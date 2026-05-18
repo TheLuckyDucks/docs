@@ -22,7 +22,7 @@ The detail modal stays open while the lobby fills. Participants appear as they j
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. You get back 90% of your entry fee. The 10% stays in the vault as a deterrent against last second griefing. Withdraw is unavailable in the last few seconds before the lobby closes.
+If you change your mind during the join window, click Withdraw. You get back 90% of your entry fee. The penalty serves a as a deterrent against last second griefing. Withdraw is unavailable in the last few minutes before the lobby closes.
 
 ## When the race starts
 
@@ -30,6 +30,6 @@ The lobby modal transitions to the canvas. A short loading screen plays while th
 
 ## After
 
-Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive in your wallet within seconds.
+Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive in your wallet instantly.
 
 If you lost, no claim is needed. The race archives itself automatically and the page returns to the lobby list.

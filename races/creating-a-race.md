@@ -6,7 +6,7 @@ Open the Create Race modal from the main page. The form is organized top to bott
 
 ### Entry fee
 
-The amount each player pays to join. Denominated in SOL by default, or any supported SPL token (USDC, USDT, more added over time). The minimum is 0.001 SOL or the equivalent token amount. The maximum is 10 SOL.
+The amount each player pays to join. Denominated in SOL by default, or any supported SPL token (legacy or Token-2022 like USDC, USDT, etc... more will be added over time). The minimum is 0.001 SOL or the equivalent token amount. The maximum is 10 SOL.
 
 The platform fee on the prize pool scales with the entry fee: 10% on tiny pots, dropping to 2% on large ones. See [Fees and prizes](../economy/fees-and-prizes.md) for the full tier table.
 
@@ -16,7 +16,7 @@ How many seats the lobby has. The default cap is 5, the absolute max is 20. Anyt
 
 ### Race duration
 
-How long the visual race takes. 30 to 180 seconds, in 15 second steps. Shorter races are punchier, longer races give more time for the audio commentary to develop a story if you opt in to it.
+How long the visual race takes. 30 to 180 seconds. Shorter races are punchier, longer races give more time for the audio commentary to develop a story if you opt in to it.
 
 ### Race mode
 

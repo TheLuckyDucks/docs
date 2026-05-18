@@ -6,7 +6,7 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 
 * **Max players > 5**. The default cap is 5 (any non-Runner can create races up to 5 slots). Runner holders can create races up to 20 slots.
 * **AI commentary**. The per second narration track only opens to Runner holders.
-* **Custom join timeout**. The 30 second to 60 minute slider only appears for Runner holders.
+* **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
 * **Custom name**. Naming a race in the lobby list.
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
 * **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.

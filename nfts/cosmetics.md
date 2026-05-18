@@ -21,7 +21,7 @@ Recent and upcoming drops follow a movie-inspired naming pattern: "inspired by" 
 
 ## Royalties
 
-The Cosmetics collection has enforced royalties via the Metaplex Core Royalties plugin and a program-allowlist enforcement layer. Every secondary sale routes a small percentage back to the project treasury, which directly funds new art and infrastructure.
+The Cosmetics collection has no enforced royalties.
 
 ## Acquiring
 

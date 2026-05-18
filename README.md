@@ -1,6 +1,6 @@
-# Welcome to Lucky Ducks
+# Welcome
 
-Lucky Ducks is a fully on-chain duck racing platform built on Solana. Every race is provably fair, every NFT is verifiable, and every prize is paid out by a smart contract. No house edge. No hidden RNG. Just ducks, and a leaderboard.
+Lucky Ducks is a fully on-chain duck racing platform built on Solana. Every race is provably fair, every NFT is verifiable, and every prize is paid out by a smart contract. No house edge. Just ducks!
 
 ## What you can do here
 

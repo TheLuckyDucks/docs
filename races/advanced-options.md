@@ -14,7 +14,7 @@ Sets a title on the race card so other players can identify it in the lobby list
 
 ## Custom join timeout
 
-The default lobby window is 5 minutes. Setting a shorter or longer custom timeout overrides it. Minimum 30 seconds, maximum 60 minutes. Custom timeouts are useful for scheduled events (long window for announcements) or rapid-fire match queues (short window for quick turnover).
+The default lobby window is 1 hour. Setting a shorter or longer custom timeout overrides it. Minimum 1 minute, maximum 1 week. Custom timeouts are useful for scheduled events (long window for announcements) or rapid-fire match queues (short window for quick turnover).
 
 ## Custom track
 

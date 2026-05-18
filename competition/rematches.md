@@ -22,9 +22,9 @@ If neither accept nor decline happens within the timeout, the rematch expires au
 
 ## Rematch chains
 
-A rematch can be rematched. If the loser of the original is now the winner of the rematch, they can propose another rematch. This continues up to the platform's max rematch chain depth (currently 11 deep) before further rematches are locked.
+A rematch can be rematched. If the loser of the original is now the winner of the rematch, they can propose another rematch. This continues up to the platform's max rematch chain depth (currently 10 deep) before further rematches are locked.
 
-The rematch chain shows up on each race in the chain as the "Rematch X of 11" indicator on the race card.
+The rematch chain shows up on each race in the chain as the "Rematch X of 10" indicator on the race card.
 
 ## Counter implications
 

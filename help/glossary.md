@@ -68,7 +68,7 @@ A race where the creator funds the prize pool upfront; joiners pay nothing to en
 
 ### Stats PDA
 
-A per-wallet account that tracks your race history, win count, XP, and other stats. Created the first time you race. Rent (~0.0017 SOL) is fully refundable on close.
+A per-wallet account that tracks your race history, win count, XP, and other stats. Created the first time you race. Rent (\~0.0017 SOL) is fully refundable on close.
 
 ### Threshold (underfilled)
 
@@ -88,7 +88,7 @@ The platform's fee wallet. Receives the platform fee out of every finalized priz
 
 ### Verified
 
-A wallet that has linked an off-platform identity via OAuth (X, Telegram, Facebook). Unlocks higher daily race creation limits and tournament eligibility.
+A wallet that has linked an off-platform identity via OAuth (X, Telegram). Unlocks higher daily race creation limits and tournament eligibility.
 
 ### VRF (Verifiable Random Function)
 
@@ -96,7 +96,7 @@ A cryptographic function whose output is provably random and unpredictable, but 
 
 ### Withdrawn
 
-A participant who left the lobby before it closed. Gets back 90% of the entry fee; the 10% penalty stays in the vault.
+A participant who left the lobby before it closed. A penalty will be applied.
 
 ### WTA (Winner Takes All)
 

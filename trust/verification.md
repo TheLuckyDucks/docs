@@ -8,7 +8,6 @@ The platform supports OAuth2 verification with:
 
 * **X (Twitter)**
 * **Telegram**
-* **Facebook**
 
 After verifying, the wallet has a verified flag and the chosen identity's display name and avatar.
 

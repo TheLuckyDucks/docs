@@ -1,6 +1,6 @@
 # What is Lucky Ducks
 
-Lucky Ducks is a duck racing platform on Solana. Picture a stylized pond, a small flock of cosmetic ducks at the starting line, and a 30-second sprint to the finish. Every race is a real Solana transaction. Every prize is paid out by a verified smart contract. Every random number that decides the outcome is produced by an oracle, not by the website.
+Lucky Ducks is a duck racing platform on Solana. Picture a stylized pond, a small flock of ducks at the starting line, and a 30-second sprint to the finish. Every race is a real Solana transaction. Every prize is paid out by a verified smart contract. Every random number that decides the outcome is produced by an oracle, not by the website.
 
 ## The pitch
 
@@ -14,7 +14,7 @@ This means three things that matter:
 
 ## The catch
 
-It runs on Solana, so you need a Solana wallet, a tiny SOL balance for fees, and a willingness to sign transactions to play. The first time you race, the smart contract creates a small on chain account to track your stats. That account costs ~0.0017 SOL in rent, fully refundable if you close it later. Beyond that, the entry fee for any race is whatever the creator set, denominated in SOL or one of the supported SPL tokens.
+It runs on Solana, so you need a Solana wallet, a tiny SOL balance for fees, and a willingness to sign transactions to play. The first time you race, the smart contract creates a small on chain account to track your stats. That account costs \~0.0017 SOL in rent, fully refundable if you close it later. Beyond that, the entry fee for any race is whatever the creator set, denominated in SOL or one of the supported SPL tokens.
 
 ## Who runs it
 

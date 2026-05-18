@@ -10,15 +10,15 @@ Someone picks the race parameters and signs a `create_race` transaction:
 * Max players (between 2 and 5 by default, up to 20 with a Runner NFT)
 * Race duration (30 to 180 seconds)
 * Payout mode (Winner Takes All, or Podium split with 1st, 2nd, 3rd)
-* Optional opt ins: AI commentary, custom track, custom join timeout, start when underfilled
+* Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
 
 The transaction allocates a fresh race account on Solana, derives a vault account to hold deposits, and emits a `race:created` event. The race appears in the lobby list seconds later.
 
 ## 2. Lobby
 
-Players have 5 minutes by default to join. Joining is a single transaction: your entry fee moves into the vault, your wallet is added to the participants list, and the lobby UI updates in real time over a websocket connection.
+Players have 1 hour by default to join. Joining is a single transaction: your entry fee moves into the vault, your wallet is added to the participants list, and the lobby UI updates in real time over a websocket connection.
 
-Players can withdraw during the lobby window. A withdrawal returns 90% of the entry fee. The 10% penalty stays in the vault as a deterrent against join-and-bail griefing.
+Players can withdraw during the lobby window. A withdrawal returns 90% of the entry fee. The penalty is there as a deterrent against join-and-bail griefing.
 
 ## 3. Start
 

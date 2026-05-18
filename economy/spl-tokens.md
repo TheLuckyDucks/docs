@@ -1,13 +1,13 @@
 # SPL token races
 
-Races and tournaments can be denominated in supported SPL tokens instead of SOL. Currently supported tokens include USDC, USDT, AMPS, and AISI, with more added periodically.
+Races and tournaments can be denominated in supported SPL tokens instead of SOL. Currently supported tokens include USDC and USDT with more added periodically.
 
 ## How a token race works
 
 Mechanically identical to a SOL race. The differences are:
 
 * The entry fee is denominated in the token's smallest unit (e.g. USDC has 6 decimals, so 1 USDC = 1,000,000 base units).
-* Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (~0.002 SOL) you pay yourself, recoverable when you close the ATA.
+* Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (\~0.002 SOL) you pay yourself, recoverable when you close the ATA.
 * The race vault holds the token in a vault-owned ATA. Payouts move the token from the vault ATA to each winner's ATA.
 
 ## Selecting a token
@@ -33,4 +33,4 @@ Tournament prize pools can also be SPL token denominated. The claim wire format 
 ## Why use SPL tokens
 
 * **Stablecoins (USDC, USDT)** keep the entry fee fixed in USD terms. No exposure to SOL price swings between joining and finalization.
-* **Community tokens (AMPS, AISI)** drive activity in their respective ecosystems. Race pools become liquidity events for those projects.
+* **Community tokens** drive activity in their respective ecosystems. Race pools become liquidity events for those projects.

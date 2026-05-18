@@ -4,9 +4,9 @@ How money flows back to you when something does not finish as expected.
 
 ## Withdrawal during the lobby
 
-You can leave a race during the lobby window. The contract refunds **90%** of your entry fee. The remaining 10% stays in the vault as a penalty, increasing the prize pool for everyone who stays.
+You can leave a race during the lobby window. The contract refunds **90%** of your entry fee. The remaining 10% is a penalty.
 
-Withdrawal is unavailable in the last few seconds of the lobby window, to prevent griefing through last-second drops.
+Withdrawal is unavailable in the last few minutes of the lobby window, to prevent griefing through last-second drops.
 
 Withdrawn players are shown in the participants list with a strikethrough; they no longer count toward the lobby fill counter or the underfilled start threshold.
 
