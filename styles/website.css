@@ -1,0 +1,379 @@
+/* ────────────────────────────────────────────────────────────
+ *  Lucky Ducks documentation theme
+ *  Matches the frontend app: Dela Gothic One golden display
+ *  titles over a deep navy backdrop, Plus Jakarta Sans body,
+ *  teal accents on links and inline code, gold accents on
+ *  table headers and blockquotes. Glass-style cards everywhere.
+ *
+ *  Loaded by legacy gitbook-cli via book.json -> styles.website.
+ *  For modern GitBook (gitbook.com) custom CSS is a paid-tier
+ *  feature; paste the contents into Workspace -> Customization
+ *  -> Custom CSS once on a paid plan, or keep it as a reference.
+ * ──────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  /* Base surface */
+  --ld-bg-0: #0a0d12;
+  --ld-bg-1: #0e1218;
+  --ld-bg-card: rgba(255, 255, 255, 0.03);
+  --ld-bg-hover: rgba(255, 255, 255, 0.06);
+  --ld-border: rgba(255, 255, 255, 0.08);
+  --ld-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --ld-text-bright: #ffffff;
+  --ld-text-body: rgba(255, 255, 255, 0.78);
+  --ld-text-muted: rgba(255, 255, 255, 0.55);
+  --ld-text-dim: rgba(255, 255, 255, 0.4);
+
+  /* Accents */
+  --ld-gold: #ffd700;
+  --ld-gold-warm: #f5d020;
+  --ld-runner: #f5af19;
+  --ld-teal: #11d4c4;
+  --ld-teal-soft: rgba(17, 212, 196, 0.12);
+  --ld-success: #4ae68a;
+  --ld-danger: #f44336;
+
+  /* Type */
+  --ld-font-display: "Dela Gothic One", "Plus Jakarta Sans", system-ui, sans-serif;
+  --ld-font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Effects */
+  --ld-shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --ld-shadow-title: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Page chrome ─────────────────────────────────────────── */
+
+body,
+.book,
+.book-body,
+.markdown-section {
+  background: var(--ld-bg-0);
+  color: var(--ld-text-body);
+  font-family: var(--ld-font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+}
+
+/* Atmospheric background. A subtle gold-to-teal aurora at the
+ *  top, fading to flat navy. Stays fixed so it doesn't repaint
+ *  on scroll. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 18% -10%,
+      rgba(245, 175, 25, 0.08),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 92% 8%,
+      rgba(17, 212, 196, 0.07),
+      transparent 55%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.book-body,
+.markdown-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4 {
+  font-family: var(--ld-font-display);
+  letter-spacing: -0.02em;
+  text-shadow: var(--ld-shadow-title);
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: none;
+}
+
+.markdown-section h1 {
+  font-size: 2.6rem;
+  color: var(--ld-gold);
+  margin-top: 0.4em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--ld-border);
+}
+
+.markdown-section h2 {
+  font-size: 1.7rem;
+  color: var(--ld-gold-warm);
+}
+
+.markdown-section h3 {
+  font-size: 1.25rem;
+  color: var(--ld-text-bright);
+  font-family: var(--ld-font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+}
+
+.markdown-section h4 {
+  font-size: 1rem;
+  color: var(--ld-runner);
+  font-family: var(--ld-font-body);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.markdown-section p,
+.markdown-section li {
+  color: var(--ld-text-body);
+}
+
+.markdown-section strong {
+  color: var(--ld-text-bright);
+  font-weight: 700;
+}
+
+.markdown-section em {
+  color: var(--ld-text-body);
+  font-style: italic;
+}
+
+/* ── Links ────────────────────────────────────────────────── */
+
+.markdown-section a {
+  color: var(--ld-teal);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(17, 212, 196, 0.35);
+  transition: color 0.15s, border-color 0.15s, text-shadow 0.15s;
+}
+.markdown-section a:hover {
+  color: var(--ld-teal);
+  border-bottom-style: solid;
+  text-shadow: 0 0 8px rgba(17, 212, 196, 0.35);
+}
+
+/* ── Inline code ─────────────────────────────────────────── */
+
+.markdown-section code {
+  background: var(--ld-teal-soft);
+  color: var(--ld-teal);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.88em;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  border: 1px solid rgba(17, 212, 196, 0.18);
+  font-weight: 500;
+}
+
+/* ── Code blocks ─────────────────────────────────────────── */
+
+.markdown-section pre {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--ld-border);
+  border-left: 3px solid var(--ld-teal);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0;
+  overflow-x: auto;
+  box-shadow: var(--ld-shadow-card);
+}
+
+.markdown-section pre > code {
+  background: transparent;
+  color: var(--ld-text-body);
+  border: none;
+  padding: 0;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────── */
+
+.markdown-section blockquote {
+  background: rgba(245, 175, 25, 0.05);
+  border-left: 3px solid var(--ld-runner);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  color: var(--ld-text-body);
+  box-shadow: var(--ld-shadow-card);
+}
+
+.markdown-section blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+
+.markdown-section table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border: 1px solid var(--ld-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--ld-shadow-card);
+}
+
+.markdown-section th {
+  background: rgba(245, 175, 25, 0.08);
+  color: var(--ld-gold-warm);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--ld-border);
+}
+
+.markdown-section td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--ld-border);
+  color: var(--ld-text-body);
+}
+
+.markdown-section tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-section tr:hover td {
+  background: var(--ld-bg-hover);
+}
+
+/* ── Lists ───────────────────────────────────────────────── */
+
+.markdown-section ul,
+.markdown-section ol {
+  padding-left: 1.6em;
+}
+
+.markdown-section ul li::marker {
+  color: var(--ld-teal);
+}
+
+.markdown-section ol li::marker {
+  color: var(--ld-gold-warm);
+  font-weight: 700;
+}
+
+.markdown-section li {
+  margin: 4px 0;
+}
+
+/* ── Horizontal rule ─────────────────────────────────────── */
+
+.markdown-section hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ld-border-strong),
+    transparent
+  );
+  margin: 28px 0;
+}
+
+/* ── Sidebar (legacy gitbook layout) ─────────────────────── */
+
+.book-summary {
+  background: var(--ld-bg-1);
+  border-right: 1px solid var(--ld-border);
+  color: var(--ld-text-body);
+}
+
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+  color: var(--ld-text-muted);
+  font-family: var(--ld-font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.15s, background 0.15s;
+}
+
+.book-summary ul.summary li a:hover {
+  color: var(--ld-text-bright);
+  background: var(--ld-bg-hover);
+}
+
+.book-summary ul.summary li.active > a {
+  color: var(--ld-gold);
+  background: rgba(255, 215, 0, 0.06);
+  font-weight: 700;
+  border-left: 2px solid var(--ld-gold);
+}
+
+.book-summary ul.summary li.header {
+  font-family: var(--ld-font-display);
+  text-transform: uppercase;
+  color: var(--ld-runner);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding-top: 1.5em;
+  text-shadow: var(--ld-shadow-title);
+}
+
+/* ── Header bar ──────────────────────────────────────────── */
+
+.book-header {
+  background: var(--ld-bg-1);
+  border-bottom: 1px solid var(--ld-border);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+}
+
+.book-header h1 a,
+.book-header h1 a:hover {
+  color: var(--ld-gold);
+  font-family: var(--ld-font-display);
+  text-shadow: var(--ld-shadow-title);
+}
+
+/* ── Search ──────────────────────────────────────────────── */
+
+#book-search-input,
+#book-search-input input {
+  background: var(--ld-bg-card);
+  color: var(--ld-text-bright);
+  border: 1px solid var(--ld-border);
+  border-radius: 8px;
+}
+
+#book-search-input input::placeholder {
+  color: var(--ld-text-dim);
+}
+
+/* ── Navigation arrows ───────────────────────────────────── */
+
+.navigation {
+  color: var(--ld-text-muted);
+}
+.navigation:hover {
+  color: var(--ld-gold);
+}
+
+/* ── Misc ────────────────────────────────────────────────── */
+
+::selection {
+  background: rgba(255, 215, 0, 0.25);
+  color: var(--ld-text-bright);
+}
+
+img {
+  border-radius: 8px;
+  box-shadow: var(--ld-shadow-card);
+}
