@@ -36,6 +36,8 @@ Yes. Once ORAO has published the seed, the outcome is deterministic. Re-run the 
 
 The first start path is the lobby filling naturally; that triggers the next transition automatically. The start-when-underfilled path is permissionless: any wallet can submit the start transaction once the join timeout has passed and the lobby has enough joiners. A backend cleanup worker submits this on schedule, but anyone else can race them to it.
 
+Finalization works the same way with a small grace window: the backend wallet submits it once the race duration ends, and after a 10-second timeout it becomes permissionless to any participant: a fallback path that kicks in if the backend is unreachable.
+
 ### What happens if the website is down?
 
 Your wallet still owns your funds. All claim, refund, and cancel actions are permissionless and can be submitted directly to the smart contract via any Solana RPC client. The website is a convenience layer over the chain, not an authority.

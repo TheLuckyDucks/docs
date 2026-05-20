@@ -38,6 +38,7 @@
 ## Trust and Fairness
 
 * [Provable randomness](trust/fairness.md)
+* [Verifying a race on-chain](trust/verifying-a-race.md)
 * [Player verification](trust/verification.md)
 
 ## Help

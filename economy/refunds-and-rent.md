@@ -4,7 +4,19 @@ How money flows back to you when something does not finish as expected.
 
 ## Withdrawal during the lobby
 
-You can leave a race during the lobby window. The contract refunds **90%** of your entry fee. The remaining 10% is a penalty.
+You can leave a race during the lobby window. The contract refunds your entry fee minus the platform fee for the current prize pool tier. The withheld percentage is sent directly to the **platform fee wallet (treasury)**.
+
+The withdrawal penalty mirrors the [platform fee tier](fees-and-prizes.md#platform-fee-tiers) the pool sits in at the moment of withdrawal. For SOL races:
+
+| Pool size at withdrawal | Refunded to you | Sent to fee wallet |
+|-------------------------|-----------------|---------------------|
+| Up to 0.05 SOL          | 90%             | 10%                 |
+| Up to 0.1 SOL           | 92.5%           | 7.5%                |
+| Up to 0.5 SOL           | 95%             | 5%                  |
+| Up to 1 SOL             | 97%             | 3%                  |
+| Above 1 SOL             | 98%             | 2%                  |
+
+SPL token races follow the same logic against the token's own fee tier schedule.
 
 Withdrawal is unavailable in the last few minutes of the lobby window, to prevent griefing through last-second drops.
 

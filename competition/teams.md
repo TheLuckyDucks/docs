@@ -1,10 +1,12 @@
 # Teams
 
-A team is a wallet group. Members can join races independently, but their results aggregate into a team standing for team-format tournaments and weekly leaderboards.
+A team is a wallet group that competes together in **tournaments**. Members join races independently, but their results aggregate into a team standing for team-format tournaments.
+
+There are no team-based events outside of tournaments at the moment. Teams exist for tournament competition specifically.
 
 ## Creating a team
 
-From the Teams page, click Create Team. Pick a name and a short description, and sign the creation transaction. You become the team's founder and first member.
+From the Teams page, click Create Team. Pick a **name** and an **avatar**, then sign the creation transaction. You become the team's founder and first member.
 
 The maximum team size is **10 members** (including the founder). The maximum number of pending join requests at any one time is **20**.
 
@@ -19,14 +21,16 @@ Two paths:
 
 Every player has a Join Requests inbox in the platform notifications. New requests appear with an Accept and a Decline button. The notification is left-anchored (separate from the right-anchored race action toasts) to avoid colliding during busy race-end sequences.
 
-## Team standings
+## Team standings in tournaments
 
-Team standings work off chain. Aggregation rules are set when the tournament is created (or for weekly leaderboards, set by the platform). Common formats include:
+Team standings are computed off chain by the tournament backend. Aggregation rules are set when the tournament is created. Common formats include:
 
-* **Sum of member XP**. Each member's individual XP earned during the window adds to the team total.
+* **Sum of member XP**. Each member's individual XP earned during the tournament window adds to the team total.
 * **Top N XP**. Only the top N members' XP counts, encouraging team selection for performance.
 * **Average XP**. Mean across all members, penalizing inactive members.
 * **Custom**. Per tournament custom weighting.
+
+Off chain aggregation keeps the rule sets flexible without requiring a smart contract upgrade for every new tournament format.
 
 ## Disbanding
 
@@ -34,4 +38,4 @@ The team founder can disband the team at any time. Members are notified and the 
 
 ## Why teams over solo
 
-Teams are mostly for the social and aspirational side of competition. Coordinating with other players on which races to enter, comparing weekly results, sharing strategies. The platform does not currently award team-only prize pools, but team-based tournaments do.
+Teams are mostly for the social and aspirational side of competition: coordinating with other players on which races to enter, comparing tournament results, sharing strategies.

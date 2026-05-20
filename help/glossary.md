@@ -4,7 +4,7 @@ Terms you will see across the docs and the app.
 
 ### ATA (Associated Token Account)
 
-A Solana account that holds a specific SPL token for a specific wallet. Each wallet has one ATA per token mint. Token races use a vault-owned ATA to hold the prize pool; payouts go from the vault ATA to each winner's ATA.
+A Solana account that holds a specific SPL token for a specific wallet. Each wallet has one ATA per token mint. Token races use a vault-owned ATA to hold the prize pool; payouts go from the vault ATA to each winner's ATA. The platform supports ATAs for both the legacy SPL Token program and SPL Token-2022.
 
 ### Boost
 
@@ -32,7 +32,7 @@ The amount each joiner pays to participate in a race.
 
 ### Finalization
 
-The on-chain transaction that closes a race and pays out the winners. Permissionless: anyone can submit it after the race duration elapses.
+The on-chain transaction that closes a race and pays out the winners. The backend wallet triggers it once the race duration elapses; if it hasn't fired within 10 seconds, it becomes permissionless and any participant can submit it.
 
 ### Join timeout
 
@@ -96,7 +96,7 @@ A cryptographic function whose output is provably random and unpredictable, but 
 
 ### Withdrawn
 
-A participant who left the lobby before it closed. A penalty will be applied.
+A participant who left the lobby before it closed. Gets back their entry fee minus the platform fee for the current pool tier (e.g. 90% at the 10% tier, 95% at the 5% tier); the withheld portion is sent to the treasury fee wallet.
 
 ### WTA (Winner Takes All)
 

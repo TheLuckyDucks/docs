@@ -37,7 +37,7 @@ SPL token pools use the same percentage schedule but with thresholds adjusted fo
 
 ## Prize pool calculation
 
-* **Unsponsored race**. Pool = entry fee × number of paid joiners. Withdrawn players get 90% back; the 10% penalty stays in the pool, increasing the per-winner take.
+* **Regular race**. Pool = entry fee × number of paid joiners.
 * **Sponsored race**. Pool = whatever the creator deposited. Joiners pay nothing; the platform fee comes out of the sponsor's deposit at finalization.
 
 ## Other costs at creation

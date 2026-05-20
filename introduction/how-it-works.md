@@ -18,7 +18,7 @@ The transaction allocates a fresh race account on Solana, derives a vault accoun
 
 Players have 1 hour by default to join. Joining is a single transaction: your entry fee moves into the vault, your wallet is added to the participants list, and the lobby UI updates in real time over a websocket connection.
 
-Players can withdraw during the lobby window. A withdrawal returns 90% of the entry fee. The penalty is there as a deterrent against join-and-bail griefing.
+Players can withdraw during the lobby window. A withdrawal returns the entry fee minus the platform fee for the current pool tier (e.g. 90% back at the 10% tier, 95% at the 5% tier). The withheld percentage goes to the platform fee wallet as a deterrent against join-and-bail griefing.
 
 ## 3. Start
 
@@ -30,7 +30,11 @@ ORAO publishes the random seed back to the contract within seconds. The seed is 
 
 ## 5. Finalization
 
-The contract runs the simulation, ranks the ducks, and transitions the race to `Completed`. Winners can now claim their share of the vault. Claims are permissionless: anyone can submit a claim transaction on a winner's behalf, the funds always go to the winner regardless of who pays for the tx.
+Once the race duration has elapsed, the backend wallet submits the finalization transaction. The contract runs the simulation, ranks the ducks, and transitions the race to `Completed`. Winners can now claim their share of the vault.
+
+Finalization is permissionless after a 10-second grace window. If the backend hasn't finalized within 10 seconds of the race duration ending, any participant can submit the finalize transaction themselves. This is the fallback path if the backend ever goes down so the race never gets stuck. In practice the backend finalizes within the grace window and participants rarely need to do this themselves.
+
+Claims work the same way: anyone can submit a claim transaction on a winner's behalf, the funds always go to the winner regardless of who pays for the tx.
 
 ## 6. Cleanup
 

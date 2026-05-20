@@ -18,7 +18,7 @@ This function runs in the visual canvas (so the duck animation matches the on-ch
 
 This is intentional. Once ORAO publishes the seed and before the race duration elapses, anyone watching the chain can run the same math the contract will run and know who wins. The visual race is just delivery: the math is already done.
 
-The backend deliberately delays the finalization transaction until the race duration has passed so the suspense survives for casual viewers. If you genuinely want to know early, you can. Most players prefer to watch.
+The backend deliberately delays the finalization transaction until the race duration has passed so the suspense survives for casual viewers. The backend wallet submits it once the timer ends, and after a 10-second grace window any participant can submit it as a fallback (see [How a race works](../introduction/how-it-works.md#5-finalization)). If you genuinely want to know early, you can. Most players prefer to watch.
 
 ## What about cancellation?
 

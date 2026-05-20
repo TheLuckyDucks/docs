@@ -22,7 +22,7 @@ The detail modal stays open while the lobby fills. Participants appear as they j
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. You get back 90% of your entry fee. The penalty serves a as a deterrent against last second griefing. Withdraw is unavailable in the last few minutes before the lobby closes.
+If you change your mind during the join window, click Withdraw. You get back your entry fee minus the platform fee for the current prize pool tier. The withheld percentage is sent straight to the platform fee wallet. Withdraw is unavailable in the last few minutes before the lobby closes.
 
 ## When the race starts
 
