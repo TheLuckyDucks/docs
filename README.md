@@ -22,4 +22,4 @@ The left sidebar groups topics by what you might want to do:
 6. **Trust and Fairness**. How the randomness works, what the verification badges mean.
 7. **Help**. FAQ and a glossary of unfamiliar terms.
 
-If anything in here is wrong, missing, or out of date, ping us on Telegram or X. The platform moves fast and the docs follow.
+If anything in here is wrong, missing, or out of date, ping us on Telegram or X — see [Social networks](help/social-networks.md) for all our channels. The platform moves fast and the docs follow.

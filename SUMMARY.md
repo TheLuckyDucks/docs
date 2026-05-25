@@ -45,3 +45,4 @@
 
 * [FAQ](help/faq.md)
 * [Glossary](help/glossary.md)
+* [Social networks](help/social-networks.md)

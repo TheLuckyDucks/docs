@@ -68,7 +68,7 @@ A race where the creator funds the prize pool upfront; joiners pay nothing to en
 
 ### Stats PDA
 
-A per-wallet account that tracks your race history, win count, XP, and other stats. Created the first time you race. Rent (\~0.0017 SOL) is fully refundable on close.
+A per-wallet account that tracks your race history, win count, XP, and other stats. Created the first time you race. Rent (~0.0017 SOL) is fully refundable on close.
 
 ### Threshold (underfilled)
 
