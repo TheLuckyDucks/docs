@@ -51,3 +51,7 @@ A few small costs are paid by the creator at race creation, separate from the po
 * **Race PDA rent**. Around 0.003 SOL. Fully refunded to the creator when the race closes.
 
 These costs are all listed in the cost breakdown box at the bottom of the Create Race modal before you sign.
+
+## A note for creators
+
+On regular (non-sponsored) races, part of the platform fee can be redirected back to the race creator. See [Creator Fee Share](creator-fee-share.md) for details.

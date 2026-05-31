@@ -32,6 +32,7 @@
 ## Economy
 
 * [Fees and prizes](economy/fees-and-prizes.md)
+* [Creator Fee Share](economy/creator-fee-share.md)
 * [Refunds and rent](economy/refunds-and-rent.md)
 * [SPL token races](economy/spl-tokens.md)
 
