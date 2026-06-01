@@ -8,7 +8,7 @@ Someone picks the race parameters and signs a `create_race` transaction:
 
 * Entry fee (SOL or SPL token)
 * Max players (between 2 and 5 by default, up to 20 with a Runner NFT)
-* Race duration (30 to 180 seconds)
+* Race duration (default 30 seconds; up to 180 seconds requires a Runner NFT)
 * Payout mode (Winner Takes All, or Podium split with 1st, 2nd, 3rd)
 * Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
 

@@ -12,6 +12,10 @@ The narration references the duck names, the boosts in play, and the current sta
 
 Sets a title on the race card so other players can identify it in the lobby list. Useful when running a themed event or a community match.
 
+## Custom race duration
+
+The default visual race duration is 30 seconds and is available to everyone. Changing it up to 180 seconds, requires a Runner NFT. Shorter races stay punchy; longer races give the AI commentary more room to develop a story.
+
 ## Custom join timeout
 
 The default lobby window is 1 hour. Setting a shorter or longer custom timeout overrides it. Minimum 1 minute, maximum 1 week. Custom timeouts are useful for scheduled events (long window for announcements) or rapid-fire match queues (short window for quick turnover).

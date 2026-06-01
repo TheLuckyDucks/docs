@@ -17,6 +17,7 @@ How many seats the lobby has. The default cap is 5, the absolute max is 20. Anyt
 ### Race duration
 
 How long the visual race takes. 30 to 180 seconds. Shorter races are punchier, longer races give more time for the audio commentary to develop a story if you opt in to it.
+The default minimum duration (30 seconds) is available to everyone. **Picking any other value requires a Runner NFT in the connected wallet**, the same way the join timeout slider does. Without a Runner the duration field is locked at 30s. See [Runner NFTs](../nfts/runners.md).
 
 ### Race mode
 
