@@ -4,30 +4,36 @@ How money flows back to you when something does not finish as expected.
 
 ## Withdrawal during the lobby
 
-You can leave a race during the lobby window. The contract refunds your entry fee minus the platform fee for the current prize pool tier. The withheld percentage is sent directly to the **platform fee wallet (treasury)**.
+You can leave a race during the lobby window. The contract refunds your entry fee minus a fixed **withdrawal penalty**, currently **0.01 SOL**. The penalty is the same regardless of pool size or token. The collected amount goes to the platform fee wallet (treasury). It does not increase the prize pool.
 
-The withdrawal penalty mirrors the [platform fee tier](fees-and-prizes.md#platform-fee-tiers) the pool sits in at the moment of withdrawal. For SOL races:
+A few details worth knowing:
 
-| Pool size at withdrawal | Refunded to you | Sent to fee wallet |
-|-------------------------|-----------------|---------------------|
-| Up to 0.05 SOL          | 90%             | 10%                 |
-| Up to 0.1 SOL           | 92.5%           | 7.5%                |
-| Up to 0.5 SOL           | 95%             | 5%                  |
-| Up to 1 SOL             | 97%             | 3%                  |
-| Above 1 SOL             | 98%             | 2%                  |
+* The penalty is always paid in **SOL**, even for SPL/token races. The rest of your entry refunds in the original asset.
+* The penalty applies only to withdrawals **within the join window**. If the race expires or is cancelled by the creator, no withdrawal penalty applies.
 
-SPL token races follow the same logic against the token's own fee tier schedule.
-
-Withdrawal is unavailable in the last few minutes of the lobby window, to prevent griefing through last-second drops.
+Withdrawal is unavailable in the last few minutes of the lobby window, to prevent griefing through last second drops.
 
 Withdrawn players are shown in the participants list with a strikethrough; they no longer count toward the lobby fill counter or the underfilled start threshold.
 
-## Full refund on race cancellation
+## Full refund on race cancellation or expiration
 
-If the race never finalizes, every paid participant can claim a **full** refund. Cancellation paths include:
+If the race never finalizes, every paid participant can claim a **full** refund. This covers two distinct cases.
 
-* The lobby never filled past the minimum for the chosen race mode (2 for WTA, 3 for Podium Split).
-* The creator manually cancelled before the join window opened.
+### Creator cancellation during the join window
+
+The creator can cancel a race while the join window is still open, even if nobody has joined yet. When they do:
+
+* Every player who joined (including the creator, if they joined as a player) gets their **full** entry back.
+* The creator pays a fixed **0.05 SOL** penalty to the platform. The penalty is the same for SOL races and token races (token races still pay it in SOL) and does not scale with the pot size.
+
+A race that has already passed the start point cannot be cancelled. For details, see [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#cancelling-a-race).
+
+### Expiration (join window passed without starting)
+
+If the join window passes and the race never reached its start condition, the race expires and can be refunded. Triggering the refund is permissionless: anyone can submit it, not just the creator. Players get their full entry back. There is **no** penalty on expiration. The penalty only applies to manual cancellation while the join window is still open.
+
+### Other refund paths
+
 * The ORAO randomness request timed out (rare; the oracle is reliable).
 * The on-chain start transition failed for any reason.
 

@@ -11,6 +11,7 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 * **Custom name**. Naming a race in the lobby list.
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
 * **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.
+* **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
 * **Private races (allowlist)**. Restricting joins to a wallet allowlist.
 
 ## What it does not do

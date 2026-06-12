@@ -22,7 +22,7 @@ The detail modal stays open while the lobby fills. Participants appear as they j
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. You get back your entry fee minus the platform fee for the current prize pool tier. The withheld percentage is sent straight to the platform fee wallet. Withdraw is unavailable in the last few minutes before the lobby closes.
+If you change your mind during the join window, click Withdraw. You get your entry back minus a fixed **0.01 SOL** withdrawal penalty (always in SOL, even on token races). The penalty goes to the platform fee wallet, not the prize pool. Withdraw is unavailable in the last few minutes before the lobby closes.
 
 ## When the race starts
 

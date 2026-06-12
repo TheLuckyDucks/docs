@@ -14,6 +14,7 @@
 * [Joining and playing](races/joining-and-playing.md)
 * [Race modes](races/race-modes.md)
 * [Advanced options](races/advanced-options.md)
+* [Hosting, cancelling, and refunds](races/hosting-and-cancelling.md)
 
 ## NFTs
 

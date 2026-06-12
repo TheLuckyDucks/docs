@@ -33,6 +33,7 @@ Only regular Winner Takes All and Podium races. Creator Fee Share does **not** a
 
 * **1-v-1 races (2 players).** Excluded by design.
 * **Sponsored races.** When the creator funds the prize themselves, they don't earn a cut of the platform fee on top of that. The treasury keeps the full fee.
+* **Hosted races (creator did not join as a player).** A creator who [hosts without playing](../races/hosting-and-cancelling.md#host-a-race-without-playing) gives up the Creator Fee Share. Hosting and earning a share are separate paths.
 * **Refunded or cancelled races.** No prize is claimed, so no fee is paid, so there's no share to pay out.
 
 Rematches inherit whatever share was snapshotted on the original race, even if platform defaults have since changed.

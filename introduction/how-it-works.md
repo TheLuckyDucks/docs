@@ -18,7 +18,7 @@ The transaction allocates a fresh race account on Solana, derives a vault accoun
 
 Players have 1 hour by default to join. Joining is a single transaction: your entry fee moves into the vault, your wallet is added to the participants list, and the lobby UI updates in real time over a websocket connection.
 
-Players can withdraw during the lobby window. A withdrawal returns the entry fee minus the platform fee for the current pool tier (e.g. 90% back at the 10% tier, 95% at the 5% tier). The withheld percentage goes to the platform fee wallet as a deterrent against join-and-bail griefing.
+Players can withdraw during the lobby window. A withdrawal returns the entry fee minus a fixed 0.01 SOL penalty (always paid in SOL, even on token races). The penalty goes to the platform fee wallet as a deterrent against join-and-bail griefing. It does not increase the remaining prize pool.
 
 ## 3. Start
 

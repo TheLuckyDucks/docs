@@ -6,7 +6,15 @@ It is a game with on-chain stakes. Skill matters less than in a typical skill-ba
 
 ### Do I need a Runner NFT to play?
 
-No. You can join any race without a Runner. The Runner is only required to **create** advanced races (over 5 players, AI commentary, custom track or name, custom join timeout, sponsored or private). Standard 2-to-5 player races work for everyone.
+No. You can join any race without a Runner. The Runner is only required to **create** advanced races (over 5 players, AI commentary, custom track or name, custom join timeout, custom race duration, hosting without playing, sponsored or private). Standard 2-to-5 player races with the default 30s duration work for everyone.
+
+### Can I cancel a race I created?
+
+Yes, while the join window is still open. Cancelling refunds every player their full entry and charges the creator a flat 0.05 SOL penalty (paid in SOL even on token races). Once a race has reached its start condition, it can no longer be cancelled. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#cancelling-a-race).
+
+### Can I create a race without joining it?
+
+Yes, if you hold a Runner NFT. This is called hosting. The race opens with zero players and fills as others join. Hosting is not available for 1v1 races, and a host gives up the Creator Fee Share for that race. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#host-a-race-without-playing).
 
 ### What is the smallest race I can run?
 

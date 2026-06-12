@@ -33,6 +33,7 @@ These are off by default. Most need a Runner NFT to enable.
 * **Custom name**. Show a race title in the lobby list.
 * **Custom track**. Use a Track NFT you own as the race background.
 * **Start when underfilled**. Permit the race to launch with fewer than max players once the join timeout passes. See [Advanced options](advanced-options.md).
+* **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 * **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
 * **Private race**. Restrict joins to a wallet allowlist you provide.
 

@@ -34,6 +34,10 @@ The amount each joiner pays to participate in a race.
 
 The on-chain transaction that closes a race and pays out the winners. The backend wallet triggers it once the race duration elapses; if it hasn't fired within 10 seconds, it becomes permissionless and any participant can submit it.
 
+### Host (hosted race)
+
+A race where the creator does not take a slot as a player. The race opens with zero players and fills as others join. Hosting requires a Runner NFT, is not available for 1v1 races, and the host gives up the Creator Fee Share.
+
 ### Join timeout
 
 The lobby window during which players can join a race. Default 5 minutes. Customizable per race.
@@ -96,7 +100,7 @@ A cryptographic function whose output is provably random and unpredictable, but 
 
 ### Withdrawn
 
-A participant who left the lobby before it closed. Gets back their entry fee minus the platform fee for the current pool tier (e.g. 90% at the 10% tier, 95% at the 5% tier); the withheld portion is sent to the treasury fee wallet.
+A participant who left the lobby before it closed. Gets their entry back minus a fixed 0.01 SOL penalty (always paid in SOL, even on token races); the penalty goes to the treasury fee wallet, not the prize pool.
 
 ### WTA (Winner Takes All)
 
