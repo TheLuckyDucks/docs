@@ -8,6 +8,14 @@ Tap a card to open the detail modal, then Join Race. The modal shows the partici
 
 You can also join straight from the card via the Join button when you do not need to customize.
 
+### Eligibility
+
+Some races have join conditions beyond paying the entry fee. The detail modal calls out anything that applies to the race in front of you:
+
+* **Verified only**. The race only accepts wallets that have completed Telegram, X, or Facebook verification.
+* **Allowlist**. The race only accepts wallets the creator explicitly listed.
+* **Minimum account age**. The race only accepts wallets whose player account is at least a certain age. Brand new players whose account is being created during the join transaction are always too young. If your wallet does not qualify, the Join button is disabled and the modal tells you why.
+
 ### NFT boost selection
 
 If you hold any Boost NFTs in the connected wallet, you can select one to attach to this race. The boost adds a small percentage to your duck's speed for this race only. Boost NFTs are not consumed: you can use the same boost in every race you join. See [Boost NFTs](../nfts/boosts.md).

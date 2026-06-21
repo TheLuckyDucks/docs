@@ -42,6 +42,22 @@ Pay the prize pool yourself instead of asking joiners to. Useful for community g
 
 Restrict joins to a wallet allowlist you provide. Each line in the allowlist field is a wallet address that can join. Other wallets see the race in the list but cannot click Join. Useful for tournament brackets or invite only events.
 
+## Minimum account age
+
+Require that anyone joining the race has a player account at least a certain number of seconds old. The toggle is off by default. When on, a duration input appears (defaulting to **24 hours**).
+
+What it does:
+
+* A joining wallet must have an existing player account, and that account must have been around for at least the configured duration. Otherwise the join is rejected.
+* A brand new player (one whose player account is created during the join transaction) is always treated as zero seconds old, so they cannot join a gated race. The gate is a simple, effective barrier against fresh sybil accounts spun up for a single race.
+* It works on top of whatever validation the race uses. You can combine it with Verified Only, with a private allowlist, or with no restriction at all (Anyone).
+
+Things worth knowing:
+
+* The gate is fixed at race creation and does not change for the lifetime of the race. Rematches inherit it.
+* Your own auto join as creator is subject to the same check. If your player account is too new, you either have to wait, lower the threshold, or use host mode to create the race without joining it. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
+* If you are not sure whether your wallet qualifies for a gated race, the join screen tells you so before you sign.
+
 ## Combining options
 
 Most options stack. The only hard exclusion is that AI commentary cannot be added to a race that has already started. Everything else can be mixed freely.

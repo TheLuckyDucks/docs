@@ -36,6 +36,7 @@ These are off by default. Most need a Runner NFT to enable.
 * **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 * **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
 * **Private race**. Restrict joins to a wallet allowlist you provide.
+* **Minimum account age**. Require joiners to have a player account at least a certain age. Useful for keeping fresh wallets out. Defaults to 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
 ## Sign and submit
 

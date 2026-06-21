@@ -38,6 +38,10 @@ The on-chain transaction that closes a race and pays out the winners. The backen
 
 A race where the creator does not take a slot as a player. The race opens with zero players and fills as others join. Hosting requires a Runner NFT, is not available for 1v1 races, and the host gives up the Creator Fee Share.
 
+### Minimum account age
+
+An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the validation type (Anyone, Verified Only, Allowlist, Runner only): can be combined with any of them.
+
 ### Join timeout
 
 The lobby window during which players can join a race. Default 5 minutes. Customizable per race.
