@@ -8,7 +8,7 @@ A Solana account that holds a specific SPL token for a specific wallet. Each wal
 
 ### Allowlist (private race)
 
-An invite list of up to 20 wallets the creator can attach to a race. Only listed wallets can join; everyone else sees the race but cannot click Join. The full list is stored off chain on the platform backend and exposed through the race endpoints, so it is visible in the dApp; only a short fingerprint is recorded on chain to prevent tampering. The creator is always allowed and does not need to add their own wallet.
+An invite list of up to 20 wallets the creator can attach to a race (also the maximum players a race can hold). Only listed wallets can join; everyone else sees the race but cannot click Join. The full list is stored off chain on the platform backend and exposed through the race endpoints, so it is visible in the dApp; only a short fingerprint is recorded on chain to prevent tampering. The creator's own wallet is implicitly allowed only via the auto join at race creation (when the race is neither sponsored nor in host mode); in host mode the creator must add their wallet to the list if they want to join later.
 
 ### Boost
 

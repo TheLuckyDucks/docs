@@ -44,8 +44,11 @@ Restrict joins to a list of wallet addresses you choose. Other wallets see the r
 
 How it works:
 
-* Add the wallets you want to invite, one per line, when you create the race. You can invite up to **20 wallets**. The 20 cap matches the per race player limit, so the list will never be longer than the race can actually hold.
-* As the host you are always allowed to join your own race, so you do not need to add your own wallet to the list. If you create the race normally (without host mode) you are auto joined as usual.
+* Add the wallets you want to invite, one per line, when you create the race. You can invite up to **20 wallets**, which is also the maximum number of players a race can hold.
+* The creator's wallet is treated specially depending on how the race is created:
+  * In a **normal** (non-sponsored, non-host) race, the creator is auto joined as the first player. The allowlist check is skipped for that one auto join, so you do not need to add your own wallet to the list.
+  * In a **host mode** race, the creator does not auto join. If you want to join your own host mode race later, your wallet must be on the allowlist like any other joiner.
+  * In a **sponsored** race, the creator does not play at all, so the allowlist does not affect them.
 * If your wallet is on the list, the race shows an active Join button and you can enter like any other race. If not, the modal tells you the race is invite only and Join stays disabled.
 * The invite list is held for about an hour while you build it and complete the create transaction. If you take longer than that and the hold expires, just re-enter the list and create again. No funds are involved at this step, so an expired hold costs nothing.
 
