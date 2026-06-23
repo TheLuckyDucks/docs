@@ -6,6 +6,10 @@ Terms you will see across the docs and the app.
 
 A Solana account that holds a specific SPL token for a specific wallet. Each wallet has one ATA per token mint. Token races use a vault-owned ATA to hold the prize pool; payouts go from the vault ATA to each winner's ATA. The platform supports ATAs for both the legacy SPL Token program and SPL Token-2022.
 
+### Allowlist (private race)
+
+An invite list of up to 20 wallets the creator can attach to a race. Only listed wallets can join; everyone else sees the race but cannot click Join. The full list is stored off chain on the platform backend and exposed through the race endpoints, so it is visible in the dApp; only a short fingerprint is recorded on chain to prevent tampering. The creator is always allowed and does not need to add their own wallet.
+
 ### Boost
 
 A speed bonus added to your duck for one race, sourced from a Boost NFT in your wallet. Capped at 1% on chain.

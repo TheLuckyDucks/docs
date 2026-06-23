@@ -13,7 +13,7 @@ You can also join straight from the card via the Join button when you do not nee
 Some races have join conditions beyond paying the entry fee. The detail modal calls out anything that applies to the race in front of you:
 
 * **Verified only**. The race only accepts wallets that have completed Telegram, X, or Facebook verification.
-* **Allowlist**. The race only accepts wallets the creator explicitly listed.
+* **Allowlist (invite only)**. The race only accepts wallets the creator added to the invite list (up to 20). If your wallet is not on the list, Join stays disabled and the modal tells you the race is invite only.
 * **Minimum account age**. The race only accepts wallets whose player account is at least a certain age. Brand new players whose account is being created during the join transaction are always too young. If your wallet does not qualify, the Join button is disabled and the modal tells you why.
 
 ### NFT boost selection

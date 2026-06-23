@@ -38,9 +38,20 @@ This option adds a small surcharge to cover the backend's auto start operation. 
 
 Pay the prize pool yourself instead of asking joiners to. Useful for community giveaways or marketing events. Set the prize amount when creating; players join for free and the pot is funded by your wallet upfront. The platform fee still applies, taken from the prize amount you sponsored.
 
-## Private race
+## Private race (allowlist)
 
-Restrict joins to a wallet allowlist you provide. Each line in the allowlist field is a wallet address that can join. Other wallets see the race in the list but cannot click Join. Useful for tournament brackets or invite only events.
+Restrict joins to a list of wallet addresses you choose. Other wallets see the race in the list but the Join button stays disabled. Useful for private games with friends, community only events, and invite only brackets.
+
+How it works:
+
+* Add the wallets you want to invite, one per line, when you create the race. You can invite up to **20 wallets**. The 20 cap matches the per race player limit, so the list will never be longer than the race can actually hold.
+* As the host you are always allowed to join your own race, so you do not need to add your own wallet to the list. If you create the race normally (without host mode) you are auto joined as usual.
+* If your wallet is on the list, the race shows an active Join button and you can enter like any other race. If not, the modal tells you the race is invite only and Join stays disabled.
+* The invite list is held for about an hour while you build it and complete the create transaction. If you take longer than that and the hold expires, just re-enter the list and create again. No funds are involved at this step, so an expired hold costs nothing.
+
+A note on how the list is stored: only a short fingerprint of the list is recorded on chain with the race, not the wallets themselves. The full list lives off chain on the platform backend, and the race endpoints expose it (so the dApp, the participant UI, and anything reading the API can see who is invited). In other words, the list is not secret. The on chain fingerprint is just a way to verify the list has not been tampered with between creation and join time.
+
+Allowlist stacks with the [minimum account age](#minimum-account-age) gate. If both are set, a joining wallet must be both on the list **and** old enough.
 
 ## Minimum account age
 
