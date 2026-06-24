@@ -50,6 +50,14 @@ An optional, creator chosen condition that limits a race to wallets whose player
 
 The lobby window during which players can join a race. Default 5 minutes. Customizable per race.
 
+### NFT Holders (join setting)
+
+A race join setting that restricts entry to wallets holding at least a chosen number of NFTs from a chosen collection. Eligibility is based on current holdings and is checked at join time using a short lived eligibility pass. The same NFT cannot secure two seats in the same race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
+
+### Token Holders (join setting)
+
+A race join setting that restricts entry to wallets holding at least a chosen amount of a chosen token. Checked directly on chain at join time. The gating token does not have to be the race's prize token. Supports both legacy SPL Token and Token-2022 mints. See [Race access and gating](../races/access-and-gating.md#token-holders).
+
 ### ORAO VRF
 
 The on-chain randomness oracle used by Lucky Ducks. ORAO operators sign random seeds and publish them to Solana; the smart contract reads the seed and computes race outcomes deterministically.

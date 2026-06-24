@@ -6,7 +6,7 @@ It is a game with on-chain stakes. Skill matters less than in a typical skill-ba
 
 ### Do I need a Runner NFT to play?
 
-No. You can join any race without a Runner. The Runner is only required to **create** advanced races (over 5 players, AI commentary, custom track or name, custom join timeout, custom race duration, minimum account age gate, hosting without playing, sponsored or private). Standard 2-to-5 player races with the default 30s duration work for everyone.
+No. You can join any race without a Runner. The Runner is only required to **create** advanced races: any race with a gated join setting (Verified Only, Allowed Players, NFT Holders, or Token Holders), or any race customized beyond the basics (over 5 players, AI commentary, custom track or name, custom join timeout, custom race duration, minimum account age gate, hosting without playing, or sponsored). A plain open race with default settings and 2 to 5 players works for everyone. See [Race access and gating](../races/access-and-gating.md).
 
 ### Can I cancel a race I created?
 

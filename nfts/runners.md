@@ -12,7 +12,10 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
 * **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.
 * **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
-* **Private races (allowlist)**. Restricting joins to a wallet allowlist.
+* **Private races (allowlist)**. Restricting joins to an invite list of up to 20 wallets.
+* **NFT Holders races**. Restricting joins to holders of a chosen NFT collection.
+* **Token Holders races**. Restricting joins to holders of a chosen token.
+* **Verified Only races**. Restricting joins to socially verified wallets.
 * **Minimum account age gate**. Requiring joiners to have a player account at least a certain age, useful for keeping fresh sybils out of a race.
 
 ## What it does not do
