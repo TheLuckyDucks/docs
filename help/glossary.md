@@ -46,6 +46,10 @@ A race where the creator does not take a slot as a player. The race opens with z
 
 An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the validation type (Anyone, Verified Only, Allowlist, Runner only): can be combined with any of them.
 
+### Mystery Box
+
+A sealed NFT that opens into a random reward from a themed pool (Cosmetics, Tracks, or Boost). The box opens automatically after minting; the reward is selected by ORAO VRF and minted to your wallet. See [Mystery Boxes](../nfts/mystery-boxes.md).
+
 ### Join timeout
 
 The lobby window during which players can join a race. Default 5 minutes. Customizable per race.

@@ -24,6 +24,7 @@ The smart contract independently verifies the NFT is in the wallet at the moment
 * **Mints**. New collections drop periodically. Mint links appear on the homepage and in the Telegram announcement channel.
 * **Marketplace**. The in-app marketplace lists every Lucky Ducks NFT currently for sale. Filter by collection.
 * **Third party**. Tensor and MagicEden list the same NFTs. Buying from a third party works identically to buying in-app, the NFT lands in the same wallet.
+* **Mystery Boxes**. Sealed boxes you mint and open for a random reward NFT from the matching collection (Cosmetics, Tracks, or Boost). See [Mystery Boxes](mystery-boxes.md).
 
 ## What about royalties
 
@@ -37,3 +38,4 @@ Read the per collection pages for what each NFT actually does:
 * [Boost NFTs](boosts.md)
 * [Track NFTs](tracks.md)
 * [Cosmetic NFTs](cosmetics.md)
+* [Mystery Boxes](mystery-boxes.md)
