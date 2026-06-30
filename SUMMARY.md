@@ -24,6 +24,7 @@
 * [Boost NFTs](nfts/boosts.md)
 * [Track NFTs](nfts/tracks.md)
 * [Cosmetic NFTs](nfts/cosmetics.md)
+* [Mystery Boxes](nfts/mystery-boxes.md)
 
 ## Competition
 
