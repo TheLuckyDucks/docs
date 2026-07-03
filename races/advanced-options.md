@@ -40,7 +40,7 @@ Pay the prize pool yourself instead of asking joiners to. Useful for community g
 
 ## Join settings (who can join)
 
-The Create Race modal also lets you control who can join: Open, Verified players only, Allowed players (private invite list), NFT Holders, or Token Holders. These are gating options rather than customization opt ins, and they all flip a race to "advanced" status (Runner NFT required to host). They have their own page: see [Race access and gating](access-and-gating.md).
+The Create Race modal also lets you control who can join: Open, Verified players only, Allowed players (private invite list), NFT Holders, or Token Holders. These are gating options rather than customization opt ins, and they can be hosted **without** a Runner NFT (each has its own creator side check instead). They have their own page: see [Race access and gating](access-and-gating.md).
 
 ## Minimum account age
 

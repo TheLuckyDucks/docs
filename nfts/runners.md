@@ -12,11 +12,18 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
 * **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.
 * **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
-* **Private races (allowlist)**. Restricting joins to an invite list of up to 20 wallets.
-* **NFT Holders races**. Restricting joins to holders of a chosen NFT collection.
-* **Token Holders races**. Restricting joins to holders of a chosen token.
-* **Verified Only races**. Restricting joins to socially verified wallets.
-* **Minimum account age gate**. Requiring joiners to have a player account at least a certain age, useful for keeping fresh sybils out of a race.
+* **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
+* **Minimum account age gate**. Requiring joiners to have a player account at least a certain age.
+
+## What Runner is not required for
+
+The four join settings (Verified Only, Allowed Players, NFT Holders, Token Holders) can be hosted **without** a Runner NFT. Each has its own creator side check instead (see [Race access and gating](../races/access-and-gating.md)):
+
+* Verified Only requires the creator to be verified themselves.
+* NFT Holders requires the creator to hold at least one item from the gating collection (unless they hold a Runner, which bypasses the check).
+* Allowed Players and Token Holders have no extra creator check.
+
+The Runner NFT is still what unlocks the [Creator Fee Share](../economy/creator-fee-share.md) on a race, even when the gate itself does not require it.
 
 ## What it does not do
 

@@ -35,7 +35,7 @@ These are off by default. Most need a Runner NFT to enable.
 * **Start when underfilled**. Permit the race to launch with fewer than max players once the join timeout passes. See [Advanced options](advanced-options.md).
 * **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 * **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
-* **Join setting (who can join)**. Open by default. Switch to Verified Only, Allowed Players, NFT Holders, or Token Holders to gate the race. See [Race access and gating](access-and-gating.md).
+* **Join setting (who can join)**. Open by default. Switch to Verified Only, Allowed Players, NFT Holders, or Token Holders to gate the race. None of these gates require a Runner NFT to host, though each has its own creator side check. See [Race access and gating](access-and-gating.md).
 * **Minimum account age**. Require joiners to have a player account at least a certain age. Useful for keeping fresh wallets out. Defaults to 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
 ## Sign and submit
