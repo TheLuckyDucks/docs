@@ -31,6 +31,7 @@
 * [Tournaments](competition/tournaments.md)
 * [Teams](competition/teams.md)
 * [Rematches](competition/rematches.md)
+* [Badges](competition/badges.md)
 
 ## Economy
 
@@ -49,4 +50,5 @@
 
 * [FAQ](help/faq.md)
 * [Glossary](help/glossary.md)
+* [The Lucky Ducks Telegram bot](help/telegram-bot.md)
 * [Social networks](help/social-networks.md)
