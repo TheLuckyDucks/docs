@@ -14,7 +14,7 @@ Sets a title on the race card so other players can identify it in the lobby list
 
 ## Custom race duration
 
-The default visual race duration is 30 seconds and is available to everyone. Changing it up to 180 seconds, requires a Runner NFT. Shorter races stay punchy; longer races give the AI commentary more room to develop a story.
+The default visual race duration is 30 seconds and is available to everyone. Changing it up to 5 minutes requires a Runner NFT. Shorter races stay punchy; longer races give the AI commentary more room to develop a story.
 
 ## Custom join timeout
 
@@ -40,7 +40,7 @@ Pay the prize pool yourself instead of asking joiners to. Useful for community g
 
 ## Join settings (who can join)
 
-The Create Race modal also lets you control who can join: Open, Verified players only, Allowed players (private invite list), NFT Holders, or Token Holders. These are gating options rather than customization opt ins, and they can be hosted **without** a Runner NFT (each has its own creator side check instead). They have their own page: see [Race access and gating](access-and-gating.md).
+The Create Race modal also lets you control who can join: Open, Verified Only, Allowed Players (private invite list), NFT Holders, or Token Holders. Three of these (Verified Only, NFT Holders, Token Holders) can be hosted without a Runner NFT; Allowed Players requires one. See [Race access and gating](access-and-gating.md).
 
 ## Minimum account age
 

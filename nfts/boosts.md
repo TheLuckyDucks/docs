@@ -14,19 +14,81 @@ You can only equip one boost per race. If your wallet holds multiple boosts, the
 
 Boost NFTs are **not consumed** on use. The same boost works in every race you join, forever. Wear and tear is not a concept here.
 
-## Counter mechanics
+## Are boosters fair?
 
-A 1% boost over a 30 second race is small but meaningful. In a 5 player race where ducks finish within a few percent of each other, holding a 1% boost shifts the win probability noticeably.
+The concern comes up: a paid speed boost is just pay to win. It is not, and the numbers below are from a direct simulation of the on chain velocity model.
 
-There is no counter NFT. Boosts cannot be neutralized or stolen. The only way another player counters your boost is by holding their own.
+### Why the boost stays small
+
+The engine picks a duck's speed independently on each of several segments. Two numbers set the scene:
+
+1. **Speed range per segment.** Each segment's base speed is drawn uniformly between about 600 and 1400 units. A duck with an unlucky draw can end up more than **2.3 times slower** than a duck with a lucky draw. That gap is orders of magnitude larger than any boost.
+2. **Boost size.** A boost multiplies the segment speed by at most 1.01 (the 1% cap). It cannot rescue a bad speed draw; it can only nudge a good one slightly further ahead.
+
+Number of segments per race depends on duration:
+
+| Race duration | Segments per duck |
+|---------------|-------------------|
+| Up to 40 seconds | 3 to 5 |
+| 41 to 90 seconds | 5 to 9 |
+| Over 90 seconds | 7 to 13 |
+
+Each duck has its own independent draw of segment count, per segment weights (1-3), and per segment speeds. So it is not "duck A cruises at one speed the whole time." It looks more like: duck A goes 900, 620, 1350, 780, 1100; duck B goes 700, 1250, 940, 1180, 830. A 1% boost multiplies each of B's segment speeds by 1.01. Compared with the spread between segments, that multiplier is tiny.
+
+### Real win probabilities (Monte Carlo, 200,000 simulations)
+
+Base odds in a 5 player race are 20% per duck. Boost shifts them only slightly:
+
+| Boost | 5 player, 30s race | 5 player, 60s race | 5 player, 3 minute race |
+|-------|--------------------|--------------------|--------------------------|
+| None | 19.9% | 20.1% | 20.0% |
+| +0.1% | 20.1% | 20.3% | 20.2% |
+| +0.5% | 20.8% | 21.2% | 21.4% |
+| +1% (max) | 21.7% | 22.4% | 22.7% |
+
+Longer races give the boost slightly more visibility (more segments average out the random draws, so a fixed multiplier stands out a bit more), but even at the max cap and longest duration, the shift is only about 2.7 percentage points from base.
+
+### Bigger and smaller lobbies
+
+The effect scales down as the lobby grows:
+
+| Lobby | Base odds | +1% boost win rate |
+|-------|-----------|--------------------|
+| 1v1 | 50% | 52.0% |
+| 5 player | 20% | 21.7% |
+| 10 player | 10% | 11.1% |
+| 20 player | 5% | 5.8% |
+
+In every case, the boost adds roughly one to two percentage points, never more.
+
+### Where a boosted duck actually finishes
+
+In a 5 player, 30 second race, a duck running the max +1% boost finishes at each position:
+
+| Finish position | Frequency |
+|-----------------|-----------|
+| 1st (win) | 21.8% |
+| 2nd | 20.7% |
+| 3rd | 20.0% |
+| 4th | 19.3% |
+| 5th (last) | 18.2% |
+
+**A +1% duck finishes last almost as often as a duck with no boost.** The random speed draw dominates. Every finished race is public on chain, so if you want to check for yourself, the historical races are open to inspection. See [How to verify a race on-chain](../trust/verifying-a-race.md).
+
+### If you'd rather race without boosters
+
+* **Sponsored races.** Boosters are disabled in sponsored races entirely. If the creator is putting up the prize, no boost NFTs are allowed. Fully symmetric field.
+* **Allowlist races.** Allowlist lets you invite specific wallets, so you can run a boost free race by inviting only players who agree not to equip one. There is one caveat: allowlisted players **can** still equip a boost if they own one. The allowlist controls who joins, not what they bring. See [Allowed players (private invites)](../races/access-and-gating.md#allowed-players-private-invites).
+
+There is no counter NFT. Boosts cannot be neutralized or stolen. The only way another player counters your boost in a regular race is by holding their own.
+
+### Why the 1% cap
+
+The 1% cap is on chain and intentional. If boosts scaled unboundedly, a wealthy player could dominate. Capping at 1% keeps the maximum edge in the range shown above: an extra one to two percentage points of win probability. That is a small nudge, and it is the ceiling.
 
 ## Verifying the badge
 
 Joined participants in the lobby show a small boost badge next to their name if they equipped one. The badge color indicates the boost size (cooler colors for smaller boosts, hotter colors for bigger ones). You can see at a glance who is running with what.
-
-## Why the cap
-
-The 1% cap is on chain and intentional. If boosts stacked or scaled unboundedly, a wealthy player could dominate every race they joined. Capping at 1% means even the most expensive boost is a slight edge, not a sure thing. Skill (or luck, depending how you frame it) still does the heavy lifting.
 
 ## Acquiring
 

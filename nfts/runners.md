@@ -6,24 +6,27 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 
 * **Max players > 5**. The default cap is 5 (any non-Runner can create races up to 5 slots). Runner holders can create races up to 20 slots.
 * **AI commentary**. The per second narration track only opens to Runner holders.
-* **Custom race duration**. The default 30 second duration is available to everyone; picking anything else (up to 180 seconds) requires a Runner.
+* **Custom race duration**. The default 30 second duration is available to everyone; picking anything else (up to 5 minutes) requires a Runner.
 * **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
 * **Custom name**. Naming a race in the lobby list.
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
 * **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.
 * **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
 * **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
+* **Allowed Players (allowlist) race**. Restricting joins to an invite list of up to 20 wallets. The allowlist itself counts as a customization.
 * **Minimum account age gate**. Requiring joiners to have a player account at least a certain age.
 
 ## What Runner is not required for
 
-The four join settings (Verified Only, Allowed Players, NFT Holders, Token Holders) can be hosted **without** a Runner NFT. Each has its own creator side check instead (see [Race access and gating](../races/access-and-gating.md)):
+Three of the four gated join settings can be hosted **without** a Runner NFT, provided the race stays on default settings otherwise. Each has its own creator side check (see [Race access and gating](../races/access-and-gating.md)):
 
 * Verified Only requires the creator to be verified themselves.
-* NFT Holders requires the creator to hold at least one item from the gating collection (unless they hold a Runner, which bypasses the check).
-* Allowed Players and Token Holders have no extra creator check.
+* NFT Holders requires the gating collection to be on the platform's approved list, and the creator to hold at least the minimum number of items themselves at auto join time.
+* Token Holders requires the gating token to be on the platform's approved list, and the creator to hold at least the minimum amount themselves at auto join time.
 
-The Runner NFT is still what unlocks the [Creator Fee Share](../economy/creator-fee-share.md) on a race, even when the gate itself does not require it.
+Allowed Players is the exception among the gates: it still requires a Runner.
+
+The Runner NFT is also what unlocks the [Creator Fee Share](../economy/creator-fee-share.md) on a race, even when the gate itself does not require it.
 
 ## What it does not do
 

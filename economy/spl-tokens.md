@@ -6,8 +6,8 @@ Races and tournaments can be denominated in supported SPL tokens instead of SOL.
 
 The platform supports both Solana token standards:
 
-* **SPL Token (Legacy)** — the original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
-* **SPL Token-2022** — the newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
+* **SPL Token (Legacy)**; the original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
+* **SPL Token-2022**; the newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
 
 The race vault, ATA derivation, and payout logic select the correct token program automatically based on the mint's owner. From a player's perspective there is nothing to configure: you just pick the token in the currency picker and the on-chain instructions route to the right program.
 

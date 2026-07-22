@@ -4,17 +4,17 @@ Where to follow Lucky Ducks, talk to the team, and keep up with releases.
 
 ## Direct contact
 
-* **Email** — [contact@theluckyducks.com](mailto:contact@theluckyducks.com). Best for partnership inquiries, bug reports with sensitive details, and anything that doesn't fit a public channel.
+* **Email**; [contact@theluckyducks.com](mailto:contact@theluckyducks.com). Best for partnership inquiries, bug reports with sensitive details, and anything that doesn't fit a public channel.
 
 ## Community chat
 
-* **Telegram** — [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks). Day-to-day chat, announcements, race shout-outs, and the fastest path to a team response. Telegram-verified players can opt in to have their `@handle` tagged in race-win and tournament announcements (see [Player verification](../trust/verification.md#telegram-handle-in-group-announcements)).
+* **Telegram**; [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks). Day-to-day chat, announcements, race shout-outs, and the fastest path to a team response. Telegram-verified players can opt in to have their `@handle` tagged in race-win and tournament announcements (see [Player verification](../trust/verification.md#telegram-handle-in-group-announcements)).
 
 ## Posts and feeds
 
-* **X (Twitter)** — [x.com/TheDucksRun](https://x.com/TheDucksRun). Release notes, screenshots, big-pot races, tournament posters.
-* **YouTube** — [youtube.com/@theducksrun](https://youtube.com/@theducksrun). Long-form: race recaps, feature walkthroughs, tournament finals.
-* **TikTok** — [tiktok.com/@theducksrun](https://tiktok.com/@theducksrun). Short-form clips: top finishes, podiums, the occasional duck blooper.
+* **X (Twitter)**; [x.com/TheDucksRun](https://x.com/TheDucksRun). Release notes, screenshots, big-pot races, tournament posters.
+* **YouTube**; [youtube.com/@theducksrun](https://youtube.com/@theducksrun). Long-form: race recaps, feature walkthroughs, tournament finals.
+* **TikTok**; [tiktok.com/@theducksrun](https://tiktok.com/@theducksrun). Short-form clips: top finishes, podiums, the occasional duck blooper.
 
 ## What goes where
 

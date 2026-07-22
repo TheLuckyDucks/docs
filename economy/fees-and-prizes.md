@@ -23,15 +23,19 @@ The split happens automatically as part of the race finalization transaction. Yo
 
 ## Platform fee tiers
 
-The platform fee is a percentage of the prize pool, set by the on chain `fee_tiers` schedule. Smaller pots pay a higher percentage; larger pots pay less. Here is the current SOL schedule:
+The platform fee percentage is picked from a tier schedule at race creation, based on the **entry fee** (or, for a sponsored race, the sponsor's deposit). It is then applied to the full prize pool at claim time. Smaller entry fees pay a higher percentage; larger ones pay less.
 
-| Pool size | Platform fee |
-|-----------|--------------|
+| Entry fee (per player) | Platform fee |
+|-------------------------|--------------|
 | Up to 0.05 SOL | 10% |
 | Up to 0.1 SOL | 7.5% |
 | Up to 0.5 SOL | 5% |
 | Up to 1 SOL | 3% |
 | Above 1 SOL | 2% |
+
+Worked example: a race with a 0.1 SOL entry fee and 10 players. Entry fee falls in the second tier, so the fee is 7.5%. The pool at fill is 1 SOL. At claim the platform takes 1 × 7.5% = 0.075 SOL, and winners share the remaining 0.925 SOL.
+
+For a sponsored race, the sponsor's deposit is what the tier is picked against (there is no per player entry fee). A 1 SOL sponsored prize sits in the 3% tier, so the platform takes 0.03 SOL at claim and winners share 0.97 SOL.
 
 SPL token pools use the same percentage schedule but with thresholds adjusted for that token's typical denomination. The full schedule is in `/config` under `race.feeTiers` and per-token under `splTokens[].feeTiers`.
 
@@ -46,7 +50,7 @@ A few small costs are paid by the creator at race creation, separate from the po
 
 * **Oracle fee** (~0.0035 SOL). Paid to ORAO for the VRF request.
 * **Archival fee** (~0.0001 SOL). Goes to the IPFS archival worker.
-* **Audio cost** (if AI commentary is enabled). Per second cost times duration.
+* **Audio cost** (if AI commentary is enabled). About 0.00005 SOL per race second, so a 30 second race costs roughly 0.0015 SOL and a 5 minute race about 0.015 SOL.
 * **Start-when-underfilled cost** (if opted in). Paid to the backend authority on auto start, refunded if the race never auto starts.
 * **Race PDA rent**. Around 0.003 SOL. Fully refunded to the creator when the race closes.
 

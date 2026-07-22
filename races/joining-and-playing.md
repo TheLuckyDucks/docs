@@ -34,7 +34,7 @@ The detail modal stays open while the lobby fills. Participants appear as they j
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. You get your entry back minus a fixed **0.01 SOL** withdrawal penalty (always in SOL, even on token races). The penalty goes to the platform fee wallet, not the prize pool. Withdraw is unavailable in the last few minutes before the lobby closes.
+If you change your mind during the join window, click Withdraw. Two windows apply: you have to withdraw **within 2 minutes of your own join**, and the **last 60 seconds** of the lobby are locked for everyone. If you qualify, the vault refunds your full entry fee and a fixed **0.01 SOL** penalty is charged from your wallet to the platform (always in SOL, even on token races). See [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) for the full rules.
 
 ## When the race starts
 

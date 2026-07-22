@@ -31,7 +31,7 @@ Verification is a one-time off-chain OAuth flow. You authorize the chosen provid
 * **Higher daily race creation limit**. Unverified wallets can create up to the standard daily cap. Verified wallets can create up to 50 races per day (500 if also a Runner NFT holder).
 * **Tournament eligibility**. Some tournament rule sets require participants to be verified, to keep sybil-style ranking abuse out of the leaderboard.
 * **Identity badge**. A small checkmark next to your nickname signals you are verified. Other players see this on race cards and lobbies.
-* **Telegram handle in announcements** (Telegram-verified players only — see below).
+* **Telegram handle in announcements** (Telegram-verified players only; see below).
 
 ## Telegram handle in group announcements
 

@@ -16,7 +16,7 @@ How many seats the lobby has. The default cap is 5, the absolute max is 20. Anyt
 
 ### Race duration
 
-How long the visual race takes. 30 to 180 seconds. Shorter races are punchier, longer races give more time for the audio commentary to develop a story if you opt in to it.
+How long the visual race takes. 30 seconds to 5 minutes. Shorter races are punchier, longer races give more time for the audio commentary to develop a story if you opt in to it.
 The default minimum duration (30 seconds) is available to everyone. **Picking any other value requires a Runner NFT in the connected wallet**, the same way the join timeout slider does. Without a Runner the duration field is locked at 30s. See [Runner NFTs](../nfts/runners.md).
 
 ### Race mode
@@ -30,12 +30,12 @@ These are off by default. Most need a Runner NFT to enable.
 
 * **AI commentary**. A funny per second narration track generated on the fly. Adds a small cost per race second.
 * **Custom join timeout**. Default is 1 hour; you can shorten or extend it.
-* **Custom name**. Show a race title in the lobby list.
+* **Custom name**. Show a race title (up to 32 characters) in the lobby list.
 * **Custom track**. Use a Track NFT you own as the race background.
 * **Start when underfilled**. Permit the race to launch with fewer than max players once the join timeout passes. See [Advanced options](advanced-options.md).
 * **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 * **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
-* **Join setting (who can join)**. Open by default. Switch to Verified Only, Allowed Players, NFT Holders, or Token Holders to gate the race. None of these gates require a Runner NFT to host, though each has its own creator side check. See [Race access and gating](access-and-gating.md).
+* **Join setting (who can join)**. Open by default. Switch to Verified Only, NFT Holders, or Token Holders to gate the race without needing a Runner. Allowed Players (invite list of up to 20 wallets) is also available but requires a Runner. See [Race access and gating](access-and-gating.md).
 * **Minimum account age**. Require joiners to have a player account at least a certain age. Useful for keeping fresh wallets out. Defaults to 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
 ## Sign and submit

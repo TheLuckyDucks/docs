@@ -4,14 +4,18 @@ How money flows back to you when something does not finish as expected.
 
 ## Withdrawal during the lobby
 
-You can leave a race during the lobby window. The contract refunds your entry fee minus a fixed **withdrawal penalty**, currently **0.01 SOL**. The penalty is the same regardless of pool size or token. The collected amount goes to the platform fee wallet (treasury). It does not increase the prize pool.
+You can leave a race during the lobby window under two time constraints:
+
+* You must withdraw **within 2 minutes of your own join**. If you have been in the lobby longer than that, the withdraw button is disabled.
+* The **last 60 seconds** of the join window are locked for everyone (anti grief), regardless of when they joined.
+
+When you withdraw, the vault refunds your **full entry fee** and a fixed **0.01 SOL** withdrawal penalty is charged separately from your wallet to the platform fee wallet. The penalty is the same regardless of pool size or token, and always paid in SOL even for SPL/token races.
 
 A few details worth knowing:
 
-* The penalty is always paid in **SOL**, even for SPL/token races. The rest of your entry refunds in the original asset.
-* The penalty applies only to withdrawals **within the join window**. If the race expires or is cancelled by the creator, no withdrawal penalty applies.
-
-Withdrawal is unavailable in the last few minutes of the lobby window, to prevent griefing through last second drops.
+* The penalty is a separate transfer from your wallet, not a deduction from the vault refund. The net effect for you is the same, but on chain you will see two movements: a refund credit and a small SOL debit.
+* Sponsored races: joiners paid no entry fee, so withdrawing simply frees the slot. No refund, no penalty, and the sponsor's prize deposit is untouched.
+* In a **1v1 (2 player)** race, the creator cannot withdraw (they would strand the sole remaining player). They must use cancel instead.
 
 Withdrawn players are shown in the participants list with a strikethrough; they no longer count toward the lobby fill counter or the underfilled start threshold.
 
@@ -34,10 +38,12 @@ If the join window passes and the race never reached its start condition, the ra
 
 ### Other refund paths
 
-* The ORAO randomness request timed out (rare; the oracle is reliable).
-* The on-chain start transition failed for any reason.
+The contract records a cancellation reason on the race account and emits it in the cancel event. Beyond a manual cancel by the creator, the two reasons that can trigger a refund flow are:
 
-Refund claims are permissionless: anyone can submit the claim on a participant's behalf. The funds always go to the original payer regardless of who pays for the tx.
+* **JoinTimeout**. The join window passed without the race reaching a startable state. This is the expiration path above.
+* **StaleRandomness**. The oracle did not fulfill the VRF request within the timeout (currently 2 minutes). Rare; the oracle is reliable.
+
+In either case, refund claims are permissionless: anyone can submit the claim on a participant's behalf. The funds always go to the original payer regardless of who pays for the tx.
 
 ## Race PDA rent
 

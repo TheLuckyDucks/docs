@@ -18,20 +18,21 @@ Players see every race in the list regardless of the setting. If they do not qua
 
 ## When you need a Runner NFT to host
 
-A Runner NFT is not required just because a race is gated. Player validation gates (Verified Only, Allowed Players, NFT Holders, Token Holders) can be hosted **without** a Runner, though each one has its own creator side eligibility check (see the per gate sections below).
+Most validation gates (Verified Only, NFT Holders, Token Holders) can be hosted **without** a Runner NFT. Each has its own creator side eligibility check (see the per gate sections below). Allowed Players is the exception among the gates.
 
 A Runner NFT **is** required when you customize a race beyond the basics. Hosting needs a Runner as soon as you:
 
 * give it a custom name,
 * add a sponsored prize,
-* change the race length from the default,
+* change the race length from the default (30 seconds),
 * open more seats than the standard lobby (more than 5 players),
 * set a custom join window or enable start when underfilled,
 * enable AI commentary,
-* require a minimum account age, or
-* host without joining as a player.
+* require a minimum account age,
+* host without joining as a player, or
+* use the **Allowed Players (allowlist)** join setting.
 
-If you host a plain race with default settings, no Runner NFT is needed, even if you put a gate on it. The moment you customize it beyond the defaults, the Runner NFT is required.
+If you host a plain race with default settings and one of the three Runner free gates (Verified Only, NFT Holders, Token Holders), no Runner NFT is needed. The moment you customize it beyond the defaults, or switch to Allowed Players, the Runner NFT is required.
 
 The Runner NFT only needs to be in the host's wallet at create time. Players joining the race never need one; their eligibility depends on the join setting you chose.
 
@@ -45,9 +46,11 @@ The creator must themselves be verified to host a Verified Only race. No Runner 
 
 Pick this to require that each player owns NFTs from a specific collection. You choose the collection and the **minimum number** a player must hold (at least one).
 
-When an eligible player joins, the app checks their wallet and prepares a one time eligibility pass for that join, so the race confirms they qualify at the moment they enter. This works across NFT types on Solana, including Metaplex Core and compressed NFTs, so most collections are supported.
+The collection must be one that the platform has approved (whitelisted) for gating. The current list of approved collections is maintained by the team; if the collection you want to gate on is not on the list, the create transaction will refuse to go through. This exists so a creator cannot gate on an arbitrary or spammy collection.
 
-Creator side eligibility: no Runner NFT is required. If you do not hold a Runner, the backend verifies at create time that you hold at least one item from the collection you are gating on. So you can freely host an NFT Holders race as long as you are yourself a holder of that collection, or you hold a Runner.
+When an eligible player joins, the app checks their wallet and prepares a one time eligibility pass for that join, so the race confirms they qualify at the moment they enter. This works across NFT types on Solana, including Metaplex Core and compressed NFTs, so most approved collections are supported.
+
+Creator side eligibility: no Runner NFT is required, provided the collection is approved. The creator's auto join is subject to the same threshold check as any joiner (the backend will not sign their eligibility pass unless they hold the minimum number themselves). If you host without playing, only the collection whitelist gate applies at create time.
 
 A few things worth knowing:
 
@@ -59,9 +62,11 @@ A few things worth knowing:
 
 Pick this to require a minimum balance of a specific token. You choose the token and the **minimum amount** (greater than zero). The check happens directly on chain when a player joins, so there is no extra preparation step beyond signing the join transaction.
 
-Both legacy SPL Tokens and Token-2022 mints are supported, the same as for [token races](../economy/spl-tokens.md). The gating token does not have to be the same as the race's prize token: you can run a SOL race that requires holding USDC, or a USDC race that requires holding AMPS, and so on.
+The token must be one that the platform has approved (whitelisted) as a gating asset. This is the same list used for SPL prize tokens; the current entries are visible in the token picker at race creation. If the token you want to gate on is not on the list, the create transaction will refuse.
 
-No Runner NFT is required to host a Token Holders race.
+The gating token does not have to be the same as the race's prize token: you can run a SOL race that requires holding USDC, or a USDC race that requires holding AMPS, and so on. Both legacy SPL Tokens and Token-2022 mints are supported, the same as for [token races](../economy/spl-tokens.md).
+
+Creator side eligibility: no Runner NFT is required, provided the token is approved. If you auto join your own race, the contract also checks your balance meets the threshold at create time. In host mode (creating without auto joining) the balance check runs only when you later join.
 
 ## Allowed players (private invites)
 
@@ -81,7 +86,7 @@ A note on how the list is stored: only a short fingerprint of the list is record
 
 For groups larger than 20 wallets, use a public race with another join setting (for example NFT Holders, Token Holders, or Verified Only) instead.
 
-No Runner NFT is required to host an Allowed Players race.
+Hosting an Allowed Players race requires a Runner NFT (unlike the other gates). This is because the allowlist itself counts as a customization: the contract has to store the invite list root and verify each joiner's proof against it.
 
 ## Stacking with minimum account age
 
@@ -94,6 +99,7 @@ Creator rewards are tied to the Runner NFT, not to the gate you chose. A host wh
 ## Good to know
 
 * The host is auto joined when the race is created (in normal, non-sponsored, non-host mode), so you do not enter your own race separately.
-* Switching a race to a gated setting alone does not require a Runner NFT. Runner is required once you customize the race beyond the defaults.
+* Switching a race to Verified Only, NFT Holders, or Token Holders on its own does not require a Runner NFT. Switching to Allowed Players does. Runner is also required once you customize the race beyond the defaults.
 * For NFT and Token gates, the minimum must be greater than zero. Setting it to zero would let everyone in, which is the same as Open, so it is not allowed.
+* For NFT and Token gates, the collection or token has to be on the platform's approved list. If it is not, the create transaction refuses.
 * Players always see gated races in the list. They simply cannot join unless they meet the requirement, and the Join button reflects that.

@@ -6,9 +6,9 @@ It is a game with on-chain stakes. Skill matters less than in a typical skill-ba
 
 ### Do I need a Runner NFT to play?
 
-No. You can join any race without a Runner. The Runner is only required to **create** races customized beyond the basics: over 5 players, AI commentary, custom track or name, custom join timeout, custom race duration, minimum account age gate, hosting without playing, or sponsored races.
+No. You can join any race without a Runner. The Runner is only required to **create** races customized beyond the basics: over 5 players, AI commentary, custom track or name, custom join timeout, custom race duration, minimum account age gate, hosting without playing, sponsored, or Allowed Players (allowlist) races.
 
-Gated join settings (Verified Only, Allowed Players, NFT Holders, Token Holders) can be hosted **without** a Runner. Each has its own creator side check: Verified Only requires the creator to be verified; NFT Holders requires the creator to hold at least one item from the gating collection (unless they hold a Runner). Allowed Players and Token Holders have no extra creator check. See [Race access and gating](../races/access-and-gating.md).
+Verified Only, NFT Holders, and Token Holders can be hosted **without** a Runner (each has its own creator side check: Verified Only requires the creator to be verified, NFT and Token gates require the collection or token to be on the platform's approved list and the creator to meet the same threshold themselves). See [Race access and gating](../races/access-and-gating.md).
 
 The Runner is still what unlocks the [Creator Fee Share](../economy/creator-fee-share.md), even on races where it is not required to host.
 
@@ -19,6 +19,10 @@ Yes, while the join window is still open. Cancelling refunds every player their 
 ### Can I create a race without joining it?
 
 Yes, if you hold a Runner NFT. This is called hosting. The race opens with zero players and fills as others join. Hosting is not available for 1v1 races, and a host gives up the Creator Fee Share for that race. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#host-a-race-without-playing).
+
+### Is there a cooldown between races I create?
+
+Yes, 30 seconds between race creations by the same wallet. This is a small anti-spam guard and applies to any wallet, Runner or not.
 
 ### What is the smallest race I can run?
 

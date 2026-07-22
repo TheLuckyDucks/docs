@@ -44,7 +44,7 @@ A race where the creator does not take a slot as a player. The race opens with z
 
 ### Minimum account age
 
-An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the validation type (Anyone, Verified Only, Allowlist, Runner only): can be combined with any of them.
+An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the join setting (Anyone, Verified Only, Allowed Players, NFT Holders, or Token Holders): can be combined with any of them.
 
 ### Mystery Box
 
@@ -52,7 +52,7 @@ A sealed NFT that opens into a random reward from a themed pool (Cosmetics, Trac
 
 ### Join timeout
 
-The lobby window during which players can join a race. Default 5 minutes. Customizable per race.
+The lobby window during which players can join a race. Default 1 hour. Customizable per race.
 
 ### NFT Holders (join setting)
 
@@ -120,7 +120,7 @@ A cryptographic function whose output is provably random and unpredictable, but 
 
 ### Withdrawn
 
-A participant who left the lobby before it closed. Gets their entry back minus a fixed 0.01 SOL penalty (always paid in SOL, even on token races); the penalty goes to the treasury fee wallet, not the prize pool.
+A participant who left the lobby before it closed. Two windows apply: within 2 minutes of their own join, and not in the last 60 seconds of the lobby. Gets their full entry back from the vault; a fixed 0.01 SOL penalty is charged separately from their wallet (always in SOL, even on token races); the penalty goes to the treasury fee wallet, not the prize pool.
 
 ### WTA (Winner Takes All)
 
