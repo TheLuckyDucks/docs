@@ -1,34 +1,57 @@
 # Rematches
 
-After a race ends, the winner can propose a rematch against the loser (or losers, in a multi-player race). The challenge stays open for a configurable window, and the rematch race is automatically created if accepted.
+After a 1v1 race ends, either player can offer a rematch. The offer sits in the prize claim UI so you do not have to go looking for it: the same screen that lets you claim the payout is where you propose the rematch.
 
-## Proposing
+Rematches roll your stake forward instead of paying everything out and asking you to buy back in.
 
-From the race summary after winning, click Propose Rematch. The interface shows the previous race's parameters as defaults: same entry fee, same race mode, same duration, same max players. Adjust if you want; the rematch is just another `create_race` call with the previous race's id stored as a reference.
+## Offering a rematch
 
-The proposal carries a `rematchProposalTimeout` from the platform config (currently 45 seconds). The challenged players have that long to accept, decline, or let it expire.
+Click Offer Rematch from the prize claim screen on a 1v1 race. This creates the next race and puts your entry fee into it.
+
+Behind the scenes:
+
+* If you are the winner, your stake in the new race is exactly **one entry fee**, taken from your unclaimed winnings. The rest of the payout, minus the platform fee, goes to you when your opponent accepts. You do not need to claim the finished race separately.
+* If you are the loser, you deposit one entry fee up front. Your opponent's stake is added when they accept.
+
+Either way, the rematch pot is exactly 2 entry fees, matching the race it followed.
+
+Offering a rematch uses one of your daily races (see [Daily races](../races/daily-races.md)).
 
 ## Accepting
 
-The challenged player(s) see a Rematch Proposal notification on their player page and in the race detail modal of the original race. Accepting sends the entry fee for the rematch and triggers the rematch race to start.
+Your opponent has a fixed acceptance window to accept. If they accept:
 
-## Declining
+* The finished race pays out immediately to the winner: no separate claim needed.
+* The new race starts.
 
-A player can explicitly decline. The rematch slot is reserved on chain at the moment of proposal, but on decline that race PDA is closed and rent refunds to the proposer.
+Accepting also uses one of the accepter's daily races.
 
-## Letting it expire
+## Cancelling versus declining
 
-If neither accept nor decline happens within the timeout, the rematch expires automatically. The rematch PDA closes and the proposer's funds are returned.
+These two look similar in the UI, but they behave differently on chain.
+
+**You cancel your own offer.** The offer clears but the rematch chain on that race stays open. You can offer again, to the same opponent, for as long as the rematch window is still open.
+
+**Your opponent declines.** That closes rematches on that race for good. Neither of you can offer again.
+
+If you cancel while your opponent still has time to accept, a **0.01 SOL** withdrawal penalty applies (the same fixed penalty as withdrawing from a lobby). Once their acceptance window has passed, cancelling is **free**. If you are close to that point and not in a hurry, waiting a bit costs nothing.
+
+Non-participants can also clear an abandoned offer, but only after the acceptance window has expired. This is a safety net; typically the proposer clears their own or the opponent declines first.
+
+## Nobody is ever stuck
+
+* The proposer can cancel at any moment.
+* The opponent can decline at any moment.
+* After the acceptance window, anyone at all can clear the offer, refunding the proposer in full.
+* Your prize from the original race is **never** held hostage by a pending rematch. You can claim it whenever you like even while a rematch offer sits open.
 
 ## Rematch chains
 
-A rematch can be rematched. If the loser of the original is now the winner of the rematch, they can propose another rematch. This continues up to the platform's max rematch chain depth (currently 10 deep) before further rematches are locked.
+A rematch can be rematched. This continues up to the platform's max rematch chain depth (currently **10 deep**) before further rematches are locked. The rematch chain shows up on each race in the chain as the "Rematch X of 10" indicator on the race card.
 
-The rematch chain shows up on each race in the chain as the "Rematch X of 10" indicator on the race card.
+Rematches inherit the settings of the race they follow, including [no-boost mode](../nfts/boosts.md#no-boost-races) if the original race had boosts disabled. A no-boost rematch chain stays no-boost all the way down.
 
-## Counter implications
-
-Rematches reserve a fresh race id on chain even before they are accepted. This means the race counter increments on every rematch proposal, including ones that get declined or expire. Race ids may have gaps as a result. This is normal and not a bug: the gaps correspond to declined or expired rematches.
+Rematches use one of each player's daily races per proposal-and-accept cycle. Worth knowing if you rematch a lot: your day's budget goes further when you play fresh races than when you run a long rematch chain.
 
 ## Stat tracking
 

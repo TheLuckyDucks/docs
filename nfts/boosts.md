@@ -78,6 +78,7 @@ In a 5 player, 30 second race, a duck running the max +1% boost finishes at each
 ### If you'd rather race without boosters
 
 * **Sponsored races.** Boosters are disabled in sponsored races entirely. If the creator is putting up the prize, no boost NFTs are allowed. Fully symmetric field.
+* **No-boost races.** A creator can flip a switch when creating any race to disable boosts entirely, sponsored or not. See [No-boost races](#no-boost-races) below.
 * **Allowlist races.** Allowlist lets you invite specific wallets, so you can run a boost free race by inviting only players who agree not to equip one. There is one caveat: allowlisted players **can** still equip a boost if they own one. The allowlist controls who joins, not what they bring. See [Allowed players (private invites)](../races/access-and-gating.md#allowed-players-private-invites).
 
 There is no counter NFT. Boosts cannot be neutralized or stolen. The only way another player counters your boost in a regular race is by holding their own.
@@ -85,6 +86,26 @@ There is no counter NFT. Boosts cannot be neutralized or stolen. The only way an
 ### Why the 1% cap
 
 The 1% cap is on chain and intentional. If boosts scaled unboundedly, a wealthy player could dominate. Capping at 1% keeps the maximum edge in the range shown above: an extra one to two percentage points of win probability. That is a small nudge, and it is the ceiling.
+
+## No-boost races
+
+A race can be created with boosts switched off. Nobody can bring a speed boost NFT into it, including the person who made it. The result comes down to the draw alone.
+
+These races are marked with a crossed-out circle icon on the race card, in the race view, and on the share image, so you can tell before you join. The Telegram and X announcements say so too.
+
+### Why you might create one
+
+Boosts are small but real. A boosted duck wins slightly more often than an unboosted one, and in a race where everyone else has one, not having one is a small disadvantage. No-boost mode removes that entirely, which is useful for community events where not everyone owns boost NFTs, or any time you want a level field.
+
+### Creating one
+
+You need a Runner NFT to create a no-boost race. The option appears when you create a race, and in recipe settings if you run automated races.
+
+### If you already own boost NFTs
+
+Nothing is lost. Your boost NFTs are untouched and work normally in every race that has not disabled them. In a no-boost race, you can still pass the boost NFT accounts to the join instruction if the UI does it automatically: they are simply ignored, and you are not charged for a boost that was not applied.
+
+Rematches inherit the setting. A rematch of a no-boost race is also a no-boost race, all the way down the chain, so a rematch cannot be used to sneak boosts back into a level match.
 
 ## Verifying the badge
 

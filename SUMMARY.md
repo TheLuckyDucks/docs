@@ -16,6 +16,7 @@
 * [Race access and gating](races/access-and-gating.md)
 * [Advanced options](races/advanced-options.md)
 * [Hosting, cancelling, and refunds](races/hosting-and-cancelling.md)
+* [Daily races](races/daily-races.md)
 
 ## NFTs
 

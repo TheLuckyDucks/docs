@@ -24,6 +24,26 @@ Yes, if you hold a Runner NFT. This is called hosting. The race opens with zero 
 
 Yes, 30 seconds between race creations by the same wallet. This is a small anti-spam guard and applies to any wallet, Runner or not.
 
+### Can I still rematch after my opponent declines?
+
+No. Declining closes rematches on that race for good. Cancelling your own offer does not, so you can offer again after cancelling. See [Rematches](../competition/rematches.md#cancelling-versus-declining).
+
+### I offered a rematch and my opponent disappeared. Are my funds locked?
+
+No. Cancel the offer to get your stake back. It is free once your opponent's acceptance window has passed.
+
+### Does a pending rematch stop me claiming my prize?
+
+No. Your prize is always claimable, even with a rematch offer sitting open.
+
+### Can a no-boost race be created without a Runner?
+
+No. Enabling no-boost mode requires a Runner NFT at create time. See [No-boost races](../nfts/boosts.md#no-boost-races).
+
+### Do sponsored and host-mode races count against my daily race limit?
+
+No. Sponsored races and host-mode races (where you do not join yourself) do not consume any of your daily race allowance. Offering and accepting a rematch each do, per player. See [Daily races](../races/daily-races.md).
+
 ### What is the smallest race I can run?
 
 Two players for Winner Takes All. Three players for Podium Split. The race will not start with fewer.

@@ -22,6 +22,10 @@ A backend process that submits permissionless transactions to keep the system he
 
 A wearable NFT skin. Visual only, no gameplay impact.
 
+### Daily race allowance
+
+The cap on how many races a wallet can play (join or auto-join) in a rolling 24 hour window. Non-Runner verified wallets get 50 per day; Runner holders get 500. Hosting, sponsoring, and creating a race you do not join yourself do **not** count. Offering or accepting a rematch does. See [Daily races](../races/daily-races.md).
+
 ### Default max players
 
 The platform's max race size that does not require a Runner NFT. Currently 5.
@@ -61,6 +65,10 @@ A race join setting that restricts entry to wallets holding at least a chosen nu
 ### Token Holders (join setting)
 
 A race join setting that restricts entry to wallets holding at least a chosen amount of a chosen token. Checked directly on chain at join time. The gating token does not have to be the race's prize token. Supports both legacy SPL Token and Token-2022 mints. See [Race access and gating](../races/access-and-gating.md#token-holders).
+
+### No-boost race
+
+A race created with boost NFTs disabled for everyone, including the creator. Marked with a crossed-out circle icon on race cards. Requires a Runner NFT to create. Rematches inherit the setting. See [No-boost races](../nfts/boosts.md#no-boost-races).
 
 ### ORAO VRF
 
