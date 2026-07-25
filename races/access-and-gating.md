@@ -28,6 +28,7 @@ A Runner NFT **is** required when you customize a race beyond the basics. Hostin
 * open more seats than the standard lobby (more than 5 players),
 * set a custom join window or enable start when underfilled,
 * enable AI commentary,
+* enable X (Twitter) announcement,
 * require a minimum account age,
 * host without joining as a player, or
 * use the **Allowed Players (allowlist)** join setting.

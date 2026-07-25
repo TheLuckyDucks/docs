@@ -17,6 +17,17 @@ Either way, the rematch pot is exactly 2 entry fees, matching the race it follow
 
 Offering a rematch uses one of your daily races (see [Daily races](../races/daily-races.md)).
 
+## What the proposer picks
+
+Most of the new race is inherited from the one it follows: entry fee, race duration, join setting, no-boost mode, and any customization the original race had. The proposer can adjust three things independently at propose time:
+
+* **AI commentary.** You can add audio commentary to a rematch even if the finished race did not have it, and you can drop it even if the finished race did. Audio is supported for any race size, **including 1v1**. The audio cost (per second times duration) is deposited by the proposer at propose time, same as on a fresh race. See [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation).
+* **X announcement.** Post the rematch publicly to Lucky Ducks' X account. Picked independently at propose time, whether or not the finished race had it. Flat 0.005 SOL cost, deposited by the proposer at propose time. See [X announcement](../races/advanced-options.md#x-announcement).
+* **Your Track NFT.** If you hold a Track NFT and pass it, the rematch uses it as the visual background. If you skip it, the rematch keeps whichever Track (if any) the previous race used.
+* **Your Runner NFT.** Attach it to lift your daily race allowance ceiling (500 with a Runner vs 50 without). It is optional; without it, the rematch still goes through but counts against the standard allowance. AI commentary itself always requires a Runner in the proposer's wallet, so if you enable audio you are attaching a Runner anyway.
+
+The rematch inherits the race name with a " #N" suffix (where N is the rematch number in the chain), so a race called "Duel" becomes "Duel #2", "Duel #3", and so on.
+
 ## Accepting
 
 Your opponent has a fixed acceptance window to accept. If they accept:

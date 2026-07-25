@@ -70,6 +70,10 @@ A race join setting that restricts entry to wallets holding at least a chosen am
 
 A race created with boost NFTs disabled for everyone, including the creator. Marked with a crossed-out circle icon on race cards. Requires a Runner NFT to create. Rematches inherit the setting. See [No-boost races](../nfts/boosts.md#no-boost-races).
 
+### X announcement (X tweet)
+
+An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost (currently 0.005 SOL) deposited at creation and transferred to the fee wallet at finalization. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
+
 ### ORAO VRF
 
 The on-chain randomness oracle used by Lucky Ducks. ORAO operators sign random seeds and publish them to Solana; the smart contract reads the seed and computes race outcomes deterministically.

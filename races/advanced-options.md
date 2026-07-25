@@ -8,6 +8,18 @@ A funny per second play by play track narrated by an AI voice, generated on the 
 
 The narration references the duck names, the boosts in play, and the current standings. It does not predict the winner. Generation can add up to 60 seconds of waiting time after the lobby closes before the visual race begins.
 
+Available for any race size, including 1v1 races and rematches. Adding audio to a rematch is decided by the proposer at propose time, independent of what the finished race had.
+
+## X announcement
+
+Post the race publicly to the Lucky Ducks X (Twitter) account when it goes live. Useful for community events or when you want to bring in players who are not already watching the app.
+
+Flat cost, currently **0.005 SOL** at creation. Deposited to the race vault at create time and transferred to the fee wallet at finalization (same point-of-no-return as the audio cost).
+
+The backend uses the on-chain flag to know when to post; you do not sign anything on X yourself. The announcement includes the race link and basic details (entry fee, mode, when it starts). No-boost races carry a marker in the tweet copy.
+
+For rematches, the proposer picks X announcement independently at propose time, whether or not the finished race had it.
+
 ## Custom name
 
 Sets a title on the race card so other players can identify it in the lobby list. Useful when running a themed event or a community match.
