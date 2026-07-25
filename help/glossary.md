@@ -46,6 +46,10 @@ The on-chain transaction that closes a race and pays out the winners. The backen
 
 A race where the creator does not take a slot as a player. The race opens with zero players and fills as others join. Hosting requires a Runner NFT, is not available for 1v1 races, and the host gives up the Creator Fee Share.
 
+### Linked wallet
+
+An external, non-Solana wallet you attach to your Lucky Ducks profile so the platform can check its NFT holdings when you join a cross-chain gated race. Linking is a one time step per wallet: you connect the wallet and sign a message to prove control. No funds move. Linking a new wallet replaces the previous link. See [NFT holders](../races/access-and-gating.md#nft-holders).
+
 ### Minimum account age
 
 An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the join setting (Anyone, Verified Only, Allowed Players, NFT Holders, or Token Holders): can be combined with any of them.
@@ -60,7 +64,7 @@ The lobby window during which players can join a race. Default 1 hour. Customiza
 
 ### NFT Holders (join setting)
 
-A race join setting that restricts entry to wallets holding at least a chosen number of NFTs from a chosen collection. Eligibility is based on current holdings and is checked at join time using a short lived eligibility pass. The same NFT cannot secure two seats in the same race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
+A race join setting that restricts entry to wallets holding at least a chosen number of NFTs from a chosen collection. The collection can be on Solana or on a supported non-Solana chain (Ethereum, Base, Polygon, and others). For cross-chain collections, joiners link an external wallet to their profile once, and the platform checks that wallet at join time. Eligibility is based on current holdings and is checked at join time using a short lived eligibility pass. The same NFT cannot secure two seats in the same race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
 
 ### Token Holders (join setting)
 

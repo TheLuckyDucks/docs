@@ -45,19 +45,51 @@ The creator must themselves be verified to host a Verified Only race. No Runner 
 
 ## NFT holders
 
-Pick this to require that each player owns NFTs from a specific collection. You choose the collection and the **minimum number** a player must hold (at least one).
+Pick this to require that each player owns NFTs from a specific collection. You choose the collection, the **minimum number** a player must hold (at least one), and the **chain** the collection lives on.
 
-The collection must be one that the platform has approved (whitelisted) for gating. The current list of approved collections is maintained by the team; if the collection you want to gate on is not on the list, the create transaction will refuse to go through. This exists so a creator cannot gate on an arbitrary or spammy collection.
+### Solana or another chain
 
-When an eligible player joins, the app checks their wallet and prepares a one time eligibility pass for that join, so the race confirms they qualify at the moment they enter. This works across NFT types on Solana, including Metaplex Core and compressed NFTs, so most approved collections are supported.
+Solana is the default and works exactly as before. The chain selector also lets you pick a supported non-Solana chain (Ethereum, Base, Polygon, and others as they are enabled) and paste that chain's collection address instead. Only chains the platform actively supports appear in the list, so anything you can pick will work. If a chain you want is not there, it has not been enabled yet.
 
-Creator side eligibility: no Runner NFT is required, provided the collection is approved. The creator's auto join is subject to the same threshold check as any joiner (the backend will not sign their eligibility pass unless they hold the minimum number themselves). If you host without playing, only the collection whitelist gate applies at create time.
+Everything else about the race is unchanged. The race itself runs on Solana, the entry fees and prizes are in SOL or the usual tokens, and the ducks race the same way. The only new part is where the required NFT can come from.
 
-A few things worth knowing:
+The chain is shown to players wherever the race is announced. A race gated on a Base collection, for example, is announced as needing NFT holders on BASE.
+
+### The collection has to be approved
+
+For any chain, the collection you gate on must be one the platform has approved for gating. The current list is maintained by the team; if the collection you want is not on the list, the create transaction will refuse. This exists so a creator cannot gate on an arbitrary or spammy collection.
+
+### Joining a cross-chain race: linked wallets
+
+For a Solana-gated race, the app checks your connected Solana wallet at join time. Nothing new.
+
+For a race gated on another chain, the app checks the external wallet you have linked to your profile. This is a one-time step per wallet:
+
+* On your profile page, choose "Link an external wallet".
+* Connect the wallet that holds your NFTs on the other chain and sign a short message to prove you control it.
+* The signature does not move funds and does not approve anything; it only proves ownership.
+* Linking a new wallet later replaces the old link.
+
+Once linked, that wallet is remembered for every future cross-chain gated race on that chain. You do not link again per race.
+
+Your linked wallet is private to your account and is used only to check NFT ownership when you join a gated race. Nothing is spent or moved from it.
+
+### At join time
+
+When you join a cross-chain gated race, the platform confirms your linked wallet holds an NFT from the required collection and lets you in. If it does not, you are not eligible for that race, the same as any holder gate. If you have not linked a wallet yet, the join flow points you to the linking step first.
+
+When an eligible player joins, the app prepares a one time eligibility pass for that join, so the race confirms they qualify at the moment they enter. This works across NFT types on Solana, including Metaplex Core and compressed NFTs, so most approved collections are supported. For non-Solana chains, the ownership check is done off chain by the backend against the linked wallet's holdings on that chain.
+
+### Creator side eligibility
+
+No Runner NFT is required to host, provided the collection is approved. The creator's auto join is subject to the same threshold check as any joiner (the backend will not sign their eligibility pass unless they hold the minimum number themselves, on whichever chain the collection lives on). If you host without playing, only the collection approval gate applies at create time.
+
+### A few things worth knowing
 
 * Eligibility is based on **how many NFTs you hold right now**, not how long you have held them.
 * Each NFT can secure **one seat per race**. The same NFT cannot be used to take two spots in the same race.
 * The eligibility pass is short lived, so finish your join promptly after the app prepares it. If it expires, just join again.
+* Solana-gated races are unaffected by the cross-chain option. If you only ever join Solana NFT races, you never need to link an external wallet.
 
 ## Token holders
 

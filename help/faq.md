@@ -40,6 +40,10 @@ No. Your prize is always claimable, even with a rematch offer sitting open.
 
 No. Enabling no-boost mode requires a Runner NFT at create time. See [No-boost races](../nfts/boosts.md#no-boost-races).
 
+### Can I gate a race with an NFT collection from another chain?
+
+Yes. When you pick the NFT Holders join setting, you also pick which chain the collection lives on. Solana is the default; supported non-Solana chains (Ethereum, Base, Polygon, and others) also appear in the picker. Joiners link the external wallet holding the NFT to their profile once and are then checked on that wallet at join time. Nothing about the race itself changes: it still runs on Solana with SOL or SPL prizes. See [NFT holders](../races/access-and-gating.md#nft-holders).
+
 ### Do sponsored and host-mode races count against my daily race limit?
 
 No. Sponsored races and host-mode races (where you do not join yourself) do not consume any of your daily race allowance. Offering and accepting a rematch each do, per player. See [Daily races](../races/daily-races.md).
