@@ -29,7 +29,7 @@ The default minimum duration (30 seconds) is available to everyone. **Picking an
 These are off by default. Most need a Runner NFT to enable.
 
 * **AI commentary**. A funny per second narration track generated on the fly. Adds a small cost per race second.
-* **X announcement**. Post the race to Lucky Ducks' X (Twitter) account so it's advertised outside the app. Flat cost. See [Advanced options](advanced-options.md#x-announcement).
+* **X announcement**. Post the race to Lucky Ducks' X (Twitter) account so it's advertised outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
 * **Custom join timeout**. Default is 1 hour; you can shorten or extend it.
 * **Custom name**. Show a race title (up to 32 characters) in the lobby list.
 * **Custom track**. Use a Track NFT you own as the race background.

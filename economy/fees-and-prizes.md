@@ -51,7 +51,7 @@ A few small costs are paid by the creator at race creation, separate from the po
 * **Oracle fee** (~0.0035 SOL). Paid to ORAO for the VRF request.
 * **Archival fee** (~0.0001 SOL). Goes to the IPFS archival worker.
 * **Audio cost** (if AI commentary is enabled). About 0.00005 SOL per race second, so a 30 second race costs roughly 0.0015 SOL and a 5 minute race about 0.015 SOL.
-* **X announcement cost** (if X announcement is enabled). Flat 0.005 SOL.
+* **X announcement cost** (if X announcement is enabled). Flat 0.005 SOL, paid straight to the backend wallet, non-refundable.
 * **Start-when-underfilled cost** (if opted in). Paid to the backend authority on auto start, refunded if the race never auto starts.
 * **Race PDA rent**. Around 0.003 SOL. Fully refunded to the creator when the race closes.
 

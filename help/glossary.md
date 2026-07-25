@@ -72,7 +72,7 @@ A race created with boost NFTs disabled for everyone, including the creator. Mar
 
 ### X announcement (X tweet)
 
-An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost (currently 0.005 SOL) deposited at creation and transferred to the fee wallet at finalization. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
+An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost (currently 0.005 SOL) paid straight to the backend wallet at creation, non-refundable. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
 
 ### ORAO VRF
 

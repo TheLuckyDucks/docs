@@ -8,7 +8,7 @@ There are no team-based events outside of tournaments at the moment. Teams exist
 
 From the Teams page, click Create Team. Pick a **name** and an **avatar**, then sign the creation transaction. You become the team's founder and first member.
 
-The maximum team size is **10 members** (including the founder). The maximum number of pending join requests at any one time is **20**.
+The maximum team size is **20 members** (including the founder). The maximum number of pending join requests at any one time is **20**.
 
 ## Inviting members
 

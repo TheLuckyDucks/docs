@@ -14,7 +14,7 @@ Available for any race size, including 1v1 races and rematches. Adding audio to 
 
 Post the race publicly to the Lucky Ducks X (Twitter) account when it goes live. Useful for community events or when you want to bring in players who are not already watching the app.
 
-Flat cost, currently **0.005 SOL** at creation. Deposited to the race vault at create time and transferred to the fee wallet at finalization (same point-of-no-return as the audio cost).
+Flat cost, currently **0.005 SOL** at creation. Transferred immediately to the backend wallet, like the archival fee: **non-refundable** once the race is created, even if the race never fills.
 
 The backend uses the on-chain flag to know when to post; you do not sign anything on X yourself. The announcement includes the race link and basic details (entry fee, mode, when it starts). No-boost races carry a marker in the tweet copy.
 
