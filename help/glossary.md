@@ -28,11 +28,15 @@ The cap on how many races a wallet can play (join or auto-join) in a rolling 24 
 
 ### Default max players
 
-The platform's max race size that does not require a Runner NFT. Currently 5.
+The largest race you can create without a Runner NFT, and the smallest lobby an underfilled race may auto start from. It is a platform setting, and the create form shows it.
+
+### Delegation
+
+Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions so you do not approve each one in your wallet. It funds those actions from your player vault, expires on its own, and can be revoked instantly. It can never move money out of the platform. See [Playing without signing every action](../races/delegated-play.md).
 
 ### Discriminator
 
-The first 8 bytes of any Anchor account, used to identify the account type. Lucky Ducks accounts (Race, PlayerStats, PlatformConfig, etc.) all start with one.
+The first 8 bytes of any Anchor account, used to identify the account type. Lucky Ducks accounts (Race, PlayerAccount, PlatformConfig, etc.) all start with one.
 
 ### Entry fee
 
@@ -76,7 +80,7 @@ A race created with boost NFTs disabled for everyone, including the creator. Mar
 
 ### X announcement (X tweet)
 
-An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost (currently 0.005 SOL) paid straight to the backend wallet at creation, non-refundable. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
+An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost, around 0.005 SOL, paid straight to the backend wallet at creation, non-refundable. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
 
 ### ORAO VRF
 
@@ -84,7 +88,15 @@ The on-chain randomness oracle used by Lucky Ducks. ORAO operators sign random s
 
 ### PDA (Program Derived Address)
 
-A Solana account whose address is deterministically derived from a set of seeds plus the program ID, with no private key. Every race, every player stats account, the platform config, and every NFT have associated PDAs.
+A Solana account whose address is deterministically derived from a set of seeds plus the program ID, with no private key. Every race, every player account, the platform config, and every NFT have associated PDAs.
+
+### Payout target
+
+Where money coming back to you lands: your wallet, or your player vault. Covers prizes, refunds and returned rent. It is set per player, not per race, so nobody else can redirect your money. See [Your player vault](../economy/player-vault.md#where-your-winnings-land).
+
+### Player vault
+
+A balance you top up once and spend across many races, held inside your player account. Not the same as a race vault. Only your wallet can take money out of it. See [Your player vault](../economy/player-vault.md).
 
 ### Podium Split
 
@@ -92,7 +104,7 @@ Race mode where the prize pool is split 50/30/20 between first, second, and thir
 
 ### Race vault
 
-A PDA owned by the smart contract that holds the entry fees for a specific race. Closed at finalization.
+A PDA owned by the smart contract that holds the entry fees for a specific race. Closed at finalization. Not the same thing as your player vault, which is yours and persists across races.
 
 ### Rematch
 
@@ -106,9 +118,9 @@ The advanced access NFT. Required to create races with non-default options.
 
 A race where the creator funds the prize pool upfront; joiners pay nothing to enter.
 
-### Stats PDA
+### Player account (stats PDA)
 
-A per-wallet account that tracks your race history, win count, XP, and other stats. Created the first time you race. Rent (~0.0017 SOL) is fully refundable on close.
+A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0017 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
 
 ### Threshold (underfilled)
 

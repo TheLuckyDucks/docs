@@ -8,13 +8,15 @@ A funny per second play by play track narrated by an AI voice, generated on the 
 
 The narration references the duck names, the boosts in play, and the current standings. It does not predict the winner. Generation can add up to 60 seconds of waiting time after the lobby closes before the visual race begins.
 
+**The race never waits indefinitely for it.** If the commentary is not ready by then, the race starts silently rather than holding everyone in the lobby, and the track is attached as soon as it finishes, so it can arrive part way through or after the finish. The commentary is archived with the race either way, so a race that ran silent is not a race whose audio is gone.
+
 Available for any race size, including 1v1 races and rematches. Adding audio to a rematch is decided by the proposer at propose time, independent of what the finished race had.
 
 ## X announcement
 
 Post the race publicly to the Lucky Ducks X (Twitter) account when it goes live. Useful for community events or when you want to bring in players who are not already watching the app.
 
-Flat cost, currently **0.005 SOL** at creation. Transferred immediately to the backend wallet, like the archival fee: **non-refundable** once the race is created, even if the race never fills.
+Flat cost at creation, around **0.005 SOL**, shown exactly in the cost breakdown before you sign. Transferred immediately to the backend wallet, like the archival fee: **non-refundable** once the race is created, even if the race never fills.
 
 The backend uses the on-chain flag to know when to post; you do not sign anything on X yourself. The announcement includes the race link and basic details (entry fee, mode, when it starts). No-boost races carry a marker in the tweet copy.
 
@@ -40,9 +42,9 @@ The four built in tracks (day, night, sunset, sunrise) are always available and 
 
 ## Start when underfilled
 
-Permit the race to launch with fewer than max players once the join timeout passes. Without this option, an unfilled race expires and refunds. With it, the race starts as long as the lobby has at least `default_max_players` joined (currently 5).
+Permit the race to launch with fewer than max players once the join timeout passes. Without this option, an unfilled race expires and can only be refunded. With it, the race starts as long as the lobby reached the platform's default race size, which the create form shows you.
 
-When you enable it, a slider appears for setting the minimum players to auto start. The minimum value of the slider is the platform's default cap (5 currently), the maximum is `maxPlayers - 1`. A 10 player race with the slider at 7 will auto start with 7, 8, or 9 players once the join window closes.
+When you enable it, a slider appears for setting the minimum players to auto start. The slider runs from the platform's default race size up to one below your chosen maximum, so it is never possible to set a threshold the race could not start from. A 10 player race with the slider at 7 will auto start with 7, 8, or 9 players once the join window closes.
 
 This option adds a small surcharge to cover the backend's auto start operation. The surcharge is paid out of the race vault to the operator on auto start; it stays in the vault and refunds with everything else if the race never starts.
 

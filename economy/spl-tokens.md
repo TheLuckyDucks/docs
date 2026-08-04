@@ -1,6 +1,6 @@
 # SPL token races
 
-Races and tournaments can be denominated in supported SPL tokens instead of SOL. Currently supported tokens include USDC and USDT with more added periodically.
+Races and tournaments can be denominated in supported SPL tokens instead of SOL. USDC and USDT are supported, and the platform adds more over time. The currency picker in the Create Race modal is the live list.
 
 ## Supported token programs
 
@@ -23,7 +23,7 @@ Mechanically identical to a SOL race. The differences are:
 
 ## Selecting a token
 
-In the Create Race modal, the entry fee field has a currency picker on the right. The picker lists SOL plus the platform's currently supported tokens, with the token's icon, symbol, and your current balance.
+In the Create Race modal, the entry fee field has a currency picker on the right. The picker lists SOL plus every supported token, with the token's icon, symbol, and your balance.
 
 Token availability and priority order are set by the platform via `splTokens[].priority` in `/config`. Tokens with higher priority appear first.
 

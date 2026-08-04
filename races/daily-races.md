@@ -29,9 +29,9 @@ Make sure your Runner is attached when you join or rematch. If it is not, the ra
 
 ## When your day resets
 
-The window is not midnight. It starts from your first race after your previous window ended, and runs for a fixed length from there (currently **24 hours**).
+The window is not midnight. It starts from your first race after your previous window ended, and runs for a fixed length from there. That length is a platform setting, and it is a rolling day.
 
-So if your first race of the day is at 3pm, your window ends the following 3pm, not at midnight tonight. Your remaining races and the exact reset time are both shown in the app.
+So if your first race is at 3pm, your window ends the following 3pm, not at midnight tonight. Your remaining races and the exact reset time are both shown in the app, which is the figure to trust.
 
 ## FAQ
 

@@ -56,6 +56,14 @@ Typically a few seconds. In rare cases the on chain randomness takes longer; the
 
 The box is consumed as part of opening. It is a one time key that turns into your reward.
 
+**Is there a limit on how many boxes I can buy?**
+
+Yes. Each box type has a total supply and a per-wallet cap, both set by the team. When you hit either one the store tells you which, and refuses the purchase before you sign anything.
+
+**The store said it could not check availability. Is it sold out?**
+
+No, and the wording is deliberate. "Sold out" and "could not check right now" are two different answers. The store refuses to sell a box it cannot confirm is available, so a temporary read failure looks like a refusal rather than risking a purchase against an empty box. Sold out is final; could not check is worth retrying in a moment.
+
 **Can I see recent reveals?**
 
 Yes. The marketplace shows a feed of the most recently revealed mints so you can see what others have pulled.

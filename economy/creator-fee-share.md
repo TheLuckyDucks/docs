@@ -13,10 +13,12 @@ Creator Fee Share lets a race creator keep part of the platform fee at race end.
 
 The size of a creator's share depends on which NFTs were used to create the race.
 
-* **Runner NFT.** Required for any creator share at all. A race created with a Runner (and more than 2 players) earns the Runner share, currently **40%** of the platform fee.
-* **Track NFT.** Adds a bonus on top of the Runner share, currently **10%**. A Track NFT only counts when used together with a Runner. A Track on its own gives nothing.
+* **Runner NFT.** Required for any creator share at all. A race created with a Runner (and more than 2 players) earns the Runner share, the larger of the two.
+* **Track NFT.** Adds a smaller bonus on top of the Runner share. A Track NFT only counts when used together with a Runner. A Track on its own gives nothing.
 
-The maximum possible share is therefore **50%** (Runner + Track). Without a Runner, the creator's share is always 0%, even if a Track was used.
+Both are percentages of the platform fee, and the create form shows what your race will earn before you sign. Without a Runner, the creator's share is always 0%, even if a Track was used.
+
+The rates used throughout this page, a 40% Runner share and a 10% Track bonus, are the platform's settings and are the ones the tables below are worked from.
 
 | Race created with... | Creator share |
 |----------------------|----------------|
@@ -63,7 +65,7 @@ The winner gets 0.97 SOL in every case.
 
 ## Where the creator share lands
 
-* **SOL races.** The creator's share rides along with the existing rent return at race close. There is no separate claim step. It lands in the creator's wallet the moment the race settles.
+* **SOL races.** The creator's share rides along with the existing rent return at race close. There is no separate claim step. It arrives the moment the race settles, in the creator's wallet or their [player vault](player-vault.md) according to their payout setting.
 * **SPL token races.** The creator's share is sent to the creator's Associated Token Account for that token. If they don't have one for the mint yet, it's created automatically as part of the claim transaction. Both legacy SPL Token and Token-2022 mints are supported, the same way as the rest of the [SPL flow](spl-tokens.md).
 
 ## Tracking it

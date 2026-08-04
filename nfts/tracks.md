@@ -32,4 +32,4 @@ Tracks ship in small themed drops. Past drops have been event themed (seasonal, 
 
 ## Track creation
 
-The collection currently has no on-platform minting tool for custom community tracks; all tracks are designed and minted by the Lucky Ducks team. Community submitted tracks are on the roadmap but not yet live.
+All tracks are designed and minted by the Lucky Ducks team. There is no on-platform minting tool for community tracks, so the way to propose one is to reach the team directly. See [Social networks](../help/social-networks.md).

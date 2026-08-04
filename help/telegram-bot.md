@@ -18,6 +18,16 @@ Join the main group at [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks), or add 
 
 The bot also announces races, wins, and prize claims in your group automatically, with a link to view each race on the site (and on X for sponsored races).
 
+### Why two groups show different races
+
+Each group has its own announcement policy, set by whoever added the bot: a group can be scoped to particular join settings, particular tokens, particular NFT collections, or to sponsored races only. `/races` applies the same policy as the announcements, so the list you get in one group is not the list you get in another, and neither is the full list. The site always shows everything.
+
+### How you appear on a card
+
+Announcements name you by the first of these that exists: your linked and verified X or Telegram handle, then your nickname, then a shortened version of your wallet address. The first two are shown with your wallet alongside them, because nicknames are not unique and a card that names two different people identically is worse than a card with an address on it.
+
+If you would rather not appear by handle, unlink it. See [Player verification](../trust/verification.md#telegram-handle-in-group-announcements).
+
 ## Raids: boost the tweet together
 
 A **raid** rallies the group to engage with a Lucky Ducks tweet. When a raid is live, the bot posts a card that updates in real time:

@@ -49,7 +49,9 @@ You can unverify at any time from the Player page. Unverifying drops the off-cha
 
 ## Multiple providers per wallet
 
-You can verify with multiple providers (X, Telegram, and Facebook all at once). The platform shows whichever identity you set as primary. Future events may give bonuses for being verified across multiple providers, but the current verified flag is binary.
+You can verify with multiple providers (X, Telegram, and Facebook all at once). The platform shows whichever identity you set as primary. Future events may give bonuses for being verified across multiple providers, but the verified flag itself is binary.
+
+**One social account belongs to one wallet.** The reverse of the rule above: a single wallet can carry several providers, but a given X, Telegram or Facebook account can only ever be linked to one wallet. Trying to verify the same account on a second wallet is refused. This is what stops one person presenting as several verified players in a race gated on Verified Only.
 
 ## What verification does not do
 

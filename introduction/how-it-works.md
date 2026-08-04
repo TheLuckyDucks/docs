@@ -34,7 +34,7 @@ Once the race duration has elapsed, the backend wallet submits the finalization 
 
 Finalization is permissionless after a 10-second grace window. If the backend hasn't finalized within 10 seconds of the race duration ending, any participant can submit the finalize transaction themselves. This is the fallback path if the backend ever goes down so the race never gets stuck. In practice the backend finalizes within the grace window and participants rarely need to do this themselves.
 
-Claims work the same way: anyone can submit a claim transaction on a winner's behalf, the funds always go to the winner regardless of who pays for the tx.
+Claims work the same way: anyone can submit a claim transaction on a winner's behalf, and the funds always go to the winner regardless of who pays for the tx, into their wallet or their player vault according to their own setting.
 
 ## 6. Cleanup
 

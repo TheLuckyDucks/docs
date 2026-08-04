@@ -11,6 +11,12 @@ The transaction you sign also covers:
 * **Network fee**. Roughly 0.000005 SOL per signed transaction. Solana's standard.
 * **No platform-side ATA rent** for SOL races. SPL token races may require a small one-time Associated Token Account creation if you do not yet have one for that mint.
 
+## Paying from your wallet or your vault
+
+Every cost on this page can come from your wallet, as it always has, or from a balance you pre-fund once. The confirmation screen shows both options with your current balance beside them, and falls back to your wallet when the balance is short. See [Your player vault](player-vault.md).
+
+The totals are the same either way. What changes is how many times you approve something.
+
 ## Where the entry fee goes
 
 | Path | Recipient | When |

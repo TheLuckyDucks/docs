@@ -1,0 +1,62 @@
+# Playing without signing every action
+
+You can let Lucky Ducks sign your in-game actions for you, for a period you choose. Joining a race then takes one tap, with no wallet popup and no waiting for a confirmation. The app calls this delegation.
+
+It is built for playing on a phone, where a wallet round trip per action is the slowest part of a race.
+
+## What you need
+
+* A [player vault](../economy/player-vault.md) with a balance, because the actions spend from it rather than from your wallet.
+* One signature to turn it on, choosing how long it lasts.
+
+That is the last signature until it expires or you turn it off.
+
+## What it can do
+
+Everything you do inside the game:
+
+* Create a race, join a race, leave a race during the lobby.
+* Claim a prize, cancel your own race, trigger a refund.
+* Offer, accept and decline rematches.
+* Claim a tournament prize.
+* Every team action: create, update, join, leave, invite, remove, disband.
+
+## What it can never do
+
+The permission covers playing. It does not cover your money leaving the platform.
+
+| Action | Why it is excluded |
+| --- | --- |
+| Withdraw from your vault | Moving value out is the line the whole design rests on. Only your wallet can authorise it |
+| Close your player account | Same reason. This is the other exit |
+| Deposit into your vault | Not merely disallowed. Money leaving your wallet requires your wallet's signature, so nothing else can do it |
+| Extend or change the permission | The permission is your consent. Anything that could extend itself would have no expiry |
+
+Money can move around inside the platform on a signature you granted. It only leaves on yours.
+
+## Turning it on and off
+
+You pick the duration, up to a maximum of 30 days. It expires on its own, so a permission you forget about does not last forever.
+
+Revoke at any time by setting the duration to zero. Revoking takes effect immediately, and it keeps working even if the platform has switched the feature off for everyone, so you can always withdraw your consent.
+
+Renewing is just turning it on again.
+
+## What it costs
+
+Each action signed on your behalf reimburses the network fee for that transaction, taken from your vault's SOL balance. It is a few thousandths of a cent per action, and it is the same fee you would have paid yourself.
+
+Two consequences worth knowing:
+
+* **An action that pays you still needs SOL in the vault.** Claiming a prize costs a network fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.
+* **There is no fallback to your wallet.** When you sign for yourself and your vault is short, the app pays from your wallet instead. A delegated action cannot do that, because your wallet is not signing. It stops and asks you to top up.
+
+## What happens after you tap
+
+A delegated action is queued, then submitted. Queued is not landed, so the app waits for the result on chain before telling you it worked. If it fails, you are told, and nothing has been charged for an action that never happened.
+
+## Choosing a duration
+
+A shorter permission is a smaller window, and the honest risk is not theft. Nothing here can take your money out of the platform. What a misused permission could do is spend your vault on races you did not choose, or act on your teams: leaving one, removing a member, disbanding a team you created. Losing an entry fee is recoverable. A disbanded team is not.
+
+If you play daily, a long duration is reasonable. If you are trying it once, pick a short one. The choice is per player for exactly this reason: your exposure should be yours to size.

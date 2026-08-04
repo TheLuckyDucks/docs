@@ -58,7 +58,7 @@ Non-participants can also clear an abandoned offer, but only after the acceptanc
 
 ## Rematch chains
 
-A rematch can be rematched. This continues up to the platform's max rematch chain depth (currently **10 deep**) before further rematches are locked. The rematch chain shows up on each race in the chain as the "Rematch X of 10" indicator on the race card.
+A rematch can be rematched. This continues up to the platform's maximum chain depth, after which further rematches are locked. Each race in the chain shows its position on the race card, as a "Rematch X of Y" indicator, so you can always see how much room is left.
 
 Rematches inherit the settings of the race they follow, including [no-boost mode](../nfts/boosts.md#no-boost-races) if the original race had boosts disabled. A no-boost rematch chain stays no-boost all the way down.
 

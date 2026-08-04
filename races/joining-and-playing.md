@@ -8,6 +8,8 @@ Tap a card to open the detail modal, then Join Race. The modal shows the partici
 
 You can also join straight from the card via the Join button when you do not need to customize.
 
+The confirmation step asks where the entry fee comes from: your wallet, or a balance you have pre-funded. See [Your player vault](../economy/player-vault.md). If you have turned on [playing without signing every action](delegated-play.md), joining takes one tap and no wallet popup appears at all.
+
 ### Eligibility
 
 Some races have join conditions beyond paying the entry fee. The detail modal calls out anything that applies to the race in front of you:
@@ -42,6 +44,6 @@ The lobby modal transitions to the canvas. A short loading screen plays while th
 
 ## After
 
-Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive in your wallet instantly.
+Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive instantly, in your wallet by default or in your player vault if you have chosen to pool your winnings there.
 
 If you lost, no claim is needed. The race archives itself automatically and the page returns to the lobby list.

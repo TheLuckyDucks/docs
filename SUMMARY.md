@@ -12,6 +12,7 @@
 
 * [Creating a race](races/creating-a-race.md)
 * [Joining and playing](races/joining-and-playing.md)
+* [Playing without signing every action](races/delegated-play.md)
 * [Race modes](races/race-modes.md)
 * [Race access and gating](races/access-and-gating.md)
 * [Advanced options](races/advanced-options.md)
@@ -37,6 +38,7 @@
 ## Economy
 
 * [Fees and prizes](economy/fees-and-prizes.md)
+* [Your player vault](economy/player-vault.md)
 * [Creator Fee Share](economy/creator-fee-share.md)
 * [Refunds and rent](economy/refunds-and-rent.md)
 * [SPL token races](economy/spl-tokens.md)

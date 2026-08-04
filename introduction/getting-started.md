@@ -14,9 +14,9 @@ You need SOL to pay transaction fees (roughly 0.000005 SOL per signed transactio
 
 Go to `theluckyducks.com/app/` and click Connect Wallet. Approve the connection in your wallet. The first connection is a signed message, not a transaction, so it costs nothing.
 
-### 4. Create the on chain stats account
+### 4. Create the on chain player account
 
-On your very first action (create or join a race), the smart contract needs a `PlayerStats` account to track your race history. A modal will explain this once and ask you to approve a one time transaction. The rent is around 0.0017 SOL and is fully refundable if you ever close the account.
+On your very first action (create or join a race), the smart contract needs a player account to hold your race history, your profile, and your vault balance. A modal will explain this once and ask you to approve a one time transaction. The rent is around 0.0017 SOL and is fully refundable if you ever close the account.
 
 ### 5. Join a race or make one
 
@@ -25,6 +25,10 @@ The lobby list shows all open races. Pick one that matches your appetite (entry 
 ### 6. Watch your duck race
 
 Once the race starts, the canvas takes over. Ducks paddle, splash, occasionally somersault. The visual race plays at a fixed pace driven by the on chain seed. Once it ends, winners can claim with a single click.
+
+### Optional: skip the wallet popups
+
+Once you are racing regularly, you can pre-fund a balance and let Lucky Ducks sign your in-game actions for you, so joining takes one tap. See [Your player vault](../economy/player-vault.md) and [Playing without signing every action](../races/delegated-play.md).
 
 ### Optional: verify
 

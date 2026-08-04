@@ -54,11 +54,15 @@ Two players for Winner Takes All. Three players for Podium Split. The race will 
 
 ### My race never started. Where is my money?
 
-Stuck races automatically cancel after the join timeout passes without enough players, or after the VRF timeout (~120 seconds) if the oracle did not respond. In either case, you can claim a full refund from the Unclaimed Items banner on your player page or from the race detail modal.
+A race becomes refundable once the join timeout passes without enough players, or once the VRF timeout (about two minutes) passes with no seed from the oracle. Nothing fires by itself at that moment. The refund becomes possible and someone has to submit it.
+
+Races the platform created are swept automatically. A race a player created is deliberately left for its creator or any participant to close, because the platform does not close a race somebody else paid for. Either way it appears in the Unclaimed Items banner on your player page, and the button there clears it.
+
+The refund returns every stake in the lobby in one transaction and closes the race, so triggering it clears the race for everyone, not just for you.
 
 ### Can someone else claim my prize?
 
-Anyone can submit the claim transaction, but the funds always go to the wallet that earned them. The signer of the claim tx is irrelevant to the destination.
+Anyone can submit the claim transaction, but the funds always go to the player who earned them, into their wallet or their player vault according to their own payout setting. The signer of the claim tx is irrelevant to the destination, and cannot change it.
 
 ### Why does the same race ID number sometimes skip?
 
@@ -66,7 +70,17 @@ Race IDs are bumped on chain whenever a rematch is proposed, including rematches
 
 ### What is the on-chain cost of playing one race?
 
-For a 0.01 SOL SOL race with no opt ins: roughly 0.000005 SOL in network fees + 0.01 SOL entry fee + 0.0017 SOL one-time stats account rent on your very first race. Total first-race spend: about 0.012 SOL.
+For a 0.01 SOL SOL race with no opt ins: roughly 0.000005 SOL in network fees + 0.01 SOL entry fee + 0.0017 SOL one-time player account rent on your very first race. Total first-race spend: about 0.012 SOL.
+
+### Do I have to pre-fund a vault to play?
+
+No. Paying from your wallet works exactly as it always has. The [player vault](../economy/player-vault.md) is a convenience: top up once, then join races without approving a transfer each time. You can withdraw all of it whenever you want.
+
+### If I let Lucky Ducks sign for me, can it take my money?
+
+It cannot take money out of the platform. The permission covers playing: joining, creating, claiming, refunds, rematches and team actions. Withdrawing from your vault and closing your account require your wallet's signature and are excluded by the contract itself, not by a setting.
+
+What a misused permission could do is spend your vault balance on races you did not choose, or act on your teams. That is the reason to pick a duration that matches how much you actually play, and to revoke when you are done. Revoking is instant and always available. See [Playing without signing every action](../races/delegated-play.md).
 
 ### Can I see the outcome of a race before it ends?
 

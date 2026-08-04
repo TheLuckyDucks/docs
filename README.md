@@ -4,11 +4,12 @@ Lucky Ducks is a fully on-chain duck racing platform built on Solana. Every race
 
 ## What you can do here
 
-* **Race** against up to 20 other players in WTA (Winner Takes All) or Podium Split mode.
+* **Race** in lobbies of up to 20 players, in WTA (Winner Takes All) or Podium Split mode.
 * **Collect** four NFT collections that change how you race: Runners unlock advanced features, Boosts add speed, Tracks let you race on custom scenery, Cosmetics dress up your duck.
 * **Compete** in scheduled tournaments with off-chain XP leaderboards and on-chain prize pots.
 * **Team up** with up to 10 other players for team-based standings and weekly events.
 * **Stake** in SOL or any supported SPL token (Legacy and Token-2022). The platform takes a small treasury fee, the rest goes to winner(s).
+* **Play fast** by pre-funding a vault and letting the platform sign your in-game actions, so joining a race takes one tap instead of a wallet approval.
 
 ## How this site is organized
 
