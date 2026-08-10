@@ -6,8 +6,8 @@ Every wallet has a player profile. Verification additionally ties your wallet to
 
 Every player can set a **nickname** and an **avatar** on the Player page, independent of verification. These show up next to your wallet in race lobbies, participant lists, leaderboards, and team rosters.
 
-* **Nickname**. Short display name. Unique-per-platform isn't enforced; collisions are disambiguated by the truncated wallet shown next to the name.
-* **Avatar**. An image you upload. If you don't set one, the platform uses a deterministic identicon derived from your wallet address.
+- **Nickname**. Short display name. Unique-per-platform isn't enforced; collisions are disambiguated by the truncated wallet shown next to the name.
+- **Avatar**. An image you upload. If you don't set one, the platform uses a deterministic identicon derived from your wallet address.
 
 Both fields are stored off chain on your player profile. You can change them any time.
 
@@ -15,8 +15,8 @@ Both fields are stored off chain on your player profile. You can change them any
 
 The platform supports OAuth2 verification with:
 
-* **X (Twitter)**
-* **Telegram**
+- **X (Twitter)**
+- **Telegram**
 
 After verifying, the wallet has a verified flag and gains access to the chosen identity's display name and avatar (which you can optionally adopt as your profile nickname/avatar).
 
@@ -30,11 +30,11 @@ Verification is a one-time off-chain OAuth flow. You authorize the chosen provid
 
 ## What verification unlocks
 
-* **Signing in without your wallet app**. Once an account is linked, you can sign in with it instead of signing a message in your wallet. On a phone that is the difference between staying in your browser and being handed off to the wallet app and back. See [Signing in with a linked account](#signing-in-with-a-linked-account).
-* **[Playing without signing every action](../races/delegated-play.md)**. Turning that on requires a verified wallet, and the program refuses it otherwise. The two go together for one reason: the whole point is not reaching for your wallet, and a linked account is what lets you get back in without one.
-* **Races reserved for verified players**. A creator can lock a race so that only verified wallets may join, which is the usual way of keeping throwaway wallets out without managing an invite list. You need to be verified to enter one, and to host one. See [Race access and gating](../races/access-and-gating.md#verified-players-only).
-* **Identity badge**. A small checkmark next to your nickname signals you are verified. Other players see this on race cards and lobbies.
-* **Telegram handle in announcements** (Telegram-verified players only; see below).
+- **Signing in without your wallet app**. Once an account is linked, you can sign in with it instead of signing a message in your wallet. On a phone that is the difference between staying in your browser and being handed off to the wallet app and back. See [Signing in with a linked account](#signing-in-with-a-linked-account).
+- **[Playing without signing every action](../races/delegated-play.md)**. Turning that on requires a verified wallet, and the program refuses it otherwise. The two go together for one reason: the whole point is not reaching for your wallet, and a linked account is what lets you get back in without one.
+- **Races reserved for verified players**. A creator can lock a race so that only verified wallets may join, which is the usual way of keeping throwaway wallets out without managing an invite list. You need to be verified to enter one, and to host one. See [Race access and gating](../races/access-and-gating.md#verified-players-only).
+- **Identity badge**. A small checkmark next to your nickname signals you are verified. Other players see this on race cards and lobbies.
+- **Telegram handle in announcements** (Telegram-verified players only; see below).
 
 ## Signing in with a linked account
 
@@ -45,6 +45,8 @@ It resolves, it does not create. Signing in with a social account finds the wall
 Two things it deliberately cannot do. It cannot link an account, because linking starts from a wallet you have already proved you own. And it never grants an operator session; an operator signs in with their wallet.
 
 Which accounts appear on the login screen depends on which providers the platform has enabled.
+
+Signing in this way is half of playing without ever opening your wallet app; [Playing without your wallet app](../races/without-the-wallet-app.md) is the other half and the order to do them in.
 
 ## Telegram handle in group announcements
 
@@ -70,7 +72,7 @@ You can verify with multiple providers (X, Telegram, and Facebook all at once). 
 
 ## What verification does not do
 
-* It does not change your wallet's race history.
-* It does not give you a boost.
-* It does not give you a discount on entry fees.
-* It does not let the platform refund you out of band; refunds are always on chain.
+- It does not change your wallet's race history.
+- It does not give you a boost.
+- It does not give you a discount on entry fees.
+- It does not let the platform refund you out of band; refunds are always on chain.

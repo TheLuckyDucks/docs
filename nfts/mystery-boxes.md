@@ -8,11 +8,11 @@ The reward NFT belongs to the matching regular collection ([Cosmetics](cosmetics
 
 Each box belongs to one of three groups, and reveals a reward drawn only from that group:
 
-| Box | Opens into |
-|-----|------------|
+| Box           | Opens into                                                                       |
+| ------------- | -------------------------------------------------------------------------------- |
 | **Cosmetics** | A random Duck cosmetic (Pirate, Astronaut, Cyberpunk, Royal, Golden, and so on). |
-| **Tracks** | A random race Track (Night, Sunset, Rainy, Snowy, Stormy, Foggy, and so on). |
-| **Boost** | A random Boost. |
+| **Tracks**    | A random race Track (Night, Sunset, Rainy, Snowy, Stormy, Foggy, and so on).     |
+| **Boost**     | A random Boost.                                                                  |
 
 The exact reward you get is chosen at open time, weighted by the pool the team has configured. Rarer rewards have a smaller share of the pool.
 
@@ -37,10 +37,10 @@ This is the same randomness source that decides race winners. For background on 
 
 While a box is opening you may see one of these states:
 
-* **Opening, Drawing, Selecting, Minting.** The reveal is in progress. This usually takes only a few seconds.
-* **Revealed.** Done. Your reward NFT is in your wallet.
-* **Temporarily unavailable.** The matching reward group is momentarily empty or paused. Your box is safe; try again a little later.
-* **Failed.** The open could not complete this time (for example, the randomness was not produced in time). The system retries for up to about two minutes before showing this; your box is not lost.
+- **Opening, Drawing, Selecting, Minting.** The reveal is in progress. This usually takes only a few seconds.
+- **Revealed.** Done. Your reward NFT is in your wallet.
+- **Temporarily unavailable.** The matching reward group is momentarily empty or paused. Your box is safe; try again a little later.
+- **Failed.** The open could not complete this time (for example, the randomness was not produced in time). The system retries for up to about two minutes before showing this; your box is not lost.
 
 ## FAQ
 

@@ -8,9 +8,9 @@ Most online racing games hide the math. The server picks a winner, plays the ani
 
 This means three things that matter:
 
-* **Anyone can verify a race**. Once randomness is published, the outcome is deterministic. Re-running the math on the same seed gives the same finishing positions, every time.
-* **The platform cannot pick a winner**. The team writes the smart contract, deploys it, and then has no special ability to influence outcomes.
-* **Refunds are automatic**. If a race never starts (not enough players, oracle failed, transaction stuck), every player can claim their entry fee back via a permissionless instruction. No support ticket required.
+- **Anyone can verify a race**. Once randomness is published, the outcome is deterministic. Re-running the math on the same seed gives the same finishing positions, every time.
+- **The platform cannot pick a winner**. The team writes the smart contract, deploys it, and then has no special ability to influence outcomes.
+- **Refunds are automatic**. If a race never starts (not enough players, oracle failed, transaction stuck), every player can claim their entry fee back via a permissionless instruction. No support ticket required.
 
 ## The catch
 

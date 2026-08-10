@@ -40,21 +40,21 @@ Three consequences, all of which have to shape how work is done:
 
 ## Layout
 
-| Path             | Holds                                                                    |
-| ---------------- | -------------------------------------------------------------------------- |
-| `README.md`      | The welcome page, and the space root per `.gitbook.yaml`                  |
-| `SUMMARY.md`     | The sidebar. A page not listed here is not navigable                      |
-| `introduction/`  | Orientation: what the platform is, how a race works, first race           |
-| `races/`         | Creating, joining, configuring, gating, hosting, cancelling               |
-| `nfts/`          | The four collections, plus Mystery Boxes                                  |
-| `competition/`   | Tournaments, teams, rematches, badges                                     |
-| `economy/`       | Fees, prizes, creator fee share, refunds, rent, SPL token races           |
-| `trust/`         | Randomness, on-chain verification, player verification                    |
-| `help/`          | FAQ, glossary, Telegram bot, social links                                 |
-| `styles/`        | `website.css`, the custom theme                                           |
-| `.gitbook.yaml`  | Modern GitBook config: readme and summary locations                       |
-| `book.json`      | Legacy `gitbook-cli` config: title, plugins, theme, brand variables       |
-| `IMPORTING.md`   | How to import and build the bundle. Not published, not in `SUMMARY.md`    |
+| Path            | Holds                                                                  |
+| --------------- | ---------------------------------------------------------------------- |
+| `README.md`     | The welcome page, and the space root per `.gitbook.yaml`               |
+| `SUMMARY.md`    | The sidebar. A page not listed here is not navigable                   |
+| `introduction/` | Orientation: what the platform is, how a race works, first race        |
+| `races/`        | Creating, joining, configuring, gating, hosting, cancelling            |
+| `nfts/`         | The four collections, plus Mystery Boxes                               |
+| `competition/`  | Tournaments, teams, rematches, badges                                  |
+| `economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races        |
+| `trust/`        | Randomness, on-chain verification, player verification                 |
+| `help/`         | FAQ, glossary, Telegram bot, social links                              |
+| `styles/`       | `website.css`, the custom theme                                        |
+| `.gitbook.yaml` | Modern GitBook config: readme and summary locations                    |
+| `book.json`     | Legacy `gitbook-cli` config: title, plugins, theme, brand variables    |
+| `IMPORTING.md`  | How to import and build the bundle. Not published, not in `SUMMARY.md` |
 
 `.claude/docs/OVERVIEW.md` is the content map: which page owns which topic, and
 where a new one belongs.
@@ -128,7 +128,19 @@ repository can ship, because a player acts on it.
   `{% content-ref %}`) is used anywhere. Keeping it that way is what lets the
   legacy `gitbook-cli` path in `IMPORTING.md` still build, and keeps every page
   readable as a file.
-- Bullets use `*`, matching the existing pages.
+- **Prettier owns the formatting**, on its defaults, over every `.md` in the
+  repository including this file and everything under `.claude/`. So bullets are
+  `-`, table cells are padded to the column width, and emphasis is `_`. Nothing
+  is configured, so a run needs no setup:
+
+  ```bash
+  npx --yes prettier --write "**/*.md"
+  ```
+
+  It touches presentation only, never words, which is what makes it safe to run
+  on a tree that GitBook also writes to. Do not extend it to `styles/`,
+  `book.json` or `.gitbook.yaml`; those are in the do-not-touch list below.
+
 - Links are relative paths to the `.md` file, with an anchor fragment when
   pointing at a section.
 - Emoji appear in a few headings (`competition/badges.md`) where they mirror the

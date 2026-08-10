@@ -4,12 +4,12 @@ Lucky Ducks ships four NFT collections, each with a different purpose. All four 
 
 ## The four collections
 
-| Collection | Purpose | Affects race outcome? |
-|------------|---------|-----------------------|
-| **Runners** | Unlock advanced race features | No |
-| **Boosts** | Add a small speed advantage | Yes |
-| **Tracks** | Custom race backgrounds | No |
-| **Cosmetics / Ducks** | Visual customization of your duck | No |
+| Collection            | Purpose                           | Affects race outcome? |
+| --------------------- | --------------------------------- | --------------------- |
+| **Runners**           | Unlock advanced race features     | No                    |
+| **Boosts**            | Add a small speed advantage       | Yes                   |
+| **Tracks**            | Custom race backgrounds           | No                    |
+| **Cosmetics / Ducks** | Visual customization of your duck | No                    |
 
 Only the Boosts collection mechanically affects who wins. The rest are about access (Runners), customization (Tracks, Cosmetics), or both.
 
@@ -21,10 +21,10 @@ The smart contract independently verifies the NFT is in the wallet at the moment
 
 ## Where to acquire
 
-* **Mints**. New collections drop periodically. Mint links appear on the homepage and in the Telegram announcement channel.
-* **Marketplace**. The in-app marketplace lists every Lucky Ducks NFT currently for sale. Filter by collection.
-* **Third party**. Tensor and MagicEden list the same NFTs. Buying from a third party works identically to buying in-app, the NFT lands in the same wallet.
-* **Mystery Boxes**. Sealed boxes you mint and open for a random reward NFT from the matching collection (Cosmetics, Tracks, or Boost). See [Mystery Boxes](mystery-boxes.md).
+- **Mints**. New collections drop periodically. Mint links appear on the homepage and in the Telegram announcement channel.
+- **Marketplace**. The in-app marketplace lists every Lucky Ducks NFT currently for sale. Filter by collection.
+- **Third party**. Tensor and MagicEden list the same NFTs. Buying from a third party works identically to buying in-app, the NFT lands in the same wallet.
+- **Mystery Boxes**. Sealed boxes you mint and open for a random reward NFT from the matching collection (Cosmetics, Tracks, or Boost). See [Mystery Boxes](mystery-boxes.md).
 
 ## What about royalties
 
@@ -34,8 +34,8 @@ Boosts, Runners, and Tracks ship without enforced royalties at the moment. The C
 
 Read the per collection pages for what each NFT actually does:
 
-* [Runner NFTs](runners.md)
-* [Boost NFTs](boosts.md)
-* [Track NFTs](tracks.md)
-* [Cosmetic NFTs](cosmetics.md)
-* [Mystery Boxes](mystery-boxes.md)
+- [Runner NFTs](runners.md)
+- [Boost NFTs](boosts.md)
+- [Track NFTs](tracks.md)
+- [Cosmetic NFTs](cosmetics.md)
+- [Mystery Boxes](mystery-boxes.md)

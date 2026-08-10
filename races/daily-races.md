@@ -4,14 +4,14 @@ Every wallet has a daily race allowance: a cap on how many races it can **play**
 
 ## What counts against your allowance
 
-| What you do | Uses one of your daily races |
-|-------------|------------------------------|
-| Create a race and join it yourself | Yes |
-| Create a sponsored race | No |
-| Host a race without joining it | No |
-| Join anyone's race | Yes |
-| Offer a rematch | Yes |
-| Accept a rematch | Yes |
+| What you do                        | Uses one of your daily races |
+| ---------------------------------- | ---------------------------- |
+| Create a race and join it yourself | Yes                          |
+| Create a sponsored race            | No                           |
+| Host a race without joining it     | No                           |
+| Join anyone's race                 | Yes                          |
+| Offer a rematch                    | Yes                          |
+| Accept a rematch                   | Yes                          |
 
 The practical effect: hosts and sponsors are not limited. If you run races for your community without playing in them, you can keep creating all day. The only pacing constraint is the short **30 second cooldown between race creations** from the same wallet.
 
@@ -19,9 +19,9 @@ The practical effect: hosts and sponsors are not limited. If you run races for y
 
 Holding a Runner NFT raises your daily race limit. Ownership is checked at the moment you play, so:
 
-* Buy a Runner today and the higher limit applies immediately.
-* Sell it and you go back to the standard limit on your next race.
-* A different Runner works just as well as the one you used yesterday.
+- Buy a Runner today and the higher limit applies immediately.
+- Sell it and you go back to the standard limit on your next race.
+- A different Runner works just as well as the one you used yesterday.
 
 The current limits: **50 races per day** without a Runner, **500 per day** for a Runner holder. Verification does not change this number; the Runner is the only thing that lifts it.
 

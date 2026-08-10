@@ -6,12 +6,12 @@ This guide walks through verifying a race independently of the Lucky Ducks websi
 
 You need three things: the program address, a block explorer, and the race ID from the race you want to verify.
 
-* **Program address**: `DuckBzSivbVv6b5zAw6EGP8YtLBbXwZmcoJPTQ5m1BkM`
-* **Block explorers**: any of these work. Solana Explorer doesn't render Anchor 0.30+ IDLs well, so prefer Solscan or SolanaFM for inspecting account contents.
-  * Solscan: `https://solscan.io/account/<address>`
-  * SolanaFM: `https://solana.fm/address/<address>`
-  * Solana Explorer: `https://explorer.solana.com/address/<address>`
-* **Race ID**: every race has a sequential number, visible in the UI and in the race URL. The race ID is what makes the race's accounts predictable: anyone who knows the ID can derive every account the race uses and look at it directly.
+- **Program address**: `DuckBzSivbVv6b5zAw6EGP8YtLBbXwZmcoJPTQ5m1BkM`
+- **Block explorers**: any of these work. Solana Explorer doesn't render Anchor 0.30+ IDLs well, so prefer Solscan or SolanaFM for inspecting account contents.
+  - Solscan: `https://solscan.io/account/<address>`
+  - SolanaFM: `https://solana.fm/address/<address>`
+  - Solana Explorer: `https://explorer.solana.com/address/<address>`
+- **Race ID**: every race has a sequential number, visible in the UI and in the race URL. The race ID is what makes the race's accounts predictable: anyone who knows the ID can derive every account the race uses and look at it directly.
 
 The ORAO VRF program; the third-party randomness oracle Lucky Ducks uses; has its own address: `VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y`. We'll come back to this in the VRF section.
 
@@ -37,16 +37,16 @@ The PDA derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`. Yo
 
 Once you have the race PDA, open it in Solscan. The "Data" or "Anchor" tab shows the race account decoded into fields. Read these in order:
 
-* **creator**: the wallet that started the race
-* **race\_id**: should match the ID you searched for
-* **entry\_fee**: the SOL or token amount each player paid
-* **max\_players**: how many players the race accepts
-* **prize\_pool**: the actual SOL or token amount at stake. After all joiners, this should be `entry_fee × number of players` (for non-sponsored races) or the sponsor's deposit (for sponsored races). For races that started underfilled, it'll be less than `entry_fee × max_players`; that's expected.
-* **status**: where in its lifecycle the race is. Possible values are `Open`, `VRFPending`, `Racing`, `Completed`, `Cancelled`, `Refunded`.
-* **players**: the list of player wallets that joined
-* **randomness\_account**: the address of the ORAO VRF account that will provide (or already provided) the random seed. Empty for races still in `Open`. We'll inspect this in step 4.
-* **vrf\_seed**: the actual random seed used to determine winners. Empty until VRF is fulfilled and consumed.
-* **winners**: the list of winning wallets. Empty until the race is finalized.
+- **creator**: the wallet that started the race
+- **race_id**: should match the ID you searched for
+- **entry_fee**: the SOL or token amount each player paid
+- **max_players**: how many players the race accepts
+- **prize_pool**: the actual SOL or token amount at stake. After all joiners, this should be `entry_fee × number of players` (for non-sponsored races) or the sponsor's deposit (for sponsored races). For races that started underfilled, it'll be less than `entry_fee × max_players`; that's expected.
+- **status**: where in its lifecycle the race is. Possible values are `Open`, `VRFPending`, `Racing`, `Completed`, `Cancelled`, `Refunded`.
+- **players**: the list of player wallets that joined
+- **randomness_account**: the address of the ORAO VRF account that will provide (or already provided) the random seed. Empty for races still in `Open`. We'll inspect this in step 4.
+- **vrf_seed**: the actual random seed used to determine winners. Empty until VRF is fulfilled and consumed.
+- **winners**: the list of winning wallets. Empty until the race is finalized.
 
 Everything you see in the UI for this race should match what's on chain. If the UI claims a race has a 10 SOL prize pool but the race account shows 1 SOL, the UI is lying.
 
@@ -56,10 +56,10 @@ In the race PDA's "Transactions" tab on Solscan, scroll to the very first transa
 
 Click through to the transaction details. You'll see:
 
-* The creator's wallet signed and submitted the tx
-* Two new accounts were created: the race account and a "race vault" PDA
-* The creator transferred a few amounts of SOL to the race vault: their entry fee (if non-sponsored), the VRF cost (paid up front so the race can pay the oracle when randomness is requested), and optionally an audio cost
-* An on-chain log entry; visible in the "Program Logs" section of the tx; reads `Race #N: created by ABC... (entry: X, players: Y, mode: Z, sponsored: bool)`
+- The creator's wallet signed and submitted the tx
+- Two new accounts were created: the race account and a "race vault" PDA
+- The creator transferred a few amounts of SOL to the race vault: their entry fee (if non-sponsored), the VRF cost (paid up front so the race can pay the oracle when randomness is requested), and optionally an audio cost
+- An on-chain log entry; visible in the "Program Logs" section of the tx; reads `Race #N: created by ABC... (entry: X, players: Y, mode: Z, sponsored: bool)`
 
 The race vault is the address where all the race's money lives. Find it the same way: it's a PDA derived from the race address, and Solscan will link directly to it from the race's tx history. Watch the vault's balance grow as players join and shrink to zero when prizes are paid out.
 
@@ -81,11 +81,11 @@ In the race account's "Transactions" tab, find a transaction with `request_rando
 
 In that tx you'll see:
 
-* A call to the Lucky Ducks program (the `request_randomness` instruction)
-* A nested invocation of the ORAO VRF program (`VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y`)
-* A new account created: this is the ORAO randomness account for this race. Its address is exactly what appears in the race's `randomness_account` field. Click through to it.
+- A call to the Lucky Ducks program (the `request_randomness` instruction)
+- A nested invocation of the ORAO VRF program (`VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y`)
+- A new account created: this is the ORAO randomness account for this race. Its address is exactly what appears in the race's `randomness_account` field. Click through to it.
 
-The randomness account starts empty (no seed yet). Then, within seconds, the ORAO fulfillment authority; a wallet operated by ORAO, *not* by Lucky Ducks; signs and submits a transaction that writes the seed into the account.
+The randomness account starts empty (no seed yet). Then, within seconds, the ORAO fulfillment authority; a wallet operated by ORAO, _not_ by Lucky Ducks; signs and submits a transaction that writes the seed into the account.
 
 In the randomness account's tx history, look for the fulfillment transaction. It's signed by an ORAO-operated wallet, calls the ORAO program, and writes the seed bytes into the account. After fulfillment, the seed is publicly visible: anyone can read it. There's no way for Lucky Ducks to change it after the fact, because the account is owned by the ORAO program, not the Lucky Ducks program.
 
@@ -99,9 +99,9 @@ Once the seed is on chain, a `consume_randomness` instruction reads it from the 
 
 Find the `finalize_race` transaction in the race's tx history. This is where winners are determined. Inspect:
 
-* The transaction's program logs include `Race #N: Finalized - X winner(s) determined`
-* The race account's `status` field changes to `Completed`
-* The race account's `winners` field is now populated
+- The transaction's program logs include `Race #N: Finalized - X winner(s) determined`
+- The race account's `status` field changes to `Completed`
+- The race account's `winners` field is now populated
 
 The winner-selection algorithm is deterministic: given the seed and the player list (including each player's NFT speed boost, if any), there is one and only one correct winner (or winning podium). The algorithm is published in the source code of the Lucky Ducks program. You can read it on GitHub and recompute the winner yourself from the seed and player data; the result must match what's in the `winners` field.
 
@@ -113,16 +113,16 @@ If the wallet in `winners[0]` doesn't match what the algorithm produces from `vr
 
 The final step is the `claim_prize` (or `claim_prize_token`) transaction. Find it in the race's tx history. Inspect:
 
-* The transaction calls the Lucky Ducks program with the `claim_prize` instruction
-* Money leaves the race vault: typically 95% to the winner(s), 5% to the platform fee wallet (the exact split depends on the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) for this pool size)
-* For podium races, the winner amounts follow the configured split (50/30/20 by default)
-* The race account is eventually closed (its rent is returned to the creator) once everything is settled
+- The transaction calls the Lucky Ducks program with the `claim_prize` instruction
+- Money leaves the race vault: typically 95% to the winner(s), 5% to the platform fee wallet (the exact split depends on the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) for this pool size)
+- For podium races, the winner amounts follow the configured split (50/30/20 by default)
+- The race account is eventually closed (its rent is returned to the creator) once everything is settled
 
 You can verify the exact amounts by looking at the SOL or token balance changes on each account in this transaction:
 
-* Race vault: goes to zero (or near zero)
-* Winner wallet: receives `prize_pool × (1 - fee_pct) × winner_share`
-* Platform fee wallet: receives `prize_pool × fee_pct`
+- Race vault: goes to zero (or near zero)
+- Winner wallet: receives `prize_pool × (1 - fee_pct) × winner_share`
+- Platform fee wallet: receives `prize_pool × fee_pct`
 
 The fee wallet address is stored in the platform config account (also a PDA, derived as `[b"platform_config"]` under the program). Open it the same way and check that the wallet receiving fees matches what's declared there.
 

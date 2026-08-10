@@ -6,8 +6,8 @@ Races and tournaments can be denominated in supported SPL tokens instead of SOL.
 
 The platform supports both Solana token standards:
 
-* **SPL Token (Legacy)**; the original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
-* **SPL Token-2022**; the newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
+- **SPL Token (Legacy)**; the original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
+- **SPL Token-2022**; the newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
 
 The race vault, ATA derivation, and payout logic select the correct token program automatically based on the mint's owner. From a player's perspective there is nothing to configure: you just pick the token in the currency picker and the on-chain instructions route to the right program.
 
@@ -17,9 +17,9 @@ For Token-2022 mints with the transfer fee extension, the platform reads the con
 
 Mechanically identical to a SOL race. The differences are:
 
-* The entry fee is denominated in the token's smallest unit (e.g. USDC has 6 decimals, so 1 USDC = 1,000,000 base units).
-* Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (\~0.002 SOL) you pay yourself, recoverable when you close the ATA.
-* The race vault holds the token in a vault-owned ATA. Payouts move the token from the vault ATA to each winner's ATA.
+- The entry fee is denominated in the token's smallest unit (e.g. USDC has 6 decimals, so 1 USDC = 1,000,000 base units).
+- Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (\~0.002 SOL) you pay yourself, recoverable when you close the ATA.
+- The race vault holds the token in a vault-owned ATA. Payouts move the token from the vault ATA to each winner's ATA.
 
 ## Selecting a token
 
@@ -45,5 +45,5 @@ Claiming works as it does for SOL. One transaction pays every member of the winn
 
 ## Why use SPL tokens
 
-* **Stablecoins (USDC, USDT)** keep the entry fee fixed in USD terms. No exposure to SOL price swings between joining and finalization.
-* **Community tokens** drive activity in their respective ecosystems. Race pools become liquidity events for those projects.
+- **Stablecoins (USDC, USDT)** keep the entry fee fixed in USD terms. No exposure to SOL price swings between joining and finalization.
+- **Community tokens** drive activity in their respective ecosystems. Race pools become liquidity events for those projects.

@@ -27,11 +27,11 @@ The engine picks a duck's speed independently on each of several segments. Two n
 
 Number of segments per race depends on duration:
 
-| Race duration | Segments per duck |
-|---------------|-------------------|
-| Up to 40 seconds | 3 to 5 |
-| 41 to 90 seconds | 5 to 9 |
-| Over 90 seconds | 7 to 13 |
+| Race duration    | Segments per duck |
+| ---------------- | ----------------- |
+| Up to 40 seconds | 3 to 5            |
+| 41 to 90 seconds | 5 to 9            |
+| Over 90 seconds  | 7 to 13           |
 
 Each duck has its own independent draw of segment count, per segment weights (1-3), and per segment speeds. So it is not "duck A cruises at one speed the whole time." It looks more like: duck A goes 900, 620, 1350, 780, 1100; duck B goes 700, 1250, 940, 1180, 830. A 1% boost multiplies each of B's segment speeds by 1.01. Compared with the spread between segments, that multiplier is tiny.
 
@@ -39,12 +39,12 @@ Each duck has its own independent draw of segment count, per segment weights (1-
 
 Base odds in a 5 player race are 20% per duck. Boost shifts them only slightly:
 
-| Boost | 5 player, 30s race | 5 player, 60s race | 5 player, 3 minute race |
-|-------|--------------------|--------------------|--------------------------|
-| None | 19.9% | 20.1% | 20.0% |
-| +0.1% | 20.1% | 20.3% | 20.2% |
-| +0.5% | 20.8% | 21.2% | 21.4% |
-| +1% (max) | 21.7% | 22.4% | 22.7% |
+| Boost     | 5 player, 30s race | 5 player, 60s race | 5 player, 3 minute race |
+| --------- | ------------------ | ------------------ | ----------------------- |
+| None      | 19.9%              | 20.1%              | 20.0%                   |
+| +0.1%     | 20.1%              | 20.3%              | 20.2%                   |
+| +0.5%     | 20.8%              | 21.2%              | 21.4%                   |
+| +1% (max) | 21.7%              | 22.4%              | 22.7%                   |
 
 Longer races give the boost slightly more visibility (more segments average out the random draws, so a fixed multiplier stands out a bit more), but even at the max cap and longest duration, the shift is only about 2.7 percentage points from base.
 
@@ -52,12 +52,12 @@ Longer races give the boost slightly more visibility (more segments average out 
 
 The effect scales down as the lobby grows:
 
-| Lobby | Base odds | +1% boost win rate |
-|-------|-----------|--------------------|
-| 1v1 | 50% | 52.0% |
-| 5 player | 20% | 21.7% |
-| 10 player | 10% | 11.1% |
-| 20 player | 5% | 5.8% |
+| Lobby     | Base odds | +1% boost win rate |
+| --------- | --------- | ------------------ |
+| 1v1       | 50%       | 52.0%              |
+| 5 player  | 20%       | 21.7%              |
+| 10 player | 10%       | 11.1%              |
+| 20 player | 5%        | 5.8%               |
 
 In every case, the boost adds roughly one to two percentage points, never more.
 
@@ -66,20 +66,20 @@ In every case, the boost adds roughly one to two percentage points, never more.
 In a 5 player, 30 second race, a duck running the max +1% boost finishes at each position:
 
 | Finish position | Frequency |
-|-----------------|-----------|
-| 1st (win) | 21.8% |
-| 2nd | 20.7% |
-| 3rd | 20.0% |
-| 4th | 19.3% |
-| 5th (last) | 18.2% |
+| --------------- | --------- |
+| 1st (win)       | 21.8%     |
+| 2nd             | 20.7%     |
+| 3rd             | 20.0%     |
+| 4th             | 19.3%     |
+| 5th (last)      | 18.2%     |
 
 **A +1% duck finishes last almost as often as a duck with no boost.** The random speed draw dominates. Every finished race is public on chain, so if you want to check for yourself, the historical races are open to inspection. See [How to verify a race on-chain](../trust/verifying-a-race.md).
 
 ### If you'd rather race without boosters
 
-* **Sponsored races.** Boosters are disabled in sponsored races entirely. If the creator is putting up the prize, no boost NFTs are allowed. Fully symmetric field.
-* **No-boost races.** A creator can flip a switch when creating any race to disable boosts entirely, sponsored or not. See [No-boost races](#no-boost-races) below.
-* **Allowlist races.** Allowlist lets you invite specific wallets, so you can run a boost free race by inviting only players who agree not to equip one. There is one caveat: allowlisted players **can** still equip a boost if they own one. The allowlist controls who joins, not what they bring. See [Allowed players (private invites)](../races/access-and-gating.md#allowed-players-private-invites).
+- **Sponsored races.** Boosters are disabled in sponsored races entirely. If the creator is putting up the prize, no boost NFTs are allowed. Fully symmetric field.
+- **No-boost races.** A creator can flip a switch when creating any race to disable boosts entirely, sponsored or not. See [No-boost races](#no-boost-races) below.
+- **Allowlist races.** Allowlist lets you invite specific wallets, so you can run a boost free race by inviting only players who agree not to equip one. There is one caveat: allowlisted players **can** still equip a boost if they own one. The allowlist controls who joins, not what they bring. See [Allowed players (private invites)](../races/access-and-gating.md#allowed-players-private-invites).
 
 There is no counter NFT. Boosts cannot be neutralized or stolen. The only way another player counters your boost in a regular race is by holding their own.
 

@@ -8,10 +8,10 @@ One tournament runs at a time. Its page shows the window, the rule it is scored 
 
 A race counts toward your team's standing when it finishes inside the window and meets the tournament's conditions. Each tournament sets its own, and its page lists them:
 
-* Races have to start after the tournament does. A race created earlier does not count even if it settles during the window.
-* If the pot is denominated in a token, only races using that token count.
-* A team may need a minimum number of members to qualify at all.
-* Sponsored races, the ones somebody else paid for, are either included or excluded.
+- Races have to start after the tournament does. A race created earlier does not count even if it settles during the window.
+- If the pot is denominated in a token, only races using that token count.
+- A team may need a minimum number of members to qualify at all.
+- Sponsored races, the ones somebody else paid for, are either included or excluded.
 
 Only races that have finalized on chain count. One still in its lobby, waiting on randomness, or mid-run is not counted until it settles.
 
@@ -19,15 +19,15 @@ Only races that have finalized on chain count. One still in its lobby, waiting o
 
 Every rule is a **per-player average**, so a large team does not win by size alone. Ten members racing once each score exactly what one member racing ten times scores.
 
-| Family | Scored on |
-| ------ | --------- |
-| Wins, races, XP, SOL volume, token volume, podium finishes | The average per member, one rule per metric |
-| Weighted | Average wins at 60 percent plus average races at 40 percent |
-| Duels | Points from 1v1 rematches, doubled against another team or a solo racer |
-| Worst results | Most last places per member. The more you lose, the better |
-| Creators | Most completed races created per member |
-| Biggest races | Bigger lobbies score more, with a bonus for a mixed lobby |
-| NFT and token rules | Races per member, where races using a Boost, a Cosmetic, or the tournament's paired collection or token count twice |
+| Family                                                     | Scored on                                                                                                           |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Wins, races, XP, SOL volume, token volume, podium finishes | The average per member, one rule per metric                                                                         |
+| Weighted                                                   | Average wins at 60 percent plus average races at 40 percent                                                         |
+| Duels                                                      | Points from 1v1 rematches, doubled against another team or a solo racer                                             |
+| Worst results                                              | Most last places per member. The more you lose, the better                                                          |
+| Creators                                                   | Most completed races created per member                                                                             |
+| Biggest races                                              | Bigger lobbies score more, with a bonus for a mixed lobby                                                           |
+| NFT and token rules                                        | Races per member, where races using a Boost, a Cosmetic, or the tournament's paired collection or token count twice |
 
 The first family carries a **diversity bonus**: 10 percent per outside team or solo racer your team meets, averaged across your races. Racing only against your own members scores the least. The other rules already account for outside play, so they take no bonus.
 

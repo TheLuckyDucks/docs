@@ -21,24 +21,24 @@ The default minimum duration (30 seconds) is available to everyone. **Picking an
 
 ### Race mode
 
-* **Winner Takes All (WTA)**. The first place finisher gets the entire prize pool, minus the platform fee. Cleanest format for small races.
-* **Podium split**. The pot is split 50/30/20 between first, second, and third. Requires at least 3 players. Better for big lobbies.
+- **Winner Takes All (WTA)**. The first place finisher gets the entire prize pool, minus the platform fee. Cleanest format for small races.
+- **Podium split**. The pot is split 50/30/20 between first, second, and third. Requires at least 3 players. Better for big lobbies.
 
 ## Optional opt ins
 
 These are off by default. Most need a Runner NFT to enable.
 
-* **AI commentary**. A funny per second narration track generated on the fly. Adds a small cost per race second.
-* **X announcement**. Post the race to Lucky Ducks' X (Twitter) account so it's advertised outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
-* **Custom join timeout**. Default is 1 hour; you can shorten or extend it.
-* **Custom name**. Show a race title (up to 32 characters) in the lobby list.
-* **Custom track**. Use a Track NFT you own as the race background.
-* **Start when underfilled**. Permit the race to launch with fewer than max players once the join timeout passes. See [Advanced options](advanced-options.md).
-* **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
-* **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
-* **No-boost race**. Disable boost NFTs for everyone in this race, including yourself. See [No-boost races](../nfts/boosts.md#no-boost-races).
-* **Join setting (who can join)**. Open by default. Switch to Verified Only, NFT Holders, or Token Holders to gate the race without needing a Runner. Allowed Players (invite list of up to 20 wallets) is also available but requires a Runner. See [Race access and gating](access-and-gating.md).
-* **Minimum account age**. Require joiners to have a player account at least a certain age. Useful for keeping fresh wallets out. Defaults to 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
+- **AI commentary**. A funny per second narration track generated on the fly. Adds a small cost per race second.
+- **X announcement**. Post the race to Lucky Ducks' X (Twitter) account so it's advertised outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
+- **Custom join timeout**. Default is 1 hour; you can shorten or extend it.
+- **Custom name**. Show a race title (up to 32 characters) in the lobby list.
+- **Custom track**. Use a Track NFT you own as the race background.
+- **Start when underfilled**. Permit the race to launch with fewer than max players once the join timeout passes. See [Advanced options](advanced-options.md).
+- **Host without playing**. Create the race without taking a slot as a player. Not available for 1v1 races, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
+- **Sponsored race**. Pay the prize pool yourself instead of asking players to. Useful for community giveaways.
+- **No-boost race**. Disable boost NFTs for everyone in this race, including yourself. See [No-boost races](../nfts/boosts.md#no-boost-races).
+- **Join setting (who can join)**. Open by default. Switch to Verified Only, NFT Holders, or Token Holders to gate the race without needing a Runner. Allowed Players (invite list of up to 20 wallets) is also available but requires a Runner. See [Race access and gating](access-and-gating.md).
+- **Minimum account age**. Require joiners to have a player account at least a certain age. Useful for keeping fresh wallets out. Defaults to 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
 ## Sign and submit
 

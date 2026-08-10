@@ -62,15 +62,15 @@ Require that anyone joining the race has a player account at least a certain num
 
 What it does:
 
-* A joining wallet must have an existing player account, and that account must have been around for at least the configured duration. Otherwise the join is rejected.
-* A brand new player (one whose player account is created during the join transaction) is always treated as zero seconds old, so they cannot join a gated race. The gate is a simple, effective barrier against fresh sybil accounts spun up for a single race.
-* It works on top of whatever validation the race uses. You can combine it with Verified Only, with a private allowlist, or with no restriction at all (Anyone).
+- A joining wallet must have an existing player account, and that account must have been around for at least the configured duration. Otherwise the join is rejected.
+- A brand new player (one whose player account is created during the join transaction) is always treated as zero seconds old, so they cannot join a gated race. The gate is a simple, effective barrier against fresh sybil accounts spun up for a single race.
+- It works on top of whatever validation the race uses. You can combine it with Verified Only, with a private allowlist, or with no restriction at all (Anyone).
 
 Things worth knowing:
 
-* The gate is fixed at race creation and does not change for the lifetime of the race. Rematches inherit it.
-* Your own auto join as creator is subject to the same check. If your player account is too new, you either have to wait, lower the threshold, or use host mode to create the race without joining it. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
-* If you are not sure whether your wallet qualifies for a gated race, the join screen tells you so before you sign.
+- The gate is fixed at race creation and does not change for the lifetime of the race. Rematches inherit it.
+- Your own auto join as creator is subject to the same check. If your player account is too new, you either have to wait, lower the threshold, or use host mode to create the race without joining it. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
+- If you are not sure whether your wallet qualifies for a gated race, the join screen tells you so before you sign.
 
 ## Combining options
 

@@ -4,19 +4,19 @@ Custom backgrounds for your races. A Track NFT is essentially a themed visual en
 
 ## What you get
 
-* A high resolution background image and matching pond reflection
-* A track name shown on the race card and detail modal
-* The ability to deep link to the NFT page from any race that uses it
-* A marketplace shortcut button on the race detail's Track Info row
+- A high resolution background image and matching pond reflection
+- A track name shown on the race card and detail modal
+- The ability to deep link to the NFT page from any race that uses it
+- A marketplace shortcut button on the race detail's Track Info row
 
 ## Built in tracks
 
 Four standard tracks ship with the platform and are always available, no NFT required:
 
-* Day
-* Night
-* Sunset
-* Sunrise
+- Day
+- Night
+- Sunset
+- Sunrise
 
 These cover the most common visual flavors. They are randomly assigned at race creation if no custom track is selected.
 

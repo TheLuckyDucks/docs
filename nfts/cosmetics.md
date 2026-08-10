@@ -4,10 +4,10 @@ Wearable duck skins. A Cosmetic NFT (sometimes referred to as a "Duck" by the te
 
 ## What changes
 
-* Color palette of the duck's body, beak, and accessories
-* Optional themed outfits (astronaut, pirate, royal, more)
-* Optional pattern overlays (camo, gradient, animated)
-* Avatar on the lobby and player pages, when you set the cosmetic as your default
+- Color palette of the duck's body, beak, and accessories
+- Optional themed outfits (astronaut, pirate, royal, more)
+- Optional pattern overlays (camo, gradient, animated)
+- Avatar on the lobby and player pages, when you set the cosmetic as your default
 
 ## How they apply
 
@@ -25,9 +25,9 @@ The Cosmetics collection has no enforced royalties.
 
 ## Acquiring
 
-* Scheduled themed drops (every few weeks)
-* In app marketplace listings
-* Third party marketplaces (Tensor, MagicEden) carry the same NFTs
+- Scheduled themed drops (every few weeks)
+- In app marketplace listings
+- Third party marketplaces (Tensor, MagicEden) carry the same NFTs
 
 ## Setting an avatar
 

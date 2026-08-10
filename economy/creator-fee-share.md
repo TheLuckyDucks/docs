@@ -4,27 +4,27 @@ Creator Fee Share lets a race creator keep part of the platform fee at race end.
 
 ## What this changes (and what it doesn't)
 
-* **Entry fees:** unchanged. Players still pay the same amount to join.
-* **Winner payout:** unchanged. Winners still take home the prize pool minus the platform fee, split according to the race mode.
-* **Platform fee total:** unchanged. Still pulled from the prize pool at the fee tier rate.
-* **Where the platform fee goes:** this is the only thing that moves. Part of the fee can be redirected from the treasury to the race creator.
+- **Entry fees:** unchanged. Players still pay the same amount to join.
+- **Winner payout:** unchanged. Winners still take home the prize pool minus the platform fee, split according to the race mode.
+- **Platform fee total:** unchanged. Still pulled from the prize pool at the fee tier rate.
+- **Where the platform fee goes:** this is the only thing that moves. Part of the fee can be redirected from the treasury to the race creator.
 
 ## Runner is the gate, Track is a bonus
 
 The size of a creator's share depends on which NFTs were used to create the race.
 
-* **Runner NFT.** Required for any creator share at all. A race created with a Runner (and more than 2 players) earns the Runner share, the larger of the two.
-* **Track NFT.** Adds a smaller bonus on top of the Runner share. A Track NFT only counts when used together with a Runner. A Track on its own gives nothing.
+- **Runner NFT.** Required for any creator share at all. A race created with a Runner (and more than 2 players) earns the Runner share, the larger of the two.
+- **Track NFT.** Adds a smaller bonus on top of the Runner share. A Track NFT only counts when used together with a Runner. A Track on its own gives nothing.
 
 Both are percentages of the platform fee, and the create form shows what your race will earn before you sign. Without a Runner, the creator's share is always 0%, even if a Track was used.
 
 The rates used throughout this page, a 40% Runner share and a 10% Track bonus, are the platform's settings and are the ones the tables below are worked from.
 
-| Race created with... | Creator share |
-|----------------------|----------------|
-| No Runner NFT (Track or not) | 0% |
-| 1-v-1 race (2 players) | 0% |
-| Runner NFT, more than 2 players | 40% (Runner) |
+| Race created with...                           | Creator share        |
+| ---------------------------------------------- | -------------------- |
+| No Runner NFT (Track or not)                   | 0%                   |
+| 1-v-1 race (2 players)                         | 0%                   |
+| Runner NFT, more than 2 players                | 40% (Runner)         |
 | Runner NFT plus Track NFT, more than 2 players | 50% (Runner + Track) |
 
 The Runner and Track percentages are platform settings managed by the team. They can be tuned over time. New rates only apply to **new** races; races already created keep the share they snapshotted at creation.
@@ -33,10 +33,10 @@ The Runner and Track percentages are platform settings managed by the team. They
 
 Only regular Winner Takes All and Podium races. Creator Fee Share does **not** apply to:
 
-* **1-v-1 races (2 players).** Excluded by design.
-* **Sponsored races.** When the creator funds the prize themselves, they don't earn a cut of the platform fee on top of that. The treasury keeps the full fee.
-* **Hosted races (creator did not join as a player).** A creator who [hosts without playing](../races/hosting-and-cancelling.md#host-a-race-without-playing) gives up the Creator Fee Share. Hosting and earning a share are separate paths.
-* **Refunded or cancelled races.** No prize is claimed, so no fee is paid, so there's no share to pay out.
+- **1-v-1 races (2 players).** Excluded by design.
+- **Sponsored races.** When the creator funds the prize themselves, they don't earn a cut of the platform fee on top of that. The treasury keeps the full fee.
+- **Hosted races (creator did not join as a player).** A creator who [hosts without playing](../races/hosting-and-cancelling.md#host-a-race-without-playing) gives up the Creator Fee Share. Hosting and earning a share are separate paths.
+- **Refunded or cancelled races.** No prize is claimed, so no fee is paid, so there's no share to pay out.
 
 Rematches inherit whatever share was snapshotted on the original race, even if platform defaults have since changed.
 
@@ -50,30 +50,30 @@ This protects creators from surprise drops mid-race and keeps the math on any in
 
 Say a Winner Takes All race has a 1 SOL prize pool. The fee tier at that pool size is 3% (see [Fees and prizes](fees-and-prizes.md#platform-fee-tiers)).
 
-* Platform fee: `1 SOL × 3% = 0.03 SOL`
-* Winner payout: `1 SOL - 0.03 SOL = 0.97 SOL` (always, regardless of creator share)
+- Platform fee: `1 SOL × 3% = 0.03 SOL`
+- Winner payout: `1 SOL - 0.03 SOL = 0.97 SOL` (always, regardless of creator share)
 
 Depending on the NFTs used to create the race, the 0.03 SOL fee splits like this:
 
 | Race created with... | Creator share | Treasury keeps | Creator receives |
-|----------------------|---------------|----------------|-------------------|
-| No Runner | 0% | 0.03 SOL | 0 |
-| Runner | 40% | 0.018 SOL | 0.012 SOL |
-| Runner + Track | 50% | 0.015 SOL | 0.015 SOL |
+| -------------------- | ------------- | -------------- | ---------------- |
+| No Runner            | 0%            | 0.03 SOL       | 0                |
+| Runner               | 40%           | 0.018 SOL      | 0.012 SOL        |
+| Runner + Track       | 50%           | 0.015 SOL      | 0.015 SOL        |
 
 The winner gets 0.97 SOL in every case.
 
 ## Where the creator share lands
 
-* **SOL races.** The creator's share rides along with the existing rent return at race close. There is no separate claim step. It arrives the moment the race settles, in the creator's wallet or their [player vault](player-vault.md) according to their payout setting.
-* **SPL token races.** The creator's share is sent to the creator's Associated Token Account for that token. If they don't have one for the mint yet, it's created automatically as part of the claim transaction. Both legacy SPL Token and Token-2022 mints are supported, the same way as the rest of the [SPL flow](spl-tokens.md).
+- **SOL races.** The creator's share rides along with the existing rent return at race close. There is no separate claim step. It arrives the moment the race settles, in the creator's wallet or their [player vault](player-vault.md) according to their payout setting.
+- **SPL token races.** The creator's share is sent to the creator's Associated Token Account for that token. If they don't have one for the mint yet, it's created automatically as part of the claim transaction. Both legacy SPL Token and Token-2022 mints are supported, the same way as the rest of the [SPL flow](spl-tokens.md).
 
 ## Tracking it
 
 Two places surface the creator share:
 
-* **On the race itself.** A race exposes `creatorFeeShareBps`, which is the combined Runner + Track value snapshotted at creation. The dApp uses this to show players what cut the creator earns for that specific race.
-* **At payout.** A real-time event fires when the share is paid out at claim time, with the amount, the creator's wallet, and the transaction signature. The creator sees the payout immediately in their personal feed.
+- **On the race itself.** A race exposes `creatorFeeShareBps`, which is the combined Runner + Track value snapshotted at creation. The dApp uses this to show players what cut the creator earns for that specific race.
+- **At payout.** A real-time event fires when the share is paid out at claim time, with the amount, the creator's wallet, and the transaction signature. The creator sees the payout immediately in their personal feed.
 
 If the share is 0 (because no Runner was used, or the race is 1-v-1, or it was sponsored), no payout event is emitted, since there's nothing to pay.
 
@@ -81,8 +81,8 @@ If the share is 0 (because no Runner was used, or the race is 1-v-1, or it was s
 
 The Runner and Track defaults live in the platform configuration as two separate values:
 
-* `creatorFeeShareRunnerBps`: the Runner-only share, in basis points (10000 = 100%).
-* `creatorFeeShareTrackBps`: the Track bonus added when both Runner and Track are used, also in basis points.
+- `creatorFeeShareRunnerBps`: the Runner-only share, in basis points (10000 = 100%).
+- `creatorFeeShareTrackBps`: the Track bonus added when both Runner and Track are used, also in basis points.
 
 Both must be between 0 and 10000. Only the configuration owner can change them, and the new values only take effect for new races.
 

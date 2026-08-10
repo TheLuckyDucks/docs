@@ -38,8 +38,8 @@ Closing your player account returns everything in one transaction: your SOL bala
 
 Separately from how you pay, you choose where money coming back to you goes:
 
-* **Wallet.** The default. Prizes, refunds and returned rent arrive in your wallet, as they always have.
-* **Vault.** The same money is added to your vault balance instead, ready to fund your next race with no top up.
+- **Wallet.** The default. Prizes, refunds and returned rent arrive in your wallet, as they always have.
+- **Vault.** The same money is added to your vault balance instead, ready to fund your next race with no top up.
 
 The choice is yours alone and applies to every race you are in. Nobody else can change where your money lands, which matters on refunds, because anyone is allowed to trigger a refund on a lobby that never filled.
 

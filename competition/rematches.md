@@ -10,8 +10,8 @@ Click Offer Rematch from the prize claim screen on a 1v1 race. This creates the 
 
 Behind the scenes:
 
-* If you are the winner, your stake in the new race is exactly **one entry fee**, taken from your unclaimed winnings. The rest of the payout, minus the platform fee, goes to you when your opponent accepts. You do not need to claim the finished race separately.
-* If you are the loser, you deposit one entry fee up front. Your opponent's stake is added when they accept.
+- If you are the winner, your stake in the new race is exactly **one entry fee**, taken from your unclaimed winnings. The rest of the payout, minus the platform fee, goes to you when your opponent accepts. You do not need to claim the finished race separately.
+- If you are the loser, you deposit one entry fee up front. Your opponent's stake is added when they accept.
 
 Either way, the rematch pot is exactly 2 entry fees, matching the race it followed.
 
@@ -21,10 +21,10 @@ Offering a rematch uses one of your daily races (see [Daily races](../races/dail
 
 Most of the new race is inherited from the one it follows: entry fee, race duration, join setting, no-boost mode, and any customization the original race had. The proposer can adjust three things independently at propose time:
 
-* **AI commentary.** You can add audio commentary to a rematch even if the finished race did not have it, and you can drop it even if the finished race did. Audio is supported for any race size, **including 1v1**. The audio cost (per second times duration) is deposited by the proposer at propose time, same as on a fresh race. See [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation).
-* **X announcement.** Post the rematch publicly to Lucky Ducks' X account. Picked independently at propose time, whether or not the finished race had it. Flat 0.005 SOL cost, non-refundable, paid by the proposer at propose time. See [X announcement](../races/advanced-options.md#x-announcement).
-* **Your Track NFT.** If you hold a Track NFT and pass it, the rematch uses it as the visual background. If you skip it, the rematch keeps whichever Track (if any) the previous race used.
-* **Your Runner NFT.** Attach it to lift your daily race allowance ceiling (500 with a Runner vs 50 without). It is optional; without it, the rematch still goes through but counts against the standard allowance. AI commentary itself always requires a Runner in the proposer's wallet, so if you enable audio you are attaching a Runner anyway.
+- **AI commentary.** You can add audio commentary to a rematch even if the finished race did not have it, and you can drop it even if the finished race did. Audio is supported for any race size, **including 1v1**. The audio cost (per second times duration) is deposited by the proposer at propose time, same as on a fresh race. See [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation).
+- **X announcement.** Post the rematch publicly to Lucky Ducks' X account. Picked independently at propose time, whether or not the finished race had it. Flat 0.005 SOL cost, non-refundable, paid by the proposer at propose time. See [X announcement](../races/advanced-options.md#x-announcement).
+- **Your Track NFT.** If you hold a Track NFT and pass it, the rematch uses it as the visual background. If you skip it, the rematch keeps whichever Track (if any) the previous race used.
+- **Your Runner NFT.** Attach it to lift your daily race allowance ceiling (500 with a Runner vs 50 without). It is optional; without it, the rematch still goes through but counts against the standard allowance. AI commentary itself always requires a Runner in the proposer's wallet, so if you enable audio you are attaching a Runner anyway.
 
 The rematch inherits the race name with a " #N" suffix (where N is the rematch number in the chain), so a race called "Duel" becomes "Duel #2", "Duel #3", and so on.
 
@@ -32,8 +32,8 @@ The rematch inherits the race name with a " #N" suffix (where N is the rematch n
 
 Your opponent has a fixed acceptance window to accept. If they accept:
 
-* The finished race pays out immediately to the winner: no separate claim needed.
-* The new race starts.
+- The finished race pays out immediately to the winner: no separate claim needed.
+- The new race starts.
 
 Accepting also uses one of the accepter's daily races.
 
@@ -51,10 +51,10 @@ Non-participants can also clear an abandoned offer, but only after the acceptanc
 
 ## Nobody is ever stuck
 
-* The proposer can cancel at any moment.
-* The opponent can decline at any moment.
-* After the acceptance window, anyone at all can clear the offer, refunding the proposer in full.
-* Your prize from the original race is **never** held hostage by a pending rematch. You can claim it whenever you like even while a rematch offer sits open.
+- The proposer can cancel at any moment.
+- The opponent can decline at any moment.
+- After the acceptance window, anyone at all can clear the offer, refunding the proposer in full.
+- Your prize from the original race is **never** held hostage by a pending rematch. You can claim it whenever you like even while a rematch offer sits open.
 
 ## Rematch chains
 

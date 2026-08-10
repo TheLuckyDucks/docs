@@ -6,15 +6,15 @@ Join the main group at [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks), or add 
 
 ## Everyday commands
 
-| Command | What it does |
-|---------|--------------|
-| `/duck` | Your player stats (races, wins, XP, badges). |
-| `/races` | Currently open races. |
-| `/race` | Details for a specific race. |
-| `/team` | Your team's stats. |
-| `/teams` | Browse teams. |
+| Command        | What it does                                                         |
+| -------------- | -------------------------------------------------------------------- |
+| `/duck`        | Your player stats (races, wins, XP, badges).                         |
+| `/races`       | Currently open races.                                                |
+| `/race`        | Details for a specific race.                                         |
+| `/team`        | Your team's stats.                                                   |
+| `/teams`       | Browse teams.                                                        |
 | `/leaderboard` | Top players. Add `day`, `week`, `month`, or `all` for a time window. |
-| `/help` | The full command list. |
+| `/help`        | The full command list.                                               |
 
 The bot also announces races, wins, and prize claims in your group automatically, with a link to view each race on the site (and on X for sponsored races).
 
@@ -50,9 +50,9 @@ If you want your engagement credited to you personally, link your X account once
 
 After that, when a raid ends the bot tallies who engaged and awards points:
 
-* Like = **2** points
-* Retweet = **3** points
-* Reply = **4** points
+- Like = **2** points
+- Retweet = **3** points
+- Reply = **4** points
 
 Check standings with `/raidboard` (add `week` or `month` for a shorter window). Points also feed your global XP and unlock raid badges (see [Badges](../competition/badges.md)).
 

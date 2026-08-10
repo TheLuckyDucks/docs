@@ -17,15 +17,15 @@ index. The sections are sequenced so a new player can go top to bottom:
 orientation, then the thing they came to do, then the things that modify it,
 then the money, then the trust story, then reference.
 
-| Section           | Answers                                                    |
-| ----------------- | ------------------------------------------------------------ |
-| Getting Started   | What is this, how does one race go, what do I do first      |
-| Races             | How do I create or join one, and what are all these options |
-| NFTs              | What do the four collections change                         |
-| Competition       | Tournaments, teams, rematches, badges                       |
-| Economy           | What does it cost, what do I get back                       |
-| Trust and Fairness | Why should I believe the result                            |
-| Help              | FAQ, glossary, bot, where to find us                        |
+| Section            | Answers                                                     |
+| ------------------ | ----------------------------------------------------------- |
+| Getting Started    | What is this, how does one race go, what do I do first      |
+| Races              | How do I create or join one, and what are all these options |
+| NFTs               | What do the four collections change                         |
+| Competition        | Tournaments, teams, rematches, badges                       |
+| Economy            | What does it cost, what do I get back                       |
+| Trust and Fairness | Why should I believe the result                             |
+| Help               | FAQ, glossary, bot, where to find us                        |
 
 A page whose section is not obvious is usually a page trying to answer two
 questions.
@@ -35,41 +35,41 @@ questions.
 The page in the right column is the one that carries the full treatment. Every
 other mention links to it rather than restating it.
 
-| Topic                                     | Owned by                            |
-| ----------------------------------------- | ------------------------------------- |
-| What the platform is, and who runs it     | `introduction/what-is-lucky-ducks.md` |
-| The lifecycle of one race, start to finish | `introduction/how-it-works.md`       |
-| First-time wallet to first race           | `introduction/getting-started.md`     |
-| The create-a-race form and its choices    | `races/creating-a-race.md`            |
-| Joining, the lobby, watching the race     | `races/joining-and-playing.md`        |
-| Signing once instead of once per action   | `races/delegated-play.md`             |
-| WTA and Podium Split, and ties            | `races/race-modes.md`                 |
-| Who may join: the five join settings, gates, allowlists | `races/access-and-gating.md` |
-| Everything optional at creation           | `races/advanced-options.md`           |
-| Hosting without playing, cancelling, expiry | `races/hosting-and-cancelling.md`   |
-| The daily race allowance                  | `races/daily-races.md`                |
-| The four collections at a glance          | `nfts/README.md`                      |
-| Runner, and what it unlocks               | `nfts/runners.md`                     |
-| Boost mechanics, stacking, fairness       | `nfts/boosts.md`                      |
-| Tracks and custom scenery                 | `nfts/tracks.md`                      |
-| Cosmetics and avatars                     | `nfts/cosmetics.md`                   |
-| Mystery Boxes                             | `nfts/mystery-boxes.md`               |
-| Tournaments, rule sets, standings         | `competition/tournaments.md`          |
-| Teams, membership, standings              | `competition/teams.md`                |
-| Rematch proposals and chains              | `competition/rematches.md`            |
-| Badges and XP milestones                  | `competition/badges.md`               |
-| Entry fee, platform fee tiers, prize pool | `economy/fees-and-prizes.md`          |
-| The pre-funded balance, deposits, withdrawals, payout target | `economy/player-vault.md`  |
-| Creator fee share                         | `economy/creator-fee-share.md`        |
-| Withdrawals, refunds, rent, surcharges    | `economy/refunds-and-rent.md`         |
-| Token races, supported programs           | `economy/spl-tokens.md`               |
-| ORAO VRF and how a seed becomes a winner  | `trust/fairness.md`                   |
-| Checking a race yourself in an explorer   | `trust/verifying-a-race.md`           |
-| Player profiles and verification badges   | `trust/verification.md`               |
-| Common questions                          | `help/faq.md`                         |
-| Terms a player will meet                  | `help/glossary.md`                    |
-| The Telegram bot and raids                | `help/telegram-bot.md`                |
-| Where to reach the team                   | `help/social-networks.md`             |
+| Topic                                                        | Owned by                              |
+| ------------------------------------------------------------ | ------------------------------------- |
+| What the platform is, and who runs it                        | `introduction/what-is-lucky-ducks.md` |
+| The lifecycle of one race, start to finish                   | `introduction/how-it-works.md`        |
+| First-time wallet to first race                              | `introduction/getting-started.md`     |
+| The create-a-race form and its choices                       | `races/creating-a-race.md`            |
+| Joining, the lobby, watching the race                        | `races/joining-and-playing.md`        |
+| Signing once instead of once per action                      | `races/delegated-play.md`             |
+| WTA and Podium Split, and ties                               | `races/race-modes.md`                 |
+| Who may join: the five join settings, gates, allowlists      | `races/access-and-gating.md`          |
+| Everything optional at creation                              | `races/advanced-options.md`           |
+| Hosting without playing, cancelling, expiry                  | `races/hosting-and-cancelling.md`     |
+| The daily race allowance                                     | `races/daily-races.md`                |
+| The four collections at a glance                             | `nfts/README.md`                      |
+| Runner, and what it unlocks                                  | `nfts/runners.md`                     |
+| Boost mechanics, stacking, fairness                          | `nfts/boosts.md`                      |
+| Tracks and custom scenery                                    | `nfts/tracks.md`                      |
+| Cosmetics and avatars                                        | `nfts/cosmetics.md`                   |
+| Mystery Boxes                                                | `nfts/mystery-boxes.md`               |
+| Tournaments, rule sets, standings                            | `competition/tournaments.md`          |
+| Teams, membership, standings                                 | `competition/teams.md`                |
+| Rematch proposals and chains                                 | `competition/rematches.md`            |
+| Badges and XP milestones                                     | `competition/badges.md`               |
+| Entry fee, platform fee tiers, prize pool                    | `economy/fees-and-prizes.md`          |
+| The pre-funded balance, deposits, withdrawals, payout target | `economy/player-vault.md`             |
+| Creator fee share                                            | `economy/creator-fee-share.md`        |
+| Withdrawals, refunds, rent, surcharges                       | `economy/refunds-and-rent.md`         |
+| Token races, supported programs                              | `economy/spl-tokens.md`               |
+| ORAO VRF and how a seed becomes a winner                     | `trust/fairness.md`                   |
+| Checking a race yourself in an explorer                      | `trust/verifying-a-race.md`           |
+| Player profiles and verification badges                      | `trust/verification.md`               |
+| Common questions                                             | `help/faq.md`                         |
+| Terms a player will meet                                     | `help/glossary.md`                    |
+| The Telegram bot and raids                                   | `help/telegram-bot.md`                |
+| Where to reach the team                                      | `help/social-networks.md`             |
 
 ## Topics that live on more than one page
 

@@ -8,8 +8,8 @@ The first place finisher gets the entire prize pool, minus the platform fee. Eve
 
 WTA is the canonical mode. Use it when:
 
-* You want the simplest possible payout (one winner, everyone else competes for that single slot).
-* The entry fee is large and splitting it three ways wouldn't leave enough on the table for podium finishes to feel meaningful.
+- You want the simplest possible payout (one winner, everyone else competes for that single slot).
+- The entry fee is large and splitting it three ways wouldn't leave enough on the table for podium finishes to feel meaningful.
 
 A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After the platform fee, the winner pockets roughly 0.45 SOL.
 
@@ -17,16 +17,16 @@ A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After the platform 
 
 The pool is divided between the top three finishers:
 
-* **1st place**: 50%
-* **2nd place**: 30%
-* **3rd place**: 20%
+- **1st place**: 50%
+- **2nd place**: 30%
+- **3rd place**: 20%
 
 Requires at least 3 players. The split percentages are fixed on chain and cannot be changed per race.
 
 Use Podium Split when:
 
-* You want more players to feel like they got something for showing up.
-* The entry fee is moderate, where three smaller payouts are still meaningful.
+- You want more players to feel like they got something for showing up.
+- The entry fee is moderate, where three smaller payouts are still meaningful.
 
 A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After the platform fee, the splits are roughly 0.225 / 0.135 / 0.09 SOL.
 

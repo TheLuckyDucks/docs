@@ -4,27 +4,27 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 
 ## What it unlocks
 
-* **Max players > 5**. The default cap is 5 (any non-Runner can create races up to 5 slots). Runner holders can create races up to 20 slots.
-* **AI commentary**. The per second narration track only opens to Runner holders.
-* **Custom race duration**. The default 30 second duration is available to everyone; picking anything else (up to 5 minutes) requires a Runner.
-* **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
-* **Custom name**. Naming a race in the lobby list.
-* **Start when underfilled**. The opt in to let the race launch with fewer than max players.
-* **Higher daily allowance**. Without a Runner a wallet gets 50 races per day. With one it gets 500. This is the only thing that lifts the cap.
-* **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
-* **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
-* **X announcement**. Post the race to Lucky Ducks' X (Twitter) account when it goes live.
-* **No-boost race**. Disable boost NFTs for the whole race, all joiners included.
-* **Allowed Players (allowlist) race**. Restricting joins to an invite list of up to 20 wallets. The allowlist itself counts as a customization.
-* **Minimum account age gate**. Requiring joiners to have a player account at least a certain age.
+- **Max players > 5**. The default cap is 5 (any non-Runner can create races up to 5 slots). Runner holders can create races up to 20 slots.
+- **AI commentary**. The per second narration track only opens to Runner holders.
+- **Custom race duration**. The default 30 second duration is available to everyone; picking anything else (up to 5 minutes) requires a Runner.
+- **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
+- **Custom name**. Naming a race in the lobby list.
+- **Start when underfilled**. The opt in to let the race launch with fewer than max players.
+- **Higher daily allowance**. Without a Runner a wallet gets 50 races per day. With one it gets 500. This is the only thing that lifts the cap.
+- **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
+- **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
+- **X announcement**. Post the race to Lucky Ducks' X (Twitter) account when it goes live.
+- **No-boost race**. Disable boost NFTs for the whole race, all joiners included.
+- **Allowed Players (allowlist) race**. Restricting joins to an invite list of up to 20 wallets. The allowlist itself counts as a customization.
+- **Minimum account age gate**. Requiring joiners to have a player account at least a certain age.
 
 ## What Runner is not required for
 
 Three of the four gated join settings can be hosted **without** a Runner NFT, provided the race stays on default settings otherwise. Each has its own creator side check (see [Race access and gating](../races/access-and-gating.md)):
 
-* Verified Only requires the creator to be verified themselves.
-* NFT Holders requires the gating collection to be on the platform's approved list, and the creator to hold at least the minimum number of items themselves at auto join time.
-* Token Holders requires the gating token to be on the platform's approved list, and the creator to hold at least the minimum amount themselves at auto join time.
+- Verified Only requires the creator to be verified themselves.
+- NFT Holders requires the gating collection to be on the platform's approved list, and the creator to hold at least the minimum number of items themselves at auto join time.
+- Token Holders requires the gating token to be on the platform's approved list, and the creator to hold at least the minimum amount themselves at auto join time.
 
 Allowed Players is the exception among the gates: it still requires a Runner.
 
@@ -36,9 +36,9 @@ Runners are not boosts. They do not change your duck's speed. They do not give y
 
 ## Acquiring
 
-* New Runner mints drop occasionally. Check the homepage banner or Telegram.
-* Secondary market on Tensor, MagicEden, or the Lucky Ducks in app marketplace.
-* Floor price moves with demand. The collection is intentionally small to keep the holder set tight.
+- New Runner mints drop occasionally. Check the homepage banner or Telegram.
+- Secondary market on Tensor, MagicEden, or the Lucky Ducks in app marketplace.
+- Floor price moves with demand. The collection is intentionally small to keep the holder set tight.
 
 ## Verifying you have one
 

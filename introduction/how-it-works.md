@@ -6,11 +6,11 @@ A race is a Solana account. Creating a race creates the account, joining a race 
 
 Someone picks the race parameters and signs a `create_race` transaction:
 
-* Entry fee (SOL or SPL token)
-* Max players (between 2 and 5 by default, up to 20 with a Runner NFT)
-* Race duration (default 30 seconds; up to 5 minutes with a Runner NFT)
-* Payout mode (Winner Takes All, or Podium split with 1st, 2nd, 3rd)
-* Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
+- Entry fee (SOL or SPL token)
+- Max players (between 2 and 5 by default, up to 20 with a Runner NFT)
+- Race duration (default 30 seconds; up to 5 minutes with a Runner NFT)
+- Payout mode (Winner Takes All, or Podium split with 1st, 2nd, 3rd)
+- Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
 
 The transaction allocates a fresh race account on Solana, derives a vault account to hold deposits, and emits a `race:created` event. The race appears in the lobby list seconds later.
 

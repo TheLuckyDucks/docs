@@ -13,15 +13,15 @@ session. `.claude/docs/*.md` are loaded on demand and hold the long form.
 Nothing should exist in both. When a rule and a doc disagree, the rule wins and
 the doc is stale.
 
-| Rule (auto-loads)               | Covers                                                        |
-| ------------------------------- | --------------------------------------------------------------- |
-| `../rules/documentation.md`     | Audience, voice, length, punctuation, links, page structure    |
-| `../rules/accuracy.md`          | Where every figure comes from, and how to check one            |
+| Rule (auto-loads)           | Covers                                                      |
+| --------------------------- | ----------------------------------------------------------- |
+| `../rules/documentation.md` | Audience, voice, length, punctuation, links, page structure |
+| `../rules/accuracy.md`      | Where every figure comes from, and how to check one         |
 
 ## Map
 
-| File          | What it is                                                                           | Load when                                    |
-| ------------- | -------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| File          | What it is                                                                                       | Load when                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
 | `OVERVIEW.md` | Reading order, page ownership, the topics deliberately split across pages, where a new page goes | Adding a page or a section, or unsure which page owns a subject |
 
 ## Why everything is under a dot-directory

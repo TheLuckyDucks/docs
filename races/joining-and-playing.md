@@ -14,11 +14,11 @@ The confirmation step asks where the entry fee comes from: your wallet, or a bal
 
 Some races have join conditions beyond paying the entry fee. The detail modal calls out anything that applies to the race in front of you:
 
-* **Verified only**. The race only accepts wallets that have completed Telegram, X, or Facebook verification.
-* **Allowlist (invite only)**. The race only accepts wallets the creator added to the invite list (up to 20). If your wallet is not on the list, Join stays disabled and the modal tells you the race is invite only.
-* **NFT Holders**. The race only accepts wallets holding at least a chosen number of NFTs from a chosen collection. The modal shows you the collection and threshold so you can check at a glance. If the collection is on another chain (Ethereum, Base, Polygon, and so on), the check runs against the external wallet you have linked to your profile; if you have not linked one, the join flow points you to that step first.
-* **Token Holders**. The race only accepts wallets holding at least a chosen amount of a chosen token. The token does not have to be the race's prize token.
-* **Minimum account age**. The race only accepts wallets whose player account is at least a certain age. Brand new players whose account is being created during the join transaction are always too young. If your wallet does not qualify, the Join button is disabled and the modal tells you why.
+- **Verified only**. The race only accepts wallets that have completed Telegram, X, or Facebook verification.
+- **Allowlist (invite only)**. The race only accepts wallets the creator added to the invite list (up to 20). If your wallet is not on the list, Join stays disabled and the modal tells you the race is invite only.
+- **NFT Holders**. The race only accepts wallets holding at least a chosen number of NFTs from a chosen collection. The modal shows you the collection and threshold so you can check at a glance. If the collection is on another chain (Ethereum, Base, Polygon, and so on), the check runs against the external wallet you have linked to your profile; if you have not linked one, the join flow points you to that step first.
+- **Token Holders**. The race only accepts wallets holding at least a chosen amount of a chosen token. The token does not have to be the race's prize token.
+- **Minimum account age**. The race only accepts wallets whose player account is at least a certain age. Brand new players whose account is being created during the join transaction are always too young. If your wallet does not qualify, the Join button is disabled and the modal tells you why.
 
 For the full reference on these gates, see [Race access and gating](access-and-gating.md).
 

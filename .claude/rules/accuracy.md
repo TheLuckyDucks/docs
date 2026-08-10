@@ -16,16 +16,16 @@ config. Both live in sibling repositories under `TheLuckyDucks/`.
 
 ## Claim to source
 
-| A page claims                                                     | Authoritative source                                                     |
-| ----------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| A live fee, penalty, cap, timeout, percentage or threshold        | `Anchor/platform-config-mainnet.json`                                     |
-| A default, a bound on a tunable, or a hard-coded limit            | `Anchor/programs/lucky_ducks/src/state.rs`                                |
-| What an instruction does, and the edge cases around it            | `Anchor/docs/program-reference.md`                                        |
-| Refunds, penalties, rent, who pays for what                       | `Anchor/docs/program-reference.md`, `Anchor/.claude/rules/vault-and-delegation.md` |
-| Randomness, VRF, how a winner is determined                       | `Anchor/programs/lucky_ducks/src/helpers.rs`, `calculate_finish_time`     |
-| A wallet flow, a button, what a screen shows                      | `Frontend/app/`, mapped by `Frontend/app/docs/OVERVIEW.md`                |
-| XP, leaderboards, badges, standings, the Telegram bot, raids      | `Backend/`. None of it is on chain                                        |
-| A collection address, or which NFT gates what                     | `Anchor/platform-config-mainnet.json`, the `nftCollection*` fields        |
+| A page claims                                                | Authoritative source                                                               |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| A live fee, penalty, cap, timeout, percentage or threshold   | `Anchor/platform-config-mainnet.json`                                              |
+| A default, a bound on a tunable, or a hard-coded limit       | `Anchor/programs/lucky_ducks/src/state.rs`                                         |
+| What an instruction does, and the edge cases around it       | `Anchor/docs/program-reference.md`                                                 |
+| Refunds, penalties, rent, who pays for what                  | `Anchor/docs/program-reference.md`, `Anchor/.claude/rules/vault-and-delegation.md` |
+| Randomness, VRF, how a winner is determined                  | `Anchor/programs/lucky_ducks/src/helpers.rs`, `calculate_finish_time`              |
+| A wallet flow, a button, what a screen shows                 | `Frontend/app/`, mapped by `Frontend/app/docs/OVERVIEW.md`                         |
+| XP, leaderboards, badges, standings, the Telegram bot, raids | `Backend/`. None of it is on chain                                                 |
+| A collection address, or which NFT gates what                | `Anchor/platform-config-mainnet.json`, the `nftCollection*` fields                 |
 
 The general shape of the game, written for a player rather than a developer, is
 `Anchor/README.md`. It is the closest thing to a peer of this bundle and a good
