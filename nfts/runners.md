@@ -10,7 +10,7 @@ The access pass collection. Holding a Runner NFT in your wallet unlocks the adva
 * **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
 * **Custom name**. Naming a race in the lobby list.
 * **Start when underfilled**. The opt in to let the race launch with fewer than max players.
-* **Higher daily creation limit**. Non-Runner verified players can create 50 races per day. Runners can create 500.
+* **Higher daily allowance**. Without a Runner a wallet gets 50 races per day. With one it gets 500. This is the only thing that lifts the cap.
 * **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
 * **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
 * **X announcement**. Post the race to Lucky Ducks' X (Twitter) account when it goes live.

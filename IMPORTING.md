@@ -70,4 +70,4 @@ The docs are intentionally short. Most pages are 200-400 words. The platform cha
 
 ## Avoiding hyphens and em-dashes
 
-By convention, this bundle uses periods and commas instead of em-dashes (—) or hyphens (-) as in-sentence separators. Keep the convention if you add new pages; it matches the rest of the app's copy.
+By convention, this bundle uses periods and commas instead of em-dashes (`—`) or hyphens (`-`) as in-sentence separators. Keep the convention if you add new pages; it matches the rest of the app's copy.

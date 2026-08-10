@@ -6,10 +6,19 @@ It is built for playing on a phone, where a wallet round trip per action is the 
 
 ## What you need
 
+* A [verified wallet](../trust/verification.md). The program refuses to turn this on for an unverified one. See below for why the two are tied together.
 * A [player vault](../economy/player-vault.md) with a balance, because the actions spend from it rather than from your wallet.
 * One signature to turn it on, choosing how long it lasts.
 
 That is the last signature until it expires or you turn it off.
+
+## Why it needs a verified wallet
+
+Not signing every action is only half of it. The other half is the sign-in: opening the app still meant proving the wallet was yours by signing a message in it, and on a phone that is the same handoff to the wallet app that delegation was meant to remove.
+
+Linking a social account is what closes that gap. Once you have one, you sign in with it, and the wallet app stays shut for the whole session. So enabling this without a verified wallet would be turning on a feature you have no comfortable way to reach: every visit would still start in the wallet app.
+
+Turning it **off** needs nothing. Revoking is always available, whatever state anything else is in.
 
 ## What it can do
 
@@ -38,9 +47,11 @@ Money can move around inside the platform on a signature you granted. It only le
 
 You pick the duration, up to a maximum of 30 days. It expires on its own, so a permission you forget about does not last forever.
 
-Revoke at any time by setting the duration to zero. Revoking takes effect immediately, and it keeps working even if the platform has switched the feature off for everyone, so you can always withdraw your consent.
+Revoke at any time by setting the duration to zero. Revoking takes effect immediately, and it keeps working even if the platform has switched the feature off for everyone, so you can always withdraw your consent. The verification requirement does not apply to revoking either: nothing about your account can put the off switch out of reach.
 
-Renewing is just turning it on again.
+Renewing is just turning it on again, and needs the same verified wallet the first grant did.
+
+Where your winnings land is set by the same screen and is a separate choice. You can change it whether or not you have granted anything, and it does not require verification: it only says where money already owed to you should go.
 
 ## What it costs
 

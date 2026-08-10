@@ -23,7 +23,7 @@ Holding a Runner NFT raises your daily race limit. Ownership is checked at the m
 * Sell it and you go back to the standard limit on your next race.
 * A different Runner works just as well as the one you used yesterday.
 
-The current limits: **50 races per day** for a verified wallet without a Runner, **500 per day** for a Runner holder.
+The current limits: **50 races per day** without a Runner, **500 per day** for a Runner holder. Verification does not change this number; the Runner is the only thing that lifts it.
 
 Make sure your Runner is attached when you join or rematch. If it is not, the race still goes through, but it counts against the standard limit instead of your Runner limit.
 

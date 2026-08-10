@@ -32,7 +32,7 @@ The largest race you can create without a Runner NFT, and the smallest lobby an 
 
 ### Delegation
 
-Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions so you do not approve each one in your wallet. It funds those actions from your player vault, expires on its own, and can be revoked instantly. It can never move money out of the platform. See [Playing without signing every action](../races/delegated-play.md).
+Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions so you do not approve each one in your wallet. It funds those actions from your player vault, expires on its own, and can be revoked instantly. It can never move money out of the platform. Granting it requires a [verified](#verified) wallet; revoking it never does. See [Playing without signing every action](../races/delegated-play.md).
 
 ### Discriminator
 
@@ -132,7 +132,7 @@ The number of missing slots a race tolerates before auto-starting on the underfi
 
 ### Tournament
 
-A scheduled competitive event that aggregates race results into a leaderboard, with a prize pool paid to top finishers.
+A scheduled event in which teams compete over a fixed window. The races each team runs count toward its standing, and the winning team splits the whole pot between its members.
 
 ### Treasury
 
@@ -140,7 +140,7 @@ The platform's fee wallet. Receives the platform fee out of every finalized priz
 
 ### Verified
 
-A wallet that has linked an off-platform identity via OAuth (X, Telegram). Unlocks higher daily race creation limits and tournament eligibility.
+A wallet that has linked an off-platform identity via OAuth (X, Telegram, Facebook). Carries a checkmark badge and can enter races reserved for verified players. A linked account is also a way to sign in without your wallet app, and it is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
 
 ### VRF (Verifiable Random Function)
 

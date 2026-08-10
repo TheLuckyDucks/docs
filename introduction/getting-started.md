@@ -14,6 +14,8 @@ You need SOL to pay transaction fees (roughly 0.000005 SOL per signed transactio
 
 Go to `theluckyducks.com/app/` and click Connect Wallet. Approve the connection in your wallet. The first connection is a signed message, not a transaction, so it costs nothing.
 
+Your first sign-in is always the wallet, because nothing else can prove the wallet is yours. Later ones do not have to be: once you have linked a social account, the login screen offers it as a second way in.
+
 ### 4. Create the on chain player account
 
 On your very first action (create or join a race), the smart contract needs a player account to hold your race history, your profile, and your vault balance. A modal will explain this once and ask you to approve a one time transaction. The rent is around 0.0017 SOL and is fully refundable if you ever close the account.
@@ -32,4 +34,6 @@ Once you are racing regularly, you can pre-fund a balance and let Lucky Ducks si
 
 ### Optional: verify
 
-The first three race actions are unverified. After three, the platform offers OAuth verification with X, Telegram, or Facebook. Verified players get a checkmark badge, a higher daily race creation limit, and rank for tournaments.
+Once you have joined a race, the platform offers verification: link an account with X, Telegram, Facebook or another supported provider. Verified players get a checkmark badge and can enter races their creator has reserved for verified wallets.
+
+It is worth doing early for two reasons beyond the badge. A linked account lets you sign in without opening your wallet app on later visits, and it is required before you can turn on [playing without signing every action](../races/delegated-play.md). See [Player verification](../trust/verification.md).

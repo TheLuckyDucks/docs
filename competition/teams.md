@@ -8,7 +8,7 @@ There are no team-based events outside of tournaments at the moment. Teams exist
 
 From the Teams page, click Create Team. Pick a **name** and an **avatar**, then sign the creation transaction. You become the team's founder and first member.
 
-The maximum team size is **20 members** (including the founder). The maximum number of pending join requests at any one time is **20**.
+A team holds up to **20 members**, the founder included, and can carry **20** pending join requests at a time. The team's page shows the cap and how many seats are left.
 
 ## Inviting members
 
@@ -23,14 +23,15 @@ Every player has a Join Requests inbox in the platform notifications. New reques
 
 ## Team standings in tournaments
 
-Team standings are computed off chain by the tournament backend. Aggregation rules are set when the tournament is created. Common formats include:
+Standings are computed off the chain, on one rule chosen when the tournament is created. Every rule is a **per-player average**, whether it counts wins, races, XP, volume, podiums, duels, last places, or races using a particular NFT, so a big team does not out-score a small one just by having more members. [Tournaments](tournaments.md#scoring) has the full set and the bonus for racing against outsiders.
 
-* **Sum of member XP**. Each member's individual XP earned during the tournament window adds to the team total.
-* **Top N XP**. Only the top N members' XP counts, encouraging team selection for performance.
-* **Average XP**. Mean across all members, penalizing inactive members.
-* **Custom**. Per tournament custom weighting.
+Computing standings off the chain is what lets a new rule appear without upgrading the program. The winners are written on chain before anything is paid.
 
-Off chain aggregation keeps the rule sets flexible without requiring a smart contract upgrade for every new tournament format.
+## Teams are frozen while a tournament runs
+
+While a tournament is under way, nothing about any team can change. You cannot create one, request to join, add or kick a member, leave, or delete. A roster reshuffled mid-event would let a team earn points under one lineup and collect under another.
+
+Sort your team out before a tournament starts. If one is already running, these buttons stay disabled until it ends.
 
 ## Disbanding
 
@@ -38,4 +39,4 @@ The team founder can disband the team at any time. Members are notified and the 
 
 ## Why teams over solo
 
-Teams are mostly for the social and aspirational side of competition: coordinating with other players on which races to enter, comparing tournament results, sharing strategies.
+A tournament pot goes to one team and is split between its members, so a team is the only way to win one. Everything else is the social side: agreeing which races to enter, comparing results, sharing what works.

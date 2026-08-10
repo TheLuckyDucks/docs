@@ -39,7 +39,9 @@ If you do not have any of the chosen token in your wallet, the join button is di
 
 ## Tournaments in SPL tokens
 
-Tournament prize pools can also be SPL token denominated. The claim wire format for token tournaments interleaves the wallet and ATA addresses in a flat list: `[wallet, ata, wallet, ata, ...]` for the top N winners. The SOL race claim format is segmented (all wallets first, then all ATAs), so token tournament claims use a different account ordering. The wallet adapter handles this transparently; you just click Claim.
+A tournament pot can be denominated in a supported token instead of SOL. When it is, only races using that same token count toward the standings, so the event and its prize are in one currency.
+
+Claiming works as it does for SOL. One transaction pays every member of the winning team, and it creates a token account for anyone who does not have one yet, so there is nothing to set up first. See [Tournaments](../competition/tournaments.md#claiming).
 
 ## Why use SPL tokens
 

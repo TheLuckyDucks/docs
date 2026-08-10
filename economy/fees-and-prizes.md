@@ -50,6 +50,17 @@ SPL token pools use the same percentage schedule but with thresholds adjusted fo
 * **Regular race**. Pool = entry fee × number of paid joiners.
 * **Sponsored race**. Pool = whatever the creator deposited. Joiners pay nothing; the platform fee comes out of the sponsor's deposit at finalization.
 
+## The dollar figures beside an amount
+
+Every amount on the platform is stated in the currency it is actually paid in, SOL or a token, with an approximate dollar value under or beside it. The token figure is the exact one: it is what the transaction moves and what the program agreed to. The dollar figure is that amount at a market price, which is why it is always written with a `≈`.
+
+Which price gets used depends on whether the thing is still running:
+
+* **A live race or tournament** is priced at the current market rate, so its dollar value moves while you are looking at it. An open race is an offer, and an offer is worth what it is worth now.
+* **One that has ended** keeps the rate from the moment it ended. If you won 2 SOL when SOL was at 150 dollars, the page still says so tomorrow. A finished result that quietly repriced itself overnight would be telling you that you won something different from what you were paid.
+
+When no price is available for a currency, you see the amount and no dollar figure at all. A blank there means the price is missing, not that the amount is worth nothing.
+
 ## Other costs at creation
 
 A few small costs are paid by the creator at race creation, separate from the pool:

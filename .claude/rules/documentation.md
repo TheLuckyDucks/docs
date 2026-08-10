@@ -89,11 +89,11 @@ page buries the thirteen above it.
 This bundle uses **no em dashes and no hyphens as sentence separators.**
 Repunctuate instead of substituting one mark for the other:
 
-| Instead of                                       | Write                                            |
-| ------------------------------------------------ | -------------------------------------------------- |
-| "The pool is split three ways - 50, 30, 20"      | "The pool is split three ways: 50, 30, 20."      |
-| "You can cancel, but it costs - see below"       | "You can cancel, but it costs. See below."       |
-| "Boosts stack (up to the cap - see Boost NFTs)"  | "Boosts stack, up to the cap. See Boost NFTs."   |
+| Instead of                                        | Write                                            |
+| ------------------------------------------------- | ------------------------------------------------ |
+| `"The pool is split three ways - 50, 30, 20"`     | `"The pool is split three ways: 50, 30, 20."`    |
+| `"You can cancel, but it costs - see below"`      | `"You can cancel, but it costs. See below."`     |
+| `"Boosts stack (up to the cap - see Boost NFTs)"` | `"Boosts stack, up to the cap. See Boost NFTs."` |
 
 A colon before an explanation, a full stop between two independent statements,
 commas around an aside. If none of those fit, the sentence is doing two jobs and
