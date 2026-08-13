@@ -28,6 +28,7 @@
 - [Track NFTs](nfts/tracks.md)
 - [Cosmetic NFTs](nfts/cosmetics.md)
 - [Mystery Boxes](nfts/mystery-boxes.md)
+- [Renting an NFT](nfts/renting.md)
 
 ## Competition
 
@@ -35,6 +36,7 @@
 - [Teams](competition/teams.md)
 - [Rematches](competition/rematches.md)
 - [Badges](competition/badges.md)
+- [The community lottery](competition/community-lottery.md)
 
 ## Economy
 

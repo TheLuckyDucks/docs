@@ -25,6 +25,7 @@ The smart contract independently verifies the NFT is in the wallet at the moment
 - **Marketplace**. The in-app marketplace lists every Lucky Ducks NFT currently for sale. Filter by collection.
 - **Third party**. Tensor and MagicEden list the same NFTs. Buying from a third party works identically to buying in-app, the NFT lands in the same wallet.
 - **Mystery Boxes**. Sealed boxes you mint and open for a random reward NFT from the matching collection (Cosmetics, Tracks, or Boost). See [Mystery Boxes](mystery-boxes.md).
+- **Renting**. Some tiers can be rented by the day instead of bought. The NFT sits in your wallet and works normally for the term, then returns to the platform. See [Renting an NFT](renting.md).
 
 ## What about royalties
 
@@ -39,3 +40,4 @@ Read the per collection pages for what each NFT actually does:
 - [Track NFTs](tracks.md)
 - [Cosmetic NFTs](cosmetics.md)
 - [Mystery Boxes](mystery-boxes.md)
+- [Renting an NFT](renting.md)
