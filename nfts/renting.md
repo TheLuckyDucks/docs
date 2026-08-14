@@ -37,6 +37,8 @@ Two things are different, and both come from the same restriction:
 
 Everything else works normally. You do not need to keep the page open, and the rental is not tied to a browser or a device.
 
+**Your own screens mark it, and only yours.** In the create and join pickers a rented item carries a **RENTED** ribbon, on every tab: Runners, Boosts, Tracks and Ducks alike. That is there so you can tell at a glance which of your picks has a clock on it. It is not visible to anyone else, in the race or anywhere on the platform.
+
 ## The one rule: do not alter it
 
 **Do not attach anything of your own to a rented NFT.** Using it cannot trigger this. Racing with it, equipping it, and everything else the platform does leave the item untouched. It means going to the NFT itself in a wallet or an explorer and adding something to it, such as your own delegate or your own freeze.
@@ -52,6 +54,8 @@ The NFT leaves your wallet automatically on the expiry, with no signature and no
 Your rentals are listed on the marketplace with the days remaining on each, and the last day is marked. Nothing is deducted from your wallet at the end; the rental was paid in full at the start.
 
 If a race you have already joined is still running when the term ends, that race is unaffected: the NFT's effect was recorded when you joined.
+
+**A default you saved is skipped, not broken.** If the item was your saved Boost, Track or Duck, the next race you set up simply leaves that slot empty rather than refusing to start. Pick something you still hold, or rent again. The same applies to a saved race template built around a rented item.
 
 ## If you want to keep it
 

@@ -20,9 +20,13 @@ You can hold SOL and several tokens in the vault at the same time. Each is track
 
 ## Spending from it
 
-When you join or create a race, you choose where the money comes from: your wallet, as before, or your vault. The confirmation screen shows both, with your current balance beside the vault option.
+Where a race entry is paid from is a setting, not a question you answer per race.
 
-If your vault does not cover the total, the app pays from your wallet instead and tells you. Nothing fails and nothing is half-paid.
+If you have turned on [delegated signing](../races/delegated-play.md), the vault pays. It has to: nothing is asking your wallet, so there is no other account to draw on.
+
+If you are signing for yourself, your wallet pays. To spend the balance instead, tick **Pay race entries from your Play Balance if it can cover them**, in the Play Balance panel on the Player page. The setting is remembered for your wallet, and it appears only while delegated signing is off, because a live permission already spends the balance.
+
+If your balance does not cover the total, your wallet pays instead and the app tells you. Nothing fails and nothing is half-paid.
 
 **A token race spends from two balances at once.** The entry fee comes out of your token balance, while the network fee and any race costs come out of your SOL balance. A vault holding plenty of a token but no SOL cannot fund a token race, and the app will say so before you sign.
 

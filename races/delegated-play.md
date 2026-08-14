@@ -1,6 +1,6 @@
 # Playing without signing every action
 
-You can let Lucky Ducks sign your in-game actions for you, for a period you choose. Joining a race then takes one tap, with no wallet popup and no waiting for a confirmation. The app calls this delegation.
+You can let Lucky Ducks sign your in-game actions for you, for a period you choose. Joining a race then takes one tap, with no wallet popup and no waiting for a confirmation. The app calls this delegated signing, and the panel that turns it on carries that name on the Player page.
 
 It is built for playing on a phone, where a wallet round trip per action is the slowest part of a race.
 
@@ -62,7 +62,7 @@ Each action signed on your behalf reimburses the network fee for that transactio
 Two consequences worth knowing:
 
 - **An action that pays you still needs SOL in the vault.** Claiming a prize costs a network fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.
-- **There is no fallback to your wallet.** When you sign for yourself and your vault is short, the app pays from your wallet instead. A delegated action cannot do that, because your wallet is not signing. It stops and asks you to top up.
+- **There is no fallback to your wallet.** When you sign for yourself your wallet is right there, so it pays by default and it covers anything your balance cannot. A delegated action has nowhere to fall back to, because your wallet is not signing. It stops and asks you to top up.
 
 ## What happens after you tap
 
