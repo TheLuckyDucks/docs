@@ -77,7 +77,7 @@ A sealed NFT that opens into a random reward from a themed pool (Cosmetics, Trac
 
 ### NFT Holders (join setting)
 
-Restricts entry to wallets holding a minimum number of NFTs from a chosen collection, on Solana or a supported chain such as Ethereum, Base or Polygon. For another chain, joiners link an external wallet once and the platform checks that. Eligibility counts current holdings, verified at join time by a short lived pass, and one NFT cannot secure 2 seats in a race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
+Restricts entry to wallets holding a minimum number of NFTs from a chosen collection, on Solana or a supported chain such as Ethereum, Base or Polygon. Creating one always needs a Runner NFT, whichever chain the collection is on. For another chain, joiners link an external wallet once and the platform checks that. Eligibility counts current holdings, verified at join time by a short lived pass, and one NFT cannot secure 2 seats in a race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
 
 ### ORAO VRF
 

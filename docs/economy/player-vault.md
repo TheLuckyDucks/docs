@@ -59,7 +59,7 @@ If the balance falls short, your wallet pays and the app says so. Nothing fails 
 
 ## Taking money out
 
-Withdraw any amount, any time, from the Player page. Only your wallet can authorise it: no permission you grant and no platform setting can move money out of your vault or your account.
+Withdraw any amount, any time, from the Player page, whether or not you have granted [delegated signing](../races/delegated-play.md). Only your wallet can authorise it, and no permission you grant or setting you flip can move money out of your vault or your account.
 
 Closing the account returns everything in one transaction, your SOL, every token balance and the rent deposit. Your race history resets, and the account comes back the next time you race. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
 

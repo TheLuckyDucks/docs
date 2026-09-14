@@ -91,7 +91,7 @@ You fund the pool instead of the joiners, which is how giveaways and marketing r
 
 ## Join settings (who can join)
 
-The form also decides who may enter: Open, Verified Only, Allowed Players, NFT Holders or Token Holders. Verified Only, NFT Holders and Token Holders need no Runner. Allowed Players does. See [Race access and gating](access-and-gating.md).
+The form also decides who may enter: Open, Verified Only, Allowed Players, NFT Holders or Token Holders. Verified Only and Token Holders need no Runner; NFT Holders and Allowed Players always do. See [Race access and gating](access-and-gating.md).
 
 ## Minimum account age
 

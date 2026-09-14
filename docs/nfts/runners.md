@@ -35,17 +35,17 @@ The access pass. A Runner in your wallet unlocks the advanced race creation feat
 - **X announcement** when the race goes live.
 - **No-boost race**, for everyone in it.
 - **Allowed Players**, an invite list of up to 20 wallets, which counts as a customization.
+- **NFT Holders**, the collection gate, on every chain.
 - **Minimum account age** on joiners.
 
 ## What Runner is not required for
 
-Three of the four gates host fine without one, as long as the race stays on default settings otherwise. Each has its own creator side check, covered in [Race access and gating](../races/access-and-gating.md):
+Two of the four gates host fine without one, as long as the race stays on default settings otherwise. Each has its own creator side check, covered in [Race access and gating](../races/access-and-gating.md):
 
-- Verified Only asks the creator to be verified.
-- NFT Holders asks for an approved collection, and for the creator to hold the minimum themselves at auto join.
-- Token Holders asks for an approved token, and the same of the creator's balance.
+- Verified Only asks the creator to be verified, if they take a seat.
+- Token Holders asks for an approved token, and for the creator to meet the same balance at auto join.
 
-Allowed Players is the exception: that one needs a Runner.
+The other two always need a Runner: **NFT Holders**, on every chain, and **Allowed Players**.
 
 {% hint style="success" %}
 A Runner is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md), though it does not unlock it. Every creator who races in their own race earns a base share with no NFT at all, and the Runner adds to that.

@@ -111,6 +111,13 @@ is ten percent and `creatorFeeShareRunnerBps: 4000` is forty.
   metric labels and the command catalogue all moved while the contract stood
   still. Before editing `help/telegram-bot.md`, read the renderer and the
   catalogue rather than the page. `../docs/verifying-claims.md` names the files.
+- **When the frontend and the program disagree, the program wins, and a
+  frontend COMMENT is the weakest evidence in the repository.** The NFT Holders
+  gate is premium in `is_premium_base`, so creating one always needs a Runner,
+  while a comment in the create form still described it as free when the
+  collection is whitelisted. Whitelisting decides which collections may gate;
+  it has not decided create cost since that changed. A page written from the UI
+  layer inherits whatever the UI has not caught up on.
 
 ## Phrase a tunable so an admin change cannot falsify the page
 

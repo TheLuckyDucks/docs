@@ -31,7 +31,7 @@ Yes, and it is built for it. Link a social account and turn on [playing without 
 
 No. Any race is joinable without one. A Runner is for **creating** races past the basics: more than 5 players, AI commentary, X announcement, custom track, name, join timeout or duration, a minimum account age gate, no-boost mode, hosting without playing, sponsored races, and the Allowed Players allowlist.
 
-Verified Only, NFT Holders and Token Holders gates need no Runner, though each has its own creator side check: the creator must be verified for Verified Only, and must meet the same threshold themselves for the holder gates, on an approved collection or token. See [Race access and gating](../races/access-and-gating.md).
+Two gates are free: Verified Only and Token Holders. NFT Holders always needs a Runner, on every chain, and so does Allowed Players. Each free gate still has its own creator side check: be verified for Verified Only, meet your own threshold for Token Holders, on an approved token. See [Race access and gating](../races/access-and-gating.md).
 
 ### Do boosts make it pay to win?
 
@@ -81,7 +81,7 @@ No, it is always claimable. The reverse is the trap: claiming first ends the cha
 
 ### Can I gate a race on an NFT collection from another chain?
 
-Yes. Pick the NFT Holders join setting and then the chain: Solana by default, or a supported chain such as Ethereum, Base or Polygon. Joiners link the external wallet holding the NFT once, and the check runs against it at join time. The race itself is unchanged, still on Solana with SOL or SPL prizes. See [NFT holders](../races/access-and-gating.md#nft-holders).
+Yes, with a Runner NFT, which this gate always needs. Pick the NFT Holders join setting and then the chain: Solana by default, or a supported chain such as Ethereum, Base or Polygon. Joiners link the external wallet holding the NFT once, and the check runs against it at join time. The race itself is unchanged, still on Solana with SOL or SPL prizes. See [NFT holders](../races/access-and-gating.md#nft-holders).
 
 ## When something goes wrong
 

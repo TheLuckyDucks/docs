@@ -269,6 +269,32 @@ for (const page of pages) {
       page,
       `pairs and columns blocks disagree: ${desktop.length} pairs, ${columns} columns`,
     );
+
+  // The pair has to be one row: a single columns block holding the desktop
+  // half in the first column and the phone half in the second. Counting the
+  // two halves per page is not enough, because both could sit in one column,
+  // or in the wrong order, and still add up.
+  for (const block of text.matchAll(
+    /\{%\s*columns\s*%\}([\s\S]*?)\{%\s*endcolumns\s*%\}/g,
+  )) {
+    const cols = block[1]
+      .split(/\{%\s*column\b[^\n]*?%\}/)
+      .slice(1)
+      .map((c) => c.split(/\{%\s*endcolumn\s*%\}/)[0]);
+    if (cols.length !== 2) {
+      problem(page, `a columns block has ${cols.length} columns, expected 2`);
+      continue;
+    }
+    const [first, second] = cols;
+    const shot = (c) => /-desktop\.png/.test(c) || /-mobile\.png/.test(c);
+    if (!shot(first) && !shot(second)) continue; // a columns block of prose is fine
+    if (!/-desktop\.png/.test(first))
+      problem(page, "a pair's first column is not the desktop half");
+    if (!/-mobile\.png/.test(second))
+      problem(page, "a pair's second column is not the phone half");
+    if (/-mobile\.png/.test(first) || /-desktop\.png/.test(second))
+      problem(page, "a pair has its halves the wrong way round");
+  }
 }
 
 // .gitbook.yaml decides what GitBook reads at all. A wrong root publishes

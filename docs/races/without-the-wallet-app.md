@@ -73,7 +73,7 @@ A short list always will:
 | Closing your player account          | The other exit, for the same reason                                                  |
 | Granting or extending delegated play | The permission is your consent, so it cannot renew itself                            |
 
-Everything you do inside a game is covered.
+None of them is blocked, they simply ask your wallet, so topping up and withdrawing stay available at any moment, grant or no grant. Everything you do inside a game is covered.
 
 ## If you lose access to the linked account
 

@@ -66,7 +66,7 @@ All off by default, and most need a Runner NFT.
 - **Host without playing**. Create without taking a seat. Not available for 1v1, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 - **Sponsored race**. You fund the pool, players join free. Good for giveaways.
 - **No-boost race**. Boost NFTs off for everyone, yourself included. See [No-boost races](../nfts/boosts.md#no-boost-races).
-- **Join setting**. Open by default. Verified Only, NFT Holders and Token Holders gate a race without a Runner; Allowed Players, an invite list of up to 20 wallets, needs one. See [Race access and gating](access-and-gating.md).
+- **Join setting**. Open by default. Verified Only and Token Holders gate a race without a Runner; NFT Holders and Allowed Players, an invite list of up to 20 wallets, both need one. See [Race access and gating](access-and-gating.md).
 - **Minimum account age**. Keeps fresh wallets out by requiring a player account of a certain age, 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
 ## Sign and submit

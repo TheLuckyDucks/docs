@@ -80,6 +80,22 @@ mentions none of them is describing the happy path only.
 grep -n "fn validate_" -A 25 programs/lucky_ducks/src/helpers.rs
 ```
 
+## The premium rule, which decides every Runner claim
+
+One expression in `Anchor/programs/lucky_ducks/src/instructions/race_create.rs` decides whether creating a race needs a Runner:
+
+```bash
+cd ../TheLuckyDucks/Anchor
+grep -n "let is_premium_base" -A 14 programs/lucky_ducks/src/instructions/race_create.rs
+```
+
+Every disjunct in it is a Runner requirement, and any page saying a feature is
+free has to be checked against that list rather than against the create form.
+The gates are the trap: two of them sit outside the expression and are free,
+and the other two are inside it. A validation gate that is NOT in the list is
+still checked against the creator, but through their own join rather than a
+create-time rule, so a host who never takes a seat is never asked.
+
 ## Off-chain surfaces
 
 None of this is in the program, and all of it moves without a release.

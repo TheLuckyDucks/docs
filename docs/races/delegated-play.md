@@ -51,9 +51,9 @@ Everything you do inside the game:
 - Claim a tournament prize.
 - Every team action: create, update, join, leave, invite, remove, disband.
 
-## What it can never do
+## What the permission can never do
 
-The permission covers playing, not your money leaving the platform.
+It covers playing, not your money leaving the platform. Read the table as limits on the **permission**, not on you.
 
 | Action                          | Why it is excluded                                                                                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -65,6 +65,8 @@ The permission covers playing, not your money leaving the platform.
 {% hint style="info" %}
 Money moves around inside the platform on a signature you granted. It only leaves on yours.
 {% endhint %}
+
+**Your own access never changes.** Deposit and withdraw whenever you like, with a live grant or without one: those buttons always ask your wallet, and a grant neither locks your balance nor puts a queue in front of it. The same goes for closing your account.
 
 ## Turning it on and off
 

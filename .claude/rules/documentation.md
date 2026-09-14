@@ -164,10 +164,13 @@ relative to the page: `../.gitbook/assets/brand/x.png` from `docs/README.md`,
 `../../.gitbook/assets/races/x.png` from a page in a section. Always a figure, never
 a bare `![]()`.
 
-**A screenshot is two files, shown as one row**: a desktop capture and a phone
-capture in a `{% columns %}` block at 70/30, which GitBook stacks on a narrow
-screen. The platform is played on phones, so a desktop-only shot describes an
-experience most readers do not have.
+**A screenshot is two files on one row, always.** A desktop capture and a phone
+capture, in a single `{% columns %}` block at 70/30, desktop first: GitBook
+stacks them on a narrow screen. The platform is played on phones, so a
+desktop-only shot describes an experience most readers do not have, and a pair
+split across two rows reads as two unrelated screens. `npm run check` fails on a
+half pair, on a pair outside a columns block, and on the halves in the wrong
+order.
 
 ```html
 {% columns %} {% column width="70%" %}

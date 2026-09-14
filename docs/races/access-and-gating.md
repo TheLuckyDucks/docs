@@ -39,9 +39,9 @@ Everyone sees every race whatever the setting. A player who does not qualify fin
 
 ## When you need a Runner NFT to host
 
-Verified Only, NFT Holders and Token Holders need **no** Runner, each with its own creator side check below. Allowed Players is the exception among the gates.
+Two gates are free: **Verified Only** and **Token Holders**, each with its own creator side check below. **NFT Holders always needs a Runner**, on every chain, and so does Allowed Players.
 
-What does need a Runner is customizing the race past the basics:
+A Runner is also what customizing the race past the basics needs:
 
 - a custom name,
 - a sponsored prize,
@@ -52,9 +52,10 @@ What does need a Runner is customizing the race past the basics:
 - an X announcement,
 - a minimum account age,
 - hosting without joining, or
-- the **Allowed Players** join setting.
+- the **Allowed Players** join setting, or
+- the **NFT Holders** join setting.
 
-So a plain race on default settings with one of the three Runner free gates needs nothing. Customize it, or switch to Allowed Players, and the Runner is required.
+So a plain race on default settings, gated on Verified Only or Token Holders or not gated at all, needs no Runner. Customize it, or pick NFT Holders or Allowed Players, and a Runner is required.
 
 {% hint style="success" %}
 The Runner only has to be in the host's wallet at create time. Joiners never need one: their eligibility is whatever the join setting asks for.
@@ -64,11 +65,15 @@ The Runner only has to be in the host's wallet at create time. Joiners never nee
 
 Limits the race to players who have proved who they are by linking a social account. Anyone who has not [verified](../trust/verification.md) sees the race but cannot join, which cuts out throwaway wallets without you managing a list.
 
-The creator must be verified too. No Runner needed.
+No Runner needed for the gate itself. The creator's own compliance comes from their join rather than from a separate check, so a creator who takes a seat must be verified, while a host who never joins is never asked. Host mode needs a Runner regardless, which is why the app offers this option to a creator who is either verified or holding one.
 
 ## NFT holders
 
 Requires each player to hold NFTs from a collection you choose, along with the **minimum number** they must hold, at least one, and the **chain** the collection lives on.
+
+{% hint style="warning" %}
+This gate always needs a Runner NFT to create, whichever chain the collection is on. Approval decides which collections may gate a race; it does not make the gate free.
+{% endhint %}
 
 ### Solana or another chain
 
@@ -119,7 +124,7 @@ For an eligible player the app prepares a one time eligibility pass, so the race
 
 ### Creator side eligibility
 
-No Runner is needed, provided the collection is approved, and your own auto join faces the same threshold as any joiner: the backend will not sign your eligibility pass unless you hold the minimum yourself, on whichever chain the collection lives on. Host without playing and only the approval gate applies at create time.
+A Runner is required, and your own auto join faces the same threshold as any joiner: the backend will not sign your eligibility pass unless you hold the minimum yourself, on whichever chain the collection lives on. Host without playing and only the approval gate applies at create time.
 
 ### A few things worth knowing
 
@@ -171,7 +176,7 @@ A gated race therefore earns exactly what an open one does, and creating without
 ## Good to know
 
 - In a normal race the host is auto joined at creation, so you never enter your own race separately.
-- Verified Only, NFT Holders and Token Holders need no Runner on their own. Allowed Players does, and so does any customization past the defaults.
+- Verified Only and Token Holders need no Runner on their own. NFT Holders and Allowed Players always do, as does any customization past the defaults.
 - For NFT and Token gates the minimum must exceed zero. Zero would admit everyone, which is just Open.
 - For NFT and Token gates the collection or token must be approved, or the create transaction refuses.
 - Gated races always stay visible. Players simply cannot join without meeting the requirement, and the Join button says so.
