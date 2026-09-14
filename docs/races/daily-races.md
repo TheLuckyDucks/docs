@@ -5,7 +5,7 @@ description: The cap on how many races a wallet can play in a rolling day, what 
 
 # Daily races
 
-Every wallet has a daily race allowance: a cap on how many races it can **play** in a rolling window. The cap is about seating a duck in a race, not about creating one.
+Every wallet has a daily allowance: a cap on how many races it can **play** in a rolling window. It counts seating a duck, not creating a race.
 
 ## What counts against your allowance
 
@@ -18,37 +18,39 @@ Every wallet has a daily race allowance: a cap on how many races it can **play**
 | Offer a rematch                    | Yes                          |
 | Accept a rematch                   | Yes                          |
 
-The practical effect: hosts and sponsors are not limited. If you run races for your community without playing in them, you can keep creating all day. The only pacing constraint is the short **30 second cooldown between race creations** from the same wallet.
+So hosts and sponsors are not limited: run races for your community without playing and you can keep going all day. The only brake is the **30 second cooldown between creations** from one wallet.
 
 ## Your limit depends on your Runner NFT
 
-Holding a Runner NFT raises your daily race limit. Ownership is checked at the moment you play, so:
+A Runner raises the cap, and ownership is checked at the moment you play:
 
-- Buy a Runner today and the higher limit applies immediately.
-- Sell it and you go back to the standard limit on your next race.
-- A different Runner works just as well as the one you used yesterday.
+- Buy one today and the higher limit applies immediately.
+- Sell it and your next race is back on the standard limit.
+- Any Runner counts, not the one you used yesterday.
 
-The current limits: **50 races per day** without a Runner, **500 per day** for a Runner holder. Verification does not change this number; the Runner is the only thing that lifts it.
+The limits: **50 races a day** without a Runner, **500** with one. Verification changes nothing here; the Runner is the only thing that lifts it.
 
 {% hint style="warning" %}
-Make sure your Runner is attached when you join or rematch. If it is not, the race still goes through, but it counts against the standard limit instead of your Runner limit.
+Attach the Runner when you join or rematch. Without it the race still goes through, but it counts against the standard limit instead.
 {% endhint %}
 
 ## When your day resets
 
-The window is not midnight. It starts from your first race after your previous window ended, and runs for a fixed length from there. That length is a platform setting, and it is a rolling day.
+Not at midnight. The window opens on your first race after the last one ended and runs a fixed length from there, which makes it a rolling day.
 
-So if your first race is at 3pm, your window ends the following 3pm, not at midnight tonight. Your remaining races and the exact reset time are both shown in the app, which is the figure to trust.
+First race at 3pm, then, and your window ends at 3pm tomorrow. Your remaining races and the exact reset time both sit in the app, which is the figure to trust.
 
 {% columns %}
 {% column width="70%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-daily-allowance-desktop.png" alt="The player page showing races remaining today and the exact reset time"><figcaption><p>Races remaining and the reset time, which is the figure to trust.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-daily-allowance-mobile.png" alt="The player page showing races remaining today and the exact reset time, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
@@ -58,14 +60,14 @@ So if your first race is at 3pm, your window ends the following 3pm, not at midn
 
 <summary>Why did my remaining races drop by two after one rematch?</summary>
 
-It did not. Offering the rematch used one race, and accepting used another for your opponent. If you also played a fresh race in between, that used a second one from your side. Offering and accepting each cost one, per player.
+It did not. Offering used one of yours, accepting used one of your opponent's. If you also played a fresh race in between, that was your second. Offering and accepting cost one each, per player.
 
 </details>
 
 <details>
 
-<summary>I bought a Runner. Why does my limit still look the same?</summary>
+<summary>I bought a Runner. Why does my limit look the same?</summary>
 
-Your limit updates when you next play. If it still looks wrong after that, check that the Runner was attached to the race.
+It updates when you next play. If it still looks wrong after that, check the Runner was attached to the race.
 
 </details>

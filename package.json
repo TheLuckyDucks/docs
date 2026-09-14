@@ -5,6 +5,7 @@
   "description": "Lucky Ducks player documentation. Tooling only: the pages are the product.",
   "scripts": {
     "check": "node scripts/check-pages.mjs",
+    "assets": "node scripts/sync-assets.mjs",
     "format": "prettier --write \"**/*.md\" package.json scripts/*.mjs",
     "format:check": "prettier --check \"**/*.md\" package.json scripts/*.mjs"
   },

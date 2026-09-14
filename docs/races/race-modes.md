@@ -5,33 +5,27 @@ description: Winner Takes All or Podium Split, what each one pays, and why there
 
 # Race modes
 
-There are two payout modes. Pick when creating a race.
+Two payout modes, picked when the race is created.
 
 {% tabs %}
 {% tab title="Winner Takes All (WTA)" %}
-The first place finisher gets the entire prize pool, minus the platform fee. Everyone else gets nothing.
+First place takes the whole prize pool, minus the platform fee. Everyone else gets nothing.
 
-WTA is the canonical mode. Use it when:
-
-- You want the simplest possible payout (one winner, everyone else competes for that single slot).
-- The entry fee is large and splitting it three ways wouldn't leave enough on the table for podium finishes to feel meaningful.
+WTA is the canonical mode. Reach for it when you want the simplest payout, one winner and everyone else chasing that slot, or when the entry fee is large enough that splitting it three ways would leave podium places feeling thin.
 
 A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After the platform fee, the winner pockets roughly 0.45 SOL.
 {% endtab %}
 
 {% tab title="Podium Split" %}
-The pool is divided between the top three finishers:
+The pool is divided between the top three:
 
 - **1st place**: 50%
 - **2nd place**: 30%
 - **3rd place**: 20%
 
-Requires at least 3 players. The split percentages are fixed on chain and cannot be changed per race.
+It needs at least 3 players, and the percentages are fixed on chain, so no race can change them.
 
-Use Podium Split when:
-
-- You want more players to feel like they got something for showing up.
-- The entry fee is moderate, where three smaller payouts are still meaningful.
+Reach for it when you want more players to leave with something, or when the entry fee is moderate enough that three smaller payouts still matter.
 
 A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After the platform fee, the splits are roughly 0.225 / 0.135 / 0.09 SOL.
 {% endtab %}
@@ -41,24 +35,26 @@ A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After the platfor
 {% column width="70%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-cards-modes-desktop.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split"><figcaption><p>The mode is on the card, before you open the race.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-cards-modes-mobile.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 ## Choosing between them
 
-WTA gives a sharper rush: one winner, total commitment. Podium Split gives more frequent positive outcomes per race played, at the cost of smaller individual payouts. There is no objectively better mode. Some communities run WTA exclusively, others alternate by lobby size.
+WTA is the sharper rush: one winner, total commitment. Podium Split pays out more often for less each time. Neither is better, and communities land differently: some run WTA only, others switch by lobby size.
 
 ## What if there are ties?
 
 {% hint style="info" %}
-There are no ties. The on chain seed produces a strict ordering. Two ducks may finish very close visually, but the contract always has a deterministic winner.
+There are none. The on chain seed produces a strict order, so two ducks can look level and the contract still has one winner.
 {% endhint %}
 
 ## Refunds
 
-If the race never finalizes (oracle stuck, lobby never fills past 2 players in WTA, or never past 3 players in Podium Split), every participant can claim a full refund. The platform never holds your fee hostage on a stuck race. See [Refunds and rent](../economy/refunds-and-rent.md).
+If a race never finalizes, whether the oracle stuck or the lobby never reached 2 players in WTA or 3 in Podium Split, every participant can claim a full refund. Your fee is never held hostage by a stuck race. See [Refunds and rent](../economy/refunds-and-rent.md).

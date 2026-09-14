@@ -9,9 +9,10 @@ The source of the player-facing documentation site for theluckyducks.com. It is
 a GitBook space backed by this repository: markdown, one file per page,
 `SUMMARY.md` as the sidebar.
 
-**The pages are the product. The only code here is a structural checker**,
-`scripts/check-pages.mjs`, run by `npm run check`. It verifies shape and it
-cannot verify a fact: front matter parses, blocks balance, links and anchors
+**The pages are the product. The only code here is tooling**: a structural
+checker, `scripts/check-pages.mjs`, run by `npm run check`, and an asset
+synchroniser, `scripts/sync-assets.mjs`, run by `npm run assets`. The checker
+verifies shape and cannot verify a fact: front matter parses, blocks balance, links and anchors
 resolve, images exist and are paired, `SUMMARY.md` is complete. **Nothing
 verifies a claim on a page**, so the only thing standing between a reader and a
 wrong number is still whoever wrote it. That is what shapes
@@ -77,7 +78,7 @@ Tooling, agent docs and this file sit outside it and cannot surface as a page.
 | `docs/help/`         | FAQ, glossary, Telegram bot, social links                                    |
 | `.gitbook/assets/`   | Every image, in one folder per section. **Repository root, not `docs/`**     |
 | `.gitbook.yaml`      | GitBook config: the content root, readme and summary locations               |
-| `scripts/`           | `check-pages.mjs`, the structural checker. The only code in the repository   |
+| `scripts/`           | `check-pages.mjs` and `sync-assets.mjs`. The only code in the repository     |
 | `package.json`       | Tooling only: `prettier` and `yaml`. Nothing here is published               |
 | `IMPORTING.md`       | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
 
@@ -95,11 +96,12 @@ other and so are unaffected by the content root.
 
 `.claude/docs/OVERVIEW.md` is the content map: which page owns which topic, and
 where a new one belongs. `.claude/docs/screenshots.md` is the shot list for
-every image the pages reference.
+every image the pages reference. `.claude/docs/verifying-claims.md` is how to
+check a figure, a permission or a precondition against the sibling repositories.
 
-## The two commands, and where they run
+## The commands, and where they run
 
-**Node is not on this host's PATH outside WSL**, so both go through it:
+**Node is not on this host's PATH outside WSL**, so they all go through it:
 
 ```bash
 wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$PATH"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
@@ -108,6 +110,9 @@ wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$P
 - **`npm run check`** is the gate before a push. It exits non-zero on a problem
   and prints one line per finding. Run it after any edit to a page, a figure or
   `SUMMARY.md`.
+- **`npm run assets`** builds a labelled placeholder for any image a page
+  references but the repository lacks, and lists any asset nothing references.
+  `npm run assets -- --prune` deletes those. It needs ffmpeg, which WSL has.
 - **`npm run format`** is prettier over every `.md`, which owns the formatting.
   `npm run format:check` is the read-only half.
 

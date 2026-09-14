@@ -5,10 +5,10 @@ description: Every badge you can earn, what it asks for, and why none of them ch
 
 # Badges
 
-Badges are earned automatically as you play and engage. They show on your profile and pop up in Telegram and on the site the moment you unlock one.
+Badges arrive on their own as you play and engage, showing on your profile and popping up in Telegram and on the site the moment you unlock one.
 
 {% hint style="info" %}
-Badges are cosmetic recognition of your activity. They do not give any race advantage.
+They are recognition, nothing more. No badge gives any race advantage.
 {% endhint %}
 
 {% columns %}
@@ -23,11 +23,11 @@ Badges are cosmetic recognition of your activity. They do not give any race adva
 {% endcolumn %}
 {% endcolumns %}
 
-Most badges are ladders: the same activity counted further. You keep every tier you pass, so a ladder shows how far along it you are rather than replacing the tier below.
+Most are ladders, the same activity counted further, and you keep every tier you pass rather than replacing it.
 
 ## XP milestones ⭐
 
-Earn XP by racing, winning, creating races, verifying, and raiding.
+XP comes from racing, winning, creating races, verifying and raiding.
 
 | Badge           | Emoji | XP     |
 | --------------- | ----- | ------ |
@@ -73,7 +73,7 @@ Earn XP by racing, winning, creating races, verifying, and raiding.
 | Unlucky Duck | 🦆    | Lose 5 races in a row |
 
 {% hint style="success" %}
-Unlucky Duck is the one badge a losing run earns you. The randomness that took those five races is the same randomness that will take the next one, so the streak says nothing about what comes after it. See [Provable randomness](../trust/fairness.md).
+Unlucky Duck is the one badge a losing run earns. The randomness that took those 5 races is the same randomness facing the next one, so a streak says nothing about what follows. See [Provable randomness](../trust/fairness.md).
 {% endhint %}
 
 ## Podium finishes 🥇
@@ -93,7 +93,7 @@ Unlucky Duck is the one badge a losing run earns you. The randomness that took t
 | Circuit Veteran | 🏅    | Race in 10 tournaments        |
 | Circuit Legend  | 🏅    | Race in 25 tournaments        |
 
-Earned by racing during a tournament rather than by winning one. See [Tournaments](tournaments.md).
+Earned by racing during a tournament, not by winning it. See [Tournaments](tournaments.md).
 
 ## Volume 💰
 
@@ -130,7 +130,7 @@ Counted by how many different [supported tokens](../economy/spl-tokens.md) you h
 | Custom Course | 🛣️    | Create a race on a custom track NFT           |
 | Track Curator | 🗺️    | Create races on 2 different custom track NFTs |
 
-The cosmetic and track ladders count **different** NFTs, so racing the same duck ten times does not advance them. See [NFT collections](../nfts/README.md).
+The cosmetic and track ladders count **different** NFTs, so racing the same duck 10 times moves neither. See [NFT collections](../nfts/README.md).
 
 ## Social and hosting 🤝
 
@@ -145,7 +145,7 @@ The cosmetic and track ladders count **different** NFTs, so racing the same duck
 | Whale         | 🤝    | Enter a race with 1+ SOL entry fee            |
 | Grudge Match  | 🤝    | Complete a full 1v1 rematch chain             |
 
-Grand Host and the larger lobbies need a Runner NFT to create, since anything past the default lobby size is a customization. See [Runner NFTs](../nfts/runners.md).
+Grand Host needs a Runner NFT, since anything past the default lobby size is a customization. See [Runner NFTs](../nfts/runners.md).
 
 ## Chat taps 🔉
 
@@ -159,7 +159,7 @@ Chat taps are the tap-to-chat messages you send during a race.
 
 ## Arcade 🕹
 
-The lounge arcade is a mini-game on the platform. These are awarded on your **best** run rather than a total, so one good run is what moves them.
+The lounge arcade is a mini-game on the platform, and these count your **best** run rather than a total, so one good run moves them.
 
 | Badge          | Emoji | How to earn                |
 | -------------- | ----- | -------------------------- |
@@ -169,7 +169,7 @@ The lounge arcade is a mini-game on the platform. These are awarded on your **be
 
 ## Raids 📣
 
-Earned from the raid leaderboard. Link and verify your X account so your engagement is credited (see [Player verification](../trust/verification.md) and [The Lucky Ducks Telegram bot](../help/telegram-bot.md#raids-boost-the-tweet-together)).
+From the raid leaderboard. Link and verify your X account to have your engagement credited: see [Player verification](../trust/verification.md) and [the Telegram bot](../help/telegram-bot.md#raids-boost-the-post-together).
 
 | Badge          | Emoji | How to earn              |
 | -------------- | ----- | ------------------------ |
@@ -179,7 +179,7 @@ Earned from the raid leaderboard. Link and verify your X account so your engagem
 | Signal Booster | 🎯    | Earn 100 raid points     |
 | Raid Machine   | 🎯    | Earn 500 raid points     |
 
-Raid points come from likes (2), retweets (3), and replies (4) on Lucky Ducks raid tweets, and also add to your XP.
+Raid points come from likes (2), reposts (3) and replies (4) on Lucky Ducks raid posts, and they feed your XP too.
 
 ## Rare 💎
 
@@ -193,8 +193,8 @@ One off achievements rather than ladders.
 | Iron Man      | 💎    | Play 25+ races in a single day          |
 | Chain Hopper  | 🌉    | Join a race gated on a non-Solana chain |
 
-Early Adopter is awarded for joining a race whose ID is 100 or below, so it belongs to the platform's first races. Chain Hopper needs a linked external wallet, which is covered in [NFT holders](../races/access-and-gating.md#nft-holders).
+Early Adopter goes to anyone who joined a race with an ID of 100 or below, so it belongs to the platform's first races. Chain Hopper needs a linked external wallet, covered in [NFT holders](../races/access-and-gating.md#nft-holders).
 
 ---
 
-Keep racing and raiding to fill out your collection.
+Keep racing and raiding to fill the set.

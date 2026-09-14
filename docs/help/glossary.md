@@ -13,7 +13,7 @@ Two terms are worth reading together before anything else: a **race vault** hold
 
 ### Allowlist (private race)
 
-An invite list of up to 20 wallets the creator can attach to a race (also the maximum players a race can hold). Only listed wallets can join; everyone else sees the race but cannot click Join. The full list is stored off chain on the platform backend and exposed through the race endpoints, so it is visible in the dApp; only a short fingerprint is recorded on chain to prevent tampering. The creator's own wallet is implicitly allowed only via the auto join at race creation (when the race is neither sponsored nor in host mode); in host mode the creator must add their wallet to the list if they want to join later.
+An invite list of up to 20 wallets, which is also the most players a race can hold. Only listed wallets can join, and everyone else sees the race with Join disabled. The list lives off chain and is exposed through the race endpoints, so the dApp can show it; only a short fingerprint goes on chain, to prove it was not tampered with. The creator is admitted by the auto join at creation, so in host mode they must list themselves to join later.
 
 ### ATA (Associated Token Account)
 
@@ -33,7 +33,7 @@ A wearable NFT skin. Visual only, no gameplay impact.
 
 ### Daily race allowance
 
-The cap on how many races a wallet can play (join or auto-join) in a rolling 24 hour window. Non-Runner verified wallets get 50 per day; Runner holders get 500. Hosting, sponsoring, and creating a race you do not join yourself do **not** count. Offering or accepting a rematch does. See [Daily races](../races/daily-races.md).
+The cap on how many races a wallet can play in a rolling 24 hour window: 50 a day without a Runner, 500 with one. Hosting, sponsoring and creating a race you do not join do **not** count; offering or accepting a rematch does. See [Daily races](../races/daily-races.md).
 
 ### Default max players
 
@@ -41,7 +41,7 @@ The largest race you can create without a Runner NFT, and the smallest lobby an 
 
 ### Delegation
 
-Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions so you do not approve each one in your wallet. It funds those actions from your player vault, expires on its own, and can be revoked instantly. It can never move money out of the platform. Granting it requires a [verified](#verified) wallet; revoking it never does. See [Playing without signing every action](../races/delegated-play.md).
+Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions instead of your wallet. It spends from your player vault, expires on its own, revokes instantly, and can never move money off the platform. Granting needs a [verified](#verified) wallet; revoking never does. See [Playing without signing every action](../races/delegated-play.md).
 
 ### Discriminator
 
@@ -65,11 +65,11 @@ The lobby window during which players can join a race. Default 1 hour. Customiza
 
 ### Linked wallet
 
-An external, non-Solana wallet you attach to your Lucky Ducks profile so the platform can check its NFT holdings when you join a cross-chain gated race. Linking is a one time step per wallet: you connect the wallet and sign a message to prove control. No funds move. Linking a new wallet replaces the previous link. See [NFT holders](../races/access-and-gating.md#nft-holders).
+A non-Solana wallet attached to your profile so the platform can read its NFT holdings when you join a cross-chain gated race. One signature per wallet proves control, no funds move, and linking a new one replaces the old. See [NFT holders](../races/access-and-gating.md#nft-holders).
 
 ### Minimum account age
 
-An optional, creator chosen condition that limits a race to wallets whose player account is at least a certain age. Defaults to 24 hours when enabled. Requires a Runner NFT at race creation. Independent of the join setting (Anyone, Verified Only, Allowed Players, NFT Holders, or Token Holders): can be combined with any of them.
+A creator chosen condition limiting a race to wallets whose player account is at least a certain age, 24 hours by default. Needs a Runner NFT at creation, and stacks on any join setting.
 
 ### Mystery Box
 
@@ -77,7 +77,7 @@ A sealed NFT that opens into a random reward from a themed pool (Cosmetics, Trac
 
 ### NFT Holders (join setting)
 
-A race join setting that restricts entry to wallets holding at least a chosen number of NFTs from a chosen collection. The collection can be on Solana or on a supported non-Solana chain (Ethereum, Base, Polygon, and others). For cross-chain collections, joiners link an external wallet to their profile once, and the platform checks that wallet at join time. Eligibility is based on current holdings and is checked at join time using a short lived eligibility pass. The same NFT cannot secure two seats in the same race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
+Restricts entry to wallets holding a minimum number of NFTs from a chosen collection, on Solana or a supported chain such as Ethereum, Base or Polygon. For another chain, joiners link an external wallet once and the platform checks that. Eligibility counts current holdings, verified at join time by a short lived pass, and one NFT cannot secure 2 seats in a race. See [Race access and gating](../races/access-and-gating.md#nft-holders).
 
 ### ORAO VRF
 
@@ -93,7 +93,7 @@ A Solana account whose address is deterministically derived from a set of seeds 
 
 ### Player account (stats PDA)
 
-A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0017 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
+A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0023 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
 
 ### Player vault
 
@@ -109,7 +109,7 @@ A PDA owned by the smart contract that holds the entry fees for a specific race.
 
 ### Rematch
 
-A subsequent race proposed by the winner against the same opponents, with the same parameters (by default). Chains up to 11 deep.
+A follow-up 1v1 either player can offer when a race ends, inheriting its settings and rolling the stake forward. Chains up to a platform limit, and a claimed prize closes the option.
 
 ### Runner NFT
 
@@ -125,7 +125,7 @@ The minimum joiner count at which an underfilled-opted-in race can auto-start. C
 
 ### Token Holders (join setting)
 
-A race join setting that restricts entry to wallets holding at least a chosen amount of a chosen token. Checked directly on chain at join time. The gating token does not have to be the race's prize token. Supports both legacy SPL Token and Token-2022 mints. See [Race access and gating](../races/access-and-gating.md#token-holders).
+Restricts entry to wallets holding a minimum amount of a chosen token, checked on chain at join time. The gating token need not be the prize token, and both legacy SPL Token and Token-2022 mints work. See [Race access and gating](../races/access-and-gating.md#token-holders).
 
 ### Tolerance
 
@@ -141,7 +141,7 @@ The platform's fee wallet. Receives the platform fee out of every finalized priz
 
 ### Verified
 
-A wallet that has linked an off-platform identity via OAuth (X, Telegram, Facebook). Carries a checkmark badge and can enter races reserved for verified players. A linked account is also a way to sign in without your wallet app, and it is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
+A wallet that has linked an off-platform identity by OAuth (X, Telegram, Facebook). It carries a checkmark, can enter races reserved for verified players, signs you in without your wallet app, and is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
 
 ### VRF (Verifiable Random Function)
 
@@ -149,12 +149,12 @@ A cryptographic function whose output is provably random and unpredictable, but 
 
 ### Withdrawn
 
-A participant who left the lobby before it closed. Two windows apply: within 2 minutes of their own join, and not in the last 60 seconds of the lobby. Gets their full entry back from the vault; a fixed 0.01 SOL penalty is charged separately from their wallet (always in SOL, even on token races); the penalty goes to the treasury fee wallet, not the prize pool.
+A participant who left the lobby before it closed, which is allowed within 2 minutes of their own join and never in the last 60 seconds. They get their full entry back from the vault, and a fixed 0.01 SOL penalty leaves their wallet for the treasury, in SOL even on a token race. It never joins the prize pool.
 
 ### WTA (Winner Takes All)
 
 Race mode where the first place finisher gets the entire prize pool, minus the platform fee.
 
-### X announcement (X tweet)
+### X announcement
 
-An optional creation setting that posts the race publicly to Lucky Ducks' X (Twitter) account. Flat cost, around 0.005 SOL, paid straight to the backend wallet at creation, non-refundable. Requires a Runner NFT to enable. Picked independently for rematches, not inherited. See [X announcement](../races/advanced-options.md#x-announcement).
+Posts the race publicly to Lucky Ducks' X account. Flat cost of around 0.0005 SOL, straight to the backend wallet at creation and non-refundable. Needs a Runner NFT, and a rematch picks it independently rather than inheriting it. See [X announcement](../races/advanced-options.md#x-announcement).

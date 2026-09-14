@@ -5,25 +5,27 @@ description: Sealed boxes that open into a random reward from a themed pool, dra
 
 # Mystery Boxes
 
-Mystery Boxes are sealed NFT boxes that open into a random reward from a themed pool. You mint a box without knowing what is inside; the box is then opened on chain and a reward NFT is minted straight to your wallet.
+A sealed box you mint without knowing what is inside. It opens on chain and mints a reward NFT straight to your wallet.
 
-The reward NFT belongs to the matching regular collection ([Cosmetics](cosmetics.md), [Tracks](tracks.md), or [Boosts](boosts.md)), so what you pull is interchangeable with anything else from that collection: tradable on the marketplace, recognized by the platform, no special "from a box" tag attached to it.
+The reward belongs to the matching regular collection, [Cosmetics](cosmetics.md), [Tracks](tracks.md) or [Boosts](boosts.md), so it is interchangeable with anything else from there: tradable, recognised by the platform, and carrying no "from a box" tag.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-desktop.png" alt="The three Mystery Box types in the marketplace, each with its price and remaining supply"><figcaption><p>You choose the box type. The reward inside it is drawn at random.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-desktop.png" alt="The three Mystery Box types in the marketplace, each with its price and remaining supply"><figcaption><p>You choose the box type. What is inside is drawn at random.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-mobile.png" alt="The three Mystery Box types in the marketplace, each with its price and remaining supply, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 ## The three box types
 
-Each box belongs to one of three groups, and reveals a reward drawn only from that group:
+Each box draws only from its own group:
 
 | Box           | Opens into                                                                       |
 | ------------- | -------------------------------------------------------------------------------- |
@@ -31,7 +33,7 @@ Each box belongs to one of three groups, and reveals a reward drawn only from th
 | **Tracks**    | A random race Track (Night, Sunset, Rainy, Snowy, Stormy, Foggy, and so on).     |
 | **Boost**     | A random Boost.                                                                  |
 
-The exact reward you get is chosen at open time, weighted by the pool the team has configured. Rarer rewards have a smaller share of the pool.
+The reward is picked at open time against weights the team configures, so rarer rewards hold a smaller share of the pool.
 
 ## How opening works
 
@@ -40,15 +42,15 @@ The exact reward you get is chosen at open time, weighted by the pool the team h
 
 ### Mint a box
 
-Pick a box type in the marketplace and mint it like any other NFT. You pay the box price and a sealed box lands in your wallet.
+Pick a type in the marketplace and mint it like any other NFT. You pay the price and a sealed box lands in your wallet.
 
 {% endstep %}
 
 {% step %}
 
-### The box opens automatically
+### The box opens itself
 
-No second transaction is needed from you. The moment your box mint is seen, the reveal begins.
+No second transaction. The reveal begins the moment your mint is seen.
 
 {% endstep %}
 
@@ -56,7 +58,7 @@ No second transaction is needed from you. The moment your box mint is seen, the 
 
 ### A random reward is drawn
 
-The outcome is decided by a verifiable random number (see [Provably fair](#provably-fair) below) and the configured reward weights.
+Decided by a verifiable random number, see [Provably fair](#provably-fair) below, and the configured weights.
 
 {% endstep %}
 
@@ -64,43 +66,41 @@ The outcome is decided by a verifiable random number (see [Provably fair](#prova
 
 ### Your reward is minted to you
 
-The reward NFT is sent directly to the wallet that opened the box, and the box is consumed.
+Straight to the wallet that opened the box, and the box is consumed.
 
 {% endstep %}
 {% endstepper %}
 
-A progress indicator walks through each step (opening, drawing your prize, selecting your reward, minting it) and finishes by showing the reward you received.
+A progress indicator walks through opening, drawing, selecting and minting, then shows you what you got.
 
 {% columns %}
 {% column width="70%" %}
 
 <figure><img src="../../.gitbook/assets/nfts/app-mystery-box-reveal-desktop.png" alt="The reveal progress indicator part way through, with the drawing step active"><figcaption><p>The reveal runs on its own. There is no second signature.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/nfts/app-mystery-box-reveal-mobile.png" alt="The reveal progress indicator part way through, with the drawing step active, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 {% hint style="success" %}
-You never sign a separate "reveal" transaction. Once the box is minted, opening is handled for you and the reward arrives on its own.
+You never sign a "reveal". Once the box is minted the opening is handled for you and the reward arrives by itself.
 {% endhint %}
 
 ## Provably fair
 
-The reward is selected using **ORAO VRF**, an on chain verifiable random function. The randomness is requested and fulfilled on chain, so the draw cannot be predicted or tampered with ahead of time. The reveal only finalizes after the random value is published on chain.
-
-This is the same randomness source that decides race winners. For background on what that guarantees and how you can verify it yourself, see [Provable randomness](../trust/fairness.md).
+The draw uses **ORAO VRF**, the same on chain randomness that decides race winners: requested and fulfilled on chain, so nobody can predict or tamper with it, and the reveal only finalises once the random value is published. See [Provable randomness](../trust/fairness.md) for what that guarantees and how to check it.
 
 ## Reveal states
 
-While a box is opening you may see one of these states:
-
-- **Opening, Drawing, Selecting, Minting.** The reveal is in progress. This usually takes only a few seconds.
-- **Revealed.** Done. Your reward NFT is in your wallet.
-- **Temporarily unavailable.** The matching reward group is momentarily empty or paused. Your box is safe; try again a little later.
-- **Failed.** The open could not complete this time (for example, the randomness was not produced in time). The system retries for up to about two minutes before showing this; your box is not lost.
+- **Opening, Drawing, Selecting, Minting.** In progress, usually a few seconds.
+- **Revealed.** Done, and the reward is in your wallet.
+- **Temporarily unavailable.** That reward group is momentarily empty or paused. Your box is safe, so try again shortly.
+- **Failed.** The open could not finish this time, for instance because the randomness did not arrive. The system retries for up to about 2 minutes first, and your box is not lost.
 
 ## FAQ
 
@@ -108,7 +108,7 @@ While a box is opening you may see one of these states:
 
 <summary>Do I choose my reward?</summary>
 
-No. The reward is drawn at random from the box's reward pool. You choose the box type (Cosmetics, Tracks, or Boost), not the specific reward.
+No. You choose the box type, Cosmetics, Tracks or Boost, and the reward is drawn at random from that pool.
 
 </details>
 
@@ -116,7 +116,7 @@ No. The reward is drawn at random from the box's reward pool. You choose the box
 
 <summary>How long does opening take?</summary>
 
-Typically a few seconds. In rare cases the on chain randomness takes longer; the system keeps trying for up to about two minutes.
+Usually a few seconds. When the on chain randomness is slow the system keeps trying for up to about 2 minutes.
 
 </details>
 
@@ -124,7 +124,7 @@ Typically a few seconds. In rare cases the on chain randomness takes longer; the
 
 <summary>What happens to the box after it opens?</summary>
 
-The box is consumed as part of opening. It is a one time key that turns into your reward.
+It is consumed. A box is a one time key that turns into your reward.
 
 </details>
 
@@ -132,7 +132,7 @@ The box is consumed as part of opening. It is a one time key that turns into you
 
 <summary>Is there a limit on how many boxes I can buy?</summary>
 
-Yes. Each box type has a total supply and a per-wallet cap, both set by the team. When you hit either one the store tells you which, and refuses the purchase before you sign anything.
+Yes. Each type has a total supply and a per-wallet cap, both set by the team, and the store tells you which one you hit and refuses before you sign.
 
 </details>
 
@@ -140,7 +140,7 @@ Yes. Each box type has a total supply and a per-wallet cap, both set by the team
 
 <summary>The store said it could not check availability. Is it sold out?</summary>
 
-No, and the wording is deliberate. "Sold out" and "could not check right now" are two different answers. The store refuses to sell a box it cannot confirm is available, so a temporary read failure looks like a refusal rather than risking a purchase against an empty box. Sold out is final; could not check is worth retrying in a moment.
+No, and the wording is deliberate. The store refuses to sell a box it cannot confirm exists, so a temporary read failure looks like a refusal rather than risking a purchase against an empty pool. Sold out is final; could not check is worth retrying in a moment.
 
 </details>
 
@@ -148,14 +148,14 @@ No, and the wording is deliberate. "Sold out" and "could not check right now" ar
 
 <summary>Can I see recent reveals?</summary>
 
-Yes. The marketplace shows a feed of the most recently revealed mints so you can see what others have pulled.
+Yes. The marketplace shows a feed of the latest reveals, so you can see what other people have pulled.
 
 </details>
 
 <details>
 
-<summary>Are the rewards different from collection mints?</summary>
+<summary>Are box rewards different from collection mints?</summary>
 
-No. A reward NFT pulled from a Mystery Box is identical to one minted any other way: same collection, same metadata, same marketplace listing options.
+No. A reward is identical to one minted any other way: same collection, same metadata, same listing options.
 
 </details>

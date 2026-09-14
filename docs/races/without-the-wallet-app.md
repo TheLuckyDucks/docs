@@ -5,9 +5,9 @@ description: Set up a session that never opens your wallet app, in the order the
 
 # Playing without your wallet app
 
-On a phone, the slowest part of a race is not the race. It is the handoff: tap, wait for the wallet app to open, approve, wait to be sent back. Doing that once is fine. Doing it for every join, every claim and every rematch is what makes a quick game feel slow.
+On a phone the slowest part of a race is the handoff: tap, wait for the wallet app, approve, wait to come back. Once is fine. Every join, claim and rematch is what makes a quick game feel slow.
 
-You can set things up so a whole session never opens your wallet app. This page is the path. Each step has its own page with the detail; here is the order and what each one buys you.
+You can set things up so a whole session never opens your wallet app. Each step has its own page; this is the order and what each one buys you.
 
 ## The three steps, once each
 
@@ -16,7 +16,7 @@ You can set things up so a whole session never opens your wallet app. This page 
 
 ### Connect your wallet and sign in
 
-The first sign-in is always the wallet, because signing a message is the only thing that proves the wallet is yours. Nothing else can establish that, so nothing else is offered until it has happened once.
+The first sign-in is always the wallet. Signing a message is the only thing that proves the wallet is yours, so nothing else is on offer until it has happened once.
 
 {% endstep %}
 
@@ -24,7 +24,7 @@ The first sign-in is always the wallet, because signing a message is the only th
 
 ### Link an account
 
-Verification attaches an off-platform identity to your wallet: X, Telegram, Facebook or whichever providers the platform has enabled. From then on that account is a second way in. See [Player verification](../trust/verification.md).
+Verification attaches an off-platform identity to your wallet: X, Telegram, Facebook, whichever providers are enabled. From then on that account is a second way in. See [Player verification](../trust/verification.md).
 
 {% endstep %}
 
@@ -32,60 +32,62 @@ Verification attaches an off-platform identity to your wallet: X, Telegram, Face
 
 ### Turn on delegated play
 
-This lets Lucky Ducks sign your in-game actions for a period you choose, funded from your [player vault](../economy/player-vault.md). See [Playing without signing every action](delegated-play.md).
+Lucky Ducks then signs your in-game actions for a period you choose, funded from your [player vault](../economy/player-vault.md). See [Playing without signing every action](delegated-play.md).
 
 {% endstep %}
 {% endstepper %}
 
-After that, opening the app means picking your linked account on the login screen, and playing means one tap per action.
+After that, opening the app means picking your linked account, and playing means one tap per action.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/races/app-login-linked-account-desktop.png" alt="The login screen offering a linked social account alongside the connect wallet button"><figcaption><p>Once an account is linked, it appears on the login screen as a second way in.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-login-linked-account-desktop.png" alt="The login screen offering a linked social account alongside the connect wallet button"><figcaption><p>A linked account shows up on the login screen as a second way in.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-login-linked-account-mobile.png" alt="The login screen offering a linked social account alongside the connect wallet button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 ## The order is not a suggestion
 
-Each step depends on the one before it, and the app will refuse out of order:
+Each step needs the one before it, and the app refuses out of order:
 
-- You cannot link an account until you have joined at least one race. A brand new wallet cannot verify.
-- You cannot turn on delegated play until your wallet is verified. The program itself refuses, not just the app.
+- No linking until you have joined a race. A brand new wallet cannot verify.
+- No delegated play until your wallet is verified. The program refuses it, not just the app.
 
-That second refusal exists because the two halves only work together. Signing your actions for you removes the wallet from playing; the linked account removes it from signing in. With only the first, every visit would still start in the wallet app, which is the thing you were trying to avoid.
+That second refusal exists because the halves only work together. Signing for you takes the wallet out of playing; the linked account takes it out of signing in. With only the first, every visit would still start in the wallet app, which was the thing you wanted to avoid.
 
 ## What still needs your wallet app
 
-Setting it up is the point at which you use the wallet, and there is a short list that always will:
+A short list always will:
 
-| Action                               | Why                                                                                     |
-| ------------------------------------ | --------------------------------------------------------------------------------------- |
-| Topping up your vault                | Money leaving your wallet needs your wallet's signature. No arrangement can change that |
-| Withdrawing from your vault          | Value leaving the platform is the line the whole design rests on                        |
-| Closing your player account          | The other exit, for the same reason                                                     |
-| Granting or extending delegated play | The permission is your consent, so it cannot renew itself                               |
+| Action                               | Why                                                                                  |
+| ------------------------------------ | ------------------------------------------------------------------------------------ |
+| Topping up your vault                | Money leaving your wallet needs your wallet's signature. No arrangement changes that |
+| Withdrawing from your vault          | Value leaving the platform is the line the whole design rests on                     |
+| Closing your player account          | The other exit, for the same reason                                                  |
+| Granting or extending delegated play | The permission is your consent, so it cannot renew itself                            |
 
-Everything else you do in a game is covered.
+Everything you do inside a game is covered.
 
 ## If you lose access to the linked account
 
-Link a second one. Any account attached to your wallet signs you in, and none of them is the primary for that purpose: verify with X and link Google later, and either will do. Only the first link runs an on-chain transaction; the rest are recorded off chain.
+Link a second one. Any account attached to your wallet signs you in, and none of them is the primary: verify with X, link Google later, and either will do. Only the first link costs an on-chain transaction.
 
 {% hint style="success" %}
-Your wallet always works as a way in. The linked account is a convenience on top of it, never a replacement, so losing every linked account costs you the convenience and not the account.
+Your wallet always works as a way in. A linked account sits on top of it and never replaces it, so losing every linked account costs you the convenience, not the account.
 {% endhint %}
 
 ## Turning it back off
 
-Revoking delegated play is always available. It needs no verification, it works even if the platform has switched the feature off for everyone, and it takes effect immediately.
+Revoking delegated play is always available. It needs no verification, it works even if the platform has switched the feature off for everyone, and it takes effect at once.
 
-Signing in with your wallet is likewise always available, whatever you have linked. Nothing in this arrangement can lock you out of your own wallet.
+Signing in with your wallet is always available too, whatever you have linked. Nothing here can lock you out of your own wallet.
 
 {% content-ref url="delegated-play.md" %}
 [delegated-play.md](delegated-play.md)

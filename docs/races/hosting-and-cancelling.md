@@ -5,61 +5,54 @@ description: Hosting a race without playing it, cancelling one during the join w
 
 # Hosting, cancelling, and refunds
 
-This page covers three related things a creator can do with a race they made: host it without playing, cancel it during the join window, or let it expire if nobody shows up.
+Three things a creator can do with their own race: host it without playing, cancel it while the window is open, or let it expire.
 
 ## Host a race without playing
 
-Normally the person who creates a race also joins it as the first player. You can instead **host** a race without playing. The race opens with no players and fills as others join.
+Normally the creator is also the first player. Hosting instead opens the race empty, and it fills as others join.
 
-A few things to know about hosting:
+- You need a Runner NFT. See [Runner NFTs](../nfts/runners.md).
+- It is not available for 1v1.
+- A host earns no [Creator Fee Share](../economy/creator-fee-share.md). Hosting and earning a cut of the fee are separate paths, and hosting gives the cut up.
+- You can still join your own race while the window is open, and from then on you are an ordinary player: cancel or expiry returns your full entry like anyone else's.
 
-- You need a Runner NFT to host a race this way. See [Runner NFTs](../nfts/runners.md).
-- Hosting is not available for 1v1 races.
-- A host does not earn the [Creator Fee Share](../economy/creator-fee-share.md). Hosting and earning a share of the platform fee are separate paths, and a host gives that share up.
-- You can still join your own race later while the join window is open. Once you join, you are treated as a normal player. If the race is then cancelled or expires, you get your full entry back like anyone else.
-
-Hosting is useful for community events, tournaments where the organizer should not also be a participant, or any time you want to put up a race for others without taking a slot yourself.
+It suits community events, tournaments where the organiser should not compete, and any race you want to put up without taking a seat.
 
 ## Cancelling a race
 
-Only the creator can cancel a race, and only while the join window is still open.
-
-When you cancel:
-
-- Everyone who joined, including you if you joined, gets their full entry back.
-- You pay a small fixed penalty in SOL that goes to the platform.
+Only the creator can cancel, and only while the join window is open. Everyone who joined gets their full entry back, you included if you joined, and you pay a small fixed penalty in SOL to the platform.
 
 {% hint style="warning" %}
-The penalty is a flat amount set by the platform, around **0.05 SOL**, and the cancel confirmation shows the exact figure. It is the same whether the race is a SOL race or a token race, and it does not change with the size of the pot. For a token race the penalty is still paid in SOL.
+The penalty is flat, around **0.05 SOL**, and the confirmation shows the exact figure. It does not scale with the pot, and a token race still pays it in SOL.
 {% endhint %}
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-desktop.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign it.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-desktop.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-mobile.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-You cannot cancel a race that is already ready to start. If your race was set to [start when underfilled](advanced-options.md#start-when-underfilled) and enough players have joined to reach that point, the race goes ahead instead of being cancelled.
+A race that is ready to start cannot be cancelled. If yours had [start when underfilled](advanced-options.md#start-when-underfilled) on and enough players joined to reach the threshold, it goes ahead instead.
 
-The penalty exists so cancelling stays a deliberate action, not a casual one. Joiners committed real funds when they signed up; the small SOL charge keeps creators from yanking races on a whim.
+The penalty is there to keep cancelling deliberate. Joiners committed real funds, and the charge stops creators pulling races on a whim.
 
 ## When a race expires
 
-If the join window passes and the race never filled or started, it can be refunded. Refunding an expired race is permissionless: anyone can trigger it, not just the creator.
-
-When a race expires and is refunded:
+A race that never filled or started can be refunded once the window passes, and triggering that is permissionless: anyone can, not only the creator.
 
 - Every player gets their full entry back.
-- If you hosted a race and never joined it, there is nothing to refund to you on the entry side, since you never paid an entry. Any leftover value from setting up the race (rent, unused opt-in costs) still comes back to you.
-- There is no penalty once the race has expired. The penalty only applies while the join window is open.
+- Hosted and never joined? There is no entry to refund you, but the leftovers from setting the race up, the rent and any unused opt in costs, still come back.
+- No penalty applies after expiry. The penalty belongs to the window.
 
-A race that nobody joined is simply closed when it expires. No penalty, no fanfare.
+A race nobody joined just closes. No penalty, no fanfare.
 
 ## Quick comparison
 
@@ -69,7 +62,7 @@ A race that nobody joined is simply closed when it expires. No penalty, no fanfa
 | Creator cancels during lobby               | Creator only           | Full entry returned               | 0.05 SOL flat                       |
 | Race expires (join window passes unfilled) | Anyone, permissionless | Full entry returned               | None                                |
 
-For everything else around money flow (rent, surcharges, where to find pending refunds) see [Refunds and rent](../economy/refunds-and-rent.md).
+For the rest of the money flow, rent, surcharges and where pending refunds appear, see [Refunds and rent](../economy/refunds-and-rent.md).
 
 {% content-ref url="../economy/refunds-and-rent.md" %}
 [refunds-and-rent.md](../economy/refunds-and-rent.md)

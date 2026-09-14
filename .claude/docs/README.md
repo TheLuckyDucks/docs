@@ -20,10 +20,11 @@ the doc is stale.
 
 ## Map
 
-| File             | What it is                                                                                       | Load when                                                       |
-| ---------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
-| `OVERVIEW.md`    | Reading order, page ownership, the topics deliberately split across pages, where a new page goes | Adding a page or a section, or unsure which page owns a subject |
-| `screenshots.md` | Every image the pages reference, what each one must show, and how to find the missing ones       | Adding or replacing an image, or capturing a batch of them      |
+| File                  | What it is                                                                                                                         | Load when                                                            |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `OVERVIEW.md`         | Reading order, page ownership, the topics deliberately split across pages, where a new page goes                                   | Adding a page or a section, or unsure which page owns a subject      |
+| `screenshots.md`      | Every image the pages reference, what each one must show, and how to find the missing ones                                         | Adding or replacing an image, or capturing a batch of them           |
+| `verifying-claims.md` | Which file in the sibling repos answers which claim, the commands that produce the answer, and the ways this bundle has been wrong | Writing or changing a figure, a permission, a precondition or a cost |
 
 ## Why everything is outside the content tree
 

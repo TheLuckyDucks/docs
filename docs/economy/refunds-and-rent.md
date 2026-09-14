@@ -5,7 +5,7 @@ description: Every path money takes back to you, from withdrawals and cancellati
 
 # Refunds and rent
 
-How money flows back to you when something does not finish as expected.
+How money comes back when a race does not finish as expected.
 
 ```mermaid
 flowchart TD
@@ -19,102 +19,104 @@ flowchart TD
 
 ## Withdrawal during the lobby
 
-You can leave a race during the lobby window under two time constraints:
+Leaving a lobby has two time constraints:
 
-- You must withdraw **within 2 minutes of your own join**. If you have been in the lobby longer than that, the withdraw button is disabled.
-- The **last 60 seconds** of the join window are locked for everyone (anti grief), regardless of when they joined.
+- **Within 2 minutes of your own join.** Longer than that and the withdraw button is disabled.
+- **Never in the last 60 seconds** of the join window, which is locked for everyone whenever they joined.
 
 {% hint style="warning" %}
-When you withdraw, the vault refunds your **full entry fee** and a fixed **0.01 SOL** withdrawal penalty is charged separately from your wallet to the platform fee wallet. The penalty is the same regardless of pool size or token, and always paid in SOL even for SPL/token races.
+The vault then refunds your **full entry fee** and charges a fixed **0.01 SOL** penalty from your wallet to the platform fee wallet. It does not scale with the pot or the token, and it is always in SOL, even on a token race.
 {% endhint %}
 
-A few details worth knowing:
+Details worth knowing:
 
-- The penalty is a separate transfer, not a deduction from the race vault refund. The net effect for you is the same, but on chain you will see two movements: a refund credit and a small SOL debit.
-- The penalty comes from whichever account signed. Sign it yourself and it leaves your wallet. Leave it during a session where you are [playing without signing every action](../races/delegated-play.md) and it leaves your player vault instead, so a sponsored race you are leaving still needs a funded vault.
-- Sponsored races: joiners paid no entry fee, so withdrawing simply frees the slot. No refund, no penalty, and the sponsor's prize deposit is untouched.
-- In a **1v1 (2 player)** race, the creator cannot withdraw (they would strand the sole remaining player). They must use cancel instead.
+- The penalty is a separate transfer, not a deduction from the refund. Same net effect, but on chain you see two movements: a credit and a small SOL debit.
+- It comes from whatever signed. Sign yourself and it leaves your wallet; leave during a [delegated session](../races/delegated-play.md) and it leaves your vault, so even a sponsored race you are leaving needs a funded vault.
+- On a sponsored race joiners paid nothing, so withdrawing just frees the seat: no refund, no penalty, and the sponsor's deposit untouched.
+- In a **1v1** the creator cannot withdraw, since that would strand the other player. They cancel instead.
 
-Withdrawn players are shown in the participants list with a strikethrough; they no longer count toward the lobby fill counter or the underfilled start threshold.
+Withdrawn players stay in the participants list with a strikethrough, and stop counting toward the fill counter or the underfilled threshold.
 
 ## Full refund on race cancellation or expiration
 
-If the race never finalizes, every paid participant can claim a **full** refund. This covers two distinct cases.
+A race that never finalizes refunds every paid participant in **full**. Two cases.
 
 ### Creator cancellation during the join window
 
-The creator can cancel a race while the join window is still open, even if nobody has joined yet. When they do:
+The creator can cancel while the window is open, even with nobody in yet:
 
-- Every player who joined (including the creator, if they joined as a player) gets their **full** entry back.
-- The creator pays a fixed **0.05 SOL** penalty to the platform. The penalty is the same for SOL races and token races (token races still pay it in SOL) and does not scale with the pot size.
+- Every player who joined, the creator included if they joined, gets their **full** entry back.
+- The creator pays a fixed **0.05 SOL** penalty to the platform, the same for SOL and token races, in SOL either way, and flat regardless of the pot.
 
-A race that has already passed the start point cannot be cancelled. For details, see [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#cancelling-a-race).
+A race past its start point cannot be cancelled. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#cancelling-a-race).
 
 ### Expiration (join window passed without starting)
 
-If the join window passes and the race never reached its start condition, the race expires and can be refunded. Triggering the refund is permissionless: anyone can submit it, not just the creator. Players get their full entry back. There is **no** penalty on expiration. The penalty only applies to manual cancellation while the join window is still open.
+A race that never reached its start condition expires and becomes refundable. Anyone can trigger that, not only the creator, players get their full entry back, and there is **no** penalty. The penalty belongs to a manual cancel inside the window.
 
 ### Other refund paths
 
-The contract records a cancellation reason on the race account and emits it in the cancel event. Beyond a manual cancel by the creator, the two reasons that can trigger a refund flow are:
+The contract records a cancellation reason on the race and emits it in the cancel event. Beyond a manual cancel, two reasons lead here:
 
-- **JoinTimeout**. The join window passed without the race reaching a startable state. This is the expiration path above.
-- **StaleRandomness**. The oracle did not fulfill the VRF request within the VRF timeout, which is about two minutes. Rare; the oracle is reliable.
+- **JoinTimeout.** The window passed without the race becoming startable, which is the expiry path above.
+- **StaleRandomness.** The oracle did not fulfil the VRF request inside the VRF timeout, about 3 minutes. Rare; the oracle is reliable.
 
 {% hint style="info" %}
-In either case the refund is permissionless: anyone can submit it, not just a participant. **It refunds the whole lobby in one transaction and closes the race**, so there is no such thing as refunding yourself alone, and no way for one player to leave the others behind. The money always goes to each original payer regardless of who paid for the transaction.
+Either way the refund is permissionless, and **it refunds the whole lobby in one transaction and closes the race**. There is no refunding yourself alone and no leaving the others behind, and the money reaches each original payer whoever paid for the transaction.
 {% endhint %}
 
 ### Who triggers it, and who pays for it
 
-Nothing happens on chain when a deadline passes. The race simply becomes refundable, and someone has to submit the transaction.
+Nothing happens on chain when a deadline passes. The race simply becomes refundable, and somebody has to submit it.
 
-- **Races the platform created** are swept automatically, and the platform pays the network fee.
-- **A race a player created is left alone on purpose.** It is theirs to close. The platform does not close a race somebody else paid for, so the refund waits for the creator or for any participant to trigger it.
+- **Races the platform created** are swept automatically, and the platform pays the fee.
+- **A race a player created is left alone on purpose.** It is theirs to close, because the platform does not close a race somebody else paid for, so it waits for the creator or any participant.
 
-You are never left guessing which one you are in: a race sitting past its join window shows up in the Unclaimed Items banner on your player page as soon as it becomes refundable, with the button that clears it.
+You are never left guessing: a race past its window appears in the Unclaimed Items banner on your player page as soon as it is refundable, with the button that clears it.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-desktop.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Anything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-desktop.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Everything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-mobile.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-Triggering it yourself costs the network fee for that transaction. If you trigger it while [playing without signing every action](../races/delegated-play.md), that fee comes from your player vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
+Triggering it yourself costs the network fee, and during a [delegated session](../races/delegated-play.md) that comes from your vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 
-## Race PDA rent
+## Race account rent
 
-Creating a race allocates a Solana account whose rent is roughly 0.003 SOL, paid by the creator at creation. When the race finalizes (or is cancelled), the contract closes the account and returns the rent to the creator.
+Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: roughly 0.0084 SOL for a 1v1, 0.012 SOL at 5 seats and 0.03 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns every lamport to the creator.
 
-Net cost of creating a race for the creator: oracle fee + archival fee + opt in costs. The rent itself is fully refundable.
+Net cost of creating a race, then: oracle fee, archival fee and any opt in costs. The rent is a deposit, not a charge.
 
 ## Your player account rent
 
-The first time you create or join a race, the contract allocates a small per-wallet account that holds your race history, your profile, and your [player vault](player-vault.md) balance. Rent is around 0.0017 SOL.
+Your first create or join allocates a small per-wallet account holding your race history, profile and [player vault](player-vault.md) balance. Rent is around 0.0023 SOL.
 
-That rent is a deposit Solana requires to keep any account open. It is held separately from your vault balance and is never spendable, which is why your balance is always withdrawable in full.
+That rent is what Solana requires to keep an account open. It sits apart from your vault balance and is never spendable, which is why your balance is always withdrawable in full.
 
-This account is also fully refundable. From the Player page, the close button submits the close instruction and returns everything in one transaction: your SOL balance, every token balance you were holding, and the rent. Your race history is reset. You can recreate the account on your next race; the rent is just held while you are actively using the platform.
+It is refundable too. The close button on the Player page returns everything in one transaction: your SOL, every token balance and the rent. Your race history resets, and the account comes back on your next race, so the rent is only held while you are using the platform.
 
 ## Start-when-underfilled surcharge
 
-If a creator opts into start-when-underfilled, a small surcharge is deposited into the race vault at creation. Two outcomes:
+Opting into start-when-underfilled deposits a small surcharge into the race vault at creation. Two outcomes:
 
-- **Race auto starts on the underfilled path**. The surcharge transfers to the backend authority as compensation for running the auto start operation.
-- **Race fills naturally / gets cancelled / refunds**. The surcharge stays in the vault and is returned to the creator along with everything else.
+- **The race auto starts underfilled.** The surcharge goes to the backend authority for running that operation.
+- **It fills naturally, cancels or refunds.** The surcharge stays in the vault and returns to the creator with everything else.
 
 ## Where the money lands
 
-Refunds, prizes and returned rent go wherever your payout setting points: your wallet by default, or your [player vault](player-vault.md) if you have chosen to pool them. The setting is yours alone and applies to every race you are in, which matters here because anyone is allowed to trigger a refund on a lobby that never filled.
+Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone and covers every race you are in, which matters here because anyone may trigger a refund on a lobby that never filled.
 
-The one exception is closing your player account. That returns the rent of the account holding the vault, so there is nothing left to credit it to and it always goes to your wallet.
+The exception is closing your player account. That returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
 
 ## Where to claim
 
-Most refunds and claims happen automatically through the Player page's "Unclaimed" banner: any race where you have a pending claim shows up there with a single Claim button. The race detail modal also exposes per-race claim buttons.
+Most refunds and claims run through the Unclaimed banner on the Player page, where any race with something pending shows up with a single Claim button. The race detail modal carries per-race claim buttons too.

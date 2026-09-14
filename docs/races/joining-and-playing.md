@@ -5,81 +5,83 @@ description: Taking a slot in someone else's race, with eligibility, boosts, cos
 
 # Joining and playing
 
-The race list updates in real time. New races appear at the top of the list and animate in. The card shows the entry fee, the prize pool, the current slot count, the duration, and any opt in badges (audio, custom track, runner only, sponsored).
+The race list updates live, newest at the top. Each card carries the entry fee, prize pool, slots taken, duration and any opt in badges: audio, custom track, runner only, sponsored.
 
 ## Joining
 
-Tap a card to open the detail modal, then Join Race. The modal shows the participants list, the available NFT boosts in your wallet (if any), and the available cosmetics. Choose what you want to wear, sign the transaction, and your duck takes its slot.
+Tap a card to open the detail modal, then Join Race. It shows the participants, the Boost NFTs in your wallet and your cosmetics. Pick what you want to wear, sign, and your duck takes its slot. When you do not need to customize, the Join button on the card skips straight to it.
 
 {% columns %}
 {% column width="70%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-detail-modal-desktop.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab"><figcaption><p>Everything you bring to a race is picked here, before you sign.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-detail-modal-mobile.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-You can also join straight from the card via the Join button when you do not need to customize.
-
-The confirmation step asks where the entry fee comes from: your wallet, or a balance you have pre-funded. See [Your player vault](../economy/player-vault.md). If you have turned on [playing without signing every action](delegated-play.md), joining takes one tap and no wallet popup appears at all.
+The confirmation asks where the entry fee comes from: your wallet, or a balance you pre-funded. See [Your player vault](../economy/player-vault.md). With [playing without signing every action](delegated-play.md) on, joining is one tap and no wallet popup appears at all.
 
 ### Eligibility
 
-Some races have join conditions beyond paying the entry fee. The detail modal calls out anything that applies to the race in front of you:
+Some races ask for more than the entry fee, and the modal spells out whatever applies:
 
-- **Verified only**. The race only accepts wallets that have completed Telegram, X, or Facebook verification.
-- **Allowlist (invite only)**. The race only accepts wallets the creator added to the invite list (up to 20). If your wallet is not on the list, Join stays disabled and the modal tells you the race is invite only.
-- **NFT Holders**. The race only accepts wallets holding at least a chosen number of NFTs from a chosen collection. The modal shows you the collection and threshold so you can check at a glance. If the collection is on another chain (Ethereum, Base, Polygon, and so on), the check runs against the external wallet you have linked to your profile; if you have not linked one, the join flow points you to that step first.
-- **Token Holders**. The race only accepts wallets holding at least a chosen amount of a chosen token. The token does not have to be the race's prize token.
-- **Minimum account age**. The race only accepts wallets whose player account is at least a certain age. Brand new players whose account is being created during the join transaction are always too young. If your wallet does not qualify, the Join button is disabled and the modal tells you why.
+- **Verified only.** Wallets that have completed Telegram, X or Facebook verification.
+- **Allowlist (invite only).** Only the wallets the creator invited, up to 20. Off the list, Join stays disabled and the modal says the race is invite only.
+- **NFT Holders.** A minimum number of NFTs from a chosen collection, both shown so you can check at a glance. If the collection lives on another chain, such as Ethereum, Base or Polygon, the check runs against the external wallet linked to your profile, and the join flow sends you to link one first if you have not.
+- **Token Holders.** A minimum amount of a chosen token, which need not be the race's prize token.
+- **Minimum account age.** A player account at least a certain age. A brand new account created during the join transaction is always too young, and the modal says so rather than failing silently.
 
-For the full reference on these gates, see [Race access and gating](access-and-gating.md).
+[Race access and gating](access-and-gating.md) is the full reference.
 
 ### NFT boost selection
 
-If you hold any Boost NFTs in the connected wallet, you can select one to attach to this race. The boost adds a small percentage to your duck's speed for this race only. Boost NFTs are not consumed: you can use the same boost in every race you join. See [Boost NFTs](../nfts/boosts.md).
+Hold any Boost NFTs and you can attach one, adding a small percentage to your duck's speed for that race. Boosts are never consumed, so the same one works in every race you join. See [Boost NFTs](../nfts/boosts.md).
 
 ### Cosmetic selection
 
-Cosmetic NFTs change how your duck looks. Pick one from the cosmetic tab. If you do not own any cosmetics, your duck races in default plumage. Cosmetics are visual only and do not affect the outcome.
+Cosmetics change how your duck looks, picked from the cosmetic tab. Own none and your duck races in default plumage. They are visual only and change no outcome.
 
 ## During the lobby
 
-The detail modal stays open while the lobby fills. Participants appear as they join, with their avatar, nickname, and any equipped NFT badges.
+The modal stays open while the lobby fills, and participants appear as they join with their avatar, nickname and any NFT badges.
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. Two windows apply: you have to withdraw **within 2 minutes of your own join**, and the **last 60 seconds** of the lobby are locked for everyone.
+Changed your mind? Click Withdraw. Two windows apply: **within 2 minutes of your own join**, and never in the **last 60 seconds** of the lobby, which is locked for everyone.
 
 {% hint style="warning" %}
-If you qualify, the vault refunds your full entry fee and a fixed **0.01 SOL** penalty is charged from your wallet to the platform (always in SOL, even on token races). See [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) for the full rules.
+The vault then refunds your full entry fee and charges a fixed **0.01 SOL** penalty from your wallet, always in SOL even on token races. [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) has the full rules.
 {% endhint %}
 
 ## When the race starts
 
-The lobby modal transitions to the canvas. A short loading screen plays while the audio (if any) finishes generating. The visual race lasts whatever duration the creator picked: ducks paddle, leap, occasionally somersault, all driven by the on chain seed.
+The modal gives way to the canvas, after a short loading screen if audio is still generating. The race runs for whatever duration the creator picked, every paddle and somersault driven by the on chain seed.
 
 ## After
 
-Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive instantly, in your wallet by default or in your player vault if you have chosen to pool your winnings there.
+Finish first in WTA, or on the podium in Podium Split, and the claim button appears with your payout on it. Click to sign and the money arrives at once, in your wallet by default or in your player vault if you pool your winnings there.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/races/app-claim-prize-desktop.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The claim button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-claim-prize-desktop.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/races/app-claim-prize-mobile.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-If you lost, no claim is needed. The race archives itself automatically and the page returns to the lobby list.
+Lost? Nothing to do. The race archives itself and the page returns to the lobby list.
 
 {% content-ref url="../economy/player-vault.md" %}
 [player-vault.md](../economy/player-vault.md)

@@ -112,21 +112,16 @@ done
 A real capture at 2x will not match those numbers. If one happens to, the page
 is the tiebreak: look at it.
 
-To regenerate one, render it in WSL where ffmpeg lives. `label.txt` holds the
-wrapped caption, one line per line, because `drawtext` does not wrap:
+To build the placeholders, run `npm run assets`. It reads the pages, generates a
+card for every referenced file that does not exist, labels it with that
+figure's own alt text, and picks the size from the filename: 1440x810 for
+`-desktop`, 390x640 for `-mobile`, 1280x720 for a card cover, 1990x480 for the
+space cover. It needs ffmpeg, so run it through WSL like the other commands.
 
-```bash
-ffmpeg -nostdin -y -f lavfi -i "color=c=0x0E1218:s=1440x810" \
-  -vf "drawbox=x=10:y=10:w=1420:h=790:color=0x2A313B:t=3,\
-drawtext=fontfile=/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf:text=DESKTOP PLACEHOLDER:fontsize=30:fontcolor=0xFFD700:x=(w-text_w)/2:y=81,\
-drawtext=fontfile=/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf:textfile=label.txt:fontsize=40:fontcolor=0xE9EAEC:line_spacing=10:x=(w-text_w)/2:y=(h-text_h)/2,\
-drawtext=fontfile=/usr/share/fonts/truetype/ubuntu/UbuntuMono-R.ttf:text=races/NAME-desktop.png:fontsize=22:fontcolor=0x11D4C4:x=(w-text_w)/2:y=709" \
-  -frames:v 1 .gitbook/assets/races/NAME-desktop.png
-```
-
-**`-nostdin` is not optional in a loop**: ffmpeg reads stdin for keypresses and
-swallows one byte per invocation, which silently eats the first character of
-every following line of whatever list is being piped in.
+The same command reports any asset no page references any more, and
+`npm run assets -- --prune` deletes those. Never add or remove these files by
+hand: `npm run check` fails on a missing file and on an orphan, so the two
+commands are the whole procedure.
 
 ## How to capture
 

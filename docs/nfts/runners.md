@@ -5,78 +5,84 @@ description: The access pass collection. What holding one unlocks when you creat
 
 # Runner NFTs
 
-The access pass collection. Holding a Runner NFT in your wallet unlocks the advanced race creation features that are otherwise hidden.
+The access pass. A Runner in your wallet unlocks the advanced race creation features, and nothing else about how you race.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-desktop.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>A Runner only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-desktop.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>It only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/nfts/nft-runner-example-mobile.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 ## What it unlocks
 
-- **Max players > 5**. The default cap is 5 (any non-Runner can create races up to 5 slots). Runner holders can create races up to 20 slots.
-- **AI commentary**. The per second narration track only opens to Runner holders.
-- **Custom race duration**. The default 30 second duration is available to everyone; picking anything else (up to 5 minutes) requires a Runner.
-- **Custom join timeout**. The 1 minute to 1 week slider only appears for Runner holders.
-- **Custom name**. Naming a race in the lobby list.
-- **Start when underfilled**. The opt in to let the race launch with fewer than max players.
-- **Higher daily allowance**. Without a Runner a wallet gets 50 races per day. With one it gets 500. This is the only thing that lifts the cap.
-- **Host without playing**. Create a race that opens with zero players and waits for others to join, without taking a slot yourself. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
-- **Sponsored race**. Fund the prize pool yourself instead of asking joiners to.
-- **X announcement**. Post the race to Lucky Ducks' X (Twitter) account when it goes live.
-- **No-boost race**. Disable boost NFTs for the whole race, all joiners included.
-- **Allowed Players (allowlist) race**. Restricting joins to an invite list of up to 20 wallets. The allowlist itself counts as a customization.
-- **Minimum account age gate**. Requiring joiners to have a player account at least a certain age.
+- **More than 5 seats.** Anyone can create up to 5; a Runner takes you to 20.
+- **AI commentary.** The per second narration track.
+- **Custom race duration.** 30 seconds is open to everyone; anything else, up to the platform maximum of 3 minutes, needs a Runner.
+- **Custom join timeout.** The 1 minute to 1 week slider.
+- **Custom name** on the race card.
+- **Start when underfilled.**
+- **A higher daily allowance.** 50 races a day becomes 500, and this is the only thing that lifts it.
+- **Host without playing.** A race that opens empty and fills as others join. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
+- **Sponsored race.** You fund the pool instead of the joiners.
+- **X announcement** when the race goes live.
+- **No-boost race**, for everyone in it.
+- **Allowed Players**, an invite list of up to 20 wallets, which counts as a customization.
+- **Minimum account age** on joiners.
 
 ## What Runner is not required for
 
-Three of the four gated join settings can be hosted **without** a Runner NFT, provided the race stays on default settings otherwise. Each has its own creator side check (see [Race access and gating](../races/access-and-gating.md)):
+Three of the four gates host fine without one, as long as the race stays on default settings otherwise. Each has its own creator side check, covered in [Race access and gating](../races/access-and-gating.md):
 
-- Verified Only requires the creator to be verified themselves.
-- NFT Holders requires the gating collection to be on the platform's approved list, and the creator to hold at least the minimum number of items themselves at auto join time.
-- Token Holders requires the gating token to be on the platform's approved list, and the creator to hold at least the minimum amount themselves at auto join time.
+- Verified Only asks the creator to be verified.
+- NFT Holders asks for an approved collection, and for the creator to hold the minimum themselves at auto join.
+- Token Holders asks for an approved token, and the same of the creator's balance.
 
-Allowed Players is the exception among the gates: it still requires a Runner.
+Allowed Players is the exception: that one needs a Runner.
 
 {% hint style="success" %}
-The Runner NFT is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md) on a race. It is not what unlocks the share: every creator who joins their own race earns a base share with no NFT at all, and the Runner adds to it.
+A Runner is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md), though it does not unlock it. Every creator who races in their own race earns a base share with no NFT at all, and the Runner adds to that.
 {% endhint %}
 
 ## What it does not do
 
 {% hint style="warning" %}
-Runners are not boosts. They do not change your duck's speed. They do not give you a head start. They do not affect outcomes in any race you join, only what features you can use when creating.
+Runners are not boosts. No extra speed, no head start, no effect on any race you join. They decide what you can build when you create.
 {% endhint %}
 
 ## Acquiring
 
-- New Runner mints drop occasionally. Check the homepage banner or Telegram.
-- Secondary market on Tensor, MagicEden, or the Lucky Ducks in app marketplace.
-- Floor price moves with demand. The collection is intentionally small to keep the holder set tight.
+- Runner mints drop occasionally, announced on the homepage banner and in Telegram.
+- Secondary market on Tensor, MagicEden or the in-app marketplace.
+- The collection is deliberately small, so the floor moves with demand.
 
 ## Verifying you have one
 
-When you connect a wallet that holds a Runner, the Create Race modal shows full options. When you connect a wallet that does not, the gated options are dimmed with a "🏃 Runner NFT" chip and a slightly reduced opacity. The modal still opens, you can still create standard races, you just cannot use the unlocked features.
+Connect a wallet holding a Runner and the create form shows everything. Without one the gated options are dimmed and each carries a "🏃 Runner NFT" chip. The form still opens and standard races still work; the unlocked features simply stay out of reach.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-desktop.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Without a Runner in the wallet, the gated options are dimmed rather than hidden.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-desktop.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Gated options are dimmed rather than hidden, so you can see what a Runner would add.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-mobile.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-## Borrowing or renting
+## Renting or borrowing one
 
-Runner NFTs are transferable Solana assets. There is no on-platform rental flow, but nothing stops you from arranging an over-the-counter loan with another holder. The contract only checks "is this NFT in the wallet signing the tx" at the moment of `create_race`; the same NFT can move freely between wallets between races.
+Runners are among the tiers the platform rents by the day, so you can take one for a weekend of hosting instead of buying. See [Renting an NFT](renting.md).
+
+They are also ordinary transferable assets, so an over-the-counter loan between holders works too: the contract only asks whether the NFT is in the wallet signing `create_race`, and it can move freely between races.

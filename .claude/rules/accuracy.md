@@ -42,6 +42,14 @@ administrator updates a tunable, which is a transaction rather than a release.
 Read the JSON first. Fall back to `state.rs` only for something that has no
 config field, or to learn the bound a tunable is capped at.
 
+**This is the single largest source of wrong figures on these pages.** Four
+divergences were live at once, each one a page that had quoted the constant:
+the race duration ceiling (`maxRaceDuration` well under `MAX_RACE_DURATION`),
+the lobby window (`joinTimeout` far above `JOIN_TIMEOUT_DEFAULT`), the team cap
+(`maxTeamMembers` above `MAX_TEAM_MEMBERS_DEFAULT`) and the per-action delegate
+charge (`delegateTxCost` a multiple of `DELEGATE_TX_COST_DEFAULT`). A constant
+that looks like a plausible answer is exactly how this defect ships.
+
 ```bash
 cd ../TheLuckyDucks/Anchor
 cat platform-config-mainnet.json
@@ -79,6 +87,30 @@ is ten percent and `creatorFeeShareRunnerBps: 4000` is forty.
   mechanic verified on the SOL path almost always holds on the token path, but
   the costs paid in SOL (rent, penalties, network fees) stay in SOL there. Say
   which currency a figure is in whenever a page is about token races.
+- **Rent is computed, not configured, and a race's rent is not one number.** The
+  race account is sized for a full lobby, so its rent scales with the seats and
+  quoting a single figure is wrong for every race but one. Compute it from
+  `Race::calculate_space` rather than guessing, and say which lobby size the
+  figure belongs to.
+- **Who may send a transaction is answered by the `Accounts` struct, not by the
+  prose.** A page once promised a grace window and a participants-only fallback
+  on an instruction that takes no signer at all. Read the `#[derive(Accounts)]`
+  in `Anchor/programs/lucky_ducks/src/contexts.rs` for `Signer` fields before
+  claiming anyone is privileged, or that anyone is excluded.
+- **A page that describes the button misses what the program refuses.** The
+  rematch page documented the flow and none of its preconditions, so two
+  refusals a player can hit went unmentioned: a claimed prize and a sponsored
+  race. Read every `require!` in that instruction's validator and cover each
+  refusal a player can actually reach.
+- **A feature being "off" and being "absent" are different claims.** Two pages
+  disagreed about royalties because one read a plugin as missing and the other
+  read it as present. It is present at a rate of zero. When a page says a
+  feature does not apply, establish whether it is absent or neutral, and ask if
+  the answer is only visible on chain.
+- **Backend surfaces drift with no program change.** The Telegram card, its
+  metric labels and the command catalogue all moved while the contract stood
+  still. Before editing `help/telegram-bot.md`, read the renderer and the
+  catalogue rather than the page. `../docs/verifying-claims.md` names the files.
 
 ## Phrase a tunable so an admin change cannot falsify the page
 

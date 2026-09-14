@@ -12,15 +12,15 @@ Six steps from a fresh browser tab to a finished race.
 
 ### Get a Solana wallet
 
-Phantom, Solflare, Backpack, and most major Solana wallets work. The wallet adapter handles the connection automatically. If you do not have one yet, Phantom is the easiest to start with: it is a browser extension and a mobile app, both free.
+Phantom, Solflare, Backpack and most major Solana wallets work, and the adapter handles the connection. Starting from nothing, Phantom is the easiest: browser extension and mobile app, both free.
 
 {% endstep %}
 
 {% step %}
 
-### Top up with a small SOL balance
+### Top up with a little SOL
 
-You need SOL to pay transaction fees (roughly 0.000005 SOL per signed transaction) plus whatever the race entry fee is. A safe starting balance is 0.05 SOL: enough for a stats account, a few dozen tx fees, and a couple of typical races.
+You need SOL for transaction fees, roughly 0.000005 SOL each, plus the entry fee itself. 0.05 SOL is a comfortable start: a stats account, a few dozen fees and a couple of typical races.
 
 {% endstep %}
 
@@ -28,47 +28,51 @@ You need SOL to pay transaction fees (roughly 0.000005 SOL per signed transactio
 
 ### Connect
 
-Go to `theluckyducks.com/app/` and click Connect Wallet. Approve the connection in your wallet. The first connection is a signed message, not a transaction, so it costs nothing.
+Go to `theluckyducks.com/app/`, click Connect Wallet and approve. The first connection is a signed message rather than a transaction, so it costs nothing.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-desktop.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack"><figcaption><p>The first connection is a signature, not a transaction, so it costs nothing.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-desktop.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack"><figcaption><p>A signature, not a transaction, so it costs nothing.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-mobile.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-Your first sign-in is always the wallet, because nothing else can prove the wallet is yours. Later ones do not have to be: once you have linked a social account, the login screen offers it as a second way in.
+Your first sign-in is always the wallet, because nothing else can prove the wallet is yours. Later ones need not be: link a social account and the login screen offers it as a second way in.
 
 {% endstep %}
 
 {% step %}
 
-### Create the on chain player account
+### Create your player account
 
-On your very first action (create or join a race), the smart contract needs a player account to hold your race history, your profile, and your vault balance. A modal will explain this once and ask you to approve a one time transaction. The rent is around 0.0017 SOL and is fully refundable if you ever close the account.
+Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once and asks for a one time transaction. Rent is around 0.0023 SOL, refundable in full if you ever close it.
 
 {% endstep %}
 
 {% step %}
 
-### Join a race or make one
+### Join a race, or make one
 
-The lobby list shows all open races. Pick one that matches your appetite (entry fee, max players, duration) and click Join. Or open the Create Race modal and set the parameters yourself. Either way, signing the transaction is the commitment: your entry fee moves into the race vault as soon as it confirms.
+The lobby list shows every open race. Pick one that suits your appetite for entry fee, lobby size and duration, and click Join. Or open Create Race and set it yourself. Signing is the commitment: your entry fee moves into the race vault as soon as it confirms.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/introduction/app-lobby-list-desktop.png" alt="The list of open races, each card showing entry fee, prize pool, slots taken and duration"><figcaption><p>Open races, newest first. The card carries everything the race will cost you.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/introduction/app-lobby-list-desktop.png" alt="The list of open races, each card showing entry fee, prize pool, slots taken and duration"><figcaption><p>Open races, newest first, each card carrying what the race costs.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/introduction/app-lobby-list-mobile.png" alt="The list of open races, each card showing entry fee, prize pool, slots taken and duration, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
@@ -78,17 +82,19 @@ The lobby list shows all open races. Pick one that matches your appetite (entry 
 
 ### Watch your duck race
 
-Once the race starts, the canvas takes over. Ducks paddle, splash, occasionally somersault. The visual race plays at a fixed pace driven by the on chain seed. Once it ends, winners can claim with a single click.
+The canvas takes over: ducks paddle, splash and occasionally somersault, at a pace set by the on chain seed. When it ends, winners claim in one click.
 
 {% columns %}
 {% column width="70%" %}
 
 <figure><img src="../../.gitbook/assets/introduction/app-race-finish-claim-desktop.png" alt="The post race screen showing the finishing order and a claim button with the payout amount"><figcaption><p>The finishing order, and the claim button with your payout on it.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/introduction/app-race-finish-claim-mobile.png" alt="The post race screen showing the finishing order and a claim button with the payout amount, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
@@ -97,13 +103,13 @@ Once the race starts, the canvas takes over. Ducks paddle, splash, occasionally 
 
 ## Optional: skip the wallet popups
 
-Once you are racing regularly, you can pre-fund a balance and let Lucky Ducks sign your in-game actions for you, so joining takes one tap. See [Your player vault](../economy/player-vault.md) and [Playing without signing every action](../races/delegated-play.md).
+Once you are racing regularly, pre-fund a balance and let Lucky Ducks sign your in-game actions, so joining takes one tap. See [Your player vault](../economy/player-vault.md) and [Playing without signing every action](../races/delegated-play.md).
 
 ## Optional: verify
 
-Once you have joined a race, the platform offers verification: link an account with X, Telegram, Facebook or another supported provider. Verified players get a checkmark badge and can enter races their creator has reserved for verified wallets.
+After your first race you can link an account with X, Telegram, Facebook or another supported provider. Verified players get a checkmark and can enter races reserved for verified wallets.
 
-It is worth doing early for two reasons beyond the badge. A linked account lets you sign in without opening your wallet app on later visits, and it is required before you can turn on [playing without signing every action](../races/delegated-play.md). See [Player verification](../trust/verification.md).
+Two reasons to do it early, beyond the badge: a linked account signs you in without opening your wallet app, and it is required before you can turn on [playing without signing every action](../races/delegated-play.md). See [Player verification](../trust/verification.md).
 
 {% content-ref url="../races/joining-and-playing.md" %}
 [joining-and-playing.md](../races/joining-and-playing.md)

@@ -5,40 +5,33 @@ description: Custom scenery for a race you create. What a Track changes, the fou
 
 # Track NFTs
 
-Custom backgrounds for your races. A Track NFT is essentially a themed visual environment: a different pond, different lighting, different decorative elements at the edges of the racing lane. The race itself plays out identically; only the scenery changes.
+A themed environment for your races: a different pond, different light, different props along the lane. The race plays out the same. Only the scenery moves.
 
-<figure><img src="../../.gitbook/assets/nfts/nft-track-examples.png" alt="Four track backgrounds side by side, each with different lighting and scenery"><figcaption><p>A track changes the environment around the lane. It never changes the outcome.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/nft-track-examples.png" alt="Four track backgrounds side by side, each with different lighting and scenery"><figcaption><p>A track changes what surrounds the lane, never the outcome.</p></figcaption></figure>
 
 ## What you get
 
-- A high resolution background image and matching pond reflection
-- A track name shown on the race card and detail modal
-- The ability to deep link to the NFT page from any race that uses it
-- A marketplace shortcut button on the race detail's Track Info row
+- A high resolution background and matching pond reflection
+- A track name on the race card and detail modal
+- A deep link to the NFT page from any race using it
+- A marketplace shortcut on the race detail's Track Info row
 
 ## Built in tracks
 
-Four standard tracks ship with the platform and are always available, no NFT required:
-
-- Day
-- Night
-- Sunset
-- Sunrise
-
-These cover the most common visual flavors. They are randomly assigned at race creation if no custom track is selected.
+Four ship with the platform, free and always available: **day, night, sunset, sunrise**. One is assigned at random when a race picks no custom track.
 
 ## Custom tracks
 
-When you create a race, the Custom Track picker lets you pick any Track NFT you currently hold. The race card and the detail modal then show the custom track name and image. Other players see the track too while in the lobby and during the race.
+The Custom Track picker on the create form offers any Track NFT you hold. The card and detail modal then carry its name and image, and everyone in the lobby and the race sees it.
 
 {% hint style="info" %}
-A track does not need to be in your wallet for the race to play once it has been created; the race PDA stores the track's mint at creation time and the asset is rendered from that pubkey regardless of where it lives later. So you can sell a Track NFT after using it in a race, and the race still renders with that track.
+Once the race exists, the Track need not stay in your wallet. The race stores the mint at creation and renders from that, wherever the asset lives later, so you can sell a Track you have already raced on and that race still looks right.
 {% endhint %}
 
 ## Acquiring
 
-Tracks ship in small themed drops. Past drops have been event themed (seasonal, sponsored). Floor prices track demand and the rarity of the specific drop.
+Tracks arrive in small themed drops, often seasonal or sponsored. Floors follow demand and how rare the drop was.
 
 ## Track creation
 
-All tracks are designed and minted by the Lucky Ducks team. There is no on-platform minting tool for community tracks, so the way to propose one is to reach the team directly. See [Social networks](../help/social-networks.md).
+The team designs and mints all of them, and there is no community minting tool, so proposing one means reaching the team. See [Social networks](../help/social-networks.md).

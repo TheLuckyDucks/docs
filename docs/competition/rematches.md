@@ -1,100 +1,102 @@
 ---
 icon: rotate-right
-description: Roll your stake forward into another 1v1, what the proposer can change, and why nobody is ever stuck.
+description: Roll your stake straight into another 1v1, what the proposer picks, and why nobody is ever stuck.
 ---
 
 # Rematches
 
-After a 1v1 race ends, either player can offer a rematch. The offer sits in the prize claim UI so you do not have to go looking for it: the same screen that lets you claim the payout is where you propose the rematch.
-
-Rematches roll your stake forward instead of paying everything out and asking you to buy back in.
+When a 1v1 ends, either player can offer a rematch. It rolls your stake forward instead of paying everything out and asking you to buy back in, and the offer sits on the prize claim screen so you do not go looking for it.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/competition/app-rematch-offer-desktop.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>The offer lives on the claim screen, so claiming and rematching are one stop.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-rematch-offer-desktop.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>Claiming and rematching are the same stop.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/competition/app-rematch-offer-mobile.png" alt="The prize claim screen with an Offer Rematch button beside the claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
+## What can be rematched
+
+A finished 1v1 you played in. Sponsored races cannot be rematched, and neither can a race whose prize has already been claimed. Token races rematch exactly like SOL ones.
+
+{% hint style="warning" %}
+**Claim the prize and the rematch goes with it.** The winner's stake in the next race comes out of the winnings still sitting in the old race, so once those are paid out there is nothing to roll forward and the program refuses the offer. Rematch first, or claim and start a fresh race.
+{% endhint %}
+
+Two windows also apply, both short and both platform settings, so the app is where to read them: you have a window from the finish to make the offer, and your opponent then has their own window to answer it.
+
 ## Offering a rematch
 
-Click Offer Rematch from the prize claim screen on a 1v1 race. This creates the next race and puts your entry fee into it.
+Click Offer Rematch on the claim screen. That creates the next race and puts your stake in it:
 
-Behind the scenes:
+- **Winner.** Your stake is one entry fee, taken from the winnings you have not claimed. The rest of that payout, minus the platform fee, reaches you when your opponent accepts, with no separate claim.
+- **Loser.** You deposit one entry fee up front. Your opponent's stake joins it when they accept.
 
-- If you are the winner, your stake in the new race is exactly **one entry fee**, taken from your unclaimed winnings. The rest of the payout, minus the platform fee, goes to you when your opponent accepts. You do not need to claim the finished race separately.
-- If you are the loser, you deposit one entry fee up front. Your opponent's stake is added when they accept.
-
-Either way, the rematch pot is exactly 2 entry fees, matching the race it followed.
-
-Offering a rematch uses one of your daily races (see [Daily races](../races/daily-races.md)).
+Either way the new pot is exactly 2 entry fees, matching the race it followed. Offering uses one of your [daily races](../races/daily-races.md).
 
 ## What the proposer picks
 
-Most of the new race is inherited from the one it follows: entry fee, race duration, join setting, no-boost mode, and any customization the original race had. The proposer can adjust three things independently at propose time:
+The new race inherits the entry fee, duration, join setting, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
 
-- **AI commentary.** You can add audio commentary to a rematch even if the finished race did not have it, and you can drop it even if the finished race did. Audio is supported for any race size, **including 1v1**. The audio cost (per second times duration) is deposited by the proposer at propose time, same as on a fresh race. See [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation).
-- **X announcement.** Post the rematch publicly to Lucky Ducks' X account. Picked independently at propose time, whether or not the finished race had it. Flat 0.005 SOL cost, non-refundable, paid by the proposer at propose time. See [X announcement](../races/advanced-options.md#x-announcement).
-- **Your Track NFT.** If you hold a Track NFT and pass it, the rematch uses it as the visual background. If you skip it, the rematch keeps whichever Track (if any) the previous race used.
-- **Your Runner NFT.** Attach it to lift your daily race allowance ceiling (500 with a Runner vs 50 without). It is optional; without it, the rematch still goes through but counts against the standard allowance. AI commentary itself always requires a Runner in the proposer's wallet, so if you enable audio you are attaching a Runner anyway.
+| At propose time     | What it does                                                                                                                                              |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AI commentary**   | On or off regardless of what the finished race had, 1v1 included. You deposit the [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation) now |
+| **X announcement**  | Posts the rematch publicly. Flat 0.0005 SOL, non-refundable, paid now. See [X announcement](../races/advanced-options.md#x-announcement)                  |
+| **Your Track NFT**  | Pass one and the rematch uses it. Skip it and the rematch keeps whatever Track the last race had                                                          |
+| **Your Runner NFT** | Optional, and it lifts your daily ceiling from 50 races to 500. AI commentary needs a Runner anyway, so enabling audio means attaching one                |
 
-The rematch inherits the race name with a " #N" suffix (where N is the rematch number in the chain), so a race called "Duel" becomes "Duel #2", "Duel #3", and so on.
+The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Duel #3".
 
 ## Accepting
 
-Your opponent has a fixed acceptance window to accept. If they accept:
-
-- The finished race pays out immediately to the winner: no separate claim needed.
-- The new race starts.
-
-Accepting also uses one of the accepter's daily races.
+Accepting inside the window starts the new race and pays the finished one out immediately, so the winner never claims it separately. It uses one of the accepter's daily races.
 
 ## Cancelling versus declining
 
-These two look similar in the UI, but they behave differently on chain.
+These look alike and are not.
 
-**You cancel your own offer.** The offer clears but the rematch chain on that race stays open. You can offer again, to the same opponent, for as long as the rematch window is still open.
+**You cancel your own offer.** It clears, but rematches on that race stay open, so you can offer again while the window lasts.
 
 **Your opponent declines.** That closes rematches on that race for good. Neither of you can offer again.
 
 {% hint style="warning" %}
-If you cancel while your opponent still has time to accept, a **0.01 SOL** withdrawal penalty applies (the same fixed penalty as withdrawing from a lobby). Once their acceptance window has passed, cancelling is **free**. If you are close to that point and not in a hurry, waiting a bit costs nothing.
+Cancelling while your opponent can still accept costs the same fixed **0.01 SOL** penalty as leaving a lobby. Once their window has passed it is free, so waiting a moment is worth it if you are not in a hurry.
 {% endhint %}
-
-Non-participants can also clear an abandoned offer, but only after the acceptance window has expired. This is a safety net; typically the proposer clears their own or the opponent declines first.
 
 ## Nobody is ever stuck
 
 - The proposer can cancel at any moment.
 - The opponent can decline at any moment.
-- After the acceptance window, anyone at all can clear the offer, refunding the proposer in full.
-- Your prize from the original race is **never** held hostage by a pending rematch. You can claim it whenever you like even while a rematch offer sits open.
+- Once the acceptance window passes, anyone at all can clear the offer, and the proposer is refunded in full.
 
 ## Rematch chains
 
-A rematch can be rematched. This continues up to the platform's maximum chain depth, after which further rematches are locked. Each race in the chain shows its position on the race card, as a "Rematch X of Y" indicator, so you can always see how much room is left.
+A rematch can be rematched, up to the platform's maximum chain depth. Each card shows its place as "Rematch X of Y", so the room left is always visible, and a chain keeps the windows the first race was created with.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-desktop.png" alt="A race card showing a Rematch 3 of 11 indicator"><figcaption><p>The card says how far down the chain a race is, and how much room is left.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-desktop.png" alt="A race card showing a Rematch 3 of 10 indicator"><figcaption><p>How far down the chain this race is, and how much room is left.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-mobile.png" alt="A race card showing a Rematch 3 of 11 indicator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-mobile.png" alt="A race card showing a Rematch 3 of 10 indicator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
-Rematches inherit the settings of the race they follow, including [no-boost mode](../nfts/boosts.md#no-boost-races) if the original race had boosts disabled. A no-boost rematch chain stays no-boost all the way down.
+No-boost mode is inherited all the way down, so a rematch cannot sneak boosts back into a level match.
 
-Rematches use one of each player's daily races per proposal-and-accept cycle. Worth knowing if you rematch a lot: your day's budget goes further when you play fresh races than when you run a long rematch chain.
+Each proposal and each acceptance spends a daily race, per player. Worth knowing if you rematch a lot: a long chain eats your day faster than fresh races do.
 
 ## Stat tracking
 
-Rematches count as normal races for XP, win count, and other stats. A winner of three rematches in a row counts as three wins; a loser counts as three losses. The chain itself does not award a separate bonus, though some tournament rule sets do treat rematch chains specially.
+Rematches count as normal races for XP, wins and everything else. Three in a row is three wins for one player and three losses for the other. The chain itself pays no bonus, though some tournament rules treat rematch chains specially.

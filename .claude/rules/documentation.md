@@ -65,6 +65,11 @@ gets its clause.
 there is not a substitute for the clause on first use; it is the second copy for
 someone who forgot.
 
+**The platform is X, and it has no other name here.** Not Twitter, not "X
+(Twitter)", and a post is a post rather than a tweet. The verb for resharing is
+repost, which is also what the bot's raid card counts. Numerals for quantities
+too: `3 minutes`, not three minutes.
+
 ## Voice
 
 - **Second person, present tense.** "You pay the entry fee when you join", not
@@ -203,6 +208,12 @@ card cover or an art grid is one file outside any columns block.
   collection art, `tg-` for Telegram, `docs-` for artwork made for these pages,
   then `-desktop` or `-mobile` on a screenshot. `.claude/docs/screenshots.md` is
   the shot list, and a new image gets a row.
+- **Never hand-manage the files in `.gitbook/assets/`. Run `npm run assets`.**
+  It builds a labelled placeholder for anything a page now references and lists
+  anything nothing references any more; `npm run assets -- --prune` deletes
+  those. Adding a figure and forgetting the asset ships a broken image, and
+  deleting a figure and forgetting the file leaves art nobody can find. Both are
+  one command, and `npm run check` fails until you have run it.
 - **Replace a capture through git, never through the web editor.** An upload in
   the editor lands flat in `.gitbook/assets/` and loses its folder.
 

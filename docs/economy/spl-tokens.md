@@ -5,73 +5,71 @@ description: Racing in USDC, USDT or another supported token, and what differs f
 
 # SPL token races
 
-Races and tournaments can be denominated in supported SPL tokens instead of SOL. USDC and USDT are supported, and the platform adds more over time. The currency picker in the Create Race modal is the live list.
+Races and tournaments can run in supported SPL tokens instead of SOL. USDC and USDT are supported and more arrive over time; the currency picker on the create form is the live list.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/economy/app-currency-picker-desktop.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances"><figcaption><p>The picker is the live list. If a token is not in it, it is not supported yet.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/economy/app-currency-picker-desktop.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances"><figcaption><p>The picker is the live list. A token that is not in it is not supported yet.</p></figcaption></figure>
+
 {% endcolumn %}
 
 {% column width="30%" %}
 
 <figure><img src="../../.gitbook/assets/economy/app-currency-picker-mobile.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
 {% endcolumn %}
 {% endcolumns %}
 
 ## Supported token programs
 
-The platform supports both Solana token standards:
+Both Solana token standards work:
 
 {% tabs %}
 {% tab title="SPL Token (Legacy)" %}
-The original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
+The original program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens run here, USDC and USDT included.
 {% endtab %}
 
 {% tab title="SPL Token-2022" %}
-The newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
+The newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`), with extensions like transfer fees, interest-bearing balances and confidential transfers. Tokens such as AMPS use it.
 {% endtab %}
 {% endtabs %}
 
-The race vault, ATA derivation, and payout logic select the correct token program automatically based on the mint's owner. From a player's perspective there is nothing to configure: you just pick the token in the currency picker and the on-chain instructions route to the right program.
+The vault, the ATA derivation and the payout logic pick the right program from the mint's owner, so there is nothing to configure: choose the token and the instructions route themselves.
 
-For Token-2022 mints with the transfer fee extension, the platform reads the configured fee from the mint and accounts for it in the join and payout flows so the player and the prize pool always see the post-fee amount on chain.
+For a Token-2022 mint with the transfer fee extension, the platform reads that fee from the mint and accounts for it in joining and payout, so the player and the pool always see the post-fee amount on chain.
 
 ## How a token race works
 
-Mechanically identical to a SOL race. The differences are:
+Mechanically identical to a SOL race, with three differences:
 
-- The entry fee is denominated in the token's smallest unit (e.g. USDC has 6 decimals, so 1 USDC = 1,000,000 base units).
-- Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (\~0.002 SOL) you pay yourself, recoverable when you close the ATA.
-- The race vault holds the token in a vault-owned ATA. Payouts move the token from the vault ATA to each winner's ATA.
+- The entry fee is denominated in the token's smallest unit. USDC has 6 decimals, so 1 USDC is 1,000,000 base units.
+- Each participant needs an Associated Token Account for that mint. Without one, the join transaction creates it and you pay a one-time ATA rent of about 0.002 SOL, recoverable when you close the account.
+- The vault holds the token in a vault-owned ATA, and payouts move it from there to each winner's ATA.
 
 {% hint style="warning" %}
-The costs paid in SOL stay in SOL on a token race. Network fees, rent, and the withdrawal or cancellation penalties are all charged in SOL even when the pot is a token.
+Costs paid in SOL stay in SOL. Network fees, rent, and the withdrawal or cancellation penalties are all charged in SOL even when the pot is a token.
 {% endhint %}
 
 ## Selecting a token
 
-In the Create Race modal, the entry fee field has a currency picker on the right. The picker lists SOL plus every supported token, with the token's icon, symbol, and your balance.
-
-Token availability and priority order are set by the platform via `splTokens[].priority` in `/config`. Tokens with higher priority appear first.
+The entry fee field carries a currency picker listing SOL and every supported token with its icon, symbol and your balance. Availability and order come from `splTokens[].priority` in `/config`, so higher priority sits first.
 
 ## Fee tier differences
 
-Each token has its own fee tier schedule. The percentages are the same as SOL (10%, 7.5%, 5%, 3%, 2%), but the dollar thresholds differ to match the token's denomination. AMPS and AISI have much higher absolute thresholds because their unit price is lower than SOL or USD.
-
-The `splTokens[].feeTiers` field in `/config` carries the full schedule.
+Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit that token's denomination, which is why AMPS and AISI sit at much higher absolute numbers. `splTokens[].feeTiers` in `/config` carries the full schedule.
 
 ## Joining without the token
 
-If you do not have any of the chosen token in your wallet, the join button is disabled with a "Insufficient balance" tooltip. The balance check happens client-side before the tx is signed.
+Hold none of the chosen token and the join button is disabled with an "Insufficient balance" tooltip. That check happens client-side, before anything is signed.
 
 ## Tournaments in SPL tokens
 
-A tournament pot can be denominated in a supported token instead of SOL. When it is, only races using that same token count toward the standings, so the event and its prize are in one currency.
+A tournament pot can be in a supported token, and when it is, only races in that token count toward the standings, so the event and its prize share one currency.
 
-Claiming works as it does for SOL. One transaction pays every member of the winning team, and it creates a token account for anyone who does not have one yet, so there is nothing to set up first. See [Tournaments](../competition/tournaments.md#claiming).
+Claiming works as it does for SOL: one transaction pays every member of the winning team, creating a token account for anyone who lacks one, so there is nothing to set up first. See [Tournaments](../competition/tournaments.md#claiming).
 
 ## Why use SPL tokens
 
-- **Stablecoins (USDC, USDT)** keep the entry fee fixed in USD terms. No exposure to SOL price swings between joining and finalization.
-- **Community tokens** drive activity in their respective ecosystems. Race pools become liquidity events for those projects.
+- **Stablecoins** keep an entry fee fixed in USD terms, with no exposure to SOL moving between joining and finalization.
+- **Community tokens** drive activity in their own ecosystems, turning race pools into liquidity events for those projects.
