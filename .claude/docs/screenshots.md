@@ -9,6 +9,10 @@
 the rule that a page must read correctly with every image stripped out. This
 file is the inventory and does not repeat them.
 
+**Page paths here are relative to `docs/`**, the published tree, while the asset
+folder sits at the repository root because GitBook requires it there. That is
+why a page climbs two levels to reach an image.
+
 ## Two files per screenshot, side by side
 
 **Every screenshot is a pair: a desktop capture and a phone capture**, shown in
@@ -19,11 +23,11 @@ describes an experience most readers do not have.
 ```
 {% columns %}
 {% column width="70%" %}
-<figure><img src="../.gitbook/assets/races/app-create-race-form-desktop.png" alt="..."><figcaption><p>What it tells the reader.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-create-race-form-desktop.png" alt="..."><figcaption><p>What it tells the reader.</p></figcaption></figure>
 {% endcolumn %}
 
 {% column width="30%" %}
-<figure><img src="../.gitbook/assets/races/app-create-race-form-mobile.png" alt="..., on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-create-race-form-mobile.png" alt="..., on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 ```
@@ -64,44 +68,35 @@ writes. Replace a capture through git, not through the editor, or this layout
 decays one file at a time.
 {% endhint %}
 
-## Which files are missing
+## What the checker already covers
 
-Run from the repository root. It reads the published pages only, so the example
-paths in `CLAUDE.md` and `IMPORTING.md` do not show up as gaps:
+`npm run check` is the gate, and it owns every mechanical question about images:
 
-```bash
-grep -rho '\.gitbook/assets/[A-Za-z0-9._/-]*\.png' --include='*.md' \
-  --exclude-dir=.claude --exclude=CLAUDE.md --exclude=IMPORTING.md . \
-  | sed 's|.*\.gitbook/assets/||' | sort -u \
-  | while read -r a; do [ -f ".gitbook/assets/$a" ] || echo "MISSING $a"; done
-```
+- a figure whose file is missing,
+- an asset on disk that no page references any more,
+- half a pair, either direction, both on disk and on the page,
+- a pair split across two columns blocks, or a screenshot outside one,
+- an `img` with no `alt`,
+- an asset with no row in this file.
 
-An empty result means every figure on every page resolves. The reverse check,
-for assets nothing references any more:
-
-```bash
-find .gitbook/assets -name '*.png' | sed 's|^\.gitbook/assets/||' \
-  | while read -r a; do grep -rq "assets/$a" --include='*.md' --exclude-dir=.claude . \
-    || echo "ORPHAN $a"; done
-```
-
-A third check, that every pair is complete:
+So there is nothing to grep by hand. Run it from the repository root, through
+WSL, because node is not on this host's PATH otherwise:
 
 ```bash
-find .gitbook/assets -name '*-desktop.png' | while read -r f; do
-  [ -f "${f%-desktop.png}-mobile.png" ] || echo "NO PHONE SHOT $f"; done
-find .gitbook/assets -name '*-mobile.png' | while read -r f; do
-  [ -f "${f%-mobile.png}-desktop.png" ] || echo "NO DESKTOP SHOT $f"; done
+wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$PATH"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
 ```
+
+What it cannot tell you is whether a file is a real capture or a placeholder,
+which is the next section.
 
 ## Every file is currently a generated placeholder
 
 Each one is a flat dark card carrying `DESKTOP PLACEHOLDER`, `PHONE
 PLACEHOLDER` or `ARTWORK PLACEHOLDER` in gold, the shot it stands in for, and
 its own path in mono. They exist so no page renders a broken image before the
-real captures land, which means the missing-file check above comes back empty
-and is no longer the question worth asking. The question is which ones are
-still placeholders, and a placeholder announces itself on the page.
+real captures land, which is also why the checker has nothing to report: every
+figure resolves. The open question is which files are still placeholders, and a
+placeholder announces itself on the page.
 
 Placeholders are the only assets at exactly the generated sizes, so this lists
 the ones nobody has replaced yet:

@@ -6,6 +6,10 @@ paths:
 
 # Writing a page
 
+**Page paths here are relative to `docs/`**, the published tree: `SUMMARY.md`
+means `docs/SUMMARY.md`. Links between pages are relative to each other, so the
+content root never appears in one.
+
 Every page is read by a player mid-task, usually on a phone, usually because
 something cost more than they expected or a button was disabled. Write for that
 reader. They are not a developer, they did not read the previous page, and they
@@ -104,6 +108,15 @@ description: One sentence saying what the page answers.
 
 `README.md` additionally carries `cover:` and `coverY:`. No other page does.
 
+**No colon followed by a space anywhere in a value.** This is YAML, so
+`description: The form, choice by choice: entry fee` is a second key and GitBook
+refuses the whole page with "Failed to parse YAML front matter". Prettier does
+not add the quotes for you, and the page is live before anyone notices.
+Repunctuate instead of quoting, so the value stays safe whatever quoting style
+GitBook writes back: `The form choice by choice, from entry fee to`. The same
+goes for a bare ` #`, which YAML reads as a comment. `npm run check` parses
+every block and fails on both.
+
 ## Blocks
 
 GitBook's blocks are used, and each one has a job. Reach for the block that
@@ -142,8 +155,8 @@ Rules that hold across all of them:
 
 Files live in `.gitbook/assets/<section>/`, where the section is the page folder
 that uses them, and `brand/` holds the root `README.md` artwork. Reference them
-relative to the page: `.gitbook/assets/brand/x.png` from `README.md`,
-`../.gitbook/assets/races/x.png` from a page in a folder. Always a figure, never
+relative to the page: `../.gitbook/assets/brand/x.png` from `docs/README.md`,
+`../../.gitbook/assets/races/x.png` from a page in a section. Always a figure, never
 a bare `![]()`.
 
 **A screenshot is two files, shown as one row**: a desktop capture and a phone
@@ -155,7 +168,7 @@ experience most readers do not have.
 {% columns %} {% column width="70%" %}
 <figure>
   <img
-    src="../.gitbook/assets/races/app-lobby-list-desktop.png"
+    src="../../.gitbook/assets/races/app-lobby-list-desktop.png"
     alt="What the image shows"
   />
   <figcaption><p>What it tells the reader.</p></figcaption>
@@ -163,7 +176,7 @@ experience most readers do not have.
 {% endcolumn %} {% column width="30%" %}
 <figure>
   <img
-    src="../.gitbook/assets/races/app-lobby-list-mobile.png"
+    src="../../.gitbook/assets/races/app-lobby-list-mobile.png"
     alt="What the image shows, on a phone"
   />
   <figcaption><p>On a phone</p></figcaption>

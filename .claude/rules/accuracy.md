@@ -6,9 +6,10 @@ paths:
 
 # Checking a claim
 
-Nothing in this repository verifies anything. There is no build and no test, so
-a wrong figure ships silently and a player acts on it. **A number on a money
-page is the highest-cost defect this bundle can carry.**
+Nothing in this repository verifies a claim. `npm run check` reads structure
+only, so a page with perfect front matter, balanced blocks and live links can
+still carry a wrong fee, and it ships silently for a player to act on. **A
+number on a money page is the highest-cost defect this bundle can carry.**
 
 Every mechanic described here is behaviour of a deployed Solana program, and
 every figure is either a constant in that program or a value in its on-chain

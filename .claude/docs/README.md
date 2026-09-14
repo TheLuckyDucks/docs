@@ -25,12 +25,17 @@ the doc is stale.
 | `OVERVIEW.md`    | Reading order, page ownership, the topics deliberately split across pages, where a new page goes | Adding a page or a section, or unsure which page owns a subject |
 | `screenshots.md` | Every image the pages reference, what each one must show, and how to find the missing ones       | Adding or replacing an image, or capturing a batch of them      |
 
-## Why everything is under a dot-directory
+## Why everything is outside the content tree
 
-GitBook syncs this repository's tree into the published space, so a top-level
-markdown directory risks appearing to players. A dot-directory does not.
-`CLAUDE.md` at the root is the one exception, because that is where it is loaded
-from.
+`.gitbook.yaml` sets `root: ./docs`, so GitBook reads that folder and nothing
+else. Agent docs live under `.claude/` at the repository root, which puts them
+outside the published tree twice over: outside the content root, and in a
+dot-directory that would be skipped even if that root moved. `CLAUDE.md` at the
+root is the one exception to the dot-directory habit, because that is where it
+is loaded from.
+
+The rule that follows: **nothing agent-facing goes inside `docs/`.** A markdown
+file there is a candidate page before anyone lists it.
 
 The bundle also carries one internal file at the root that predates this
 directory: `../../IMPORTING.md`, which covers how the Git Sync works, the

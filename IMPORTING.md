@@ -6,8 +6,10 @@ Internal notes on how this bundle reaches gitbook.com, what the platform will an
 
 The space is backed by this repository over GitBook's Git Sync, on one branch, in both directions. GitBook reads two things from the tree:
 
-- `.gitbook.yaml`, which sets the space root, the first page (`README.md`) and the navigation file (`SUMMARY.md`).
-- `SUMMARY.md`, which is the sidebar. A page not listed there is not navigable.
+- `.gitbook.yaml` at the repository root, which sets `root: ./docs` as the content root, plus the first page (`README.md`) and the navigation file (`SUMMARY.md`), both relative to that root.
+- `docs/SUMMARY.md`, which is the sidebar. A page not listed there is not navigable.
+
+**Only `docs/` is published.** Tooling (`package.json`, `scripts/`), agent docs (`.claude/`), `CLAUDE.md` and this file all sit outside the content root, so GitBook never reads them. The one exception to the layout is `.gitbook/assets/`, which GitBook requires at the repository root rather than under the content root.
 
 To point a new space at this repository: create the space, choose **Synchronize with Git provider**, pick the provider and repository, and select the branch. GitBook reads `.gitbook.yaml` on the first sync and the pages render immediately.
 
@@ -26,40 +28,41 @@ Everything that shapes how a page looks therefore has to come from the content i
 
 GitBook block syntax is used deliberately, so every block here has to survive a round trip through the web editor:
 
-| Block             | Syntax                                                         |
-| ----------------- | -------------------------------------------------------------- |
-| Front matter      | `icon:`, `description:`, and `cover:`/`coverY:` on `README.md` |
-| Hint              | `{% hint style="info\|success\|warning\|danger" %}`            |
-| Stepper           | `{% stepper %}` / `{% step %}` with an `###` title per step    |
-| Tabs              | `{% tabs %}` / `{% tab title="..." %}`                         |
-| Expandable        | `<details>` with a `<summary>`                                 |
-| Cards             | `<table data-view="cards">` with a `data-card-target` column   |
-| Page link card    | `{% content-ref url="..." %}`                                  |
-| Code with a title | `{% code title="..." %}` around a fenced block                 |
-| Diagram           | A fenced ` ```mermaid ` block                                  |
-| Columns           | `{% columns %}` / `{% column width="70%" %}`                   |
-| Image             | `<figure><img src="..." alt="..."><figcaption>`                |
+| Block             | Syntax                                                              |
+| ----------------- | ------------------------------------------------------------------- |
+| Front matter      | `icon:`, `description:`, and `cover:`/`coverY:` on `docs/README.md` |
+| Hint              | `{% hint style="info\|success\|warning\|danger" %}`                 |
+| Stepper           | `{% stepper %}` / `{% step %}` with an `###` title per step         |
+| Tabs              | `{% tabs %}` / `{% tab title="..." %}`                              |
+| Expandable        | `<details>` with a `<summary>`                                      |
+| Cards             | `<table data-view="cards">` with a `data-card-target` column        |
+| Page link card    | `{% content-ref url="..." %}`                                       |
+| Code with a title | `{% code title="..." %}` around a fenced block                      |
+| Diagram           | A fenced ` ```mermaid ` block                                       |
+| Columns           | `{% columns %}` / `{% column width="70%" %}`                        |
+| Image             | `<figure><img src="..." alt="..."><figcaption>`                     |
 
 Page icons are Font Awesome names without the `fa-` prefix.
 
 ## Images
 
-Image files live in `.gitbook/assets/<section>/`, one folder per page folder plus `brand/` for the root artwork. Reference them by relative path from the page: `.gitbook/assets/brand/x.png` from `README.md`, `../.gitbook/assets/races/x.png` from a page in a folder.
+Image files live in `.gitbook/assets/<section>/` at the repository root, one folder per page folder plus `brand/` for the welcome page artwork. Reference them by relative path from the page, which means climbing out of the content root: `../.gitbook/assets/brand/x.png` from `docs/README.md`, `../../.gitbook/assets/races/x.png` from a page in a section.
 
 Every screenshot is two files, `-desktop.png` and `-mobile.png`, shown as one row by a `{% columns %}` block at 70/30. Artwork is a single file.
 
 Two things to know about the editor. GitBook writes anything uploaded through it **flat** into `.gitbook/assets/`, so replacing a capture there breaks the folder layout for that file; replace captures through git. And a `<figure>` whose file is missing renders as a broken image on the live site, so the asset has to land before the page does.
 
-`.claude/docs/screenshots.md` is the shot list: every image the pages reference, what it should show, the capture conventions, and the commands that find missing files, orphans and half-finished pairs.
+`.claude/docs/screenshots.md` is the shot list: every image the pages reference, what it should show, and the capture conventions. `npm run check` is what finds a missing file, an orphan or half a pair.
 
 ## Editing
 
 Every page is a markdown file, one file per page. To add one:
 
-1. Create the `.md` file in the folder whose section a reader would look in.
+1. Create the `.md` file under `docs/`, in the folder whose section a reader would look in.
 2. Give it `icon:` and `description:` front matter.
-3. Add its line to `SUMMARY.md` under the right heading.
-4. Commit and push, or make the same change in the editor and let the sync bring it back.
+3. Add its line to `docs/SUMMARY.md` under the right heading.
+4. Run `npm run check`, which fails on a broken front matter, block, link, anchor or image.
+5. Commit and push, or make the same change in the editor and let the sync bring it back.
 
 The docs are intentionally short. Most pages are 200-400 words. The platform changes often; small targeted updates beat encyclopedic walls. When a feature changes, find the page that mentions it (search the repo for the keyword) and edit just that section.
 

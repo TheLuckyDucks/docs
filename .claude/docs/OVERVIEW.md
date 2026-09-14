@@ -8,6 +8,8 @@
 `../rules/documentation.md` is how to write a page. `../rules/accuracy.md` is
 how to check a figure. This file is the map, and it repeats neither.
 
+**Page paths here are relative to `docs/`**, the published tree.
+
 ---
 
 ## Reading order

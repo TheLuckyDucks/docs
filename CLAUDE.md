@@ -9,9 +9,13 @@ The source of the player-facing documentation site for theluckyducks.com. It is
 a GitBook space backed by this repository: markdown, one file per page,
 `SUMMARY.md` as the sidebar.
 
-**There is no code here.** No build, no tests, no lint, no CI. Nothing verifies
-a claim on a page, so the only thing standing between a reader and a wrong
-number is whoever wrote it. That absence shapes every rule in `.claude/rules/`.
+**The pages are the product. The only code here is a structural checker**,
+`scripts/check-pages.mjs`, run by `npm run check`. It verifies shape and it
+cannot verify a fact: front matter parses, blocks balance, links and anchors
+resolve, images exist and are paired, `SUMMARY.md` is complete. **Nothing
+verifies a claim on a page**, so the only thing standing between a reader and a
+wrong number is still whoever wrote it. That is what shapes
+`.claude/rules/accuracy.md`.
 
 The audience is a player, not a developer. Someone who has connected a wallet
 once and wants to know what a button costs, why their refund was short, or
@@ -56,34 +60,72 @@ this repository. `IMPORTING.md` carries the detail.
 
 ## Layout
 
-| Path            | Holds                                                                        |
-| --------------- | ---------------------------------------------------------------------------- |
-| `README.md`     | The welcome page, and the space root per `.gitbook.yaml`                     |
-| `SUMMARY.md`    | The sidebar. A page not listed here is not navigable                         |
-| `introduction/` | Orientation: what the platform is, how a race works, first race              |
-| `races/`        | Creating, joining, configuring, gating, hosting, cancelling                  |
-| `nfts/`         | The four collections, plus Mystery Boxes and renting                         |
-| `competition/`  | Tournaments, teams, rematches, badges, the community lottery                 |
-| `economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races              |
-| `trust/`        | Randomness, on-chain verification, player verification                       |
-| `help/`         | FAQ, glossary, Telegram bot, social links                                    |
-| `.gitbook/`     | `assets/<section>/`, where every image a page references lives               |
-| `.gitbook.yaml` | GitBook config: space root, readme and summary locations                     |
-| `IMPORTING.md`  | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
+**`docs/` is the published tree and nothing else is.** `.gitbook.yaml` sets
+`root: ./docs`, so GitBook reads that folder and ignores everything beside it.
+Tooling, agent docs and this file sit outside it and cannot surface as a page.
+
+| Path                 | Holds                                                                        |
+| -------------------- | ---------------------------------------------------------------------------- |
+| `docs/README.md`     | The welcome page, and the space root per `.gitbook.yaml`                     |
+| `docs/SUMMARY.md`    | The sidebar. A page not listed here is not navigable                         |
+| `docs/introduction/` | Orientation: what the platform is, how a race works, first race              |
+| `docs/races/`        | Creating, joining, configuring, gating, hosting, cancelling                  |
+| `docs/nfts/`         | The four collections, plus Mystery Boxes and renting                         |
+| `docs/competition/`  | Tournaments, teams, rematches, badges, the community lottery                 |
+| `docs/economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races              |
+| `docs/trust/`        | Randomness, on-chain verification, player verification                       |
+| `docs/help/`         | FAQ, glossary, Telegram bot, social links                                    |
+| `.gitbook/assets/`   | Every image, in one folder per section. **Repository root, not `docs/`**     |
+| `.gitbook.yaml`      | GitBook config: the content root, readme and summary locations               |
+| `scripts/`           | `check-pages.mjs`, the structural checker. The only code in the repository   |
+| `package.json`       | Tooling only: `prettier` and `yaml`. Nothing here is published               |
+| `IMPORTING.md`       | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
+
+The asset folder is the one thing that does **not** move under `docs/`: GitBook
+requires `.gitbook/assets/` at the repository root. So a page reaches an image
+by climbing out of the content tree, which is why a page in a section uses
+`../../.gitbook/assets/<section>/x.png` and `docs/README.md` uses
+`../.gitbook/assets/brand/x.png`.
+
+**Page paths are written relative to `docs/` everywhere in this file and under
+`.claude/`**, because that is how a reader of the site sees them: `SUMMARY.md`
+means `docs/SUMMARY.md`, and `races/access-and-gating.md` means
+`docs/races/access-and-gating.md`. Links between pages are relative to each
+other and so are unaffected by the content root.
 
 `.claude/docs/OVERVIEW.md` is the content map: which page owns which topic, and
 where a new one belongs. `.claude/docs/screenshots.md` is the shot list for
 every image the pages reference.
 
-## Where agent docs live, and why they are hidden
+## The two commands, and where they run
 
-Everything an agent reads lives under `.claude/`, not in a `docs/` folder at the
-root. GitBook syncs this repository's tree, and a top-level markdown directory
-risks appearing in the published space; a dot-directory does not.
+**Node is not on this host's PATH outside WSL**, so both go through it:
 
-`CLAUDE.md` is the exception and has to sit at the root, because that is where
-it is loaded from. If it ever surfaces as a page in the space, unlist it there
-rather than moving it.
+```bash
+wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$PATH"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
+```
+
+- **`npm run check`** is the gate before a push. It exits non-zero on a problem
+  and prints one line per finding. Run it after any edit to a page, a figure or
+  `SUMMARY.md`.
+- **`npm run format`** is prettier over every `.md`, which owns the formatting.
+  `npm run format:check` is the read-only half.
+
+Two things about running them here. Check which node version is current under
+`~/.nvm/versions/node/` rather than trusting the line above, and **never read
+`$?` through `bash -lc`**: the outer Git Bash expands it before WSL sees it, so
+a failing command reads as a pass. Use `&& echo ok || echo failed` instead.
+
+## Where agent docs live
+
+Everything an agent reads lives under `.claude/` at the repository root, outside
+the content tree. That is now belt and braces: a file outside `docs/` is not
+read by GitBook at all, and a dot-directory would be skipped even if the content
+root moved back. `CLAUDE.md` sits at the root for the same reason, because that
+is where it is loaded from.
+
+Nothing agent-facing belongs inside `docs/`. A markdown file there is a
+candidate page even before anyone lists it in `SUMMARY.md`.
 
 ## Adding, moving and renaming a page
 

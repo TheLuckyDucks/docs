@@ -1,0 +1,15 @@
+{
+  "name": "luckyducks-docs",
+  "private": true,
+  "type": "module",
+  "description": "Lucky Ducks player documentation. Tooling only: the pages are the product.",
+  "scripts": {
+    "check": "node scripts/check-pages.mjs",
+    "format": "prettier --write \"**/*.md\" package.json scripts/*.mjs",
+    "format:check": "prettier --check \"**/*.md\" package.json scripts/*.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "yaml": "^2.0.0"
+  }
+}
