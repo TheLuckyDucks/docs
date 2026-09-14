@@ -48,6 +48,17 @@ const FALLBACK_LABELS = {
   "nft-card-cosmetics.png": "Card cover: two or three duck skins",
   "nft-card-mystery-boxes.png": "Card cover: a sealed Mystery Box",
   "nft-card-renting.png": "Card cover: an item with the Rental label",
+  "docs-card-getting-started.png": "Card cover: a first race, start to finish",
+  "docs-card-races.png": "Card cover: the create race form",
+  "docs-card-nfts.png": "Card cover: the four collections together",
+  "docs-card-competition.png": "Card cover: a tournament standings board",
+  "docs-card-economy.png": "Card cover: a prize pool and its payout",
+  "docs-card-trust.png": "Card cover: a verified race result",
+  "docs-card-help.png": "Card cover: the Telegram bot answering a question",
+  "social-card-telegram.png": "Card cover: the Telegram group",
+  "social-card-x.png": "Card cover: the X profile",
+  "social-card-youtube.png": "Card cover: the YouTube channel",
+  "social-card-tiktok.png": "Card cover: the TikTok profile",
 };
 
 /** One format per shape of asset: size, type face sizes, wrap, kicker. */
@@ -96,14 +107,19 @@ function formatFor(base) {
       max: 2,
       kicker: "ARTWORK PLACEHOLDER",
     };
-  if (base.startsWith("nft-card-"))
+  // every card cover, whichever table it fills. GitBook crops a cover wide,
+  // so all three prefixes want the same 16:9. A card is a few hundred pixels
+  // across in a grid, so 640x360 is already 2x for it.
+  if (
+    ["nft-card-", "docs-card-", "social-card-"].some((p) => base.startsWith(p))
+  )
     return {
-      w: 1280,
-      h: 720,
-      fsk: 26,
-      fsl: 36,
-      fsn: 20,
-      cols: 40,
+      w: 640,
+      h: 360,
+      fsk: 14,
+      fsl: 20,
+      fsn: 11,
+      cols: 34,
       max: 3,
       kicker: "ARTWORK PLACEHOLDER",
     };

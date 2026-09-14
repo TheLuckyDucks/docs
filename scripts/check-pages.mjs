@@ -34,7 +34,9 @@ const SINGLE_ASSETS = new Set([
   "nft-cosmetics-grid.png",
   "nft-track-examples.png",
 ]);
-const SINGLE_ASSET_PREFIXES = ["nft-card-"];
+// A card cover fills a hidden `data-card-cover` column rather than a figure:
+// one 16:9 file, no viewport pair. One prefix per card table.
+const SINGLE_ASSET_PREFIXES = ["nft-card-", "docs-card-", "social-card-"];
 /** A banner is one wide image for a detail, serving both viewports. */
 const isBanner = (base) => base.endsWith("-banner.png");
 

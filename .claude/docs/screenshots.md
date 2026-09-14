@@ -61,21 +61,22 @@ Assets live under `.gitbook/assets/<section>/`, where the section is the page
 folder that uses them. It keeps a pair adjacent, keeps a section's shots
 together, and makes an orphan obvious.
 
-| Folder                   | Holds                                                          |
-| ------------------------ | -------------------------------------------------------------- |
-| `.gitbook/assets/brand/` | Artwork for the root `README.md`: the space cover and its hero |
-| `introduction/`          | Getting Started                                                |
-| `races/`                 | Races, and the cost breakdown `economy/` borrows               |
-| `nfts/`                  | Collections, boxes, renting, and the six card covers           |
-| `competition/`           | Tournaments, teams, rematches, badges, lottery                 |
-| `economy/`               | Vault, payouts, creator share, refunds, tokens                 |
-| `trust/`                 | Verification, and the four block explorer shots                |
-| `help/`                  | Telegram                                                       |
+| Folder                   | Holds                                                            |
+| ------------------------ | ---------------------------------------------------------------- |
+| `.gitbook/assets/brand/` | Artwork for the root `README.md`: cover, hero, and 7 card covers |
+| `introduction/`          | Getting Started                                                  |
+| `races/`                 | Races, and the cost breakdown `economy/` borrows                 |
+| `nfts/`                  | Collections, boxes, renting, and the six card covers             |
+| `competition/`           | Tournaments, teams, rematches, badges, lottery                   |
+| `economy/`               | Vault, payouts, creator share, refunds, tokens                   |
+| `trust/`                 | Verification, and the four block explorer shots                  |
+| `help/`                  | Telegram, and the four social card covers                        |
 
 An asset used by two pages lives in the folder of the page that owns the
-subject, and the other page reaches it by relative path. There is one:
-`races/app-create-race-cost-breakdown-*`, which `economy/fees-and-prizes.md`
-also shows.
+subject, and the other page reaches it by relative path.
+Ten do: the cost breakdown and nine control banners, since one banner per control
+means a control documented on two pages is referenced twice rather than captured
+twice. The Pages column below names both pages each time.
 
 {% hint style="warning" %}
 **An image re-uploaded through the GitBook web editor lands flat in
@@ -121,7 +122,7 @@ the ones nobody has replaced yet:
 find .gitbook/assets -name '*.png' | while read -r f; do
   d=$(perl -e 'open my $h, "<", $ARGV[0] or die; binmode $h; read $h, my $b, 33;
                my ($w, $y) = unpack("x16NN", $b); print "${w}x$y"' "$f")
-  case "$d" in 600x250|1440x810|390x640|1280x720|1990x480) echo "placeholder $f $d" ;; esac
+  case "$d" in 600x250|1440x810|390x640|640x360|1990x480) echo "placeholder $f $d" ;; esac
 done
 ```
 
@@ -131,7 +132,7 @@ is the tiebreak: look at it.
 To build the placeholders, run `npm run assets`. It reads the pages, generates a
 card for every referenced file that does not exist, labels it with that
 figure's own alt text, and picks the size from the filename: 600x250 for `-banner`, 1440x810 for
-`-desktop`, 390x640 for `-mobile`, 1280x720 for a card cover, 1990x480 for the
+`-desktop`, 390x640 for `-mobile`, 640x360 for a card cover, 1990x480 for the
 space cover. It needs ffmpeg, so run it through WSL like the other commands.
 
 The same command reports any asset no page references any more, and
@@ -161,14 +162,25 @@ commands are the whole procedure.
 
 Two sizes are special: `brand/docs-cover-welcome.png` is the space cover and
 wants roughly **1990x480**, and the six `nfts/nft-card-*.png` are card covers,
-so a **16:9** crop of collection art each.
+so a **16:9** crop each, as are the seven `brand/docs-card-*.png` on the welcome
+page and the four `help/social-card-*.png`. A cover is linked from a hidden
+`data-card-cover` column rather than shown in a figure, so it carries no alt
+text of its own and `scripts/sync-assets.mjs` labels it from a table in the
+script.
 
 ## brand/ (artwork, single files)
 
-| File                        | Page        | Shows                                                                   |
-| --------------------------- | ----------- | ----------------------------------------------------------------------- |
-| `docs-cover-welcome.png`    | `README.md` | The space cover. Pond, flock, wordmark. 1990x480, readable when cropped |
-| `docs-hero-race-canvas.png` | `README.md` | A five duck race mid-run with position markers, wide crop of the canvas |
+| File                            | Page        | Shows                                                                   |
+| ------------------------------- | ----------- | ----------------------------------------------------------------------- |
+| `docs-cover-welcome.png`        | `README.md` | The space cover. Pond, flock, wordmark. 1990x480, readable when cropped |
+| `docs-hero-race-canvas.png`     | `README.md` | A five duck race mid-run with position markers, wide crop of the canvas |
+| `docs-card-getting-started.png` | `README.md` | Card cover, 16:9, a first race from wallet to finish                    |
+| `docs-card-races.png`           | `README.md` | Card cover, 16:9, the create race form                                  |
+| `docs-card-nfts.png`            | `README.md` | Card cover, 16:9, the four collections together                         |
+| `docs-card-competition.png`     | `README.md` | Card cover, 16:9, a tournament standings board                          |
+| `docs-card-economy.png`         | `README.md` | Card cover, 16:9, a prize pool and its payout                           |
+| `docs-card-trust.png`           | `README.md` | Card cover, 16:9, a verified race result                                |
+| `docs-card-help.png`            | `README.md` | Card cover, 16:9, the Telegram bot answering a question                 |
 
 ## introduction/
 
@@ -301,9 +313,13 @@ still worth having: it is where most readers will actually check a race.
 
 ## help/
 
-| Shot                   | Page                   | Shows                                                      |
-| ---------------------- | ---------------------- | ---------------------------------------------------------- |
-| `tg-race-announcement` | `help/telegram-bot.md` | A race announcement card in a group: entry fee, mode, link |
+| Shot                       | Page                      | Shows                                                      |
+| -------------------------- | ------------------------- | ---------------------------------------------------------- |
+| `tg-race-announcement`     | `help/telegram-bot.md`    | A race announcement card in a group: entry fee, mode, link |
+| `social-card-telegram.png` | `help/social-networks.md` | Card cover, 16:9, the Telegram group                       |
+| `social-card-x.png`        | `help/social-networks.md` | Card cover, 16:9, the X profile                            |
+| `social-card-youtube.png`  | `help/social-networks.md` | Card cover, 16:9, the YouTube channel                      |
+| `social-card-tiktok.png`   | `help/social-networks.md` | Card cover, 16:9, the TikTok profile                       |
 
 The phone half of this one is the Telegram mobile app, not a browser.
 
