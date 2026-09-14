@@ -1,6 +1,23 @@
+---
+icon: feather
+description: The access pass collection. What holding one unlocks when you create a race, and what it does not do.
+---
+
 # Runner NFTs
 
 The access pass collection. Holding a Runner NFT in your wallet unlocks the advanced race creation features that are otherwise hidden.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/nfts/nft-runner-example-desktop.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>A Runner only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/nfts/nft-runner-example-mobile.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## What it unlocks
 
@@ -28,11 +45,15 @@ Three of the four gated join settings can be hosted **without** a Runner NFT, pr
 
 Allowed Players is the exception among the gates: it still requires a Runner.
 
+{% hint style="success" %}
 The Runner NFT is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md) on a race. It is not what unlocks the share: every creator who joins their own race earns a base share with no NFT at all, and the Runner adds to it.
+{% endhint %}
 
 ## What it does not do
 
+{% hint style="warning" %}
 Runners are not boosts. They do not change your duck's speed. They do not give you a head start. They do not affect outcomes in any race you join, only what features you can use when creating.
+{% endhint %}
 
 ## Acquiring
 
@@ -43,6 +64,18 @@ Runners are not boosts. They do not change your duck's speed. They do not give y
 ## Verifying you have one
 
 When you connect a wallet that holds a Runner, the Create Race modal shows full options. When you connect a wallet that does not, the gated options are dimmed with a "🏃 Runner NFT" chip and a slightly reduced opacity. The modal still opens, you can still create standard races, you just cannot use the unlocked features.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/nfts/app-create-race-runner-locked-desktop.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Without a Runner in the wallet, the gated options are dimmed rather than hidden.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/nfts/app-create-race-runner-locked-mobile.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## Borrowing or renting
 

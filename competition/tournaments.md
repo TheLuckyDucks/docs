@@ -1,8 +1,25 @@
+---
+icon: trophy
+description: A scheduled event where teams compete for one pot. What counts, how it is scored, and who gets paid.
+---
+
 # Tournaments
 
 A tournament is a scheduled event in which **teams** compete over a fixed window for a single prize pot. You do not sign up and you do not pay to enter. You race as you normally would, and the races your [team](teams.md) runs during the window count toward its standing.
 
 One tournament runs at a time. Its page shows the window, the rule it is scored on, the pot, and the live standings.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-tournament-page-desktop.png" alt="The tournament page showing the window, the scoring rule, the pot and the live standings table"><figcaption><p>The window, the rule and the pot are all stated on the tournament page.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-tournament-page-mobile.png" alt="The tournament page showing the window, the scoring rule, the pot and the live standings table, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## What counts
 
@@ -13,7 +30,9 @@ A race counts toward your team's standing when it finishes inside the window and
 - A team may need a minimum number of members to qualify at all.
 - Sponsored races, the ones somebody else paid for, are either included or excluded.
 
+{% hint style="info" %}
 Only races that have finalized on chain count. One still in its lobby, waiting on randomness, or mid-run is not counted until it settles.
+{% endhint %}
 
 ## Scoring
 
@@ -41,7 +60,9 @@ The **winning team takes all of it**, split equally between its members. There i
 
 A platform fee comes out of the pot before the split. It is set per tournament and cannot exceed 10 percent.
 
+{% hint style="success" %}
 Standings are computed off the chain, which is what lets a rule change between tournaments without touching the program. The winners are then written on chain, and from that point the payout is the program's to make and nobody can alter the list.
+{% endhint %}
 
 ## Claiming
 
@@ -51,8 +72,26 @@ Whoever sends it, the money goes to the winners' own wallets. Paying the network
 
 The Claim button shows your share and what it is worth. While a tournament is running that dollar figure follows the market; once it has ended it is fixed at the rate when it ended, so what you won does not appear to change afterwards. A tournament that ended without a usable price shows the amount and no dollar figure.
 
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-tournament-claim-desktop.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value"><figcaption><p>One transaction pays the whole team, whoever sends it.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-tournament-claim-mobile.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
 ## Your team is frozen while a tournament runs
 
+{% hint style="warning" %}
 From the moment a tournament starts until it ends, teams cannot change: no creating one, no requesting to join, no adding, kicking, or leaving, and no deleting. A roster reshuffled mid-event would let a team collect points under one lineup and claim under another.
+{% endhint %}
 
 Build or join your team before a tournament starts. If a tournament is already running, the buttons are disabled until it ends.
+
+{% content-ref url="teams.md" %}
+[teams.md](teams.md)
+{% endcontent-ref %}

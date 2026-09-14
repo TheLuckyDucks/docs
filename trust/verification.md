@@ -1,3 +1,8 @@
+---
+icon: circle-check
+description: Linking an off-platform identity to your wallet: what it unlocks, what it stores, and why it is one-way.
+---
+
 # Player verification
 
 Every wallet has a player profile. Verification additionally ties your wallet to an off-platform identity, which is optional but unlocks limits and tournament eligibility.
@@ -20,9 +25,23 @@ The platform supports OAuth2 verification with:
 
 After verifying, the wallet has a verified flag and gains access to the chosen identity's display name and avatar (which you can optionally adopt as your profile nickname/avatar).
 
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/trust/app-verification-tab-desktop.png" alt="The verification tab on the player page listing the available providers with a link button beside each"><figcaption><p>The providers on offer are whichever ones the platform has enabled.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/trust/app-verification-tab-mobile.png" alt="The verification tab on the player page listing the available providers with a link button beside each, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
 ## When verification is offered
 
+{% hint style="info" %}
 You need to have joined at least one race. A brand-new wallet cannot verify: the providers are listed on the player page from the start, but they refuse until there is a race on your history, which is what stops an empty wallet minting a badge and walking away.
+{% endhint %}
 
 There is no upper limit and no window. Once you qualify you can verify at any time, or never.
 
@@ -35,6 +54,18 @@ Verification is a one-time off-chain OAuth flow. You authorize the chosen provid
 - **Races reserved for verified players**. A creator can lock a race so that only verified wallets may join, which is the usual way of keeping throwaway wallets out without managing an invite list. You need to be verified to enter one, and to host one. See [Race access and gating](../races/access-and-gating.md#verified-players-only).
 - **Identity badge**. A small checkmark next to your nickname signals you are verified. Other players see this on race cards and lobbies.
 - **Telegram handle in announcements** (Telegram-verified players only; see below).
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/trust/app-verified-badge-desktop.png" alt="A lobby participant row with a verification checkmark next to the nickname"><figcaption><p>The badge travels with you: race cards, lobbies, leaderboards and team rosters.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/trust/app-verified-badge-mobile.png" alt="A lobby participant row with a verification checkmark next to the nickname, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## Signing in with a linked account
 
@@ -60,7 +91,9 @@ You can flip the opt-in on or off at any time. Past announcements aren't rewritt
 
 The platform stores only what is needed: a stable identifier from the OAuth provider, your display name, and your avatar URL. The platform does not receive your email, phone number, OAuth refresh tokens, or any other PII from the provider. The OAuth grant covers only the scopes needed to confirm you control the linked account.
 
+{% hint style="danger" %}
 Verification is one-way. There is no unverify: nothing on the platform, and no instruction in the program, sets the flag back to false once it is set. Linking an account is a decision to make deliberately rather than one to try out.
+{% endhint %}
 
 ## Multiple providers per wallet
 
@@ -68,7 +101,9 @@ You can verify with multiple providers (X, Telegram, and Facebook all at once). 
 
 **Any account you have linked signs you in, and none of them is the primary one for that.** Verify with X and link Google later, and either will do. That is the practical reason to link a second: if you lose access to the first account, the second is still a way back into your wallet without your wallet app. Only the first link runs an on-chain transaction; the rest are recorded off chain.
 
+{% hint style="warning" %}
 **One social account belongs to one wallet.** The reverse of the rule above: a single wallet can carry several providers, but a given X, Telegram or Facebook account can only ever be linked to one wallet. Trying to verify the same account on a second wallet is refused. This is what stops one person presenting as several verified players in a race gated on Verified Only.
+{% endhint %}
 
 ## What verification does not do
 

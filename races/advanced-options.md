@@ -1,6 +1,23 @@
+---
+icon: sliders
+description: Every optional opt in on the create form, what it costs, and which ones need a Runner NFT.
+---
+
 # Advanced options
 
 The optional opt ins in the Create Race modal. All of them require a Runner NFT in your wallet except where noted.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-advanced-options-panel-desktop.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start"><figcaption><p>The opt ins are off by default, and each one shows its cost before you sign.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-advanced-options-panel-mobile.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## AI commentary
 
@@ -8,7 +25,9 @@ A funny per second play by play track narrated by an AI voice, generated on the 
 
 The narration references the duck names, the boosts in play, and the current standings. It does not predict the winner. Generation can add up to 60 seconds of waiting time after the lobby closes before the visual race begins.
 
+{% hint style="info" %}
 **The race never waits indefinitely for it.** If the commentary is not ready by then, the race starts silently rather than holding everyone in the lobby, and the track is attached as soon as it finishes, so it can arrive part way through or after the finish. The commentary is archived with the race either way, so a race that ran silent is not a race whose audio is gone.
+{% endhint %}
 
 Available for any race size, including 1v1 races and rematches. Adding audio to a rematch is decided by the proposer at propose time, independent of what the finished race had.
 
@@ -16,7 +35,9 @@ Available for any race size, including 1v1 races and rematches. Adding audio to 
 
 Post the race publicly to the Lucky Ducks X (Twitter) account when it goes live. Useful for community events or when you want to bring in players who are not already watching the app.
 
+{% hint style="warning" %}
 Flat cost at creation, around **0.005 SOL**, shown exactly in the cost breakdown before you sign. Transferred immediately to the backend wallet, like the archival fee: **non-refundable** once the race is created, even if the race never fills.
+{% endhint %}
 
 The backend uses the on-chain flag to know when to post; you do not sign anything on X yourself. The announcement includes the race link and basic details (entry fee, mode, when it starts). No-boost races carry a marker in the tweet copy.
 
@@ -45,6 +66,18 @@ The four built in tracks (day, night, sunset, sunrise) are always available and 
 Permit the race to launch with fewer than max players once the join timeout passes. Without this option, an unfilled race expires and can only be refunded. With it, the race starts as long as the lobby reached the platform's default race size, which the create form shows you.
 
 When you enable it, a slider appears for setting the minimum players to auto start. The slider runs from the platform's default race size up to one below your chosen maximum, so it is never possible to set a threshold the race could not start from. A 10 player race with the slider at 7 will auto start with 7, 8, or 9 players once the join window closes.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-underfilled-slider-desktop.png" alt="The start when underfilled slider set to seven out of a ten player race"><figcaption><p>The slider cannot be dragged below the platform's default race size.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-underfilled-slider-mobile.png" alt="The start when underfilled slider set to seven out of a ten player race, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 This option adds a small surcharge to cover the backend's auto start operation. The surcharge is paid out of the race vault to the operator on auto start; it stays in the vault and refunds with everything else if the race never starts.
 

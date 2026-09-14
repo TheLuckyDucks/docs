@@ -6,7 +6,7 @@ Topic rules live in `.claude/rules/`.
 ## What this is
 
 The source of the player-facing documentation site for theluckyducks.com. It is
-a GitBook space backed by this repository: plain markdown, one file per page,
+a GitBook space backed by this repository: markdown, one file per page,
 `SUMMARY.md` as the sidebar.
 
 **There is no code here.** No build, no tests, no lint, no CI. Nothing verifies
@@ -38,26 +38,42 @@ Three consequences, all of which have to shape how work is done:
   turns a one-line correction into a conflict against every concurrent edit.
   Change the smallest span that fixes the problem.
 
+## The site plan decides what is possible
+
+The space publishes on GitBook's **Basic Site** plan, the free site tier.
+
+**GitBook accepts no custom code in a site: no CSS, no HTML, no JavaScript, on
+any plan.** That is a platform limitation and no upgrade lifts it, so a styling
+request cannot be answered with a stylesheet. Everything that shapes a page has
+to come from the content: page icons, page descriptions, and GitBook's own
+blocks.
+
+Basic Site also excludes custom domain, custom fonts, custom logo, footer
+customization, the bold and gradient themes, semantic and code colours, PDF
+export, AI search, adaptive content, authenticated access and site sections.
+Anything that is available is set in the GitBook customization panel, not in
+this repository. `IMPORTING.md` carries the detail.
+
 ## Layout
 
-| Path            | Holds                                                                  |
-| --------------- | ---------------------------------------------------------------------- |
-| `README.md`     | The welcome page, and the space root per `.gitbook.yaml`               |
-| `SUMMARY.md`    | The sidebar. A page not listed here is not navigable                   |
-| `introduction/` | Orientation: what the platform is, how a race works, first race        |
-| `races/`        | Creating, joining, configuring, gating, hosting, cancelling            |
-| `nfts/`         | The four collections, plus Mystery Boxes                               |
-| `competition/`  | Tournaments, teams, rematches, badges                                  |
-| `economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races        |
-| `trust/`        | Randomness, on-chain verification, player verification                 |
-| `help/`         | FAQ, glossary, Telegram bot, social links                              |
-| `styles/`       | `website.css`, the custom theme                                        |
-| `.gitbook.yaml` | Modern GitBook config: readme and summary locations                    |
-| `book.json`     | Legacy `gitbook-cli` config: title, plugins, theme, brand variables    |
-| `IMPORTING.md`  | How to import and build the bundle. Not published, not in `SUMMARY.md` |
+| Path            | Holds                                                                        |
+| --------------- | ---------------------------------------------------------------------------- |
+| `README.md`     | The welcome page, and the space root per `.gitbook.yaml`                     |
+| `SUMMARY.md`    | The sidebar. A page not listed here is not navigable                         |
+| `introduction/` | Orientation: what the platform is, how a race works, first race              |
+| `races/`        | Creating, joining, configuring, gating, hosting, cancelling                  |
+| `nfts/`         | The four collections, plus Mystery Boxes and renting                         |
+| `competition/`  | Tournaments, teams, rematches, badges, the community lottery                 |
+| `economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races              |
+| `trust/`        | Randomness, on-chain verification, player verification                       |
+| `help/`         | FAQ, glossary, Telegram bot, social links                                    |
+| `.gitbook/`     | `assets/<section>/`, where every image a page references lives               |
+| `.gitbook.yaml` | GitBook config: space root, readme and summary locations                     |
+| `IMPORTING.md`  | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
 
 `.claude/docs/OVERVIEW.md` is the content map: which page owns which topic, and
-where a new one belongs.
+where a new one belongs. `.claude/docs/screenshots.md` is the shot list for
+every image the pages reference.
 
 ## Where agent docs live, and why they are hidden
 
@@ -71,13 +87,15 @@ rather than moving it.
 
 ## Adding, moving and renaming a page
 
-- **A new page needs two edits.** Create the `.md` in the right folder, then add
-  its line to `SUMMARY.md` under the correct heading. A page missing from
-  `SUMMARY.md` is unreachable through navigation and is the most common way a
-  new page silently does nothing.
+- **A new page needs three edits.** Create the `.md` in the right folder with
+  `icon:` and `description:` front matter, then add its line to `SUMMARY.md`
+  under the correct heading. A page missing from `SUMMARY.md` is unreachable
+  through navigation and is the most common way a new page silently does
+  nothing.
 - **Renaming a file breaks every inbound link and its published URL.** Links
   here are relative paths (`../nfts/runners.md`), so a rename means grepping for
-  the old filename and fixing every hit, in `SUMMARY.md` too.
+  the old filename and fixing every hit, in `SUMMARY.md` and in every
+  `{% content-ref %}` too.
 - **Renaming a heading breaks deep links silently.** Anchors are derived from
   heading text, so `boosts.md#no-boost-races` dies the moment that heading is
   reworded, and nothing reports it. Grep for the anchor before editing a heading
@@ -86,6 +104,11 @@ rather than moving it.
   ```bash
   grep -rn "boosts.md#" --include=*.md .
   ```
+
+  **A heading that other pages deep-link into cannot move inside a tab, a
+  stepper step or an expandable either**, because those are not headings and the
+  anchor disappears with them. `races/access-and-gating.md` keeps five gates as
+  `##` sections for exactly this reason.
 
 - **Order in `SUMMARY.md` is the reading order.** The sections are sequenced so
   a new player can read top to bottom. Put a page where someone would meet the
@@ -108,8 +131,8 @@ changes often, and a short page is one that gets corrected instead of going
 stale. When a page grows past what a reader will scan, split it and link rather
 than adding another section.
 
-Full rules, including the vocabulary table and the punctuation convention this
-bundle keeps: `.claude/rules/documentation.md`.
+Full rules, including the vocabulary table, the block vocabulary and the
+punctuation convention this bundle keeps: `.claude/rules/documentation.md`.
 
 ## Every number here is a claim about a live program
 
@@ -124,10 +147,22 @@ repository can ship, because a player acts on it.
 
 ## Markdown conventions
 
-- **Plain markdown only.** No GitBook block syntax (`{% hint %}`,
-  `{% content-ref %}`) is used anywhere. Keeping it that way is what lets the
-  legacy `gitbook-cli` path in `IMPORTING.md` still build, and keeps every page
-  readable as a file.
+- **GitBook block syntax is used deliberately.** Hints, steppers, tabs,
+  expandables, cards, page-link cards, titled code blocks and Mermaid diagrams
+  all appear. They are GitBook's own syntax, so they survive a round trip
+  through the web editor. `.claude/rules/documentation.md` says which block does
+  which job; `IMPORTING.md` lists the literal syntax of each.
+- **Every page carries `icon:` and `description:` front matter.** The icon is a
+  Font Awesome name without the `fa-` prefix and shows in the sidebar; the
+  description is the subtitle under the page title, the card subtitle, and the
+  meta description a search engine reads.
+- **Images live in `.gitbook/assets/<section>/`**, one folder per page folder
+  plus `brand/` for the root artwork, referenced by relative path from the page
+  inside a `<figure>` with an `alt` and a `<figcaption>`. **Every screenshot is a
+  pair**, desktop and phone, in a `{% columns %}` block at 70/30; artwork is a
+  single file. A figure whose file is missing renders as a broken image on the
+  live site, so an image and its asset ship together.
+  `.claude/docs/screenshots.md` is the shot list and the capture procedure.
 - **Prettier owns the formatting**, on its defaults, over every `.md` in the
   repository including this file and everything under `.claude/`. So bullets are
   `-`, table cells are padded to the column width, and emphasis is `_`. Nothing
@@ -138,8 +173,8 @@ repository can ship, because a player acts on it.
   ```
 
   It touches presentation only, never words, which is what makes it safe to run
-  on a tree that GitBook also writes to. Do not extend it to `styles/`,
-  `book.json` or `.gitbook.yaml`; those are in the do-not-touch list below.
+  on a tree that GitBook also writes to. It leaves `{% %}` blocks and raw HTML
+  alone. Do not extend it to `.gitbook.yaml`.
 
 - Links are relative paths to the `.md` file, with an anchor fragment when
   pointing at a section.
@@ -148,10 +183,8 @@ repository can ship, because a player acts on it.
 
 ## Do not touch
 
-- `styles/website.css` unless the change is a deliberate brand decision. Custom
-  CSS applies only on GitBook paid tiers and on the legacy builder, so a change
-  here is invisible in some environments and not in others.
-- `book.json` plugin list. It targets `gitbook-cli`, which is unmaintained, and
-  a plugin added on a whim is a build that fails on a machine nobody tests on.
 - `.gitbook.yaml`. It defines the space root. Changing it re-points the whole
   site.
+- The block syntax itself. A mistyped `{% hint %}` does not fail a build,
+  because there is no build: it renders as literal text on a live public page.
+  Copy the shape from a page that already uses the block.

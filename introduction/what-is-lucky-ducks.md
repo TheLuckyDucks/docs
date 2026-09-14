@@ -1,6 +1,23 @@
+---
+icon: circle-info
+description: A duck racing platform where the math is the product. What that means, what it costs, and who runs it.
+---
+
 # What is Lucky Ducks
 
 Lucky Ducks is a duck racing platform on Solana. Picture a stylized pond, a small flock of ducks at the starting line, and a 30-second sprint to the finish. Every race is a real Solana transaction. Every prize is paid out by a verified smart contract. Every random number that decides the outcome is produced by an oracle, not by the website.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/introduction/app-race-canvas-midrace-desktop.png" alt="Ducks part way through a race, with the leader board overlay showing current positions"><figcaption><p>A race in progress. Positions come from the on-chain seed, not from the server.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/introduction/app-race-canvas-midrace-mobile.png" alt="Ducks part way through a race, with the leader board overlay showing current positions, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## The pitch
 
@@ -14,8 +31,18 @@ This means three things that matter:
 
 ## The catch
 
-It runs on Solana, so you need a Solana wallet, a tiny SOL balance for fees, and a willingness to sign transactions to play. The first time you race, the smart contract creates a small on chain account to track your stats. That account costs \~0.0017 SOL in rent, fully refundable if you close it later. Beyond that, the entry fee for any race is whatever the creator set, denominated in SOL or one of the supported SPL tokens.
+It runs on Solana, so you need a Solana wallet, a tiny SOL balance for fees, and a willingness to sign transactions to play.
+
+{% hint style="info" %}
+The first time you race, the smart contract creates a small on chain account to track your stats. That account costs \~0.0017 SOL in rent, fully refundable if you close it later.
+{% endhint %}
+
+Beyond that, the entry fee for any race is whatever the creator set, denominated in SOL or one of the supported SPL tokens.
 
 ## Who runs it
 
 The Lucky Ducks team writes the smart contract, the backend, the frontend, and the cosmetic art. The platform takes a small treasury fee on every prize pool to cover hosting, oracle costs, and ongoing development. Past that, your money goes to other players.
+
+{% content-ref url="how-it-works.md" %}
+[how-it-works.md](how-it-works.md)
+{% endcontent-ref %}

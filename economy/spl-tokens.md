@@ -1,13 +1,37 @@
+---
+icon: coins
+description: Racing in USDC, USDT or another supported token, and what differs from a SOL race.
+---
+
 # SPL token races
 
 Races and tournaments can be denominated in supported SPL tokens instead of SOL. USDC and USDT are supported, and the platform adds more over time. The currency picker in the Create Race modal is the live list.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-currency-picker-desktop.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances"><figcaption><p>The picker is the live list. If a token is not in it, it is not supported yet.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-currency-picker-mobile.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## Supported token programs
 
 The platform supports both Solana token standards:
 
-- **SPL Token (Legacy)**; the original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
-- **SPL Token-2022**; the newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
+{% tabs %}
+{% tab title="SPL Token (Legacy)" %}
+The original token program (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). Most major tokens, including USDC and USDT, run on this program.
+{% endtab %}
+
+{% tab title="SPL Token-2022" %}
+The newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`) with support for extensions like transfer fees, interest-bearing balances, and confidential transfers. Tokens like AMPS use this program.
+{% endtab %}
+{% endtabs %}
 
 The race vault, ATA derivation, and payout logic select the correct token program automatically based on the mint's owner. From a player's perspective there is nothing to configure: you just pick the token in the currency picker and the on-chain instructions route to the right program.
 
@@ -20,6 +44,10 @@ Mechanically identical to a SOL race. The differences are:
 - The entry fee is denominated in the token's smallest unit (e.g. USDC has 6 decimals, so 1 USDC = 1,000,000 base units).
 - Each participant needs an Associated Token Account (ATA) for that mint. If you do not have one, the join transaction creates it automatically; this adds a one-time ATA rent (\~0.002 SOL) you pay yourself, recoverable when you close the ATA.
 - The race vault holds the token in a vault-owned ATA. Payouts move the token from the vault ATA to each winner's ATA.
+
+{% hint style="warning" %}
+The costs paid in SOL stay in SOL on a token race. Network fees, rent, and the withdrawal or cancellation penalties are all charged in SOL even when the pot is a token.
+{% endhint %}
 
 ## Selecting a token
 

@@ -1,3 +1,8 @@
+---
+icon: lock
+description: The five join settings, every gate type, and exactly when hosting one needs a Runner NFT.
+---
+
 # Race access and gating
 
 Every race has a **join setting** that decides who is allowed to enter. By default a race is open to everyone, but you can lock it down to verified players, a private invite list, NFT holders, or token holders.
@@ -14,7 +19,21 @@ This page covers each option, when a Runner NFT is (and is not) needed to host, 
 | **NFT holders**           | Players who hold a minimum number of NFTs from a chosen collection.               |
 | **Token holders**         | Players who hold a minimum balance of a chosen token.                             |
 
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-join-setting-picker-desktop.png" alt="The join setting selector in the create form with the five options listed"><figcaption><p>The join setting is picked once, at creation, and cannot change afterwards.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-join-setting-picker-mobile.png" alt="The join setting selector in the create form with the five options listed, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
+{% hint style="info" %}
 Players see every race in the list regardless of the setting. If they do not qualify, the Join button stays disabled and the race detail tells them why.
+{% endhint %}
 
 ## When you need a Runner NFT to host
 
@@ -35,7 +54,9 @@ A Runner NFT **is** required when you customize a race beyond the basics. Hostin
 
 If you host a plain race with default settings and one of the three Runner free gates (Verified Only, NFT Holders, Token Holders), no Runner NFT is needed. The moment you customize it beyond the defaults, or switch to Allowed Players, the Runner NFT is required.
 
+{% hint style="success" %}
 The Runner NFT only needs to be in the host's wallet at create time. Players joining the race never need one; their eligibility depends on the join setting you chose.
+{% endhint %}
 
 ## Verified players only
 
@@ -57,7 +78,9 @@ The chain is shown to players wherever the race is announced. A race gated on a 
 
 ### The collection has to be approved
 
+{% hint style="warning" %}
 For any chain, the collection you gate on must be one the platform has approved for gating. The current list is maintained by the team; if the collection you want is not on the list, the create transaction will refuse. This exists so a creator cannot gate on an arbitrary or spammy collection.
+{% endhint %}
 
 ### Joining a cross-chain race: linked wallets
 
@@ -69,6 +92,18 @@ For a race gated on another chain, the app checks the external wallet you have l
 - Connect the wallet that holds your NFTs on the other chain and sign a short message to prove you control it.
 - The signature does not move funds and does not approve anything; it only proves ownership.
 - Linking a new wallet later replaces the old link.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-link-external-wallet-desktop.png" alt="The link an external wallet panel on the profile page, showing the supported chains"><figcaption><p>One signature per wallet, once. It proves ownership and moves nothing.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-link-external-wallet-mobile.png" alt="The link an external wallet panel on the profile page, showing the supported chains, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 Once linked, that wallet is remembered for every future cross-chain gated race on that chain. You do not link again per race.
 
@@ -119,7 +154,9 @@ A note on how the list is stored: only a short fingerprint of the list is record
 
 For groups larger than 20 wallets, use a public race with another join setting (for example NFT Holders, Token Holders, or Verified Only) instead.
 
+{% hint style="warning" %}
 Hosting an Allowed Players race requires a Runner NFT (unlike the other gates). This is because the allowlist itself counts as a customization: the contract has to store the invite list root and verify each joiner's proof against it.
+{% endhint %}
 
 ## Stacking with minimum account age
 
@@ -138,3 +175,15 @@ So a gated race earns exactly what an ungated one does. Creating without a Runne
 - For NFT and Token gates, the minimum must be greater than zero. Setting it to zero would let everyone in, which is the same as Open, so it is not allowed.
 - For NFT and Token gates, the collection or token has to be on the platform's approved list. If it is not, the create transaction refuses.
 - Players always see gated races in the list. They simply cannot join unless they meet the requirement, and the Join button reflects that.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-gated-race-join-disabled-desktop.png" alt="A gated race detail modal with the Join button disabled and the requirement spelled out above it"><figcaption><p>A gate you do not pass is explained on the race, not hidden from the list.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-gated-race-join-disabled-mobile.png" alt="A gated race detail modal with the Join button disabled and the requirement spelled out above it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}

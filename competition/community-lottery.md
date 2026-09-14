@@ -1,8 +1,25 @@
+---
+icon: ticket
+description: On UK draw days you pick one number and the flock picks the rest. What it costs is nothing.
+---
+
 # The community lottery
 
 On UK draw days a box appears asking you to pick one number. Everyone who picks contributes one number to a single shared line, and Lucky Ducks plays that line in the real draw.
 
 You pick one number. The flock picks the rest.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-lottery-box-desktop.png" alt="The lottery box showing the shared line part filled, with taken numbers crossed out"><figcaption><p>The line fills live. Taken numbers are crossed out for everyone.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-lottery-box-mobile.png" alt="The lottery box showing the shared line part filled, with taken numbers crossed out, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## How it works
 
@@ -22,7 +39,11 @@ The box shows the line as it fills, live. When someone takes a number it appears
 
 ## Picking a number
 
-Numbers already taken are crossed out and cannot be chosen. **Tapping a free number takes it straight away.** There is no confirm step, and no way to change it afterwards, so pick the one you want.
+Numbers already taken are crossed out and cannot be chosen.
+
+{% hint style="warning" %}
+**Tapping a free number takes it straight away.** There is no confirm step, and no way to change it afterwards, so pick the one you want.
+{% endhint %}
 
 **Which numbers you can choose depends on where you land in the line.** Once the main numbers are all taken, the next players are picking Lucky Stars or the Life Ball instead, and those come from a much smaller range. The box tells you which one you are choosing and shows only the numbers that are valid for it.
 
@@ -37,7 +58,9 @@ Rounds fill fast, so a tap can arrive a moment too late. The box tells you which
 - **Picking has closed.** The window ended.
 - **You have already picked.** You hold a slot in this round already.
 
+{% hint style="success" %}
 Nothing is charged and nothing is lost in any of these. The lottery costs you nothing to take part in.
+{% endhint %}
 
 ## If you would rather not
 

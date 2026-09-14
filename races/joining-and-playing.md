@@ -1,3 +1,8 @@
+---
+icon: person-running
+description: Taking a slot in someone else's race: eligibility, boosts, cosmetics, withdrawing, and claiming.
+---
+
 # Joining and playing
 
 The race list updates in real time. New races appear at the top of the list and animate in. The card shows the entry fee, the prize pool, the current slot count, the duration, and any opt in badges (audio, custom track, runner only, sponsored).
@@ -5,6 +10,18 @@ The race list updates in real time. New races appear at the top of the list and 
 ## Joining
 
 Tap a card to open the detail modal, then Join Race. The modal shows the participants list, the available NFT boosts in your wallet (if any), and the available cosmetics. Choose what you want to wear, sign the transaction, and your duck takes its slot.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-race-detail-modal-desktop.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab"><figcaption><p>Everything you bring to a race is picked here, before you sign.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-race-detail-modal-mobile.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 You can also join straight from the card via the Join button when you do not need to customize.
 
@@ -36,7 +53,11 @@ The detail modal stays open while the lobby fills. Participants appear as they j
 
 ### Withdrawing
 
-If you change your mind during the join window, click Withdraw. Two windows apply: you have to withdraw **within 2 minutes of your own join**, and the **last 60 seconds** of the lobby are locked for everyone. If you qualify, the vault refunds your full entry fee and a fixed **0.01 SOL** penalty is charged from your wallet to the platform (always in SOL, even on token races). See [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) for the full rules.
+If you change your mind during the join window, click Withdraw. Two windows apply: you have to withdraw **within 2 minutes of your own join**, and the **last 60 seconds** of the lobby are locked for everyone.
+
+{% hint style="warning" %}
+If you qualify, the vault refunds your full entry fee and a fixed **0.01 SOL** penalty is charged from your wallet to the platform (always in SOL, even on token races). See [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) for the full rules.
+{% endhint %}
 
 ## When the race starts
 
@@ -46,4 +67,20 @@ The lobby modal transitions to the canvas. A short loading screen plays while th
 
 Winners can claim from the post race screen. If you finished first (WTA) or in the podium (Podium Split mode), the claim button appears with your payout amount. Click to sign. The funds arrive instantly, in your wallet by default or in your player vault if you have chosen to pool your winnings there.
 
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-claim-prize-desktop.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The claim button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-claim-prize-mobile.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
 If you lost, no claim is needed. The race archives itself automatically and the page returns to the lobby list.
+
+{% content-ref url="../economy/player-vault.md" %}
+[player-vault.md](../economy/player-vault.md)
+{% endcontent-ref %}

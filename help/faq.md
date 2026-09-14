@@ -1,4 +1,11 @@
+---
+icon: circle-question
+description: The questions players actually ask, grouped by playing, creating, rematches, money, and how it works underneath.
+---
+
 # Frequently asked questions
+
+## Playing
 
 ### Is this a real game or a casino?
 
@@ -12,6 +19,16 @@ Verified Only, NFT Holders, and Token Holders can be hosted **without** a Runner
 
 The Runner is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md), though it is no longer needed to earn one: every creator who joins their own race earns a base share without it.
 
+### What is the smallest race I can run?
+
+Two players for Winner Takes All. Three players for Podium Split. The race will not start with fewer.
+
+### Can I see the outcome of a race before it ends?
+
+Yes. Once ORAO has published the seed, the outcome is deterministic. Re-run the contract's simulation function on the seed and the participant list and you get the same ranking the canvas will eventually show. Most players prefer to wait and watch.
+
+## Creating and hosting
+
 ### Can I cancel a race I created?
 
 Yes, while the join window is still open. Cancelling refunds every player their full entry and charges the creator a flat 0.05 SOL penalty (paid in SOL even on token races). Once a race has reached its start condition, it can no longer be cancelled. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md#cancelling-a-race).
@@ -23,18 +40,6 @@ Yes, if you hold a Runner NFT. This is called hosting. The race opens with zero 
 ### Is there a cooldown between races I create?
 
 Yes, 30 seconds between race creations by the same wallet. This is a small anti-spam guard and applies to any wallet, Runner or not.
-
-### Can I still rematch after my opponent declines?
-
-No. Declining closes rematches on that race for good. Cancelling your own offer does not, so you can offer again after cancelling. See [Rematches](../competition/rematches.md#cancelling-versus-declining).
-
-### I offered a rematch and my opponent disappeared. Are my funds locked?
-
-No. Cancel the offer to get your stake back. It is free once your opponent's acceptance window has passed.
-
-### Does a pending rematch stop me claiming my prize?
-
-No. Your prize is always claimable, even with a rematch offer sitting open.
 
 ### Can a no-boost race be created without a Runner?
 
@@ -48,9 +53,21 @@ Yes. When you pick the NFT Holders join setting, you also pick which chain the c
 
 No. Sponsored races and host-mode races (where you do not join yourself) do not consume any of your daily race allowance. Offering and accepting a rematch each do, per player. See [Daily races](../races/daily-races.md).
 
-### What is the smallest race I can run?
+## Rematches
 
-Two players for Winner Takes All. Three players for Podium Split. The race will not start with fewer.
+### Can I still rematch after my opponent declines?
+
+No. Declining closes rematches on that race for good. Cancelling your own offer does not, so you can offer again after cancelling. See [Rematches](../competition/rematches.md#cancelling-versus-declining).
+
+### I offered a rematch and my opponent disappeared. Are my funds locked?
+
+No. Cancel the offer to get your stake back. It is free once your opponent's acceptance window has passed.
+
+### Does a pending rematch stop me claiming my prize?
+
+No. Your prize is always claimable, even with a rematch offer sitting open.
+
+## Money
 
 ### My race never started. Where is my money?
 
@@ -63,10 +80,6 @@ The refund returns every stake in the lobby in one transaction and closes the ra
 ### Can someone else claim my prize?
 
 Anyone can submit the claim transaction, but the funds always go to the player who earned them, into their wallet or their player vault according to their own payout setting. The signer of the claim tx is irrelevant to the destination, and cannot change it.
-
-### Why does the same race ID number sometimes skip?
-
-Race IDs are bumped on chain whenever a rematch is proposed, including rematches that get declined or expire. A declined rematch closes its reserved PDA but the counter does not decrement, so race IDs may have gaps. This is normal.
 
 ### What is the on-chain cost of playing one race?
 
@@ -82,9 +95,11 @@ It cannot take money out of the platform. The permission covers playing: joining
 
 What a misused permission could do is spend your vault balance on races you did not choose, or act on your teams. That is the reason to pick a duration that matches how much you actually play, and to revoke when you are done. Revoking is instant and always available. See [Playing without signing every action](../races/delegated-play.md).
 
-### Can I see the outcome of a race before it ends?
+## Under the hood
 
-Yes. Once ORAO has published the seed, the outcome is deterministic. Re-run the contract's simulation function on the seed and the participant list and you get the same ranking the canvas will eventually show. Most players prefer to wait and watch.
+### Why does the same race ID number sometimes skip?
+
+Race IDs are bumped on chain whenever a rematch is proposed, including rematches that get declined or expire. A declined rematch closes its reserved PDA but the counter does not decrement, so race IDs may have gaps. This is normal.
 
 ### Are races permissionless to start?
 
@@ -99,3 +114,7 @@ Your wallet still owns your funds. All claim, refund, and cancel actions are per
 ### Can I run my own client?
 
 Yes. The smart contract is open and the IDL is published. Anyone can write a custom client (CLI, Discord bot, alternative web frontend) that interacts with it. The official frontend has no special permissions.
+
+{% hint style="info" %}
+Not here? Ask on Telegram or X. See [Social networks](social-networks.md) for every channel, and [Glossary](glossary.md) for any term on this page you have not met before.
+{% endhint %}

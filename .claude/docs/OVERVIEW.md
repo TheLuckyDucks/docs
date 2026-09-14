@@ -131,6 +131,13 @@ Some of what a player sees is not described here, and should not be pulled in.
 - **The dApp interface itself.** Screens, buttons and wallet dialogs change
   faster than a page can track. Describe what happens and what it costs, not
   where the button is.
+
+  Screenshots are the deliberate exception, and they do not change that rule:
+  an image shows the reader what a screen looks like, while the prose still has
+  to carry the answer on its own. A page that says "click the button shown
+  above" has moved the answer into an asset that will go stale. The shot list
+  and the re-capture procedure are `screenshots.md`.
+
 - **Anything off chain.** XP, leaderboards, badge awards, tournament standings
   and the Telegram bot are backend features. They can change without a program
   release, so a page describing them precisely will go stale first.

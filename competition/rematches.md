@@ -1,8 +1,25 @@
+---
+icon: rotate-right
+description: Roll your stake forward into another 1v1, what the proposer can change, and why nobody is ever stuck.
+---
+
 # Rematches
 
 After a 1v1 race ends, either player can offer a rematch. The offer sits in the prize claim UI so you do not have to go looking for it: the same screen that lets you claim the payout is where you propose the rematch.
 
 Rematches roll your stake forward instead of paying everything out and asking you to buy back in.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-rematch-offer-desktop.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>The offer lives on the claim screen, so claiming and rematching are one stop.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-rematch-offer-mobile.png" alt="The prize claim screen with an Offer Rematch button beside the claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## Offering a rematch
 
@@ -45,7 +62,9 @@ These two look similar in the UI, but they behave differently on chain.
 
 **Your opponent declines.** That closes rematches on that race for good. Neither of you can offer again.
 
+{% hint style="warning" %}
 If you cancel while your opponent still has time to accept, a **0.01 SOL** withdrawal penalty applies (the same fixed penalty as withdrawing from a lobby). Once their acceptance window has passed, cancelling is **free**. If you are close to that point and not in a hurry, waiting a bit costs nothing.
+{% endhint %}
 
 Non-participants can also clear an abandoned offer, but only after the acceptance window has expired. This is a safety net; typically the proposer clears their own or the opponent declines first.
 
@@ -59,6 +78,18 @@ Non-participants can also clear an abandoned offer, but only after the acceptanc
 ## Rematch chains
 
 A rematch can be rematched. This continues up to the platform's maximum chain depth, after which further rematches are locked. Each race in the chain shows its position on the race card, as a "Rematch X of Y" indicator, so you can always see how much room is left.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-rematch-chain-indicator-desktop.png" alt="A race card showing a Rematch 3 of 11 indicator"><figcaption><p>The card says how far down the chain a race is, and how much room is left.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/competition/app-rematch-chain-indicator-mobile.png" alt="A race card showing a Rematch 3 of 11 indicator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 Rematches inherit the settings of the race they follow, including [no-boost mode](../nfts/boosts.md#no-boost-races) if the original race had boosts disabled. A no-boost rematch chain stays no-boost all the way down.
 

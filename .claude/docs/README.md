@@ -20,9 +20,10 @@ the doc is stale.
 
 ## Map
 
-| File          | What it is                                                                                       | Load when                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
-| `OVERVIEW.md` | Reading order, page ownership, the topics deliberately split across pages, where a new page goes | Adding a page or a section, or unsure which page owns a subject |
+| File             | What it is                                                                                       | Load when                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| `OVERVIEW.md`    | Reading order, page ownership, the topics deliberately split across pages, where a new page goes | Adding a page or a section, or unsure which page owns a subject |
+| `screenshots.md` | Every image the pages reference, what each one must show, and how to find the missing ones       | Adding or replacing an image, or capturing a batch of them      |
 
 ## Why everything is under a dot-directory
 
@@ -31,11 +32,12 @@ markdown directory risks appearing to players. A dot-directory does not.
 `CLAUDE.md` at the root is the one exception, because that is where it is loaded
 from.
 
-The published bundle also carries one internal file at the root that predates
-this directory: `../../IMPORTING.md`, which covers importing into GitBook and
-building with the legacy `gitbook-cli`. It is not listed in `SUMMARY.md` and is
-not published. Read it before touching `book.json`, `.gitbook.yaml` or
-`styles/website.css`.
+The bundle also carries one internal file at the root that predates this
+directory: `../../IMPORTING.md`, which covers how the Git Sync works, the
+literal syntax of every block the pages use, and what the site plan allows. It
+is not listed in `SUMMARY.md` and is not published. Read it before touching
+`.gitbook.yaml`, and before answering any question about styling: GitBook
+accepts no custom CSS, HTML or JS in a site on any plan.
 
 ## Cross-repo
 

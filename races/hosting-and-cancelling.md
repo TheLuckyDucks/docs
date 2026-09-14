@@ -1,3 +1,8 @@
+---
+icon: ban
+description: Hosting a race without playing it, cancelling one during the join window, and what happens when a race expires.
+---
+
 # Hosting, cancelling, and refunds
 
 This page covers three related things a creator can do with a race they made: host it without playing, cancel it during the join window, or let it expire if nobody shows up.
@@ -24,7 +29,21 @@ When you cancel:
 - Everyone who joined, including you if you joined, gets their full entry back.
 - You pay a small fixed penalty in SOL that goes to the platform.
 
+{% hint style="warning" %}
 The penalty is a flat amount set by the platform, around **0.05 SOL**, and the cancel confirmation shows the exact figure. It is the same whether the race is a SOL race or a token race, and it does not change with the size of the pot. For a token race the penalty is still paid in SOL.
+{% endhint %}
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/races/app-cancel-race-confirm-desktop.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign it.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/races/app-cancel-race-confirm-mobile.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 You cannot cancel a race that is already ready to start. If your race was set to [start when underfilled](advanced-options.md#start-when-underfilled) and enough players have joined to reach that point, the race goes ahead instead of being cancelled.
 
@@ -51,3 +70,7 @@ A race that nobody joined is simply closed when it expires. No penalty, no fanfa
 | Race expires (join window passes unfilled) | Anyone, permissionless | Full entry returned               | None                                |
 
 For everything else around money flow (rent, surcharges, where to find pending refunds) see [Refunds and rent](../economy/refunds-and-rent.md).
+
+{% content-ref url="../economy/refunds-and-rent.md" %}
+[refunds-and-rent.md](../economy/refunds-and-rent.md)
+{% endcontent-ref %}

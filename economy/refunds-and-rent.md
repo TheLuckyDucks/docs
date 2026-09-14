@@ -1,6 +1,21 @@
+---
+icon: receipt
+description: Every path money takes back to you: withdrawals, cancellations, expiry, rent, and the surcharge.
+---
+
 # Refunds and rent
 
 How money flows back to you when something does not finish as expected.
+
+```mermaid
+flowchart TD
+    A{"What happened?"} -->|"You left during the lobby"| B["Full entry back, 0.01 SOL penalty from your wallet"]
+    A -->|"Creator cancelled while the window was open"| C["Full entry back to everyone, 0.05 SOL penalty from the creator"]
+    A -->|"Join window passed without starting"| D["Full entry back to everyone, no penalty"]
+    A -->|"Oracle produced no seed in time"| D
+    D --> E["Anyone can submit it. It refunds the whole lobby and closes the race"]
+    C --> E
+```
 
 ## Withdrawal during the lobby
 
@@ -9,7 +24,9 @@ You can leave a race during the lobby window under two time constraints:
 - You must withdraw **within 2 minutes of your own join**. If you have been in the lobby longer than that, the withdraw button is disabled.
 - The **last 60 seconds** of the join window are locked for everyone (anti grief), regardless of when they joined.
 
+{% hint style="warning" %}
 When you withdraw, the vault refunds your **full entry fee** and a fixed **0.01 SOL** withdrawal penalty is charged separately from your wallet to the platform fee wallet. The penalty is the same regardless of pool size or token, and always paid in SOL even for SPL/token races.
+{% endhint %}
 
 A few details worth knowing:
 
@@ -44,7 +61,9 @@ The contract records a cancellation reason on the race account and emits it in t
 - **JoinTimeout**. The join window passed without the race reaching a startable state. This is the expiration path above.
 - **StaleRandomness**. The oracle did not fulfill the VRF request within the VRF timeout, which is about two minutes. Rare; the oracle is reliable.
 
+{% hint style="info" %}
 In either case the refund is permissionless: anyone can submit it, not just a participant. **It refunds the whole lobby in one transaction and closes the race**, so there is no such thing as refunding yourself alone, and no way for one player to leave the others behind. The money always goes to each original payer regardless of who paid for the transaction.
+{% endhint %}
 
 ### Who triggers it, and who pays for it
 
@@ -54,6 +73,18 @@ Nothing happens on chain when a deadline passes. The race simply becomes refunda
 - **A race a player created is left alone on purpose.** It is theirs to close. The platform does not close a race somebody else paid for, so the refund waits for the creator or for any participant to trigger it.
 
 You are never left guessing which one you are in: a race sitting past its join window shows up in the Unclaimed Items banner on your player page as soon as it becomes refundable, with the button that clears it.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-unclaimed-items-banner-desktop.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Anything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-unclaimed-items-banner-mobile.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 Triggering it yourself costs the network fee for that transaction. If you trigger it while [playing without signing every action](../races/delegated-play.md), that fee comes from your player vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 

@@ -1,3 +1,8 @@
+---
+icon: robot
+description: Commands, group announcements, and raids. What everyone can use, and what linking your X account adds.
+---
+
 # The Lucky Ducks Telegram bot
 
 The Lucky Ducks bot keeps your community in sync with on chain racing and rewards engagement on X. This page covers what everyone can use.
@@ -18,9 +23,23 @@ Join the main group at [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks), or add 
 
 The bot also announces races, wins, and prize claims in your group automatically, with a link to view each race on the site (and on X for sponsored races).
 
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/help/tg-race-announcement-desktop.png" alt="A race announcement card posted by the bot in a Telegram group, with the entry fee, mode and a link"><figcaption><p>Announcements carry the race link, so the group can join from the chat.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/help/tg-race-announcement-mobile.png" alt="A race announcement card posted by the bot in a Telegram group, with the entry fee, mode and a link, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
 ### Why two groups show different races
 
+{% hint style="info" %}
 Each group has its own announcement policy, set by whoever added the bot: a group can be scoped to particular join settings, particular tokens, particular NFT collections, or to sponsored races only. `/races` applies the same policy as the announcements, so the list you get in one group is not the list you get in another, and neither is the full list. The site always shows everything.
+{% endhint %}
 
 ### How you appear on a card
 
@@ -32,6 +51,8 @@ If you would rather not appear by handle, unlink it. See [Player verification](.
 
 A **raid** rallies the group to engage with a Lucky Ducks tweet. When a raid is live, the bot posts a card that updates in real time:
 
+{% code title="A live raid card" %}
+
 ```
 💥 Raid the Tweet
 🟨 Likes    5 | 6   [ 83% ]
@@ -40,9 +61,13 @@ A **raid** rallies the group to engage with a Lucky Ducks tweet. When a raid is 
 https://x.com/.../status/...
 ```
 
+{% endcode %}
+
 Each line shows the current count against the goal and the percent complete. Like, retweet, or reply to the tweet and watch the numbers climb. When every goal is hit, or the timer runs out, the card flips to an "Ended" summary and the next tweet in the queue goes live.
 
+{% hint style="success" %}
 You don't need to link anything to help a raid: **everyone's** likes, retweets, and replies count toward the group goals.
+{% endhint %}
 
 ### Earn points on the raid leaderboard
 
@@ -60,14 +85,26 @@ Linking is optional. Without it you still push the group goals, you just will no
 
 ## FAQ
 
-**Do I need a wallet to raid?**
+<details>
+
+<summary>Do I need a wallet to raid?</summary>
 
 No. Anyone can engage with the tweet. Points and XP require a linked, verified wallet.
 
-**How is engagement counted?**
+</details>
+
+<details>
+
+<summary>How is engagement counted?</summary>
 
 The live card reads the tweet's public counts. Personal points are tallied once at the end of the raid.
 
-**Why link both X and Telegram?**
+</details>
+
+<details>
+
+<summary>Why link both X and Telegram?</summary>
 
 It ties your identities to one wallet so your raid points and future rewards land in the right place. Linking a second network never requires a second on chain step.
+
+</details>

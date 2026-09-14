@@ -1,6 +1,19 @@
+---
+icon: hand-holding-dollar
+description: Part of the platform fee comes back to a creator who races in their own race. What each NFT adds, and what it never changes.
+---
+
 # Creator Fee Share
 
 Creator Fee Share lets a race creator keep part of the platform fee at race end. It does not change what winners receive. It only changes where the platform's cut goes.
+
+```mermaid
+flowchart LR
+    V["Prize pool in the race vault"] --> W["Winners, unchanged"]
+    V --> F["Platform fee, at the tier rate"]
+    F --> C["Creator Fee Share, if the creator raced in it"]
+    F --> T["Treasury keeps the rest"]
+```
 
 ## What this changes (and what it doesn't)
 
@@ -15,17 +28,19 @@ Every creator earns a share. No NFT is required. The one condition is that you *
 
 On top of that base, each NFT you bring adds its own share. They stack.
 
-| What you bring                        | Adds |
-| ------------------------------------- | ---- |
-| Nothing, you just join your own race  | 10%  |
-| Runner NFT                            | 40%  |
-| Track NFT                             | 10%  |
-| Cosmetic NFT on your duck             | 10%  |
-| Booster NFT on your duck              | 10%  |
+| What you bring                       | Adds |
+| ------------------------------------ | ---- |
+| Nothing, you just join your own race | 10%  |
+| Runner NFT                           | 40%  |
+| Track NFT                            | 10%  |
+| Cosmetic NFT on your duck            | 10%  |
+| Booster NFT on your duck             | 10%  |
 
 A creator with all four earns 80% of the platform fee on their race. A creator with none of them earns 10%. Each one counts on its own: a Track earns its 10% whether or not you also hold a Runner.
 
+{% hint style="info" %}
 These are percentages **of the platform fee**, not of the prize pool, and the create form shows what your race will earn before you sign.
+{% endhint %}
 
 | Race created by...                         | Creator share |
 | ------------------------------------------ | ------------- |
@@ -37,6 +52,18 @@ These are percentages **of the platform fee**, not of the prize pool, and the cr
 | A 1-v-1 race (2 players)                   | 0%            |
 
 The percentages are platform settings managed by the team and can be tuned over time. They are added together and never exceed 100% of the fee. New rates only apply to **new** races; races already created keep the share they snapshotted at creation.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-creator-share-preview-desktop.png" alt="The create form showing the creator share this race will earn, above the sign button"><figcaption><p>What the race will earn you is shown before you sign it.</p></figcaption></figure>
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../.gitbook/assets/economy/app-creator-share-preview-mobile.png" alt="The create form showing the creator share this race will earn, above the sign button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ### What this is for
 
@@ -83,7 +110,9 @@ Depending on what the creator brought, the 0.03 SOL fee splits like this:
 
 The winner gets 0.97 SOL in every case.
 
+{% hint style="warning" %}
 **Your share is a slice of the fee, not of the pool.** This is the easiest number to misread. On the race above, a 10% share is 10% of the 0.03 SOL fee, which is 0.003 SOL, not 10% of the 1 SOL pool. The bigger the pool, the bigger the fee, and so the bigger your share.
+{% endhint %}
 
 That also decides whether a race pays for itself. Creating one costs you the VRF fee and the archive fee, so a small race on the base share alone will not quite cover them, while a larger race will, and the NFT shares clear it comfortably either way. The create form shows the figure before you sign, so you can see where any particular race lands.
 
@@ -103,6 +132,10 @@ If the share is 0 (because the race is 1-v-1, or sponsored, or the creator hoste
 
 ## For administrators
 
+<details>
+
+<summary>The five configuration values, and the rule that binds them</summary>
+
 The five shares live in the platform configuration as separate values, all in basis points (10000 = 100%):
 
 - `creatorFeeShareBaseBps`: earned by any creator who joins their own race, with no NFT required.
@@ -114,6 +147,8 @@ The five shares live in the platform configuration as separate values, all in ba
 Each must be between 0 and 10000, and **their total must not exceed 10000 either**. They are added together and paid out of one platform fee, so a configuration that sums above 100% would promise more than the race collects, and the program refuses it. That check is on the total, which means raising one share can be rejected because of the values the other four already hold.
 
 Only the configuration owner can change them, and new values only take effect for new races. Setting the base to 0 restores the older behaviour, where only NFT holders earned anything.
+
+</details>
 
 ## Why this exists
 

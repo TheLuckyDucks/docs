@@ -1,70 +1,65 @@
 # Importing into GitBook
 
-This bundle is set up to import cleanly into both modern GitBook (gitbook.com) and legacy `gitbook-cli`.
+Internal notes on how this bundle reaches gitbook.com, what the platform will and will not render, and what the site plan allows. Not published, and not listed in `SUMMARY.md`.
 
-## Modern GitBook (gitbook.com)
+## How this repository becomes the site
 
-The hosted SaaS platform.
+The space is backed by this repository over GitBook's Git Sync, on one branch, in both directions. GitBook reads two things from the tree:
 
-### Option A: Direct import via UI
+- `.gitbook.yaml`, which sets the space root, the first page (`README.md`) and the navigation file (`SUMMARY.md`).
+- `SUMMARY.md`, which is the sidebar. A page not listed there is not navigable.
 
-1. Create a new GitBook space.
-2. From the space settings, choose **Synchronize with Git provider** and pick GitHub / GitLab / Bitbucket.
-3. Push this `docs/` folder to a repo and point the GitBook sync at it.
-4. GitBook reads `.gitbook.yaml` (which sets `README.md` as the root page and `SUMMARY.md` as the navigation), and the docs render immediately.
+To point a new space at this repository: create the space, choose **Synchronize with Git provider**, pick the provider and repository, and select the branch. GitBook reads `.gitbook.yaml` on the first sync and the pages render immediately.
 
-### Option B: Import from existing markdown
+## Custom CSS is not possible, on any plan
 
-1. From the space, **Import** ➔ **GitBook**.
-2. Zip this `docs/` folder and upload it.
-3. GitBook parses `SUMMARY.md` to build the sidebar.
+GitBook does not accept custom code of any kind in a site: no CSS, no HTML, no JavaScript. This is a platform limitation and not a plan restriction, so no upgrade unlocks it. Site appearance is whatever the customization panel offers.
 
-### Styling on modern GitBook
+The site runs on the **Basic Site** plan, which is GitBook's free site tier. That means:
 
-Custom CSS is a paid-tier feature (Plus / Pro plans, configured under Workspace Settings ➔ Customization). Paste the contents of `styles/website.css` into the Custom CSS field on a paid plan and the docs will pick up the app's theme. On the free tier, the docs render in GitBook's default theme; the brand color (gold) can still be set via the basic customization panel.
+- **Available**: the block editor and Git Sync, basic customization (site theme, colour, light and dark default), search, and preview deployments for a branch.
+- **Not available**: custom domain, custom fonts, custom logo, footer customization, the bold and gradient themes, semantic and code-block colours, PDF export, AI search, adaptive content, authenticated access, site sections.
 
-## Legacy gitbook-cli
+Everything that shapes how a page looks therefore has to come from the content itself: page icons and descriptions in front matter, and GitBook's own blocks.
 
-The open-source static site generator (no longer actively maintained but still functional). Builds an HTML site you can host anywhere.
+## What the pages use
 
-```bash
-npm install -g gitbook-cli
-cd docs/
-gitbook install   # installs the plugins listed in book.json
-gitbook serve     # http://localhost:4000 with hot reload
-gitbook build     # outputs _book/ ready to upload to your host
-```
+GitBook block syntax is used deliberately, so every block here has to survive a round trip through the web editor:
 
-The `book.json` already points at `styles/website.css` so the brand styling applies out of the box.
+| Block             | Syntax                                                         |
+| ----------------- | -------------------------------------------------------------- |
+| Front matter      | `icon:`, `description:`, and `cover:`/`coverY:` on `README.md` |
+| Hint              | `{% hint style="info\|success\|warning\|danger" %}`            |
+| Stepper           | `{% stepper %}` / `{% step %}` with an `###` title per step    |
+| Tabs              | `{% tabs %}` / `{% tab title="..." %}`                         |
+| Expandable        | `<details>` with a `<summary>`                                 |
+| Cards             | `<table data-view="cards">` with a `data-card-target` column   |
+| Page link card    | `{% content-ref url="..." %}`                                  |
+| Code with a title | `{% code title="..." %}` around a fenced block                 |
+| Diagram           | A fenced ` ```mermaid ` block                                  |
+| Columns           | `{% columns %}` / `{% column width="70%" %}`                   |
+| Image             | `<figure><img src="..." alt="..."><figcaption>`                |
+
+Page icons are Font Awesome names without the `fa-` prefix.
+
+## Images
+
+Image files live in `.gitbook/assets/<section>/`, one folder per page folder plus `brand/` for the root artwork. Reference them by relative path from the page: `.gitbook/assets/brand/x.png` from `README.md`, `../.gitbook/assets/races/x.png` from a page in a folder.
+
+Every screenshot is two files, `-desktop.png` and `-mobile.png`, shown as one row by a `{% columns %}` block at 70/30. Artwork is a single file.
+
+Two things to know about the editor. GitBook writes anything uploaded through it **flat** into `.gitbook/assets/`, so replacing a capture there breaks the folder layout for that file; replace captures through git. And a `<figure>` whose file is missing renders as a broken image on the live site, so the asset has to land before the page does.
+
+`.claude/docs/screenshots.md` is the shot list: every image the pages reference, what it should show, the capture conventions, and the commands that find missing files, orphans and half-finished pairs.
 
 ## Editing
 
-Every page is a plain markdown file. The structure is:
+Every page is a markdown file, one file per page. To add one:
 
-```
-docs/
-├─ README.md                 (welcome page)
-├─ SUMMARY.md                (sidebar navigation, edit to reorder/add pages)
-├─ .gitbook.yaml             (modern GitBook config)
-├─ book.json                 (legacy gitbook-cli config)
-├─ styles/
-│  └─ website.css            (custom theme)
-├─ introduction/
-├─ races/
-├─ nfts/
-├─ competition/
-├─ economy/
-├─ trust/
-└─ help/
-```
-
-To add a new page:
-
-1. Create the `.md` file in the appropriate folder.
-2. Add an entry to `SUMMARY.md` under the right section.
-3. Commit and push (or rebuild for legacy gitbook-cli).
-
-## Updating content
+1. Create the `.md` file in the folder whose section a reader would look in.
+2. Give it `icon:` and `description:` front matter.
+3. Add its line to `SUMMARY.md` under the right heading.
+4. Commit and push, or make the same change in the editor and let the sync bring it back.
 
 The docs are intentionally short. Most pages are 200-400 words. The platform changes often; small targeted updates beat encyclopedic walls. When a feature changes, find the page that mentions it (search the repo for the keyword) and edit just that section.
 

@@ -1,12 +1,31 @@
+---
+icon: dice
+description: Where the randomness comes from, why the platform cannot pick a winner, and what happens if no seed arrives.
+---
+
 # Provable randomness
 
 The most important property of Lucky Ducks is that the platform cannot pick a winner. Here is how that works.
+
+```mermaid
+sequenceDiagram
+    participant LD as Lucky Ducks program
+    participant OR as ORAO VRF program
+    participant SOL as Solana, public to anyone
+    LD->>OR: Request randomness for this race
+    OR->>SOL: Operators sign the seed and publish it
+    SOL-->>LD: The seed is now readable by anyone
+    LD->>LD: Fixed simulation ranks the ducks from the seed
+    LD->>SOL: Finalize, winners written on chain
+```
 
 ## The actor: ORAO Verifiable Random Function (VRF)
 
 ORAO is a Solana-native randomness oracle. When the smart contract needs a random seed for a race, it sends a `request` transaction to the ORAO program. ORAO operators (a distributed set of network participants) compute the response, sign it with their VRF keys, and write the signed seed back to Solana.
 
+{% hint style="success" %}
 The signed seed is publicly verifiable: anyone can check that the seed was produced by the right key over the right inputs. ORAO cannot retroactively change a seed once published.
+{% endhint %}
 
 ## How the seed becomes a winner
 
@@ -26,7 +45,9 @@ The contract splits the waiting period at a single instant: the VRF timeout, aro
 
 Nothing fires on its own when the deadline passes. The race does not auto-cancel; the refund simply becomes possible, and anyone can submit it. The platform sweeps races it created itself, and leaves a race a player created for that player or any participant to close, because closing a race somebody else paid for is not the platform's call. Either way the race appears in your Unclaimed Items as soon as it is refundable.
 
+{% hint style="info" %}
 **A refund returns every stake in one transaction and closes the race.** Nobody can refund only themselves.
+{% endhint %}
 
 That is the part that matters for fairness, and it is why the refund cannot open one moment earlier than the start becomes impossible. The seed is public the instant it lands on chain, so if the two windows overlapped, a player could read the result, dislike it, and exit instead of paying the winner. Because the windows meet exactly and a refund is all or nothing, the worst anyone can do is void a race that was already too late to run, and that returns their own stake along with everyone else's.
 
@@ -37,3 +58,7 @@ Read ORAO's audit reports, watch their on-chain operator set, or just observe th
 ## What if the seed is biased?
 
 ORAO uses a VRF scheme: the seed is the output of a one-way function over inputs (including the request transaction's slot) that the contract chooses. Nobody, not even ORAO, can predict the output before submitting. The output is unique per request and uniform across the possibility space.
+
+{% content-ref url="verifying-a-race.md" %}
+[verifying-a-race.md](verifying-a-race.md)
+{% endcontent-ref %}
