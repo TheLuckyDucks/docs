@@ -54,12 +54,12 @@ const FALLBACK_LABELS = {
 function formatFor(base) {
   if (base.endsWith("-banner.png"))
     return {
-      w: 1600,
-      h: 500,
-      fsk: 26,
-      fsl: 34,
-      fsn: 20,
-      cols: 52,
+      w: 600,
+      h: 250,
+      fsk: 13,
+      fsl: 18,
+      fsn: 10,
+      cols: 40,
       max: 3,
       kicker: "BANNER PLACEHOLDER",
     };

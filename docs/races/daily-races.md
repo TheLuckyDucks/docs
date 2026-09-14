@@ -36,9 +36,11 @@ Attach the Runner when you join or rematch. Without it the race still goes throu
 
 ## When your day resets
 
-Not at midnight. The window opens on your first race after the last one ended and runs a fixed length from there, which makes it a rolling day.
+Not at midnight. Your window opens on your first race and runs **24 hours** from there, which makes it a rolling day: first race at 3pm, and your allowance is whole again at 3pm tomorrow.
 
-First race at 3pm, then, and your window ends at 3pm tomorrow. Your remaining races and the exact reset time both sit in the app, which is the figure to trust.
+{% hint style="warning" %}
+**Nothing in the app announces the window.** There is no counter on your player page, and no start or end time anywhere, so 24 hours from your first race is the figure to keep. The one reminder lives in the join screen, and only once you are down to 3 races or fewer: it says how many are left and when they come back.
+{% endhint %}
 
 ## FAQ
 

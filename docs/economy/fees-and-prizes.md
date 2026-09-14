@@ -33,6 +33,8 @@ Every cost here can come from your wallet or from a balance you pre-fund once. T
 
 The totals match either way. What changes is how often you approve something.
 
+<figure><img src="../../.gitbook/assets/economy/app-pay-from-balance-checkbox-banner.png" alt="The pay race entries from your Play Balance checkbox in the Play Balance panel"><figcaption><p>The setting decides it once, rather than asking you every race.</p></figcaption></figure>
+
 ## Where the entry fee goes
 
 | Path                        | Recipient       | When              |
@@ -80,6 +82,8 @@ Which price depends on whether the thing is still running:
 {% hint style="info" %}
 With no price available you see the amount and no dollar figure. A blank means the price is missing, not that the amount is worthless.
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/economy/app-usd-estimate-banner.png" alt="A prize amount in SOL with an approximate dollar figure beside it"><figcaption><p>The token amount is the exact one. The figure beside it is an estimate.</p></figcaption></figure>
 
 ## Other costs at creation
 

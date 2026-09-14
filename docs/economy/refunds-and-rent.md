@@ -37,6 +37,8 @@ Details worth knowing:
 
 Withdrawn players stay in the participants list with a strikethrough, and stop counting toward the fill counter or the underfilled threshold.
 
+<figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="The withdraw button in the race modal with the time left on it"><figcaption><p>The button disables itself once either window closes.</p></figcaption></figure>
+
 ## Full refund on race cancellation or expiration
 
 A race that never finalizes refunds every paid participant in **full**. Two cases.
@@ -91,6 +93,8 @@ Your first create or join allocates a small per-wallet account holding your race
 That rent is what Solana requires to keep an account open. It sits apart from your vault balance and is never spendable, which is why your balance is always withdrawable in full.
 
 It is refundable too. The close button on the Player page returns everything in one transaction: your SOL, every token balance and the rent. Your race history resets, and the account comes back on your next race, so the rent is only held while you are using the platform.
+
+<figure><img src="../../.gitbook/assets/economy/app-close-account-button-banner.png" alt="The close player account button on the Player page with the refundable rent stated"><figcaption><p>One transaction returns your SOL, your tokens and the rent.</p></figcaption></figure>
 
 ## Start-when-underfilled surcharge
 

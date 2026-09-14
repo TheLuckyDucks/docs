@@ -29,9 +29,13 @@ What each player pays to join, in SOL or any supported SPL token, legacy or Toke
 
 The platform fee scales with it: 10% on tiny pots, down to 2% on large ones. [Fees and prizes](../economy/fees-and-prizes.md) has the tier table.
 
+<figure><img src="../../.gitbook/assets/races/app-entry-fee-field-banner.png" alt="The entry fee field on the create form with the currency picker beside it"><figcaption><p>The minimum is 0.01 SOL, and the picker sets what everyone pays in.</p></figcaption></figure>
+
 ### Max players
 
 How many seats the lobby has. The default cap is 5 and the absolute maximum is 20; anything past the default needs a Runner NFT in the connected wallet. See [Runner NFTs](../nfts/runners.md).
+
+<figure><img src="../../.gitbook/assets/races/app-max-players-field-banner.png" alt="The max players control on the create form with the seats past the default marked as gated"><figcaption><p>Past the default of 5, the control tells you a Runner is needed.</p></figcaption></figure>
 
 ### Race duration
 
@@ -40,6 +44,8 @@ How long the visual race runs. The floor is 30 seconds, and the ceiling is a pla
 {% hint style="warning" %}
 30 seconds is open to everyone. **Any other value needs a Runner NFT**, like the join timeout slider, and without one the field stays locked at 30s. See [Runner NFTs](../nfts/runners.md).
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/races/app-race-duration-field-banner.png" alt="The race duration field on the create form showing the platform maximum"><figcaption><p>30 seconds needs nothing. Any other value needs a Runner.</p></figcaption></figure>
 
 ### Race mode
 
@@ -52,6 +58,8 @@ First place takes the whole pool, minus the platform fee. The cleanest format fo
 The pot splits 50/30/20 across first, second and third. Needs at least 3 players, and suits a big lobby.
 {% endtab %}
 {% endtabs %}
+
+<figure><img src="../../.gitbook/assets/races/app-race-mode-picker-banner.png" alt="The race mode picker on the create form with Winner Takes All and Podium Split"><figcaption><p>Podium Split needs 3 players, so a 1v1 only offers the first.</p></figcaption></figure>
 
 ## Optional opt ins
 

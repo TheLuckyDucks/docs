@@ -24,6 +24,8 @@ The Cosmetics tab in the join modal shows every cosmetic in your wallet. Pick on
 Cosmetics are visual only. No effect on speed, finishing order or anything else a race decides.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-banner.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck"><figcaption><p>Every cosmetic in your wallet, and the choice sticks until you change it.</p></figcaption></figure>
+
 ## Themed releases
 
 Drops follow a movie-inspired naming pattern: "inspired by" and never named after a specific title, which keeps the team out of trademark trouble. Shipped sets include retro arcade, neon synthwave and seasonal runs.
@@ -42,4 +44,4 @@ The collection carries the Royalties plugin at a rate of zero, so selling a cosm
 
 You can also pick a cosmetic as your platform avatar from the Player page, and its image then appears next to your nickname everywhere: lobbies, chat, leaderboard, team rosters. That is a separate choice from the one you make for a race.
 
-<figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-banner.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck"><figcaption><p>Picking one for a race and picking one as your avatar are two separate choices.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-avatar-cosmetic-setting-banner.png" alt="The avatar picker on the Player page with a cosmetic chosen as the platform avatar"><figcaption><p>Your race skin and your platform avatar are two separate choices.</p></figcaption></figure>

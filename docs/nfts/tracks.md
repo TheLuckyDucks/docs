@@ -28,6 +28,8 @@ The Custom Track picker on the create form offers any Track NFT you hold. The ca
 Once the race exists, the Track need not stay in your wallet. The race stores the mint at creation and renders from that, wherever the asset lives later, so you can sell a Track you have already raced on and that race still looks right.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/races/app-custom-track-picker-banner.png" alt="The track picker on the create form with the built in tracks and a Track NFT"><figcaption><p>A Track you own appears in the picker beside the four built in ones.</p></figcaption></figure>
+
 ## Acquiring
 
 Tracks arrive in small themed drops, often seasonal or sponsored. Floors follow demand and how rare the drop was.

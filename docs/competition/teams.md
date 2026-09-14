@@ -36,6 +36,8 @@ Two ways in:
 1. **Direct invite.** The founder invites a wallet address, and it lands in that player's inbox to accept or decline.
 2. **Open team.** The team marks itself open, players request to join from its page, and the founder approves or declines each one from the admin panel.
 
+<figure><img src="../../.gitbook/assets/competition/app-team-invite-banner.png" alt="The team invite control with a wallet address entered and the send button"><figcaption><p>An invite lands in that player's inbox to accept or decline.</p></figcaption></figure>
+
 ## Joining requests inbox
 
 Every player has a Join Requests inbox in the platform notifications, where a new request arrives with Accept and Decline on it. It is anchored on the left, away from the race toasts on the right, so the two cannot collide at the end of a race.

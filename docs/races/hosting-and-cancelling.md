@@ -18,6 +18,8 @@ Normally the creator is also the first player. Hosting instead opens the race em
 
 It suits community events, tournaments where the organiser should not compete, and any race you want to put up without taking a seat.
 
+<figure><img src="../../.gitbook/assets/races/app-host-mode-toggle-banner.png" alt="The host without playing toggle on the create form, unavailable on a 1v1"><figcaption><p>It opens the race empty, and it gives the Creator Fee Share up.</p></figcaption></figure>
+
 ## Cancelling a race
 
 Only the creator can cancel, and only while the join window is open. Everyone who joined gets their full entry back, you included if you joined, and you pay a small fixed penalty in SOL to the platform.

@@ -27,6 +27,8 @@ From the Player page choose Deposit, pick SOL or a supported token, enter an amo
 **A deposit always needs your wallet's signature.** Not a policy: money leaving your wallet requires your wallet to sign, so no setting and no permission can move it for you.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/economy/app-vault-deposit-dialog-banner.png" alt="The deposit dialog on the Player page with the currency choice and an amount entered"><figcaption><p>A deposit always asks your wallet, whatever else is switched on.</p></figcaption></figure>
+
 ## Spending from it
 
 What pays for a race entry is a setting, not a question per race.
@@ -45,11 +47,15 @@ If the balance falls short, your wallet pays and the app says so. Nothing fails 
 **The vault cannot pay rent.** Opening an account on Solana needs a deposit from a wallet that signs for it, so creating a race, or your very first player account, always comes from your wallet. Everything else can come from the vault. On an action signed for you, the fee payer fronts the rent and your vault repays it.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/economy/app-pay-from-balance-checkbox-banner.png" alt="The pay race entries from your Play Balance checkbox in the Play Balance panel"><figcaption><p>Remembered for your wallet, and only shown while you sign for yourself.</p></figcaption></figure>
+
 ## Taking money out
 
 Withdraw any amount, any time, from the Player page, whether or not you have granted [delegated signing](../races/delegated-play.md). Only your wallet can authorise it, and no permission you grant or setting you flip can move money out of your vault or your account.
 
 Closing the account returns everything in one transaction, your SOL, every token balance and the rent deposit. Your race history resets, and the account comes back the next time you race. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
+
+<figure><img src="../../.gitbook/assets/economy/app-vault-withdraw-dialog-banner.png" alt="The withdraw dialog on the Player page with the whole balance available"><figcaption><p>Any amount, any time, and only your wallet can authorise it.</p></figcaption></figure>
 
 ## Where your winnings land
 

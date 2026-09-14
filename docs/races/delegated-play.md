@@ -66,6 +66,8 @@ Renewing is just granting again, and needs the same verified wallet.
 
 Where your winnings land sits on the same screen but is a separate choice. Change it whenever you like, granted or not, verified or not: it only says where money already owed to you should go.
 
+<figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The revoke control in the delegated signing panel, with the duration set to zero"><figcaption><p>The off switch needs no verification and takes effect at once.</p></figcaption></figure>
+
 ## What it costs
 
 Each action signed for you reimburses a flat per-action charge from your vault's SOL balance, set by the platform and 0.00005 SOL as it stands, which covers submitting the transaction on your behalf.
@@ -85,6 +87,8 @@ The action is queued, then submitted. Queued is not landed, so the app waits for
 A shorter permission is a smaller window, and the honest risk is not theft: nothing here moves your money off the platform. What a misused permission could do is spend your vault on races you did not choose, or act on your teams, including disbanding one you created. A lost entry fee is recoverable. A disbanded team is not.
 
 Play daily and a long duration is reasonable. Trying it once, pick a short one. The choice is per player for exactly that reason: your exposure should be yours to size.
+
+<figure><img src="../../.gitbook/assets/races/app-delegation-duration-selector-banner.png" alt="The duration selector in the delegated signing panel with the options up to 30 days"><figcaption><p>The window is yours to size, and it expires on its own.</p></figcaption></figure>
 
 {% content-ref url="../economy/player-vault.md" %}
 [player-vault.md](../economy/player-vault.md)

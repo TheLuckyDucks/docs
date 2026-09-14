@@ -178,6 +178,14 @@ a bare `![]()`.
   rows reads as two unrelated screens.
 - **Artwork** is a single file.
 
+**One banner per control, and one control per banner.** A page documenting
+several options gives each one its own banner instead of a single shot of the
+panel they share: `races/advanced-options.md` carries a banner per opt in, and
+`races/creating-a-race.md` one per required choice. A panel shot sitting above
+those is the same pixels twice, so it comes out. Where the control a section
+needs already has a banner on another page, reference that one: a reused file
+beats a second capture of one control.
+
 `npm run check` fails on a half pair, a pair outside a columns block, halves in
 the wrong order, and a banner inside a columns block.
 

@@ -16,6 +16,8 @@ Anyone can set a **nickname** and an **avatar** on the Player page, verified or 
 
 Both live off chain on your profile and can change any time.
 
+<figure><img src="../../.gitbook/assets/trust/app-nickname-avatar-fields-banner.png" alt="The nickname field and the avatar upload on the Player page"><figcaption><p>Open to everyone, verified or not, and changeable any time.</p></figcaption></figure>
+
 ## What gets verified
 
 OAuth2 verification with:
@@ -76,6 +78,8 @@ This is half of playing without ever opening your wallet app. [Playing without y
 Verify with Telegram and you can opt into showing your **handle** in the platform's Telegram announcements: wins, podiums, tournament results and similar posts.
 
 It is off by default, and you toggle it from the Player page once Telegram-verified. On, announcements tag your `@handle` so the broadcast reaches you and your contacts; off, they use your nickname only. Flip it whenever you like, though past announcements are not rewritten.
+
+<figure><img src="../../.gitbook/assets/trust/app-telegram-handle-toggle-banner.png" alt="The Telegram handle toggle on the Player page, switched off"><figcaption><p>Off until you turn it on, and only offered once Telegram is linked.</p></figcaption></figure>
 
 ## Privacy
 

@@ -63,6 +63,8 @@ Requires each player to hold NFTs from a collection you choose, along with the *
 This gate always needs a Runner NFT to create, whichever chain the collection is on. Approval decides which collections may gate a race; it does not make the gate free.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/races/app-nft-gate-fields-banner.png" alt="The NFT Holders gate on the create form with the collection field and the minimum count"><figcaption><p>Both the collection and the count are shown to joiners.</p></figcaption></figure>
+
 ### Solana or another chain
 
 Solana is the default. The chain selector also offers supported non-Solana chains, such as Ethereum, Base and Polygon, where you paste that chain's collection address instead. Only chains the platform supports appear, so anything you can pick works; anything missing is not enabled yet.
@@ -119,6 +121,8 @@ The gating token need not be the prize token: a SOL race can require USDC, a USD
 
 Creator side: no Runner needed on an approved token. Auto join your own race and the contract checks your balance at create time; in host mode it checks whenever you later join.
 
+<figure><img src="../../.gitbook/assets/races/app-token-gate-fields-banner.png" alt="The Token Holders gate on the create form with the mint field and the minimum amount"><figcaption><p>The gate token need not be the token the race is played in.</p></figcaption></figure>
+
 ## Allowed players (private invites)
 
 Invites specific wallets to a private race, up to **20 wallets**, which is also the most players a race can hold.
@@ -138,6 +142,8 @@ Need more than 20 wallets? Use a public race with another gate, such as NFT Hold
 {% hint style="warning" %}
 Hosting an Allowed Players race needs a Runner NFT, unlike the other gates, because the allowlist is itself a customization: the contract stores the list root and verifies each joiner's proof against it.
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/races/app-allowed-players-list-banner.png" alt="The allowed players list on the create form with several wallets added and the counter"><figcaption><p>Up to 20 wallets, and the counter says how many are left.</p></figcaption></figure>
 
 ## Stacking with minimum account age
 

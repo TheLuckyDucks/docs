@@ -7,8 +7,6 @@ description: Every optional opt in on the create form, what it costs, and which 
 
 The opt ins on the Create Race form. All need a Runner NFT in your wallet except where noted.
 
-<figure><img src="../../.gitbook/assets/races/app-advanced-options-panel-banner.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start"><figcaption><p>Off by default, and each one shows its cost before you sign.</p></figcaption></figure>
-
 ## AI commentary
 
 A per second play by play in an AI voice, generated as the race starts. It costs the platform's audio rate times the race duration.
@@ -20,6 +18,8 @@ The narration names the ducks, the boosts in play and the standings. It never pr
 {% endhint %}
 
 Any race size can have it, 1v1 and rematches included. On a rematch the proposer decides, whatever the finished race had.
+
+<figure><img src="../../.gitbook/assets/races/app-ai-commentary-toggle-banner.png" alt="The AI commentary toggle on the create form with its per second cost beside it"><figcaption><p>The cost shown is the race duration times the platform's audio rate.</p></figcaption></figure>
 
 ## X announcement
 
@@ -33,23 +33,33 @@ The backend reads the on-chain flag and posts for you, so you sign nothing on X.
 
 On a rematch the proposer picks this independently, whatever the finished race had.
 
+<figure><img src="../../.gitbook/assets/races/app-x-announcement-toggle-banner.png" alt="The X announcement toggle on the create form with its flat cost beside it"><figcaption><p>A flat cost, itemised before you sign and gone for good once the race exists.</p></figcaption></figure>
+
 ## Custom name
 
 A title on the race card, so players can pick your race out of the lobby list. Handy for a themed event or a community match.
+
+<figure><img src="../../.gitbook/assets/races/app-custom-name-field-banner.png" alt="The custom name field on the create form with a race title typed into it"><figcaption><p>Up to 32 characters, and it is what players read on the card.</p></figcaption></figure>
 
 ## Custom race duration
 
 30 seconds is the default and open to everyone. Changing it, up to the platform maximum of 3 minutes, needs a Runner NFT. Short stays punchy; long gives the AI commentary room to build a story.
 
+<figure><img src="../../.gitbook/assets/races/app-race-duration-field-banner.png" alt="The race duration field on the create form showing the platform maximum"><figcaption><p>The form states the ceiling the platform currently allows.</p></figcaption></figure>
+
 ## Custom join timeout
 
 The lobby window is 1 hour by default, and a custom timeout overrides it: minimum 1 minute, maximum 1 week. Long windows suit scheduled events, short ones suit a rapid queue.
+
+<figure><img src="../../.gitbook/assets/races/app-join-timeout-field-banner.png" alt="The custom join timeout field on the create form set to a short window"><figcaption><p>Anything from 1 minute to 1 week, in place of the 1 hour default.</p></figcaption></figure>
 
 ## Custom track
 
 Use a Track NFT you own as the background. It changes the pond, the lighting and the props, and nothing about the outcome. See [Track NFTs](../nfts/tracks.md).
 
 The four built in tracks, day, night, sunset and sunrise, are always free. Anything else needs the Track NFT in your wallet.
+
+<figure><img src="../../.gitbook/assets/races/app-custom-track-picker-banner.png" alt="The track picker on the create form with the built in tracks and a Track NFT"><figcaption><p>The four built in tracks are free. Anything else has to be in your wallet.</p></figcaption></figure>
 
 ## Start when underfilled
 
@@ -65,9 +75,13 @@ It also adds a small surcharge for the backend's auto start. That sits in the ra
 
 You fund the pool instead of the joiners, which is how giveaways and marketing races work. Set the prize when you create, and players enter free. The platform fee still comes out of what you sponsored.
 
+<figure><img src="../../.gitbook/assets/races/app-sponsored-race-toggle-banner.png" alt="The sponsored race toggle on the create form with the prize amount field open"><figcaption><p>You set the prize, and joiners enter for nothing.</p></figcaption></figure>
+
 ## Join settings (who can join)
 
 The form also decides who may enter: Open, Verified Only, Allowed Players, NFT Holders or Token Holders. Verified Only and Token Holders need no Runner; NFT Holders and Allowed Players always do. See [Race access and gating](access-and-gating.md).
+
+<figure><img src="../../.gitbook/assets/races/app-join-setting-picker-banner.png" alt="The join setting selector open, with all five options listed"><figcaption><p>Five settings, one per race, fixed once the race exists.</p></figcaption></figure>
 
 ## Minimum account age
 
@@ -82,6 +96,8 @@ Worth knowing:
 - It is fixed at creation for the life of the race, and rematches inherit it.
 - Your own auto join faces the same check. Too new and you wait, lower the threshold, or use host mode to create without joining. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 - Unsure whether your wallet qualifies? The join screen tells you before you sign.
+
+<figure><img src="../../.gitbook/assets/races/app-minimum-account-age-toggle-banner.png" alt="The minimum account age toggle on the create form showing the 24 hour value"><figcaption><p>Off by default, and 24 hours the moment you switch it on.</p></figcaption></figure>
 
 ## Combining options
 

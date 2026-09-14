@@ -27,6 +27,8 @@ Your first sign-in is always the wallet, because nothing else can prove the wall
 
 Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once and asks for a one time transaction. Rent is around 0.0023 SOL, refundable in full if you ever close it.
 
+<figure><img src="../../.gitbook/assets/introduction/app-player-account-modal-banner.png" alt="The first race modal explaining the one time player account and its refundable rent"><figcaption><p>It appears once, and what it asks for comes back if you close the account.</p></figcaption></figure>
+
 ## 5. Join a race, or make one
 
 The lobby list shows every open race. Pick one that suits your appetite for entry fee, lobby size and duration, and click Join. Or open Create Race and set it yourself. Signing is the commitment: your entry fee moves into the race vault as soon as it confirms.

@@ -41,6 +41,8 @@ The new race inherits the entry fee, duration, join setting, [no-boost mode](../
 
 The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Duel #3".
 
+<figure><img src="../../.gitbook/assets/competition/app-rematch-proposer-options-banner.png" alt="The rematch proposal dialog with the commentary, announcement, track and runner choices"><figcaption><p>Four choices are yours. The rest is inherited from the race you just played.</p></figcaption></figure>
+
 ## Accepting
 
 Accepting inside the window starts the new race and pays the finished one out immediately, so the winner never claims it separately. It uses one of the accepter's daily races.
