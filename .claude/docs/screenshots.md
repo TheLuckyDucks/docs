@@ -245,14 +245,15 @@ figures in them are public already. Use the **same** race for all four, so a
 reader following the page sees one story. A phone capture of an explorer is
 still worth having: it is where most readers will actually check a race.
 
-| Shot                               | Page                        | Shows                                                            |
-| ---------------------------------- | --------------------------- | ---------------------------------------------------------------- |
-| `app-verification-tab`             | `trust/verification.md`     | The verification tab with the enabled providers                  |
-| `app-verified-badge`               | `trust/verification.md`     | A lobby row with the checkmark next to the nickname              |
-| `explorer-program-account`         | `trust/verifying-a-race.md` | Owner, upgrade authority, last deployed slot                     |
-| `explorer-race-account-data`       | `trust/verifying-a-race.md` | The decoded race account: creator, fee, status, players, winners |
-| `explorer-orao-randomness-account` | `trust/verifying-a-race.md` | The randomness account with the ORAO program as its owner        |
-| `explorer-claim-prize-balances`    | `trust/verifying-a-race.md` | Balance changes on the claim tx: vault out, winner in, fee in    |
+| Shot                               | Page                        | Shows                                                                                                                                                          |
+| ---------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app-verify-fairness`              | `trust/verifying-a-race.md` | The Verify fairness panel on a finished race: seed, per player derivation, finish times, winners. Open it and frame a derivation row together with the winners |
+| `app-verification-tab`             | `trust/verification.md`     | The verification tab with the enabled providers                                                                                                                |
+| `app-verified-badge`               | `trust/verification.md`     | A lobby row with the checkmark next to the nickname                                                                                                            |
+| `explorer-program-account`         | `trust/verifying-a-race.md` | Owner, upgrade authority, last deployed slot                                                                                                                   |
+| `explorer-race-account-data`       | `trust/verifying-a-race.md` | The decoded race account: creator, fee, status, players, winners                                                                                               |
+| `explorer-orao-randomness-account` | `trust/verifying-a-race.md` | The randomness account with the ORAO program as its owner                                                                                                      |
+| `explorer-claim-prize-balances`    | `trust/verifying-a-race.md` | Balance changes on the claim tx: vault out, winner in, fee in                                                                                                  |
 
 ## help/
 

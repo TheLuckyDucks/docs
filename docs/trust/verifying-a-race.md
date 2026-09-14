@@ -7,6 +7,34 @@ description: Check a race yourself in a public block explorer, from the program'
 
 Verify a race without the Lucky Ducks website, using public Solana explorers. By the end you will have confirmed the three things that matter: the randomness came from a public source, anyone can recompute the winner, and the payout went where the program said it would.
 
+## The app shows its working first
+
+Open any finished race and the detail view carries a **Verify fairness** panel. It appears once the race is `Completed` and its seed is on chain, and it walks the same pipeline this page does: the ORAO seed, the derivation applied to each player, each duck's finish time, and the winners as recorded, with links out to the on-chain transaction behind every step.
+
+Three more panels on the same view save you the derivation work:
+
+- **Addresses**, which hands you the program, the race account and the rest, so nothing has to be computed by hand.
+- **Transactions**, which lists every signature on the race in order, from creation to claim.
+- **Race info**, which is the same figures the account holds.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-desktop.png" alt="The Verify fairness panel on a finished race, showing the ORAO seed, the per player derivation, the finish times and the winners"><figcaption><p>The seed, the derivation, the finish times and the winners, each linked to its transaction.</p></figcaption></figure>
+
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-mobile.png" alt="The Verify fairness panel on a finished race, showing the ORAO seed, the per player derivation, the finish times and the winners, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
+{% endcolumn %}
+{% endcolumns %}
+
+{% hint style="info" %}
+That panel is still the platform telling you what happened, which is why the rest of this page exists. Everything it shows can be checked against the chain by somebody who does not trust it, and the two should agree exactly.
+{% endhint %}
+
 ## Before you start; what you need
 
 The program address, an explorer, and the race ID.
@@ -60,7 +88,7 @@ For the strongest check, reproduce the published build hash locally with `solana
 
 ### Find the race account
 
-Every race lives at a Program Derived Address anyone can compute from the race ID, so the program cannot lie about where a race lives. The derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`, and you need not compute it by hand: the app shows it on the race page and an explorer search by ID surfaces it.
+Every race lives at a Program Derived Address anyone can compute from the race ID, so the program cannot lie about where a race lives. The derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`, and you need not compute it by hand: the **Addresses** panel on the race lists it, and an explorer search by ID surfaces it too.
 
 Open the PDA and read the decoded fields on the "Data" or "Anchor" tab:
 
@@ -97,7 +125,7 @@ Everything the app shows for this race should match. If the app claims a 10 SOL 
 
 ### Verify race creation
 
-The first transaction in the PDA's history is the `create_race`, or `create_race_token`, call. Open it and you should see:
+The first transaction in the PDA's history is the `create_race`, or `create_race_token`, call. The race's **Transactions** panel lists the same signatures in order, if you would rather start from there. Open it and you should see:
 
 - the creator's wallet signing and submitting,
 - two new accounts, the race and its vault PDA,

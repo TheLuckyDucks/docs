@@ -7,7 +7,9 @@ description: The questions players actually ask, ordered from the simple ones to
 
 Ordered easiest first. The early answers are what a new player needs; the last few are for anyone who wants to see the machinery.
 
-## The basics
+## Start here
+
+Nothing below this heading assumes you know anything about crypto.
 
 ### Is this a real game or a casino?
 
@@ -16,6 +18,10 @@ A game with on-chain stakes. Skill matters less than in a competitive game, sinc
 ### Can I lose more than my entry fee?
 
 No. The entry fee is your whole stake, and a losing race costs you nothing beyond it. The only other charges are optional and avoidable: 0.01 SOL if you withdraw from a lobby you joined, 0.05 SOL if you cancel a race you created, and the network fee on whatever you sign.
+
+### What is the on-chain cost of playing one race?
+
+For a 0.01 SOL race with no opt ins: roughly 0.000005 SOL in network fees, the 0.01 SOL entry fee, and 0.0023 SOL of one-time player account rent on your very first race. About 0.0123 SOL all in, and the rent comes back if you ever close the account. Creating a race instead of joining one adds the race account's rent, which also returns when the race closes.
 
 ### Can I play on my phone?
 
@@ -27,17 +33,23 @@ No. Any race is joinable without one. A Runner is for **creating** races past th
 
 Verified Only, NFT Holders and Token Holders gates need no Runner, though each has its own creator side check: the creator must be verified for Verified Only, and must meet the same threshold themselves for the holder gates, on an approved collection or token. See [Race access and gating](../races/access-and-gating.md).
 
-### What is the smallest race I can run?
-
-Two players for Winner Takes All, three for Podium Split. Neither starts with fewer.
-
 ### Do boosts make it pay to win?
 
 Barely. A boost is capped at 1% on chain, which a direct simulation of the race engine puts at 1 to 2 percentage points of win rate, and a maxed boost still finishes last almost as often as an unboosted duck. If you would rather remove them entirely, sponsored races and no-boost races do. The numbers are on [Boost NFTs](../nfts/boosts.md).
 
+## Playing
+
+### What is the smallest race I can run?
+
+Two players for Winner Takes All, three for Podium Split. Neither starts with fewer.
+
 ### Do I have to pre-fund a vault to play?
 
 No. Paying from your wallet works as it always has. The [player vault](../economy/player-vault.md) is a convenience: top up once, then join without approving a transfer each time, and withdraw all of it whenever you like.
+
+### What happens if I close the tab mid-race?
+
+Nothing to the result. The outcome was fixed the moment the oracle published the seed, the race settles without you watching, and anything owed to you waits in the Unclaimed Items banner until you claim it.
 
 ## Creating and rematching
 
@@ -55,10 +67,6 @@ There is also a 30 second cooldown between creations from the same wallet, Runne
 
 No. Neither consumes any of your daily allowance, because neither seats you in the race. Offering and accepting a rematch each do, one per player. See [Daily races](../races/daily-races.md).
 
-### Can I gate a race on an NFT collection from another chain?
-
-Yes. Pick the NFT Holders join setting and then the chain: Solana by default, or a supported chain such as Ethereum, Base or Polygon. Joiners link the external wallet holding the NFT once, and the check runs against it at join time. The race itself is unchanged, still on Solana with SOL or SPL prizes. See [NFT holders](../races/access-and-gating.md#nft-holders).
-
 ### Can I still rematch after my opponent declines?
 
 No. A decline closes rematches on that race for good. Cancelling your own offer does not, so you can offer again while the window lasts. See [Rematches](../competition/rematches.md#cancelling-versus-declining).
@@ -71,7 +79,11 @@ No. Cancel the offer and your stake comes back, free of charge once their accept
 
 No, it is always claimable. The reverse is the trap: claiming first ends the chance of a rematch on that race, because the winner's next stake comes out of those unclaimed winnings. See [Rematches](../competition/rematches.md).
 
-## Money and trust
+### Can I gate a race on an NFT collection from another chain?
+
+Yes. Pick the NFT Holders join setting and then the chain: Solana by default, or a supported chain such as Ethereum, Base or Polygon. Joiners link the external wallet holding the NFT once, and the check runs against it at join time. The race itself is unchanged, still on Solana with SOL or SPL prizes. See [NFT holders](../races/access-and-gating.md#nft-holders).
+
+## When something goes wrong
 
 ### My race never started. Where is my money?
 
@@ -80,10 +92,6 @@ A race becomes refundable once the join timeout passes without enough players, o
 Races the platform created are swept automatically. A race a player created is deliberately left for its creator or any participant to close, because the platform does not close a race somebody else paid for. Either way it shows up in the Unclaimed Items banner on your player page, and the button there clears it.
 
 One refund returns every stake in the lobby and closes the race, so triggering it clears the race for everyone rather than just for you.
-
-### What happens if I close the tab mid-race?
-
-Nothing to the result. The outcome was fixed the moment the oracle published the seed, the race settles without you watching, and anything owed to you waits in the Unclaimed Items banner until you claim it.
 
 ### Can someone else claim my prize?
 
@@ -95,9 +103,13 @@ Not out of the platform. The permission covers playing: joining, creating, claim
 
 What a misused permission could do is spend your vault balance on races you did not choose, or act on your teams. That is why the duration is yours to size, and why revoking is instant and always available. See [Playing without signing every action](../races/delegated-play.md).
 
-### What is the on-chain cost of playing one race?
+### What happens if the website is down?
 
-For a 0.01 SOL race with no opt ins: roughly 0.000005 SOL in network fees, the 0.01 SOL entry fee, and 0.0023 SOL of one-time player account rent on your very first race. About 0.0123 SOL all in, and the rent comes back if you ever close the account. Creating a race instead of joining one adds the race account's rent, which also returns when the race closes.
+Your wallet still owns your funds. Claims, refunds and cancels are permissionless and can be submitted straight to the contract through any Solana RPC client. The website is a convenience over the chain, not an authority.
+
+## Trust, and how it works underneath
+
+From here on the answers assume a little more, and the last few are for anyone who wants to see the machinery.
 
 ### How do I know a race was fair?
 
@@ -107,8 +119,6 @@ Check it yourself. The seed came from an oracle account the platform does not ow
 
 Yes. Once ORAO publishes the seed the outcome is fixed, so re-running the contract's simulation on that seed and the participant list gives the ranking the canvas will show. Most players would rather watch.
 
-## Under the hood
-
 ### Are races permissionless to start?
 
 A lobby that fills triggers the next transition on its own. The start-when-underfilled path is permissionless: any wallet can submit the start transaction once the join timeout has passed and enough players are in. A backend worker does it on schedule, and anyone else can beat it there.
@@ -117,25 +127,23 @@ Finalization is permissionless from the moment the race duration has elapsed. Th
 
 ### Why ORAO for the randomness, and not Switchboard or another VRF?
 
-Four practical reasons, all of which matter more in a 30 second race than they would in a lending protocol.
+Five reasons, and all of them matter more in a 30 second race than they would in a lending protocol that reads a price once an hour.
 
-**Latency.** A race cannot start until the seed lands, so the wait is the player's wait. ORAO usually fulfils in seconds, often under a minute even when the network is busy, which keeps a lobby from stalling.
+**Latency, because the seed gates the race.** The race moves `Open` to `VRFPending` and then waits: no seed, no start, so the oracle's response time is the player's waiting time. ORAO typically fulfils within seconds and usually inside a minute even under load, which is what keeps a full lobby from sitting there. The contract puts a hard edge on that wait at the VRF timeout, around 3 minutes, after which the race can only be refunded.
 
-**Cost per race.** Every race pays for its own randomness, and that cost comes out of the creator's pocket rather than being amortised across a protocol. At around 0.00275 SOL a request, it stays small enough that a creator can run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
+**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the VRF cost is transferred into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. At around 0.00275 SOL that stays cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
 
-**Devnet parity.** The same program and the same oracle run on devnet, so the whole race lifecycle, including the randomness, is testable before anything reaches mainnet. An oracle that only really exists on mainnet would mean shipping the riskiest part untested.
+**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account through a CPI to the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](../trust/verifying-a-race.md) walks that check.
 
-**Support that answers.** When something does go wrong with an oracle, the question is how fast a human helps. ORAO's team has been quick to respond, which is worth more than a feature comparison when a race is stuck.
+**Devnet parity, and a test suite that includes the oracle.** The same program and the same oracle run on devnet, and the local test suite clones the ORAO program so a race runs end to end, randomness included, before anything reaches mainnet. An oracle that only really exists on mainnet would mean shipping the riskiest step untested.
 
-None of that requires you to trust ORAO, which is the point of [Provable randomness](../trust/fairness.md): the seed is signed, the account belongs to ORAO's program rather than to Lucky Ducks, and the maths on top of it is public.
+**Support that answers.** When an oracle does misbehave, the question is how quickly a human helps. ORAO's team has been fast to respond, which is worth more than a feature table at the moment a race is stuck.
+
+None of it asks you to trust ORAO, which is the point of [Provable randomness](../trust/fairness.md): the seed is signed, the account is theirs rather than ours, and the maths on top is public.
 
 ### Why do race ID numbers sometimes skip?
 
 Race IDs are bumped on chain whenever a rematch is proposed, including one that gets declined or expires. A declined rematch closes its reserved account but the counter does not go back, so gaps are normal.
-
-### What happens if the website is down?
-
-Your wallet still owns your funds. Claims, refunds and cancels are permissionless and can be submitted straight to the contract through any Solana RPC client. The website is a convenience over the chain, not an authority.
 
 ### Can I run my own client?
 
