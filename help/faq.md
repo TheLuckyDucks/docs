@@ -10,7 +10,7 @@ No. You can join any race without a Runner. The Runner is only required to **cre
 
 Verified Only, NFT Holders, and Token Holders can be hosted **without** a Runner (each has its own creator side check: Verified Only requires the creator to be verified, NFT and Token gates require the collection or token to be on the platform's approved list and the creator to meet the same threshold themselves). See [Race access and gating](../races/access-and-gating.md).
 
-The Runner is still what unlocks the [Creator Fee Share](../economy/creator-fee-share.md), even on races where it is not required to host.
+The Runner is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md), though it is no longer needed to earn one: every creator who joins their own race earns a base share without it.
 
 ### Can I cancel a race I created?
 

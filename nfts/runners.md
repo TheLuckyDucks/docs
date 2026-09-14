@@ -28,7 +28,7 @@ Three of the four gated join settings can be hosted **without** a Runner NFT, pr
 
 Allowed Players is the exception among the gates: it still requires a Runner.
 
-The Runner NFT is also what unlocks the [Creator Fee Share](../economy/creator-fee-share.md) on a race, even when the gate itself does not require it.
+The Runner NFT is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md) on a race. It is not what unlocks the share: every creator who joins their own race earns a base share with no NFT at all, and the Runner adds to it.
 
 ## What it does not do
 

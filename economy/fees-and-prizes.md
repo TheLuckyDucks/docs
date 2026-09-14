@@ -76,4 +76,4 @@ These costs are all listed in the cost breakdown box at the bottom of the Create
 
 ## A note for creators
 
-On regular (non-sponsored) races, part of the platform fee can be redirected back to the race creator. See [Creator Fee Share](creator-fee-share.md) for details.
+On regular (non-sponsored) races, part of the platform fee goes back to the race creator, provided they join the race themselves. No NFT is needed to earn it, and each NFT the creator brings adds more. See [Creator Fee Share](creator-fee-share.md) for details, including how it offsets the creation costs listed above.

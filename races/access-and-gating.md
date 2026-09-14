@@ -127,7 +127,9 @@ The optional [minimum account age](advanced-options.md#minimum-account-age) gate
 
 ## Gating and creator rewards
 
-Creator rewards are tied to the Runner NFT, not to the gate you chose. A host who creates with a Runner NFT unlocks the [Creator Fee Share](../economy/creator-fee-share.md), and adding a Track NFT raises that share further, up to the cap. If you host a gated race without a Runner, the race still runs, but you do not earn a creator share on it. Races created by the platform itself (auto hosted system races) do not earn a creator share either, since there is no individual creator wallet to pay it to.
+Creator rewards do not depend on the gate you chose. What they depend on is whether you **join the race yourself**: every creator who takes a seat in their own race earns the base [Creator Fee Share](../economy/creator-fee-share.md), with no NFT of any kind required, and each NFT you bring adds more on top.
+
+So a gated race earns exactly what an ungated one does. Creating without a Runner still earns the base share. Creating without playing, which is [host mode](hosting-and-cancelling.md#host-a-race-without-playing), earns nothing at all, and that is decided when the race is created rather than later. Races created by the platform itself (auto hosted system races) earn no creator share either, since there is no individual creator wallet to pay it to.
 
 ## Good to know
 
