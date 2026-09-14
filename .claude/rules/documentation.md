@@ -52,14 +52,14 @@ Assume general crypto literacy is being built, not present. Wallet, token, NFT,
 transaction and fee can stand alone. Anything Solana-specific or platform-specific
 gets its clause.
 
-| Do not write, unexplained      | Write                                                           |
-| ------------------------------ | --------------------------------------------------------------- |
-| "your PlayerAccount PDA"       | "your stats account, which the program creates for your wallet" |
-| "rent-exempt"                  | "the small SOL deposit Solana requires to keep an account open" |
-| "the VRF callback"             | "when the randomness arrives on chain"                          |
-| "ATA"                          | "your token account for that token"                             |
-| "lamports"                     | SOL, converted. Lamports only where an explorer will show them  |
-| "CPI", "discriminator", "seed" | Nothing. These belong in the program repository                 |
+| Do not write, unexplained      | Write                                                            |
+| ------------------------------ | ---------------------------------------------------------------- |
+| "your PlayerAccount PDA"       | "your player account, which the program creates for your wallet" |
+| "rent-exempt"                  | "the small SOL deposit Solana requires to keep an account open"  |
+| "the VRF callback"             | "when the randomness arrives on chain"                           |
+| "ATA"                          | "your token account for that token"                              |
+| "lamports"                     | SOL, converted. Lamports only where an explorer will show them   |
+| "CPI", "discriminator", "seed" | Nothing. These belong in the program repository                  |
 
 `help/glossary.md` exists for terms a player meets repeatedly. Adding a term
 there is not a substitute for the clause on first use; it is the second copy for

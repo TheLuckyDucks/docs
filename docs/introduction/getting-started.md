@@ -13,7 +13,7 @@ Phantom, Solflare, Backpack and most major Solana wallets work, and the adapter 
 
 ## 2. Top up with a little SOL
 
-You need SOL for transaction fees, roughly 0.000005 SOL each, plus the entry fee itself. 0.05 SOL is a comfortable start: a stats account, a few dozen fees and a couple of typical races.
+You need SOL for transaction fees, roughly 0.000005 SOL each, plus the entry fee itself. 0.05 SOL is a comfortable start: a player account, a few dozen fees and a couple of typical races.
 
 ## 3. Connect
 

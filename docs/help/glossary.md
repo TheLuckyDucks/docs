@@ -91,7 +91,7 @@ Where money coming back to you lands: your wallet, or your player vault. Covers 
 
 A Solana account whose address is deterministically derived from a set of seeds plus the program ID, with no private key. Every race, every player account, the platform config, and every NFT have associated PDAs.
 
-### Player account (stats PDA)
+### Player account
 
 A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0023 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
 
