@@ -164,13 +164,27 @@ relative to the page: `../.gitbook/assets/brand/x.png` from `docs/README.md`,
 `../../.gitbook/assets/races/x.png` from a page in a section. Always a figure, never
 a bare `![]()`.
 
-**A screenshot is two files on one row, always.** A desktop capture and a phone
-capture, in a single `{% columns %}` block at 70/30, desktop first: GitBook
-stacks them on a narrow screen. The platform is played on phones, so a
-desktop-only shot describes an experience most readers do not have, and a pair
-split across two rows reads as two unrelated screens. `npm run check` fails on a
-half pair, on a pair outside a columns block, and on the halves in the wrong
-order.
+**Which image a sentence wants depends on what the sentence is about.**
+
+- **Talking about part of a page**, a button, a combobox, a slider, a chip, a
+  cost box? Use a **banner**: one wide image, `<stem>-banner.png`, on its own
+  with no columns block. A control looks the same on a phone, so a pair of it is
+  two pictures of one thing.
+- **Showing a whole screen or view**, a lobby, a modal, a page, an explorer
+  view? Use a **pair**: `-desktop.png` and `-mobile.png` in a single
+  `{% columns %}` block at 70/30, desktop first, which GitBook stacks on a
+  narrow screen. The platform is played on phones, so a desktop-only screen
+  describes an experience most readers do not have, and a pair split over two
+  rows reads as two unrelated screens.
+- **Artwork** is a single file.
+
+`npm run check` fails on a half pair, a pair outside a columns block, halves in
+the wrong order, and a banner inside a columns block.
+
+**A columns block cannot go inside a stepper step.** It does not render as a
+row there, so a step wanting a pair means the page should use numbered headings
+instead: `introduction/getting-started.md` and `trust/verifying-a-race.md` both
+do. A banner inside a step is fine.
 
 ```html
 {% columns %} {% column width="70%" %}

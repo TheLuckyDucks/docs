@@ -73,19 +73,7 @@ All off by default, and most need a Runner NFT.
 
 The cost box totals everything you pay: entry fee, oracle fee (\~0.0035 SOL), archival fee (\~0.0001 SOL), any opt in costs, and the race account's rent. The rent comes back when the race ends. After signing, the race hits the lobby and the join timer starts.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-desktop.png" alt="The cost breakdown box at the foot of the create form, itemising entry fee, oracle fee, archival fee and rent"><figcaption><p>Every line you are about to pay. The rent line returns when the race closes.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-mobile.png" alt="The cost breakdown box at the foot of the create form, itemising entry fee, oracle fee, archival fee and rent, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-banner.png" alt="The cost breakdown box at the foot of the create form, itemising entry fee, oracle fee, archival fee and rent"><figcaption><p>Every line you are about to pay. The rent line returns when the race closes.</p></figcaption></figure>
 
 {% hint style="success" %}
 Race in your own race and part of the platform fee comes back to you. No NFT needed to earn it, and each one you bring adds more. See [Creator Fee Share](../economy/creator-fee-share.md).

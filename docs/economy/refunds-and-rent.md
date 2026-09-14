@@ -74,19 +74,7 @@ Nothing happens on chain when a deadline passes. The race simply becomes refunda
 
 You are never left guessing: a race past its window appears in the Unclaimed Items banner on your player page as soon as it is refundable, with the button that clears it.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-desktop.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Everything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-mobile.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-banner.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Everything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
 
 Triggering it yourself costs the network fee, and during a [delegated session](../races/delegated-play.md) that comes from your vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 

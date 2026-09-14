@@ -11,19 +11,7 @@ A balance you top up once and spend across many races, instead of approving a wa
 Not to be confused with a race vault, which holds one race's entry fees and closes with that race. Your player vault is yours, it persists, and only you can take money out.
 {% endhint %}
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-play-balance-panel-desktop.png" alt="The Play Balance panel on the Player page with SOL and token balances, deposit and withdraw buttons"><figcaption><p>Top up, withdraw, and set what pays for a race, all in one panel.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-play-balance-panel-mobile.png" alt="The Play Balance panel on the Player page with SOL and token balances, deposit and withdraw buttons, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/economy/app-play-balance-panel-banner.png" alt="The Play Balance panel on the Player page with SOL and token balances, deposit and withdraw buttons"><figcaption><p>Top up, withdraw, and set what pays for a race, all in one panel.</p></figcaption></figure>
 
 ## Where it lives
 
@@ -81,19 +69,7 @@ The choice is yours alone and covers every race you are in, which matters on ref
 
 The one exception is closing your account: that returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-payout-target-setting-desktop.png" alt="The payout target setting with wallet and vault options, wallet selected"><figcaption><p>One setting, per player, covering prizes, refunds and returned rent.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-payout-target-setting-mobile.png" alt="The payout target setting with wallet and vault options, wallet selected, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/economy/app-payout-target-setting-banner.png" alt="The payout target setting with wallet and vault options, wallet selected"><figcaption><p>One setting, per player, covering prizes, refunds and returned rent.</p></figcaption></figure>
 
 Pooling is worth it if you race often, and you can set it back to Wallet whenever you like.
 

@@ -17,19 +17,7 @@ It exists for phones, where a wallet round trip per action is the slowest part o
 
 That is your last signature until it expires or you turn it off.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-delegated-signing-panel-desktop.png" alt="The delegated signing panel on the Player page with a duration selector and a revoke button"><figcaption><p>The panel that grants the permission is also where you revoke it.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-delegated-signing-panel-mobile.png" alt="The delegated signing panel on the Player page with a duration selector and a revoke button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-delegated-signing-panel-banner.png" alt="The delegated signing panel on the Player page with a duration selector and a revoke button"><figcaption><p>The panel that grants the permission is also where you revoke it.</p></figcaption></figure>
 
 ## Why it needs a verified wallet
 

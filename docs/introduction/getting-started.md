@@ -7,58 +7,27 @@ description: Six steps from a fresh browser tab to a finished race, and the two 
 
 Six steps from a fresh browser tab to a finished race.
 
-{% stepper %}
-{% step %}
-
-### Get a Solana wallet
+## 1. Get a Solana wallet
 
 Phantom, Solflare, Backpack and most major Solana wallets work, and the adapter handles the connection. Starting from nothing, Phantom is the easiest: browser extension and mobile app, both free.
 
-{% endstep %}
-
-{% step %}
-
-### Top up with a little SOL
+## 2. Top up with a little SOL
 
 You need SOL for transaction fees, roughly 0.000005 SOL each, plus the entry fee itself. 0.05 SOL is a comfortable start: a stats account, a few dozen fees and a couple of typical races.
 
-{% endstep %}
-
-{% step %}
-
-### Connect
+## 3. Connect
 
 Go to `theluckyducks.com/app/`, click Connect Wallet and approve. The first connection is a signed message rather than a transaction, so it costs nothing.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-desktop.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack"><figcaption><p>A signature, not a transaction, so it costs nothing.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-mobile.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/introduction/app-connect-wallet-banner.png" alt="The connect wallet dialog listing Phantom, Solflare and Backpack"><figcaption><p>A signature, not a transaction, so it costs nothing.</p></figcaption></figure>
 
 Your first sign-in is always the wallet, because nothing else can prove the wallet is yours. Later ones need not be: link a social account and the login screen offers it as a second way in.
 
-{% endstep %}
-
-{% step %}
-
-### Create your player account
+## 4. Create your player account
 
 Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once and asks for a one time transaction. Rent is around 0.0023 SOL, refundable in full if you ever close it.
 
-{% endstep %}
-
-{% step %}
-
-### Join a race, or make one
+## 5. Join a race, or make one
 
 The lobby list shows every open race. Pick one that suits your appetite for entry fee, lobby size and duration, and click Join. Or open Create Race and set it yourself. Signing is the commitment: your entry fee moves into the race vault as soon as it confirms.
 
@@ -76,11 +45,7 @@ The lobby list shows every open race. Pick one that suits your appetite for entr
 {% endcolumn %}
 {% endcolumns %}
 
-{% endstep %}
-
-{% step %}
-
-### Watch your duck race
+## 6. Watch your duck race
 
 The canvas takes over: ducks paddle, splash and occasionally somersault, at a pace set by the on chain seed. When it ends, winners claim in one click.
 
@@ -97,9 +62,6 @@ The canvas takes over: ducks paddle, splash and occasionally somersault, at a pa
 
 {% endcolumn %}
 {% endcolumns %}
-
-{% endstep %}
-{% endstepper %}
 
 ## Optional: skip the wallet popups
 

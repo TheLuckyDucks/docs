@@ -52,6 +52,17 @@ const FALLBACK_LABELS = {
 
 /** One format per shape of asset: size, type face sizes, wrap, kicker. */
 function formatFor(base) {
+  if (base.endsWith("-banner.png"))
+    return {
+      w: 1600,
+      h: 500,
+      fsk: 26,
+      fsl: 34,
+      fsn: 20,
+      cols: 52,
+      max: 3,
+      kicker: "BANNER PLACEHOLDER",
+    };
   if (base.endsWith("-mobile.png"))
     return {
       w: 390,

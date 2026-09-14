@@ -42,16 +42,4 @@ The collection carries the Royalties plugin at a rate of zero, so selling a cosm
 
 You can also pick a cosmetic as your platform avatar from the Player page, and its image then appears next to your nickname everywhere: lobbies, chat, leaderboard, team rosters. That is a separate choice from the one you make for a race.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-desktop.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck"><figcaption><p>Picking one for a race and picking one as your avatar are two separate choices.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-mobile.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-banner.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck"><figcaption><p>Picking one for a race and picking one as your avatar are two separate choices.</p></figcaption></figure>

@@ -31,19 +31,7 @@ A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After the platfor
 {% endtab %}
 {% endtabs %}
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-race-cards-modes-desktop.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split"><figcaption><p>The mode is on the card, before you open the race.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-race-cards-modes-mobile.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-race-cards-modes-banner.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split"><figcaption><p>The mode is on the card, before you open the race.</p></figcaption></figure>
 
 ## Choosing between them
 

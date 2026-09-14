@@ -83,10 +83,7 @@ For the strongest check, reproduce the published build hash locally with `solana
 
 ## Verifying one race, step by step
 
-{% stepper %}
-{% step %}
-
-### Find the race account
+## Step 1; Find the race account
 
 Every race lives at a Program Derived Address anyone can compute from the race ID, so the program cannot lie about where a race lives. The derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`, and you need not compute it by hand: the **Addresses** panel on the race lists it, and an explorer search by ID surfaces it too.
 
@@ -119,11 +116,7 @@ Open the PDA and read the decoded fields on the "Data" or "Anchor" tab:
 
 Everything the app shows for this race should match. If the app claims a 10 SOL pool and the account says 1 SOL, the app is lying.
 
-{% endstep %}
-
-{% step %}
-
-### Verify race creation
+## Step 2; Verify race creation
 
 The first transaction in the PDA's history is the `create_race`, or `create_race_token`, call. The race's **Transactions** panel lists the same signatures in order, if you would rather start from there. Open it and you should see:
 
@@ -134,11 +127,7 @@ The first transaction in the PDA's history is the `create_race`, or `create_race
 
 The vault is where all the race's money lives, a PDA derived from the race address, and the explorer links to it from the history. Watch its balance grow as players join and fall to zero when prizes are paid.
 
-{% endstep %}
-
-{% step %}
-
-### Verify each join
+## Step 3; Verify each join
 
 Each joiner has their own `join_race` transaction, so the history holds one per player. Each should show the joiner signing, `entry_fee` moving from their wallet to the vault, and a log line `Race #N: Player ABC... joined`.
 
@@ -146,11 +135,7 @@ Two things to cross-check: the wallet that signed is the wallet appended to `pla
 
 On a sponsored race joiners pay nothing, since the sponsor funded the pool at creation, so the join transaction has a signature and no transfer.
 
-{% endstep %}
-
-{% step %}
-
-### Verify the randomness source
+## Step 4; Verify the randomness source
 
 The most important step. Lucky Ducks generates no randomness of its own: the outcome comes from a seed ORAO produces and signs, and the on-chain accounts let you prove it.
 
@@ -176,11 +161,7 @@ That ownership is the fairness proof. ORAO controls the seed, does not know who 
 
 One subtlety: the seed is readable the moment ORAO fulfils, usually before `race_duration` has elapsed, so anyone watching can compute the winner before the race visibly ends. The backend delays finalization so the app stays suspenseful, but the outcome was locked the second the seed landed.
 
-{% endstep %}
-
-{% step %}
-
-### Verify winner determination
+## Step 5; Verify winner determination
 
 A `consume_randomness` instruction copies the seed from the ORAO account into the race's `vrf_seed`, and from there the winner is recomputable by anyone.
 
@@ -190,11 +171,7 @@ Selection is deterministic. Given the seed and the player list, boosts included,
 
 A mismatch between `winners[0]` and what the algorithm produces would mean a broken program, which cannot happen while the algorithm runs on chain inside a program with a public, verified hash.
 
-{% endstep %}
-
-{% step %}
-
-### Verify the payout
+## Step 6; Verify the payout
 
 The last step is `claim_prize`, or `claim_prize_token`. Check that it calls the Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A podium race splits the winners' share 50/30/20. Once everything settles, the race account closes and its rent returns to the creator.
 
@@ -221,9 +198,6 @@ The balance changes on that one transaction are the whole proof:
 The fee wallet address is declared in the platform config account, a PDA derived as `[b"platform_config"]` under the program, so open that and confirm the wallet receiving fees is the declared one.
 
 A token race works the same way with SPL transfers instead of SOL. Legacy SPL Token and Token-2022 differ slightly in the destination accounts and instructions, and the verification logic does not change. Solscan shows token movements on the "Tokens" tab.
-
-{% endstep %}
-{% endstepper %}
 
 ## What to look for as red and green flags
 

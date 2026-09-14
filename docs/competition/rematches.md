@@ -7,19 +7,7 @@ description: Roll your stake straight into another 1v1, what the proposer picks,
 
 When a 1v1 ends, either player can offer a rematch. It rolls your stake forward instead of paying everything out and asking you to buy back in, and the offer sits on the prize claim screen so you do not go looking for it.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-rematch-offer-desktop.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>Claiming and rematching are the same stop.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-rematch-offer-mobile.png" alt="The prize claim screen with an Offer Rematch button beside the claim button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/competition/app-rematch-offer-banner.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>Claiming and rematching are the same stop.</p></figcaption></figure>
 
 ## What can be rematched
 
@@ -79,19 +67,7 @@ Cancelling while your opponent can still accept costs the same fixed **0.01 SOL*
 
 A rematch can be rematched, up to the platform's maximum chain depth. Each card shows its place as "Rematch X of Y", so the room left is always visible, and a chain keeps the windows the first race was created with.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-desktop.png" alt="A race card showing a Rematch 3 of 10 indicator"><figcaption><p>How far down the chain this race is, and how much room is left.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-mobile.png" alt="A race card showing a Rematch 3 of 10 indicator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-banner.png" alt="A race card showing a Rematch 3 of 10 indicator"><figcaption><p>How far down the chain this race is, and how much room is left.</p></figcaption></figure>
 
 No-boost mode is inherited all the way down, so a rematch cannot sneak boosts back into a level match.
 

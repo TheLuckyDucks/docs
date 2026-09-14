@@ -35,6 +35,8 @@ const SINGLE_ASSETS = new Set([
   "nft-track-examples.png",
 ]);
 const SINGLE_ASSET_PREFIXES = ["nft-card-"];
+/** A banner is one wide image for a detail, serving both viewports. */
+const isBanner = (base) => base.endsWith("-banner.png");
 
 const problems = [];
 const problem = (file, message) => problems.push({ file, message });
@@ -195,6 +197,11 @@ for (const page of pages) {
   )) {
     if (!/^###\s+\S/m.test(m[1])) problem(page, "a step has no ### title");
     if (/<details>/.test(m[1])) problem(page, "a step contains <details>");
+    if (/\{%s*columnss*%\}/.test(m[1]))
+      problem(
+        page,
+        "a step contains a columns block, which does not render as a row inside a stepper",
+      );
   }
 
   for (const m of text.matchAll(/<img\s+src="([^"]+)"([^>]*)>/g)) {
@@ -285,6 +292,11 @@ for (const page of pages) {
       problem(page, `a columns block has ${cols.length} columns, expected 2`);
       continue;
     }
+    if (/-banner.png/.test(block[1]))
+      problem(
+        page,
+        "a banner sits inside a columns block; a banner stands alone",
+      );
     const [first, second] = cols;
     const shot = (c) => /-desktop\.png/.test(c) || /-mobile\.png/.test(c);
     if (!shot(first) && !shot(second)) continue; // a columns block of prose is fine
@@ -350,7 +362,7 @@ const shots = existsSync(join(ROOT, shotList))
 for (const asset of [...assetUsers.keys()].sort()) {
   const base = asset.slice(asset.lastIndexOf("/") + 1);
   const stem = base
-    .replace(/-(desktop|mobile)\.png$/, "")
+    .replace(/-(desktop|mobile|banner).png$/, "")
     .replace(/\.png$/, "");
   if (shots && !shots.includes(stem)) problem(shotList, `no row for ${stem}`);
 }
@@ -372,9 +384,9 @@ for (const asset of onDisk) {
   if (!asset.endsWith(".png")) continue;
   if (!assetUsers.has(asset)) problem(asset, "orphan: no page references it");
   const base = asset.slice(asset.lastIndexOf("/") + 1);
-  if (isSingle(base)) continue;
-  if (!/-(desktop|mobile)\.png$/.test(base))
-    problem(asset, "screenshot is neither -desktop nor -mobile");
+  if (isSingle(base) || isBanner(base)) continue;
+  if (!/-(desktop|mobile).png$/.test(base))
+    problem(asset, "screenshot is neither a banner nor -desktop/-mobile");
   const other = asset.includes("-desktop.png")
     ? asset.replace("-desktop.png", "-mobile.png")
     : asset.replace("-mobile.png", "-desktop.png");

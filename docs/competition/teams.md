@@ -40,19 +40,7 @@ Two ways in:
 
 Every player has a Join Requests inbox in the platform notifications, where a new request arrives with Accept and Decline on it. It is anchored on the left, away from the race toasts on the right, so the two cannot collide at the end of a race.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-desktop.png" alt="The join requests inbox with one pending request showing accept and decline buttons"><figcaption><p>Requests wait in the inbox until the founder answers.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-mobile.png" alt="The join requests inbox with one pending request showing accept and decline buttons, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-banner.png" alt="The join requests inbox with one pending request showing accept and decline buttons"><figcaption><p>Requests wait in the inbox until the founder answers.</p></figcaption></figure>
 
 ## Team standings in tournaments
 

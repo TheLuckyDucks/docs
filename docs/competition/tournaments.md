@@ -74,19 +74,7 @@ Whoever sends it, the money goes to the winners' own wallets. Paying the fee ent
 
 The button shows your share and what it is worth. While the tournament runs that dollar figure follows the market; once it ends the figure is fixed at the rate when it ended, so what you won does not appear to drift afterwards. A tournament that ended with no usable price shows the amount alone.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-tournament-claim-desktop.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value"><figcaption><p>One transaction pays the whole team, whoever sends it.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-tournament-claim-mobile.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/competition/app-tournament-claim-banner.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value"><figcaption><p>One transaction pays the whole team, whoever sends it.</p></figcaption></figure>
 
 ## Your team is frozen while a tournament runs
 

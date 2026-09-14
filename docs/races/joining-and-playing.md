@@ -67,19 +67,7 @@ The modal gives way to the canvas, after a short loading screen if audio is stil
 
 Finish first in WTA, or on the podium in Podium Split, and the claim button appears with your payout on it. Click to sign and the money arrives at once, in your wallet by default or in your player vault if you pool your winnings there.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-claim-prize-desktop.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-claim-prize-mobile.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-claim-prize-banner.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
 
 Lost? Nothing to do. The race archives itself and the page returns to the lobby list.
 

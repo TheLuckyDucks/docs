@@ -73,19 +73,7 @@ Straight to the wallet that opened the box, and the box is consumed.
 
 A progress indicator walks through opening, drawing, selecting and minting, then shows you what you got.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-reveal-desktop.png" alt="The reveal progress indicator part way through, with the drawing step active"><figcaption><p>The reveal runs on its own. There is no second signature.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-reveal-mobile.png" alt="The reveal progress indicator part way through, with the drawing step active, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-reveal-banner.png" alt="The reveal progress indicator part way through, with the drawing step active"><figcaption><p>The reveal runs on its own. There is no second signature.</p></figcaption></figure>
 
 {% hint style="success" %}
 You never sign a "reveal". Once the box is minted the opening is handled for you and the reward arrives by itself.

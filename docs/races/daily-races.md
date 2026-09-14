@@ -40,20 +40,6 @@ Not at midnight. The window opens on your first race after the last one ended an
 
 First race at 3pm, then, and your window ends at 3pm tomorrow. Your remaining races and the exact reset time both sit in the app, which is the figure to trust.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-daily-allowance-desktop.png" alt="The player page showing races remaining today and the exact reset time"><figcaption><p>Races remaining and the reset time, which is the figure to trust.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-daily-allowance-mobile.png" alt="The player page showing races remaining today and the exact reset time, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
-
 ## FAQ
 
 <details>

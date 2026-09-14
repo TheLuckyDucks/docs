@@ -57,19 +57,7 @@ It is a one-time off-chain OAuth flow: you authorise the provider, the backend c
 - **An identity badge**, a checkmark beside your nickname that other players see on race cards and in lobbies.
 - **Your Telegram handle in announcements**, for Telegram-verified players who opt in. See below.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/trust/app-verified-badge-desktop.png" alt="A lobby participant row with a verification checkmark next to the nickname"><figcaption><p>The badge travels with you: race cards, lobbies, leaderboards, rosters.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/trust/app-verified-badge-mobile.png" alt="A lobby participant row with a verification checkmark next to the nickname, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/trust/app-verified-badge-banner.png" alt="A lobby participant row with a verification checkmark next to the nickname"><figcaption><p>The badge travels with you: race cards, lobbies, leaderboards, rosters.</p></figcaption></figure>
 
 ## Signing in with a linked account
 

@@ -19,19 +19,7 @@ This page covers each one, when hosting needs a Runner NFT, and how the gates st
 | **NFT holders**           | Players who hold a minimum number of NFTs from a chosen collection.               |
 | **Token holders**         | Players who hold a minimum balance of a chosen token.                             |
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-join-setting-picker-desktop.png" alt="The join setting selector in the create form with the five options listed"><figcaption><p>Picked once, at creation, and fixed from then on.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-join-setting-picker-mobile.png" alt="The join setting selector in the create form with the five options listed, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-join-setting-picker-banner.png" alt="The join setting selector in the create form with the five options listed"><figcaption><p>Picked once, at creation, and fixed from then on.</p></figcaption></figure>
 
 {% hint style="info" %}
 Everyone sees every race whatever the setting. A player who does not qualify finds Join disabled, with the reason on the race.
@@ -100,19 +88,7 @@ A race gated on another chain checks the external wallet linked to your profile,
 - The signature moves no funds and approves nothing. It only proves ownership.
 - Linking a new wallet replaces the old link.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-link-external-wallet-desktop.png" alt="The link an external wallet panel on the profile page, showing the supported chains"><figcaption><p>One signature per wallet, once. It proves ownership and moves nothing.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-link-external-wallet-mobile.png" alt="The link an external wallet panel on the profile page, showing the supported chains, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-link-external-wallet-banner.png" alt="The link an external wallet panel on the profile page, showing the supported chains"><figcaption><p>One signature per wallet, once. It proves ownership and moves nothing.</p></figcaption></figure>
 
 That wallet is then remembered for every future cross-chain race on that chain, so you never link per race. It stays private to your account, is read only to check ownership, and nothing is ever spent from it.
 
@@ -181,16 +157,4 @@ A gated race therefore earns exactly what an open one does, and creating without
 - For NFT and Token gates the collection or token must be approved, or the create transaction refuses.
 - Gated races always stay visible. Players simply cannot join without meeting the requirement, and the Join button says so.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-gated-race-join-disabled-desktop.png" alt="A gated race detail modal with the Join button disabled and the requirement spelled out above it"><figcaption><p>A gate you do not pass is explained on the race, not hidden from the list.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-gated-race-join-disabled-mobile.png" alt="A gated race detail modal with the Join button disabled and the requirement spelled out above it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-gated-race-join-disabled-banner.png" alt="A gated race detail modal with the Join button disabled and the requirement spelled out above it"><figcaption><p>A gate you do not pass is explained on the race, not hidden from the list.</p></figcaption></figure>

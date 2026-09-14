@@ -7,19 +7,7 @@ description: The access pass collection. What holding one unlocks when you creat
 
 The access pass. A Runner in your wallet unlocks the advanced race creation features, and nothing else about how you race.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-desktop.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>It only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-mobile.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-banner.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>It only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
 
 ## What it unlocks
 
@@ -67,19 +55,7 @@ Runners are not boosts. No extra speed, no head start, no effect on any race you
 
 Connect a wallet holding a Runner and the create form shows everything. Without one the gated options are dimmed and each carries a "🏃 Runner NFT" chip. The form still opens and standard races still work; the unlocked features simply stay out of reach.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-desktop.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Gated options are dimmed rather than hidden, so you can see what a Runner would add.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-mobile.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-banner.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Gated options are dimmed rather than hidden, so you can see what a Runner would add.</p></figcaption></figure>
 
 ## Renting or borrowing one
 

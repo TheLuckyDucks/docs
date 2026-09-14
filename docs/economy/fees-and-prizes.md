@@ -94,19 +94,7 @@ The creator pays a few small costs at creation, separate from the pool:
 
 All of them are itemised in the cost box before you sign.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-desktop.png" alt="The cost breakdown box itemising entry fee, oracle fee, archival fee, opt in costs and rent"><figcaption><p>The same breakdown appears on the create form, before you sign.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-mobile.png" alt="The cost breakdown box itemising entry fee, oracle fee, archival fee, opt in costs and rent, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-banner.png" alt="The cost breakdown box itemising entry fee, oracle fee, archival fee, opt in costs and rent"><figcaption><p>The same breakdown appears on the create form, before you sign.</p></figcaption></figure>
 
 ## A note for creators
 

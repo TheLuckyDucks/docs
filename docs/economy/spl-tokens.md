@@ -7,19 +7,7 @@ description: Racing in USDC, USDT or another supported token, and what differs f
 
 Races and tournaments can run in supported SPL tokens instead of SOL. USDC and USDT are supported and more arrive over time; the currency picker on the create form is the live list.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-currency-picker-desktop.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances"><figcaption><p>The picker is the live list. A token that is not in it is not supported yet.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-currency-picker-mobile.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/economy/app-currency-picker-banner.png" alt="The currency picker beside the entry fee field, listing SOL and supported tokens with balances"><figcaption><p>The picker is the live list. A token that is not in it is not supported yet.</p></figcaption></figure>
 
 ## Supported token programs
 

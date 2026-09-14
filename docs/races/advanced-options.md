@@ -7,19 +7,7 @@ description: Every optional opt in on the create form, what it costs, and which 
 
 The opt ins on the Create Race form. All need a Runner NFT in your wallet except where noted.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-advanced-options-panel-desktop.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start"><figcaption><p>Off by default, and each one shows its cost before you sign.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-advanced-options-panel-mobile.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-advanced-options-panel-banner.png" alt="The opt in section of the create form with toggles for commentary, announcement, custom name, track and underfilled start"><figcaption><p>Off by default, and each one shows its cost before you sign.</p></figcaption></figure>
 
 ## AI commentary
 
@@ -69,19 +57,7 @@ Lets the race launch short of max players once the join timeout passes. Without 
 
 Enabling it adds a slider for the minimum players to start with. It runs from the platform's default race size up to one below your maximum, so you cannot set a threshold the race could never reach. A 10 player race with the slider at 7 starts with 7, 8 or 9 once the window closes.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-underfilled-slider-desktop.png" alt="The start when underfilled slider set to 7 out of a 10 player race"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-underfilled-slider-mobile.png" alt="The start when underfilled slider set to 7 out of a 10 player race, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-underfilled-slider-banner.png" alt="The start when underfilled slider set to 7 out of a 10 player race"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
 
 It also adds a small surcharge for the backend's auto start. That sits in the race vault and goes to the operator on auto start, or refunds with everything else if the race never runs.
 

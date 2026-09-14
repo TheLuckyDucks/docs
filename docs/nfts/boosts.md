@@ -19,19 +19,7 @@ The cap is on chain at **100 bps, or 1%**. A boost claiming more off chain gets 
 
 One boost per race. Hold several and the join modal shows them all for you to pick from; pick none and the race runs unboosted.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-boost-picker-desktop.png" alt="The boost picker in the join modal, listing each boost in the wallet with its percentage"><figcaption><p>One boost per race, chosen at join time.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-boost-picker-mobile.png" alt="The boost picker in the join modal, listing each boost in the wallet with its percentage, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-boost-picker-banner.png" alt="The boost picker in the join modal, listing each boost in the wallet with its percentage"><figcaption><p>One boost per race, chosen at join time.</p></figcaption></figure>
 
 {% hint style="success" %}
 Boosts are **never consumed**. The same one works in every race you ever join.
@@ -118,19 +106,7 @@ A race can be created with boosts switched off for everyone, its creator include
 
 Those races carry a crossed-out circle on the card, in the race view and on the share image, and the Telegram and X announcements say so too, so you always know before joining.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-desktop.png" alt="A race card carrying the crossed-out circle marker that means boosts are disabled"><figcaption><p>The marker rides on the card, the race view and the share image.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-mobile.png" alt="A race card carrying the crossed-out circle marker that means boosts are disabled, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-banner.png" alt="A race card carrying the crossed-out circle marker that means boosts are disabled"><figcaption><p>The marker rides on the card, the race view and the share image.</p></figcaption></figure>
 
 ### Why you might create one
 
@@ -152,19 +128,7 @@ Rematches inherit the setting all the way down the chain, so a rematch cannot sn
 
 A participant who equipped a boost carries a small badge beside their name in the lobby, coloured by boost size: cooler for smaller, hotter for bigger. One glance tells you who is running with what.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-boost-badges-lobby-desktop.png" alt="A lobby participant list where two players carry coloured boost badges next to their names"><figcaption><p>Badge colour tracks boost size, so the lobby shows who brought what.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-boost-badges-lobby-mobile.png" alt="A lobby participant list where two players carry coloured boost badges next to their names, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-boost-badges-lobby-banner.png" alt="A lobby participant list where two players carry coloured boost badges next to their names"><figcaption><p>Badge colour tracks boost size, so the lobby shows who brought what.</p></figcaption></figure>
 
 ## Acquiring
 

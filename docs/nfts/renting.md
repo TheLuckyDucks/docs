@@ -13,19 +13,7 @@ It suits a Boost for a weekend tournament, or trying a Track before you buy one.
 
 Only the tiers the platform offers. In the marketplace a rentable tier has a **Rent** button beside **Buy**; anything else has only Buy, so there is no disabled button to hunt for.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-marketplace-rent-button-desktop.png" alt="A marketplace tier showing a Rent button beside the Buy button"><figcaption><p>No Rent button means that tier is not rentable at all.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-marketplace-rent-button-mobile.png" alt="A marketplace tier showing a Rent button beside the Buy button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-marketplace-rent-button-banner.png" alt="A marketplace tier showing a Rent button beside the Buy button"><figcaption><p>No Rent button means that tier is not rentable at all.</p></figcaption></figure>
 
 Mystery Boxes never rent. A box exists only until you open it, so there would be nothing to give back.
 
@@ -37,19 +25,7 @@ From **1 day to 30 days**, in whole days. The slider moves a day at a time and t
 
 Each tier has its own daily price, set by the platform and unrelated to what buying one costs. The total is the daily price times the days, the button shows it, and there is no proration or partial day.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-rental-duration-slider-desktop.png" alt="The rental duration slider with day shortcuts underneath and the total price on the confirm button"><figcaption><p>The total on the button is the whole cost. Nothing is charged later.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-rental-duration-slider-mobile.png" alt="The rental duration slider with day shortcuts underneath and the total price on the confirm button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-rental-duration-slider-banner.png" alt="The rental duration slider with day shortcuts underneath and the total price on the confirm button"><figcaption><p>The total on the button is the whole cost. Nothing is charged later.</p></figcaption></figure>
 
 ## Paying
 
@@ -72,19 +48,7 @@ Everything else is normal: no page to keep open, and no tie to a browser or devi
 
 **Your own screens mark it, and only yours.** A rented item carries a **RENTED** ribbon in the create and join pickers, on every tab, so you can see which of your picks has a clock on it. Nobody else sees it, in a race or anywhere else.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-rented-ribbon-desktop.png" alt="A picker tile carrying a RENTED ribbon in the corner"><figcaption><p>On your screens only. Other players never see it.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/nfts/app-rented-ribbon-mobile.png" alt="A picker tile carrying a RENTED ribbon in the corner, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/nfts/app-rented-ribbon-banner.png" alt="A picker tile carrying a RENTED ribbon in the corner"><figcaption><p>On your screens only. Other players never see it.</p></figcaption></figure>
 
 ## The one rule: do not alter it
 

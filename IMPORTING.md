@@ -48,7 +48,7 @@ Page icons are Font Awesome names without the `fa-` prefix.
 
 Image files live in `.gitbook/assets/<section>/` at the repository root, one folder per page folder plus `brand/` for the welcome page artwork. Reference them by relative path from the page, which means climbing out of the content root: `../.gitbook/assets/brand/x.png` from `docs/README.md`, `../../.gitbook/assets/races/x.png` from a page in a section.
 
-Every screenshot is two files, `-desktop.png` and `-mobile.png`, shown as one row by a `{% columns %}` block at 70/30. Artwork is a single file.
+Images come in three classes. A **banner**, `<stem>-banner.png`, is one wide image for a specific part of a page (a button, a combobox, a slider) and stands alone. A **pair**, `-desktop.png` and `-mobile.png`, is a whole screen shown as one row by a `{% columns %}` block at 70/30. **Artwork** is a single file. A columns block does not render as a row inside a stepper step, so a page with paired screenshots in an ordered procedure uses numbered headings instead.
 
 Two things to know about the editor. GitBook writes anything uploaded through it **flat** into `.gitbook/assets/`, so replacing a capture there breaks the folder layout for that file; replace captures through git. And a `<figure>` whose file is missing renders as a broken image on the live site, so the asset has to land before the page does.
 

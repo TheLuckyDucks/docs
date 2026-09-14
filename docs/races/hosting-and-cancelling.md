@@ -26,19 +26,7 @@ Only the creator can cancel, and only while the join window is open. Everyone wh
 The penalty is flat, around **0.05 SOL**, and the confirmation shows the exact figure. It does not scale with the pot, and a token race still pays it in SOL.
 {% endhint %}
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-desktop.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-mobile.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-banner.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign.</p></figcaption></figure>
 
 A race that is ready to start cannot be cancelled. If yours had [start when underfilled](advanced-options.md#start-when-underfilled) on and enough players joined to reach the threshold, it goes ahead instead.
 

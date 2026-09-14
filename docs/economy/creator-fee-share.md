@@ -53,17 +53,7 @@ These are percentages **of the platform fee**, not of the prize pool, and the cr
 
 The percentages are platform settings, added together and never exceeding 100% of the fee. A new rate applies only to **new** races, since an existing race keeps the share it snapshotted.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-creator-share-preview-desktop.png" alt="The create form showing the creator share this race will earn, above the sign button"><figcaption><p>What the race will earn you is shown before you sign it.</p></figcaption></figure>
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/economy/app-creator-share-preview-mobile.png" alt="The create form showing the creator share this race will earn, above the sign button, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/economy/app-creator-share-preview-banner.png" alt="The create form showing the creator share this race will earn, above the sign button"><figcaption><p>What the race will earn you is shown before you sign it.</p></figcaption></figure>
 
 ### What this is for
 
