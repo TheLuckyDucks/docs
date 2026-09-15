@@ -5,21 +5,7 @@ description: The full lifecycle of one race, from the create transaction to the 
 
 # How a race works
 
-A race is a Solana account. Creating one allocates the account, joining deposits your entry fee into its vault, and at the end the contract pays the winners and closes it. Here is the whole lifecycle.
-
-```mermaid
-flowchart TD
-    A["1. Creation: the race account and its vault open"] --> B["2. Lobby: players join, 1 hour by default"]
-    B --> C{"Lobby fills, or starts underfilled?"}
-    C -->|"Yes"| D["3. Start: the lobby locks, randomness requested"]
-    C -->|"Join window passes"| X["Cancelled: every stake refundable"]
-    D --> E["4. ORAO publishes the seed on chain"]
-    E -->|"No seed inside the 3 minute window"| X
-    E --> F["5. Finalization: the contract ranks the ducks and completes the race"]
-    F --> G["Winners claim their share of the vault"]
-    G --> H["6. Cleanup: race account closed, rent returns to the creator"]
-    X --> H
-```
+A race is a Solana account. Creating one allocates the account, joining deposits your entry fee into its vault, and at the end the contract pays the winners and closes it. Here is the whole lifecycle, a step at a time.
 
 ## 1. Creation
 

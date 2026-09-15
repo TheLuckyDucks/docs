@@ -83,6 +83,25 @@ For the strongest check, reproduce the published build hash locally with `solana
 
 ## Verifying one race, step by step
 
+The six steps below follow a race's own lifecycle, in the order the chain
+recorded it. Each box is something you can open and read for yourself, and
+the two edges leading to Cancelled are the paths where nobody wins and every
+stake goes back.
+
+```mermaid
+flowchart TD
+    A["1. Creation: the race account and its vault open"] --> B["2. Lobby: players join, 1 hour by default"]
+    B --> C{"Lobby fills, or starts underfilled?"}
+    C -->|"Yes"| D["3. Start: the lobby locks, randomness requested"]
+    C -->|"Join window passes"| X["Cancelled: every stake refundable"]
+    D --> E["4. ORAO publishes the seed on chain"]
+    E -->|"No seed inside the 3 minute window"| X
+    E --> F["5. Finalization: the contract ranks the ducks and completes the race"]
+    F --> G["Winners claim their share of the vault"]
+    G --> H["6. Cleanup: race account closed, rent returns to the creator"]
+    X --> H
+```
+
 ## Step 1; Find the race account
 
 Every race lives at a Program Derived Address anyone can compute from the race ID, so the program cannot lie about where a race lives. The derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`, and you need not compute it by hand: the **Addresses** panel on the race lists it, and an explorer search by ID surfaces it too.
