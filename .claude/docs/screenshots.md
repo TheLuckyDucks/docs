@@ -215,6 +215,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-max-players-field` **(banner)**            | `races/creating-a-race.md`                                    | The seats control, values past the default marked as gated        |
 | `app-race-duration-field` **(banner)**          | `races/creating-a-race.md`, `races/advanced-options.md`       | The duration field with the platform ceiling stated               |
 | `app-race-mode-picker` **(banner)**             | `races/creating-a-race.md`                                    | The mode picker: Winner Takes All beside Podium Split             |
+| `app-create-race-opt-ins` **(banner)**          | `races/creating-a-race.md`                                    | The opt in cards stacked, all off, gated ones show a Runner chip  |
 | `app-ai-commentary-toggle` **(banner)**         | `races/advanced-options.md`                                   | The AI commentary toggle with its per second cost                 |
 | `app-x-announcement-toggle` **(banner)**        | `races/advanced-options.md`                                   | The X announcement toggle with its flat cost                      |
 | `app-custom-name-field` **(banner)**            | `races/advanced-options.md`                                   | The custom name field with a race title typed in                  |

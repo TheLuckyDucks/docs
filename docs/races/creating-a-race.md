@@ -7,6 +7,10 @@ description: The Create Race form choice by choice, from entry fee and lobby siz
 
 Open Create Race from the main page. The form runs top to bottom in the order you fill it in.
 
+{% hint style="info" %}
+**Creating is optional.** You can join a race someone else has already opened instead, straight from the race list, with nothing to fill in. Create your own when you want the terms to be yours: the entry fee, the seats, the duration and the mode. See [Joining and playing](joining-and-playing.md).
+{% endhint %}
+
 {% columns %}
 {% column width="70%" %}
 
@@ -76,6 +80,8 @@ All off by default, and most need a Runner NFT.
 - **No-boost race**. Boost NFTs off for everyone, yourself included. See [No-boost races](../nfts/boosts.md#no-boost-races).
 - **Join setting**. Open by default. Verified Only and Token Holders gate a race without a Runner; NFT Holders and Allowed Players, an invite list of up to 20 wallets, both need one. See [Race access and gating](access-and-gating.md).
 - **Minimum account age**. Keeps fresh wallets out by requiring a player account of a certain age, 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
+
+<figure><img src="../../.gitbook/assets/races/app-create-race-opt-ins-banner.png" alt="The stack of opt in cards on the create form, every toggle off, the gated ones carrying a Runner NFT chip"><figcaption><p>Every opt in starts off, and the ones that need a Runner carry the chip that says so.</p></figcaption></figure>
 
 ## Sign and submit
 
