@@ -29,7 +29,7 @@ Three things follow:
 
 - **Anyone can verify a race.** Once the randomness is published the outcome is fixed. Re-run the math on the same seed and the finishing order comes out the same, every time.
 - **The platform cannot pick a winner.** The team writes the contract and deploys it, and from then on has no special power over outcomes.
-- **Refunds are automatic.** If a race never starts, whether from too few players, a failed oracle or a stuck transaction, every player can claim their fee back with a permissionless instruction. No support ticket.
+- **Refunds are automatic.** If a race never starts, whether from too few players, a failed oracle or a stuck transaction, every player can claim their fee back, and anyone at all can trigger the refund. No support ticket.
 
 ## The catch
 

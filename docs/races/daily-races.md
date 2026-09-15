@@ -30,8 +30,8 @@ A Runner raises the cap, and ownership is checked at the moment you play:
 
 The limits: **50 races a day** without a Runner, **500** with one. Verification changes nothing here; the Runner is the only thing that lifts it.
 
-{% hint style="warning" %}
-Attach the Runner when you join or rematch. Without it the race still goes through, but it counts against the standard limit instead.
+{% hint style="info" %}
+**There is nothing to switch on.** The app reads your connected wallet when you join or rematch and uses the Runner it finds there, so holding one is the whole of it. Play from a wallet with no Runner in it and the race still goes through, on the standard limit.
 {% endhint %}
 
 ## When your day resets
@@ -56,6 +56,6 @@ It did not. Offering used one of yours, accepting used one of your opponent's. I
 
 <summary>I bought a Runner. Why does my limit look the same?</summary>
 
-It updates when you next play. If it still looks wrong after that, check the Runner was attached to the race.
+It updates when you next play. If it still looks wrong after that, check the Runner is in the wallet you are connected with, since that is the only one the app reads.
 
 </details>

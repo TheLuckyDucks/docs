@@ -53,7 +53,7 @@ Runners are not boosts. No extra speed, no head start, no effect on any race you
 
 ## Verifying you have one
 
-Connect a wallet holding a Runner and the create form shows everything. Without one the gated options are dimmed and each carries a "🏃 Runner NFT" chip. The form still opens and standard races still work; the unlocked features simply stay out of reach.
+Connect a wallet holding a Runner and the create form shows everything. There is nothing to switch on or select: the app reads your connected wallet on its own, when you create and when you join, and uses what it finds. Without one the gated options are dimmed and each carries a "🏃 Runner NFT" chip. The form still opens and standard races still work; the unlocked features simply stay out of reach.
 
 <figure><img src="../../.gitbook/assets/nfts/app-create-race-runner-locked-banner.png" alt="The create form with the gated options dimmed and each carrying a Runner NFT chip"><figcaption><p>Gated options are dimmed rather than hidden, so you can see what a Runner would add.</p></figcaption></figure>
 
@@ -61,4 +61,4 @@ Connect a wallet holding a Runner and the create form shows everything. Without 
 
 Runners are among the tiers the platform rents by the day, so you can take one for a weekend of hosting instead of buying. See [Renting an NFT](renting.md).
 
-They are also ordinary transferable assets, so an over-the-counter loan between holders works too: the contract only asks whether the NFT is in the wallet signing `create_race`, and it can move freely between races.
+They are also ordinary transferable assets, so an over-the-counter loan between holders works too: the program only asks whether the NFT sits in the wallet creating the race, and it can move freely between races.

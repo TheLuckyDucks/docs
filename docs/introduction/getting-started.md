@@ -9,7 +9,7 @@ Six steps from a fresh browser tab to a finished race.
 
 ## 1. Get a Solana wallet
 
-Phantom, Solflare, Backpack and most major Solana wallets work, and the adapter handles the connection. Starting from nothing, Phantom is the easiest: browser extension and mobile app, both free.
+Phantom, Solflare, Backpack and most major Solana wallets work, and the app handles the connection for you. Starting from nothing, Phantom is the easiest: browser extension and mobile app, both free.
 
 ## 2. Top up with a little SOL
 

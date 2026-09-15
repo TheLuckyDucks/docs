@@ -22,7 +22,7 @@ Only Boosts touch who wins. The rest are access (Runners) or looks (Tracks, Cosm
 
 ## How NFT detection works
 
-Creating or joining a race scans your connected wallet for assets from the relevant collection, and one valid asset unlocks the matching features. Scans cache for a few minutes, so if you just transferred an NFT in and the page has not noticed, refresh the wallet adapter.
+Creating or joining a race scans your connected wallet for assets from the relevant collection, and one valid asset unlocks the matching features. Scans cache for a few minutes, so if you just transferred an NFT in and the page has not noticed, reconnect your wallet or reload the page.
 
 {% hint style="success" %}
 The contract checks the NFT is in the wallet at the moment of the transaction, independently of the page. The frontend cannot fake it.

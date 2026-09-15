@@ -121,7 +121,7 @@ The gating token need not be the prize token: a SOL race can require USDC, a USD
 
 Creator side: no Runner needed on an approved token. Auto join your own race and the contract checks your balance at create time; in host mode it checks whenever you later join.
 
-<figure><img src="../../.gitbook/assets/races/app-token-gate-fields-banner.png" alt="The Token Holders gate on the create form with the mint field and the minimum amount"><figcaption><p>The gate token need not be the token the race is played in.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-token-gate-fields-banner.png" alt="The Token Holders gate on the create form with the token field and the minimum amount"><figcaption><p>The gate token need not be the token the race is played in.</p></figcaption></figure>
 
 ## Allowed players (private invites)
 
@@ -135,12 +135,12 @@ Invites specific wallets to a private race, up to **20 wallets**, which is also 
 - On the list, the race shows an active Join button and you enter like any other race.
 - The list is held for about an hour while you build it and sign. Take longer and the hold expires: re-enter it and create again. No funds are involved, so that costs nothing.
 
-Only a short fingerprint of the list goes on chain with the race, not the wallets. The list itself lives on the backend and is exposed through the race endpoints, so the dApp and anyone reading the API can see who is invited. It is not secret; the fingerprint exists to prove the list was not tampered with between creation and join.
+Only a short fingerprint of the list goes on chain with the race, not the wallets. The list itself lives on the platform's servers and is published with the race, so the app and anyone else looking at the race can see who is invited. It is not secret; the fingerprint exists to prove the list was not tampered with between creation and join.
 
 Need more than 20 wallets? Use a public race with another gate, such as NFT Holders, Token Holders or Verified Only.
 
 {% hint style="warning" %}
-Hosting an Allowed Players race needs a Runner NFT, unlike the other gates, because the allowlist is itself a customization: the contract stores the list root and verifies each joiner's proof against it.
+Hosting an Allowed Players race needs a Runner NFT, unlike the other gates, because the allowlist is itself a customization.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/races/app-allowed-players-list-banner.png" alt="The allowed players list on the create form with several wallets added and the counter"><figcaption><p>Up to 20 wallets, and the counter says how many are left.</p></figcaption></figure>

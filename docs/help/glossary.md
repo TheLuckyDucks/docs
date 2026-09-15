@@ -13,19 +13,15 @@ Two terms are worth reading together before anything else: a **race vault** hold
 
 ### Allowlist (private race)
 
-An invite list of up to 20 wallets, which is also the most players a race can hold. Only listed wallets can join, and everyone else sees the race with Join disabled. The list lives off chain and is exposed through the race endpoints, so the dApp can show it; only a short fingerprint goes on chain, to prove it was not tampered with. The creator is admitted by the auto join at creation, so in host mode they must list themselves to join later.
+An invite list of up to 20 wallets, which is also the most players a race can hold. Only listed wallets can join, and everyone else sees the race with Join disabled. The list lives off chain and is published with the race, so the app can show it; only a short fingerprint goes on chain, to prove it was not tampered with. The creator is admitted by the auto join at creation, so in host mode they must list themselves to join later.
 
 ### ATA (Associated Token Account)
 
-A Solana account that holds a specific SPL token for a specific wallet. Each wallet has one ATA per token mint. Token races use a vault-owned ATA to hold the prize pool; payouts go from the vault ATA to each winner's ATA. The platform supports ATAs for both the legacy SPL Token program and SPL Token-2022.
+A small Solana account that holds one SPL token for one wallet. Your wallet needs one per token, and joining a token race creates it for you if you have none, for a one-time deposit of about 0.002 SOL that comes back when you close it. The race vault has one too, and payouts move the token from it to each winner's.
 
 ### Boost
 
 A speed bonus added to your duck for one race, sourced from a Boost NFT in your wallet. Capped at 1% on chain.
-
-### Cleanup worker
-
-A backend process that submits permissionless transactions to keep the system healthy. Examples: archiving expired races, calling `start_underfilled_race` once eligibility opens.
 
 ### Cosmetic
 
@@ -43,17 +39,13 @@ The largest race you can create without a Runner NFT, and the smallest lobby an 
 
 Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions instead of your wallet. It spends from your player vault, expires on its own, revokes instantly, and can never move money off the platform. Granting needs a [verified](#verified) wallet; revoking never does. See [Playing without signing every action](../races/delegated-play.md).
 
-### Discriminator
-
-The first 8 bytes of any Anchor account, used to identify the account type. Lucky Ducks accounts (Race, PlayerAccount, PlatformConfig, etc.) all start with one.
-
 ### Entry fee
 
 The amount each joiner pays to participate in a race.
 
 ### Finalization
 
-The on-chain transaction that closes a race and pays out the winners. The backend wallet triggers it once the race duration elapses; if it hasn't fired within 10 seconds, it becomes permissionless and any participant can submit it.
+The on-chain transaction that ranks the ducks and lets the winners claim. The backend wallet normally sends it once the race duration elapses, but it requires no particular wallet from that moment on, so anyone can send it if the backend does not.
 
 ### Host (hosted race)
 
@@ -65,7 +57,7 @@ The lobby window during which players can join a race. Default 1 hour. Customiza
 
 ### Linked wallet
 
-A non-Solana wallet attached to your profile so the platform can read its NFT holdings when you join a cross-chain gated race. One signature per wallet proves control, no funds move, and linking a new one replaces the old. See [NFT holders](../races/access-and-gating.md#nft-holders).
+A non-Solana wallet linked to your profile so the platform can read its NFT holdings when you join a cross-chain gated race. One signature per wallet proves control, no funds move, and linking a new one replaces the old. See [NFT holders](../races/access-and-gating.md#nft-holders).
 
 ### Minimum account age
 
@@ -89,7 +81,7 @@ Where money coming back to you lands: your wallet, or your player vault. Covers 
 
 ### PDA (Program Derived Address)
 
-A Solana account whose address is deterministically derived from a set of seeds plus the program ID, with no private key. Every race, every player account, the platform config, and every NFT have associated PDAs.
+An account whose address the program derives from a set of seeds plus the program ID rather than from a keypair, so nobody holds a key that can sign for it. Races, player accounts, the platform config and race vaults are all PDAs. The term turns up in a block explorer, which is where [Verifying a race on-chain](../trust/verifying-a-race.md) uses it.
 
 ### Player account
 
@@ -105,7 +97,7 @@ Race mode where the prize pool is split 50/30/20 between first, second, and thir
 
 ### Race vault
 
-A PDA owned by the smart contract that holds the entry fees for a specific race. Closed at finalization. Not the same thing as your player vault, which is yours and persists across races.
+An account owned by the smart contract that holds the entry fees for one race, and closes with it. Not the same thing as your player vault, which is yours and persists across races.
 
 ### Rematch
 
@@ -121,7 +113,7 @@ A race where the creator funds the prize pool upfront; joiners pay nothing to en
 
 ### Threshold (underfilled)
 
-The minimum joiner count at which an underfilled-opted-in race can auto-start. Computed as `maxPlayers - tolerance`, where tolerance is set at creation.
+The minimum number of joiners at which a race with start-when-underfilled on can start short. The creator sets it on a slider at creation, and it can never be lower than the platform's default race size.
 
 ### Token Holders (join setting)
 
@@ -129,7 +121,7 @@ Restricts entry to wallets holding a minimum amount of a chosen token, checked o
 
 ### Tolerance
 
-The number of missing slots a race tolerates before auto-starting on the underfilled path. `maxPlayers - tolerance` gives the minimum-to-start threshold.
+How many empty seats a race will start with on the underfilled path. Take it off the maximum players and you have the threshold the race starts at.
 
 ### Tournament
 
@@ -141,7 +133,7 @@ The platform's fee wallet. Receives the platform fee out of every finalized priz
 
 ### Verified
 
-A wallet that has linked an off-platform identity by OAuth (X, Telegram, Facebook). It carries a checkmark, can enter races reserved for verified players, signs you in without your wallet app, and is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
+A wallet that has linked an off-platform identity, such as X or Telegram, through whichever providers the platform has enabled. It carries a checkmark, can enter races reserved for verified players, signs you in without your wallet app, and is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
 
 ### VRF (Verifiable Random Function)
 

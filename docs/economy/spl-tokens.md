@@ -23,17 +23,17 @@ The newer program (`TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb`), with extensio
 {% endtab %}
 {% endtabs %}
 
-The vault, the ATA derivation and the payout logic pick the right program from the mint's owner, so there is nothing to configure: choose the token and the instructions route themselves.
+Which of the two a token uses is worked out for you, so there is nothing to set: pick the token and everything else follows from it.
 
-For a Token-2022 mint with the transfer fee extension, the platform reads that fee from the mint and accounts for it in joining and payout, so the player and the pool always see the post-fee amount on chain.
+Where a token charges a transfer fee of its own, the platform reads that fee and accounts for it both when you join and when you are paid, so the amount you see is the amount that actually moves.
 
 ## How a token race works
 
 Mechanically identical to a SOL race, with three differences:
 
-- The entry fee is denominated in the token's smallest unit. USDC has 6 decimals, so 1 USDC is 1,000,000 base units.
-- Each participant needs an Associated Token Account for that mint. Without one, the join transaction creates it and you pay a one-time ATA rent of about 0.002 SOL, recoverable when you close the account.
-- The vault holds the token in a vault-owned ATA, and payouts move it from there to each winner's ATA.
+- The entry fee is set and shown in the token itself, so a 1 USDC race costs 1 USDC.
+- Each player needs a token account for that SPL token, which is a small account Solana uses to hold one token for one wallet. Without one, joining creates it for you and you pay a one-time deposit of about 0.002 SOL, which comes back when you close it.
+- The race vault holds the token itself, and payouts move it from there to each winner's token account.
 
 {% hint style="warning" %}
 Costs paid in SOL stay in SOL. Network fees, rent, and the withdrawal or cancellation penalties are all charged in SOL even when the pot is a token.
@@ -41,15 +41,15 @@ Costs paid in SOL stay in SOL. Network fees, rent, and the withdrawal or cancell
 
 ## Selecting a token
 
-The entry fee field carries a currency picker listing SOL and every supported token with its icon, symbol and your balance. Availability and order come from `splTokens[].priority` in `/config`, so higher priority sits first.
+The entry fee field carries a currency picker listing SOL and every supported token with its icon, symbol and your balance. Which tokens appear, and in what order, is set by the platform.
 
 ## Fee tier differences
 
-Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit that token's denomination, which is why AMPS and AISI sit at much higher absolute numbers. `splTokens[].feeTiers` in `/config` carries the full schedule.
+Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit what that token is worth, which is why AMPS and AISI sit at much higher absolute numbers.
 
 ## Joining without the token
 
-Hold none of the chosen token and the join button is disabled with an "Insufficient balance" tooltip. That check happens client-side, before anything is signed.
+Hold none of the chosen token and the join button is disabled with an "Insufficient balance" tooltip. The app checks before anything is signed, so finding out costs nothing.
 
 ## Tournaments in SPL tokens
 

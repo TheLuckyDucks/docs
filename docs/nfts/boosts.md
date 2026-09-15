@@ -9,10 +9,10 @@ The one collection that touches race outcomes. Equip a Boost when you join and y
 
 ## How the boost works
 
-Every Boost has a fixed `boost_bps` in its on chain metadata. `bps` means basis points, so 100 bps is 1%, and an 80 bps boost adds 0.8% to your duck's speed.
+Every Boost carries a fixed size in its on chain details, written in basis points. 100 basis points is 1%, so an 80 point boost adds 0.8% to your duck's speed.
 
 {% hint style="info" %}
-The cap is on chain at **100 bps, or 1%**. A boost claiming more off chain gets clamped to 1% by the contract, which keeps a boost an edge rather than a guarantee.
+The cap is on chain at **100 bps, or 1%**. A boost claiming more off chain is cut back to 1% by the contract, which keeps a boost an edge rather than a guarantee.
 {% endhint %}
 
 ## Stacking and selection
@@ -118,7 +118,7 @@ It needs a Runner NFT. The option sits on the create form, and in recipe setting
 
 ### If you already own boost NFTs
 
-Nothing is lost. They work normally in every race that has not disabled them. In a no-boost race the join instruction simply ignores boost accounts the UI passes, and you are not charged for a boost that was never applied.
+Nothing is lost. They work normally in every race that has not disabled them. In a no-boost race nothing you bring is applied, and you are not charged for a boost that never took effect.
 
 {% hint style="info" %}
 Rematches inherit the setting all the way down the chain, so a rematch cannot sneak boosts back into a level match.

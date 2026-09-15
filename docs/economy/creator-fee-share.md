@@ -34,7 +34,7 @@ On top of that base, each NFT you bring adds its own share. They stack.
 | Runner NFT                           | 40%  |
 | Track NFT                            | 10%  |
 | Cosmetic NFT on your duck            | 10%  |
-| Booster NFT on your duck             | 10%  |
+| Boost NFT on your duck               | 10%  |
 
 All four brings 80% of the fee on that race, none brings 10%, and each counts on its own: a Track earns its 10% whether or not a Runner is there too.
 
@@ -57,7 +57,7 @@ The percentages are platform settings, added together and never exceeding 100% o
 
 ### What this is for
 
-A race costs its creator the VRF and archive fees whether it fills or not, and the base share gives that back: run a race, play in it, and the fee it generates returns to you instead of being a cost. How much depends on the pool, so a bigger race covers the cost sooner and the NFT shares turn break-even into profit.
+A race costs its creator the oracle and archival fees whether it fills or not, and the base share gives that back: run a race, play in it, and the fee it generates returns to you instead of being a cost. How much depends on the pool, so a bigger race covers the cost sooner and the NFT shares turn break-even into profit.
 
 ## Which races qualify
 
@@ -70,8 +70,8 @@ Only regular Winner Takes All and Podium races. Creator Fee Share does **not** a
 
 Two more things worth knowing about the NFT shares:
 
-- **The Cosmetic and Booster shares follow your own entry.** They are earned by the duck you put in the race, so they go with the cosmetic and the boost you picked when you created it, not with what you happen to own.
-- **A race with boosts turned off earns no Booster share.** No boost is applied in that race, so there is nothing for the share to reward.
+- **The Cosmetic and Boost shares follow your own entry.** They are earned by the duck you put in the race, so they go with the cosmetic and the boost you picked when you created it, not with what you happen to own.
+- **A race with boosts turned off earns no Boost share.** No boost is applied in that race, so there is nothing for the share to reward.
 
 A rematch earns no share at all: it is a 1v1, and the program writes its creator share as zero whatever the race it followed earned.
 
@@ -102,21 +102,21 @@ The winner gets 0.97 SOL in every case.
 **Your share is a slice of the fee, not of the pool.** This is the easiest number to misread. On the race above, a 10% share is 10% of the 0.03 SOL fee, which is 0.003 SOL, not 10% of the 1 SOL pool. The bigger the pool, the bigger the fee, and so the bigger your share.
 {% endhint %}
 
-That also decides whether a race pays for itself: on the base share alone a small race falls just short of the VRF and archive fees, a larger one clears them, and the NFT shares clear them comfortably either way. The create form shows where your race lands before you sign.
+That also decides whether a race pays for itself: on the base share alone a small race falls just short of the oracle and archival fees, a larger one clears them, and the NFT shares clear them comfortably either way. The create form shows where your race lands before you sign.
 
 ## Where the creator share lands
 
 - **SOL races.** The share rides along with the rent return at race close, with no separate claim, landing in the creator's wallet or [player vault](player-vault.md) by their payout setting.
-- **SPL token races.** It goes to the creator's token account for that mint, created automatically in the claim transaction if they have none. Legacy SPL Token and Token-2022 both work, as in the rest of the [SPL flow](spl-tokens.md).
+- **SPL token races.** It goes to the creator's token account for that token, created for them in the claim transaction if they have none. Legacy SPL Token and Token-2022 both work, as in the rest of the [SPL flow](spl-tokens.md).
 
 ## Tracking it
 
 Two places show it:
 
-- **On the race.** `creatorFeeShareBps` is the total snapshotted at creation, and the dApp uses it to show what cut that race earns its creator.
-- **At payout.** An event fires at claim time with the amount, the creator's wallet and the signature, so the creator sees it at once in their feed.
+- **On the race.** The total is fixed on the race at creation, and the app reads it to show what cut that race earns its creator.
+- **At payout.** The amount, the wallet it went to and the transaction are all published at claim time, so the creator sees it at once in their feed.
 
-A share of 0, from a 1-v-1, a sponsored race or a host who did not play, emits no event, because there is nothing to pay.
+A share of 0, from a 1-v-1, a sponsored race or a host who did not play, publishes nothing, because there is nothing to pay.
 
 ## For administrators
 
@@ -140,6 +140,6 @@ Only the configuration owner can change them, and new values only take effect fo
 
 ## Why this exists
 
-It makes running a race something a creator is paid for rather than something they pay for. Every race costs its creator the VRF and archive fees up front, and the base share is what gives that back, so anyone who fills a race and plays in it is contributing to the platform rather than subsidising it.
+It makes running a race something a creator is paid for rather than something they pay for. Every race costs its creator the oracle and archival fees up front, and the base share is what gives that back, so anyone who fills a race and plays in it is contributing to the platform rather than subsidising it.
 
 The four NFT shares sit on top of that and reward the creators who actually put their NFTs to work rather than only holding them. A creator who brings a Runner, a Track, a cosmetic and a boost to their own race earns the most, which is the point: the fee comes back to the people running the races and using what they own to do it.

@@ -9,13 +9,13 @@ A race is a Solana account. Creating one allocates the account, joining deposits
 
 ```mermaid
 flowchart TD
-    A["1. Creation: create_race signed, vault derived"] --> B["2. Lobby: players join, 1 hour by default"]
+    A["1. Creation: the race account and its vault open"] --> B["2. Lobby: players join, 1 hour by default"]
     B --> C{"Lobby fills, or starts underfilled?"}
-    C -->|"Yes"| D["3. Start: Open becomes VRFPending, randomness requested"]
+    C -->|"Yes"| D["3. Start: the lobby locks, randomness requested"]
     C -->|"Join window passes"| X["Cancelled: every stake refundable"]
-    D --> E["4. VRF resolution: ORAO publishes the seed on chain"]
-    E -->|"No seed inside the VRF timeout"| X
-    E --> F["5. Finalization: the contract ranks the ducks, status Completed"]
+    D --> E["4. ORAO publishes the seed on chain"]
+    E -->|"No seed inside the 3 minute window"| X
+    E --> F["5. Finalization: the contract ranks the ducks and completes the race"]
     F --> G["Winners claim their share of the vault"]
     G --> H["6. Cleanup: race account closed, rent returns to the creator"]
     X --> H
@@ -23,7 +23,7 @@ flowchart TD
 
 ## 1. Creation
 
-The creator picks the parameters and signs a `create_race` transaction:
+The creator picks the settings and signs one transaction:
 
 - Entry fee (SOL or SPL token)
 - Max players (2 to 5 by default, up to 20 with a Runner NFT)
@@ -31,7 +31,7 @@ The creator picks the parameters and signs a `create_race` transaction:
 - Payout mode (Winner Takes All, or Podium split across 1st, 2nd, 3rd)
 - Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
 
-The transaction allocates the race account, derives a vault for the deposits, and emits a `race:created` event. The race shows up in the lobby list seconds later.
+The transaction opens the race account and the vault that holds the deposits, and the race shows up in the lobby list seconds later.
 
 ## 2. Lobby
 
@@ -55,17 +55,17 @@ You can withdraw while the lobby is open. That returns your entry fee and charge
 
 ## 3. Start
 
-The race starts when the lobby fills, or earlier if the creator enabled start when underfilled and the join timeout has passed. Starting is its own on chain transition: the race moves from `Open` to `VRFPending` and the contract requests randomness from an ORAO oracle.
+The race starts when the lobby fills, or earlier if the creator enabled start when underfilled and the join timeout has passed. Starting is its own on chain step: the race stops taking joins and the contract requests randomness from an ORAO oracle.
 
-## 4. VRF resolution
+## 4. The randomness arrives
 
 ORAO publishes the seed back within seconds, in public. Anyone watching can run the same deterministic math the contract will run and know the winners before the visual race does. The backend holds the finalization transaction until the duration has elapsed, so the suspense survives.
 
 ## 5. Finalization
 
-Once the duration is up, the backend wallet submits finalization. The contract runs the simulation, ranks the ducks and moves the race to `Completed`. Winners can claim.
+Once the duration is up, the backend wallet submits finalization. The contract runs the simulation, ranks the ducks and marks the race completed. Winners can claim.
 
-Finalizing is permissionless the moment the duration has elapsed. The instruction takes no signer at all, so if the backend is unreachable, anyone can submit it and the race still settles. In practice the backend gets there first and nobody has to.
+Finalizing needs nobody's permission once the duration has elapsed, and no particular wallet either, so if the backend is unreachable anyone can submit it and the race still settles. In practice the backend gets there first and nobody has to.
 
 {% hint style="success" %}
 Claims work the same way. Anyone can submit a claim for a winner, and the money still goes to the winner, into their wallet or their player vault according to their own setting.
@@ -73,7 +73,7 @@ Claims work the same way. Anyone can submit a claim for a winner, and the money 
 
 ## 6. Cleanup
 
-The race account closes and its rent returns to the creator. If something went wrong on the way, such as an oracle timeout, the race moves to `Cancelled` instead and every participant can claim a full refund.
+The race account closes and its rent returns to the creator. If something went wrong on the way, such as the seed never arriving, the race is cancelled instead and every participant can claim a full refund.
 
 {% content-ref url="getting-started.md" %}
 [getting-started.md](getting-started.md)

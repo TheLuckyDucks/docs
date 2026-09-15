@@ -14,7 +14,7 @@ A per second play by play in an AI voice, generated as the race starts. It costs
 The narration names the ducks, the boosts in play and the standings. It never predicts the winner. Generating it can add up to 60 seconds after the lobby closes.
 
 {% hint style="info" %}
-**The race never waits indefinitely.** If the track is not ready, the race starts silently instead of holding the lobby, and the audio attaches when it finishes, which can be part way through or after the finish. Either way it is archived with the race, so a silent race is not a race whose audio is lost.
+**The race never waits indefinitely.** If the track is not ready, the race starts silently instead of holding the lobby, and the audio is added to the race when it finishes, which can be part way through or after the finish. Either way it is archived with the race, so a silent race is not a race whose audio is lost.
 {% endhint %}
 
 Any race size can have it, 1v1 and rematches included. On a rematch the proposer decides, whatever the finished race had.
@@ -69,7 +69,7 @@ Enabling it adds a slider for the minimum players to start with. It runs from th
 
 <figure><img src="../../.gitbook/assets/races/app-underfilled-slider-banner.png" alt="The start when underfilled slider set to 7 out of a 10 player race"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
 
-It also adds a small surcharge for the backend's auto start. That sits in the race vault and goes to the operator on auto start, or refunds with everything else if the race never runs.
+It also adds a small surcharge for the backend's auto start. That sits in the race vault and goes to the platform on auto start, or refunds with everything else if the race never runs.
 
 ## Sponsored race
 

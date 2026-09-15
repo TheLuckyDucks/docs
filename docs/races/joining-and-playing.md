@@ -43,7 +43,7 @@ Some races ask for more than the entry fee, and the modal spells out whatever ap
 
 ### NFT boost selection
 
-Hold any Boost NFTs and you can attach one, adding a small percentage to your duck's speed for that race. Boosts are never consumed, so the same one works in every race you join. See [Boost NFTs](../nfts/boosts.md).
+Hold any Boost NFTs and you can pick one, adding a small percentage to your duck's speed for that race. Boosts are never consumed, so the same one works in every race you join. See [Boost NFTs](../nfts/boosts.md).
 
 <figure><img src="../../.gitbook/assets/nfts/app-boost-picker-banner.png" alt="The boost picker in the join modal, each boost showing its percentage"><figcaption><p>One boost per race, and it is never consumed.</p></figcaption></figure>
 
@@ -52,6 +52,10 @@ Hold any Boost NFTs and you can attach one, adding a small percentage to your du
 Cosmetics change how your duck looks, picked from the cosmetic tab. Own none and your duck races in default plumage. They are visual only and change no outcome.
 
 <figure><img src="../../.gitbook/assets/nfts/app-cosmetic-picker-banner.png" alt="The cosmetics tab in the join modal with one skin selected and a preview of the duck"><figcaption><p>Visual only, and it changes nothing a race decides.</p></figcaption></figure>
+
+### Your Runner NFT
+
+Nothing to pick, and nothing to switch on. Joining never needs a Runner, and if you hold one the app reads it from your connected wallet by itself, which is what raises your [daily race allowance](daily-races.md). There is no control for it in the join modal because there is no choice to make. See [Runner NFTs](../nfts/runners.md).
 
 ## During the lobby
 
@@ -87,7 +91,7 @@ The modal gives way to the canvas, after a short loading screen if audio is stil
 
 ## After
 
-Finish first in WTA, or on the podium in Podium Split, and the claim button appears with your payout on it. Click to sign and the money arrives at once, in your wallet by default or in your player vault if you pool your winnings there.
+Finish first in Winner Takes All, or on the podium in Podium Split, and the claim button appears with your payout on it. Click to sign and the money arrives at once, in your wallet by default or in your player vault if you pool your winnings there.
 
 <figure><img src="../../.gitbook/assets/races/app-claim-prize-banner.png" alt="The post race screen with the payout amount on the claim button and the finishing order beside it"><figcaption><p>The button carries the amount. Where it lands is your own payout setting.</p></figcaption></figure>
 

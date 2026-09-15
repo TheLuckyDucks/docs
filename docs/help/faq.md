@@ -87,7 +87,7 @@ Yes, with a Runner NFT, which this gate always needs. Pick the NFT Holders join 
 
 ### My race never started. Where is my money?
 
-A race becomes refundable once the join timeout passes without enough players, or once the VRF timeout, about 3 minutes, passes with no seed from the oracle. Nothing fires by itself at that moment: the refund becomes possible and somebody has to submit it.
+A race becomes refundable once the join timeout passes without enough players, or once about 3 minutes pass with no seed from the oracle. Nothing fires by itself at that moment: the refund becomes possible and somebody has to submit it.
 
 Races the platform created are swept automatically. A race a player created is deliberately left for its creator or any participant to close, because the platform does not close a race somebody else paid for. Either way it shows up in the Unclaimed Items banner on your player page, and the button there clears it.
 
@@ -105,7 +105,7 @@ What a misused permission could do is spend your vault balance on races you did 
 
 ### What happens if the website is down?
 
-Your wallet still owns your funds. Claims, refunds and cancels are permissionless and can be submitted straight to the contract through any Solana RPC client. The website is a convenience over the chain, not an authority.
+Your wallet still owns your funds. Claims, refunds and cancels need nobody's permission and can be sent straight to the contract with any tool that reaches Solana. The website is a convenience over the chain, not an authority.
 
 ## Trust, and how it works underneath
 
@@ -119,21 +119,21 @@ Check it yourself. The seed came from an oracle account the platform does not ow
 
 Yes. Once ORAO publishes the seed the outcome is fixed, so re-running the contract's simulation on that seed and the participant list gives the ranking the canvas will show. Most players would rather watch.
 
-### Are races permissionless to start?
+### Can anyone start or finish a race?
 
-A lobby that fills triggers the next transition on its own. The start-when-underfilled path is permissionless: any wallet can submit the start transaction once the join timeout has passed and enough players are in. A backend worker does it on schedule, and anyone else can beat it there.
+A lobby that fills triggers the next transition on its own. The start-when-underfilled path needs no permission either: any wallet can submit the start transaction once the join timeout has passed and enough players are in. A backend worker does it on schedule, and anyone else can beat it there.
 
-Finalization is permissionless from the moment the race duration has elapsed. The backend wallet normally submits it, but the instruction takes no signer at all, so anyone can step in if the backend is unreachable.
+Finalizing needs nobody's permission from the moment the race duration has elapsed. The backend wallet normally submits it, but no particular wallet is required, so anyone can step in if the backend is unreachable.
 
 ### Why ORAO for the randomness, and not Switchboard or another VRF?
 
 Five reasons, and all of them matter more in a 30 second race than they would in a lending protocol that reads a price once an hour.
 
-**Latency, because the seed gates the race.** The race moves `Open` to `VRFPending` and then waits: no seed, no start, so the oracle's response time is the player's waiting time. ORAO typically fulfils within seconds and usually inside a minute even under load, which is what keeps a full lobby from sitting there. The contract puts a hard edge on that wait at the VRF timeout, around 3 minutes, after which the race can only be refunded.
+**Latency, because the seed gates the race.** The race stops taking joins and then waits: no seed, no start, so the oracle's response time is the player's waiting time. ORAO typically fulfils within seconds and usually inside a minute even under load, which is what keeps a full lobby from sitting there. The contract puts a hard edge on that wait at the VRF timeout, around 3 minutes, after which the race can only be refunded.
 
-**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the VRF cost is transferred into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. At around 0.00275 SOL that stays cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
+**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the oracle's cost is moved into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. At around 0.00275 SOL that stays cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
 
-**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account through a CPI to the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](../trust/verifying-a-race.md) walks that check.
+**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account by calling the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](../trust/verifying-a-race.md) walks that check.
 
 **Devnet parity, and a test suite that includes the oracle.** The same program and the same oracle run on devnet, and the local test suite clones the ORAO program so a race runs end to end, randomness included, before anything reaches mainnet. An oracle that only really exists on mainnet would mean shipping the riskiest step untested.
 

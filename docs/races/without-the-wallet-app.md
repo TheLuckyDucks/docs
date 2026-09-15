@@ -24,7 +24,7 @@ The first sign-in is always the wallet. Signing a message is the only thing that
 
 ### Link an account
 
-Verification attaches an off-platform identity to your wallet: X, Telegram, Facebook, whichever providers are enabled. From then on that account is a second way in. See [Player verification](../trust/verification.md).
+Verification links an off-platform identity to your wallet, through whichever providers the platform has enabled. From then on that account is a second way in. See [Player verification](../trust/verification.md).
 
 {% endstep %}
 
@@ -77,7 +77,7 @@ None of them is blocked, they simply ask your wallet, so topping up and withdraw
 
 ## If you lose access to the linked account
 
-Link a second one. Any account attached to your wallet signs you in, and none of them is the primary: verify with X, link Google later, and either will do. Only the first link costs an on-chain transaction.
+Link a second one. Any account linked to your wallet signs you in, and none of them is the primary: verify with X, link Google later, and either will do. Only the first link costs an on-chain transaction.
 
 {% hint style="success" %}
 Your wallet always works as a way in. A linked account sits on top of it and never replaces it, so losing every linked account costs you the convenience, not the account.

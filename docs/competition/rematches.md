@@ -36,8 +36,8 @@ The new race inherits the entry fee, duration, join setting, [no-boost mode](../
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **AI commentary**   | On or off regardless of what the finished race had, 1v1 included. You deposit the [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation) now |
 | **X announcement**  | Posts the rematch publicly. Flat 0.0005 SOL, non-refundable, paid now. See [X announcement](../races/advanced-options.md#x-announcement)                  |
-| **Your Track NFT**  | Pass one and the rematch uses it. Skip it and the rematch keeps whatever Track the last race had                                                          |
-| **Your Runner NFT** | Optional, and it lifts your daily ceiling from 50 races to 500. AI commentary needs a Runner anyway, so enabling audio means attaching one                |
+| **Your Track NFT**  | Pick one and the rematch uses it. Pick none and the rematch keeps whatever Track the last race had                                                        |
+| **Your Runner NFT** | Nothing to pick. The app uses the Runner in your wallet on its own, and it lifts your daily ceiling from 50 races to 500. AI commentary needs one anyway  |
 
 The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Duel #3".
 

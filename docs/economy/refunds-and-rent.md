@@ -58,13 +58,13 @@ A race that never reached its start condition expires and becomes refundable. An
 
 ### Other refund paths
 
-The contract records a cancellation reason on the race and emits it in the cancel event. Beyond a manual cancel, two reasons lead here:
+The race records why it was cancelled, and the app shows that reason on it. Beyond a manual cancel, two lead here:
 
-- **JoinTimeout.** The window passed without the race becoming startable, which is the expiry path above.
-- **StaleRandomness.** The oracle did not fulfil the VRF request inside the VRF timeout, about 3 minutes. Rare; the oracle is reliable.
+- **The join window passed** without the race becoming startable, which is the expiry path above.
+- **No seed arrived** inside the oracle's window, about 3 minutes. Rare; the oracle is reliable.
 
 {% hint style="info" %}
-Either way the refund is permissionless, and **it refunds the whole lobby in one transaction and closes the race**. There is no refunding yourself alone and no leaving the others behind, and the money reaches each original payer whoever paid for the transaction.
+Either way anyone at all can trigger the refund, and **it refunds the whole lobby in one transaction and closes the race**. There is no refunding yourself alone and no leaving the others behind, and the money reaches each original payer whoever paid for the transaction.
 {% endhint %}
 
 ### Who triggers it, and who pays for it
@@ -82,7 +82,7 @@ Triggering it yourself costs the network fee, and during a [delegated session](.
 
 ## Race account rent
 
-Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: roughly 0.0084 SOL for a 1v1, 0.012 SOL at 5 seats and 0.03 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns every lamport to the creator.
+Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: roughly 0.0084 SOL for a 1v1, 0.012 SOL at 5 seats and 0.03 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns all of it to the creator.
 
 Net cost of creating a race, then: oracle fee, archival fee and any opt in costs. The rent is a deposit, not a charge.
 
@@ -100,7 +100,7 @@ It is refundable too. The close button on the Player page returns everything in 
 
 Opting into start-when-underfilled deposits a small surcharge into the race vault at creation. Two outcomes:
 
-- **The race auto starts underfilled.** The surcharge goes to the backend authority for running that operation.
+- **The race auto starts underfilled.** The surcharge goes to the platform for starting the race for you.
 - **It fills naturally, cancels or refunds.** The surcharge stays in the vault and returns to the creator with everything else.
 
 ## Where the money lands

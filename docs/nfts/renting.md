@@ -53,7 +53,7 @@ Everything else is normal: no page to keep open, and no tie to a browser or devi
 ## The one rule: do not alter it
 
 {% hint style="danger" %}
-**Do not attach anything of your own to a rented NFT.** Playing cannot trigger this: racing with it and equipping it leave the item untouched. It means going to the NFT in a wallet or explorer and adding something, such as your own delegate or freeze.
+**Do not change the asset itself.** Playing cannot trigger this: racing with it and picking it in the app leave the item untouched. It means going to the NFT in your wallet or a block explorer and altering it there, such as approving another wallet to move it, or locking it.
 
 Do that and the rental ends on the spot. The item is taken back, the rest of the term with it, and there is no refund. You are told when it happens, and the ended rental says what was found on it.
 {% endhint %}

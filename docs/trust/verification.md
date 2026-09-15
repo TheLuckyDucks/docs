@@ -12,7 +12,7 @@ Every wallet has a player profile. Verification ties that wallet to an off-platf
 Anyone can set a **nickname** and an **avatar** on the Player page, verified or not, and both appear beside your wallet in lobbies, participant lists, leaderboards and team rosters.
 
 - **Nickname.** A short display name. Uniqueness is not enforced, so collisions are separated by the truncated wallet shown next to it.
-- **Avatar.** An image you upload. Without one you get a deterministic identicon derived from your address.
+- **Avatar.** An image you upload. Without one you get a pattern generated from your wallet address, the same one every time.
 
 Both live off chain on your profile and can change any time.
 
@@ -20,12 +20,9 @@ Both live off chain on your profile and can change any time.
 
 ## What gets verified
 
-OAuth2 verification with:
+An account with one of the providers the platform has enabled. X and Telegram are the ones most players use, and the Verification tab on the Player page is the live list, so what you see there is what is on offer.
 
-- **X**
-- **Telegram**
-
-Verifying sets a verified flag on the wallet and gives you access to that identity's display name and avatar, which you can adopt as your profile if you like.
+Verifying marks the wallet as verified and gives you access to that identity's display name and avatar, which you can adopt as your profile if you like.
 
 {% columns %}
 {% column width="70%" %}
@@ -49,7 +46,7 @@ After your first race. A brand new wallet cannot verify: the providers are liste
 
 There is no deadline. Once you qualify you can verify whenever, or never.
 
-It is a one-time off-chain OAuth flow: you authorise the provider, the backend confirms the grant, and your wallet's `verified` flag flips. The flag lives on your profile and shows beside your nickname in lobbies, leaderboards and rosters.
+It happens once, off chain: you authorise the provider, the platform confirms it, and your wallet is marked verified from then on. The mark lives on your profile and shows beside your nickname in lobbies, leaderboards and rosters.
 
 ## What verification unlocks
 
@@ -83,7 +80,7 @@ It is off by default, and you toggle it from the Player page once Telegram-verif
 
 ## Privacy
 
-The platform stores only what it needs: a stable identifier from the provider, your display name and your avatar URL. It never receives your email, phone number, refresh tokens or any other personal data, and the grant covers only the scopes needed to confirm you control the account.
+The platform stores only what it needs: a stable identifier from the provider, your display name and your avatar image. It never receives your email, phone number or any other personal data, and the permission you give covers only what confirms you control the account.
 
 {% hint style="danger" %}
 Verification is one-way. There is no unverify: nothing on the platform, and no instruction in the program, sets the flag back. Link an account deliberately rather than to try it out.
@@ -91,7 +88,7 @@ Verification is one-way. There is no unverify: nothing on the platform, and no i
 
 ## Multiple providers per wallet
 
-You can verify with several providers at once, X, Telegram and Facebook together, and the platform shows whichever identity you make primary. Future events may reward being verified across several, but the flag itself is binary.
+You can verify with several providers at once, and the platform shows whichever identity you make primary. Future events may reward being verified across several, but the flag itself is binary.
 
 **Any linked account signs you in, and none of them is the primary for that.** Verify with X, link Google later, and either will do. That is the practical reason to link a second: lose access to the first and the second is still a way back into your wallet without your wallet app. Only the first link costs an on-chain transaction.
 

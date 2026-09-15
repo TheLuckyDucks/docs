@@ -36,7 +36,7 @@ The penalty is there to keep cancelling deliberate. Joiners committed real funds
 
 ## When a race expires
 
-A race that never filled or started can be refunded once the window passes, and triggering that is permissionless: anyone can, not only the creator.
+A race that never filled or started can be refunded once the window passes, and anyone at all can trigger that, not only the creator.
 
 - Every player gets their full entry back.
 - Hosted and never joined? There is no entry to refund you, but the leftovers from setting the race up, the rent and any unused opt in costs, still come back.
@@ -46,11 +46,11 @@ A race nobody joined just closes. No penalty, no fanfare.
 
 ## Quick comparison
 
-| Situation                                  | Who triggers           | Player refund                     | Creator penalty                     |
-| ------------------------------------------ | ---------------------- | --------------------------------- | ----------------------------------- |
-| Withdraw during lobby                      | The player themselves  | Entry minus 0.01 SOL flat penalty | Not applicable (creator unaffected) |
-| Creator cancels during lobby               | Creator only           | Full entry returned               | 0.05 SOL flat                       |
-| Race expires (join window passes unfilled) | Anyone, permissionless | Full entry returned               | None                                |
+| Situation                                  | Who triggers          | Player refund                     | Creator penalty                     |
+| ------------------------------------------ | --------------------- | --------------------------------- | ----------------------------------- |
+| Withdraw during lobby                      | The player themselves | Entry minus 0.01 SOL flat penalty | Not applicable (creator unaffected) |
+| Creator cancels during lobby               | Creator only          | Full entry returned               | 0.05 SOL flat                       |
+| Race expires (join window passes unfilled) | Anyone at all         | Full entry returned               | None                                |
 
 For the rest of the money flow, rent, surcharges and where pending refunds appear, see [Refunds and rent](../economy/refunds-and-rent.md).
 

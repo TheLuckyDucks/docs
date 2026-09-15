@@ -25,7 +25,7 @@ Your entry fee moves entirely into the race vault. At race end the vault pays th
 The transaction you sign also covers:
 
 - **Network fee.** Roughly 0.000005 SOL per signed transaction, Solana's standard.
-- **No platform-side ATA rent** on a SOL race. A token race may need a one-time Associated Token Account if you have none for that mint.
+- **Nothing extra on a SOL race.** A token race may need a one-time token account for that token, if your wallet has none. It costs about 0.002 SOL and comes back when you close it.
 
 ## Paying from your wallet or your vault
 
@@ -63,7 +63,7 @@ Worked example: a race with a 0.1 SOL entry fee and 10 players. Entry fee falls 
 For a sponsored race, the sponsor's deposit is what the tier is picked against (there is no per player entry fee). A 1 SOL sponsored prize sits in the 3% tier, so the platform takes 0.03 SOL at claim and winners share 0.97 SOL.
 {% endhint %}
 
-Token pools use the same percentages with thresholds adjusted to that token's denomination. The full schedule is in `/config` under `race.feeTiers`, and per token under `splTokens[].feeTiers`.
+Token pools use the same percentages, with the thresholds adjusted to what that token is worth.
 
 ## Prize pool calculation
 
@@ -89,11 +89,11 @@ With no price available you see the amount and no dollar figure. A blank means t
 
 The creator pays a few small costs at creation, separate from the pool:
 
-- **Oracle fee** (~0.00275 SOL), to ORAO for the VRF request.
-- **Archival fee** (~0.0001 SOL), to the IPFS archival worker.
+- **Oracle fee** (~0.00275 SOL), paid to ORAO for the race's seed.
+- **Archival fee** (~0.0001 SOL), for keeping a permanent public copy of the finished race.
 - **Audio cost**, with AI commentary on: about 0.00005 SOL per race second, so roughly 0.0015 SOL for 30 seconds and 0.009 SOL for 3 minutes.
 - **X announcement**, if enabled: flat 0.0005 SOL straight to the backend wallet, non-refundable.
-- **Start-when-underfilled cost**, if opted in: paid to the backend authority on auto start, refunded if the race never auto starts.
+- **Start-when-underfilled cost**, if opted in: paid to the platform when it starts the race for you, refunded if the race never auto starts.
 - **Race account rent.** Around 0.012 SOL for a 5 seat lobby, scaling with the seats: roughly 0.0084 SOL for a 1v1 and 0.03 SOL at 20. Refunded in full when the race closes.
 
 All of them are itemised in the cost box before you sign.

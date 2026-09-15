@@ -58,7 +58,7 @@ A tie is broken by which team was created first, then by a fixed seed. No shared
 
 The platform funds the pot when it creates the tournament, in SOL or a [supported token](../economy/spl-tokens.md), and nothing is added later.
 
-The **winning team takes all of it**, split equally between its members. No second or third place. A pot that will not divide exactly leaves a few lamports over, and the first winner in the list gets them.
+The **winning team takes all of it**, split equally between its members. No second or third place. A pot that will not divide exactly leaves a tiny remainder, and the first winner in the list gets it.
 
 A platform fee comes off the pot before the split, set per tournament and never above 10 percent.
 
