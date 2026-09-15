@@ -142,6 +142,23 @@ commands are the whole procedure.
 
 ## How to capture
 
+`npm run capture` takes some of these off the live site for you, driving a
+Chrome you started with `--remote-debugging-port=9222`. `npm run capture --
+--list` says which. It only ever overwrites a file `npm run assets` has
+already made, so the two commands keep owning which files exist.
+
+**It reaches far less than half of this list, and the reason is the product,
+not the script.** Create Race is disabled for a guest and the player page
+redirects one away, so every control banner on the create form and every
+panel on the player page needs a signed-in tab: `--session` drives one you
+have connected by hand. The tournament page renders nothing at all while no
+tournament is running.
+
+**A live capture carries other players.** The activity ticker names whoever
+last created or won, and a lobby shows the avatars of whoever is in it, so
+the identity rule below is the one an automated shot breaks first. Crop them
+out, or capture from a quiet moment, before a shot goes on a page.
+
 - **One component, not a browser.** Crop to the panel, modal, card or row the
   caption is about. No window chrome, no address bar, no operating system dock.
 - **Desktop at a desktop width, phone at ~390 logical px.** Capture at 2x pixel

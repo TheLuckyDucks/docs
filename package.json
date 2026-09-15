@@ -6,10 +6,12 @@
   "scripts": {
     "check": "node scripts/check-pages.mjs",
     "assets": "node scripts/sync-assets.mjs",
+    "capture": "node scripts/capture-shots.mjs",
     "format": "prettier --write \"**/*.md\" package.json scripts/*.mjs",
     "format:check": "prettier --check \"**/*.md\" package.json scripts/*.mjs"
   },
   "devDependencies": {
+    "playwright-core": "^1.63.0",
     "prettier": "^3.0.0",
     "yaml": "^2.0.0"
   }

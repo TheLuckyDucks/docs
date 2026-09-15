@@ -10,8 +10,9 @@ a GitBook space backed by this repository: markdown, one file per page,
 `SUMMARY.md` as the sidebar.
 
 **The pages are the product. The only code here is tooling**: a structural
-checker, `scripts/check-pages.mjs`, run by `npm run check`, and an asset
-synchroniser, `scripts/sync-assets.mjs`, run by `npm run assets`. The checker
+checker, `scripts/check-pages.mjs`, run by `npm run check`, an asset
+synchroniser, `scripts/sync-assets.mjs`, run by `npm run assets`, and a
+screenshot capturer, `scripts/capture-shots.mjs`, run by `npm run capture`. The checker
 verifies shape and cannot verify a fact: front matter parses, blocks balance, links and anchors
 resolve, images exist and are paired, `SUMMARY.md` is complete. **Nothing
 verifies a claim on a page**, so the only thing standing between a reader and a
@@ -78,7 +79,7 @@ Tooling, agent docs and this file sit outside it and cannot surface as a page.
 | `docs/help/`         | FAQ, glossary, Telegram bot, social links                                    |
 | `.gitbook/assets/`   | Every image, in one folder per section. **Repository root, not `docs/`**     |
 | `.gitbook.yaml`      | GitBook config: the content root, readme and summary locations               |
-| `scripts/`           | `check-pages.mjs` and `sync-assets.mjs`. The only code in the repository     |
+| `scripts/`           | `check-pages.mjs`, `sync-assets.mjs`, `capture-shots.mjs`. The only code     |
 | `package.json`       | Tooling only: `prettier` and `yaml`. Nothing here is published               |
 | `IMPORTING.md`       | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
 
@@ -113,6 +114,14 @@ wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$P
 - **`npm run assets`** builds a labelled placeholder for any image a page
   references but the repository lacks, and lists any asset nothing references.
   `npm run assets -- --prune` deletes those. It needs ffmpeg, which WSL has.
+- **`npm run capture`** takes real screenshots off the live site into
+  `.gitbook/assets/`, driving a Chrome you started with
+  `--remote-debugging-port=9222`. It never creates a file, only overwrites one
+  `npm run assets` already made, so the referenced-and-on-disk invariant stays
+  with those two. `npm run capture -- --list` says what it knows how to take.
+  On this host it needs `networkingMode=mirrored` in `.wslconfig`, because
+  Chrome binds its debug port to loopback and WSL is otherwise a separate
+  network.
 - **`npm run format`** is prettier over every `.md`, which owns the formatting.
   `npm run format:check` is the read-only half.
 
