@@ -81,7 +81,19 @@ All off by default, and most need a Runner NFT.
 - **Join setting**. Open by default. Verified Only and Token Holders gate a race without a Runner; NFT Holders and Allowed Players, an invite list of up to 20 wallets, both need one. See [Race access and gating](access-and-gating.md).
 - **Minimum account age**. Keeps fresh wallets out by requiring a player account of a certain age, 24 hours when enabled. See [Advanced options](advanced-options.md#minimum-account-age).
 
-<figure><img src="../../.gitbook/assets/races/app-create-race-opt-ins-banner.png" alt="The stack of opt in cards on the create form, every toggle off, the gated ones carrying a Runner NFT chip"><figcaption><p>Every opt in starts off, and the ones that need a Runner carry the chip that says so.</p></figcaption></figure>
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../../.gitbook/assets/races/app-create-race-opt-ins-desktop.png" alt="The opt in cards on the create form, every toggle off, the gated ones carrying a Runner NFT chip"><figcaption><p>Every opt in starts off, and the ones that need a Runner carry the chip that says so.</p></figcaption></figure>
+
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../../.gitbook/assets/races/app-create-race-opt-ins-mobile.png" alt="The opt in cards on the create form, every toggle off, the gated ones carrying a Runner NFT chip, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
+{% endcolumn %}
+{% endcolumns %}
 
 ## Sign and submit
 
