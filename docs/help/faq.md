@@ -13,7 +13,7 @@ Nothing below this heading assumes you know anything about crypto.
 
 ### Is this a real game or a casino?
 
-A game with on-chain stakes. Skill matters less than in a competitive game, since the outcome is random once boosts are equipped, but there is no house edge: the platform fee comes off the prize pool and the rest goes to players. Spend more on entry fees than you win back and you are losing to other players, not to the platform.
+A game with on-chain stakes. The result of a race is random, so nothing you do during one changes it, but there is no house edge: the platform fee comes off the prize pool and the rest goes to players. Spend more on entry fees than you win back and you are losing to other players, not to the platform.
 
 ### Can I lose more than my entry fee?
 
