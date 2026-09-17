@@ -161,9 +161,10 @@ out, or capture from a quiet moment, before a shot goes on a page.
 
 - **One component, not a browser.** Crop to the panel, modal, card or row the
   caption is about. No window chrome, no address bar, no operating system dock.
-- **Desktop at a desktop width, phone at ~390 logical px.** Capture at 2x pixel
-  ratio and let GitBook scale down. Crop the phone shot to the component too: a
-  full device screen sits in a 30% column and nothing in it will be legible.
+- **Desktop at a desktop width, phone in a fixed 390x640 frame.** Capture at 2x
+  pixel ratio and let GitBook scale down, so every phone file is 780x1280. The
+  phone shot is the whole frame, never a crop to its component: a crop gives
+  every phone half a different shape, and they sit side by side down a page.
 - **The app's own dark theme, both times.** The published site renders in the
   reader's theme, but these are pictures of a dark product, and mixing light and
   dark captures across a pair looks like a bug.

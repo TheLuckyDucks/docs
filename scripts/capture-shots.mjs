@@ -57,13 +57,20 @@ const ONLY = (arg("--only", "") || "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-/** Desktop and phone, both at 2x, which is the ratio the shot list asks for. */
+/**
+ * Desktop and phone, both at 2x, which is the ratio the shot list asks for.
+ *
+ * The phone is a FIXED 390x640 frame, and every phone shot is that whole frame
+ * rather than a crop of its element, so each phone half of a pair comes out
+ * 780x1280 and they all sit the same size in their 30% column. A crop to the
+ * element made every phone shot a different shape.
+ */
 const DESKTOP = {
   viewport: { width: 1440, height: 900 },
   deviceScaleFactor: 2,
 };
 const PHONE = {
-  viewport: { width: 390, height: 844 },
+  viewport: { width: 390, height: 640 },
   deviceScaleFactor: 2,
   isMobile: true,
   hasTouch: true,
@@ -314,7 +321,11 @@ const targetsFor = (shot) => {
   return shot.kind === "pair"
     ? [
         { file: join(dir, shot.stem + "-desktop.png"), device: desktop },
-        { file: join(dir, shot.stem + "-mobile.png"), device: PHONE },
+        {
+          file: join(dir, shot.stem + "-mobile.png"),
+          device: PHONE,
+          phone: true,
+        },
       ]
     : [{ file: join(dir, shot.stem + "-banner.png"), device: desktop }];
 };
@@ -413,7 +424,7 @@ const noCache = async (page) => {
   await cdp.send("Network.setCacheDisabled", { cacheDisabled: true });
 };
 
-const shoot = async (page, shot, file) => {
+const shoot = async (page, shot, file, phone = false) => {
   await noCache(page).catch(() => {});
   // `--race` deep-links a race you chose, instead of taking whichever card is
   // at the top of a live list. The app routes /app/races/<id> to that race's
@@ -429,7 +440,8 @@ const shoot = async (page, shot, file) => {
   await el.waitFor({ state: "visible", timeout: 20000 });
   // A viewport shot wants the top of the page, the filter bar and all. Pulling
   // the target into view instead starts the crop half way down the first card.
-  if (shot.clip === "viewport") {
+  const frame = phone || shot.clip === "viewport";
+  if (frame) {
     await page.evaluate(() => window.scrollTo(0, 0));
   } else {
     await el.scrollIntoViewIfNeeded().catch(() => {});
@@ -439,21 +451,20 @@ const shoot = async (page, shot, file) => {
   // A modal or a control wants its own bounds. A list does NOT: clipping a
   // scroll container to its element gives every row it holds, which came out
   // as a 9952px tall phone shot. Those want what fits on a screen instead.
-  const png =
-    shot.clip === "viewport"
-      ? await page.screenshot({ timeout: 20000 })
-      : await page.screenshot({ clip: await bounds(page, el), timeout: 20000 });
+  const png = frame
+    ? await page.screenshot({ timeout: 20000 })
+    : await page.screenshot({ clip: await bounds(page, el), timeout: 20000 });
   writeFileSync(file, png);
 };
 
 /** Guest runs get a clean context each time, so no state leaks between shots. */
 const captureGuest = async (browser, shot) => {
   const files = [];
-  for (const { file, device } of targetsFor(shot)) {
+  for (const { file, device, phone } of targetsFor(shot)) {
     refuseIfAbsent(file);
     const context = await browser.newContext(device);
     try {
-      await shoot(await context.newPage(), shot, file);
+      await shoot(await context.newPage(), shot, file, phone);
       files.push(file);
     } finally {
       await context.close();
