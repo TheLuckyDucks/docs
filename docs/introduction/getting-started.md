@@ -71,7 +71,7 @@ Once you are racing regularly, pre-fund a balance and let Lucky Ducks sign your 
 
 ## Optional: verify
 
-After your first race you can link an account with X, Telegram, Facebook or another supported provider. Verified players get a checkmark and can enter races reserved for verified wallets.
+After your first race you can link an account with X, Telegram, Facebook or another supported provider. Verified players get a green dot on their avatar and can enter races reserved for verified wallets.
 
 Two reasons to do it early, beyond the badge: a linked account signs you in without opening your wallet app, and it is required before you can turn on [playing without signing every action](../races/delegated-play.md). See [Player verification](../trust/verification.md).
 

@@ -12,13 +12,13 @@ The reward belongs to the matching regular collection, [Cosmetics](cosmetics.md)
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-desktop.png" alt="The three Mystery Box types in the marketplace, each with its price and remaining supply"><figcaption><p>You choose the box type. What is inside is drawn at random.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-desktop.png" alt="A Mystery Box leading its section of the marketplace, with its price and remaining supply"><figcaption><p>You choose the box type. What is inside is drawn at random.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-mobile.png" alt="The three Mystery Box types in the marketplace, each with its price and remaining supply, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-mystery-box-types-mobile.png" alt="A Mystery Box leading its section of the marketplace, with its price and remaining supply, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}
@@ -42,7 +42,7 @@ The reward is picked at open time against weights the team configures, so rarer 
 
 ### Mint a box
 
-Pick a type in the marketplace and mint it like any other NFT. You pay the price and a sealed box lands in your wallet.
+Open the marketplace section you want, Ducks, Boosts or Tracks, and mint the box it leads with, like any other NFT. You pay the price and a sealed box lands in your wallet.
 
 {% endstep %}
 

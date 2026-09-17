@@ -61,7 +61,7 @@ A non-Solana wallet linked to your profile so the platform can read its NFT hold
 
 ### Minimum account age
 
-A creator chosen condition limiting a race to wallets whose player account is at least a certain age, 24 hours by default. Needs a Runner NFT at creation, and stacks on any join setting.
+A creator chosen condition limiting a race to wallets whose player account is at least a certain age, set anywhere from 5 minutes to 6 months. Needs a Runner NFT at creation, and stacks on any join setting.
 
 ### Mystery Box
 
@@ -133,7 +133,7 @@ The platform's fee wallet. Receives the platform fee out of every finalized priz
 
 ### Verified
 
-A wallet that has linked an off-platform identity, such as X or Telegram, through whichever providers the platform has enabled. It carries a checkmark, can enter races reserved for verified players, signs you in without your wallet app, and is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
+A wallet that has linked an off-platform identity, such as X or Telegram, through whichever providers the platform has enabled. It carries a green dot on its avatar, can enter races reserved for verified players, signs you in without your wallet app, and is what [delegation](#delegation) requires. See [Player verification](../trust/verification.md).
 
 ### VRF (Verifiable Random Function)
 

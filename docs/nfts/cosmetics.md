@@ -1,6 +1,6 @@
 ---
 icon: shirt
-description: Wearable duck skins. What they change, how to equip one for a race, and how to set one as your avatar.
+description: Wearable duck skins. What they change, how to equip one for a race, and how they relate to your avatar.
 ---
 
 # Cosmetic NFTs
@@ -14,7 +14,6 @@ Wearable duck skins. A Cosmetic, sometimes called a Duck by the team, changes ho
 - The palette of the body, beak and accessories
 - Themed outfits: astronaut, pirate, royal and more
 - Pattern overlays: camo, gradient, animated
-- Your avatar on the lobby and player pages, if you set the cosmetic as your default
 
 ## How they apply
 
@@ -42,6 +41,6 @@ The collection carries the Royalties plugin at a rate of zero, so selling a cosm
 
 ## Setting an avatar
 
-You can also pick a cosmetic as your platform avatar from the Player page, and its image then appears next to your nickname everywhere: lobbies, chat, leaderboard, team rosters. That is a separate choice from the one you make for a race.
+Your platform avatar is a separate thing: an image you upload. On the Player page, tap the pencil beside your nickname, then tap or drop an image on your avatar, and save. A picture of a cosmetic you own works as well as any other, and it appears next to your nickname everywhere: lobbies, chat, leaderboard, team rosters. Owning a cosmetic never sets it for you, and the one your duck wears in a race is chosen on its own.
 
-<figure><img src="../../.gitbook/assets/nfts/app-avatar-cosmetic-setting-banner.png" alt="The avatar picker on the Player page with a cosmetic chosen as the platform avatar"><figcaption><p>Your race skin and your platform avatar are two separate choices.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/app-nickname-avatar-fields-banner.png" alt="The Player page header in edit mode, with the avatar you tap or drop an image on beside the nickname field"><figcaption><p>Your avatar is an image you upload. The skin your duck races in is chosen separately.</p></figcaption></figure>

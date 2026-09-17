@@ -49,17 +49,17 @@ ORAO VRF program      VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y
 {% endcode %}
 
 - **The program**, above. Every race account is derived under it. ORAO's is the third-party randomness oracle, and the VRF step comes back to it.
-- **An explorer.** Solscan or SolanaFM for reading account contents, since Solana Explorer renders Anchor 0.30+ IDLs poorly:
+- **An explorer.** Solana Explorer decodes a race account on its Anchor Data tab, and the steps below follow it. Solscan and SolanaFM show the same accounts:
+  - Solana Explorer: `https://explorer.solana.com/address/<address>`
   - Solscan: `https://solscan.io/account/<address>`
   - SolanaFM: `https://solana.fm/address/<address>`
-  - Solana Explorer: `https://explorer.solana.com/address/<address>`
 - **The race ID**, a sequential number visible in the app and in the race URL. It is what makes a race's accounts predictable: know the ID and you can derive every account the race uses.
 
 ## Step 0; Verify the program itself is legitimate
 
-One-time, not per race: you are checking that the deployed program matches the open source and has not been quietly replaced. Open the program address on Solscan and read three fields.
+One-time, not per race: you are checking that the deployed program matches the open source and has not been quietly replaced. Open the program address on Solana Explorer and read three rows.
 
-**Owner** should be `BPFLoaderUpgradeab1e11111111111111111111111`, the Solana upgradeable loader that every standard upgradeable program shows. Anything else is wrong.
+**Upgradeable** should read Yes, which means the program runs under `BPFLoaderUpgradeab1e11111111111111111111111`, the Solana upgradeable loader every standard upgradeable program uses. Anything else is wrong.
 
 **Upgrade authority** is whoever can deploy a new version. Healthy is either an address the team has published or `None`, which locks the program at this version. An anonymous authority matching no disclosed wallet is a yellow flag, because that wallet could push a malicious update.
 
@@ -79,7 +79,7 @@ One-time, not per race: you are checking that the deployed program matches the o
 {% endcolumn %}
 {% endcolumns %}
 
-For the strongest check, reproduce the published build hash locally with `solana-verify`, which confirms the on-chain bytes match the public source.
+For the strongest check, reproduce the published build hash locally with `solana-verify`, which confirms the on-chain bytes match the public source. The explorer's **Verified Build** row only says whether anyone has registered such a build with it: **Program Not Verified** means none is registered there, not that the bytes differ, so this check is the one that settles it.
 
 ## Verifying one race, step by step
 
@@ -106,7 +106,7 @@ flowchart TD
 
 Every race lives at a Program Derived Address anyone can compute from the race ID, so the program cannot lie about where a race lives. The derivation is `[b"race", platform_config_pubkey, race_id_as_u64_le]`, and you need not compute it by hand: the **Addresses** panel on the race lists it, and an explorer search by ID surfaces it too.
 
-Open the PDA and read the decoded fields on the "Data" or "Anchor" tab:
+Open the PDA and read the decoded fields on the **Anchor Data** tab, which writes each name in title case, **Race Id** for `race_id`:
 
 - **creator**: the wallet that started the race
 - **race_id**: matches the ID you searched
@@ -188,7 +188,7 @@ Find `finalize_race` in the history and check three things: the logs include `Ra
 
 Selection is deterministic. Given the seed and the player list, boosts included, exactly one winner or podium is correct, and the algorithm is published in the program's source, so you can recompute it yourself and compare against `winners`. Winner Takes All lists 1 wallet; podium lists 3, in order.
 
-A mismatch between `winners[0]` and what the algorithm produces would mean a broken program, which cannot happen while the algorithm runs on chain inside a program with a public, verified hash.
+A mismatch between `winners[0]` and what the algorithm produces would mean a broken program, and recomputing it yourself from the published source is what would catch one.
 
 ## Step 6; Verify the payout
 
@@ -203,13 +203,13 @@ The balance changes on that one transaction are the whole proof:
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/trust/explorer-claim-prize-balances-desktop.png" alt="The balance changes tab of a claim transaction, showing the vault emptying, the winner credited and the fee wallet credited"><figcaption><p>One transaction: vault out, winner in, fee wallet in.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/explorer-claim-prize-balances-desktop.png" alt="The accounts table of a claim transaction on Solana Explorer, its SOL change column showing the vault emptying, the winner credited and the fee wallet credited"><figcaption><p>One transaction: vault out, winner in, fee wallet in.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/trust/explorer-claim-prize-balances-mobile.png" alt="The balance changes tab of a claim transaction, showing the vault emptying, the winner credited and the fee wallet credited, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/explorer-claim-prize-balances-mobile.png" alt="The accounts table of a claim transaction on Solana Explorer, its SOL change column showing the vault emptying, the winner credited and the fee wallet credited, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}
@@ -237,7 +237,7 @@ A token race works the same way with SPL transfers instead of SOL. Legacy SPL To
 Say you played race #142 and won 9.5 SOL:
 
 1. Look up race #142 in the app and copy the race address, or derive the PDA.
-2. Open it on Solscan and confirm `winners[0]` is your wallet.
+2. Open it on the Anchor Data tab and confirm `winners[0]` is your wallet.
 3. Click through to `randomness_account` and confirm ORAO's program owns it.
 4. Compare `vrf_seed` on the race with the bytes in the ORAO account. They match.
 5. Find `claim_prize` and confirm 9.5 SOL went from the vault to you, 0.5 SOL to the fee wallet (5% of a 10 SOL pool at the 5% tier), the vault is near zero and the race account is closed.

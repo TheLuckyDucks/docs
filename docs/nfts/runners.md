@@ -7,7 +7,7 @@ description: The access pass collection. What holding one unlocks when you creat
 
 The access pass. A Runner in your wallet unlocks the advanced race creation features, and nothing else about how you race.
 
-<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-banner.png" alt="A Runner NFT shown in the marketplace with its traits listed beside it"><figcaption><p>It only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/nft-runner-example-banner.png" alt="The Runner tier in the marketplace with its price, minted count and Mint and Rent buttons"><figcaption><p>It only has to be in the creating wallet at the moment the race is created.</p></figcaption></figure>
 
 ## What it unlocks
 

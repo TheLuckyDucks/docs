@@ -67,9 +67,9 @@ Cancelling while your opponent can still accept costs the same fixed **0.01 SOL*
 
 ## Rematch chains
 
-A rematch can be rematched, up to the platform's maximum chain depth. Each card shows its place as "Rematch X of Y", so the room left is always visible, and a chain keeps the windows the first race was created with.
+A rematch can be rematched, up to the platform's maximum chain depth. Each card carries a Rematch #N badge saying how far down the chain it is, and a chain keeps the windows the first race was created with.
 
-<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-banner.png" alt="A race card showing a Rematch 3 of 10 indicator"><figcaption><p>How far down the chain this race is, and how much room is left.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-banner.png" alt="A race card carrying a Rematch #1 badge beside its race number"><figcaption><p>How far down the chain this race is.</p></figcaption></figure>
 
 No-boost mode is inherited all the way down, so a rematch cannot sneak boosts back into a level match.
 

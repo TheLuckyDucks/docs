@@ -89,7 +89,7 @@ Revoking delegated play is always available. It needs no verification, it works 
 
 Signing in with your wallet is always available too, whatever you have linked. Nothing here can lock you out of your own wallet.
 
-<figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The revoke control in the delegated signing panel, with the duration set to zero"><figcaption><p>Always available, whatever the rest of your account looks like.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The Revoke button in the delegated signing panel while a grant is live"><figcaption><p>Always available, whatever the rest of your account looks like.</p></figcaption></figure>
 
 {% content-ref url="delegated-play.md" %}
 [delegated-play.md](delegated-play.md)

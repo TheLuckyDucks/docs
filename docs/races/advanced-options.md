@@ -85,7 +85,7 @@ The form also decides who may enter: Open, Verified Only, Allowed Players, NFT H
 
 ## Minimum account age
 
-Requires a joiner's player account to be at least a certain age, off by default and **24 hours** when switched on.
+Requires a joiner's player account to be at least a certain age. It is off by default, and the slider sets anything from **5 minutes** to **6 months**.
 
 - A joining wallet needs an existing player account, old enough, or the join is rejected.
 - An account created during the join transaction counts as zero seconds old, which makes this a cheap barrier against wallets spun up for one race.
@@ -97,7 +97,7 @@ Worth knowing:
 - Your own auto join faces the same check. Too new and you wait, lower the threshold, or use host mode to create without joining. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 - Unsure whether your wallet qualifies? The join screen tells you before you sign.
 
-<figure><img src="../../.gitbook/assets/races/app-minimum-account-age-toggle-banner.png" alt="The minimum account age toggle on the create form showing the 24 hour value"><figcaption><p>Off by default, and 24 hours the moment you switch it on.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-minimum-account-age-toggle-banner.png" alt="The minimum account age slider on the create form, set to 12 hours"><figcaption><p>Off by default. Slide it anywhere from 5 minutes to 6 months.</p></figcaption></figure>
 
 ## Combining options
 

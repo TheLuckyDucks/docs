@@ -74,7 +74,7 @@ together, and makes an orphan obvious.
 
 An asset used by two pages lives in the folder of the page that owns the
 subject, and the other page reaches it by relative path.
-Ten do: the cost breakdown and nine control banners, since one banner per control
+Eleven do: the cost breakdown and ten control banners, since one banner per control
 means a control documented on two pages is referenced twice rather than captured
 twice. The Pages column below names both pages each time.
 
@@ -219,7 +219,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | ----------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `app-create-race-form`                          | `races/creating-a-race.md`                                    | Top of the create form: entry fee, max players, duration, mode    |
 | `app-create-race-cost-breakdown` **(banner)**   | `races/creating-a-race.md`, `economy/fees-and-prizes.md`      | The itemised cost box, rent line visible                          |
-| `app-race-detail-modal`                         | `races/joining-and-playing.md`                                | The detail modal with participants, boost and cosmetic tabs       |
+| `app-race-detail-modal`                         | `races/joining-and-playing.md`                                | A joined race's modal: pool, seats, fee, duration                 |
 | `app-claim-prize` **(banner)**                  | `races/joining-and-playing.md`                                | The claim button with the payout on it, finishing order beside it |
 | `app-login-linked-account`                      | `races/without-the-wallet-app.md`                             | The login screen offering a linked account next to connect wallet |
 | `app-delegated-signing-panel` **(banner)**      | `races/delegated-play.md`                                     | The delegated signing panel: duration, expiry, revoke             |
@@ -240,33 +240,32 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-join-timeout-field` **(banner)**           | `races/advanced-options.md`                                   | The join timeout field set to a short window                      |
 | `app-custom-track-picker` **(banner)**          | `races/advanced-options.md`, `nfts/tracks.md`                 | The track picker: the four built in tracks and one Track NFT      |
 | `app-sponsored-race-toggle` **(banner)**        | `races/advanced-options.md`                                   | The sponsored toggle with the prize amount field open             |
-| `app-minimum-account-age-toggle` **(banner)**   | `races/advanced-options.md`                                   | The account age toggle showing its 24 hour value                  |
+| `app-minimum-account-age-toggle` **(banner)**   | `races/advanced-options.md`                                   | The account age slider, set between 5 minutes and 6 months        |
 | `app-nft-gate-fields` **(banner)**              | `races/access-and-gating.md`                                  | The NFT Holders gate: collection field and minimum count          |
 | `app-token-gate-fields` **(banner)**            | `races/access-and-gating.md`                                  | The Token Holders gate: mint field and minimum amount             |
 | `app-allowed-players-list` **(banner)**         | `races/access-and-gating.md`                                  | The invite list with several wallets in it and the counter        |
 | `app-host-mode-toggle` **(banner)**             | `races/hosting-and-cancelling.md`                             | The host without playing toggle, unavailable on a 1v1             |
 | `app-withdraw-button` **(banner)**              | `races/joining-and-playing.md`, `economy/refunds-and-rent.md` | The withdraw button with the time left on it                      |
 | `app-lobby-participants`                        | `races/joining-and-playing.md`                                | The race modal part filled: avatars, nicknames, NFT badges        |
-| `app-delegation-duration-selector` **(banner)** | `races/delegated-play.md`                                     | The duration selector, options up to 30 days                      |
-| `app-delegation-revoke` **(banner)**            | `races/delegated-play.md`, `races/without-the-wallet-app.md`  | The revoke control with the duration set to zero                  |
+| `app-delegation-duration-selector` **(banner)** | `races/delegated-play.md`                                     | The duration list open: 1, 7 and 30 days                          |
+| `app-delegation-revoke` **(banner)**            | `races/delegated-play.md`, `races/without-the-wallet-app.md`  | The Revoke button, shown while a grant is live                    |
 
 ## nfts/
 
-| Shot                                         | Page                                                | Shows                                                          |
-| -------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------- |
-| `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                         |
-| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The create form with gated options dimmed, each with the chip  |
-| `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | One Runner in the marketplace with its traits beside it        |
-| `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage   |
-| `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges        |
-| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A race card with the crossed-out circle marker                 |
-| `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview  |
-| `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | The three box types with price and remaining supply            |
-| `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active          |
-| `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Buy                                    |
-| `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider with shortcut marks and the total on the button |
-| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | A picker tile carrying the RENTED ribbon                       |
-| `app-avatar-cosmetic-setting` **(banner)**   | `nfts/cosmetics.md`                                 | The Player page avatar picker with a cosmetic chosen           |
+| Shot                                         | Page                                                | Shows                                                         |
+| -------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------- |
+| `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                        |
+| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The create form with gated options dimmed, each with the chip |
+| `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | The Runner tier: price, minted count, Mint and Rent           |
+| `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage  |
+| `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges       |
+| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A no-boost race card: no bolt chip in its header              |
+| `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview |
+| `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply         |
+| `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active         |
+| `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                  |
+| `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent   |
+| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | A picker tile carrying the RENTED ribbon                      |
 
 Single files in the same folder, all artwork:
 
@@ -290,7 +289,7 @@ Single files in the same folder, all artwork:
 | `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left             |
 | `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | The inbox with one pending request, accept and decline         |
 | `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button    |
-| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card showing its position in the chain, as Rematch X of Y    |
+| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                               |
 | `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed           |
 | `app-lottery-box`                           | `competition/community-lottery.md` | The pick a number box, line part filled, taken numbers out     |
 | `app-team-invite` **(banner)**              | `competition/teams.md`             | The invite control with a wallet address entered               |
@@ -318,17 +317,17 @@ figures in them are public already. Use the **same** race for all four, so a
 reader following the page sees one story. A phone capture of an explorer is
 still worth having: it is where most readers will actually check a race.
 
-| Shot                                      | Page                        | Shows                                                                                                                                                          |
-| ----------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `app-verify-fairness`                     | `trust/verifying-a-race.md` | The Verify fairness panel on a finished race: seed, per player derivation, finish times, winners. Open it and frame a derivation row together with the winners |
-| `app-verification-tab`                    | `trust/verification.md`     | The verification tab with the enabled providers                                                                                                                |
-| `app-verified-badge` **(banner)**         | `trust/verification.md`     | A lobby row with the checkmark next to the nickname                                                                                                            |
-| `explorer-program-account`                | `trust/verifying-a-race.md` | Owner, upgrade authority, last deployed slot                                                                                                                   |
-| `explorer-race-account-data`              | `trust/verifying-a-race.md` | The decoded race account: creator, fee, status, players, winners                                                                                               |
-| `explorer-orao-randomness-account`        | `trust/verifying-a-race.md` | The randomness account with the ORAO program as its owner                                                                                                      |
-| `explorer-claim-prize-balances`           | `trust/verifying-a-race.md` | Balance changes on the claim tx: vault out, winner in, fee in                                                                                                  |
-| `app-nickname-avatar-fields` **(banner)** | `trust/verification.md`     | The nickname field and the avatar upload                                                                                                                       |
-| `app-telegram-handle-toggle` **(banner)** | `trust/verification.md`     | The Telegram handle toggle, switched off                                                                                                                       |
+| Shot                                      | Page                                         | Shows                                                                                                                                                          |
+| ----------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app-verify-fairness`                     | `trust/verifying-a-race.md`                  | The Verify fairness panel on a finished race: seed, per player derivation, finish times, winners. Open it and frame a derivation row together with the winners |
+| `app-verification-tab`                    | `trust/verification.md`                      | The verification tab with the enabled providers                                                                                                                |
+| `app-verified-badge` **(banner)**         | `trust/verification.md`                      | A lobby row with the green verified dot on the avatar                                                                                                          |
+| `explorer-program-account`                | `trust/verifying-a-race.md`                  | Upgradeable, upgrade authority, last deployed slot                                                                                                             |
+| `explorer-race-account-data`              | `trust/verifying-a-race.md`                  | The decoded race account: creator, fee, status, players, winners                                                                                               |
+| `explorer-orao-randomness-account`        | `trust/verifying-a-race.md`                  | The randomness account with the ORAO program as its owner                                                                                                      |
+| `explorer-claim-prize-balances`           | `trust/verifying-a-race.md`                  | Balance changes on the claim tx: vault out, winner in, fee in                                                                                                  |
+| `app-nickname-avatar-fields` **(banner)** | `trust/verification.md`, `nfts/cosmetics.md` | The nickname field and the avatar upload                                                                                                                       |
+| `app-telegram-handle-toggle` **(banner)** | `trust/verification.md`                      | The Telegram handle toggle, switched off                                                                                                                       |
 
 ## help/
 

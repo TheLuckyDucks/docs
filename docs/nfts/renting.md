@@ -11,9 +11,9 @@ It suits a Boost for a weekend tournament, or trying a Track before you buy one.
 
 ## What can be rented
 
-Only the tiers the platform offers. In the marketplace a rentable tier has a **Rent** button beside **Buy**; anything else has only Buy, so there is no disabled button to hunt for.
+Only the tiers the platform offers. In the marketplace a rentable tier has a **Rent** button beside **Mint**; anything else has only Mint, so there is no disabled button to hunt for.
 
-<figure><img src="../../.gitbook/assets/nfts/app-marketplace-rent-button-banner.png" alt="A marketplace tier showing a Rent button beside the Buy button"><figcaption><p>No Rent button means that tier is not rentable at all.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-marketplace-rent-button-banner.png" alt="A marketplace tier showing a Rent button beside the Mint button"><figcaption><p>No Rent button means that tier is not rentable at all.</p></figcaption></figure>
 
 Mystery Boxes never rent. A box exists only until you open it, so there would be nothing to give back.
 
@@ -21,11 +21,11 @@ The pool is deliberately small. Rentable items are minted for the purpose, carry
 
 ## Choosing how long
 
-From **1 day to 30 days**, in whole days. The slider moves a day at a time and the marks beneath it (1, 3, 7, 14, 21, 30) are shortcuts rather than the only options, so 5 days or 17 are both fine.
+From **1 day to 30 days**, in whole days. The slider moves a day at a time and the marks beneath it (1, 3, 7, 10, 15, 20, 30) are shortcuts rather than the only options, so 5 days or 17 are both fine.
 
-Each tier has its own daily price, set by the platform and unrelated to what buying one costs. The total is the daily price times the days, the button shows it, and there is no proration or partial day.
+Each tier has its own daily price, set by the platform and unrelated to what buying one costs. The total is the daily price times the days, shown above the Rent button, and there is no proration or partial day.
 
-<figure><img src="../../.gitbook/assets/nfts/app-rental-duration-slider-banner.png" alt="The rental duration slider with day shortcuts underneath and the total price on the confirm button"><figcaption><p>The total on the button is the whole cost. Nothing is charged later.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-rental-duration-slider-banner.png" alt="The rental duration slider with day shortcuts underneath and the total price above the Rent button"><figcaption><p>The total above the button is the whole cost. Nothing is charged later.</p></figcaption></figure>
 
 ## Paying
 

@@ -58,15 +58,15 @@ Money moves around inside the platform on a signature you granted. It only leave
 
 ## Turning it on and off
 
-Pick any duration up to 30 days. It expires on its own, so a permission you forget cannot last forever.
+Choose 1, 7 or 30 days. It expires on its own, so a permission you forget cannot last forever.
 
-Revoke whenever you like by setting the duration to zero. It takes effect at once, and it keeps working even if the platform has switched the feature off for everyone, so you can always withdraw consent. Verification is not required to revoke either: nothing about your account can put the off switch out of reach.
+Revoke whenever you like with the Revoke button, which the panel shows while a grant is live. It takes effect at once, and it keeps working even if the platform has switched the feature off for everyone, so you can always withdraw consent. Verification is not required to revoke either: nothing about your account can put the off switch out of reach.
 
-Renewing is just granting again, and needs the same verified wallet.
+Extending uses the same panel, with Extend in place of Enable, and needs the same verified wallet.
 
 Where your winnings land sits on the same screen but is a separate choice. Change it whenever you like, granted or not, verified or not: it only says where money already owed to you should go.
 
-<figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The revoke control in the delegated signing panel, with the duration set to zero"><figcaption><p>The off switch needs no verification and takes effect at once.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The Revoke button in the delegated signing panel while a grant is live"><figcaption><p>The off switch needs no verification and takes effect at once.</p></figcaption></figure>
 
 ## What it costs
 

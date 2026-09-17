@@ -9,18 +9,18 @@ The race list updates live, newest at the top. Each card carries the entry fee, 
 
 ## Joining
 
-Tap a card to open the detail modal, then Join Race. It shows the participants, the Boost NFTs in your wallet and your cosmetics. Pick what you want to wear, sign, and your duck takes its slot. When you do not need to customize, the Join button on the card skips straight to it.
+Tap Join on a race card, or open the race and tap Join there. Either way the join dialog opens, with the race at the top, a Boost tab listing the Boost NFTs in your wallet and a Duck tab listing your cosmetics. Pick what you want to bring, sign, and your duck takes its slot.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/races/app-race-detail-modal-desktop.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab"><figcaption><p>Everything you bring to a race is picked here, before you sign.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-race-detail-modal-desktop.png" alt="The race modal for a lobby you have joined, with its prize pool, seats taken, entry fee and duration"><figcaption><p>A lobby you are in: the pool, the seats, the fee and the duration.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/races/app-race-detail-modal-mobile.png" alt="The race detail modal with the participants list, boost picker and cosmetics tab, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-race-detail-modal-mobile.png" alt="The race modal for a lobby you have joined, with its prize pool, seats taken, entry fee and duration, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}

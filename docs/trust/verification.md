@@ -53,10 +53,10 @@ It happens once, off chain: you authorise the provider, the platform confirms it
 - **Signing in without your wallet app.** A linked account signs you in instead of a signed message, which on a phone is the difference between staying in your browser and being bounced to the wallet app and back. See [Signing in with a linked account](#signing-in-with-a-linked-account).
 - **[Playing without signing every action](../races/delegated-play.md).** The program refuses to grant it to an unverified wallet, for one reason: the point is not reaching for your wallet, and a linked account is what gets you back in without one.
 - **Races reserved for verified players.** A creator can admit verified wallets only, which keeps throwaway wallets out without an invite list. You need to be verified to enter one, and to host one. See [Race access and gating](../races/access-and-gating.md#verified-players-only).
-- **An identity badge**, a checkmark beside your nickname that other players see on race cards and in lobbies.
+- **An identity badge**, a green dot on your avatar that other players see on race cards and in lobbies.
 - **Your Telegram handle in announcements**, for Telegram-verified players who opt in. See below.
 
-<figure><img src="../../.gitbook/assets/trust/app-verified-badge-banner.png" alt="A lobby participant row with a verification checkmark next to the nickname"><figcaption><p>The badge travels with you: race cards, lobbies, leaderboards, rosters.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/app-verified-badge-banner.png" alt="A lobby participant row with the green verified dot on the player's avatar"><figcaption><p>The badge travels with you: race cards, lobbies, leaderboards, rosters.</p></figcaption></figure>
 
 ## Signing in with a linked account
 

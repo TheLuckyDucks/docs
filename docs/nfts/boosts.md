@@ -104,9 +104,9 @@ It is on chain and deliberate. Unbounded boosts would let a wealthy player domin
 
 A race can be created with boosts switched off for everyone, its creator included, so the result comes down to the draw alone.
 
-Those races carry a crossed-out circle on the card, in the race view and on the share image, and the Telegram and X announcements say so too, so you always know before joining.
+You can tell them apart before joining by what is missing. A race that accepts boosts carries a ⚡ chip on its card, in the race view and on its share image, and a no-boost race carries none. The Telegram and X announcements say so in words. A crossed-out circle is a different thing: it marks a sponsored race, which refuses boosts for its own reason.
 
-<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-banner.png" alt="A race card carrying the crossed-out circle marker that means boosts are disabled"><figcaption><p>The marker rides on the card, the race view and the share image.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-banner.png" alt="A no-boost race card, with no bolt chip among the chips in its header"><figcaption><p>No bolt in the header: this race takes no boosts.</p></figcaption></figure>
 
 ### Why you might create one
 
