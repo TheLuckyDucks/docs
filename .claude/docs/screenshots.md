@@ -265,7 +265,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active         |
 | `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                  |
 | `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent   |
-| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | A picker tile carrying the RENTED ribbon                      |
+| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | The create form Runner tab: a tile under the RENTED band      |
 
 Single files in the same folder, all artwork:
 
@@ -276,7 +276,7 @@ Single files in the same folder, all artwork:
 | `nft-card-tracks.png`        | `nfts/README.md`    | Card cover, 16:9, a track background                               |
 | `nft-card-cosmetics.png`     | `nfts/README.md`    | Card cover, 16:9, three duck skins side by side                    |
 | `nft-card-mystery-boxes.png` | `nfts/README.md`    | Card cover, 16:9, a sealed box                                     |
-| `nft-card-renting.png`       | `nfts/README.md`    | Card cover, 16:9, an item with the Rental label                    |
+| `nft-card-renting.png`       | `nfts/README.md`    | Card cover, 16:9, a rented Runner: RENTED band and countdown       |
 | `nft-cosmetics-grid.png`     | `nfts/cosmetics.md` | Two rows of four skins, each with name, rarity and price           |
 | `nft-track-examples.png`     | `nfts/tracks.md`    | The four built in tracks side by side: day, night, sunset, sunrise |
 

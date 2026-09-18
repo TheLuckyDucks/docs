@@ -5,7 +5,7 @@ description: On UK draw days you pick one number and the flock picks the rest. W
 
 # The community lottery
 
-On UK draw days a box asks you for one number. Everyone who picks adds one to a single shared line, and Lucky Ducks plays that line in the real draw.
+On UK draw days a box asks you for one number. Everyone who picks adds one to a single shared line, and Lucky Ducks sets out to play that line in the real draw.
 
 You pick one number. The flock picks the rest.
 
@@ -67,3 +67,7 @@ Channels can opt into lottery announcements: the window opening, each number as 
 The top prize in the box is whatever the National Lottery is advertising for that draw. It moves between draws, and for Set For Life it is not a cash sum at all.
 
 Picking a number is not a bet and buys you no ticket. It is one shared line the community chooses together. The ticket is on Lucky Ducks, and if the line comes up, the prize is shared with the flock, as the box itself says.
+
+{% hint style="info" %}
+**The ticket is a best effort, not a promise.** The team does its best to buy the line before each draw, but it is not obliged to, and a round's ticket can go unbought for any reason. A line that was never played cannot win, so a round is a bit of fun, never something to count on.
+{% endhint %}

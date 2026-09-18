@@ -1148,6 +1148,45 @@ const SHOTS = [
     note: "a wallet with no Runner",
   },
 
+  // ---------- a wallet renting a Runner (--session off)
+  {
+    stem: "app-rented-ribbon",
+    folder: "nfts",
+    kind: "banner",
+    path: "/app/races",
+    modes: ["off"],
+    // The ribbon renders only on the renter's own screens: the create and
+    // join pickers, and their collection. Here, the create form's Runner tab.
+    steps: [
+      { click: '[data-cy="create-race"]' },
+      { waitFor: '[data-cy="nft-rented"]' },
+    ],
+    span: [
+      '[data-cy="create-modal"] button:has-text("Runner")',
+      '[data-cy="create-modal"] button:has-text("Duck")',
+      '[data-cy="nft-rented"] >> xpath=ancestor::*[4]',
+    ],
+    target: '[data-cy="nft-rented"]',
+    pad: 12,
+    settle: 1500,
+    note: "a wallet with a rented Runner. Opens the form, never submits",
+  },
+
+  {
+    stem: "nft-card-renting",
+    folder: "nfts",
+    kind: "single",
+    path: "/app/player/nfts",
+    modes: ["off"],
+    // The renter's own collection: the art under its RENTED band, with the
+    // countdown to the end of the term, and the name below.
+    steps: [{ waitFor: '[data-cy="nft-rented"]' }],
+    target: '[data-cy="nft-rented"] >> xpath=ancestor::*[2]',
+    aspect: 16 / 9,
+    settle: 1500,
+    note: "a wallet with a rented Runner",
+  },
+
   // ---------- the delegation panel with a live grant (--session on)
   {
     stem: "app-delegated-signing-panel",

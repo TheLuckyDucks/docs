@@ -46,7 +46,7 @@ Two things differ, both from the same freeze:
 
 Everything else is normal: no page to keep open, and no tie to a browser or device.
 
-**Your own screens mark it, and only yours.** A rented item carries a **RENTED** ribbon in the create and join pickers, on every tab, so you can see which of your picks has a clock on it. Nobody else sees it, in a race or anywhere else.
+**Your own screens mark it, and only yours.** A rented item carries a **RENTED** ribbon in the create and join pickers, on every tab, so you can see which of your picks has a clock on it. The NFTs tab of your Player page carries the same ribbon, with a countdown to the end of the term, which is where to check how long you have left. Nobody else sees any of it, in a race or anywhere else.
 
 <figure><img src="../../.gitbook/assets/nfts/app-rented-ribbon-banner.png" alt="A picker tile carrying a RENTED ribbon in the corner"><figcaption><p>On your screens only. Other players never see it.</p></figcaption></figure>
 
