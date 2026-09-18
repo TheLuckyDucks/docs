@@ -1129,6 +1129,139 @@ const SHOTS = [
     target: '[data-cy="grant-revoke"]',
     note: "never pressed",
   },
+
+  // ---------- joined, inside the 120s withdraw window (--session on)
+  {
+    stem: "app-withdraw-button",
+    hold: "only exists for 120s after a join, so it is joined for by hand",
+    folder: "races",
+    kind: "banner",
+    path: "/app/races",
+    modes: ["on"],
+    steps: [{ click: '[data-cy="confirm-cancel"]', optional: true }],
+    // The button carries both numbers: the entry coming back and the flat
+    // penalty going out. It renders on the card, not in the race modal, and it
+    // is gone 120 seconds after the join that put it there.
+    span: [
+      '#race-4998 [data-cy="race-action"][data-action="lobby"]',
+      '#race-4998 [data-cy="race-action"][data-action="withdraw"]',
+    ],
+    target: '#race-4998 [data-cy="race-action"][data-action="withdraw"]',
+    pad: 12,
+    note: "race 4996, joined for the shot. Only takeable inside the window",
+  },
+
+  // ---------- the covers on the welcome page
+  //
+  // Seven 16:9 cards and one space cover, each a single file at its bare name
+  // because a cover is linked from a hidden column rather than shown in a
+  // figure.
+  //
+  // A cover is DISPLAYED SMALL, so a screenshot of a whole page arrives as an
+  // unreadable thumbnail. Each of these is one subject close up, and `aspect`
+  // pads that subject out to the ratio the cover wants rather than handing the
+  // cover a shape it then crops again, off centre.
+  {
+    stem: "docs-card-getting-started",
+    folder: "brand",
+    kind: "single",
+    path: "/app/races",
+    modes: ["on"],
+    target: '[data-cy="race-card"]',
+    aspect: 16 / 9,
+    note: "one race card, close enough to read the entry fee",
+  },
+  {
+    stem: "docs-card-races",
+    folder: "brand",
+    kind: "single",
+    path: "/app/races",
+    modes: ["on"],
+    steps: [
+      { click: '[data-cy="create-race"]' },
+      { scrollTo: '[data-cy="create-amount"]', block: "center" },
+    ],
+    span: ['[data-cy="create-amount"]', '[data-cy="max-players"]'],
+    target: '[data-cy="create-amount"]',
+    aspect: 16 / 9,
+    note: "the money and the seats, which is what the form is about",
+  },
+  {
+    stem: "docs-card-nfts",
+    folder: "brand",
+    kind: "single",
+    path: "/marketplace/",
+    modes: ["on"],
+    steps: [{ click: '[data-cy="nav-tab"][data-category="runner"]' }],
+    target: '[data-cy="tier-card"]',
+    aspect: 16 / 9,
+    note: "a tier card and its neighbours, not the whole shop",
+  },
+  {
+    stem: "docs-card-competition",
+    folder: "brand",
+    kind: "single",
+    // Written for a tournament standings board. Nothing is running, so the
+    // roster that always exists stands in for it.
+    path: "/app/teams",
+    modes: ["on"],
+    target: '[data-cy="my-team"]',
+    maxHeight: 420,
+    aspect: 16 / 9,
+  },
+  {
+    stem: "docs-card-economy",
+    folder: "brand",
+    kind: "single",
+    path: "/app/races/4985",
+    modes: ["on"],
+    span: [
+      '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
+      '.modal-md button:has-text("CLAIM")',
+    ],
+    target: '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
+    aspect: 16 / 9,
+    note: "race 4985: a pool and what each place took out of it",
+  },
+  {
+    stem: "docs-card-trust",
+    folder: "brand",
+    kind: "single",
+    path: "/app/races/4398",
+    modes: ["on"],
+    steps: [{ click: '.modal-md :text-is("Details")' }],
+    target: MODAL,
+    maxHeight: 380,
+    aspect: 16 / 9,
+    note: "race 4398's details, where the seed and the verified mark are",
+  },
+  {
+    stem: "docs-card-help",
+    folder: "brand",
+    kind: "single",
+    url: "https://theluckyducks.com/",
+    guestEntry: false,
+    steps: [{ scrollTo: "#faq", block: "start" }, { wait: 1200 }],
+    target: "#faq",
+    maxHeight: 420,
+    aspect: 16 / 9,
+    keepScroll: true,
+    settle: 1500,
+  },
+  {
+    stem: "docs-cover-welcome",
+    folder: "brand",
+    kind: "single",
+    url: "https://theluckyducks.com/",
+    guestEntry: false,
+    // The space cover is a wide strip across the top of the page rather than a
+    // subject, so here the window IS the crop.
+    viewport: { width: 1990, height: 480 },
+    target: "text=/^Duck Racing$/",
+    clip: "viewport",
+    settle: 3000,
+  },
+
 ];
 
 /**
@@ -1138,12 +1271,18 @@ const SHOTS = [
  * banner-shaped: a wide short window clipped to itself is a strip of the page,
  * where the same crop out of a full desktop window would be a screenshot of
  * everything.
+ *
+ * `single` is the odd one and belongs to the covers: a card cover or a space
+ * cover is one file at its bare name, because nothing references it through a
+ * figure and so nothing carries the `-banner` the other kinds spell out.
  */
 const targetsFor = (shot) => {
   const dir = OUT ? OUT : join(ROOT, ASSETS, shot.folder);
   const desktop = shot.viewport
     ? { ...DESKTOP, viewport: shot.viewport }
     : DESKTOP;
+  if (shot.kind === "single")
+    return [{ file: join(dir, shot.stem + ".png"), device: desktop }];
   return shot.kind === "pair"
     ? [
         { file: join(dir, shot.stem + "-desktop.png"), device: desktop },
@@ -1293,7 +1432,40 @@ const bounds = async (page, el, maxHeight = Infinity) => {
     y,
     width: Math.min(Math.ceil(box.x2), box.vw) - x,
     height: Math.min(Math.ceil(box.y2), box.vh, y + maxHeight) - y,
+    vw: box.vw,
+    vh: box.vh,
   };
+};
+
+/**
+ * Grow a crop to an aspect ratio, around what it already holds.
+ *
+ * A card cover is displayed small and at a fixed ratio, so a screenshot of a
+ * whole page arrives as an unreadable thumbnail: the cover wants ONE thing,
+ * close up. Cropping tight to that one thing gives whatever shape the element
+ * happens to be, which the cover then crops again, off centre. So the tight box
+ * is the subject and this pads it out to the ratio the cover wants, taking in
+ * the surroundings evenly and never leaving the viewport.
+ */
+const crop = (box, shot) => {
+  const { vw, vh, ...rest } = shot.aspect ? toAspect(box, shot.aspect) : box;
+  return rest;
+};
+
+const toAspect = (box, ratio) => {
+  const vw = box.vw ?? Infinity;
+  const vh = box.vh ?? Infinity;
+  let { x, y, width, height } = box;
+  if (width / height < ratio) {
+    const want = Math.min(Math.round(height * ratio), vw);
+    x = Math.max(0, Math.min(vw - want, Math.round(x - (want - width) / 2)));
+    width = want;
+  } else {
+    const want = Math.min(Math.round(width / ratio), vh);
+    y = Math.max(0, Math.min(vh - want, Math.round(y - (want - height) / 2)));
+    height = want;
+  }
+  return { x, y, width, height };
 };
 
 /**
@@ -1501,21 +1673,21 @@ const shoot = async (page, shot, file, phone = false) => {
           Math.max(...boxes.map((b) => b.y + b.height)) + pad,
           y + (shot.extendDown ?? 0),
         );
-        writeFileSync(
-          file,
-          await snap(page, {
-            x,
-            y,
-            width: Math.min(x2, vp.width) - x,
-            height: Math.min(y2, vp.height) - y,
-          }),
-        );
+        const span = {
+          x,
+          y,
+          width: Math.min(x2, vp.width) - x,
+          height: Math.min(y2, vp.height) - y,
+          vw: vp.width,
+          vh: vp.height,
+        };
+        writeFileSync(file, await snap(page, crop(span, shot)));
         return;
       }
     }
     const png = frame
       ? await snap(page)
-      : await snap(page, await bounds(page, el, shot.maxHeight));
+      : await snap(page, crop(await bounds(page, el, shot.maxHeight), shot));
     writeFileSync(file, png);
   } finally {
     if (unzoom) await unzoom();
