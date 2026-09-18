@@ -74,9 +74,9 @@ Nothing happens on chain when a deadline passes. The race simply becomes refunda
 - **Races the platform created** are swept automatically, and the platform pays the fee.
 - **A race a player created is left alone on purpose.** It is theirs to close, because the platform does not close a race somebody else paid for, so it waits for the creator or any participant.
 
-You are never left guessing: a race past its window appears in the Unclaimed Items banner on your player page as soon as it is refundable, with the button that clears it.
+You are never left guessing: a race past its window joins the Unclaimed Items banner as soon as it is refundable. The banner sits in the top bar, on every page, and it carries anything owed to you: refunds like this one, and prizes you have won but not taken. One button clears the lot.
 
-<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-banner.png" alt="The Unclaimed Items banner on the player page listing a refundable race with a claim button"><figcaption><p>Everything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/economy/app-unclaimed-items-banner-banner.png" alt="The Unclaimed Items banner in the top bar, showing the total owed and the button that claims all of it"><figcaption><p>Everything owed to you collects in one banner, with the button that clears it.</p></figcaption></figure>
 
 Triggering it yourself costs the network fee, and during a [delegated session](../races/delegated-play.md) that comes from your vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 

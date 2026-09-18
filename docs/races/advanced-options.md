@@ -65,11 +65,15 @@ The four built in tracks, day, night, sunset and sunrise, are always free. Anyth
 
 Lets the race launch short of max players once the join timeout passes. Without it, an unfilled race expires and can only be refunded.
 
+The box stays greyed out until you raise the maximum above the platform default race size. At the default there is nothing to fall short of, so there is nothing to opt into.
+
 Enabling it adds a slider for the minimum players to start with. It runs from the platform's default race size up to one below your maximum, so you cannot set a threshold the race could never reach. A 10 player race with the slider at 7 starts with 7, 8 or 9 once the window closes.
 
-<figure><img src="../../.gitbook/assets/races/app-underfilled-slider-banner.png" alt="The start when underfilled slider set to 7 out of a 10 player race"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-underfilled-slider-banner.png" alt="The start when underfilled card on a 10 player race, its slider at the 5 player minimum"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
 
 It also adds a small surcharge for the backend's auto start. That sits in the race vault and goes to the platform on auto start, or refunds with everything else if the race never runs.
+
+One thing to know before you tick it: once enough players have joined to reach your threshold, the race is eligible to start, and from that moment you can no longer [cancel](hosting-and-cancelling.md#cancelling-a-race) it.
 
 ## Sponsored race
 

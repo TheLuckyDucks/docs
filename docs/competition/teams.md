@@ -29,20 +29,21 @@ A team holds up to **20 members**, founder included, and can carry **20** pendin
 {% endcolumn %}
 {% endcolumns %}
 
-## Inviting members
+## Bringing people in
 
-Two ways in:
+There is one way into a team, and the player takes the first step: they open the team's page and ask to join. The founder answers. Nobody is added without asking, and nobody joins without the founder agreeing.
 
-1. **Direct invite.** The founder invites a wallet address, and it lands in that player's inbox to accept or decline.
-2. **Open team.** The team marks itself open, players request to join from its page, and the founder approves or declines each one from the admin panel.
+What the founder shares is the team's **invite link**. It follows the team name, so renaming the team changes the link, and the old one stops working. Anyone who opens it lands on the team page and can ask to join from there. Beside the link, the founder can save a short **invite message** for whoever arrives that way.
 
-<figure><img src="../../.gitbook/assets/competition/app-team-invite-banner.png" alt="The team invite control with a wallet address entered and the send button"><figcaption><p>An invite lands in that player's inbox to accept or decline.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-team-invite-banner.png" alt="The invite link on a team page, with the copy button and the invite message field below it"><figcaption><p>Share the link, and whoever opens it can ask to join.</p></figcaption></figure>
 
-## Joining requests inbox
+## Answering join requests
 
-Every player has a Join Requests inbox in the platform notifications, where a new request arrives with Accept and Decline on it. It is anchored on the left, away from the race toasts on the right, so the two cannot collide at the end of a race.
+A dot appears on **Teams** in the menu when someone asks. It clears the moment the founder opens the team's **Members** tab, which is where the requests wait, under the roster and with the same tick boxes. Tick one, several or all of them, then accept or reject the lot in one go: a batch is a single transaction, however many players are in it.
 
-<figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-banner.png" alt="The join requests inbox with one pending request showing accept and decline buttons"><figcaption><p>Requests wait in the inbox until the founder answers.</p></figcaption></figure>
+A team holds **20** pending requests at a time. A player waiting on an answer can withdraw the request from the team page, and a rejected player is free to ask again.
+
+<figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-banner.png" alt="Pending join requests under the roster on a team page, ticked, with the accept and reject buttons above them"><figcaption><p>Requests wait under the roster until the founder answers.</p></figcaption></figure>
 
 ## Team standings in tournaments
 

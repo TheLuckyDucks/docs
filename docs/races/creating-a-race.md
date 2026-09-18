@@ -59,7 +59,7 @@ First place takes the whole pool, minus the platform fee. The cleanest format fo
 {% endtab %}
 
 {% tab title="Podium split" %}
-The pot splits 50/30/20 across first, second and third. Needs at least 3 players, and suits a big lobby.
+The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 players, and suits a big lobby.
 {% endtab %}
 {% endtabs %}
 

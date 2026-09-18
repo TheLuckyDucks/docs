@@ -596,11 +596,13 @@ const SHOTS = [
   },
   {
     stem: "app-underfilled-slider",
-    hold: "its checkbox stays disabled when driven, even with 10 seats typed",
     folder: "races",
     kind: "banner",
     path: "/app/races",
-    modes: ["off"],
+    // The checkbox needs both halves of `enabled`: a Runner in the wallet, and a
+    // seat count above the platform default. Hence 10 seats, and hence "on",
+    // which is the phase whose wallet holds a Runner.
+    modes: ["on"],
     steps: [
       { click: '[data-cy="create-race"]' },
       { scrollTo: '[data-cy="max-players"]', block: "center" },
@@ -612,19 +614,19 @@ const SHOTS = [
       { wait: 800 },
       {
         check:
-          'text=/^allow race to start with less players/i >> xpath=ancestor::*[.//input[@type="checkbox"]][1]//input[@type="checkbox"]',
+          'text=/allow race to start with .* minimum/i >> xpath=ancestor::*[.//input[@type="checkbox"]][1]//input[@type="checkbox"]',
       },
     ],
-    cardOf: "text=/^allow race to start with less players/i",
+    cardOf: "text=/allow race to start with .* minimum/i",
     after: [
       {
         restore:
-          'text=/^allow race to start with less players/i >> xpath=ancestor::*[.//input[@type="checkbox"]][1]//input[@type="checkbox"]',
+          'text=/allow race to start with .* minimum/i >> xpath=ancestor::*[.//input[@type="checkbox"]][1]//input[@type="checkbox"]',
         optional: true,
       },
       {
         fill: 'input[data-cy="max-players"], [data-cy="max-players"] input',
-        value: "3",
+        value: "2",
         optional: true,
       },
       { press: "Tab", optional: true },
@@ -1042,6 +1044,63 @@ const SHOTS = [
     target: '[data-cy="rent-modal"]',
     after: [{ click: '[data-cy="rent-cancel"]', optional: true }],
     note: "opens the rent dialog, never confirms",
+  },
+
+  // ---------- a won race whose prize is still unclaimed (--session on)
+  //
+  // Race 4985 finished with this wallet first and the prize never taken, which
+  // is the only state that renders a CLAIM button. Nothing here presses it: a
+  // delegated session would send the claim with no wallet prompt at all.
+  {
+    stem: "app-race-finish-claim",
+    folder: "introduction",
+    kind: "pair",
+    path: "/app/races/4985",
+    modes: ["on"],
+    target: MODAL,
+    note: "race 4985: won, unclaimed. CLAIM is never pressed",
+  },
+  {
+    stem: "app-claim-prize",
+    folder: "races",
+    kind: "banner",
+    path: "/app/races/4985",
+    modes: ["on"],
+    // The podium and the button that empties it, which is the pair the page
+    // describes. The tab row above them says nothing a reader needs here.
+    span: [
+      '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
+      '.modal-md button:has-text("CLAIM")',
+    ],
+    target: '.modal-md button:has-text("CLAIM")',
+    note: "race 4985. The button is framed, never pressed",
+  },
+  {
+    stem: "app-unclaimed-items-banner",
+    folder: "economy",
+    kind: "banner",
+    path: "/app/leaderboard",
+    modes: ["on"],
+    // It lives in the top bar rather than on a page, so it is already banner
+    // shaped: trophy, total owed, and the button that sweeps the lot.
+    target: 'button:has-text("CLAIM ALL") >> xpath=ancestor::*[1]',
+    pad: 10,
+    note: "CLAIM ALL is framed, never pressed",
+  },
+
+  // ---------- the founder's own team (--session on, a team creator)
+  {
+    stem: "app-team-invite",
+    folder: "competition",
+    kind: "banner",
+    path: "/app/teams",
+    modes: ["on"],
+    steps: [
+      { click: '[data-cy="team-subtab"]', text: "Members" },
+      { scrollTo: "text=/^INVITE LINK$/i", block: "center" },
+    ],
+    span: ["text=/^INVITE LINK$/i", 'button:has-text("Save message")'],
+    target: "text=/^INVITE LINK$/i",
   },
 
   // ---------- the delegation panel with a live grant (--session on)

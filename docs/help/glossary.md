@@ -93,7 +93,7 @@ A balance you top up once and spend across many races, held inside your player a
 
 ### Podium Split
 
-Race mode where the prize pool is split 50/30/20 between first, second, and third place.
+Race mode where the prize pool is split 50% / 30% / 20% between first, second, and third place.
 
 ### Race vault
 

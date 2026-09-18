@@ -227,7 +227,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-join-setting-picker` **(banner)**          | `races/access-and-gating.md`, `races/advanced-options.md`     | The join setting selector open, all five options visible          |
 | `app-link-external-wallet` **(banner)**         | `races/access-and-gating.md`                                  | The link an external wallet panel with the supported chains       |
 | `app-gated-race-join-disabled` **(banner)**     | `races/access-and-gating.md`, `races/joining-and-playing.md`  | A gated race with Join disabled and the requirement stated        |
-| `app-underfilled-slider` **(banner)**           | `races/advanced-options.md`                                   | The start-when-underfilled slider at 7 on a 10 player race        |
+| `app-underfilled-slider` **(banner)**           | `races/advanced-options.md`                                   | The underfilled card on a 10 player race, slider at 5             |
 | `app-cancel-race-confirm` **(banner)**          | `races/hosting-and-cancelling.md`                             | The cancel confirmation: refund to players, flat SOL penalty      |
 | `app-entry-fee-field` **(banner)**              | `races/creating-a-race.md`                                    | The entry fee field with the currency picker beside it            |
 | `app-max-players-field` **(banner)**            | `races/creating-a-race.md`                                    | The seats control, values past the default marked as gated        |
@@ -282,18 +282,18 @@ Single files in the same folder, all artwork:
 
 ## competition/
 
-| Shot                                        | Page                               | Shows                                                          |
-| ------------------------------------------- | ---------------------------------- | -------------------------------------------------------------- |
-| `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings              |
-| `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure |
-| `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left             |
-| `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | The inbox with one pending request, accept and decline         |
-| `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button    |
-| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                               |
-| `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed           |
-| `app-lottery-box`                           | `competition/community-lottery.md` | The pick a number box, line part filled, taken numbers out     |
-| `app-team-invite` **(banner)**              | `competition/teams.md`             | The invite control with a wallet address entered               |
-| `app-rematch-proposer-options` **(banner)** | `competition/rematches.md`         | The propose dialog: commentary, announcement, track, runner    |
+| Shot                                        | Page                               | Shows                                                             |
+| ------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------- |
+| `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                 |
+| `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure    |
+| `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left                |
+| `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | Pending requests under the roster, ticked, with accept and reject |
+| `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button       |
+| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                                  |
+| `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed              |
+| `app-lottery-box`                           | `competition/community-lottery.md` | The pick a number box, line part filled, taken numbers out        |
+| `app-team-invite` **(banner)**              | `competition/teams.md`             | The INVITE LINK box: link, copy button, invite message            |
+| `app-rematch-proposer-options` **(banner)** | `competition/rematches.md`         | The propose dialog: commentary, announcement, track, runner       |
 
 ## economy/
 
@@ -302,7 +302,7 @@ Single files in the same folder, all artwork:
 | `app-play-balance-panel` **(banner)**        | `economy/player-vault.md`                               | The Play Balance panel: balances, deposit, withdraw            |
 | `app-payout-target-setting` **(banner)**     | `economy/player-vault.md`                               | The payout target control, wallet selected                     |
 | `app-creator-share-preview` **(banner)**     | `economy/creator-fee-share.md`                          | The create form line stating what the race will earn           |
-| `app-unclaimed-items-banner` **(banner)**    | `economy/refunds-and-rent.md`                           | The Unclaimed Items banner with one refundable race            |
+| `app-unclaimed-items-banner` **(banner)**    | `economy/refunds-and-rent.md`                           | The top bar strip: trophy, total owed, CLAIM ALL               |
 | `app-currency-picker` **(banner)**           | `economy/spl-tokens.md`                                 | The currency picker listing SOL and the supported tokens       |
 | `app-vault-deposit-dialog` **(banner)**      | `economy/player-vault.md`                               | The deposit dialog, currency chosen and an amount entered      |
 | `app-vault-withdraw-dialog` **(banner)**     | `economy/player-vault.md`                               | The withdraw dialog with the whole balance available           |
