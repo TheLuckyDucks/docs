@@ -9,19 +9,7 @@ On UK draw days a box asks you for one number. Everyone who picks adds one to a 
 
 You pick one number. The flock picks the rest.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-lottery-box-desktop.png" alt="The lottery box showing the shared line part filled, with taken numbers crossed out"><figcaption><p>The line fills live, and taken numbers cross out for everyone.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/competition/app-lottery-box-mobile.png" alt="The lottery box showing the shared line part filled, with taken numbers crossed out, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/competition/app-lottery-box-banner.png" alt="The EuroMillions box before anyone has picked: an empty line of five numbers and two Lucky Stars, above the numbers 1 to 50"><figcaption><p>An empty line, every number still free. The first seven players fill it.</p></figcaption></figure>
 
 ## How it works
 
@@ -46,6 +34,8 @@ Taken numbers are crossed out and cannot be chosen.
 {% hint style="warning" %}
 **Tapping a free number takes it straight away.** No confirm step, and no changing it afterwards, so tap the one you want.
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/competition/app-lottery-pick-banner.png" alt="The box after a pick: number 2 in the first slot of the line, with the player's avatar on it and the box's reply below"><figcaption><p>One tap, and your number is in the line.</p></figcaption></figure>
 
 **What you can pick depends on where you land in the line.** Once the main numbers are gone the next players are choosing Lucky Stars or the Life Ball, from a much smaller range, and the box says which and shows only the valid numbers.
 
@@ -76,4 +66,4 @@ Channels can opt into lottery announcements: the window opening, each number as 
 
 The top prize in the box is whatever the National Lottery is advertising for that draw. It moves between draws, and for Set For Life it is not a cash sum at all.
 
-Picking a number is not a bet and buys you no ticket. It is one shared line the community chooses together.
+Picking a number is not a bet and buys you no ticket. It is one shared line the community chooses together. The ticket is on Lucky Ducks, and if the line comes up, the prize is shared with the flock, as the box itself says.

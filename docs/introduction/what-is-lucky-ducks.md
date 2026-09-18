@@ -36,7 +36,7 @@ Three things follow:
 It runs on Solana, so you need a wallet, a little SOL for fees, and the willingness to sign transactions.
 
 {% hint style="info" %}
-Your first race also creates a small on chain player account. It costs \~0.0023 SOL in rent, refundable in full if you close it later.
+Your first race also creates a small on chain player account. It costs \~0.0017 SOL in rent, refundable in full if you close it later.
 {% endhint %}
 
 Past that, an entry fee is whatever the creator set, in SOL or a supported SPL token.

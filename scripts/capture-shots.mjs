@@ -315,8 +315,11 @@ const SHOTS = [
     folder: "nfts",
     kind: "banner",
     path: "/app/races",
-    target: "#race-4979",
-    note: "race 4979 is open with boosts off. Gone once it starts",
+    // Race 5000 is sponsored, so its header carries 🚫 where the bolt goes:
+    // the one refusal a card marks. A creator's own no-boost race shows no
+    // chip at all, which a picture cannot point at.
+    target: "#race-5000",
+    note: "race 5000, sponsored. Gone once it starts",
   },
   {
     stem: "app-rematch-chain-indicator",
@@ -1103,6 +1106,48 @@ const SHOTS = [
     target: "text=/^INVITE LINK$/i",
   },
 
+  // ---------- a fresh wallet: no player account, no Runner (--session off)
+  //
+  // Order matters. Opening the create form raises the player-account modal
+  // before anything is signed; Cancel drops it, but "Let's race!" marks the
+  // account checked for the session and the modal never shows again. So the
+  // modal is taken first and cancelled, and the locked form second.
+  {
+    stem: "app-player-account-modal",
+    folder: "introduction",
+    kind: "banner",
+    path: "/app/races",
+    modes: ["off"],
+    steps: [{ click: '[data-cy="create-race"]' }],
+    target: '[data-cy="first-race-modal"]',
+    after: [{ click: '[data-cy="first-race-cancel"]', optional: true }],
+    note: "a wallet with no player account. Cancelled, never confirmed",
+  },
+  {
+    stem: "app-create-race-runner-locked",
+    folder: "nfts",
+    kind: "banner",
+    path: "/app/races",
+    modes: ["off"],
+    // "Let's race!" only resumes the pending action, which is opening this
+    // form. The account itself is created by the first create or join.
+    steps: [
+      { click: '[data-cy="create-race"]' },
+      { click: '[data-cy="first-race-confirm"]', optional: true },
+      { scrollTo: "text=/^No Runner NFT found$/", block: "center" },
+    ],
+    // Without a Runner the gated options are not on the form at all. What a
+    // player sees instead is this notice, listing what one would unlock.
+    span: [
+      '[data-cy="create-modal"] button:has-text("Runner")',
+      '[data-cy="create-modal"] button:has-text("Duck")',
+      "text=/^Hold a Runner NFT to unlock/",
+    ],
+    target: "text=/^No Runner NFT found$/",
+    pad: 20,
+    note: "a wallet with no Runner",
+  },
+
   // ---------- the delegation panel with a live grant (--session on)
   {
     stem: "app-delegated-signing-panel",
@@ -1181,8 +1226,11 @@ const SHOTS = [
       { click: '[data-cy="create-race"]' },
       { scrollTo: '[data-cy="create-amount"]', block: "center" },
     ],
-    span: ['[data-cy="create-amount"]', '[data-cy="max-players"]'],
+    // Entry fee, currency, max players and validation: a 2x2 block 560px
+    // wide. The pad reaches up to the labels, which sit above the inputs.
+    span: ['[data-cy="create-amount"]', '[data-cy="validation-picker"]'],
     target: '[data-cy="create-amount"]',
+    pad: 28,
     aspect: 16 / 9,
     note: "the money and the seats, which is what the form is about",
   },
@@ -1191,22 +1239,32 @@ const SHOTS = [
     folder: "brand",
     kind: "single",
     path: "/marketplace/",
-    modes: ["on"],
-    steps: [{ click: '[data-cy="nav-tab"][data-category="runner"]' }],
+    modes: ["guest"],
+    steps: [{ click: '[data-cy="nav-tab"][data-category="boost"]' }],
+    span: ['[data-cy="tier-card"] >> nth=0', '[data-cy="tier-card"] >> nth=2'],
     target: '[data-cy="tier-card"]',
+    pad: 12,
     aspect: 16 / 9,
-    note: "a tier card and its neighbours, not the whole shop",
+    note: "three tiers side by side, each with its price",
   },
   {
     stem: "docs-card-competition",
     folder: "brand",
     kind: "single",
-    // Written for a tournament standings board. Nothing is running, so the
-    // roster that always exists stands in for it.
-    path: "/app/teams",
+    // Written for a tournament standings board. Nothing is running, and a
+    // team page is too wide to read at cover size, so it is the badge wall:
+    // its heading and the first rows, which read at any size.
+    path: "/app/player",
     modes: ["on"],
-    target: '[data-cy="my-team"]',
-    maxHeight: 420,
+    steps: [
+      { scrollTo: "text=/^badges \\(/i >> visible=true", block: "center" },
+    ],
+    span: [
+      "text=/^badges \\(/i >> visible=true",
+      "text=/^badges \\(/i >> visible=true >> xpath=following-sibling::*[1]",
+    ],
+    target: "text=/^badges \\(/i >> visible=true",
+    maxHeight: 380,
     aspect: 16 / 9,
   },
   {
@@ -1215,10 +1273,6 @@ const SHOTS = [
     kind: "single",
     path: "/app/races/4985",
     modes: ["on"],
-    span: [
-      '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
-      '.modal-md button:has-text("CLAIM")',
-    ],
     target: '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
     aspect: 16 / 9,
     note: "race 4985: a pool and what each place took out of it",
@@ -1229,11 +1283,15 @@ const SHOTS = [
     kind: "single",
     path: "/app/races/4398",
     modes: ["on"],
-    steps: [{ click: '.modal-md :text-is("Details")' }],
-    target: MODAL,
-    maxHeight: 380,
+    steps: [
+      { click: '.modal-md :text-is("Details")' },
+      { click: ':text-is("Verify fairness")' },
+      { scrollTo: ':text-is("Winners recorded on-chain")', block: "center" },
+    ],
+    // the panel: its heading, the tx link and the speed chart, 534x259
+    target: ':text-is("Winners recorded on-chain") >> xpath=ancestor::*[2]',
     aspect: 16 / 9,
-    note: "race 4398's details, where the seed and the verified mark are",
+    note: "race 4398: the winners as the chain recorded them",
   },
   {
     stem: "docs-card-help",
@@ -1257,11 +1315,73 @@ const SHOTS = [
     // The space cover is a wide strip across the top of the page rather than a
     // subject, so here the window IS the crop.
     viewport: { width: 1990, height: 480 },
+    steps: [
+      {
+        css: "html { scrollbar-width: none } ::-webkit-scrollbar { display: none }",
+      },
+    ],
     target: "text=/^Duck Racing$/",
     clip: "viewport",
     settle: 3000,
   },
-
+  // ---------- the NFT covers and figures, off the marketplace as a guest
+  //
+  // `inside` cuts a 16:9 band out of the art itself rather than padding the
+  // art out with page, so a cover of a Runner is all Runner.
+  {
+    stem: "nft-card-runners",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-tab"][data-category="runner"]' }],
+    target: '[data-cy="tier-card"] video',
+    aspect: 16 / 9,
+    inside: true,
+    settle: 2000,
+  },
+  {
+    stem: "nft-card-boosts",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-tab"][data-category="boost"]' }],
+    target: '[data-cy="tier-card"] img',
+    aspect: 16 / 9,
+    inside: true,
+  },
+  {
+    stem: "nft-card-cosmetics",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-tab"][data-category="cosmetics"]' }],
+    // three skins in a row, which is what the row asks for
+    span: [
+      '[data-cy="tier-card"] >> nth=0 >> video',
+      '[data-cy="tier-card"] >> nth=2 >> video',
+    ],
+    target: '[data-cy="tier-card"] video',
+    pad: 8,
+    aspect: 16 / 9,
+    settle: 2000,
+  },
+  {
+    stem: "nft-cosmetics-grid",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    // Tall enough for two rows of four. The tab bar is pinned, and a crop
+    // that scrolled under it had the bar lying across the first row.
+    viewport: { width: 1440, height: 1800 },
+    steps: [
+      { click: '[data-cy="nav-tab"][data-category="cosmetics"]' },
+      { unstick: '[data-cy="nav-tab"]' },
+    ],
+    span: ['[data-cy="tier-card"] >> nth=0', '[data-cy="tier-card"] >> nth=7'],
+    target: '[data-cy="tier-card"]',
+    pad: 12,
+    settle: 2000,
+  },
 ];
 
 /**
@@ -1332,6 +1452,30 @@ const runSteps = async (page, steps = []) => {
   for (const step of steps) {
     const timeout = step.optional ? Math.min(4000, T) : T;
     try {
+      // `css` adds a stylesheet, for chrome the browser draws over the page:
+      // a viewport crop takes the scrollbar with it. Guest shots only, since a
+      // guest context is thrown away after its shot and a session tab is not.
+      if (step.css) await page.addStyleTag({ content: step.css });
+      // `unstick` hides whatever pinned bar holds the selector, so a crop that
+      // scrolled under it shows the page instead of the bar lying across it.
+      if (step.unstick) {
+        await page
+          .locator(step.unstick)
+          .first()
+          .evaluate(
+            (el) => {
+              for (let n = el; n && n !== document.body; n = n.parentElement) {
+                const pos = getComputedStyle(n).position;
+                if (pos === "fixed" || pos === "sticky") {
+                  n.style.visibility = "hidden";
+                  return;
+                }
+              }
+            },
+            undefined,
+            { timeout },
+          );
+      }
       if (step.click) {
         // `text` narrows a row selector to the one you meant. A list orders
         // itself by whatever is live, so "the first team" is a different team
@@ -1448,8 +1592,28 @@ const bounds = async (page, el, maxHeight = Infinity) => {
  * the surroundings evenly and never leaving the viewport.
  */
 const crop = (box, shot) => {
-  const { vw, vh, ...rest } = shot.aspect ? toAspect(box, shot.aspect) : box;
+  const fit = shot.inside ? insideAspect : toAspect;
+  const { vw, vh, ...rest } = shot.aspect ? fit(box, shot.aspect) : box;
   return rest;
+};
+
+/**
+ * The other way round, for art: a band cut out of the middle of the subject
+ * rather than the subject with its surroundings. A square Runner cut to 16:9 is
+ * all Runner, where padding it out would be mostly page background.
+ */
+const insideAspect = (box, ratio) => {
+  let { x, y, width, height } = box;
+  if (width / height > ratio) {
+    const want = Math.round(height * ratio);
+    x += Math.round((width - want) / 2);
+    width = want;
+  } else {
+    const want = Math.round(width / ratio);
+    y += Math.round((height - want) / 2);
+    height = want;
+  }
+  return { x, y, width, height };
 };
 
 const toAspect = (box, ratio) => {
@@ -1669,9 +1833,14 @@ const shoot = async (page, shot, file, phone = false) => {
         const x2 = Math.max(...boxes.map((b) => b.x + b.width)) + pad;
         // `extendDown` reaches past the last element, for a list that has no hook
         // of its own under a tab bar that does.
-        const y2 = Math.max(
-          Math.max(...boxes.map((b) => b.y + b.height)) + pad,
-          y + (shot.extendDown ?? 0),
+        // `maxHeight` caps a span the way it caps a target: a heading and the
+        // first rows of the long list under it, not the whole list.
+        const y2 = Math.min(
+          Math.max(
+            Math.max(...boxes.map((b) => b.y + b.height)) + pad,
+            y + (shot.extendDown ?? 0),
+          ),
+          y + (shot.maxHeight ?? Infinity),
         );
         const span = {
           x,

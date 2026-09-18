@@ -188,17 +188,17 @@ script.
 
 ## brand/ (artwork, single files)
 
-| File                            | Page        | Shows                                                                   |
-| ------------------------------- | ----------- | ----------------------------------------------------------------------- |
-| `docs-cover-welcome.png`        | `README.md` | The space cover. Pond, flock, wordmark. 1990x480, readable when cropped |
-| `docs-hero-race-canvas.png`     | `README.md` | A five duck race mid-run with position markers, wide crop of the canvas |
-| `docs-card-getting-started.png` | `README.md` | Card cover, 16:9, a first race from wallet to finish                    |
-| `docs-card-races.png`           | `README.md` | Card cover, 16:9, the create race form                                  |
-| `docs-card-nfts.png`            | `README.md` | Card cover, 16:9, the four collections together                         |
-| `docs-card-competition.png`     | `README.md` | Card cover, 16:9, a tournament standings board                          |
-| `docs-card-economy.png`         | `README.md` | Card cover, 16:9, a prize pool and its payout                           |
-| `docs-card-trust.png`           | `README.md` | Card cover, 16:9, a verified race result                                |
-| `docs-card-help.png`            | `README.md` | Card cover, 16:9, the Telegram bot answering a question                 |
+| File                            | Page        | Shows                                                                     |
+| ------------------------------- | ----------- | ------------------------------------------------------------------------- |
+| `docs-cover-welcome.png`        | `README.md` | The space cover: the landing page hero strip, captured at 1990x480        |
+| `docs-hero-race-canvas.png`     | `README.md` | A five duck race mid-run with position markers, wide crop of the canvas   |
+| `docs-card-getting-started.png` | `README.md` | Card cover, 16:9, one race card close up                                  |
+| `docs-card-races.png`           | `README.md` | Card cover, 16:9, the create form: mode, fee, currency, seats, validation |
+| `docs-card-nfts.png`            | `README.md` | Card cover, 16:9, three Boost tiers with their prices                     |
+| `docs-card-competition.png`     | `README.md` | Card cover, 16:9, the badge wall on a player page                         |
+| `docs-card-economy.png`         | `README.md` | Card cover, 16:9, a race podium with each place's payout                  |
+| `docs-card-trust.png`           | `README.md` | Card cover, 16:9, the winners recorded on chain, with the speed chart     |
+| `docs-card-help.png`            | `README.md` | Card cover, 16:9, the FAQ on the landing page                             |
 
 ## introduction/
 
@@ -211,7 +211,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-race-finish-claim`                 | `introduction/getting-started.md`     | The post race screen: finishing order, claim button with amount |
 | `app-lobby-filling`                     | `introduction/how-it-works.md`        | One lobby at four of five seats, each with avatar and nickname  |
 | `app-race-canvas-midrace`               | `introduction/what-is-lucky-ducks.md` | Ducks part way down the lane with the standings overlay         |
-| `app-player-account-modal` **(banner)** | `introduction/getting-started.md`     | The one time player account modal, refundable rent stated       |
+| `app-player-account-modal` **(banner)** | `introduction/getting-started.md`     | The first-race modal: rent quoted, refundable, no own tx        |
 
 ## races/
 
@@ -255,11 +255,11 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | Shot                                         | Page                                                | Shows                                                         |
 | -------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------- |
 | `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                        |
-| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The create form with gated options dimmed, each with the chip |
+| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The Runner tab: no Runner found, and what one unlocks         |
 | `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | The Runner tier: price, minted count, Mint and Rent           |
 | `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage  |
 | `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges       |
-| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A no-boost race card: no bolt chip in its header              |
+| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A sponsored race card: 🚫 where the bolt goes                 |
 | `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview |
 | `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply         |
 | `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active         |
@@ -271,29 +271,30 @@ Single files in the same folder, all artwork:
 
 | File                         | Page                | Shows                                                              |
 | ---------------------------- | ------------------- | ------------------------------------------------------------------ |
-| `nft-card-runners.png`       | `nfts/README.md`    | Card cover, 16:9, Runner art                                       |
-| `nft-card-boosts.png`        | `nfts/README.md`    | Card cover, 16:9, Boost art                                        |
+| `nft-card-runners.png`       | `nfts/README.md`    | Card cover, 16:9, a band cut from the Runner art                   |
+| `nft-card-boosts.png`        | `nfts/README.md`    | Card cover, 16:9, a band cut from a Boost's art                    |
 | `nft-card-tracks.png`        | `nfts/README.md`    | Card cover, 16:9, a track background                               |
-| `nft-card-cosmetics.png`     | `nfts/README.md`    | Card cover, 16:9, two or three duck skins                          |
+| `nft-card-cosmetics.png`     | `nfts/README.md`    | Card cover, 16:9, three duck skins side by side                    |
 | `nft-card-mystery-boxes.png` | `nfts/README.md`    | Card cover, 16:9, a sealed box                                     |
 | `nft-card-renting.png`       | `nfts/README.md`    | Card cover, 16:9, an item with the Rental label                    |
-| `nft-cosmetics-grid.png`     | `nfts/cosmetics.md` | A grid of skins across outfits and palettes                        |
+| `nft-cosmetics-grid.png`     | `nfts/cosmetics.md` | Two rows of four skins, each with name, rarity and price           |
 | `nft-track-examples.png`     | `nfts/tracks.md`    | The four built in tracks side by side: day, night, sunset, sunrise |
 
 ## competition/
 
-| Shot                                        | Page                               | Shows                                                             |
-| ------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------- |
-| `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                 |
-| `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure    |
-| `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left                |
-| `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | Pending requests under the roster, ticked, with accept and reject |
-| `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button       |
-| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                                  |
-| `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed              |
-| `app-lottery-box`                           | `competition/community-lottery.md` | The pick a number box, line part filled, taken numbers out        |
-| `app-team-invite` **(banner)**              | `competition/teams.md`             | The INVITE LINK box: link, copy button, invite message            |
-| `app-rematch-proposer-options` **(banner)** | `competition/rematches.md`         | The propose dialog: commentary, announcement, track, runner       |
+| Shot                                        | Page                               | Shows                                                               |
+| ------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
+| `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                   |
+| `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure      |
+| `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left                  |
+| `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | Pending requests under the roster, ticked, with accept and reject   |
+| `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button         |
+| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                                    |
+| `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed                |
+| `app-lottery-box` **(banner)**              | `competition/community-lottery.md` | The empty EuroMillions box: a blank line and 1 to 50 (supplied)     |
+| `app-lottery-pick` **(banner)**             | `competition/community-lottery.md` | The box after a pick: 2 in the first slot, and its reply (supplied) |
+| `app-team-invite` **(banner)**              | `competition/teams.md`             | The INVITE LINK box: link, copy button, invite message              |
+| `app-rematch-proposer-options` **(banner)** | `competition/rematches.md`         | The propose dialog: commentary, announcement, track, runner         |
 
 ## economy/
 

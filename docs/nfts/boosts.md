@@ -106,7 +106,7 @@ A race can be created with boosts switched off for everyone, its creator include
 
 You can tell them apart before joining by what is missing. A race that accepts boosts carries a ⚡ chip on its card, in the race view and on its share image, and a no-boost race carries none. The Telegram and X announcements say so in words. A crossed-out circle is a different thing: it marks a sponsored race, which refuses boosts for its own reason.
 
-<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-banner.png" alt="A no-boost race card, with no bolt chip among the chips in its header"><figcaption><p>No bolt in the header: this race takes no boosts.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-no-boost-race-card-banner.png" alt="A sponsored race card, with a crossed-out circle among the chips in its header where the bolt would be"><figcaption><p>A sponsored race: the crossed-out circle stands where the bolt would be.</p></figcaption></figure>
 
 ### Why you might create one
 

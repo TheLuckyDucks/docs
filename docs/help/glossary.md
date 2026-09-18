@@ -85,7 +85,7 @@ An account whose address the program derives from a set of seeds plus the progra
 
 ### Player account
 
-A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0023 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
+A per-wallet account holding your race history, win count, XP, your profile, and your player vault balance. Created the first time you race. Rent (~0.0017 SOL) is held separately from your balance and is fully refundable on close, along with everything in the vault.
 
 ### Player vault
 

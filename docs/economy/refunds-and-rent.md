@@ -88,7 +88,7 @@ Net cost of creating a race, then: oracle fee, archival fee and any opt in costs
 
 ## Your player account rent
 
-Your first create or join allocates a small per-wallet account holding your race history, profile and [player vault](player-vault.md) balance. Rent is around 0.0023 SOL.
+Your first create or join allocates a small per-wallet account holding your race history, profile and [player vault](player-vault.md) balance. Rent is about 0.0017 SOL, added to that first transaction rather than asked for separately, and the modal that explains it shows the exact figure.
 
 That rent is what Solana requires to keep an account open. It sits apart from your vault balance and is never spendable, which is why your balance is always withdrawable in full.
 

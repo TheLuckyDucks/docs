@@ -25,9 +25,9 @@ Your first sign-in is always the wallet, because nothing else can prove the wall
 
 ## 4. Create your player account
 
-Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once and asks for a one time transaction. Rent is around 0.0023 SOL, refundable in full if you ever close it.
+Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once, the first time you open the create form or join a race. There is no separate transaction to sign: the account is created inside your first create or join, and its rent, about 0.0017 SOL, is added to that transaction. The modal shows the exact figure, and the rent comes back in full if you ever close the account.
 
-<figure><img src="../../.gitbook/assets/introduction/app-player-account-modal-banner.png" alt="The first race modal explaining the one time player account and its refundable rent"><figcaption><p>It appears once, and what it asks for comes back if you close the account.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/introduction/app-player-account-modal-banner.png" alt="The first race modal explaining the one time player account and its refundable rent"><figcaption><p>It appears once. The rent rides along with your first race, and comes back if you close the account.</p></figcaption></figure>
 
 ## 5. Join a race, or make one
 

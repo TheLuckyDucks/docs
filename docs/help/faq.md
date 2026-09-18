@@ -21,7 +21,7 @@ No. The entry fee is your whole stake, and a losing race costs you nothing beyon
 
 ### What is the on-chain cost of playing one race?
 
-For a 0.01 SOL race with no opt ins: roughly 0.000005 SOL in network fees, the 0.01 SOL entry fee, and 0.0023 SOL of one-time player account rent on your very first race. About 0.0123 SOL all in, and the rent comes back if you ever close the account. Creating a race instead of joining one adds the race account's rent, which also returns when the race closes.
+For a 0.01 SOL race with no opt ins: roughly 0.000005 SOL in network fees, the 0.01 SOL entry fee, and about 0.0017 SOL of one-time player account rent on your very first race. About 0.0117 SOL all in, and the rent comes back if you ever close the account. Creating a race instead of joining one adds the race account's rent, which also returns when the race closes.
 
 ### Can I play on my phone?
 
