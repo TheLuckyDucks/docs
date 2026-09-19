@@ -137,10 +137,14 @@ const SHOTS = [
     folder: "races",
     kind: "banner",
     path: "/app/races",
-    target: '[data-cy="race-grid"]',
-    clip: "viewport",
-    viewport: { width: 1440, height: 560 },
-    note: "wants two cards, one of each mode. Check the crop before keeping it",
+    // Two open cards of different modes that already share a row. The grid
+    // pins each card in place, so hiding one leaves a hole rather than
+    // pulling the next up: pick a pair from the same row. The ids go stale as
+    // races start.
+    span: ["#race-5010", "#race-5008"],
+    target: "#race-5010",
+    pad: 12,
+    note: "5010 is Winner Takes All and 5008 Podium, both open, one row",
   },
   {
     stem: "app-race-detail-modal",
@@ -150,7 +154,7 @@ const SHOTS = [
     path: "/app/races",
     // A race this wallet has joined and that has not started, opened from its
     // card, so the modal shows a lobby the reader is in rather than one to join.
-    steps: [{ click: "#race-4983 >> text=/^#4983$/" }],
+    steps: [{ click: "#race-5015 >> text=/^#5015$/" }],
     target: MODAL,
     after: [
       {
@@ -159,7 +163,7 @@ const SHOTS = [
         optional: true,
       },
     ],
-    note: "race 4983: joined by the signed-in wallet, not started",
+    note: "race 5015: joined by the signed-in wallet, not started",
   },
   {
     stem: "app-lobby-participants",
@@ -168,7 +172,7 @@ const SHOTS = [
     kind: "pair",
     path: "/app/races",
     steps: [
-      { click: '#race-4971 [data-cy="race-action"][data-action="lobby"]' },
+      { click: '#race-5008 [data-cy="race-action"][data-action="lobby"]' },
       {
         click:
           '.modal-sm :text-is("Players"), .modal-md :text-is("Players"), .modal-lg :text-is("Players")',
@@ -182,7 +186,7 @@ const SHOTS = [
         optional: true,
       },
     ],
-    note: "race 4971's lobby on the Players tab: joined, not started, boosts showing",
+    note: "race 5008's lobby on the Players tab: joined, not started, boosts showing",
   },
   {
     stem: "app-lobby-filling",
@@ -314,12 +318,12 @@ const SHOTS = [
     stem: "app-no-boost-race-card",
     folder: "nfts",
     kind: "banner",
-    path: "/app/races",
+    path: "/app/archives",
     // Race 5000 is sponsored, so its header carries 🚫 where the bolt goes:
     // the one refusal a card marks. A creator's own no-boost race shows no
     // chip at all, which a picture cannot point at.
     target: "#race-5000",
-    note: "race 5000, sponsored. Gone once it starts",
+    note: "race 5000, sponsored, from the archive so it stays reachable",
   },
   {
     stem: "app-rematch-chain-indicator",
@@ -327,6 +331,24 @@ const SHOTS = [
     folder: "competition",
     kind: "banner",
     path: "/app/archives",
+    // The archive loads a page at a time as you reach its end, and 4980 sinks
+    // further every day. Each pair reaches the last card, which is what pulls
+    // in the next page, then the card is brought to the middle.
+    steps: [
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: "#race-4980", block: "center" },
+    ],
     target: "#race-4980",
     note: "race 4980, the first rematch of 4977",
   },
@@ -1821,6 +1843,12 @@ const shoot = async (page, shot, file, phone = false) => {
   await page.mouse.move(edge[0], edge[1]).catch(() => {});
   await page.waitForTimeout(300);
   await page.waitForTimeout(shot.settle ?? 800); // let art and live numbers settle
+  // A toast is never the subject. A "new version" notice arrives whenever a
+  // deploy lands mid-run and stays until closed, and a race result can pop up
+  // over anything, so every one on screen is dismissed before the picture.
+  const toasts = await page.locator('[data-cy="toast-dismiss"]').all();
+  for (const x of toasts) await x.click({ timeout: 1000 }).catch(() => {});
+  if (toasts.length) await page.waitForTimeout(600); // let it fade out
   // `fit` zooms the page out until the whole of it fits the frame, for a screen
   // that should be seen entire rather than scrolled: the login card is taller
   // than both frames. The zoom is undone afterwards, so your tab is left as it was.

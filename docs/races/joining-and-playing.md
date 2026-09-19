@@ -5,7 +5,17 @@ description: Taking a slot in someone else's race, with eligibility, boosts, cos
 
 # Joining and playing
 
-The race list updates live, newest at the top. Each card carries the entry fee, prize pool, slots taken, duration and any opt in badges: audio, custom track, runner only, sponsored.
+The race list updates live, newest at the top. Each card carries the entry fee, prize pool, slots taken and duration. Icons in its header show what the race adds, and hovering one names it:
+
+- 🎁 sponsored: joining costs nothing
+- ✅, 📋 or 👛, who may join: verified players, an allow list, or holders of an NFT or token. A holder gate shows the collection's or token's own icon when it has one.
+- ⏳ a minimum account age
+- 🔊 AI commentary
+- 𝕏 announced on X
+- ▶ can start short of a full lobby
+- ⚡ boosts accepted, or 🚫 on a sponsored race, which refuses them
+
+A custom track shows as the card's background. Bottom left is the race's creator: hover or tap their avatar for their name and wallet.
 
 ## Joining
 

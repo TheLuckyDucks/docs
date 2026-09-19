@@ -26,13 +26,13 @@ Players have 1 hour by default to join. Joining is one transaction: your entry f
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/introduction/app-lobby-filling-desktop.png" alt="A race lobby with four of five slots taken, each showing a player avatar and nickname"><figcaption><p>The lobby updates as each join transaction confirms.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/introduction/app-lobby-filling-desktop.png" alt="A race lobby with nine of twenty seats taken, the players' avatars stacked under the count"><figcaption><p>The lobby updates as each join transaction confirms.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/introduction/app-lobby-filling-mobile.png" alt="A race lobby with four of five slots taken, each showing a player avatar and nickname, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/introduction/app-lobby-filling-mobile.png" alt="A race lobby with nine of twenty seats taken, the players' avatars stacked under the count, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}

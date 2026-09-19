@@ -209,7 +209,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-connect-wallet` **(banner)**       | `introduction/getting-started.md`     | The connect dialog with the wallet list                         |
 | `app-lobby-list`                        | `introduction/getting-started.md`     | Three or four open race cards: entry fee, pool, slots, duration |
 | `app-race-finish-claim`                 | `introduction/getting-started.md`     | The post race screen: finishing order, claim button with amount |
-| `app-lobby-filling`                     | `introduction/how-it-works.md`        | One lobby at four of five seats, each with avatar and nickname  |
+| `app-lobby-filling`                     | `introduction/how-it-works.md`        | A joined lobby filling: 9 of 20 seats, avatars under the count  |
 | `app-race-canvas-midrace`               | `introduction/what-is-lucky-ducks.md` | Ducks part way down the lane with the standings overlay         |
 | `app-player-account-modal` **(banner)** | `introduction/getting-started.md`     | The first-race modal: rent quoted, refundable, no own tx        |
 
