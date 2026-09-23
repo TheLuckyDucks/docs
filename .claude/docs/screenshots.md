@@ -321,6 +321,7 @@ still worth having: it is where most readers will actually check a race.
 | Shot                                      | Page                                         | Shows                                                                 |
 | ----------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------- |
 | `app-verify-fairness`                     | `trust/verifying-a-race.md`                  | The verification screen: seed, formula and recomputed times           |
+| `app-verify-timings`                      | `trust/verifying-a-race.md`                  | One racer's segment table: hash, weight, speed, distance, time        |
 | `app-verify-entry` **(banner)**           | `trust/verifying-a-race.md`                  | A finished race's Verify fairness panel: the seed and the Verify link |
 | `app-verification-tab`                    | `trust/verification.md`                      | The verification tab with the enabled providers                       |
 | `app-verified-badge` **(banner)**         | `trust/verification.md`                      | A lobby row with the green verified dot on the avatar                 |

@@ -39,6 +39,22 @@ The race's own modal keeps three panels that save you the lookups: **Race info**
 {% endcolumn %}
 {% endcolumns %}
 
+Open any racer in that list and the working behind their time unfolds: every segment with the hash it came from, its weight, the speed and distance it gave, and the time that segment took. They add up to the finish time the chain recorded.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../../.gitbook/assets/trust/app-verify-timings-desktop.png" alt="The per segment table for one racer: hash, weight, speed, distance and the time each segment took, under the field's speed curves"><figcaption><p>Every segment of one racer, and the total they add up to.</p></figcaption></figure>
+
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../../.gitbook/assets/trust/app-verify-timings-mobile.png" alt="The per segment table for one racer on a phone, scrolled sideways to its weight, speed, distance and time columns"><figcaption><p>On a phone</p></figcaption></figure>
+
+{% endcolumn %}
+{% endcolumns %}
+
 {% hint style="info" %}
 That screen is still the platform telling you what happened, which is why the rest of this page exists. Everything it shows can be checked against the chain by somebody who does not trust it, and the two should agree exactly.
 {% endhint %}

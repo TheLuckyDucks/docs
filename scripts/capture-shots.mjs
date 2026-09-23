@@ -294,6 +294,27 @@ const SHOTS = [
     note: "race 4398: completed, seed on chain",
   },
   {
+    stem: "app-verify-timings",
+    modes: ["guest"],
+    folder: "trust",
+    kind: "pair",
+    path: "/app/verify/4398",
+    // The segment working is below the fold on both frames, and its header row
+    // is one element rather than a cell each, so the anchor is the last line:
+    // brought to the bottom, it leaves the table filling the frame above it.
+    steps: [
+      { scrollTo: "text=/totalTime = baseTime/", block: "end" },
+      { wait: 800 },
+      { unstick: 'button:text-is("↑")', optional: true },
+      { wheel: "text=/afcfe0/", dx: 460 },
+    ],
+    target: "text=/totalTime = baseTime/",
+    clip: "viewport",
+    keepScroll: true,
+    settle: 1500,
+    note: "race 4398, the racer the screen opens on",
+  },
+  {
     stem: "app-verify-entry",
     modes: ["guest"],
     folder: "trust",
@@ -1555,6 +1576,22 @@ const runSteps = async (page, steps = []) => {
             undefined,
             { timeout },
           );
+      }
+      // `wheel` scrolls INSIDE something, which `scrollTo` cannot: a table that
+      // is wider than a phone keeps its last columns behind a sideways scroll,
+      // and a shot of the timings without the time column is no use. The
+      // pointer is put on the element first, since a wheel goes wherever it
+      // hovers, and it is parked again before the picture is taken.
+      if (step.wheel) {
+        const box = await page
+          .locator(step.wheel)
+          .first()
+          .boundingBox({ timeout });
+        if (box) {
+          await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+          await page.mouse.wheel(step.dx ?? 0, step.dy ?? 0);
+          await page.waitForTimeout(600);
+        }
       }
       if (step.click) {
         // `text` narrows a row selector to the one you meant. A list orders
