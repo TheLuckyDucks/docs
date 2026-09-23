@@ -318,17 +318,18 @@ figures in them are public already. Use the **same** race for all four, so a
 reader following the page sees one story. A phone capture of an explorer is
 still worth having: it is where most readers will actually check a race.
 
-| Shot                                      | Page                                         | Shows                                                                                                                                                          |
-| ----------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `app-verify-fairness`                     | `trust/verifying-a-race.md`                  | The Verify fairness panel on a finished race: seed, per player derivation, finish times, winners. Open it and frame a derivation row together with the winners |
-| `app-verification-tab`                    | `trust/verification.md`                      | The verification tab with the enabled providers                                                                                                                |
-| `app-verified-badge` **(banner)**         | `trust/verification.md`                      | A lobby row with the green verified dot on the avatar                                                                                                          |
-| `explorer-program-account`                | `trust/verifying-a-race.md`                  | Upgradeable, upgrade authority, last deployed slot                                                                                                             |
-| `explorer-race-account-data`              | `trust/verifying-a-race.md`                  | The decoded race account: creator, fee, status, players, winners                                                                                               |
-| `explorer-orao-randomness-account`        | `trust/verifying-a-race.md`                  | The randomness account with the ORAO program as its owner                                                                                                      |
-| `explorer-claim-prize-balances`           | `trust/verifying-a-race.md`                  | Balance changes on the claim tx: vault out, winner in, fee in                                                                                                  |
-| `app-nickname-avatar-fields` **(banner)** | `trust/verification.md`, `nfts/cosmetics.md` | The nickname field and the avatar upload                                                                                                                       |
-| `app-telegram-handle-toggle` **(banner)** | `trust/verification.md`                      | The Telegram handle toggle, switched off                                                                                                                       |
+| Shot                                      | Page                                         | Shows                                                                 |
+| ----------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------- |
+| `app-verify-fairness`                     | `trust/verifying-a-race.md`                  | The verification screen: seed, formula and recomputed times           |
+| `app-verify-entry` **(banner)**           | `trust/verifying-a-race.md`                  | A finished race's Verify fairness panel: the seed and the Verify link |
+| `app-verification-tab`                    | `trust/verification.md`                      | The verification tab with the enabled providers                       |
+| `app-verified-badge` **(banner)**         | `trust/verification.md`                      | A lobby row with the green verified dot on the avatar                 |
+| `explorer-program-account`                | `trust/verifying-a-race.md`                  | Upgradeable, upgrade authority, last deployed slot                    |
+| `explorer-race-account-data`              | `trust/verifying-a-race.md`                  | The decoded race account: creator, fee, status, players, winners      |
+| `explorer-orao-randomness-account`        | `trust/verifying-a-race.md`                  | The randomness account with the ORAO program as its owner             |
+| `explorer-claim-prize-balances`           | `trust/verifying-a-race.md`                  | Balance changes on the claim tx: vault out, winner in, fee in         |
+| `app-nickname-avatar-fields` **(banner)** | `trust/verification.md`, `nfts/cosmetics.md` | The nickname field and the avatar upload                              |
+| `app-telegram-handle-toggle` **(banner)** | `trust/verification.md`                      | The Telegram handle toggle, switched off                              |
 
 ## help/
 

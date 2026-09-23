@@ -9,30 +9,36 @@ Verify a race without the Lucky Ducks website, using public Solana explorers. By
 
 ## The app shows its working first
 
-Open any finished race and the detail view carries a **Verify fairness** panel. It appears once the race is `Completed` and its seed is on chain, and it walks the same pipeline this page does: the ORAO seed, the derivation applied to each player, each duck's finish time, and the winners as recorded, with links out to the on-chain transaction behind every step.
+The app has a verification screen that recomputes a finished race in your own browser, from the seed, with the same formula the on-chain program runs. It needs no wallet, so you can read it as a guest.
 
-Three more panels on the same view save you the derivation work:
+Three ways in:
 
-- **Addresses**, which hands you the program, the race account and the rest, so nothing has to be computed by hand.
-- **Transactions**, which lists every signature on the race in order, from creation to claim.
-- **Race info**, which is the same figures the account holds.
+- The **🎲** button on the races page, beside Create Race, which opens the screen and asks for a race number.
+- The **Verify** link inside a finished race, under **Verify fairness** on its Details tab, which opens that race straight away. It appears once the race is `Completed` and its seed is on chain.
+- The address **`/app/verify/<race number>`** directly, or **`/app/verify`** on its own for the lookup.
+
+<figure><img src="../../.gitbook/assets/trust/app-verify-entry-banner.png" alt="The Verify fairness panel inside a finished race, showing the ORAO seed and the Verify link"><figcaption><p>Inside a finished race: the seed, and the link that opens the full working.</p></figcaption></figure>
+
+Top to bottom, the screen shows the ORAO randomness account and the seed it published, the formula the program applies to every player, every racer in finishing order with the time recomputed for them, the speed curves of the whole field, and the segment by segment working behind any one racer. The randomness and the recorded result each link to the transaction they came from.
+
+The race's own modal keeps three panels that save you the lookups: **Race info**, the figures the account holds; **Transactions**, every signature on the race in order, from creation to claim; and **Addresses**, the program, the race account and the rest, ready to paste into an explorer.
 
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-desktop.png" alt="The Verify fairness panel on a finished race, showing the ORAO seed, the per player derivation, the finish times and the winners"><figcaption><p>The seed, the derivation, the finish times and the winners, each linked to its transaction.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-desktop.png" alt="The verification screen for a finished race, showing the ORAO seed, the derivation formula and the recomputed finish times"><figcaption><p>The seed, the formula and every finish time, recomputed as you read it.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-mobile.png" alt="The Verify fairness panel on a finished race, showing the ORAO seed, the per player derivation, the finish times and the winners, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trust/app-verify-fairness-mobile.png" alt="The verification screen for a finished race, showing the ORAO seed, the derivation formula and the recomputed finish times, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}
 
 {% hint style="info" %}
-That panel is still the platform telling you what happened, which is why the rest of this page exists. Everything it shows can be checked against the chain by somebody who does not trust it, and the two should agree exactly.
+That screen is still the platform telling you what happened, which is why the rest of this page exists. Everything it shows can be checked against the chain by somebody who does not trust it, and the two should agree exactly.
 {% endhint %}
 
 ## Before you start; what you need

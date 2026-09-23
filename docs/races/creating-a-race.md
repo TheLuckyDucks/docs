@@ -97,7 +97,7 @@ All off by default, and most need a Runner NFT.
 
 ## Sign and submit
 
-The cost box totals everything you pay: entry fee, oracle fee (\~0.00275 SOL), archival fee (\~0.0001 SOL), any opt in costs, and the race account's rent. The rent comes back when the race ends. After signing, the race hits the lobby and the join timer starts.
+The cost box totals everything you pay: entry fee, oracle fee (\~0.002 SOL), archival fee (\~0.0001 SOL), any opt in costs, and the race account's rent. The rent comes back when the race ends. After signing, the race hits the lobby and the join timer starts.
 
 <figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-banner.png" alt="The cost breakdown box at the foot of the create form, itemising entry fee, oracle fee, archival fee and rent"><figcaption><p>Every line you are about to pay. The rent line returns when the race closes.</p></figcaption></figure>
 

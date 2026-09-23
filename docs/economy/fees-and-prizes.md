@@ -89,7 +89,7 @@ With no price available you see the amount and no dollar figure. A blank means t
 
 The creator pays a few small costs at creation, separate from the pool:
 
-- **Oracle fee** (~0.00275 SOL), paid to ORAO for the race's seed.
+- **Oracle fee** (~0.002 SOL), covering ORAO's charge for the race's seed and the three transactions that request it, read it and settle the result.
 - **Archival fee** (~0.0001 SOL), for keeping a permanent public copy of the finished race.
 - **Audio cost**, with AI commentary on: about 0.00005 SOL per race second, so roughly 0.0015 SOL for 30 seconds and 0.009 SOL for 3 minutes.
 - **X announcement**, if enabled: flat 0.0005 SOL straight to the backend wallet, non-refundable.

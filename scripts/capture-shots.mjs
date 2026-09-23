@@ -281,17 +281,33 @@ const SHOTS = [
   // ---------- no wallet, pinned to races that show the thing
   {
     stem: "app-verify-fairness",
-    modes: ["guest", "off"],
+    modes: ["guest"],
     folder: "trust",
     kind: "pair",
+    // Its own view, and no wallet is needed to read it. The frame is the shot:
+    // the whole working runs to several screens, and the top is what says what
+    // the screen is: the seed, then the formula under it.
+    path: "/app/verify/4398",
+    target: '[data-cy="verify-view"]',
+    clip: "viewport",
+    settle: 2500,
+    note: "race 4398: completed, seed on chain",
+  },
+  {
+    stem: "app-verify-entry",
+    modes: ["guest"],
+    folder: "trust",
+    kind: "banner",
     path: "/app/races/4398",
+    // The way in from a finished race: the panel holds the seed and the link
+    // that opens the verification screen.
     steps: [
       { click: '.modal-md :text-is("Details")' },
       { click: ':text-is("Verify fairness")' },
-      { scrollTo: ':text-is("Derive each finish time")' },
     ],
-    target: MODAL,
-    note: "race 4398: completed, seed on chain",
+    span: [':text-is("Verify fairness")', '[data-cy="open-verify-race"]'],
+    target: '[data-cy="open-verify-race"]',
+    pad: 14,
   },
   {
     stem: "app-boost-badges-lobby",
@@ -1342,15 +1358,13 @@ const SHOTS = [
     stem: "docs-card-trust",
     folder: "brand",
     kind: "single",
-    path: "/app/races/4398",
-    modes: ["on"],
+    path: "/app/verify/4398",
+    modes: ["guest"],
     steps: [
-      { click: '.modal-md :text-is("Details")' },
-      { click: ':text-is("Verify fairness")' },
-      { scrollTo: ':text-is("Winners recorded on-chain")', block: "center" },
+      { scrollTo: ':text-is("Players recorded on-chain")', block: "center" },
     ],
-    // the panel: its heading, the tx link and the speed chart, 534x259
-    target: ':text-is("Winners recorded on-chain") >> xpath=ancestor::*[2]',
+    // the panel: its heading, the tx link and the finishing order under it
+    target: ':text-is("Players recorded on-chain") >> xpath=ancestor::*[2]',
     aspect: 16 / 9,
     note: "race 4398: the winners as the chain recorded them",
   },
@@ -1700,6 +1714,11 @@ const toAspect = (box, ratio) => {
  * dressed differently from the site everyone else is looking at, and a browser
  * profile that is reused between runs holds the old art indefinitely. This
  * forces every request to go to the network for the life of the page.
+ *
+ * A guest context starts empty, so the app's service worker is installed fresh
+ * by the run itself and has nothing stale to answer with. Purging it here was
+ * tried and taken out again: the extra navigation it needed left the page in a
+ * state where the screenshot hung.
  */
 const noCache = async (page) => {
   const cdp = await page.context().newCDPSession(page);
