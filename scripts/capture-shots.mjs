@@ -335,21 +335,11 @@ const SHOTS = [
     folder: "nfts",
     kind: "banner",
     path: "/app/archives",
-    // Race 5000 is sponsored, so its header carries 🚫 where the bolt goes:
-    // the one refusal a card marks. A creator's own no-boost race shows no
-    // chip at all, which a picture cannot point at.
-    target: "#race-5000",
-    note: "race 5000, sponsored, from the archive so it stays reachable",
-  },
-  {
-    stem: "app-rematch-chain-indicator",
-    modes: ["guest", "off"],
-    folder: "competition",
-    kind: "banner",
-    path: "/app/archives",
-    // The archive loads a page at a time as you reach its end, and 4980 sinks
-    // further every day. Each pair reaches the last card, which is what pulls
-    // in the next page, then the card is brought to the middle.
+    // A sponsored race carries 🚫 where the bolt goes: the one refusal a card
+    // marks. A creator's own no-boost race shows no chip at all, which a
+    // picture cannot point at. The archive pages in as you reach its end, and
+    // any race sinks through it daily, so pick a recent sponsored one when
+    // this stops resolving.
     steps: [
       { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
       { wait: 1500 },
@@ -357,16 +347,31 @@ const SHOTS = [
       { wait: 1500 },
       { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
       { wait: 1500 },
-      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
-      { wait: 1500 },
-      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
-      { wait: 1500 },
-      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
-      { wait: 1500 },
-      { scrollTo: "#race-4980", block: "center" },
+      { scrollTo: "#race-5133", block: "center" },
     ],
-    target: "#race-4980",
-    note: "race 4980, the first rematch of 4977",
+    target: "#race-5133",
+    note: "race 5133, sponsored",
+  },
+  {
+    stem: "app-rematch-chain-indicator",
+    modes: ["guest", "off"],
+    folder: "competition",
+    kind: "banner",
+    path: "/app/archives",
+    // Each pair reaches the last card, which is what pulls in the next page,
+    // then the card is brought to the middle. Rematches are rare, so when this
+    // one has sunk too far, find another card carrying a Rematch badge.
+    steps: [
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
+      { wait: 1500 },
+      { scrollTo: "#race-5140", block: "center" },
+    ],
+    target: "#race-5140",
+    note: "race 5140, a first rematch",
   },
   {
     stem: "app-usd-estimate",
