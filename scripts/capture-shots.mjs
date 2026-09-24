@@ -306,7 +306,7 @@ const SHOTS = [
       { scrollTo: "text=/totalTime = baseTime/", block: "end" },
       { wait: 800 },
       { unstick: 'button:text-is("↑")', optional: true },
-      { wheel: "text=/afcfe0/", dx: 460 },
+      { wheel: "text=/boosted/i", dx: 900 },
     ],
     target: "text=/totalTime = baseTime/",
     clip: "viewport",
