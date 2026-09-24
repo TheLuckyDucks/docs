@@ -19,7 +19,7 @@ Three ways in:
 
 <figure><img src="../../.gitbook/assets/trust/app-verify-entry-banner.png" alt="The Verify fairness panel inside a finished race, showing the ORAO seed and the Verify link"><figcaption><p>Inside a finished race: the seed, and the link that opens the full working.</p></figcaption></figure>
 
-Top to bottom, the screen shows the race as it was created, with the transaction that opened it and the addresses it lives at; the randomness ORAO published; the formula the program applies to every player; every racer in finishing order with the time recomputed for them; the speed curves of the whole field; and the segment by segment working behind any one racer.
+Top to bottom, the screen shows the race as it was created, with the transaction that opened it and the addresses it lives at; the randomness ORAO published; the formula the program applies to every player, annotated line by line in plain English; every racer in finishing order with the time recomputed for them; the speed curves of the whole field; and the segment by segment working behind any one racer.
 
 Nothing on it is an anonymous link. Each address and signature sits in its own labelled box: **Created**, the transaction that opened the race, beside the **Program**, **Race PDA** and **Vault** it runs on; **VRF requested** and **VRF consumed**, the two transactions behind the randomness; the **VRF seed** itself; the **Randomness account** ORAO wrote it to; and **Finalized**, the transaction that recorded the result. Every box copies with a click and opens in a Solana explorer, which is where the rest of this page picks the story up.
 
