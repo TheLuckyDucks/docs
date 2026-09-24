@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-- [What is Lucky Ducks](introduction/what-is-lucky-ducks.md)
+- [What is The Lucky Ducks](introduction/what-is-lucky-ducks.md)
 - [How a race works](introduction/how-it-works.md)
 - [Your first race](introduction/getting-started.md)
 

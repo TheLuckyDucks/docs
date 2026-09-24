@@ -70,7 +70,7 @@ The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 
 All off by default, and most need a Runner NFT.
 
 - **AI commentary**. A per second narration track, generated as the race starts. Costs a little per race second.
-- **X announcement**. Posts the race to Lucky Ducks' X account, so it reaches people outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
+- **X announcement**. Posts the race to The Lucky Ducks' X account, so it reaches people outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
 - **Custom join timeout**. Default 1 hour, shorter or longer as you like.
 - **Custom name**. A title on the race card, up to 32 characters.
 - **Custom track**. A Track NFT you own as the background.

@@ -5,11 +5,11 @@ description: Where the randomness comes from, why the platform cannot pick a win
 
 # Provable randomness
 
-The most important property of Lucky Ducks is that the platform cannot pick a winner. Here is how.
+The most important property of The Lucky Ducks is that the platform cannot pick a winner. Here is how.
 
 ```mermaid
 sequenceDiagram
-    participant LD as Lucky Ducks program
+    participant LD as The Lucky Ducks program
     participant OR as ORAO VRF program
     participant SOL as Solana, public to anyone
     LD->>OR: Request randomness for this race

@@ -7,7 +7,7 @@ description: On-chain duck racing on Solana. Provably fair races, verifiable NFT
 
 # Welcome
 
-Lucky Ducks is duck racing, fully on chain. Every race is provably fair, every NFT is verifiable, and a smart contract pays every prize. No house edge. Just ducks!
+The Lucky Ducks is duck racing, fully on chain. Every race is provably fair, every NFT is verifiable, and a smart contract pays every prize. No house edge. Just ducks!
 
 <figure><img src="../.gitbook/assets/brand/docs-hero-race-canvas.png" alt="Seven ducks racing across the pond with position markers above them"><figcaption><p>A seven player race, mid-run. The animation follows the seed the oracle published on chain.</p></figcaption></figure>
 

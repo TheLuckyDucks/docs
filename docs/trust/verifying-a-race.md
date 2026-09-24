@@ -3,9 +3,9 @@ icon: magnifying-glass
 description: Check a race yourself in a public block explorer, from the program's legitimacy to the final payout.
 ---
 
-# How to verify a Lucky Ducks race on-chain
+# How to verify a race on-chain
 
-Verify a race without the Lucky Ducks website, using public Solana explorers. By the end you will have confirmed the three things that matter: the randomness came from a public source, anyone can recompute the winner, and the payout went where the program said it would.
+Verify a race without The Lucky Ducks website, using public Solana explorers. By the end you will have confirmed the three things that matter: the randomness came from a public source, anyone can recompute the winner, and the payout went where the program said it would.
 
 ## The app shows its working first
 
@@ -19,9 +19,9 @@ Three ways in:
 
 <figure><img src="../../.gitbook/assets/trust/app-verify-entry-banner.png" alt="The Verify fairness panel inside a finished race, showing the ORAO seed and the Verify link"><figcaption><p>Inside a finished race: the seed, and the link that opens the full working.</p></figcaption></figure>
 
-Top to bottom, the screen shows the randomness ORAO published, the formula the program applies to every player, every racer in finishing order with the time recomputed for them, the speed curves of the whole field, and the segment by segment working behind any one racer.
+Top to bottom, the screen shows the race as it was created, with the transaction that opened it and the addresses it lives at; the randomness ORAO published; the formula the program applies to every player; every racer in finishing order with the time recomputed for them; the speed curves of the whole field; and the segment by segment working behind any one racer.
 
-Each address and signature sits in its own labelled box: **VRF requested** and **VRF consumed**, the two transactions behind the randomness; the **VRF seed** itself; the **Randomness account** ORAO wrote it to; and **Finalized**, the transaction that recorded the result. Every box copies with a click and opens in a Solana explorer, which is where the rest of this page picks the story up.
+Nothing on it is an anonymous link. Each address and signature sits in its own labelled box: **Created**, the transaction that opened the race, beside the **Program**, **Race PDA** and **Vault** it runs on; **VRF requested** and **VRF consumed**, the two transactions behind the randomness; the **VRF seed** itself; the **Randomness account** ORAO wrote it to; and **Finalized**, the transaction that recorded the result. Every box copies with a click and opens in a Solana explorer, which is where the rest of this page picks the story up.
 
 The race's own modal keeps three panels that save you the lookups: **Race info**, the figures the account holds; **Transactions**, every signature on the race in order, from creation to claim; and **Addresses**, the program, the race account and the rest, ready to paste into an explorer.
 
@@ -66,8 +66,8 @@ The program address, an explorer, and the race ID.
 {% code title="The two addresses you will need" %}
 
 ```
-Lucky Ducks program   DuckBzSivbVv6b5zAw6EGP8YtLBbXwZmcoJPTQ5m1BkM
-ORAO VRF program      VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y
+The Lucky Ducks program   DuckBzSivbVv6b5zAw6EGP8YtLBbXwZmcoJPTQ5m1BkM
+ORAO VRF program          VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y
 ```
 
 {% endcode %}
@@ -180,11 +180,11 @@ On a sponsored race joiners pay nothing, since the sponsor funded the pool at cr
 
 ## Step 4; Verify the randomness source
 
-The most important step. Lucky Ducks generates no randomness of its own: the outcome comes from a seed ORAO produces and signs, and the on-chain accounts let you prove it.
+The most important step. The Lucky Ducks generates no randomness of its own: the outcome comes from a seed ORAO produces and signs, and the on-chain accounts let you prove it.
 
-Find the transaction carrying `request_randomness`, the moment Lucky Ducks asked ORAO for this race's number. In it you will see the call to the Lucky Ducks program, a nested invocation of the ORAO program (`VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y`), and a new account whose address is exactly the race's `randomness_account`. Click through.
+Find the transaction carrying `request_randomness`, the moment The Lucky Ducks asked ORAO for this race's number. In it you will see the call to The Lucky Ducks program, a nested invocation of the ORAO program (`VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y`), and a new account whose address is exactly the race's `randomness_account`. Click through.
 
-That account starts empty. Within seconds the ORAO fulfilment authority, a wallet ORAO operates and Lucky Ducks does not, signs a transaction writing the seed into it. Find that transaction in the account's history: ORAO-signed, calling the ORAO program, writing the bytes. From then on anyone can read the seed, and Lucky Ducks cannot change it, because **the account is owned by ORAO's program rather than by Lucky Ducks**.
+That account starts empty. Within seconds the ORAO fulfilment authority, a wallet ORAO operates and The Lucky Ducks does not, signs a transaction writing the seed into it. Find that transaction in the account's history: ORAO-signed, calling the ORAO program, writing the bytes. From then on anyone can read the seed, and The Lucky Ducks cannot change it, because **the account is owned by ORAO's program rather than by The Lucky Ducks**.
 
 {% columns %}
 {% column width="70%" %}
@@ -216,7 +216,7 @@ A mismatch between `winners[0]` and what the algorithm produces would mean a bro
 
 ## Step 6; Verify the payout
 
-The last step is `claim_prize`, or `claim_prize_token`. Check that it calls the Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A podium race splits the winners' share 50% / 30% / 20%. Once everything settles, the race account closes and its rent returns to the creator.
+The last step is `claim_prize`, or `claim_prize_token`. Check that it calls The Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A podium race splits the winners' share 50% / 30% / 20%. Once everything settles, the race account closes and its rent returns to the creator.
 
 The balance changes on that one transaction are the whole proof:
 

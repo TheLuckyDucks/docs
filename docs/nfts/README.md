@@ -5,7 +5,7 @@ description: Four collections, what each one changes, how the platform detects t
 
 # NFT collections
 
-Four collections, each with its own job. All four are Metaplex Core assets on Solana, tradable on the Lucky Ducks marketplace and on Tensor and MagicEden, and race actions check the connected wallet for the right one.
+Four collections, each with its own job. All four are Metaplex Core assets on Solana, tradable on The Lucky Ducks marketplace and on Tensor and MagicEden, and race actions check the connected wallet for the right one.
 
 ## The four collections
 
@@ -31,7 +31,7 @@ The contract checks the NFT is in the wallet at the moment of the transaction, i
 ## Where to acquire
 
 - **Mints.** New collections drop periodically, announced on the homepage and in Telegram.
-- **Marketplace.** The in-app marketplace lists every Lucky Ducks NFT for sale, filterable by collection.
+- **Marketplace.** The in-app marketplace lists every NFT from The Lucky Ducks for sale, filterable by collection.
 - **Third party.** Tensor and MagicEden carry the same NFTs, and buying there lands the asset in the same wallet.
 - **Mystery Boxes.** Sealed boxes that open into a random reward from the matching collection. See [Mystery Boxes](mystery-boxes.md).
 - **Renting.** Some tiers rent by the day. The NFT sits in your wallet and works normally for the term, then returns on its own. See [Renting an NFT](renting.md).

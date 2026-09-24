@@ -1,11 +1,11 @@
 ---
 icon: signature
-description: Let Lucky Ducks sign your in-game actions for a period you choose, and keep money leaving the platform on your own signature.
+description: Let The Lucky Ducks sign your in-game actions for a period you choose, and keep money leaving the platform on your own signature.
 ---
 
 # Playing without signing every action
 
-Lucky Ducks can sign your in-game actions for you, for a period you choose. Joining then takes one tap: no wallet popup, no waiting on a confirmation. The app calls it delegated signing, and the panel on the Player page carries that name.
+The Lucky Ducks can sign your in-game actions for you, for a period you choose. Joining then takes one tap: no wallet popup, no waiting on a confirmation. The app calls it delegated signing, and the panel on the Player page carries that name.
 
 It exists for phones, where a wallet round trip per action is the slowest part of a race. This page is the detail; [Playing without your wallet app](without-the-wallet-app.md) is the whole path, sign-in half included.
 

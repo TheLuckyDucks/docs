@@ -3,7 +3,7 @@ icon: circle-info
 description: A duck racing platform where the math is the product. What that means, what it costs, and who runs it.
 ---
 
-# What is Lucky Ducks
+# What is The Lucky Ducks
 
 A stylized pond, a flock of ducks at the line, and a 30-second sprint to the finish. Every race is a real Solana transaction, every prize is paid by a verified smart contract, and every random number that decides the outcome comes from an oracle rather than from the website.
 

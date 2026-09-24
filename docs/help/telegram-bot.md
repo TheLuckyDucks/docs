@@ -59,7 +59,7 @@ Would rather not appear by handle? Unlink it. See [Player verification](../trust
 
 ## Raids: boost the post together
 
-A **raid** rallies the group around a Lucky Ducks post on X. While one is live the bot keeps a card updated in place:
+A **raid** rallies the group around a post from The Lucky Ducks on X. While one is live the bot keeps a card updated in place:
 
 {% code title="A live raid card" %}
 

@@ -37,7 +37,7 @@ The largest race you can create without a Runner NFT, and the smallest lobby an 
 
 ### Delegation
 
-Permission you grant, for a period you choose, letting Lucky Ducks sign your in-game actions instead of your wallet. It spends from your player vault, expires on its own, revokes instantly, and can never move money off the platform. Granting needs a [verified](#verified) wallet; revoking never does. See [Playing without signing every action](../races/delegated-play.md).
+Permission you grant, for a period you choose, letting The Lucky Ducks sign your in-game actions instead of your wallet. It spends from your player vault, expires on its own, revokes instantly, and can never move money off the platform. Granting needs a [verified](#verified) wallet; revoking never does. See [Playing without signing every action](../races/delegated-play.md).
 
 ### Entry fee
 
@@ -73,7 +73,7 @@ Restricts entry to wallets holding a minimum number of NFTs from a chosen collec
 
 ### ORAO VRF
 
-The on-chain randomness oracle used by Lucky Ducks. ORAO operators sign random seeds and publish them to Solana; the smart contract reads the seed and computes race outcomes deterministically.
+The on-chain randomness oracle used by The Lucky Ducks. ORAO operators sign random seeds and publish them to Solana; the smart contract reads the seed and computes race outcomes deterministically.
 
 ### Payout target
 
@@ -149,4 +149,4 @@ Race mode where the first place finisher gets the entire prize pool, minus the p
 
 ### X announcement
 
-Posts the race publicly to Lucky Ducks' X account. Flat cost of around 0.0005 SOL, straight to the backend wallet at creation and non-refundable. Needs a Runner NFT, and a rematch picks it independently rather than inheriting it. See [X announcement](../races/advanced-options.md#x-announcement).
+Posts the race publicly to The Lucky Ducks' X account. Flat cost of around 0.0005 SOL, straight to the backend wallet at creation and non-refundable. Needs a Runner NFT, and a rematch picks it independently rather than inheriting it. See [X announcement](../races/advanced-options.md#x-announcement).

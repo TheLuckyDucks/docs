@@ -97,7 +97,7 @@ One refund returns every stake in the lobby and closes the race, so triggering i
 
 Anyone can submit the claim transaction, and the money still goes to the player who earned it, into their wallet or their player vault by their own payout setting. Whoever signs and pays for the transaction cannot change where it lands.
 
-### If I let Lucky Ducks sign for me, can it take my money?
+### If I let The Lucky Ducks sign for me, can it take my money?
 
 Not out of the platform. The permission covers playing: joining, creating, claiming, refunds, rematches and team actions. Withdrawing from your vault and closing your account need your wallet's signature, and the contract itself excludes them rather than a setting doing it.
 
@@ -131,9 +131,9 @@ Five reasons, and all of them matter more in a 30 second race than they would in
 
 **Latency, because the seed gates the race.** The race stops taking joins and then waits: no seed, no start, so the oracle's response time is the player's waiting time. ORAO typically fulfils within seconds and usually inside a minute even under load, which is what keeps a full lobby from sitting there. The contract puts a hard edge on that wait at the VRF timeout, around 3 minutes, after which the race can only be refunded.
 
-**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the oracle's cost is moved into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. At around 0.002 SOL that stays cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
+**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the oracle's cost is moved into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. At around 0.002 SOL, with the platform covering whatever the randomness costs above that, it stays cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
 
-**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account by calling the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](../trust/verifying-a-race.md) walks that check.
+**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account by calling the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to The Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](../trust/verifying-a-race.md) walks that check.
 
 **Devnet parity, and a test suite that includes the oracle.** The same program and the same oracle run on devnet, and the local test suite clones the ORAO program so a race runs end to end, randomness included, before anything reaches mainnet. An oracle that only really exists on mainnet would mean shipping the riskiest step untested.
 

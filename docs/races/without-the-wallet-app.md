@@ -32,7 +32,7 @@ Verification links an off-platform identity to your wallet, through whichever pr
 
 ### Turn on delegated play
 
-Lucky Ducks then signs your in-game actions for a period you choose, funded from your [player vault](../economy/player-vault.md). See [Playing without signing every action](delegated-play.md).
+The Lucky Ducks then signs your in-game actions for a period you choose, funded from your [player vault](../economy/player-vault.md). See [Playing without signing every action](delegated-play.md).
 
 {% endstep %}
 {% endstepper %}

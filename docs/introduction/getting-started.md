@@ -67,7 +67,7 @@ The canvas takes over: ducks paddle, splash and occasionally somersault, at a pa
 
 ## Optional: skip the wallet popups
 
-Once you are racing regularly, pre-fund a balance and let Lucky Ducks sign your in-game actions, so joining takes one tap. See [Your player vault](../economy/player-vault.md) and [Playing without signing every action](../races/delegated-play.md).
+Once you are racing regularly, pre-fund a balance and let The Lucky Ducks sign your in-game actions, so joining takes one tap. See [Your player vault](../economy/player-vault.md) and [Playing without signing every action](../races/delegated-play.md).
 
 ## Optional: verify
 

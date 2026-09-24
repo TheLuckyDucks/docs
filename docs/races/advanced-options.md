@@ -23,7 +23,7 @@ Any race size can have it, 1v1 and rematches included. On a rematch the proposer
 
 ## X announcement
 
-Posts the race to the Lucky Ducks X account when it goes live, which is useful for community events or for reaching players who are not watching the app.
+Posts the race to The Lucky Ducks X account when it goes live, which is useful for community events or for reaching players who are not watching the app.
 
 {% hint style="warning" %}
 Flat cost at creation, around **0.0005 SOL**, itemised in the cost breakdown before you sign. It goes straight to the backend wallet like the archival fee, and it is **non-refundable** once the race exists, even if the race never fills.
