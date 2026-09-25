@@ -80,9 +80,13 @@ You are never left guessing: a race past its window joins the Unclaimed Items ba
 
 Triggering it yourself costs the network fee, and during a [delegated session](../races/delegated-play.md) that comes from your vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 
+On a token race, a refund or a cancellation that finds a player's token account closed opens it again first, in a transaction approved in the same prompt. Whoever sends it pays that account's rent: your wallet when you sign, the platform when it sends the refund, delegated sessions included. Your vault is never charged for it.
+
 ## Race account rent
 
-Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: roughly 0.0084 SOL for a 1v1, 0.012 SOL at 5 seats and 0.03 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns all of it to the creator.
+Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: at today's rate roughly 0.0061 SOL for a 1v1, 0.0088 SOL at 5 seats and 0.022 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns all of it to the creator.
+
+Solana sets the rent rate, not The Lucky Ducks, and the rate can change, so treat every rent figure on these pages as approximate. The app reads the live rate and shows the exact amount before you sign.
 
 Net cost of creating a race, then: oracle fee, archival fee and any opt in costs. The rent is a deposit, not a charge.
 

@@ -36,7 +36,7 @@ Everything you do inside the game:
 - Create a race, join one, leave one during the lobby.
 - Claim a prize, cancel your own race, trigger a refund.
 - Offer, accept and decline rematches.
-- Claim a tournament prize.
+- Claim a tournament prize you won.
 - Every team action: create, update, join, leave, invite, remove, disband.
 
 ## What the permission can never do
@@ -71,6 +71,8 @@ Where your winnings land sits on the same screen but is a separate choice. Chang
 ## What it costs
 
 Each action signed for you reimburses a flat per-action charge from your vault's SOL balance, set by the platform and 0.00005 SOL as it stands, which covers submitting the transaction on your behalf.
+
+A token claim sent for you may also have to open a token account the payout goes to, for a winner or for the platform. Your vault pays that rent, and the program bills it only for accounts it actually creates. When several are missing, a separate step creates them first and the claim is paid after it.
 
 {% hint style="warning" %}
 **An action that pays you still needs SOL in the vault.** Claiming costs a fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.

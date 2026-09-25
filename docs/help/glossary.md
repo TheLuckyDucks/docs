@@ -17,7 +17,7 @@ An invite list of up to 20 wallets, which is also the most players a race can ho
 
 ### ATA (Associated Token Account)
 
-A small Solana account that holds one SPL token for one wallet. Your wallet needs one per token, and joining a token race creates it for you if you have none, for a one-time deposit of about 0.002 SOL that comes back when you close it. The race vault has one too, and payouts move the token from it to each winner's.
+A small Solana account that holds one SPL token for one wallet. Your wallet needs one per token, and joining a token race creates it for you if you have none, for a one-time deposit, about 0.0015 SOL at today's rent rate, that comes back when you close it. The race vault has one too, and payouts move the token from it to each winner's.
 
 ### Boost
 

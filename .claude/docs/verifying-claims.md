@@ -30,19 +30,28 @@ tunable is capped at or to cover a value with no config field.
 
 ## Rent, which is arithmetic
 
-Solana charges `(128 + size) * 6960` lamports to keep an account open, and the
-dApp's own copy of that math is `Frontend/app/src/shared/utils/rent.ts`
-(`PLAYER_ACCOUNT_LEN`, `ATA_SIZE`). A race account is sized for a **full lobby**,
-so its rent depends on the seats:
+Solana charges `(128 + size) * rate` lamports to keep an account open, and the
+rate is the cluster's, not a constant: SIMD-0437 lowers it in stages. Read it
+from mainnet before quoting any rent figure; rent for 0 bytes is `128 * rate`:
+
+```bash
+curl -s https://api.mainnet-beta.solana.com -H 'Content-Type: application/json' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"getMinimumBalanceForRentExemption","params":[0]}'
+```
+
+The dApp's own copy of that math is `Frontend/app/src/shared/utils/rent.ts`
+(`PLAYER_ACCOUNT_LEN`, `ATA_SIZE`), which takes the rate from `/config`. A race
+account is sized for a **full lobby**, so its rent depends on the seats. Set
+`RATE` to the result above divided by 128:
 
 ```bash
 cd ../TheLuckyDucks/Anchor
-perl -0777 -ne '
+RATE=5080 perl -0777 -ne '
   my ($body) = /fn calculate_space\(max_players: u16\) -> usize \{(.*?)\n    \}/s;
   $body =~ s{//[^\n]*}{}g; $body =~ s/\s+//g;
   for my $p (2, 5, 10, 20) {
     my $e = $body; $e =~ s/\(max_playersasusize\*(\d+)\)/$p*$1/g;
-    my $size = eval $e; my $rent = (128 + $size) * 6960;
+    my $size = eval $e; my $rent = (128 + $size) * $ENV{RATE};
     printf "max_players %-3d size %5d bytes  rent %.6f SOL\n", $p, $size, $rent/1e9;
   }' programs/lucky_ducks/src/state.rs
 ```

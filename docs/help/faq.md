@@ -27,6 +27,10 @@ For a 0.01 SOL race with no opt ins: roughly 0.000005 SOL in network fees, the 0
 
 Yes, and it is built for it. Link a social account and turn on [playing without signing every action](../races/delegated-play.md) and a whole session never opens your wallet app: one tap per join, claim or rematch. [Playing without your wallet app](../races/without-the-wallet-app.md) is the order to set it up in.
 
+### Does my wallet sign the transactions the app sends?
+
+Yes, with nothing to set. Wallets that support Solana's newer v1 transactions (Phantom and Solflare, for example) sign that format, and others use the older format automatically. If a wallet fails a v1 transaction, the app retries that action in the older format, which can mean a second approval, and keeps to it for the rest of your session.
+
 ### Do I need a Runner NFT to play?
 
 No. Any race is joinable without one. A Runner is for **creating** races past the basics: more than 5 players, AI commentary, X announcement, custom track, name, join timeout or duration, a minimum account age gate, no-boost mode, hosting without playing, sponsored races, and the Allowed Players allowlist.
@@ -77,7 +81,7 @@ No. Cancel the offer and your stake comes back, free of charge once their accept
 
 ### Does a pending rematch stop me claiming my prize?
 
-No, it is always claimable. The reverse is the trap: claiming first ends the chance of a rematch on that race, because the winner's next stake comes out of those unclaimed winnings. See [Rematches](../competition/rematches.md).
+Only while the offer is open, because the program holds the prize until the offer is settled. Accepting pays the finished race out with no claim at all, and a decline, a cancel or clearing an expired offer makes it claimable again. The reverse is the trap: claiming first ends the chance of a rematch on that race, because the winner's next stake comes out of those unclaimed winnings. See [Rematches](../competition/rematches.md).
 
 ### Can I gate a race on an NFT collection from another chain?
 

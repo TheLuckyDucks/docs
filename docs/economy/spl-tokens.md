@@ -32,7 +32,7 @@ Where a token charges a transfer fee of its own, the platform reads that fee and
 Mechanically identical to a SOL race, with three differences:
 
 - The entry fee is set and shown in the token itself, so a 1 USDC race costs 1 USDC.
-- Each player needs a token account for that SPL token, which is a small account Solana uses to hold one token for one wallet. Without one, joining creates it for you and you pay a one-time deposit of about 0.002 SOL, which comes back when you close it.
+- Each player needs a token account for that SPL token, which is a small account Solana uses to hold one token for one wallet. Without one, joining creates it for you and you pay a one-time deposit, about 0.0015 SOL at today's rent rate, which comes back when you close it.
 - The race vault holds the token itself, and payouts move it from there to each winner's token account.
 
 {% hint style="warning" %}
@@ -55,7 +55,7 @@ Hold none of the chosen token and the join button is disabled with an "Insuffici
 
 A tournament pot can be in a supported token, and when it is, only races in that token count toward the standings, so the event and its prize share one currency.
 
-Claiming works as it does for SOL: one transaction pays every member of the winning team, creating a token account for anyone who lacks one, so there is nothing to set up first. See [Tournaments](../competition/tournaments.md#claiming).
+Claiming works as it does for SOL: one transaction pays every member of the winning team, creating a token account for anyone who lacks one, so there is nothing to set up first. Whoever claims pays those accounts' rent, from their vault when the platform claims for them. When many are missing, they are opened in a first transaction and the payout follows in a second; signing yourself, you approve both in one prompt. See [Tournaments](../competition/tournaments.md#claiming).
 
 ## Why use SPL tokens
 

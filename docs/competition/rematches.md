@@ -64,6 +64,7 @@ Cancelling while your opponent can still accept costs the same fixed **0.01 SOL*
 - The proposer can cancel at any moment.
 - The opponent can decline at any moment.
 - Once the acceptance window passes, anyone at all can clear the offer, and the proposer is refunded in full.
+- Until one of those happens, the offered race is closed to everything else: nobody can join it, and it cannot be cancelled or refunded like an ordinary race.
 
 ## Rematch chains
 
