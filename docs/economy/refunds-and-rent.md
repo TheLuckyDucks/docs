@@ -41,7 +41,7 @@ Withdrawn players stay in the participants list with a strikethrough, and stop c
 
 ## Full refund on race cancellation or expiration
 
-A race that never finalizes refunds every paid participant in **full**. Two cases.
+A race that never finalizes refunds every paid participant in **full**, all of them in one transaction, whether the creator cancelled it or it expired. A lobby holds at most 20 players, which is what lets a single transaction always pay the whole of it. Two cases.
 
 ### Creator cancellation during the join window
 
@@ -80,7 +80,11 @@ You are never left guessing: a race past its window joins the Unclaimed Items ba
 
 Triggering it yourself costs the network fee, and during a [delegated session](../races/delegated-play.md) that comes from your vault. See [Provable randomness](../trust/fairness.md#what-if-the-seed-never-arrives) for the deadline itself.
 
-On a token race, a refund or a cancellation that finds a player's token account closed opens it again first, in a transaction approved in the same prompt. Whoever sends it pays that account's rent: your wallet when you sign, the platform when it sends the refund, delegated sessions included. Your vault is never charged for it.
+### When a player has no token account
+
+On a token race, the refund or cancellation is sent as it is. Only if it fails because someone it pays has no token account for that token, for instance because they closed it, are the missing accounts opened, and the refund is then sent once more. Signing yourself, you approve both in one prompt. A retry that still fails shows its error and is not repeated automatically.
+
+Whoever sends it pays the rent on the accounts it opens: your wallet when you sign, the platform when it sends the refund, delegated sessions included. Your vault is never charged for these. The one account a refund sent for you can bill your vault for is your vault's own, covered in [What it costs](../races/delegated-play.md#what-it-costs).
 
 ## Race account rent
 
@@ -112,6 +116,16 @@ Opting into start-when-underfilled deposits a small surcharge into the race vaul
 Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone and covers every race you are in, which matters here because anyone may trigger a refund on a lobby that never filled.
 
 The exception is closing your player account. That returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
+
+## Very small SOL payouts
+
+Solana will not credit a wallet holding no SOL at all with less than the minimum balance an account needs to exist, and it refuses any transaction that tries. So a SOL payout that small, to a wallet that empty, is held back instead of sent: it stays in the vault it would have come from, and the transaction records who was owed it and how much. On a refund or a tournament claim, which pay many people at once, this is what stops one empty wallet from blocking everyone else's payment.
+
+{% hint style="danger" %}
+A held-back amount is not paid later. It stays in the vault until the vault closes and leaves with whatever else is left there: to the race's creator, by their payout setting, on a race, and to the platform on a tournament.
+{% endhint %}
+
+It applies only to SOL, never to a token payout, and only to a wallet at zero. The minimum entry fee is never set below that threshold, so in practice it is a very small tournament share, split many ways, that meets it.
 
 ## Where to claim
 

@@ -68,13 +68,27 @@ Standings are computed off chain, which is what lets a rule change between tourn
 
 ## Claiming
 
-One transaction pays every winner at once, so the first of you to press Claim settles it for the whole team. With [playing without signing every action](../races/delegated-play.md) on, the platform can send it for you.
+One claim pays every winner, so the first of you to press Claim settles it for the whole team. With [playing without signing every action](../races/delegated-play.md) on, the platform can send it for you.
 
 Whoever sends it, the money goes to the winners' own wallets. Paying the fee entitles the sender to nothing.
 
 The button shows your share and what it is worth. While the tournament runs that dollar figure follows the market; once it ends the figure is fixed at the rate when it ended, so what you won does not appear to drift afterwards. A tournament that ended with no usable price shows the amount alone.
 
-<figure><img src="../../.gitbook/assets/competition/app-tournament-claim-banner.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value"><figcaption><p>One transaction pays the whole team, whoever sends it.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-tournament-claim-banner.png" alt="The tournament claim button showing one member's share of the pot and its approximate dollar value"><figcaption><p>One claim pays the whole team, whoever sends it.</p></figcaption></figure>
+
+### A large team is paid over several transactions
+
+When the winning team is too large for one transaction, the claim pays it in several, each covering the next group of winners in list order. Your share can therefore land a little before or after a teammate's, and every share is the same amount it would be in one go, remainder included.
+
+If the claim stops part way, because a transaction failed or you closed the page, its progress stays on chain. The next claim, from you, a teammate or the platform acting for one of you, picks up at the first winner not yet paid. Nobody can be paid twice: a transaction resent after it landed is refused, and once a claim has started paging, only continuing it can pay anyone.
+
+The first transaction opens a small account that tracks the progress. Whoever sends it pays that account's rent, the small SOL deposit Solana requires to keep an account open, and gets all of it back when the last transaction closes it.
+
+{% hint style="success" %}
+The platform fee comes out on the last transaction, after every winner has been paid. A claim that stalls part way never leaves the platform paid and the team waiting.
+{% endhint %}
+
+On a SOL pot, a share too small for Solana to credit to a wallet holding no SOL at all is held back rather than sent. See [Refunds and rent](../economy/refunds-and-rent.md#very-small-sol-payouts) for what happens to it.
 
 ## Your team is frozen while a tournament runs
 

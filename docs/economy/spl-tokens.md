@@ -55,7 +55,23 @@ Hold none of the chosen token and the join button is disabled with an "Insuffici
 
 A tournament pot can be in a supported token, and when it is, only races in that token count toward the standings, so the event and its prize share one currency.
 
-Claiming works as it does for SOL: one transaction pays every member of the winning team, creating a token account for anyone who lacks one, so there is nothing to set up first. Whoever claims pays those accounts' rent, from their vault when the platform claims for them. When many are missing, they are opened in a first transaction and the payout follows in a second; signing yourself, you approve both in one prompt. See [Tournaments](../competition/tournaments.md#claiming).
+Claiming works as it does for SOL: one claim pays every member of the winning team, over several transactions when the team is too large for one. See [Tournaments](../competition/tournaments.md#claiming).
+
+## When someone has no token account
+
+Every payout goes to each person's token account for that token, and sometimes one does not exist: a winner who never held the token, or a player who closed theirs. There is nothing to set up first. The payout is sent as it is, and only a failure caused by a missing account opens anything.
+
+- **A prize claim**, for a race or a tournament, opens a missing account itself. When too many are missing for one transaction, they are opened in a transaction of their own and the claim is sent again. Whoever claims pays the rent, from their vault when the platform claims for them, and only for accounts actually opened.
+- **A refund or a cancellation** opens none itself, so the missing accounts are opened after it fails and it is sent again. Whoever sends it pays, the platform when it does, and your vault never does. See [Refunds and rent](refunds-and-rent.md#when-a-player-has-no-token-account).
+
+Signing yourself, you approve the extra transaction and the payout in one prompt. The retry happens once, and a second failure shows its error. An account opened for you is yours like any other, and closing it returns its rent to you.
+
+## What your wallet history shows
+
+A token payout can carry a memo, a short note that travels with the transfer and shows in a block explorer and in any wallet history that displays memos. It says what the payment is and which race or tournament it belongs to, such as `LuckyDucks refund race #1234`. A withdrawal from your player vault, or closing your account, reads `LuckyDucks withdraw`.
+
+- **Always**, on a race prize, a creator's share, leaving a lobby, a rematch payout, a withdrawal from your vault and closing your account.
+- **Only when your token account requires one**, on a refund, a cancellation and a tournament prize, which pay a whole lobby or team at once. Some Token-2022 accounts refuse any incoming transfer that arrives without a memo, and those get one. Every other account receives the payment with no note.
 
 ## Why use SPL tokens
 

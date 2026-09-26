@@ -72,7 +72,11 @@ Where your winnings land sits on the same screen but is a separate choice. Chang
 
 Each action signed for you reimburses a flat per-action charge from your vault's SOL balance, set by the platform and 0.00005 SOL as it stands, which covers submitting the transaction on your behalf.
 
-A token claim sent for you may also have to open a token account the payout goes to, for a winner or for the platform. Your vault pays that rent, and the program bills it only for accounts it actually creates. When several are missing, a separate step creates them first and the claim is paid after it.
+A token claim sent for you may also have to open a token account the payout goes to, for a winner or for the platform. Your vault pays that rent, and the program bills it only for accounts it actually creates. When too many are missing for the claim to open them itself, the claim fails, a separate step opens them and the claim is sent again, and that step charges nothing if it finds every account already open.
+
+A tournament prize paid over several transactions takes the per-action charge once per transaction, from the vault of the winner each one is sent for. When the platform starts such a claim for you, it also fronts the rent of the small account that tracks the progress and takes it back at the end, so that never reaches your vault.
+
+When a refund or cancellation sent for you has to reopen someone's token account, the platform pays that rent, never your vault. The one account your vault does pay for there is your own: if you pool payouts in your vault and it has never held that token, the vault's account for it is opened in the same transaction, and your vault repays that rent along with the per-action charge.
 
 {% hint style="warning" %}
 **An action that pays you still needs SOL in the vault.** Claiming costs a fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.

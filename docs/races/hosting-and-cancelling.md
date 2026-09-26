@@ -22,7 +22,7 @@ It suits community events, tournaments where the organiser should not compete, a
 
 ## Cancelling a race
 
-Only the creator can cancel, and only while the join window is open. Everyone who joined gets their full entry back, you included if you joined, and you pay a small fixed penalty in SOL to the platform.
+Only the creator can cancel, and only while the join window is open. Everyone who joined gets their full entry back in that same transaction, you included if you joined, and you pay a small fixed penalty in SOL to the platform.
 
 {% hint style="warning" %}
 The penalty is flat, around **0.05 SOL**, and the confirmation shows the exact figure. It does not scale with the pot, and a token race still pays it in SOL.
@@ -38,7 +38,7 @@ The penalty is there to keep cancelling deliberate. Joiners committed real funds
 
 A race that never filled or started can be refunded once the window passes, and anyone at all can trigger that, not only the creator.
 
-- Every player gets their full entry back.
+- Every player gets their full entry back, the whole lobby in one transaction.
 - Hosted and never joined? There is no entry to refund you, but the leftovers from setting the race up, the rent and any unused opt in costs, still come back.
 - No penalty applies after expiry. The penalty belongs to the window.
 
@@ -52,7 +52,7 @@ A race nobody joined just closes. No penalty, no fanfare.
 | Creator cancels during lobby               | Creator only          | Full entry returned               | 0.05 SOL flat                       |
 | Race expires (join window passes unfilled) | Anyone at all         | Full entry returned               | None                                |
 
-For the rest of the money flow, rent, surcharges and where pending refunds appear, see [Refunds and rent](../economy/refunds-and-rent.md).
+For the rest of the money flow, rent, surcharges, where pending refunds appear and what happens to a payout too small to send, see [Refunds and rent](../economy/refunds-and-rent.md).
 
 {% content-ref url="../economy/refunds-and-rent.md" %}
 [refunds-and-rent.md](../economy/refunds-and-rent.md)
