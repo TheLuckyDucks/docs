@@ -94,7 +94,7 @@ The creator pays a few small costs at creation, separate from the pool:
 - **Audio cost**, with AI commentary on: about 0.00005 SOL per race second, so roughly 0.0015 SOL for 30 seconds and 0.009 SOL for 3 minutes.
 - **X announcement**, if enabled: flat 0.0005 SOL straight to the backend wallet, non-refundable.
 - **Start-when-underfilled cost**, if opted in: paid to the platform when it starts the race for you, refunded if the race never auto starts.
-- **Race account rent.** Around 0.0088 SOL for a 5 seat lobby at today's rent rate, scaling with the seats: roughly 0.0061 SOL for a 1v1 and 0.022 SOL at 20. Refunded in full when the race closes.
+- **Race account rent.** Around 0.0079 SOL for a 5 seat lobby at today's rent rate, scaling with the seats: roughly 0.0058 SOL for a 1v1 and 0.019 SOL at 20. Refunded in full when the race closes.
 
 The oracle fee is a flat charge rather than a pass through of what the day costs. ORAO's own fee is 0.0005 SOL, and most of the rest is rent for the account the seed is written into. Fulfilling the request returns only part of that rent, and the remainder stays in the account for good. Busy moments push the transactions above their base fee, and a request that is never fulfilled returns none of that rent at all, so the real figure sits above the flat one often enough to matter. The Lucky Ducks funds that gap instead of passing it on, so what a creator pays stays the same number every time.
 

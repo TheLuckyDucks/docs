@@ -208,7 +208,7 @@ One subtlety: the seed is readable the moment ORAO fulfils, usually before `race
 
 A `consume_randomness` instruction copies the seed from the ORAO account into the race's `vrf_seed`, and from there the winner is recomputable by anyone.
 
-Find `finalize_race` in the history and check three things: the logs include `Race #N: Finalized - X winner(s) determined`, `status` has become `Completed`, and `winners` is populated.
+Find `finalize_race` in the history and check three things: the logs include `Race #N: Finalized, X winner(s) determined`, `status` has become `Completed`, and `winners` is populated.
 
 Selection is deterministic. Given the seed and the player list, boosts included, exactly one winner or podium is correct, and the algorithm is published in the program's source, so you can recompute it yourself and compare against `winners`. Winner Takes All lists 1 wallet; podium lists 3, in order.
 

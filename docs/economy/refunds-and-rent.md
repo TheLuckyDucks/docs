@@ -88,7 +88,7 @@ Whoever sends it pays the rent on the accounts it opens: your wallet when you si
 
 ## Race account rent
 
-Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: at today's rate roughly 0.0061 SOL for a 1v1, 0.0088 SOL at 5 seats and 0.022 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns all of it to the creator.
+Creating a race allocates a Solana account, and the creator pays its rent up front. The account is sized for a full lobby, so the rent tracks the seats: at today's rate roughly 0.0058 SOL for a 1v1, 0.0079 SOL at 5 seats and 0.019 SOL at 20. When the race finalizes or is cancelled, the contract closes the account and returns all of it to the creator.
 
 Solana sets the rent rate, not The Lucky Ducks, and the rate can change, so treat every rent figure on these pages as approximate. The app reads the live rate and shows the exact amount before you sign.
 
