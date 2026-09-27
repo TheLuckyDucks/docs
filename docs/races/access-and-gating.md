@@ -57,7 +57,7 @@ No Runner needed for the gate itself. The creator's own compliance comes from th
 
 ## NFT holders
 
-Requires each player to hold NFTs from a collection you choose, along with the **minimum number** they must hold, at least one, and the **chain** the collection lives on.
+Requires each player to hold NFTs from a collection you choose, along with the **minimum number** they must hold, and the **chain** the collection lives on. The minimum is at least 1 and at most a cap the platform sets, 5 as it stands and never above 32.
 
 {% hint style="warning" %}
 This gate always needs a Runner NFT to create, whichever chain the collection is on. Approval decides which collections may gate a race; it does not make the gate free.
@@ -72,6 +72,8 @@ Solana is the default. The chain selector also offers supported non-Solana chain
 Nothing else about the race changes. It still runs on Solana, with SOL or the usual tokens, and the ducks race the same. Only the source of the required NFT is new.
 
 Players see the chain wherever the race is announced: a race gated on a Base collection announces itself as needing NFT holders on BASE.
+
+On another chain, a minimum above 1 needs a collection whose token IDs the platform can list for a wallet: one that supports ERC-721 Enumerable, or one the chain's NFT data service covers. For any other collection, creating the race with a minimum above 1 is refused.
 
 ### The collection has to be approved
 
@@ -96,7 +98,7 @@ That wallet is then remembered for every future cross-chain race on that chain, 
 
 ### At join time
 
-The platform confirms your linked wallet holds an NFT from the required collection and lets you in; if it does not, you are not eligible, as with any holder gate. Not linked yet? The join flow sends you to that step first.
+When you join, the platform confirms the wallet holds at least the minimum number of NFTs from the required collection and lets you in; if it does not, you are not eligible, as with any holder gate. On another chain that is your linked wallet. Not linked yet? The join flow sends you to that step first.
 
 For an eligible player the app prepares a one time eligibility pass, so the race confirms you qualify at the moment you enter. On Solana that covers Metaplex Core and compressed NFTs, so most approved collections work. For other chains the backend checks the linked wallet's holdings off chain.
 
@@ -106,8 +108,8 @@ A Runner is required, and your own auto join faces the same threshold as any joi
 
 ### A few things worth knowing
 
-- Eligibility counts **what you hold right now**, not how long you have held it.
-- Each NFT secures **one seat per race**. The same NFT cannot take two.
+- Eligibility counts **what you hold when you join**, not how long you have held it.
+- Each NFT counts toward **one seat per race**. Once it has counted for a player, it cannot count for anyone else in that race, even after moving to another wallet, so passing NFTs between wallets cannot seat several players.
 - The eligibility pass is short lived, so finish your join promptly. If it expires, join again.
 - Solana-gated races are untouched by any of this. Race only in those and you never link an external wallet.
 

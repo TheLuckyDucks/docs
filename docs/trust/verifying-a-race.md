@@ -81,7 +81,7 @@ ORAO VRF program          VRFzZoJdhFWL8rkvu87LpKM3RbcVezpMEc6X5GVDr7y
 
 ## Step 0; Verify the program itself is legitimate
 
-One-time, not per race: you are checking that the deployed program matches the open source and has not been quietly replaced. Open the program address on Solana Explorer and read three rows.
+One-time, not per race: you are checking that the program at this address is the one the team runs and has not been quietly replaced. Open the program address on Solana Explorer and read three rows.
 
 **Upgradeable** should read Yes, which means the program runs under `BPFLoaderUpgradeab1e11111111111111111111111`, the Solana upgradeable loader every standard upgradeable program uses. Anything else is wrong.
 
@@ -103,7 +103,7 @@ One-time, not per race: you are checking that the deployed program matches the o
 {% endcolumn %}
 {% endcolumns %}
 
-For the strongest check, reproduce the published build hash locally with `solana-verify`, which confirms the on-chain bytes match the public source. The explorer's **Verified Build** row only says whether anyone has registered such a build with it: **Program Not Verified** means none is registered there, not that the bytes differ, so this check is the one that settles it.
+The explorer's **Verified Build** row reads **Program Not Verified**. The program is deployed from a direct Anchor build rather than a registered verifiable build, so no build is registered with the explorer. That row says nothing either way about the bytes: what settles whether the program changed is the upgrade authority and the last deployed slot above.
 
 ## Verifying one race, step by step
 

@@ -43,7 +43,7 @@ Some races ask for more than the entry fee, and the modal spells out whatever ap
 
 - **Verified only.** Wallets that have completed Telegram, X or Facebook verification.
 - **Allowlist (invite only).** Only the wallets the creator invited, up to 20. Off the list, Join stays disabled and the modal says the race is invite only.
-- **NFT Holders.** A minimum number of NFTs from a chosen collection, both shown so you can check at a glance. If the collection lives on another chain, such as Ethereum, Base or Polygon, the check runs against the external wallet linked to your profile, and the join flow sends you to link one first if you have not.
+- **NFT Holders.** A minimum number of NFTs from a chosen collection, both shown so you can check at a glance. Your holding is checked when you join, and each NFT counts toward one seat in the race, so the same NFTs cannot seat a second player. If the collection lives on another chain, such as Ethereum, Base or Polygon, the check runs against the external wallet linked to your profile, and the join flow sends you to link one first if you have not.
 - **Token Holders.** A minimum amount of a chosen token, which need not be the race's prize token.
 - **Minimum account age.** A player account at least a certain age. A brand new account created during the join transaction is always too young, and the modal says so rather than failing silently.
 
