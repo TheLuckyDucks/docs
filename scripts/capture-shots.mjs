@@ -167,26 +167,18 @@ const SHOTS = [
   },
   {
     stem: "app-lobby-participants",
-    modes: ["off"],
+    modes: ["guest"],
     folder: "races",
     kind: "pair",
-    path: "/app/races",
+    path: "/app/races/5364",
     steps: [
-      { click: '#race-5008 [data-cy="race-action"][data-action="lobby"]' },
       {
         click:
           '.modal-sm :text-is("Players"), .modal-md :text-is("Players"), .modal-lg :text-is("Players")',
       },
     ],
     target: MODAL,
-    after: [
-      {
-        click:
-          '.modal-sm :text-is("CLOSE"), .modal-md :text-is("CLOSE"), .modal-lg :text-is("CLOSE")',
-        optional: true,
-      },
-    ],
-    note: "race 5008's lobby on the Players tab: joined, not started, boosts showing",
+    note: "race 5364: an open lobby filling, two of its three carrying a boost",
   },
   {
     stem: "app-lobby-filling",
@@ -335,21 +327,21 @@ const SHOTS = [
     modes: ["guest", "off"],
     folder: "nfts",
     kind: "banner",
-    path: "/app/races/4971",
+    path: "/app/races/5364",
     steps: [{ click: '.modal-md :text-is("Players")' }],
     target: '.pb-nickname:text-is("dotfx") >> xpath=ancestor::*[6]',
     maxHeight: 186, // three rows: a banner, not the whole list
-    note: "race 4971: an open lobby where eight players carry a boost",
+    note: "race 5364: an open lobby where two of three carry a boost",
   },
   {
     stem: "app-verified-badge",
     modes: ["guest", "off"],
     folder: "trust",
     kind: "banner",
-    path: "/app/races/4971",
+    path: "/app/races/5364",
     steps: [{ click: '.modal-md :text-is("Players")' }],
     target: '.pb-nickname:text-is("dotfx") >> xpath=ancestor::*[5]',
-    note: "one verified player's row in race 4971",
+    note: "one verified player's row in race 5364",
   },
   {
     stem: "app-no-boost-race-card",
