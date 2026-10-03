@@ -846,12 +846,13 @@ const SHOTS = [
     span: [
       "text=/^play balance$/i >> visible=true",
       '[data-cy="vault-balance"]',
-      '[data-cy="vault-withdraw"]',
+      '[data-cy="vault-direction"]',
     ],
     target: '[data-cy="vault-balance"]',
   },
   {
     stem: "app-pay-from-balance-checkbox",
+    hold: "no vault-spend-toggle in the markup; needs a wallet with delegated signing OFF to tell apart gone from hidden",
     folder: "economy",
     kind: "banner",
     path: "/app/player/settings",
@@ -879,6 +880,7 @@ const SHOTS = [
       },
     ],
     span: [
+      '[data-cy="vault-direction"]',
       '[data-cy="vault-amount"] >> xpath=ancestor::*[2]',
       '[data-cy="vault-currency"] >> xpath=..',
       '[data-cy="vault-deposit"]',
@@ -900,16 +902,23 @@ const SHOTS = [
     path: "/app/player/settings",
     modes: ["off"],
     steps: [
-      { scrollTo: '[data-cy="vault-amount"]', block: "center" },
+      { scrollTo: '[data-cy="vault-direction"]', block: "center" },
+      { click: '[data-cy="vault-direction"] :text-is("Withdraw")' },
       {
         fill: 'input[data-cy="vault-amount"], [data-cy="vault-amount"] input',
         value: "0.039",
       },
     ],
     span: [
+      '[data-cy="vault-direction"]',
       '[data-cy="vault-amount"] >> xpath=ancestor::*[2]',
       '[data-cy="vault-withdraw"]',
-      "text=/rent your vault must keep/i >> visible=true",
+    ],
+    after: [
+      {
+        click: '[data-cy="vault-direction"] :text-is("Deposit")',
+        optional: true,
+      },
     ],
     target: '[data-cy="vault-withdraw"]',
     after: [
@@ -942,6 +951,17 @@ const SHOTS = [
     ],
     target: '[data-cy="grant-duration"]',
     note: "opens the duration list, never presses Enable",
+  },
+  {
+    stem: "app-preferences-panel",
+    folder: "help",
+    kind: "banner",
+    path: "/app/player/settings",
+    modes: ["off"],
+    // The whole block: the language picker, every switch under it and the Save
+    // that commits them.
+    steps: [{ scrollTo: '[data-cy="preferences-section"]', block: "center" }],
+    target: '[data-cy="preferences-section"]',
   },
   {
     stem: "app-payout-target-setting",

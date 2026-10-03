@@ -83,6 +83,8 @@ Which price depends on whether the thing is still running:
 With no price available you see the amount and no dollar figure. A blank means the price is missing, not that the amount is worthless.
 {% endhint %}
 
+If you would rather see token amounts alone, turn the conversion off in [your preferences](../help/preferences.md).
+
 <figure><img src="../../.gitbook/assets/economy/app-usd-estimate-banner.png" alt="A prize amount in SOL with an approximate dollar figure beside it"><figcaption><p>The token amount is the exact one. The figure beside it is an estimate.</p></figcaption></figure>
 
 ## Other costs at creation

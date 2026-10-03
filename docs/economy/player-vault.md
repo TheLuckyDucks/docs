@@ -21,7 +21,7 @@ The balance is not a number recorded somewhere: it is the actual SOL in your acc
 
 ## Topping up
 
-From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. You can hold SOL and several tokens at once, each tracked separately.
+From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. The **25%**, **50%** and **All** chips under the amount fill it in for you, from what your wallet can move. You can hold SOL and several tokens at once, each tracked separately.
 
 {% hint style="info" %}
 **A deposit always needs your wallet's signature.** Not a policy: money leaving your wallet requires your wallet to sign, so no setting and no permission can move it for you.
@@ -51,7 +51,7 @@ If the balance falls short, your wallet pays and the app says so. Nothing fails 
 
 ## Taking money out
 
-Withdraw any amount, any time, from the Player page, whether or not you have granted [delegated signing](../races/delegated-play.md). Only your wallet can authorise it, and no permission you grant or setting you flip can move money out of your vault or your account.
+Withdraw any amount, any time, from the Player page, whether or not you have granted [delegated signing](../races/delegated-play.md). The **25%**, **50%** and **All** chips under the amount fill in that share of the balance. Only your wallet can authorise it, and no permission you grant or setting you flip can move money out of your vault or your account.
 
 Closing the account returns everything in one transaction, your SOL, every token balance and the rent deposit. Your race history resets, and the account comes back the next time you race. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
 
@@ -78,6 +78,20 @@ The one exception is closing your account: that returns the rent of the account 
 <figure><img src="../../.gitbook/assets/economy/app-payout-target-setting-banner.png" alt="The payout target setting with wallet and vault options, wallet selected"><figcaption><p>One setting, per player, covering prizes, refunds and returned rent.</p></figcaption></figure>
 
 Pooling is worth it if you race often, and you can set it back to Wallet whenever you like.
+
+The switch always shows what is stored for your account, whether or not delegated signing is on, so enabling it never moves your winnings somewhere you did not pick.
+
+## The balance in the top bar
+
+The button at the top right shows your wallet's SOL. Open it to see both balances side by side: your wallet, then your vault's SOL and every token it holds.
+
+Press any row to put that balance on the button instead. A vault balance carries a small orange dot on its token icon, the same orange as an action the app signs for you, because that is the money those actions spend. Press the wallet row to go back.
+
+The choice is saved with [your preferences](../help/preferences.md), so it holds on every device. It returns to your wallet by itself when the vault no longer holds what you picked, and when you close your account.
+
+{% hint style="info" %}
+Signed in with a social account on a device with no wallet app? There is no wallet balance to read, so the button shows your vault.
+{% endhint %}
 
 ## Next
 

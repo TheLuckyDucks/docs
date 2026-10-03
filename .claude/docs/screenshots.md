@@ -334,13 +334,14 @@ still worth having: it is where most readers will actually check a race.
 
 ## help/
 
-| Shot                       | Page                      | Shows                                                      |
-| -------------------------- | ------------------------- | ---------------------------------------------------------- |
-| `tg-race-announcement`     | `help/telegram-bot.md`    | A race announcement card in a group: entry fee, mode, link |
-| `social-card-telegram.png` | `help/social-networks.md` | Card cover, 16:9, the Telegram group                       |
-| `social-card-x.png`        | `help/social-networks.md` | Card cover, 16:9, the X profile                            |
-| `social-card-youtube.png`  | `help/social-networks.md` | Card cover, 16:9, the YouTube channel                      |
-| `social-card-tiktok.png`   | `help/social-networks.md` | Card cover, 16:9, the TikTok profile                       |
+| Shot                                 | Page                      | Shows                                                      |
+| ------------------------------------ | ------------------------- | ---------------------------------------------------------- |
+| `app-preferences-panel` **(banner)** | `help/preferences.md`     | The preferences panel: its switches and the Save button    |
+| `tg-race-announcement`               | `help/telegram-bot.md`    | A race announcement card in a group: entry fee, mode, link |
+| `social-card-telegram.png`           | `help/social-networks.md` | Card cover, 16:9, the Telegram group                       |
+| `social-card-x.png`                  | `help/social-networks.md` | Card cover, 16:9, the X profile                            |
+| `social-card-youtube.png`            | `help/social-networks.md` | Card cover, 16:9, the YouTube channel                      |
+| `social-card-tiktok.png`             | `help/social-networks.md` | Card cover, 16:9, the TikTok profile                       |
 
 The phone half of this one is the Telegram mobile app, not a browser.
 

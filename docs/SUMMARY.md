@@ -56,5 +56,6 @@
 
 - [FAQ](help/faq.md)
 - [Glossary](help/glossary.md)
+- [Your preferences](help/preferences.md)
 - [The Lucky Ducks Telegram bot](help/telegram-bot.md)
 - [Social networks](help/social-networks.md)

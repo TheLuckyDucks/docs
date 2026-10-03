@@ -62,6 +62,7 @@ other mention links to it rather than restating it.
 | Badges and XP milestones                                     | `competition/badges.md`               |
 | Entry fee, platform fee tiers, prize pool                    | `economy/fees-and-prizes.md`          |
 | The pre-funded balance, deposits, withdrawals, payout target | `economy/player-vault.md`             |
+| Which balance the top bar button shows                       | `economy/player-vault.md`             |
 | Creator fee share                                            | `economy/creator-fee-share.md`        |
 | Withdrawals, refunds, rent, surcharges                       | `economy/refunds-and-rent.md`         |
 | Token races, supported programs                              | `economy/spl-tokens.md`               |
@@ -70,6 +71,7 @@ other mention links to it rather than restating it.
 | Player profiles and verification badges                      | `trust/verification.md`               |
 | Common questions                                             | `help/faq.md`                         |
 | Terms a player will meet                                     | `help/glossary.md`                    |
+| Language, dollar figures, race sound, seasonal theme         | `help/preferences.md`                 |
 | The Telegram bot and raids                                   | `help/telegram-bot.md`                |
 | Where to reach the team                                      | `help/social-networks.md`             |
 
