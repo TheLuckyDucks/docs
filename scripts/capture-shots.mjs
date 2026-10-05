@@ -852,13 +852,13 @@ const SHOTS = [
   },
   {
     stem: "app-pay-from-balance-checkbox",
-    hold: "no vault-spend-toggle in the markup; needs a wallet with delegated signing OFF to tell apart gone from hidden",
     folder: "economy",
     kind: "banner",
     path: "/app/player/settings",
     modes: ["off"],
     steps: [{ scrollTo: '[data-cy="vault-spend-toggle"]', block: "center" }],
     span: [
+      "text=/delegated signing is off/i >> visible=true",
       '[data-cy="vault-spend-toggle"]',
       "text=/pay race entries from your play balance/i >> visible=true",
       "text=/cannot cover comes out of your wallet/i >> visible=true",
