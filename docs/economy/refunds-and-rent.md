@@ -113,7 +113,7 @@ Opting into start-when-underfilled deposits a small surcharge into the race vaul
 
 ## Where the money lands
 
-Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone and covers every race you are in, which matters here because anyone may trigger a refund on a lobby that never filled.
+Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone and covers every race you are in, which matters here because anyone may trigger a refund on a lobby that never filled. It covers tournament prizes as well, and it does not depend on delegated signing: whether your grant is live, expired or was never made changes nothing about where your money lands.
 
 The exception is closing your player account. That returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
 
@@ -129,4 +129,4 @@ It applies only to SOL, never to a token payout, and only to a wallet at zero. T
 
 ## Where to claim
 
-Most refunds and claims run through the Unclaimed banner on the Player page, where any race with something pending shows up with a single Claim button. The race detail modal carries per-race claim buttons too.
+Most refunds and claims run through the Unclaimed Items banner in the top bar, where any race with something pending shows up with a single Claim button. The race detail modal carries per-race claim buttons too.

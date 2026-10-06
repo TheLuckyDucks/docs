@@ -64,19 +64,21 @@ Revoke whenever you like with the Revoke button, which the panel shows while a g
 
 Extending uses the same panel, with Extend in place of Enable, and needs the same verified wallet.
 
-Where your winnings land sits on the same screen but is a separate choice. Change it whenever you like, granted or not, verified or not: it only says where money already owed to you should go.
+Where your winnings land sits on the same screen but is a separate choice. Change it whenever you like, granted or not, verified or not: it only says where money already owed to you should go. The grant does not move it either. Prizes and refunds go where that choice says with a live grant, an expired one or none at all, so revoking or letting a grant lapse does not send them back to your wallet.
 
 <figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The Revoke button in the delegated signing panel while a grant is live"><figcaption><p>The off switch needs no verification and takes effect at once.</p></figcaption></figure>
 
 ## What it costs
 
-Each action signed for you reimburses a flat per-action charge from your vault's SOL balance, set by the platform and 0.00005 SOL as it stands, which covers submitting the transaction on your behalf.
+Each action signed for you reimburses a flat per-action charge from your vault's SOL balance, set by the platform and 0.0001 SOL as it stands, which covers submitting the transaction on your behalf.
 
-A token claim sent for you may also have to open a token account the payout goes to, for a winner or for the platform. Your vault pays that rent, and the program bills it only for accounts it actually creates. When too many are missing for the claim to open them itself, the claim fails, a separate step opens them and the claim is sent again, and that step charges nothing if it finds every account already open.
+A token claim sent for you may also have to open a token account the payout goes to: a winner's, their vault's if they pool winnings there, or the platform's. Your vault pays that rent, for a teammate's account as for your own, and the program bills it only for accounts it actually creates. When too many are missing for the claim to open them itself, the claim fails, a separate step opens them and the claim is sent again. That step is a transaction of its own, so it takes the per-action charge with the rent, and it charges nothing if it finds every account already open.
 
 A tournament prize paid over several transactions takes the per-action charge once per transaction, from the vault of the winner each one is sent for. When the platform starts such a claim for you, it also fronts the rent of the small account that tracks the progress and takes it back at the end, so that never reaches your vault.
 
-When a refund or cancellation sent for you has to reopen someone's token account, the platform pays that rent, never your vault. The one account your vault does pay for there is your own: if you pool payouts in your vault and it has never held that token, the vault's account for it is opened in the same transaction, and your vault repays that rent along with the per-action charge.
+The confirmation in front of a tournament claim states that charge per transaction, says when a team your size takes several, and on a token pot that opening a winner's token account adds its rent. The claim is sent for you only when your vault's SOL covers the charge for every transaction it expects. The rent is not part of that check, because which accounts are missing is not known until the claim runs: a transaction your vault cannot cover is refused whole, and nothing in it moves.
+
+When a refund, a cancellation or a declined rematch sent for you has to reopen someone's token account, the platform pays that rent, never your vault. The one account your vault does pay for there is your own: if you pool payouts in your vault and it has never held that token, the vault's account for it is opened in the same transaction, and your vault repays that rent along with the per-action charge.
 
 {% hint style="warning" %}
 **An action that pays you still needs SOL in the vault.** Claiming costs a fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.

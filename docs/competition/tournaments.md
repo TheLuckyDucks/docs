@@ -68,9 +68,9 @@ Standings are computed off chain, which is what lets a rule change between tourn
 
 ## Claiming
 
-One claim pays every winner, so the first of you to press Claim settles it for the whole team. With [playing without signing every action](../races/delegated-play.md) on, the platform can send it for you.
+One claim pays every winner, so the first of you to press Claim settles it for the whole team. With [playing without signing every action](../races/delegated-play.md) on, the platform can send it for you, and the confirmation says what that takes from your vault before you agree. See [What it costs](../races/delegated-play.md#what-it-costs).
 
-Whoever sends it, the money goes to the winners' own wallets. Paying the fee entitles the sender to nothing.
+Whoever sends it, the money goes to the winners and to nobody else. Paying the fee entitles the sender to nothing.
 
 The button shows your share and what it is worth. While the tournament runs that dollar figure follows the market; once it ends the figure is fixed at the rate when it ended, so what you won does not appear to drift afterwards. A tournament that ended with no usable price shows the amount alone.
 
@@ -84,9 +84,13 @@ If the claim stops part way, because a transaction failed or you closed the page
 
 The first transaction opens a small account that tracks the progress. Whoever sends it pays that account's rent, the small SOL deposit Solana requires to keep an account open, and gets all of it back when the last transaction closes it.
 
+On a SOL pot, the winners still waiting sometimes have to be paid together in one last transaction: Solana will not leave the pot's account holding a leftover smaller than that deposit, and paying everyone left empties it instead. If your wallet cannot sign a transaction that large, the claim stops before you are asked to sign anything more and says so. Nothing is lost: a teammate whose wallet supports larger transactions can finish it, and so can the platform acting for one of you.
+
 {% hint style="success" %}
 The platform fee comes out on the last transaction, after every winner has been paid. A claim that stalls part way never leaves the platform paid and the team waiting.
 {% endhint %}
+
+Each winner's share goes where that winner chose to receive winnings: their wallet, or their [vault](../economy/player-vault.md#where-your-winnings-land). The choice is per player, so a team can be paid to both in one claim, and nobody starting the claim can change it for a teammate.
 
 On a SOL pot, a share too small for Solana to credit to a wallet holding no SOL at all is held back rather than sent. See [Refunds and rent](../economy/refunds-and-rent.md#very-small-sol-payouts) for what happens to it.
 

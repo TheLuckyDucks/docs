@@ -93,7 +93,7 @@ Yes, with a Runner NFT, which this gate always needs. Pick the NFT Holders join 
 
 A race becomes refundable once the join timeout passes without enough players, or once about 3 minutes pass with no seed from the oracle. Nothing fires by itself at that moment: the refund becomes possible and somebody has to submit it.
 
-Races the platform created are swept automatically. A race a player created is deliberately left for its creator or any participant to close, because the platform does not close a race somebody else paid for. Either way it shows up in the Unclaimed Items banner on your player page, and the button there clears it.
+Races the platform created are swept automatically. A race a player created is deliberately left for its creator or any participant to close, because the platform does not close a race somebody else paid for. Either way it shows up in the Unclaimed Items banner in the top bar, on every page, and the button there clears it.
 
 One refund returns every stake in the lobby and closes the race, so triggering it clears the race for everyone rather than just for you.
 

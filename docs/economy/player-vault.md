@@ -53,6 +53,8 @@ If the balance falls short, your wallet pays and the app says so. Nothing fails 
 
 Withdraw any amount, any time, from the Player page, whether or not you have granted [delegated signing](../races/delegated-play.md). The **25%**, **50%** and **All** chips under the amount fill in that share of the balance. Only your wallet can authorise it, and no permission you grant or setting you flip can move money out of your vault or your account.
 
+A token withdrawal first checks that your vault really holds that token on chain. If the figure on screen is out of date and there is nothing there to take out, the app says so before your wallet is asked, and nothing is signed.
+
 Closing the account returns everything in one transaction, your SOL, every token balance and the rent deposit. Your race history resets, and the account comes back the next time you race. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
 
 <figure><img src="../../.gitbook/assets/economy/app-vault-withdraw-dialog-banner.png" alt="The withdraw dialog on the Player page with the whole balance available"><figcaption><p>Any amount, any time, and only your wallet can authorise it.</p></figcaption></figure>
@@ -72,6 +74,10 @@ The same money joins your vault balance instead, ready to fund the next race wit
 {% endtabs %}
 
 The choice is yours alone and covers every race you are in, which matters on refunds, because anyone may trigger a refund on a lobby that never filled. It covers returned rent as well as prizes.
+
+It covers tournament prizes too. Each member of a winning team is paid where they chose, whoever starts the claim, so one teammate can take their share in their wallet while another pools theirs.
+
+It also stands on its own. Winnings and refunds go where this setting says whether or not delegated signing is granted, so letting a grant expire does not send them back to your wallet.
 
 The one exception is closing your account: that returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
 

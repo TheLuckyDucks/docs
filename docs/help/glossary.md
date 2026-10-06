@@ -77,7 +77,7 @@ The on-chain randomness oracle used by The Lucky Ducks. ORAO operators sign rand
 
 ### Payout target
 
-Where money coming back to you lands: your wallet, or your player vault. Covers prizes, refunds and returned rent. It is set per player, not per race, so nobody else can redirect your money. See [Your player vault](../economy/player-vault.md#where-your-winnings-land).
+Where money coming back to you lands: your wallet, or your player vault. Covers race and tournament prizes, refunds and returned rent. It is set per player, not per race, so nobody else can redirect your money, and it does not depend on delegated signing being on. See [Your player vault](../economy/player-vault.md#where-your-winnings-land).
 
 ### PDA (Program Derived Address)
 

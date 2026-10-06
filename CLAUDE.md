@@ -221,8 +221,11 @@ repository can ship, because a player acts on it.
   `.claude/docs/screenshots.md` is the shot list and the capture procedure.
 - **Prettier owns the formatting**, on its defaults, over every `.md` in the
   repository including this file and everything under `.claude/`. So bullets are
-  `-`, table cells are padded to the column width, and emphasis is `_`. Nothing
-  is configured, so a run needs no setup:
+  `-`, table cells are padded to the column width, and emphasis is `_`. The run
+  does the padding, never the edit: write a table row with one space each side
+  of a pipe and leave the column widths to it, since aligning by hand turns a
+  one-cell change into a diff of the whole table. Nothing is configured, so a
+  run needs no setup:
 
   ```bash
   npx --yes prettier --write "**/*.md"
