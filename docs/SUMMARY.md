@@ -36,6 +36,7 @@
 - [Teams](competition/teams.md)
 - [Rematches](competition/rematches.md)
 - [Badges](competition/badges.md)
+- [The jackpot](competition/jackpot.md)
 - [The community lottery](competition/community-lottery.md)
 
 ## Economy

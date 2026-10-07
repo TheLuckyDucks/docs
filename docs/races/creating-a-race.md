@@ -55,7 +55,7 @@ How long the visual race runs. The floor is 30 seconds, and the ceiling is a pla
 
 {% tabs %}
 {% tab title="Winner Takes All" %}
-First place takes the whole pool, minus the platform fee. The cleanest format for a small race.
+First place takes the whole pool, minus fees. The cleanest format for a small race.
 {% endtab %}
 
 {% tab title="Podium split" %}
@@ -64,6 +64,10 @@ The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 
 {% endtabs %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-mode-picker-banner.png" alt="The race mode picker on the create form with Winner Takes All and Podium Split"><figcaption><p>Podium Split needs 3 players, so a 1v1 only offers the first.</p></figcaption></figure>
+
+### Feeding the jackpot
+
+A share of your race's pool goes into [the jackpot](../competition/jackpot.md) unless you untick this. It is ticked to begin with, any creator can change it with or without a Runner NFT, and the prize preview on the form follows your choice. A race that feeds the jackpot carries the jackpot mark, so players see it before they join. The choice is not offered while the platform's jackpot rate is zero.
 
 ## Optional opt ins
 

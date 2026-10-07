@@ -12,6 +12,7 @@ flowchart LR
     P["Each player's entry fee"] --> V["Race vault"]
     S["Sponsor's deposit, on a sponsored race"] --> V
     V -->|"At finalization"| F["Platform fee, at the tier rate"]
+    V -->|"At finalization"| J["Jackpot fee, to the jackpot"]
     V -->|"At finalization"| W["Prize pool to the winners"]
     F --> T["Treasury"]
     F -->|"If the creator raced in it"| C["Creator Fee Share"]
@@ -20,7 +21,7 @@ flowchart LR
 
 ## What you pay
 
-Your entry fee moves entirely into the race vault. At race end the vault pays the platform fee out of the pool and the rest to the winners.
+Your entry fee moves entirely into the race vault. At race end the vault pays the platform fee out of the pool, the [jackpot fee](#the-jackpot-fee) too, and the rest to the winners.
 
 The transaction you sign also covers:
 
@@ -41,6 +42,7 @@ The totals match either way. What changes is how often you approve something.
 | --------------------------- | --------------- | ----------------- |
 | Prize pool                  | Winner(s)       | Race finalization |
 | Platform fee                | Treasury        | Race finalization |
+| Jackpot fee                 | The jackpot     | Race finalization |
 | Stays in vault if cancelled | Original payers | Race cancellation |
 
 The split happens inside the finalization transaction, so nobody has to do anything for the fee to be taken.
@@ -61,9 +63,29 @@ The rate is picked at creation from a tier schedule, against the **entry fee**, 
 Worked example: a race with a 0.1 SOL entry fee and 10 players. Entry fee falls in the second tier, so the fee is 7.5%. The pool at fill is 1 SOL. At claim the platform takes 1 × 7.5% = 0.075 SOL, and winners share the remaining 0.925 SOL.
 
 For a sponsored race, the sponsor's deposit is what the tier is picked against (there is no per player entry fee). A 1 SOL sponsored prize sits in the 3% tier, so the platform takes 0.03 SOL at claim and winners share 0.97 SOL.
+
+Neither example counts the [jackpot fee](#the-jackpot-fee), which a race pays on top unless its creator switched it off.
 {% endhint %}
 
 Token pools use the same percentages, with the thresholds adjusted to what that token is worth.
+
+## The jackpot fee
+
+A race also pays a jackpot fee: a share of its pool that goes into [the jackpot](../competition/jackpot.md), a pot won by one of the top players of each period. It is paid in the race's own currency, SOL from a SOL race and the token from a token race.
+
+It is a second fee beside the platform fee, not a cut of it. Each is a share of the whole pool, and winners receive the pool less both. The platform sets the rate, never above 10%, and it can be zero. It is fixed when the race is created, so a later change never reprices a race you joined, and the race shows it before you sign.
+
+{% hint style="info" %}
+Worked example: a 1 SOL pool with a 7.5% platform fee and a 5% jackpot fee. The platform takes 1 × 7.5% = 0.075 SOL, the jackpot takes 1 × 5% = 0.05 SOL, and winners share the remaining 0.875 SOL.
+{% endhint %}
+
+**The creator can switch it off for their race.** The create form has a "feeds the jackpot" choice, ticked unless the creator unticks it, and a race that feeds the jackpot carries the jackpot mark wherever its features are shown. With the platform's rate at zero the choice is not offered at all.
+
+A refund, a cancelled race and a tournament prize pay no jackpot fee.
+
+On a token race, the claim may have to open the jackpot's account for that token, about 0.002 SOL paid by whoever sends the claim. The platform normally opens it first, so most claims pay nothing for it.
+
+Creator Fee Share is a share of the platform fee alone, so the jackpot fee never changes what a creator earns.
 
 ## Prize pool calculation
 

@@ -9,11 +9,11 @@ Two payout modes, picked when the race is created.
 
 {% tabs %}
 {% tab title="Winner Takes All (WTA)" %}
-First place takes the whole prize pool, minus the platform fee. Everyone else gets nothing.
+First place takes the whole prize pool, minus fees. Everyone else gets nothing.
 
 WTA is the canonical mode. Reach for it when you want the simplest payout, one winner and everyone else chasing that slot, or when the entry fee is large enough that splitting it three ways would leave podium places feeling thin.
 
-A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After the platform fee, the winner pockets roughly 0.45 SOL.
+A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After fees, the winner pockets roughly 0.45 SOL.
 {% endtab %}
 
 {% tab title="Podium Split" %}
@@ -27,7 +27,7 @@ It needs at least 3 players, and the percentages are fixed on chain, so no race 
 
 Reach for it when you want more players to leave with something, or when the entry fee is moderate enough that three smaller payouts still matter.
 
-A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After the platform fee, the splits are roughly 0.225 / 0.135 / 0.09 SOL.
+A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After fees, the splits are roughly 0.225 / 0.135 / 0.09 SOL.
 {% endtab %}
 {% endtabs %}
 

@@ -1,0 +1,7 @@
+# Every text file in this repo is LF, in the index and in the working tree:
+# pages, scripts, JSON, YAML.
+#
+# `eol=lf` overrides `core.autocrlf=true` on a Windows host, which on its own
+# checks every text file out as CRLF. `text=auto` leaves the binary call to
+# git, so the images under `.gitbook/assets/` are never touched.
+*       text=auto eol=lf

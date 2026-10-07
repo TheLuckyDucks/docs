@@ -17,6 +17,7 @@ The bot keeps a group in sync with on chain racing and rewards engagement on X. 
 | `/race`        | One race in detail                                               |
 | `/team`        | Your team's stats                                                |
 | `/teams`       | Browse teams                                                     |
+| `/jackpot`     | The jackpot: the pot, the next draw, the rules and the leaders   |
 | `/raidboard`   | The raid leaderboard. Add `week` or `month` for a shorter window |
 | `/duckfact`    | A random duck fact                                               |
 | `/joke`        | A random duck joke                                               |
@@ -56,6 +57,10 @@ Each group has its own announcement policy, set by whoever added the bot: it can
 Announcements name you by the first of these that exists: your linked and verified X or Telegram handle, then your nickname, then a shortened wallet address. The first two appear with your wallet beside them, because nicknames are not unique and a card naming two people identically is worse than one with an address on it.
 
 Would rather not appear by handle? Unlink it. See [Player verification](../trust/verification.md#telegram-handle-in-group-announcements).
+
+## Jackpot announcements
+
+The bot posts twice for each period of [the jackpot](../competition/jackpot.md): once when a period starts, with the pot and the rules, and once when the winner is drawn, naming them with their avatar. Whoever added the bot to a group can switch those posts off for it.
 
 ## Raids: boost the post together
 

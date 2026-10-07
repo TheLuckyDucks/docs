@@ -60,7 +60,7 @@ The platform funds the pot when it creates the tournament, in SOL or a [supporte
 
 The **winning team takes all of it**, split equally between its members. No second or third place. A pot that will not divide exactly leaves a tiny remainder, and the first winner in the list gets it.
 
-A platform fee comes off the pot before the split, set per tournament and never above 10 percent.
+A platform fee comes off the pot before the split, set per tournament and never above 10 percent. A tournament pot pays no [jackpot fee](../economy/fees-and-prizes.md#the-jackpot-fee). The races played in it do, like any other.
 
 {% hint style="success" %}
 Standings are computed off chain, which is what lets a rule change between tournaments without touching the program. The platform writes the team at the top of those standings as the winner, scored on the tournament's rule and counting only teams that meet its minimum size, and refuses to write any other. From that point the payout is the program's to make and nobody can alter the list.

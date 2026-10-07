@@ -73,7 +73,7 @@ Tooling, agent docs and this file sit outside it and cannot surface as a page.
 | `docs/introduction/` | Orientation: what the platform is, how a race works, first race              |
 | `docs/races/`        | Creating, joining, configuring, gating, hosting, cancelling                  |
 | `docs/nfts/`         | The four collections, plus Mystery Boxes and renting                         |
-| `docs/competition/`  | Tournaments, teams, rematches, badges, the community lottery                 |
+| `docs/competition/`  | Tournaments, teams, rematches, badges, the jackpot, the community lottery    |
 | `docs/economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races              |
 | `docs/trust/`        | Randomness, on-chain verification, player verification                       |
 | `docs/help/`         | FAQ, glossary, Telegram bot, social links                                    |
@@ -235,6 +235,14 @@ repository can ship, because a player acts on it.
   on a tree that GitBook also writes to. It leaves `{% %}` blocks and raw HTML
   alone. Do not extend it to `.gitbook.yaml`.
 
+- **Every text file is LF**, in the working tree as in the index: pages,
+  scripts, JSON, YAML. `.gitattributes` pins it (`* text=auto eol=lf`), which
+  overrides `core.autocrlf=true` on a Windows host, and `.vscode/settings.json`
+  sets `files.eol` so the editor creates a new file the same way. Images are
+  binary and are never touched. Verify with
+  `git ls-files --eol -co --exclude-standard | grep -E "w/(crlf|mixed)"`, which
+  must come back empty; when it names a file, convert that file (`\r\n` to
+  `\n`, nothing else).
 - Links are relative paths to the `.md` file, with an anchor fragment when
   pointing at a section.
 - Emoji appear in a few headings (`competition/badges.md`) where they mirror the

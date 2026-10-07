@@ -18,7 +18,7 @@ flowchart LR
 ## What this changes (and what it doesn't)
 
 - **Entry fees:** unchanged.
-- **Winner payout:** unchanged, still the pool minus the platform fee, split by race mode.
+- **Winner payout:** unchanged, still the pool minus fees, split by race mode.
 - **Platform fee total:** unchanged, still taken from the pool at the tier rate.
 - **Where that fee goes:** the one thing that moves. Part of it can go to the creator instead of the treasury.
 

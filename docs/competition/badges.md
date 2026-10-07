@@ -95,6 +95,18 @@ Unlucky Duck is the one badge a losing run earns. The randomness that took those
 
 Earned by racing during a tournament, not by winning it. See [Tournaments](tournaments.md).
 
+## Jackpot 🎰
+
+| Badge          | Emoji | How to earn              |
+| -------------- | ----- | ------------------------ |
+| Jackpot Winner | 🎰    | Win the jackpot          |
+| Double Jackpot | 🎰    | Win the jackpot 2 times  |
+| Triple Jackpot | 🎰    | Win the jackpot 3 times  |
+| Jackpot Hunter | 🎰    | Win the jackpot 5 times  |
+| Jackpot Legend | 🎰    | Win the jackpot 10 times |
+
+Earned when you are drawn as the winner, whether or not you have claimed the prize yet. See [The jackpot](jackpot.md).
+
 ## Volume 💰
 
 Your total wagered, in SOL.

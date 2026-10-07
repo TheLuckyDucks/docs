@@ -51,6 +51,10 @@ Two players for Winner Takes All, three for Podium Split. Neither starts with fe
 
 No. Paying from your wallet works as it always has. The [player vault](../economy/player-vault.md) is a convenience: top up once, then join without approving a transfer each time, and withdraw all of it whenever you like.
 
+### What is the jackpot fee on my race?
+
+A share of the race's prize pool that goes into [the jackpot](../competition/jackpot.md), a pot won whole by one of the top players of each period. It is separate from the platform fee, paid in the race's own currency, fixed when the race is created, and shown before you sign. A creator can switch it off for their race, and a race that feeds the jackpot carries the jackpot mark.
+
 ### What happens if I close the tab mid-race?
 
 Nothing to the result. The outcome was fixed the moment the oracle published the seed, the race settles without you watching, and anything owed to you waits in the Unclaimed Items banner until you claim it.

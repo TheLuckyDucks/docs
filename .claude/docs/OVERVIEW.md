@@ -24,7 +24,7 @@ then the money, then the trust story, then reference.
 | Getting Started    | What is this, how does one race go, what do I do first      |
 | Races              | How do I create or join one, and what are all these options |
 | NFTs               | What do the four collections change                         |
-| Competition        | Tournaments, teams, rematches, badges                       |
+| Competition        | Tournaments, teams, rematches, badges, the jackpot          |
 | Economy            | What does it cost, what do I get back                       |
 | Trust and Fairness | Why should I believe the result                             |
 | Help               | FAQ, glossary, bot, where to find us                        |
@@ -60,7 +60,8 @@ other mention links to it rather than restating it.
 | Teams, membership, standings                                 | `competition/teams.md`                |
 | Rematch proposals and chains                                 | `competition/rematches.md`            |
 | Badges and XP milestones                                     | `competition/badges.md`               |
-| Entry fee, platform fee tiers, prize pool                    | `economy/fees-and-prizes.md`          |
+| The jackpot: the pot, who is entered, the draw               | `competition/jackpot.md`              |
+| Entry fee, platform fee tiers, the jackpot fee, prize pool   | `economy/fees-and-prizes.md`          |
 | The pre-funded balance, deposits, withdrawals, payout target | `economy/player-vault.md`             |
 | Which balance the top bar button shows                       | `economy/player-vault.md`             |
 | Creator fee share                                            | `economy/creator-fee-share.md`        |
@@ -102,6 +103,12 @@ describe what a player needs to pass one, from their own side.
 that it is fair, including no-boost races. Several pages deep-link into
 `#no-boost-races`, so that heading is effectively an API. Grep before rewording
 it.
+
+**The jackpot is two pages on purpose.** `economy/fees-and-prizes.md` owns the
+jackpot FEE: what a race pays, the worked example, what is exempt.
+`competition/jackpot.md` owns the pot and the draw: who is entered, how the
+winner is picked, how it is paid. Every other page that states what winners
+receive says "minus fees" and links to the first.
 
 **The vault and delegation are two pages on purpose.**
 `economy/player-vault.md` owns the money: what the balance is, depositing,

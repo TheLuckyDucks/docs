@@ -23,7 +23,7 @@ Two windows also apply, both short and both platform settings, so the app is whe
 
 Click Offer Rematch on the claim screen. That creates the next race and puts your stake in it:
 
-- **Winner.** Your stake is one entry fee, taken from the winnings you have not claimed. The rest of that payout, minus the platform fee, reaches you when your opponent accepts, with no separate claim.
+- **Winner.** Your stake is one entry fee, taken from the winnings you have not claimed. The rest of that payout, minus fees, reaches you when your opponent accepts, with no separate claim.
 - **Loser.** You deposit one entry fee up front. Your opponent's stake joins it when they accept.
 
 Either way the new pot is exactly 2 entry fees, matching the race it followed. Offering uses one of your [daily races](../races/daily-races.md).

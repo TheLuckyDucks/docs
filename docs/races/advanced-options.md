@@ -77,7 +77,7 @@ One thing to know before you tick it: once enough players have joined to reach y
 
 ## Sponsored race
 
-You fund the pool instead of the joiners, which is how giveaways and marketing races work. Set the prize when you create, and players enter free. The platform fee still comes out of what you sponsored.
+You fund the pool instead of the joiners, which is how giveaways and marketing races work. Set the prize when you create, and players enter free. The platform fee still comes out of what you sponsored, and so does the [jackpot fee](../economy/fees-and-prizes.md#the-jackpot-fee), unless you switch it off.
 
 <figure><img src="../../.gitbook/assets/races/app-sponsored-race-toggle-banner.png" alt="The sponsored race toggle on the create form with the prize amount field open"><figcaption><p>You set the prize, and joiners enter for nothing.</p></figcaption></figure>
 

@@ -51,6 +51,14 @@ The on-chain transaction that ranks the ducks and lets the winners claim. The ba
 
 A race where the creator does not take a slot as a player. The race opens with zero players and fills as others join. Hosting requires a Runner NFT, is not available for 1v1 races, and the host gives up the Creator Fee Share.
 
+### Jackpot
+
+A pot of SOL and tokens that races pay into, won whole by one of the top players of each period, picked by provable randomness, and claimed by the winner. See [The jackpot](../competition/jackpot.md).
+
+### Jackpot fee
+
+The share of a race's prize pool that goes into the jackpot, paid in the race's own currency. It is a separate fee beside the platform fee, fixed when the race is created, and the race's creator can switch it off. See [Fees and prizes](../economy/fees-and-prizes.md#the-jackpot-fee).
+
 ### Join timeout
 
 The lobby window during which players can join a race. Default 1 hour. Customizable per race.
@@ -145,7 +153,7 @@ A participant who left the lobby before it closed, which is allowed within 2 min
 
 ### WTA (Winner Takes All)
 
-Race mode where the first place finisher gets the entire prize pool, minus the platform fee.
+Race mode where the first place finisher gets the entire prize pool, minus fees.
 
 ### X announcement
 

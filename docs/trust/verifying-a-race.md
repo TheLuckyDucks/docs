@@ -216,13 +216,14 @@ A mismatch between `winners[0]` and what the algorithm produces would mean a bro
 
 ## Step 6; Verify the payout
 
-The last step is `claim_prize`, or `claim_prize_token`. Check that it calls The Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A podium race splits the winners' share 50% / 30% / 20%. Once everything settles, the race account closes and its rent returns to the creator.
+The last step is `claim_prize`, or `claim_prize_token`. Check that it calls The Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A race with a [jackpot fee](../economy/fees-and-prizes.md#the-jackpot-fee) sends that share to the jackpot in the same transaction, in SOL or in the race's token. A podium race splits the winners' share 50% / 30% / 20%. Once everything settles, the race account closes and its rent returns to the creator.
 
 The balance changes on that one transaction are the whole proof:
 
 - Race vault: to zero, or near it
-- Winner: `prize_pool × (1 - fee_pct) × winner_share`
+- Winner: `prize_pool × (1 - fee_pct - jackpot_pct) × winner_share`
 - Platform fee wallet: `prize_pool × fee_pct`
+- Jackpot: `prize_pool × jackpot_pct`, which is zero when the race carries no jackpot fee
 
 {% columns %}
 {% column width="70%" %}

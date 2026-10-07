@@ -47,6 +47,8 @@ The entry fee field carries a currency picker listing SOL and every supported to
 
 Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit what that token is worth, which is why AMPS and AISI sit at much higher absolute numbers.
 
+A token race pays the [jackpot fee](fees-and-prizes.md#the-jackpot-fee) in its own token, at the same rate as a SOL race.
+
 ## Joining without the token
 
 Hold none of the chosen token and the join button is disabled with an "Insufficient balance" tooltip. The app checks before anything is signed, so finding out costs nothing.
