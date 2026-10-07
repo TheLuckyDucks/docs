@@ -58,6 +58,8 @@ Nothing is charged and nothing is lost in any of those. Taking part costs nothin
 
 Choose **No thanks** and the box leaves you alone for that round. It will offer again on the next draw day.
 
+To stop being asked at all, untick **Take part in picking the daily lottery line (free)** in [your preferences](../help/preferences.md) and save. The box then stays away on every device you sign in on, until you tick it again.
+
 ## Following along in Telegram
 
 Channels can opt into lottery announcements: the window opening, each number as it goes, and the finished line. Ask a channel admin to switch it on, or see [The Lucky Ducks Telegram bot](../help/telegram-bot.md).
