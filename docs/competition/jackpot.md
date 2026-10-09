@@ -9,7 +9,7 @@ The jackpot is a pot of SOL and tokens that builds up from races and is won, who
 
 ## How a jackpot runs
 
-1. **A jackpot starts** and runs for a set number of days, from 1 to 31. Its start and end are written on chain at that moment and cannot be moved afterwards.
+1. **A jackpot starts** and runs for a set number of days, from 1 to 30. Its start and end are written on chain at that moment and cannot be moved afterwards.
 2. **Races feed the pot.** While it runs, every race that pays out sends a share of its prize pool to the pot.
 3. **Players are ranked** on what they did during those days. The top of the ranking become the finalists.
 4. **A winner is drawn** when the period ends, at 12:00 UTC on its last day. The finalists are published first, then a random number picks one of them. This takes a few minutes.
@@ -49,7 +49,7 @@ Only players who raced during the period can win. The platform sets 4 rules for 
 
 | Rule            | What it decides                                                                   |
 | --------------- | --------------------------------------------------------------------------------- |
-| Period          | How long each jackpot runs: a number of days, from 1 to 31                        |
+| Period          | How long each jackpot runs: a number of days, from 1 to 30                        |
 | Ranked by       | XP earned in races, races won, races lost, or races created                       |
 | Finalists       | How many of the top players are entered, from 1 to 50                             |
 | Who is eligible | A minimum number of races run in the period, and optionally verified players only |
