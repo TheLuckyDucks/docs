@@ -57,7 +57,7 @@ A pot of SOL and tokens that races pay into, won whole by one of the top players
 
 ### Jackpot fee
 
-The share of a race's prize pool that goes into the jackpot, paid in the race's own currency. It is a separate fee beside the platform fee, fixed when the race is created, and the race's creator can switch it off. See [Fees and prizes](../economy/fees-and-prizes.md#the-jackpot-fee).
+The share of a race's prize pool that goes into the jackpot, paid in the race's own currency. It is a separate fee beside the platform fee, fixed when the race is created and taken when the prize is claimed while a jackpot is running, and the race's creator can switch it off. See [Fees and prizes](../economy/fees-and-prizes.md#the-jackpot-fee).
 
 ### Join timeout
 

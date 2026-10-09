@@ -217,6 +217,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 
 | Shot                                            | Page                                                          | Shows                                                             |
 | ----------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `app-jackpot-create-option` **(banner)**        | `races/creating-a-race.md`                                    | The feeds the jackpot option, first on the form, ticked           |
 | `app-create-race-form`                          | `races/creating-a-race.md`                                    | Top of the create form: entry fee, max players, duration, mode    |
 | `app-create-race-cost-breakdown` **(banner)**   | `races/creating-a-race.md`, `economy/fees-and-prizes.md`      | The itemised cost box, rent line visible                          |
 | `app-race-detail-modal`                         | `races/joining-and-playing.md`                                | A joined race's modal: pool, seats, fee, duration                 |
@@ -284,6 +285,9 @@ Single files in the same folder, all artwork:
 
 | Shot                                        | Page                               | Shows                                                               |
 | ------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
+| `app-jackpot-tab`                           | `competition/jackpot.md`           | The Jackpot tab: pot, countdown, rules and current standings        |
+| `app-jackpot-claim` **(banner)**            | `competition/jackpot.md`           | A past draw under Past winners, with its claim button               |
+| `app-jackpot-verify` **(banner)**           | `competition/jackpot.md`           | A draw's record: transactions, finalists, random number             |
 | `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                   |
 | `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure      |
 | `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left                  |

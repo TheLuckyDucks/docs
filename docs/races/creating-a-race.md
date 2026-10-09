@@ -41,6 +41,12 @@ How many seats the lobby has. The default cap is 5 and the absolute maximum is 2
 
 <figure><img src="../../.gitbook/assets/races/app-max-players-field-banner.png" alt="The max players control on the create form with the seats past the default marked as gated"><figcaption><p>Past the default of 5, the control tells you a Runner is needed.</p></figcaption></figure>
 
+### Feeding the jackpot
+
+A share of your race's pool goes into [the jackpot](../competition/jackpot.md) unless you untick this. It is the first option on the form and is ticked to begin with, and any creator can change it with or without a Runner NFT. The card shows the rate and what it comes to in your race's currency, and the prize preview on the form follows your choice. A race that feeds the jackpot carries the jackpot mark, so players see it before they join. The choice is not offered while the platform's jackpot rate is zero. The card also says whether a jackpot is running right now: the share is taken when the prize is claimed, and only [while one is running](../competition/jackpot.md#between-two-jackpots).
+
+<figure><img src="../../.gitbook/assets/races/app-jackpot-create-option-banner.png" alt="The feeds the jackpot option at the top of the create form, ticked"><figcaption><p>First on the form, and ticked unless you untick it.</p></figcaption></figure>
+
 ### Race duration
 
 How long the visual race runs. The floor is 30 seconds, and the ceiling is a platform setting that the form shows you, 3 minutes as the platform has it set. Short is punchier; long gives the audio commentary room to build a story.
@@ -64,10 +70,6 @@ The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 
 {% endtabs %}
 
 <figure><img src="../../.gitbook/assets/races/app-race-mode-picker-banner.png" alt="The race mode picker on the create form with Winner Takes All and Podium Split"><figcaption><p>Podium Split needs 3 players, so a 1v1 only offers the first.</p></figcaption></figure>
-
-### Feeding the jackpot
-
-A share of your race's pool goes into [the jackpot](../competition/jackpot.md) unless you untick this. It is ticked to begin with, any creator can change it with or without a Runner NFT, and the prize preview on the form follows your choice. A race that feeds the jackpot carries the jackpot mark, so players see it before they join. The choice is not offered while the platform's jackpot rate is zero.
 
 ## Optional opt ins
 

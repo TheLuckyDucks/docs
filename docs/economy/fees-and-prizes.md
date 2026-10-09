@@ -11,9 +11,9 @@ What you pay, where it goes, and how the pool is split.
 flowchart LR
     P["Each player's entry fee"] --> V["Race vault"]
     S["Sponsor's deposit, on a sponsored race"] --> V
-    V -->|"At finalization"| F["Platform fee, at the tier rate"]
-    V -->|"At finalization"| J["Jackpot fee, to the jackpot"]
-    V -->|"At finalization"| W["Prize pool to the winners"]
+    V -->|"When the prize is claimed"| F["Platform fee, at the tier rate"]
+    V -->|"When the prize is claimed"| J["Jackpot fee, to the jackpot while one is running"]
+    V -->|"When the prize is claimed"| W["Prize pool to the winners"]
     F --> T["Treasury"]
     F -->|"If the creator raced in it"| C["Creator Fee Share"]
     V -->|"If the race never runs"| R["Full refund to the original payers"]
@@ -21,7 +21,7 @@ flowchart LR
 
 ## What you pay
 
-Your entry fee moves entirely into the race vault. At race end the vault pays the platform fee out of the pool, the [jackpot fee](#the-jackpot-fee) too, and the rest to the winners.
+Your entry fee moves entirely into the race vault. When the prize is claimed the vault pays the platform fee out of the pool, the [jackpot fee](#the-jackpot-fee) too, and the rest to the winners.
 
 The transaction you sign also covers:
 
@@ -38,14 +38,14 @@ The totals match either way. What changes is how often you approve something.
 
 ## Where the entry fee goes
 
-| Path                        | Recipient       | When              |
-| --------------------------- | --------------- | ----------------- |
-| Prize pool                  | Winner(s)       | Race finalization |
-| Platform fee                | Treasury        | Race finalization |
-| Jackpot fee                 | The jackpot     | Race finalization |
-| Stays in vault if cancelled | Original payers | Race cancellation |
+| Path                        | Recipient       | When                                    |
+| --------------------------- | --------------- | --------------------------------------- |
+| Prize pool                  | Winner(s)       | Prize claim                             |
+| Platform fee                | Treasury        | Prize claim                             |
+| Jackpot fee                 | The jackpot     | Prize claim, while a jackpot is running |
+| Stays in vault if cancelled | Original payers | Race cancellation                       |
 
-The split happens inside the finalization transaction, so nobody has to do anything for the fee to be taken.
+The split happens inside the claim transaction, so nobody has to do anything more for the fee to be taken.
 
 ## Platform fee tiers
 
@@ -79,18 +79,18 @@ It is a second fee beside the platform fee, not a cut of it. Each is a share of 
 Worked example: a 1 SOL pool with a 7.5% platform fee and a 5% jackpot fee. The platform takes 1 × 7.5% = 0.075 SOL, the jackpot takes 1 × 5% = 0.05 SOL, and winners share the remaining 0.875 SOL.
 {% endhint %}
 
-**The creator can switch it off for their race.** The create form has a "feeds the jackpot" choice, ticked unless the creator unticks it, and a race that feeds the jackpot carries the jackpot mark wherever its features are shown. With the platform's rate at zero the choice is not offered at all.
+**The creator can switch it off for their race.** The create form has a "feeds the jackpot" choice, ticked unless the creator unticks it, and a race that feeds the jackpot carries the jackpot mark wherever its features are shown. With the platform's rate at zero the choice is not offered at all. The share is taken when the prize is claimed, and only while a jackpot is running: one claimed while the jackpot is [on hold](../competition/jackpot.md#between-two-jackpots) pays none, and the winners keep it.
 
 A refund, a cancelled race and a tournament prize pay no jackpot fee.
 
-On a token race, the claim may have to open the jackpot's account for that token, about 0.002 SOL paid by whoever sends the claim. The platform normally opens it first, so most claims pay nothing for it.
+On a token race, the first claim that brings a token into the current jackpot opens the jackpot's account for that token and adds the token to its list. That costs about 0.0017 SOL at today's rent rate, paid by whoever sends the claim, and it is not returned. Every later claim in that token pays nothing for it until the next jackpot.
 
 Creator Fee Share is a share of the platform fee alone, so the jackpot fee never changes what a creator earns.
 
 ## Prize pool calculation
 
 - **Regular race.** Pool = entry fee × paid joiners.
-- **Sponsored race.** Pool = whatever the creator deposited. Joiners pay nothing, and the fee comes out of that deposit at finalization.
+- **Sponsored race.** Pool = whatever the creator deposited. Joiners pay nothing, and the fee comes out of that deposit when the prize is claimed.
 
 ## The dollar figures beside an amount
 
@@ -118,7 +118,7 @@ The creator pays a few small costs at creation, separate from the pool:
 - **Audio cost**, with AI commentary on: about 0.00005 SOL per race second, so roughly 0.0015 SOL for 30 seconds and 0.009 SOL for 3 minutes.
 - **X announcement**, if enabled: flat 0.0005 SOL straight to the backend wallet, non-refundable.
 - **Start-when-underfilled cost**, if opted in: paid to the platform when it starts the race for you, refunded if the race never auto starts.
-- **Race account rent.** Around 0.0079 SOL for a 5 seat lobby at today's rent rate, scaling with the seats: roughly 0.0058 SOL for a 1v1 and 0.019 SOL at 20. Refunded in full when the race closes.
+- **Race account rent.** Around 0.0078 SOL for a 5 seat lobby at today's rent rate, scaling with the seats: roughly 0.0057 SOL for a 1v1 and 0.018 SOL at 20. Refunded in full when the race closes.
 
 The oracle fee is a flat charge rather than a pass through of what the day costs. ORAO's own fee is 0.0005 SOL, and most of the rest is rent for the account the seed is written into. Fulfilling the request returns only part of that rent, and the remainder stays in the account for good. Busy moments push the transactions above their base fee, and a request that is never fulfilled returns none of that rent at all, so the real figure sits above the flat one often enough to matter. The Lucky Ducks funds that gap instead of passing it on, so what a creator pays stays the same number every time.
 
