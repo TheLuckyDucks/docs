@@ -26,7 +26,7 @@ Any race size can have it, 1v1 and rematches included. On a rematch the proposer
 Posts the race to The Lucky Ducks X account when it goes live, which is useful for community events or for reaching players who are not watching the app.
 
 {% hint style="warning" %}
-Flat cost at creation, around **0.0005 SOL**, itemised in the cost breakdown before you sign. It goes straight to the backend wallet like the archival fee, and it is **non-refundable** once the race exists, even if the race never fills.
+Flat cost at creation, itemised in the cost breakdown before you sign. It is **non-refundable** once the race exists, even if the race never fills. [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation) has the figure.
 {% endhint %}
 
 The backend reads the on-chain flag and posts for you, so you sign nothing on X. The post carries the race link and the basics: entry fee, mode, when it starts. No-boost races are marked as such.
@@ -37,13 +37,13 @@ On a rematch the proposer picks this independently, whatever the finished race h
 
 ## Custom name
 
-A title on the race card, so players can pick your race out of the lobby list. Handy for a themed event or a community match.
+A title on the race card, up to 32 characters, so players can pick your race out of the lobby list. Handy for a themed event or a community match.
 
 <figure><img src="../../.gitbook/assets/races/app-custom-name-field-banner.png" alt="The custom name field on the create form with a race title typed into it"><figcaption><p>Up to 32 characters, and it is what players read on the card.</p></figcaption></figure>
 
 ## Custom race duration
 
-30 seconds is the default and open to everyone. Changing it, up to the platform maximum of 3 minutes, needs a Runner NFT. Short stays punchy; long gives the AI commentary room to build a story.
+The default duration is open to everyone. Any other value, up to the ceiling the form shows, needs a Runner NFT. See [Race duration](creating-a-race.md#race-duration).
 
 <figure><img src="../../.gitbook/assets/races/app-race-duration-field-banner.png" alt="The race duration field on the create form showing the platform maximum"><figcaption><p>The form states the ceiling the platform currently allows.</p></figcaption></figure>
 
@@ -57,7 +57,7 @@ The lobby window is 1 hour by default, and a custom timeout overrides it: minimu
 
 Use a Track NFT you own as the background. It changes the pond, the lighting and the props, and nothing about the outcome. See [Track NFTs](../nfts/tracks.md).
 
-The four built in tracks, day, night, sunset and sunrise, are always free. Anything else needs the Track NFT in your wallet.
+The built in tracks are always free. Anything else needs the Track NFT in your wallet, and that is all it needs: a custom track is the one option here that does not ask for a Runner.
 
 <figure><img src="../../.gitbook/assets/races/app-custom-track-picker-banner.png" alt="The track picker on the create form with the built in tracks and a Track NFT"><figcaption><p>The four built in tracks are free. Anything else has to be in your wallet.</p></figcaption></figure>
 
@@ -71,7 +71,7 @@ Enabling it adds a slider for the minimum players to start with. It runs from th
 
 <figure><img src="../../.gitbook/assets/races/app-underfilled-slider-banner.png" alt="The start when underfilled card on a 10 player race, its slider at the 5 player minimum"><figcaption><p>The slider will not go below the platform's default race size.</p></figcaption></figure>
 
-It also adds a small surcharge for the backend's auto start. That sits in the race vault and goes to the platform on auto start, or refunds with everything else if the race never runs.
+It also adds a small surcharge for the backend's auto start, which comes back to you if the race never starts that way. See [Refunds and rent](../economy/refunds-and-rent.md#start-when-underfilled-surcharge).
 
 One thing to know before you tick it: once enough players have joined to reach your threshold, the race is eligible to start, and from that moment you can no longer [cancel](hosting-and-cancelling.md#cancelling-a-race) it.
 

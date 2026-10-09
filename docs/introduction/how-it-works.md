@@ -12,16 +12,18 @@ A race is a Solana account. Creating one allocates the account, joining deposits
 The creator picks the settings and signs one transaction:
 
 - Entry fee (SOL or SPL token)
-- Max players (2 to 5 by default, up to 20 with a Runner NFT)
-- Race duration (30 seconds by default, up to the platform maximum of 3 minutes with a Runner NFT)
+- Max players
+- Race duration
 - Payout mode (Winner Takes All, or Podium split across 1st, 2nd, 3rd)
 - Optional opt ins: race name, AI commentary, custom track, custom join timeout, start when underfilled
+
+A bigger lobby, a longer race and most opt ins need a Runner NFT. [Creating a race](../races/creating-a-race.md) has every choice and its limits.
 
 The transaction opens the race account and the vault that holds the deposits, and the race shows up in the lobby list seconds later.
 
 ## 2. Lobby
 
-Players have 1 hour by default to join. Joining is one transaction: your entry fee moves into the vault, your wallet joins the participants list, and the lobby updates live over a websocket.
+Players join while the lobby's join window is open. Joining is one transaction: your entry fee moves into the vault, your wallet joins the participants list, and the lobby updates live over a websocket.
 
 {% columns %}
 {% column width="70%" %}
@@ -37,11 +39,13 @@ Players have 1 hour by default to join. Joining is one transaction: your entry f
 {% endcolumn %}
 {% endcolumns %}
 
-You can withdraw while the lobby is open. That returns your entry fee and charges a fixed 0.01 SOL penalty, always in SOL even on token races. The penalty goes to the platform fee wallet to discourage join-and-bail griefing, and it does not swell the remaining prize pool.
+You can withdraw for a short while after joining. That returns your entry fee and charges a small fixed penalty, always in SOL even on token races. The penalty goes to the platform fee wallet to discourage join-and-bail griefing, and it does not swell the remaining prize pool. [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) has the windows and the figure.
 
 ## 3. Start
 
 The race starts when the lobby fills, or earlier if the creator enabled start when underfilled and the join timeout has passed. Starting is its own on chain step: the race stops taking joins and the contract requests randomness from an ORAO oracle.
+
+Starting an underfilled race needs nobody's permission. The backend does it on schedule, and any wallet can submit it instead once the join timeout has passed and enough players are in.
 
 ## 4. The randomness arrives
 

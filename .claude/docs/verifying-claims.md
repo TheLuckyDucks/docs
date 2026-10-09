@@ -1,13 +1,15 @@
 # Verifying a claim against the code
 
-> The long form of `../rules/accuracy.md`: which file answers which kind of
+> The long form of `.claude/rules/accuracy.md`: which file answers which kind of
 > claim, the commands that produce the answer, and the specific ways this bundle
-> has been wrong before. Load it when a page states a figure, a permission, a
+> has been wrong before. Open it when a page states a figure, a permission, a
 > precondition or a cost.
 
-Reading the sibling repositories is expected, not exceptional. `Anchor/`,
-`Backend/` and `Frontend/app/` are all fair evidence, and a claim on a page
-should be traceable to one of them.
+Reading the product repository is expected, not exceptional. It is checked out
+beside this one, at `../TheLuckyDucks` from this root, and its `Anchor/`,
+`Backend/` and `Frontend/app/` are all fair evidence: a claim on a page should
+be traceable to one of them. Every command below starts from this
+repository's root.
 
 ## Start from the live config, always
 

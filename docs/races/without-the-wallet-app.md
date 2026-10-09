@@ -64,20 +64,13 @@ That second refusal exists because the halves only work together. Signing for yo
 
 ## What still needs your wallet app
 
-A short list always will:
-
-| Action                               | Why                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------ |
-| Topping up your vault                | Money leaving your wallet needs your wallet's signature. No arrangement changes that |
-| Withdrawing from your vault          | Value leaving the platform is the line the whole design rests on                     |
-| Closing your player account          | The other exit, for the same reason                                                  |
-| Granting or extending delegated play | The permission is your consent, so it cannot renew itself                            |
+A short list always will: topping up your vault, withdrawing from it, closing your player account, and granting or extending delegated play. [What the permission can never do](delegated-play.md#what-the-permission-can-never-do) gives the reason for each.
 
 None of them is blocked, they simply ask your wallet, so topping up and withdrawing stay available at any moment, grant or no grant. Everything you do inside a game is covered.
 
 ## If you lose access to the linked account
 
-Link a second one. Any account linked to your wallet signs you in, and none of them is the primary: verify with X, link Google later, and either will do. Only the first link costs an on-chain transaction.
+Link a second one. Any account linked to your wallet signs you in, so a second is a way back in if you lose the first. See [Multiple providers per wallet](../trust/verification.md#multiple-providers-per-wallet).
 
 {% hint style="success" %}
 Your wallet always works as a way in. A linked account sits on top of it and never replaces it, so losing every linked account costs you the convenience, not the account.
@@ -85,7 +78,7 @@ Your wallet always works as a way in. A linked account sits on top of it and nev
 
 ## Turning it back off
 
-Revoking delegated play is always available. It needs no verification, it works even if the platform has switched the feature off for everyone, and it takes effect at once.
+Revoking delegated play is always available, whatever else is true of your account, and it takes effect at once. See [Turning it on and off](delegated-play.md#turning-it-on-and-off).
 
 Signing in with your wallet is always available too, whatever you have linked. Nothing here can lock you out of your own wallet.
 

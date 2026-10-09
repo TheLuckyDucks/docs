@@ -43,7 +43,7 @@ The backend holds finalization until the timer ends so the suspense survives, an
 
 The contract splits the wait at one instant: the VRF timeout, around 3 minutes from the moment the race is waiting on randomness. Before it, the race can only start. After it, the race can only be refunded. Exactly one is possible at any moment and the contract enforces the boundary, so the backend cannot hold a race pending past it.
 
-Nothing fires on its own at the deadline. The race does not auto-cancel; the refund merely becomes possible, and anyone can submit it. The platform sweeps the races it created and leaves a player's race to that player or any participant, because closing a race somebody else paid for is not the platform's call. Either way it appears in your Unclaimed Items as soon as it is refundable.
+Nothing fires on its own at the deadline. The race does not auto-cancel; the refund merely becomes possible, and anyone can submit it. [Refunds and rent](../economy/refunds-and-rent.md#who-triggers-it-and-who-pays-for-it) says who does, and where the refund shows up for you.
 
 {% hint style="info" %}
 **A refund returns every stake in one transaction and closes the race.** Nobody can refund only themselves.
@@ -58,6 +58,20 @@ Read their audits, watch their on-chain operator set, or simply note that the se
 ## What if the seed is biased?
 
 ORAO uses a VRF scheme, so the seed is the output of a one-way function over inputs the contract chooses, including the request transaction's slot. Nobody, ORAO included, can predict it before submitting, and the output is unique per request and uniform across the possibility space.
+
+## Why ORAO
+
+ORAO rather than Switchboard or another VRF, for four reasons. All of them matter more in a 30 second race than they would in a lending protocol that reads a price once an hour.
+
+**Latency, because the seed gates the race.** The race stops taking joins and then waits: no seed, no start, so the oracle's response time is the player's waiting time. ORAO typically fulfils within seconds and usually inside a minute even under load, which is what keeps a full lobby from sitting there. The contract puts a hard edge on that wait at the [VRF timeout](#what-if-the-seed-never-arrives), after which the race can only be refunded.
+
+**Cost, per race and paid up front.** Randomness here is not a protocol-level subscription amortised over many reads. Each race buys its own, and the creator funds it: the oracle's cost is moved into the race vault by the create transaction, so the race can pay the oracle at request time whether or not it ever fills. The creator pays a flat oracle fee and the platform covers whatever the randomness costs above it, which keeps it cheap enough to run races all day. See [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation).
+
+**A request model that is one account, owned by the oracle.** Requesting creates a single randomness account by calling the ORAO program, and ORAO's own fulfilment authority writes the seed into it. The account belongs to ORAO's program rather than to The Lucky Ducks, which is exactly what makes the seed checkable by a stranger and unchangeable by us. Fewer moving parts than a queue with cranks to keep alive, and one account address to hand a sceptic. [Verifying a race on-chain](verifying-a-race.md) walks that check.
+
+**Support that answers.** When an oracle does misbehave, the question is how quickly a human helps. ORAO's team has been fast to respond, which is worth more than a feature table at the moment a race is stuck.
+
+None of it asks you to trust ORAO: the seed is signed, the account is theirs rather than ours, and the maths on top is public.
 
 {% content-ref url="verifying-a-race.md" %}
 [verifying-a-race.md](verifying-a-race.md)

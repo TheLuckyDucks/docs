@@ -121,7 +121,7 @@ It needs a Runner NFT. The option sits on the create form, and in recipe setting
 Nothing is lost. They work normally in every race that has not disabled them. In a no-boost race nothing you bring is applied, and you are not charged for a boost that never took effect.
 
 {% hint style="info" %}
-Rematches inherit the setting all the way down the chain, so a rematch cannot sneak boosts back into a level match.
+[Rematches](../competition/rematches.md) inherit the setting all the way down the chain, so a rematch cannot sneak boosts back into a level match.
 {% endhint %}
 
 ## Verifying the badge
@@ -132,4 +132,4 @@ A participant who equipped a boost carries a small badge beside their name in th
 
 ## Acquiring
 
-The usual channels: scheduled mints, the in-app marketplace, third party secondary. Boost floors follow how busy the game is.
+The usual channels: scheduled mints, the in-app marketplace, third party secondary. See [Where to acquire](README.md#where-to-acquire). Boost floors follow how busy the game is.

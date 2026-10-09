@@ -97,7 +97,7 @@ On a SOL pot, a share too small for Solana to credit to a wallet holding no SOL 
 ## Your team is frozen while a tournament runs
 
 {% hint style="warning" %}
-From the start to the end of a tournament, no team can change: no creating, no join requests, no adding, kicking or leaving, no deleting. A roster reshuffled mid-event could collect points under one lineup and claim under another.
+From the start to the end of a tournament, no team can change. See [Teams](teams.md#teams-are-frozen-while-a-tournament-runs) for what that covers and why.
 {% endhint %}
 
 So build or join your team beforehand. While one is running those buttons stay disabled.

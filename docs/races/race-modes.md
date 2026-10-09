@@ -13,7 +13,7 @@ First place takes the whole prize pool, minus fees. Everyone else gets nothing.
 
 WTA is the canonical mode. Reach for it when you want the simplest payout, one winner and everyone else chasing that slot, or when the entry fee is large enough that splitting it three ways would leave podium places feeling thin.
 
-A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. After fees, the winner pockets roughly 0.45 SOL.
+A 5 player race with a 0.1 SOL entry fee has a 0.5 SOL pool. At a 7.5% platform fee and with no jackpot fee, the winner receives about 0.46 SOL.
 {% endtab %}
 
 {% tab title="Podium Split" %}
@@ -27,9 +27,11 @@ It needs at least 3 players, and the percentages are fixed on chain, so no race 
 
 Reach for it when you want more players to leave with something, or when the entry fee is moderate enough that three smaller payouts still matter.
 
-A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. After fees, the splits are roughly 0.225 / 0.135 / 0.09 SOL.
+A 10 player race with a 0.05 SOL entry fee has a 0.5 SOL pool. At a 10% platform fee and with no jackpot fee, the three places receive 0.225, 0.135 and 0.09 SOL.
 {% endtab %}
 {% endtabs %}
+
+The fee on a real race depends on its entry fee, and a race can also pay a jackpot fee. [Fees and prizes](../economy/fees-and-prizes.md) has both.
 
 <figure><img src="../../.gitbook/assets/races/app-race-cards-modes-banner.png" alt="Two race cards side by side, one badged Winner Takes All and one badged Podium Split"><figcaption><p>The mode is on the card, before you open the race.</p></figcaption></figure>
 

@@ -5,55 +5,21 @@
 > renders as a broken image on a live public page, so this list is the gate
 > between a page edit and a push.
 
-`../rules/documentation.md` carries the figure markup, the naming prefixes and
-the rule that a page must read correctly with every image stripped out. This
-file is the inventory and does not repeat them.
+`.claude/rules/images.md` carries the three classes of image, the figure markup,
+the naming prefixes and the rule that a page must read correctly with every
+image stripped out. This file is the inventory and the capture procedure, and
+repeats none of them.
 
 **Page paths here are relative to `docs/`**, the published tree, while the asset
 folder sits at the repository root because GitBook requires it there. That is
 why a page climbs two levels to reach an image.
 
-## Three classes of image
+## Reading the tables
 
-**A banner, for a specific part of a page.** A button, a combobox, a slider, a
-chip, a row, a cost box: one wide image at roughly 600x250, named
-`<stem>-banner.png`, standing on its own with no columns block. A control looks
-the same on a phone as on a desktop, so a pair of it is two pictures of one
-thing. Rows in the tables below marked **(banner)** are these.
-
-**A pair, for a whole screen or view.** A lobby, a modal, a page, an explorer
-view: `<stem>-desktop.png` and `<stem>-mobile.png`, shown in one row by a
-`{% columns %}` block at 70/30, which GitBook stacks on a narrow screen. The
-platform is played on phones, so a desktop-only shot of a screen describes an
-experience most readers do not have.
-
-**Artwork, single.** A cover, a card cover, an art grid.
-
-The test for which: if the sentence beside it talks about part of the page,
-banner. If it shows the reader where they are, pair.
-
-One banner covers one control. A page listing several options gives each its own
-rather than sharing one shot of the panel, and a control already captured for
-another page is referenced again rather than shot twice.
-
-```
-{% columns %}
-{% column width="70%" %}
-<figure><img src="../../.gitbook/assets/races/app-create-race-form-desktop.png" alt="..."><figcaption><p>What it tells the reader.</p></figcaption></figure>
-{% endcolumn %}
-
-{% column width="30%" %}
-<figure><img src="../../.gitbook/assets/races/app-create-race-form-mobile.png" alt="..., on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-{% endcolumn %}
-{% endcolumns %}
-```
-
-The desktop caption carries the meaning; the phone caption is always `On a
-phone`, because the pair shows one thing twice. The phone `alt` is the desktop
-`alt` plus `, on a phone`.
-
-**Artwork is single.** A cover, a card cover or an art grid is one file with no
-viewport pair, and it sits outside any columns block.
+A row marked **(banner)** is one file, `<name>-banner.png`: a single wide image
+of one control, at roughly 600x250. Every other screenshot row is two files,
+`<name>-desktop.png` and `<name>-mobile.png`. Artwork rows name their file in
+full.
 
 ## Folders
 
@@ -78,13 +44,6 @@ Eleven do: the cost breakdown and ten control banners, since one banner per cont
 means a control documented on two pages is referenced twice rather than captured
 twice. The Pages column below names both pages each time.
 
-{% hint style="warning" %}
-**An image re-uploaded through the GitBook web editor lands flat in
-`.gitbook/assets/` and loses its folder**, because that is where the editor
-writes. Replace a capture through git, not through the editor, or this layout
-decays one file at a time.
-{% endhint %}
-
 ## What the checker already covers
 
 `npm run check` is the gate, and it owns every mechanical question about images:
@@ -96,24 +55,20 @@ decays one file at a time.
 - an `img` with no `alt`,
 - an asset with no row in this file.
 
-So there is nothing to grep by hand. Run it from the repository root, through
-WSL, because node is not on this host's PATH otherwise:
-
-```bash
-wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$PATH"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
-```
+So there is nothing to grep by hand. `CLAUDE.md` has the command.
 
 What it cannot tell you is whether a file is a real capture or a placeholder,
 which is the next section.
 
-## Every file is currently a generated placeholder
+## Telling a placeholder from a capture
 
-Each one is a flat dark card carrying `BANNER PLACEHOLDER`, `DESKTOP PLACEHOLDER`, `PHONE
+`npm run assets` generates a placeholder for any image a page references and
+the repository lacks. Each one is a flat dark card carrying `BANNER PLACEHOLDER`, `DESKTOP PLACEHOLDER`, `PHONE
 PLACEHOLDER` or `ARTWORK PLACEHOLDER` in gold, the shot it stands in for, and
-its own path in mono. They exist so no page renders a broken image before the
-real captures land, which is also why the checker has nothing to report: every
-figure resolves. The open question is which files are still placeholders, and a
-placeholder announces itself on the page.
+its own path in mono. They exist so that no page renders a broken image before the
+real capture lands, which is also why the checker has nothing to report: every
+figure resolves. A placeholder announces itself on the page, so one that is
+still in the tree at a push is published as it is.
 
 Placeholders are the only assets at exactly the generated sizes, so this lists
 the ones nobody has replaced yet:

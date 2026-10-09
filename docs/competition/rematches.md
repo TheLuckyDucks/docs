@@ -32,12 +32,12 @@ Either way the new pot is exactly 2 entry fees, matching the race it followed. O
 
 The new race inherits the entry fee, duration, join setting, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
 
-| At propose time     | What it does                                                                                                                                              |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **AI commentary**   | On or off regardless of what the finished race had, 1v1 included. You deposit the [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation) now |
-| **X announcement**  | Posts the rematch publicly. Flat 0.0005 SOL, non-refundable, paid now. See [X announcement](../races/advanced-options.md#x-announcement)                  |
-| **Your Track NFT**  | Pick one and the rematch uses it. Pick none and the rematch keeps whatever Track the last race had                                                        |
-| **Your Runner NFT** | Nothing to pick. The app uses the Runner in your wallet on its own, and it lifts your daily ceiling from 50 races to 500. AI commentary needs one anyway  |
+| At propose time     | What it does                                                                                                                                                     |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AI commentary**   | On or off regardless of what the finished race had, 1v1 included. You deposit the [audio cost](../economy/fees-and-prizes.md#other-costs-at-creation) now        |
+| **X announcement**  | Posts the rematch publicly, for a flat non-refundable cost paid now. See [X announcement](../races/advanced-options.md#x-announcement)                           |
+| **Your Track NFT**  | Pick one and the rematch uses it. Pick none and the rematch keeps whatever Track the last race had                                                               |
+| **Your Runner NFT** | Nothing to pick. The app uses the Runner in your wallet on its own, and it lifts your [daily allowance](../races/daily-races.md). AI commentary needs one anyway |
 
 The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Duel #3".
 
@@ -56,7 +56,7 @@ These look alike and are not.
 **Your opponent declines.** That closes rematches on that race for good. Neither of you can offer again.
 
 {% hint style="warning" %}
-Cancelling while your opponent can still accept costs the same fixed **0.01 SOL** penalty as leaving a lobby. Once their window has passed it is free, so waiting a moment is worth it if you are not in a hurry.
+Cancelling while your opponent can still accept costs the same fixed penalty as [leaving a lobby](../economy/refunds-and-rent.md#withdrawal-during-the-lobby). Once their window has passed it is free, so waiting a moment is worth it if you are not in a hurry.
 {% endhint %}
 
 ## Nobody is ever stuck
@@ -75,6 +75,8 @@ A rematch can be rematched, up to the platform's maximum chain depth. Each card 
 No-boost mode is inherited all the way down, so a rematch cannot sneak boosts back into a level match.
 
 Each proposal and each acceptance spends a daily race, per player. Worth knowing if you rematch a lot: a long chain eats your day faster than fresh races do.
+
+Each offer also takes the next race number, and one that is declined or expires does not give it back. That is why race numbers sometimes skip.
 
 ## Stat tracking
 

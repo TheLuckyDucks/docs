@@ -11,13 +11,13 @@ This page covers each one, when hosting needs a Runner NFT, and how the gates st
 
 ## The five join settings
 
-| Setting                   | Who can join                                                                      |
-| ------------------------- | --------------------------------------------------------------------------------- |
-| **Open**                  | Anyone with a wallet. Default.                                                    |
-| **Verified players only** | Players who have linked and verified a social account (X, Telegram, or Facebook). |
-| **Allowed players**       | Only the wallets on the creator's invite list.                                    |
-| **NFT holders**           | Players who hold a minimum number of NFTs from a chosen collection.               |
-| **Token holders**         | Players who hold a minimum balance of a chosen token.                             |
+| Setting                   | Who can join                                                        |
+| ------------------------- | ------------------------------------------------------------------- |
+| **Open**                  | Anyone with a wallet. Default.                                      |
+| **Verified players only** | Players who have linked and verified a social account.              |
+| **Allowed players**       | Only the wallets on the creator's invite list.                      |
+| **NFT holders**           | Players who hold a minimum number of NFTs from a chosen collection. |
+| **Token holders**         | Players who hold a minimum balance of a chosen token.               |
 
 <figure><img src="../../.gitbook/assets/races/app-join-setting-picker-banner.png" alt="The join setting selector in the create form with the five options listed"><figcaption><p>Picked once, at creation, and fixed from then on.</p></figcaption></figure>
 
@@ -29,19 +29,7 @@ Everyone sees every race whatever the setting. A player who does not qualify fin
 
 Two gates are free: **Verified Only** and **Token Holders**, each with its own creator side check below. **NFT Holders always needs a Runner**, on every chain, and so does Allowed Players.
 
-A Runner is also what customizing the race past the basics needs:
-
-- a custom name,
-- a sponsored prize,
-- a duration other than the default 30 seconds,
-- more than 5 seats,
-- a custom join window, or start when underfilled,
-- AI commentary,
-- an X announcement,
-- a minimum account age,
-- hosting without joining, or
-- the **Allowed Players** join setting, or
-- the **NFT Holders** join setting.
+A Runner is also what customizing the race past the basics needs: a custom name, a sponsored prize, more seats, another duration, and the other opt ins. [Runner NFTs](../nfts/runners.md#what-it-unlocks) has the full list.
 
 So a plain race on default settings, gated on Verified Only or Token Holders or not gated at all, needs no Runner. Customize it, or pick NFT Holders or Allowed Players, and a Runner is required.
 
@@ -117,7 +105,7 @@ A Runner is required, and your own auto join faces the same threshold as any joi
 
 Requires a minimum balance of a token you choose, and the **minimum amount** has to be greater than zero. The check runs on chain as a player joins, so there is nothing to prepare beyond signing.
 
-The token must be on the platform's approved list, the same list used for SPL prize tokens, visible in the token picker at creation. Anything else and the create transaction refuses. Each token in the picker shows its address, shortened, with a button that copies it in full.
+The token must be on the platform's approved list, the same list used for SPL prize tokens, visible in the token picker at creation. Anything else and the create transaction refuses. The picker shows each token's address, as the [currency picker](../economy/spl-tokens.md#selecting-a-token) does.
 
 The gating token need not be the prize token: a SOL race can require USDC, a USDC race can require AMPS. Legacy SPL Token and Token-2022 mints both work, as for [token races](../economy/spl-tokens.md).
 

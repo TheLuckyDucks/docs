@@ -21,7 +21,7 @@ The balance is not a number recorded somewhere: it is the actual SOL in your acc
 
 ## Topping up
 
-From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. The currency picker shows each token's address under its symbol, shortened, with a button that copies it in full, and SOL reads **Native**. The **25%**, **50%** and **All** chips under the amount fill it in for you, from what your wallet can move. You can hold SOL and several tokens at once, each tracked separately.
+From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. The currency picker shows each token's address under its symbol, as [the one on the create form](spl-tokens.md#selecting-a-token) does. The **25%**, **50%** and **All** chips under the amount fill it in for you, from what your wallet can move. You can hold SOL and several tokens at once, each tracked separately.
 
 {% hint style="info" %}
 **A deposit always needs your wallet's signature.** Not a policy: money leaving your wallet requires your wallet to sign, so no setting and no permission can move it for you.
@@ -55,7 +55,7 @@ Withdraw any amount, any time, from the Player page, whether or not you have gra
 
 A token withdrawal first checks that your vault really holds that token on chain. If the figure on screen is out of date and there is nothing there to take out, the app says so before your wallet is asked, and nothing is signed.
 
-Closing the account returns everything in one transaction, your SOL, every token balance and the rent deposit. Your race history resets, and the account comes back the next time you race. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
+Closing the account is the other way out: it returns everything in one transaction, the rent deposit included. See [Refunds and rent](refunds-and-rent.md#your-player-account-rent).
 
 <figure><img src="../../.gitbook/assets/economy/app-vault-withdraw-dialog-banner.png" alt="The withdraw dialog on the Player page with the whole balance available"><figcaption><p>Any amount, any time, and only your wallet can authorise it.</p></figcaption></figure>
 
@@ -83,7 +83,7 @@ The one exception is closing your account: that returns the rent of the account 
 
 <figure><img src="../../.gitbook/assets/economy/app-payout-target-setting-banner.png" alt="The payout target setting with wallet and vault options, wallet selected"><figcaption><p>One setting, per player, covering prizes, refunds and returned rent.</p></figcaption></figure>
 
-Pooling is worth it if you race often, and you can set it back to Wallet whenever you like.
+Pooling is worth it if you race often, and you can change the setting whenever you like, verified or not, with a grant or without one.
 
 The switch always shows what is stored for your account, whether or not delegated signing is on, so enabling it never moves your winnings somewhere you did not pick.
 

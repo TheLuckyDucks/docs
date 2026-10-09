@@ -114,12 +114,12 @@ stake goes back.
 
 ```mermaid
 flowchart TD
-    A["1. Creation: the race account and its vault open"] --> B["2. Lobby: players join, 1 hour by default"]
+    A["1. Creation: the race account and its vault open"] --> B["2. Lobby: players join while the window is open"]
     B --> C{"Lobby fills, or starts underfilled?"}
     C -->|"Yes"| D["3. Start: the lobby locks, randomness requested"]
     C -->|"Join window passes"| X["Cancelled: every stake refundable"]
     D --> E["4. ORAO publishes the seed on chain"]
-    E -->|"No seed inside the 3 minute window"| X
+    E -->|"No seed inside the oracle's window"| X
     E --> F["5. Finalization: the contract ranks the ducks and completes the race"]
     F --> G["Winners claim their share of the vault"]
     G --> H["6. Cleanup: race account closed, rent returns to the creator"]
@@ -216,7 +216,7 @@ A mismatch between `winners[0]` and what the algorithm produces would mean a bro
 
 ## Step 6; Verify the payout
 
-The last step is `claim_prize`, or `claim_prize_token`. Check that it calls The Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A race with a [jackpot fee](../economy/fees-and-prizes.md#the-jackpot-fee) sends that share to the jackpot in the same transaction, in SOL or in the race's token, when a jackpot is running at that moment. On a token race, the first claim that brings a token into the current jackpot also opens the jackpot's account for it, paid by whoever sent the claim. A podium race splits the winners' share 50% / 30% / 20%. Once everything settles, the race account closes and its rent returns to the creator.
+The last step is `claim_prize`, or `claim_prize_token`. Check that it calls The Lucky Ducks program, and that money leaves the vault in the right proportions: most to the winner or winners and the rest to the platform fee wallet, at whatever the [platform fee tier](../economy/fees-and-prizes.md#platform-fee-tiers) says for that pool. A race with a [jackpot fee](../economy/fees-and-prizes.md#the-jackpot-fee) sends that share to the jackpot in the same transaction, in SOL or in the race's token, when a jackpot is running at that moment. On a token race, the first claim that brings a token into the current jackpot also opens the jackpot's account for it, paid by whoever sent the claim. A podium race splits the winners' share between three places, in the proportions [Race modes](../races/race-modes.md) gives. Once everything settles, the race account closes and its rent returns to the creator.
 
 The balance changes on that one transaction are the whole proof:
 

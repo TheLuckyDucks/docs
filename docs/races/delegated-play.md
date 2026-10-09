@@ -64,7 +64,7 @@ Revoke whenever you like with the Revoke button, which the panel shows while a g
 
 Extending uses the same panel, with Extend in place of Enable, and needs the same verified wallet.
 
-Where your winnings land sits on the same screen but is a separate choice. Change it whenever you like, granted or not, verified or not: it only says where money already owed to you should go. The grant does not move it either. Prizes and refunds go where that choice says with a live grant, an expired one or none at all, so revoking or letting a grant lapse does not send them back to your wallet.
+Where your winnings land sits on the same screen but is a separate choice, and a grant does not move it: revoking one, or letting it lapse, does not send your prizes and refunds back to your wallet. See [Where your winnings land](../economy/player-vault.md#where-your-winnings-land).
 
 <figure><img src="../../.gitbook/assets/races/app-delegation-revoke-banner.png" alt="The Revoke button in the delegated signing panel while a grant is live"><figcaption><p>The off switch needs no verification and takes effect at once.</p></figcaption></figure>
 

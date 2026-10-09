@@ -81,7 +81,7 @@ Each race captures its share **at creation**, already totalled: the base plus wh
 
 ## A worked example
 
-Say a Winner Takes All race has a 1 SOL prize pool. The fee tier at that pool size is 3% (see [Fees and prizes](fees-and-prizes.md#platform-fee-tiers)).
+Say a Winner Takes All race has a 1 SOL prize pool, a 3% platform fee and no jackpot fee. The platform fee rate follows the race's entry fee: see [Fees and prizes](fees-and-prizes.md#platform-fee-tiers).
 
 - Platform fee: `1 SOL × 3% = 0.03 SOL`
 - Winner payout: `1 SOL - 0.03 SOL = 0.97 SOL` (always, regardless of creator share)

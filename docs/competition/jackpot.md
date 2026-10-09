@@ -9,7 +9,7 @@ The jackpot is a pot of SOL and tokens that builds up from races and is won, who
 
 ## How a jackpot runs
 
-1. **A jackpot starts** and runs for a set number of days, from 1 to 30. Its start and end are written on chain at that moment and cannot be moved afterwards.
+1. **A jackpot starts** and runs for a set number of days. Its start and end are written on chain at that moment and cannot be moved afterwards.
 2. **Races feed the pot.** While it runs, every race that pays out sends a share of its prize pool to the pot.
 3. **Players are ranked** on what they did during those days. The top of the ranking become the finalists.
 4. **A winner is drawn** when the period ends, at 12:00 UTC on its last day. The finalists are published first, then a random number picks one of them. This takes a few minutes.
@@ -33,13 +33,9 @@ The Jackpot tab shows where the current one stands. At the top are the pot and a
 
 ## Where the pot comes from
 
-While a jackpot is running, every race that pays out sends a share of its prize pool to the pot, in the currency the race was run in: SOL from a SOL race, the token from a token race. That share is the jackpot fee. It sits beside the platform fee, and winners receive the pool less both. [Fees and prizes](../economy/fees-and-prizes.md#the-jackpot-fee) has the arithmetic.
+While a jackpot is running, every race that pays out sends a share of its prize pool to the pot, in the currency the race was run in: SOL from a SOL race, the token from a token race. That share is the jackpot fee. It sits beside the platform fee, and winners receive the pool less both. [Fees and prizes](../economy/fees-and-prizes.md#the-jackpot-fee) has the rest: the rate and its ceiling, the arithmetic, what pays none, and how a race's creator switches it off for that race.
 
-- **The platform sets the rate**, never above 10% of a pool. It can be zero, which stops new races feeding the pot without touching what is already in it.
-- **A race's creator can switch it off for that race**, on the create form. A race that does not feed the jackpot shows no jackpot mark, and its winners keep that share.
-- **The rate is fixed when a race is created.** A later change never reprices a race you have already joined, and every race shows its rate before you sign.
-- **The share is taken when the prize is claimed**, and only [while a jackpot is running](#between-two-jackpots).
-- **A refund, a cancelled race and a tournament prize pay none.**
+Two things about it matter on this page. The share is taken when the prize is claimed, and only [while a jackpot is running](#between-two-jackpots). And a race that feeds the jackpot carries the jackpot mark, while one that does not shows none and its winners keep that share.
 
 <figure><img src="../../.gitbook/assets/competition/app-jackpot-race-chip-banner.png" alt="A race card header carrying the jackpot mark among its chips"><figcaption><p>The mark in a card's header: this race feeds the jackpot.</p></figcaption></figure>
 
@@ -121,7 +117,7 @@ A jackpot is claimed, like a race prize. Win one and that draw shows a Claim but
 
 - **You receive everything the pot held**: its SOL and every token, each in its own currency.
 - **It lands in your wallet or your player vault**, following the same [payout target](../economy/player-vault.md#where-your-winnings-land) your race prizes use.
-- **A token you have never held needs a token account**, the small deposit Solana asks to keep one open, about 0.0015 SOL each at today's rate. The claim opens it and you pay it. It is yours, and comes back if you ever close the account.
+- **A token you have never held needs a token account**, with the small deposit Solana asks to keep one open ([SPL token races](../economy/spl-tokens.md#how-a-token-race-works) has the figure). The claim opens it and you pay it. It is yours, and comes back if you ever close the account.
 - **A pot with many tokens is claimed in several transactions.** The app sends them in order and tells you how many are left.
 
 {% hint style="success" %}
@@ -130,7 +126,7 @@ There is no deadline. An unclaimed prize waits for you, and nobody else can take
 
 ## Following along in Telegram
 
-`/jackpot` in a group with the bot shows the pot, the next draw, the rules and the leaders. Groups also get a post when a jackpot starts, one when it ends and its finalists are named, and one when the winner is drawn, or one saying a jackpot was cancelled. The Lucky Ducks X account may post the start and the winner too. See [The Lucky Ducks Telegram bot](../help/telegram-bot.md#jackpot-announcements).
+`/jackpot` in a group with the bot shows the jackpot that is running, and groups get a post at each stage of one. The Lucky Ducks X account may post the start and the winner too. See [The Lucky Ducks Telegram bot](../help/telegram-bot.md#jackpot-announcements).
 
 ## Checking a draw yourself
 

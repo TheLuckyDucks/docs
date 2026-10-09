@@ -191,7 +191,7 @@ From the raid leaderboard. Link and verify your X account to have your engagemen
 | Signal Booster | 🎯    | Earn 100 raid points     |
 | Raid Machine   | 🎯    | Earn 500 raid points     |
 
-Raid points come from likes (2), reposts (3) and replies (4) on The Lucky Ducks raid posts, and they feed your XP too.
+Raid points come from likes, reposts and replies on The Lucky Ducks raid posts, weighted as [the Telegram bot](../help/telegram-bot.md#earn-points-on-the-raid-leaderboard) page says, and they feed your XP too.
 
 ## Rare 💎
 

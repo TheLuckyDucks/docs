@@ -1,257 +1,249 @@
 # CLAUDE.md
 
-Project memory for the Lucky Ducks player documentation. Read at session start.
-Topic rules live in `.claude/rules/`.
+The map of the Lucky Ducks player documentation repository. Read at session
+start. The rules themselves are in `.claude/rules/`, and
+"Which file answers what" below says which one to open.
 
 ## What this is
 
-The source of the player-facing documentation site for theluckyducks.com. It is
-a GitBook space backed by this repository: markdown, one file per page,
-`SUMMARY.md` as the sidebar.
+The source of the player documentation site for theluckyducks.com: a GitBook
+space backed by this repository. Markdown, one file per page, with
+`docs/SUMMARY.md` as the sidebar.
 
-**The pages are the product. The only code here is tooling**: a structural
-checker, `scripts/check-pages.mjs`, run by `npm run check`, an asset
-synchroniser, `scripts/sync-assets.mjs`, run by `npm run assets`, and a
-screenshot capturer, `scripts/capture-shots.mjs`, run by `npm run capture`. The checker
-verifies shape and cannot verify a fact: front matter parses, blocks balance, links and anchors
-resolve, images exist and are paired, `SUMMARY.md` is complete. **Nothing
-verifies a claim on a page**, so the only thing standing between a reader and a
-wrong number is still whoever wrote it. That is what shapes
-`.claude/rules/accuracy.md`.
+**The pages are the product, and their reader is a player, not a developer**:
+someone who has connected a wallet once and wants to know what a button costs,
+why their refund was short, or whether a Runner NFT is required for the thing
+they are trying to do.
 
-The audience is a player, not a developer. Someone who has connected a wallet
-once and wants to know what a button costs, why their refund was short, or
-whether a Runner NFT is required for the thing they are trying to do.
+**The only code here is tooling**: `scripts/check-pages.mjs`,
+`scripts/sync-assets.mjs` and `scripts/capture-shots.mjs`, behind the commands
+below. The checker verifies shape and cannot verify a fact, so **nothing
+verifies a claim on a page**. Every fee, limit, percentage and timeout is a
+value in a deployed Solana program or its on-chain config, decided in the
+product repository and never here. A wrong number on a money page is the
+highest-cost defect this repository can ship, because a player acts on it:
+`.claude/rules/accuracy.md` says where each figure comes from.
 
-## GitBook writes to this branch
+## Publishing, and what a session never does
 
-Every commit in this repository's history is authored by GitBook
-(`GITBOOK-<n>: No subject`). The sync is bidirectional: an edit made in the
-GitBook web editor is committed here, and a commit pushed here is pulled into
-the space.
+**Pushing this repository publishes the site, and the sync is two-way.** A
+commit pushed to this branch is pulled into the live space, and an edit made in
+the GitBook web editor is committed here by GitBook itself
+(`GITBOOK-<n>: No subject`).
 
-Three consequences, all of which have to shape how work is done:
-
-- **A local edit races with the editor.** Anyone editing in GitBook while a
-  local change is unpushed produces a conflict on a file nobody was expecting to
-  conflict. Pull before starting, and push a finished change promptly rather
-  than sitting on it.
-- **GitBook normalizes markdown when it writes back.** Hand-tuned formatting,
-  table alignment padding and link style survive only until someone touches the
-  page in the editor. Do not spend effort on formatting that carries no meaning,
-  and do not treat a formatting-only diff from GitBook as damage.
-- **Never rewrite a page wholesale to fix a sentence.** A full-file rewrite
-  turns a one-line correction into a conflict against every concurrent edit.
-  Change the smallest span that fixes the problem.
-
-## The site plan decides what is possible
-
-The space publishes on GitBook's **Basic Site** plan, the free site tier.
-
-**GitBook accepts no custom code in a site: no CSS, no HTML, no JavaScript, on
-any plan.** That is a platform limitation and no upgrade lifts it, so a styling
-request cannot be answered with a stylesheet. Everything that shapes a page has
-to come from the content: page icons, page descriptions, and GitBook's own
-blocks.
-
-Basic Site also excludes custom domain, custom fonts, custom logo, footer
-customization, the bold and gradient themes, semantic and code colours, PDF
-export, AI search, adaptive content, authenticated access and site sections.
-Anything that is available is set in the GitBook customization panel, not in
-this repository. `IMPORTING.md` carries the detail.
+- **A session never commits and never pushes.** Everything it does stays in the
+  working tree. It runs the check, says what it changed, and the owner reviews
+  and runs git. Here in particular a push cannot be reviewed afterwards: it
+  puts every page in the tree in front of players at once, a page written for
+  behaviour mainnet does not have yet included.
+- **The site describes MAINNET only.** Nothing about devnet, beta or test
+  builds, and no "coming soon". A page for behaviour that is not on mainnet yet
+  is written with the change and HELD until the deploy, because a player who
+  reads about a gate or a screen mainnet does not have is misled exactly as by
+  a stale page. A hand-over names the pages that are held.
+- **Change the smallest span that fixes the problem**, never a whole page for
+  one sentence. A local edit that is not pushed yet races anyone working in the
+  web editor, and a full-file rewrite turns a one-line correction into a
+  conflict against every concurrent edit. So the owner pulls before a batch
+  starts, and a finished batch is handed over at once instead of sitting.
+- **GitBook normalizes markdown when it writes back.** Hand-tuned formatting
+  survives only until someone touches the page in the editor, so spend no
+  effort on formatting that carries no meaning, and do not read a
+  formatting-only diff from GitBook as damage.
+- **A site takes no custom code: no CSS, no HTML, no JavaScript, on any plan.**
+  A styling request cannot be answered with a stylesheet. Everything that
+  shapes a page comes from its content: the page icon, the page description
+  and GitBook's own blocks. What the plan allows is in `IMPORTING.md`, and
+  anything it does allow is set in the GitBook customization panel, not here.
+- **`.gitbook.yaml` decides what GitBook reads**, and `npm run check` holds it:
+  `root: ./docs`, with the readme and the summary relative to that root.
+  Changing `root` or `structure` re-points the whole site, so neither is
+  touched. The one edit it takes is a `redirects:` entry when a page moves
+  (`.claude/rules/site-structure.md`). Prettier is not extended to it.
 
 ## Layout
 
-**`docs/` is the published tree and nothing else is.** `.gitbook.yaml` sets
-`root: ./docs`, so GitBook reads that folder and ignores everything beside it.
-Tooling, agent docs and this file sit outside it and cannot surface as a page.
+**`docs/` is the published tree and nothing else is.** GitBook reads that
+folder and ignores everything beside it, so tooling, rules and this file cannot
+surface as a page. **Nothing written for a session goes inside `docs/`**: a
+markdown file there is a candidate page before anyone lists it. The rules sit
+under `.claude/`, a dot-directory GitBook would skip even if the content root
+moved, and this file sits at the root because that is where it is loaded from.
 
-| Path                 | Holds                                                                        |
-| -------------------- | ---------------------------------------------------------------------------- |
-| `docs/README.md`     | The welcome page, and the space root per `.gitbook.yaml`                     |
-| `docs/SUMMARY.md`    | The sidebar. A page not listed here is not navigable                         |
-| `docs/introduction/` | Orientation: what the platform is, how a race works, first race              |
-| `docs/races/`        | Creating, joining, configuring, gating, hosting, cancelling                  |
-| `docs/nfts/`         | The four collections, plus Mystery Boxes and renting                         |
-| `docs/competition/`  | Tournaments, teams, rematches, badges, the jackpot, the community lottery    |
-| `docs/economy/`      | Fees, prizes, creator fee share, refunds, rent, SPL token races              |
-| `docs/trust/`        | Randomness, on-chain verification, player verification                       |
-| `docs/help/`         | FAQ, glossary, Telegram bot, social links                                    |
-| `.gitbook/assets/`   | Every image, in one folder per section. **Repository root, not `docs/`**     |
-| `.gitbook.yaml`      | GitBook config: the content root, readme and summary locations               |
-| `scripts/`           | `check-pages.mjs`, `sync-assets.mjs`, `capture-shots.mjs`. The only code     |
-| `package.json`       | Tooling only: `prettier` and `yaml`. Nothing here is published               |
-| `IMPORTING.md`       | How the sync works, what the plan allows. Not published, not in `SUMMARY.md` |
+| Path               | Holds                                                                                                          |
+| ------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `docs/README.md`   | The welcome page, and the space root                                                                           |
+| `docs/SUMMARY.md`  | The sidebar. A page not listed here is not navigable                                                           |
+| `docs/<section>/`  | The pages: `introduction`, `races`, `nfts`, `competition`, `economy`, `trust`, `help`                          |
+| `.gitbook/assets/` | Every image, one folder per section plus `brand/`. **Repository root, not `docs/`**: GitBook requires it there |
+| `.gitbook.yaml`    | GitBook config: the content root, the readme and summary, and redirects                                        |
+| `scripts/`         | The three tools. The only code                                                                                 |
+| `package.json`     | Tooling only: `prettier`, `yaml`, `playwright-core`. Nothing here is published                                 |
+| `IMPORTING.md`     | GitBook reference: connecting a space, the plan, the literal block syntax                                      |
+| `.claude/rules/`   | The rules, loaded by the tool                                                                                  |
+| `.claude/docs/`    | Reference material, opened on demand                                                                           |
 
-The asset folder is the one thing that does **not** move under `docs/`: GitBook
-requires `.gitbook/assets/` at the repository root. So a page reaches an image
-by climbing out of the content tree, which is why a page in a section uses
-`../../.gitbook/assets/<section>/x.png` and `docs/README.md` uses
-`../.gitbook/assets/brand/x.png`.
+Because the asset folder stays at the root, a page climbs out of the content
+tree to reach an image: `../../.gitbook/assets/<section>/x.png` from a page in
+a section, `../.gitbook/assets/brand/x.png` from `docs/README.md`.
 
-**Page paths are written relative to `docs/` everywhere in this file and under
-`.claude/`**, because that is how a reader of the site sees them: `SUMMARY.md`
-means `docs/SUMMARY.md`, and `races/access-and-gating.md` means
-`docs/races/access-and-gating.md`. Links between pages are relative to each
-other and so are unaffected by the content root.
+**Page paths are written relative to `docs/` in every rule and reference
+file**, because that is how a reader of the site sees them:
+`races/access-and-gating.md` means `docs/races/access-and-gating.md`. Links
+between pages are relative to each other, so the content root never appears in
+one.
 
-`.claude/docs/OVERVIEW.md` is the content map: which page owns which topic, and
-where a new one belongs. `.claude/docs/screenshots.md` is the shot list for
-every image the pages reference. `.claude/docs/verifying-claims.md` is how to
-check a figure, a permission or a precondition against the sibling repositories.
+## This host
 
-## The commands, and where they run
+**Windows 11 with WSL (Ubuntu): two shells, and node exists in only one.**
 
-**Node is not on this host's PATH outside WSL**, so they all go through it:
+| Tool                 | Windows host (the Bash tool is Git Bash) | WSL                      |
+| -------------------- | ---------------------------------------- | ------------------------ |
+| `git`, `perl`        | yes                                      | yes                      |
+| `node`, `npm`, `npx` | **no**                                   | yes, once nvm is sourced |
+| `ffmpeg`             | no                                       | yes                      |
+| `python`             | no (the name is a stub that errors)      | yes                      |
+
+So every `npm` command goes through WSL, and a text scan is written in perl so
+that it runs on the host.
+
+| Windows                          | WSL                                |
+| -------------------------------- | ---------------------------------- |
+| `D:\WORK`                        | `/mnt/WORK`                        |
+| `D:\WORK\DeFi\TheLuckyDucksDocs` | `/mnt/WORK/DeFi/TheLuckyDucksDocs` |
+| `D:\WORK\.claude-tmp`            | `/mnt/WORK/.claude-tmp`            |
+
+**`D:\WORK` is the only Windows path WSL mounts, and not at `/mnt/d`.**
+`/mnt/c` and `/mnt/d` exist with no drive behind them, so a path under either
+silently addresses nothing, and nothing on `C:` can be read or written from
+WSL.
+
+**nvm does not initialise under `bash -lc`, so the command sources it:**
 
 ```bash
-wsl -d Ubuntu -- bash -lc 'export PATH="$HOME/.nvm/versions/node/v24.10.0/bin:$PATH"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
+wsl -d Ubuntu -- bash -lc '. "$HOME/.nvm/nvm.sh"; cd /mnt/WORK/DeFi/TheLuckyDucksDocs && npm run check'
 ```
 
-- **`npm run check`** is the gate before a push. It exits non-zero on a problem
-  and prints one line per finding. Run it after any edit to a page, a figure or
-  `SUMMARY.md`.
+**Never write a Node version directory** (`~/.nvm/versions/node/vX.Y.Z/bin`),
+here or in a script. More than one version is installed and the set changes:
+the day the pinned one is upgraded away, the command dies with
+`node: command not found`, which reads as a broken toolchain rather than as a
+stale string. Sourcing nvm uses whichever version its `default` alias names.
+
+**A WSL command with logic in it goes in a script file.** What is typed after
+`wsl -d Ubuntu --` is read by other shells before the one that runs it, and
+none of what they change raises an error:
+
+| Typed inline                                           | What reaches the command                                                      |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| A bare `/mnt/...` argument                             | `C:/Program Files/Git/mnt/...`: Git Bash rewrites what looks like a Unix path |
+| `$var` assigned in the same string, or a loop variable | Empty: it is read before the command runs                                     |
+| `$?`                                                   | 0, after a run that failed                                                    |
+| A file list built by `files=$(...)`                    | Commands, not arguments: each file named is run as a script                   |
+
+`$HOME` in the command above survives only because it has the same value in
+every shell that reads it. So one command with literal arguments is typed
+inline, with any `/mnt/...` path inside the quoted string, and anything with a
+variable, a loop, an exit code to read or a computed list of files is written
+to a script file and run as
+`wsl -d Ubuntu -- bash -lc 'bash /mnt/WORK/<path>/<script>.sh'`.
+
+**`D:\WORK\.claude-tmp` is the scratch folder both sides reach, and it can be
+emptied at any time.** A log or a one-off script goes there; Git Bash reads it
+at `/d/WORK/.claude-tmp/`. No rule depends on a tool there and no document
+names a file there as something that exists: a tool worth keeping lives in this
+repository's `scripts/`.
+
+## The commands
+
+All four run through WSL, in the form above.
+
+- **`npm run check`** is the gate before a hand-over. It reads every page and
+  prints one line per finding under the file it is in. **Its last line is the
+  verdict**: `no problems: <n> pages, <m> assets, all resolved`, or
+  `<n> problem(s) across <m> pages`. Read that line, never an exit code. It
+  covers front matter, balanced blocks, links and anchors, images and their
+  pairs, `docs/SUMMARY.md`, `.gitbook.yaml` and the shot list, and it fails on
+  an em dash or an en dash in a page.
+- **`npm run format`** is prettier, on its defaults, over every `.md`,
+  `package.json` and `scripts/*.mjs`; `npm run format:check` is the read-only
+  half. A batch formats only the files it touched:
+  `npx prettier --write <files>`.
 - **`npm run assets`** builds a labelled placeholder for any image a page
-  references but the repository lacks, and lists any asset nothing references.
-  `npm run assets -- --prune` deletes those. It needs ffmpeg, which WSL has.
+  references and the repository lacks, and lists any asset nothing references;
+  `npm run assets -- --prune` deletes those. It needs ffmpeg.
 - **`npm run capture`** takes real screenshots off the live site into
-  `.gitbook/assets/`, driving a Chrome you started with
+  `.gitbook/assets/`, driving a Chrome started with
   `--remote-debugging-port=9222`. It never creates a file, only overwrites one
-  `npm run assets` already made, so the referenced-and-on-disk invariant stays
-  with those two. `npm run capture -- --list` says what it knows how to take.
-  On this host it needs `networkingMode=mirrored` in `.wslconfig`, because
-  Chrome binds its debug port to loopback and WSL is otherwise a separate
-  network.
-- **`npm run format`** is prettier over every `.md`, which owns the formatting.
-  `npm run format:check` is the read-only half.
+  `npm run assets` already made, and `npm run capture -- --list` says what it
+  can take. On this host it needs `networkingMode=mirrored` in `.wslconfig`,
+  because Chrome binds its debug port to loopback and WSL is otherwise a
+  separate network.
 
-Two things about running them here. Check which node version is current under
-`~/.nvm/versions/node/` rather than trusting the line above, and **never read
-`$?` through `bash -lc`**: the outer Git Bash expands it before WSL sees it, so
-a failing command reads as a pass. Use `&& echo ok || echo failed` instead.
+When each one runs, and in what order, is `.claude/rules/closing-a-batch.md`.
 
-## Where agent docs live
+## Conventions that hold in every file
 
-Everything an agent reads lives under `.claude/` at the repository root, outside
-the content tree. That is now belt and braces: a file outside `docs/` is not
-read by GitBook at all, and a dot-directory would be skipped even if the content
-root moved back. `CLAUDE.md` sits at the root for the same reason, because that
-is where it is loaded from.
+Pages, rules, reference files and script comments alike.
 
-Nothing agent-facing belongs inside `docs/`. A markdown file there is a
-candidate page even before anyone lists it in `SUMMARY.md`.
+- **No em dashes, and no spaced hyphen standing in for one.** `a - b` joining
+  two clauses is the same dash with different bytes. Repunctuate instead: a
+  colon before an explanation, a full stop between two independent statements,
+  commas around an aside. If none of those fit, the sentence is doing two jobs
+  and wants splitting.
 
-## Adding, moving and renaming a page
+  | Instead of                                    | Write                                         |
+  | --------------------------------------------- | --------------------------------------------- |
+  | `"The pool is split three ways - 50, 30, 20"` | `"The pool is split three ways: 50, 30, 20."` |
+  | `"You can cancel, but it costs - see below"`  | `"You can cancel, but it costs. See below."`  |
+  | `"Boosts stack (up to the cap - see Boosts)"` | `"Boosts stack, up to the cap. See Boosts."`  |
 
-- **A new page needs three edits.** Create the `.md` in the right folder with
-  `icon:` and `description:` front matter, then add its line to `SUMMARY.md`
-  under the correct heading. A page missing from `SUMMARY.md` is unreachable
-  through navigation and is the most common way a new page silently does
-  nothing.
-- **Renaming a file breaks every inbound link and its published URL.** Links
-  here are relative paths (`../nfts/runners.md`), so a rename means grepping for
-  the old filename and fixing every hit, in `SUMMARY.md` and in every
-  `{% content-ref %}` too.
-- **Renaming a heading breaks deep links silently.** Anchors are derived from
-  heading text, so `boosts.md#no-boost-races` dies the moment that heading is
-  reworded, and nothing reports it. Grep for the anchor before editing a heading
-  that other pages point at:
+  A hyphen keeps its real jobs: compound modifiers (`on-chain`, `no-boost`,
+  `opt-in`), ranges, list bullets, minus signs, and anything a player types or
+  reads verbatim. The app's own copy keeps the same convention, and so does a
+  reply to the owner.
 
-  ```bash
-  grep -rn "boosts.md#" --include=*.md .
-  ```
-
-  **A heading that other pages deep-link into cannot move inside a tab, a
-  stepper step or an expandable either**, because those are not headings and the
-  anchor disappears with them. `races/access-and-gating.md` keeps five gates as
-  `##` sections for exactly this reason.
-
-- **Order in `SUMMARY.md` is the reading order.** The sections are sequenced so
-  a new player can read top to bottom. Put a page where someone would meet the
-  concept, not where the alphabet puts it.
-
-## Reading level and voice
-
-**Every page serves a crypto newcomer and a veteran at the same time.** Assume
-no prior knowledge, but never spend a reader's patience proving it: explain a
-term in the clause where it first appears and move on. A newcomer must never
-have to read another page to understand a sentence, and a veteran must never
-have to wade through a tutorial to reach the answer. Do not write down to
-either.
-
-Second person, present tense, plain words. A page answers a question a player
-actually has, in its first sentence, with the mechanism after it.
-
-Pages are deliberately short, most of them a few hundred words. The platform
-changes often, and a short page is one that gets corrected instead of going
-stale. When a page grows past what a reader will scan, split it and link rather
-than adding another section.
-
-Full rules, including the vocabulary table, the block vocabulary and the
-punctuation convention this bundle keeps: `.claude/rules/documentation.md`.
-
-## Every number here is a claim about a live program
-
-Entry fees, penalties, percentages, limits, timeouts and player caps are all
-values in a deployed Solana program or in its on-chain config account. They are
-not decided in this repository and cannot be verified from it.
-
-Before writing or changing one, check it against the source named in
-`.claude/rules/accuracy.md`. That rule carries the claim-to-source table and the
-commands. A wrong number on a money page is the highest-cost defect this
-repository can ship, because a player acts on it.
-
-## Markdown conventions
-
-- **GitBook block syntax is used deliberately.** Hints, steppers, tabs,
-  expandables, cards, page-link cards, titled code blocks and Mermaid diagrams
-  all appear. They are GitBook's own syntax, so they survive a round trip
-  through the web editor. `.claude/rules/documentation.md` says which block does
-  which job; `IMPORTING.md` lists the literal syntax of each.
-- **Every page carries `icon:` and `description:` front matter.** The icon is a
-  Font Awesome name without the `fa-` prefix and shows in the sidebar; the
-  description is the subtitle under the page title, the card subtitle, and the
-  meta description a search engine reads.
-- **Images live in `.gitbook/assets/<section>/`**, one folder per page folder
-  plus `brand/` for the root artwork, referenced by relative path from the page
-  inside a `<figure>` with an `alt` and a `<figcaption>`. **Every screenshot is a
-  pair**, desktop and phone, in a `{% columns %}` block at 70/30; artwork is a
-  single file. A figure whose file is missing renders as a broken image on the
-  live site, so an image and its asset ship together.
-  `.claude/docs/screenshots.md` is the shot list and the capture procedure.
-- **Prettier owns the formatting**, on its defaults, over every `.md` in the
-  repository including this file and everything under `.claude/`. So bullets are
-  `-`, table cells are padded to the column width, and emphasis is `_`. The run
-  does the padding, never the edit: write a table row with one space each side
-  of a pipe and leave the column widths to it, since aligning by hand turns a
-  one-cell change into a diff of the whole table. Nothing is configured, so a
-  run needs no setup:
-
-  ```bash
-  npx --yes prettier --write "**/*.md"
-  ```
-
-  It touches presentation only, never words, which is what makes it safe to run
-  on a tree that GitBook also writes to. It leaves `{% %}` blocks and raw HTML
-  alone. Do not extend it to `.gitbook.yaml`.
-
+- **The network is "X", never "Twitter", and what is published there is a
+  "post", never a "tweet".** Not "X (Twitter)" either. The verb for resharing
+  is repost, which is also what the bot's raid card counts. An identifier keeps
+  the name it has.
 - **Every text file is LF**, in the working tree as in the index: pages,
   scripts, JSON, YAML. `.gitattributes` pins it (`* text=auto eol=lf`), which
-  overrides `core.autocrlf=true` on a Windows host, and `.vscode/settings.json`
-  sets `files.eol` so the editor creates a new file the same way. Images are
-  binary and are never touched. Verify with
+  overrides `core.autocrlf=true` on this host, and `.vscode/settings.json` sets
+  `files.eol` so the editor creates a new file the same way. Images are binary
+  and never touched. Verify with
   `git ls-files --eol -co --exclude-standard | grep -E "w/(crlf|mixed)"`, which
   must come back empty; when it names a file, convert that file (`\r\n` to
   `\n`, nothing else).
-- Links are relative paths to the `.md` file, with an anchor fragment when
-  pointing at a section.
-- Emoji appear in a few headings (`competition/badges.md`) where they mirror the
-  badge art. Do not add them elsewhere.
+- **Prettier owns the layout, and a table is never aligned by hand.** Write a
+  row as its cells with one space each side of a pipe and leave the widths to
+  the pass: aligning by hand turns a one-cell change into a diff of the whole
+  table. Prettier touches presentation only, never words, and leaves `{% %}`
+  blocks and raw HTML alone, which is what makes it safe on a tree GitBook also
+  writes to.
 
-## Do not touch
+## Which file answers what
 
-- `.gitbook.yaml`. It defines the space root. Changing it re-points the whole
-  site.
-- The block syntax itself. A mistyped `{% hint %}` does not fail a build,
-  because there is no build: it renders as literal text on a live public page.
-  Copy the shape from a page that already uses the block.
+**Every `.md` under `.claude/rules/` is loaded by the tool**: at launch when it
+has no `paths:` front matter, and when a file matching its `paths:` is read or
+edited when it has one. So a rule is written once, in the file below that owns
+it, and every other mention is a pointer.
+
+| Rule file                            | Loads                                  | Answers                                                                               |
+| ------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------- |
+| `.claude/rules/closing-a-batch.md`   | At launch                              | When to scan, format and check, what to hand over, and when an agent may be launched  |
+| `.claude/rules/pages.md`             | With a page                            | How a page is written: reader, voice, vocabulary, length, front matter, blocks, links |
+| `.claude/rules/site-structure.md`    | With a page or `.gitbook.yaml`         | Where a fact lives, and adding, moving or renaming a page without breaking a URL      |
+| `.claude/rules/images.md`            | With a page or an asset                | Which image a sentence wants, its markup, its name and how the files are managed      |
+| `.claude/rules/accuracy.md`          | With a page                            | Where a figure or a mechanic comes from, and how to phrase one an operator can change |
+| `.claude/rules/instruction-files.md` | With this file or one under `.claude/` | How rules and reference files are written                                             |
+
+**`.claude/docs/` is not loaded by the tool.** It holds reference material,
+opened when the task needs it:
+
+| Reference file                     | Open it when                                                                                        |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `.claude/docs/OVERVIEW.md`         | Adding a page or a section, or unsure which page owns a subject or a fact                           |
+| `.claude/docs/screenshots.md`      | Adding, replacing or capturing an image. `npm run check` reads it at that path, so it does not move |
+| `.claude/docs/verifying-claims.md` | Checking a figure, a permission, a precondition or a cost against the product repository            |
+| `IMPORTING.md`                     | Connecting a space, answering a styling question, or needing the literal syntax of a block          |

@@ -13,7 +13,7 @@ Phantom, Solflare, Backpack and most major Solana wallets work, and the app hand
 
 ## 2. Top up with a little SOL
 
-You need SOL for transaction fees, roughly 0.000005 SOL each, plus the entry fee itself. 0.05 SOL is a comfortable start: a player account, a few dozen fees and a couple of typical races.
+You need SOL for the entry fee itself, plus a small network fee on each transaction. 0.05 SOL is a comfortable start: a player account, a few dozen fees and a couple of typical races. [Fees and prizes](../economy/fees-and-prizes.md) has the figures.
 
 ## 3. Connect
 
@@ -25,7 +25,7 @@ Your first sign-in is always the wallet, because nothing else can prove the wall
 
 ## 4. Create your player account
 
-Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once, the first time you open the create form or join a race. There is no separate transaction to sign: the account is created inside your first create or join, and its rent, about 0.0017 SOL, is added to that transaction. The modal shows the exact figure, and the rent comes back in full if you ever close the account.
+Your first create or join needs an on chain account to hold your race history, profile and vault balance. A modal explains it once, the first time you open the create form or join a race. There is no separate transaction to sign: the account is created inside your first create or join, and its rent, the small SOL deposit Solana requires to keep an account open, is added to that transaction. The modal shows the exact figure, and the rent comes back in full if you ever close the account. See [Refunds and rent](../economy/refunds-and-rent.md#your-player-account-rent).
 
 <figure><img src="../../.gitbook/assets/introduction/app-player-account-modal-banner.png" alt="The first race modal explaining the one time player account and its refundable rent"><figcaption><p>It appears once. The rent rides along with your first race, and comes back if you close the account.</p></figcaption></figure>
 
@@ -71,7 +71,7 @@ Once you are racing regularly, pre-fund a balance and let The Lucky Ducks sign y
 
 ## Optional: verify
 
-After your first race you can link an account with X, Telegram, Facebook or another supported provider. Verified players get a green dot on their avatar and can enter races reserved for verified wallets.
+After your first race you can link an account with X, Telegram or another provider the platform has enabled. Verified players get a green dot on their avatar and can enter races reserved for verified wallets.
 
 Two reasons to do it early, beyond the badge: a linked account signs you in without opening your wallet app, and it is required before you can turn on [playing without signing every action](../races/delegated-play.md). See [Player verification](../trust/verification.md).
 

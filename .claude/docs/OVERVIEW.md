@@ -1,16 +1,15 @@
 # Content map
 
-> Which page owns which topic, which topics are deliberately split across
-> several pages, and where a new page belongs. Read this before adding a
-> section, so it lands on the page that already owns the subject instead of
-> becoming a fourth partial answer.
+> Which page owns which topic, which page is the home of which fact, and which
+> topics are deliberately split across several pages. Open it before adding a
+> section or a sentence, so it lands on the page that already owns the subject
+> instead of becoming a fourth partial answer.
 
-`../rules/documentation.md` is how to write a page. `../rules/accuracy.md` is
-how to check a figure. This file is the map, and it repeats neither.
+`.claude/rules/site-structure.md` is the rule this map serves: each fact has
+one home, and every other page keeps a phrase and a link. This file is the map,
+and it repeats no rule.
 
 **Page paths here are relative to `docs/`**, the published tree.
-
----
 
 ## Reading order
 
@@ -29,38 +28,38 @@ then the money, then the trust story, then reference.
 | Trust and Fairness | Why should I believe the result                             |
 | Help               | FAQ, glossary, bot, where to find us                        |
 
-A page whose section is not obvious is usually a page trying to answer two
-questions.
+## Which page owns a topic
 
-## Page ownership
-
-The page in the right column is the one that carries the full treatment. Every
-other mention links to it rather than restating it.
+The page in the right column carries the full treatment. Every other mention
+links to it rather than restating it.
 
 | Topic                                                        | Owned by                              |
 | ------------------------------------------------------------ | ------------------------------------- |
 | What the platform is, and who runs it                        | `introduction/what-is-lucky-ducks.md` |
 | The lifecycle of one race, start to finish                   | `introduction/how-it-works.md`        |
 | First-time wallet to first race                              | `introduction/getting-started.md`     |
-| The create-a-race form and its choices                       | `races/creating-a-race.md`            |
+| The create-a-race form and its required choices              | `races/creating-a-race.md`            |
 | Joining, the lobby, watching the race                        | `races/joining-and-playing.md`        |
-| Signing once instead of once per action                      | `races/delegated-play.md`             |
 | WTA and Podium Split, and ties                               | `races/race-modes.md`                 |
 | Who may join: the five join settings, gates, allowlists      | `races/access-and-gating.md`          |
 | Everything optional at creation                              | `races/advanced-options.md`           |
 | Hosting without playing, cancelling, expiry                  | `races/hosting-and-cancelling.md`     |
 | The daily race allowance                                     | `races/daily-races.md`                |
-| The four collections at a glance                             | `nfts/README.md`                      |
+| The order of setting up a session with no wallet app         | `races/without-the-wallet-app.md`     |
+| Signing once instead of once per action                      | `races/delegated-play.md`             |
+| The four collections at a glance, where to buy, royalties    | `nfts/README.md`                      |
 | Runner, and what it unlocks                                  | `nfts/runners.md`                     |
 | Boost mechanics, stacking, fairness                          | `nfts/boosts.md`                      |
 | Tracks and custom scenery                                    | `nfts/tracks.md`                      |
 | Cosmetics and avatars                                        | `nfts/cosmetics.md`                   |
 | Mystery Boxes                                                | `nfts/mystery-boxes.md`               |
+| Renting an NFT                                               | `nfts/renting.md`                     |
 | Tournaments, rule sets, standings                            | `competition/tournaments.md`          |
-| Teams, membership, standings                                 | `competition/teams.md`                |
+| Teams, membership, the freeze                                | `competition/teams.md`                |
 | Rematch proposals and chains                                 | `competition/rematches.md`            |
 | Badges and XP milestones                                     | `competition/badges.md`               |
 | The jackpot: the pot, who is entered, the draw               | `competition/jackpot.md`              |
+| The community lottery                                        | `competition/community-lottery.md`    |
 | Entry fee, platform fee tiers, the jackpot fee, prize pool   | `economy/fees-and-prizes.md`          |
 | The pre-funded balance, deposits, withdrawals, payout target | `economy/player-vault.md`             |
 | Which balance the top bar button shows                       | `economy/player-vault.md`             |
@@ -76,24 +75,66 @@ other mention links to it rather than restating it.
 | The Telegram bot and raids                                   | `help/telegram-bot.md`                |
 | Where to reach the team                                      | `help/social-networks.md`             |
 
+## Which page is the home of a fact
+
+The figure, the windows and the exceptions are stated on the home and nowhere
+else. `help/faq.md` and `help/glossary.md` are the home of nothing: an answer
+or a definition there is a sentence and a link.
+
+| Fact                                                                       | Home                                                  |
+| -------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Entry fee minimum and maximum; the Fee figure on the form                  | `races/creating-a-race.md`, "Entry fee"               |
+| Lobby size: the default cap and the maximum                                | `races/creating-a-race.md`, "Max players"             |
+| Race duration: the floor and the ceiling                                   | `races/creating-a-race.md`, "Race duration"           |
+| The "feeds the jackpot" choice on the form                                 | `races/creating-a-race.md`, "Feeding the jackpot"     |
+| Join window: the default and the custom range                              | `races/advanced-options.md`, "Custom join timeout"    |
+| Race name length; the minimum account age range                            | `races/advanced-options.md`                           |
+| Everything a Runner unlocks                                                | `nfts/runners.md`, "What it unlocks"                  |
+| Which join settings need a Runner; allowlist size; the NFT gate's cap      | `races/access-and-gating.md`                          |
+| Daily allowance: the limits, the window, the creation cooldown             | `races/daily-races.md`                                |
+| Podium percentages; the fewest players each mode starts with               | `races/race-modes.md`                                 |
+| Platform fee tiers                                                         | `economy/fees-and-prizes.md`, "Platform fee tiers"    |
+| Jackpot fee: its ceiling, when it is taken, what pays none                 | `economy/fees-and-prizes.md`, "The jackpot fee"       |
+| Network fee; oracle, archival, audio and X announcement costs              | `economy/fees-and-prizes.md`                          |
+| How a dollar figure is priced                                              | `economy/fees-and-prizes.md`                          |
+| Withdraw windows and penalty; cancel penalty; who triggers a refund        | `economy/refunds-and-rent.md`                         |
+| Rent of the player account, and of a race account by lobby size            | `economy/refunds-and-rent.md`                         |
+| The underfilled-start surcharge; very small SOL payouts                    | `economy/refunds-and-rent.md`                         |
+| The token account deposit; the address line in a currency picker           | `economy/spl-tokens.md`                               |
+| The payout target, what it covers and its one exception                    | `economy/player-vault.md`, "Where your winnings land" |
+| Creator Fee Share percentages and which races earn it                      | `economy/creator-fee-share.md`                        |
+| Delegation: what it covers and never can, durations, the per-action charge | `races/delegated-play.md`                             |
+| Verification: providers, when it is offered, one-way, a second account     | `trust/verification.md`                               |
+| The oracle's deadline; why ORAO                                            | `trust/fairness.md`                                   |
+| Finalization and starting, and who may send each                           | `introduction/how-it-works.md`                        |
+| The boost cap, the win rates, no-boost races                               | `nfts/boosts.md`                                      |
+| Where to buy an NFT; royalties                                             | `nfts/README.md`                                      |
+| Team size, pending requests, the freeze during a tournament                | `competition/teams.md`                                |
+| Tournament scoring, the pot, its fee ceiling, claiming                     | `competition/tournaments.md`                          |
+| Rematch rules, windows, chain depth, why race numbers skip                 | `competition/rematches.md`                            |
+| Jackpot period, finalists, the draw, cancelling, claiming                  | `competition/jackpot.md`                              |
+| Jackpot posts in Telegram; raid point weights; how a card names you        | `help/telegram-bot.md`                                |
+
 ## Topics that live on more than one page
 
 These are split on purpose. The split is the thing to preserve: each page
-answers its own question and links out for the rest. Adding the full story to
-whichever page you happen to be editing is how the bundle drifts into three
-half-answers that disagree.
+answers its own question and links out for the rest.
 
-**Money coming back.** Three pages touch it and they are not interchangeable.
-`races/race-modes.md` says what happens to the pool when a race does not run.
-`races/hosting-and-cancelling.md` is the creator's view: cancelling, expiry, and
-what it costs them. `economy/refunds-and-rent.md` is the full accounting,
-including rent and the underfilled-start surcharge, and it is the one that owns
-the figures.
+**Money coming back.** `races/race-modes.md` says in a sentence what happens
+to the pool when a race does not run. `races/hosting-and-cancelling.md` is the
+creator's view: cancelling, expiry, and what is left to them.
+`economy/refunds-and-rent.md` is the full accounting and the one that owns
+every figure, the penalties included.
 
 **What a Runner NFT does.** `nfts/runners.md` owns the collection and the full
-list of what holding one unlocks. `races/access-and-gating.md` owns the hosting
-gate as a property of the create form. `races/daily-races.md` owns the allowance
-it raises. `economy/creator-fee-share.md` owns the revenue it enables.
+list of what holding one unlocks. `races/access-and-gating.md` owns which join
+settings need one. `races/daily-races.md` owns the allowance it raises.
+`economy/creator-fee-share.md` owns the revenue it adds to.
+
+**The create form.** `races/creating-a-race.md` owns the required choices and
+their limits. `races/advanced-options.md` owns each opt in. What an opt in
+costs is on `economy/fees-and-prizes.md`, and the form's own list of opt ins is
+a phrase and a link each.
 
 **Gating.** `races/access-and-gating.md` owns all five join settings and every
 gate type. `nfts/runners.md`, `nfts/boosts.md` and `trust/verification.md` each
@@ -101,8 +142,7 @@ describe what a player needs to pass one, from their own side.
 
 **Boost fairness.** `nfts/boosts.md` owns both the mechanic and the argument
 that it is fair, including no-boost races. Several pages deep-link into
-`#no-boost-races`, so that heading is effectively an API. Grep before rewording
-it.
+`#no-boost-races`, so that heading is treated as fixed.
 
 **The jackpot is two pages on purpose.** `economy/fees-and-prizes.md` owns the
 jackpot FEE: what a race pays, the worked example, what is exempt.
@@ -115,18 +155,19 @@ receive says "minus fees" and links to the first.
 withdrawing, and the payout target that decides where winnings land.
 `races/delegated-play.md` owns the permission: what may be signed for you, what
 never can be, and how to revoke. They depend on each other, because delegation
-spends from the vault, so each links to the other once and neither restates it.
+spends from the vault, so each links to the other and neither restates it.
+`races/without-the-wallet-app.md` owns only the ORDER of the steps, and links
+to those two and to `trust/verification.md` for the rest.
 
 The word "vault" carries two meanings on this site. A **race vault** holds one
 race's entry fees and closes when the race ends. A **player vault** is a
 persistent balance owned by one player. `help/glossary.md` distinguishes them
 and every page that could be read either way must say which it means.
 
-**Where money lands.** Three pages state it and only one owns it.
-`economy/refunds-and-rent.md` owns the payout target's effect on refunds and
-rent, `economy/player-vault.md` owns the setting itself, and
-`races/joining-and-playing.md` mentions it in one clause on the claim step. Keep
-that proportion.
+**A payout that finds no token account.** `economy/spl-tokens.md` gives the
+overview for a claim and a refund, `economy/refunds-and-rent.md` owns the
+refund's side, and `races/delegated-play.md` owns what a claim sent for you
+bills your vault.
 
 **Verification, which is two unrelated things.** `trust/verification.md` is
 about a player proving who they are and earning a profile badge.
@@ -135,35 +176,14 @@ Their filenames are one word apart and they are the pair most likely to be
 confused, cross-linked wrongly, or edited into each other. Check which one you
 are in before adding a section about "verification".
 
-## What lives outside this bundle
+## What the pages leave out
 
-Some of what a player sees is not described here, and should not be pulled in.
-
-- **The dApp interface itself.** Screens, buttons and wallet dialogs change
-  faster than a page can track. Describe what happens and what it costs, not
-  where the button is.
-
-  Screenshots are the deliberate exception, and they do not change that rule:
-  an image shows the reader what a screen looks like, while the prose still has
-  to carry the answer on its own. A page that says "click the button shown
-  above" has moved the answer into an asset that will go stale. The shot list
-  and the re-capture procedure are `screenshots.md`.
-
-- **Anything off chain.** XP, leaderboards, badge awards, tournament standings
-  and the Telegram bot are backend features. They can change without a program
-  release, so a page describing them precisely will go stale first.
+- **Where a button is.** A page describes what happens and what it costs
+  (`.claude/rules/pages.md`). A screenshot shows the screen, and the prose
+  still carries the answer on its own.
+- **Anything off chain, in detail.** XP, leaderboards, badge awards, tournament
+  standings and the Telegram bot are backend features. They can change without
+  a program release, so a page describing them precisely goes stale first.
 - **Developer-facing material.** Instruction names, account layouts and seeds
   belong in the program repository. `trust/verifying-a-race.md` is the single
   deliberate exception, because going on chain is exactly what it teaches.
-
-## Adding a page
-
-1. Find the topic in the ownership table. If it is already owned, the change is
-   a section on that page, not a new file.
-2. If it is genuinely new, put the file in the folder whose section a reader
-   would look in, and give it a filename that reads as the topic.
-3. Add its line to `SUMMARY.md`, positioned where a reader meets the concept in
-   the top-to-bottom order.
-4. Add a row to the ownership table above.
-5. Link to it from the page a reader is most likely to be on when the question
-   occurs to them. A page nothing links to is a page nothing reaches.

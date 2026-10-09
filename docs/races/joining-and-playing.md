@@ -41,13 +41,13 @@ The confirmation asks where the entry fee comes from: your wallet, or a balance 
 
 Some races ask for more than the entry fee, and the modal spells out whatever applies:
 
-- **Verified only.** Wallets that have completed Telegram, X or Facebook verification.
-- **Allowlist (invite only).** Only the wallets the creator invited, up to 20. Off the list, Join stays disabled and the modal says the race is invite only.
-- **NFT Holders.** A minimum number of NFTs from a chosen collection, both shown so you can check at a glance. Your holding is checked when you join, and each NFT counts toward one seat in the race, so the same NFTs cannot seat a second player. If the collection lives on another chain, such as Ethereum, Base or Polygon, the check runs against the external wallet linked to your profile, and the join flow sends you to link one first if you have not.
+- **Verified only.** Wallets that have completed [verification](../trust/verification.md).
+- **Allowlist (invite only).** Only the wallets the creator invited. Off the list, Join stays disabled and the modal says the race is invite only.
+- **NFT Holders.** A minimum number of NFTs from a chosen collection, both shown so you can check at a glance. Your holding is checked when you join. If the collection lives on another chain, the check runs against the external wallet linked to your profile, and the join flow sends you to link one first if you have not.
 - **Token Holders.** A minimum amount of a chosen token, which need not be the race's prize token.
 - **Minimum account age.** A player account at least a certain age. A brand new account created during the join transaction is always too young, and the modal says so rather than failing silently.
 
-[Race access and gating](access-and-gating.md) is the full reference.
+[Race access and gating](access-and-gating.md) is the full reference, with the limits each gate carries.
 
 <figure><img src="../../.gitbook/assets/races/app-gated-race-join-disabled-banner.png" alt="A gated race with Join disabled and the requirement stated above it"><figcaption><p>Whatever a race asks for, the modal says it before you sign.</p></figcaption></figure>
 
@@ -87,10 +87,10 @@ The modal stays open while the lobby fills, and participants appear as they join
 
 ### Withdrawing
 
-Changed your mind? Click Withdraw. Two windows apply: **within 2 minutes of your own join**, and never in the **last 60 seconds** of the lobby, which is locked for everyone.
+Changed your mind? Click Withdraw. It is open for a short window after your own join, and it locks for everyone just before the lobby closes. The button carries the time left.
 
 {% hint style="warning" %}
-The vault then refunds your full entry fee and charges a fixed **0.01 SOL** penalty from your wallet, always in SOL even on token races. [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) has the full rules.
+The vault then refunds your full entry fee and charges a small fixed penalty from your wallet, always in SOL even on token races. [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) has the windows, the figure and the full rules.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="The withdraw button in the race modal with the time left on it"><figcaption><p>Live for 2 minutes after your own join, and dead in the last minute of the window.</p></figcaption></figure>

@@ -25,7 +25,7 @@ Leaving a lobby has two time constraints:
 - **Never in the last 60 seconds** of the join window, which is locked for everyone whenever they joined.
 
 {% hint style="warning" %}
-The vault then refunds your **full entry fee** and charges a fixed **0.01 SOL** penalty from your wallet to the platform fee wallet. It does not scale with the pot or the token, and it is always in SOL, even on a token race.
+The vault then refunds your **full entry fee** and charges a fixed **0.01 SOL** penalty from your wallet to the platform fee wallet. It does not scale with the pot or the token, it is always in SOL, even on a token race, and it never joins the prize pool.
 {% endhint %}
 
 Details worth knowing:
@@ -41,7 +41,7 @@ Withdrawn players stay in the participants list with a strikethrough, and stop c
 
 ## Full refund on race cancellation or expiration
 
-A race that never finalizes refunds every paid participant in **full**, all of them in one transaction, whether the creator cancelled it or it expired. A lobby holds at most 20 players, which is what lets a single transaction always pay the whole of it. Two cases.
+A race that never finalizes refunds every paid participant in **full**, all of them in one transaction, whether the creator cancelled it or it expired. A lobby has a fixed maximum size, which is what lets a single transaction always pay the whole of it. Two cases.
 
 ### Creator cancellation during the join window
 
@@ -61,7 +61,7 @@ A race that never reached its start condition expires and becomes refundable. An
 The race records why it was cancelled, and the app shows that reason on it. Beyond a manual cancel, two lead here:
 
 - **The join window passed** without the race becoming startable, which is the expiry path above.
-- **No seed arrived** inside the oracle's window, about 3 minutes. Rare; the oracle is reliable.
+- **No seed arrived** inside the oracle's window. Rare; the oracle is reliable.
 
 {% hint style="info" %}
 Either way anyone at all can trigger the refund, and **it refunds the whole lobby in one transaction and closes the race**. There is no refunding yourself alone and no leaving the others behind, and the money reaches each original payer whoever paid for the transaction.
@@ -113,9 +113,7 @@ Opting into start-when-underfilled deposits a small surcharge into the race vaul
 
 ## Where the money lands
 
-Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone and covers every race you are in, which matters here because anyone may trigger a refund on a lobby that never filled. It covers tournament prizes as well, and it does not depend on delegated signing: whether your grant is live, expired or was never made changes nothing about where your money lands.
-
-The exception is closing your player account. That returns the rent of the account holding the vault, so there is nothing left to credit and it always goes to your wallet.
+Refunds, prizes and returned rent follow your payout setting: your wallet by default, or your [player vault](player-vault.md) if you pool them. The setting is yours alone, which matters here because anyone may trigger a refund on a lobby that never filled: whoever submits it, your money goes where you chose. [Where your winnings land](player-vault.md#where-your-winnings-land) has the setting itself, what it covers and its one exception.
 
 ## Very small SOL payouts
 

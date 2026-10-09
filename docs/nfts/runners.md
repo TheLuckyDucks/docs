@@ -11,20 +11,22 @@ The access pass. A Runner in your wallet unlocks the advanced race creation feat
 
 ## What it unlocks
 
-- **More than 5 seats.** Anyone can create up to 5; a Runner takes you to 20.
+- **More seats than the default lobby.** See [Max players](../races/creating-a-race.md#max-players).
 - **AI commentary.** The per second narration track.
-- **Custom race duration.** 30 seconds is open to everyone; anything else, up to the platform maximum of 3 minutes, needs a Runner.
-- **Custom join timeout.** The 1 minute to 1 week slider.
+- **Custom race duration.** The default is open to everyone; anything else needs a Runner.
+- **Custom join timeout.**
 - **Custom name** on the race card.
 - **Start when underfilled.**
-- **A higher daily allowance.** 50 races a day becomes 500, and this is the only thing that lifts it.
+- **A higher [daily allowance](../races/daily-races.md).** A Runner is the only thing that lifts it.
 - **Host without playing.** A race that opens empty and fills as others join. See [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
 - **Sponsored race.** You fund the pool instead of the joiners.
 - **X announcement** when the race goes live.
 - **No-boost race**, for everyone in it.
-- **Allowed Players**, an invite list of up to 20 wallets, which counts as a customization.
+- **Allowed Players**, the invite list, which counts as a customization.
 - **NFT Holders**, the collection gate, on every chain.
 - **Minimum account age** on joiners.
+
+[Advanced options](../races/advanced-options.md) and [Race access and gating](../races/access-and-gating.md) describe each one, with its limits and its cost.
 
 ## What Runner is not required for
 
@@ -34,6 +36,8 @@ Two of the four gates host fine without one, as long as the race stays on defaul
 - Token Holders asks for an approved token, and for the creator to meet the same balance at auto join.
 
 The other two always need a Runner: **NFT Holders**, on every chain, and **Allowed Players**.
+
+A custom track needs no Runner either. It needs the [Track NFT](tracks.md) itself.
 
 {% hint style="success" %}
 A Runner is also the largest single addition to the [Creator Fee Share](../economy/creator-fee-share.md), though it does not unlock it. Every creator who races in their own race earns a base share with no NFT at all, and the Runner adds to that.
@@ -48,7 +52,7 @@ Runners are not boosts. No extra speed, no head start, no effect on any race you
 ## Acquiring
 
 - Runner mints drop occasionally, announced on the homepage banner and in Telegram.
-- Secondary market on Tensor, MagicEden or the in-app marketplace.
+- The in-app marketplace and the third party markets. See [Where to acquire](README.md#where-to-acquire).
 - The collection is deliberately small, so the floor moves with demand.
 
 ## Verifying you have one

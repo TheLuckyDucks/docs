@@ -1,7 +1,7 @@
 ---
 description: Where every number and mechanic on a page comes from, and how to check one. Read before writing or changing any figure, limit, fee, percentage or timeout.
 paths:
-  - "**/*.md"
+  - "docs/**/*.md"
 ---
 
 # Checking a claim
@@ -13,7 +13,15 @@ number on a money page is the highest-cost defect this bundle can carry.**
 
 Every mechanic described here is behaviour of a deployed Solana program, and
 every figure is either a constant in that program or a value in its on-chain
-config. Both live in sibling repositories under `TheLuckyDucks/`.
+config. Both are decided in the product repository, checked out beside this
+one: `../TheLuckyDucks` from this root, holding `Anchor/` (the program),
+`Backend/` (everything off chain) and `Frontend/app/` (the dApp). The paths in
+the table below are inside it.
+
+**Read the product, never another page.** A page reads as confident current
+documentation, so a claim carried from one page to the next looks corroborated
+while both are stale. `.claude/docs/verifying-claims.md` is the long form of
+this rule: the commands that produce each answer.
 
 ## Claim to source
 
@@ -31,6 +39,7 @@ config. Both live in sibling repositories under `TheLuckyDucks/`.
 The general shape of the game, written for a player rather than a developer, is
 `Anchor/README.md`. It is the closest thing to a peer of this bundle and a good
 first stop when a page needs to describe a mechanic end to end.
+`Anchor/docs/README.md` indexes the program's own docs.
 
 ## Mainnet is the source, not the constant
 
@@ -41,6 +50,11 @@ administrator updates a tunable, which is a transaction rather than a release.
 
 Read the JSON first. Fall back to `state.rs` only for something that has no
 config field, or to learn the bound a tunable is capped at.
+
+**The JSON is itself a copy, and it can trail the chain**: an administrator
+changes a tunable with a transaction, and nothing rewrites the file. Where a
+page and the JSON disagree, neither settles it. Leave the figure as it is and
+report both, for the owner to settle against the on-chain account.
 
 **This is the single largest source of wrong figures on these pages.** Four
 divergences were live at once, each one a page that had quoted the constant:
@@ -110,7 +124,7 @@ is ten percent and `creatorFeeShareRunnerBps: 4000` is forty.
 - **Backend surfaces drift with no program change.** The Telegram card, its
   metric labels and the command catalogue all moved while the contract stood
   still. Before editing `help/telegram-bot.md`, read the renderer and the
-  catalogue rather than the page. `../docs/verifying-claims.md` names the files.
+  catalogue rather than the page. `.claude/docs/verifying-claims.md` names the files.
 - **When the frontend and the program disagree, the program wins, and a
   frontend COMMENT is the weakest evidence in the repository.** The NFT Holders
   gate is premium in `is_premium_base`, so creating one always needs a Runner,
@@ -133,6 +147,8 @@ states one as a fact goes stale without anybody editing anything.
 - Point at the surface that shows the live value. The confirmation screen and
   the explorer are always right; a sentence here is right until someone signs a
   transaction.
+- Where the figure itself is stated, it is stated on the page that owns the
+  subject and nowhere else (`site-structure.md`).
 
 Values that are NOT admin-tunable can be stated flatly: the program id, the
 podium split having exactly three places, the fact that there are no ties, the
@@ -144,16 +160,17 @@ fact that a seed cannot be changed after it is committed.
    `cfg` block in `state.rs`.
 2. Convert the units. Lamports to SOL, basis points to percent, seconds to
    minutes.
-3. Grep this bundle for the old figure. The same number usually appears on more
-   than one page, and in a worked example whose arithmetic then has to be redone.
+3. Grep the pages for the old figure. It belongs on its home page and in the
+   worked examples that consume it; a hit anywhere else is a copy to turn into
+   a link.
 
    ```bash
-   grep -rn "0.05 SOL" --include=*.md .
+   grep -rn "0.05 SOL" --include=*.md docs
    ```
 
 4. Re-check any worked example that consumed it. An example with stale
    arithmetic is worse than no example, because it looks verified.
 
-If the sibling repositories are not checked out, say the figure could not be
+If the product repository is not checked out, say the figure could not be
 verified rather than carrying it over from the surrounding prose. An unverified
 number that reads plausibly is exactly the defect this rule exists to stop.

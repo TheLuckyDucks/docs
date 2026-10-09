@@ -41,15 +41,13 @@ What the founder shares is the team's **invite link**. It follows the team name,
 
 A dot appears on **Teams** in the menu when someone asks. It clears the moment the founder opens the team's **Members** tab, which is where the requests wait, under the roster and with the same tick boxes. Tick one, several or all of them, then accept or reject the lot in one go: a batch is a single transaction, however many players are in it.
 
-A team holds **20** pending requests at a time. A player waiting on an answer can withdraw the request from the team page, and a rejected player is free to ask again.
+A player waiting on an answer can withdraw the request from the team page, and a rejected player is free to ask again.
 
 <figure><img src="../../.gitbook/assets/competition/app-join-requests-inbox-banner.png" alt="Pending join requests under the roster on a team page, ticked, with the accept and reject buttons above them"><figcaption><p>Requests wait under the roster until the founder answers.</p></figcaption></figure>
 
 ## Team standings in tournaments
 
-Standings are computed off chain on one rule, chosen when the tournament is created. Every rule is a **per-player average**, whether it counts wins, races, XP, volume, podiums, duels, last places or races using a particular NFT, so a big team cannot out-score a small one on headcount. [Tournaments](tournaments.md#scoring) has the full set and the bonus for racing outsiders.
-
-Computing off chain is what lets a new rule appear without upgrading the program. The winners are written on chain before anything is paid.
+Standings are computed off chain on one rule, chosen when the tournament is created. Every rule is a **per-player average**, whether it counts wins, races, XP, volume, podiums, duels, last places or races using a particular NFT, so a big team cannot out-score a small one on headcount. [Tournaments](tournaments.md#scoring) has the full set, the bonus for racing outsiders, and how the winners are written on chain before anything is paid.
 
 ## Teams are frozen while a tournament runs
 

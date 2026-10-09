@@ -5,7 +5,7 @@ description: Linking an off-platform identity to your wallet, what it unlocks, w
 
 # Player verification
 
-Every wallet has a player profile. Verification ties that wallet to an off-platform identity as well, which is optional but unlocks limits and tournament eligibility.
+Every wallet has a player profile. Verification ties that wallet to an off-platform identity as well. It is optional, and [what it unlocks](#what-verification-unlocks) is listed below.
 
 ## Profile basics: nickname and avatar
 

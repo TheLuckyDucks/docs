@@ -25,7 +25,7 @@ It suits community events, tournaments where the organiser should not compete, a
 Only the creator can cancel, and only while the join window is open. Everyone who joined gets their full entry back in that same transaction, you included if you joined, and you pay a small fixed penalty in SOL to the platform.
 
 {% hint style="warning" %}
-The penalty is flat, around **0.05 SOL**, and the confirmation shows the exact figure. It does not scale with the pot, and a token race still pays it in SOL.
+The penalty is flat, and the confirmation shows the exact figure. It does not scale with the pot, and a token race still pays it in SOL. [Refunds and rent](../economy/refunds-and-rent.md#creator-cancellation-during-the-join-window) has the figure.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/races/app-cancel-race-confirm-banner.png" alt="The cancel confirmation dialog stating the refund to players and the flat SOL penalty to the creator"><figcaption><p>The exact penalty is on the confirmation, before you sign.</p></figcaption></figure>
@@ -46,11 +46,11 @@ A race nobody joined just closes. No penalty, no fanfare.
 
 ## Quick comparison
 
-| Situation                                  | Who triggers          | Player refund                     | Creator penalty                     |
-| ------------------------------------------ | --------------------- | --------------------------------- | ----------------------------------- |
-| Withdraw during lobby                      | The player themselves | Entry minus 0.01 SOL flat penalty | Not applicable (creator unaffected) |
-| Creator cancels during lobby               | Creator only          | Full entry returned               | 0.05 SOL flat                       |
-| Race expires (join window passes unfilled) | Anyone at all         | Full entry returned               | None                                |
+| Situation                                  | Who triggers          | Player refund                                                  | Creator penalty                     |
+| ------------------------------------------ | --------------------- | -------------------------------------------------------------- | ----------------------------------- |
+| Withdraw during lobby                      | The player themselves | Full entry returned, and the player pays a flat penalty in SOL | Not applicable (creator unaffected) |
+| Creator cancels during lobby               | Creator only          | Full entry returned                                            | A flat penalty in SOL               |
+| Race expires (join window passes unfilled) | Anyone at all         | Full entry returned                                            | None                                |
 
 For the rest of the money flow, rent, surcharges, where pending refunds appear and what happens to a payout too small to send, see [Refunds and rent](../economy/refunds-and-rent.md).
 

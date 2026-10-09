@@ -36,8 +36,7 @@ The collection carries the Royalties plugin at a rate of zero, so selling a cosm
 ## Acquiring
 
 - Themed drops every few weeks
-- In-app marketplace listings
-- Tensor and MagicEden, carrying the same NFTs
+- The in-app marketplace and the third party markets. See [Where to acquire](README.md#where-to-acquire)
 
 ## Setting an avatar
 

@@ -29,9 +29,9 @@ Open Create Race from the main page. The form runs top to bottom in the order yo
 
 ### Entry fee
 
-What each player pays to join, in SOL or any supported SPL token, legacy or Token-2022, such as USDC and USDT. More tokens arrive over time. The minimum is 0.01 SOL or the token equivalent, the maximum 10 SOL. In the currency picker each token shows its address, shortened, with a button that copies it, and SOL reads **Native**.
+What each player pays to join, in SOL or any [supported SPL token](../economy/spl-tokens.md), legacy or Token-2022. The minimum is 0.01 SOL or the token equivalent, the maximum 10 SOL. The currency picker shows each token's address, so you can tell a token from a lookalike: see [Selecting a token](../economy/spl-tokens.md#selecting-a-token).
 
-The platform fee scales with it: 10% on tiny pots, down to 2% on large ones. [Fees and prizes](../economy/fees-and-prizes.md) has the tier table.
+The platform fee rate depends on it: a smaller entry fee pays a higher rate. [Fees and prizes](../economy/fees-and-prizes.md#platform-fee-tiers) has the tier table.
 
 The amount field shows one **Fee** figure: the platform fee rate for the amount you typed, plus the jackpot fee rate while the race [feeds the jackpot](#feeding-the-jackpot). Hover it, or tap it on a phone, to see the two parts.
 
@@ -67,7 +67,7 @@ First place takes the whole pool, minus fees. The cleanest format for a small ra
 {% endtab %}
 
 {% tab title="Podium split" %}
-The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 players, and suits a big lobby.
+The pot is split between first, second and third. Needs at least 3 players, and suits a big lobby. [Race modes](race-modes.md) has the split.
 {% endtab %}
 {% endtabs %}
 
@@ -75,19 +75,19 @@ The pot splits 50% / 30% / 20% across first, second and third. Needs at least 3 
 
 ## Optional opt ins
 
-All off by default, and most need a Runner NFT.
+All off by default, and most need a Runner NFT: [Runner NFTs](../nfts/runners.md#what-it-unlocks) lists which.
 
 - **AI commentary**. A per second narration track, generated as the race starts. Costs a little per race second.
 - **X announcement**. Posts the race to The Lucky Ducks' X account, so it reaches people outside the app. Small flat cost, non-refundable. See [Advanced options](advanced-options.md#x-announcement).
-- **Custom join timeout**. Default 1 hour, shorter or longer as you like.
-- **Custom name**. A title on the race card, up to 32 characters.
+- **Custom join timeout**. A shorter or longer lobby window than the default.
+- **Custom name**. A title on the race card.
 - **Custom track**. A Track NFT you own as the background.
 - **Start when underfilled**. Lets the race launch short of max players once the join timeout passes. See [Advanced options](advanced-options.md).
 - **Host without playing**. Create without taking a seat. Not available for 1v1, and the host gives up the Creator Fee Share. See [Hosting, cancelling, and refunds](hosting-and-cancelling.md).
 - **Sponsored race**. You fund the pool, players join free. Good for giveaways.
 - **No-boost race**. Boost NFTs off for everyone, yourself included. See [No-boost races](../nfts/boosts.md#no-boost-races).
-- **Join setting**. Open by default. Verified Only and Token Holders gate a race without a Runner; NFT Holders and Allowed Players, an invite list of up to 20 wallets, both need one. The number of NFTs an NFT Holders race can require is capped by the platform, 5 as it stands. See [Race access and gating](access-and-gating.md).
-- **Minimum account age**. Keeps fresh wallets out by requiring a player account of a certain age, anywhere from 5 minutes to 6 months. See [Advanced options](advanced-options.md#minimum-account-age).
+- **Join setting**. Open by default, or limited to verified players, an invite list, NFT holders or token holders. See [Race access and gating](access-and-gating.md).
+- **Minimum account age**. Keeps fresh wallets out by requiring a player account of a certain age. See [Advanced options](advanced-options.md#minimum-account-age).
 
 {% columns %}
 {% column width="70%" %}
@@ -105,7 +105,7 @@ All off by default, and most need a Runner NFT.
 
 ## Sign and submit
 
-The cost box totals everything you pay: entry fee, oracle fee (\~0.002 SOL), archival fee (\~0.0001 SOL), any opt in costs, and the race account's rent. The rent comes back when the race ends. After signing, the race hits the lobby and the join timer starts.
+The cost box totals everything you pay: entry fee, oracle fee, archival fee, any opt in costs, and the race account's rent. The rent comes back when the race ends, and [Fees and prizes](../economy/fees-and-prizes.md#other-costs-at-creation) has each figure. After signing, the race hits the lobby and the join timer starts.
 
 <figure><img src="../../.gitbook/assets/races/app-create-race-cost-breakdown-banner.png" alt="The cost breakdown box at the foot of the create form, itemising entry fee, oracle fee, archival fee and rent"><figcaption><p>Every line you are about to pay. The rent line returns when the race closes.</p></figcaption></figure>
 

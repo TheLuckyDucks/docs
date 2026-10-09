@@ -13,10 +13,10 @@ The Lucky Ducks is duck racing, fully on chain. Every race is provably fair, eve
 
 ## What you can do here
 
-- **Race** up to 20 players, in WTA (Winner Takes All) or Podium Split mode.
+- **Race** up to 20 players, in WTA (Winner Takes All) or Podium Split [mode](races/race-modes.md).
 - **Collect** four NFT collections: Runners unlock advanced features, Boosts add speed, Tracks change the scenery, Cosmetics dress up your duck.
 - **Compete** in tournaments where teams race for one on-chain pot, split between the winning team.
-- **Team up** with up to 20 players. Your races feed the standing automatically, with no sign-up and no entry fee.
+- **Team up** with other players in a [team](competition/teams.md). Your races feed the standing automatically, with no sign-up and no entry fee.
 - **Stake** in SOL or any supported SPL token, Legacy or Token-2022. The platform takes a small treasury fee, the rest goes to the winners.
 - **Play fast** by pre-funding a vault and letting the platform sign for you, so joining takes one tap instead of a wallet approval.
 
@@ -24,9 +24,9 @@ The Lucky Ducks is duck racing, fully on chain. Every race is provably fair, eve
 
 A race is a random draw with an on-chain payout, so it works as one. Fund the prize yourself with a **sponsored race** and players join for nothing: the oracle picks the winner, the contract pays out, and nobody, the team included, can steer it.
 
-- **Give away tokens.** Sponsor the pot in SOL or any supported token, open 20 seats, and let the draw run. Winner takes all, or Podium Split pays three.
+- **Give away tokens.** Sponsor the pot in SOL or any supported token, open the seats, and let the draw run. Winner takes all, or Podium Split pays three.
 - **Keep it to your people.** Gate entry on holding your NFT collection or a minimum balance of your token, on Solana or on a supported chain such as Ethereum, Base or Polygon.
-- **Run a closed draw.** An invite list of up to 20 wallets, and only those wallets can enter.
+- **Run a closed draw.** An invite list of wallets you choose, and only those wallets can enter.
 - **Prove it afterwards.** Every seed, ranking and transfer is on chain, so a winner who asks can check the draw themselves.
 
 {% hint style="info" %}

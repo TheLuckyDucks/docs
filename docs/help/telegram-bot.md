@@ -54,9 +54,9 @@ Each group has its own announcement policy, set by whoever added the bot: it can
 
 ### How you appear on a card
 
-Announcements name you by the first of these that exists: your linked and verified X or Telegram handle, then your nickname, then a shortened wallet address. The first two appear with your wallet beside them, because nicknames are not unique and a card naming two people identically is worse than one with an address on it.
+Announcements name you by the first of these that exists: your Telegram handle, if you verified with Telegram and switched its display on, then your nickname, then a shortened wallet address. The first two appear with your wallet beside them, because nicknames are not unique and a card naming two people identically is worse than one with an address on it.
 
-Would rather not appear by handle? Unlink it. See [Player verification](../trust/verification.md#telegram-handle-in-group-announcements).
+Your handle is shown only if you opted in, and the same switch turns it off again. See [Player verification](../trust/verification.md#telegram-handle-in-group-announcements).
 
 ## Jackpot announcements
 

@@ -47,7 +47,7 @@ Under each symbol is the token's address, shortened, with a button that copies i
 
 ## Fee tier differences
 
-Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit what that token is worth, which is why AMPS and AISI sit at much higher absolute numbers.
+Each token has its own tier schedule. The percentages match [SOL's](fees-and-prizes.md#platform-fee-tiers) while the thresholds suit what that token is worth, which is why AMPS and AISI sit at much higher absolute numbers.
 
 A token race pays the [jackpot fee](fees-and-prizes.md#the-jackpot-fee) in its own token, at the same rate as a SOL race.
 
