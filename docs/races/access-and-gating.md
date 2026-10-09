@@ -67,7 +67,7 @@ This gate always needs a Runner NFT to create, whichever chain the collection is
 
 ### Solana or another chain
 
-Solana is the default. The chain selector also offers supported non-Solana chains, such as Ethereum, Base and Polygon, where you paste that chain's collection address instead. Only chains the platform supports appear, so anything you can pick works; anything missing is not enabled yet.
+Solana is the default. The chain selector also offers supported non-Solana chains, such as Ethereum, Base and Polygon, where you pick from the collections approved on that chain instead. Only chains the platform supports appear, so anything you can pick works; anything missing is not enabled yet. Each collection in the picker shows its address, shortened, with a button that copies it in full, so you can check it is the one you mean.
 
 Nothing else about the race changes. It still runs on Solana, with SOL or the usual tokens, and the ducks race the same. Only the source of the required NFT is new.
 
@@ -117,7 +117,7 @@ A Runner is required, and your own auto join faces the same threshold as any joi
 
 Requires a minimum balance of a token you choose, and the **minimum amount** has to be greater than zero. The check runs on chain as a player joins, so there is nothing to prepare beyond signing.
 
-The token must be on the platform's approved list, the same list used for SPL prize tokens, visible in the token picker at creation. Anything else and the create transaction refuses.
+The token must be on the platform's approved list, the same list used for SPL prize tokens, visible in the token picker at creation. Anything else and the create transaction refuses. Each token in the picker shows its address, shortened, with a button that copies it in full.
 
 The gating token need not be the prize token: a SOL race can require USDC, a USDC race can require AMPS. Legacy SPL Token and Token-2022 mints both work, as for [token races](../economy/spl-tokens.md).
 

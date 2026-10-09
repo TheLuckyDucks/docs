@@ -15,7 +15,7 @@ The jackpot is a pot of SOL and tokens that builds up from races and is won, who
 4. **A winner is drawn** when the period ends, at 12:00 UTC on its last day. The finalists are published first, then a random number picks one of them. This takes a few minutes.
 5. **The winner claims the whole pot**, and the next jackpot starts the moment the winner is known.
 
-The Jackpot tab shows where the current one stands: the pot, the countdown to the draw, the rules in force, and the live ranking under **Current standings**.
+The Jackpot tab shows where the current one stands. At the top are the pot and a countdown to the draw, in days, hours, minutes and seconds. A row of boxes under them gives the jackpot's number (**Jackpot draw**), its length in days (**Period**), and when it **Starts** and **Ends**, in your own time zone. Then come the rules in force, what the pot holds, and the players in front under **Current standings**.
 
 {% columns %}
 {% column width="70%" %}
@@ -41,26 +41,41 @@ While a jackpot is running, every race that pays out sends a share of its prize 
 - **The share is taken when the prize is claimed**, and only [while a jackpot is running](#between-two-jackpots).
 - **A refund, a cancelled race and a tournament prize pay none.**
 
+<figure><img src="../../.gitbook/assets/competition/app-jackpot-race-chip-banner.png" alt="A race card header carrying the jackpot mark among its chips"><figcaption><p>The mark in a card's header: this race feeds the jackpot.</p></figcaption></figure>
+
 While a jackpot is running, anyone can also send SOL or a supported token straight to the pot, which is how a sponsor tops it up.
+
+## What the pot holds
+
+The figure at the top of the Jackpot tab is the whole pot in dollars, or its SOL alone when [dollar figures](../help/preferences.md) are switched off or no price is available. Under the rules, a dropdown lists what the pot is made of: SOL first, then every token it holds.
+
+Each entry shows the token's icon and symbol with its address under them, shortened, beside a button that copies it in full. SOL has no token address and reads **Native**. Then come the amount, to 3 decimals, its dollar value when dollar figures are on, and a button that opens that balance in a block explorer. The pot's own address is not printed on the page: the explorer button on the SOL entry opens the account that holds it. The amounts update on their own as race prizes are claimed.
+
+Under the dropdown, **Transactions** opens the list of the jackpot's on-chain transactions so far, each with a copy button and an explorer link, the same list a race's details keep.
 
 ## Who can win
 
-Only players who raced during the period can win. The platform sets 4 rules for each jackpot, and the Jackpot tab shows the ones in force.
+Only players who raced during the period can win. The platform sets the rules for each jackpot, and the Jackpot tab shows the ones in force, each in a box of its own.
 
-| Rule            | What it decides                                                                   |
-| --------------- | --------------------------------------------------------------------------------- |
-| Period          | How long each jackpot runs: a number of days, from 1 to 30                        |
-| Ranked by       | XP earned in races, races won, races lost, or races created                       |
-| Finalists       | How many of the top players are entered, from 1 to 50                             |
-| Who is eligible | A minimum number of races run in the period, and optionally verified players only |
+| Rule                | What it decides                                             |
+| ------------------- | ----------------------------------------------------------- |
+| Period              | How long each jackpot runs: a number of days, from 1 to 30  |
+| Ranked by           | XP earned in races, races won, races lost, or races created |
+| Finalists           | How many of the top players are entered, from 1 to 50       |
+| Players             | Everyone, or verified players only                          |
+| Min. races required | How many races you must have run in the period to be ranked |
 
 Every race counts toward the ranking: paid or sponsored, in SOL or in a token. You have to race to be eligible. Creating races is not enough on its own, even when the ranking is by races created, and a race you created counts only once it has run to a result: a cancelled one does not.
 
-Meeting those rules is all it takes to be ranked, whatever your score. With the ranking by races won, a player who has raced and not won yet is on the board with 0 wins, below everyone who has won. So in a quiet period where 10 players raced and only 2 of them won, all 10 are ranked, and with 10 finalists all 10 go into the draw.
+Meeting those rules is all it takes to be ranked, whatever your score. With the ranking by races won, a player who has raced and not won yet is ranked with 0 wins, below everyone who has won. So in a quiet period where 10 players raced and only 2 of them won, all 10 are ranked, and with 10 finalists all 10 go into the draw.
 
 Players level on the ranking, at zero or at any other score, are separated by the age of their player account: the one created earlier places higher. A rule change applies from the next period, never to the one being played.
 
-If you have raced and are not ranked, the Jackpot tab says why: too few races so far, or a period open to verified players only.
+**Current standings** lists the finalists as they stand and nobody below them: the players who would go into the draw if the period ended now. A note under the list says that one of them wins the whole pot. When you are among them your own row is highlighted. Ranked lower, you are not listed and the tab does not state your place, so the score on the last row is the one to beat.
+
+If you have raced and are not ranked at all, the tab says why above the list: too few races so far, or a period open to verified players only.
+
+<figure><img src="../../.gitbook/assets/competition/app-jackpot-standings-banner.png" alt="The Current standings list, the finalists as they stand, with one row highlighted as the reader's own"><figcaption><p>The players who would go into the draw if the period ended now.</p></figcaption></figure>
 
 The jackpot is for players who are racing now, so only what you did during the period counts, and the program itself refuses a finalist who has not raced since the period began.
 

@@ -81,6 +81,8 @@ Worked example: a 1 SOL pool with a 7.5% platform fee and a 5% jackpot fee. The 
 
 **The creator can switch it off for their race.** The create form has a "feeds the jackpot" choice, ticked unless the creator unticks it, and a race that feeds the jackpot carries the jackpot mark wherever its features are shown. With the platform's rate at zero the choice is not offered at all. The share is taken when the prize is claimed, and only while a jackpot is running: one claimed while the jackpot is [on hold](../competition/jackpot.md#between-two-jackpots) pays none, and the winners keep it.
 
+**Where you see the two fees.** The create form adds them into one **Fee** figure beside the amount, so a race that feeds the jackpot shows more than its tier rate there; hover it, or tap it on a phone, for the two parts. A race's details state them apart, in a **Platform Fee** box and, on a race that feeds the jackpot, a **Jackpot Fee** box. When the jackpot's share is not being taken, that box says so: **Paused, not collected** on a race still to be paid out, **Not collected** on one already paid.
+
 A refund, a cancelled race and a tournament prize pay no jackpot fee.
 
 On a token race, the first claim that brings a token into the current jackpot opens the jackpot's account for that token and adds the token to its list. That costs about 0.0017 SOL at today's rent rate, paid by whoever sends the claim, and it is not returned. Every later claim in that token pays nothing for it until the next jackpot.

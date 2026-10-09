@@ -29,9 +29,11 @@ Open Create Race from the main page. The form runs top to bottom in the order yo
 
 ### Entry fee
 
-What each player pays to join, in SOL or any supported SPL token, legacy or Token-2022, such as USDC and USDT. More tokens arrive over time. The minimum is 0.01 SOL or the token equivalent, the maximum 10 SOL.
+What each player pays to join, in SOL or any supported SPL token, legacy or Token-2022, such as USDC and USDT. More tokens arrive over time. The minimum is 0.01 SOL or the token equivalent, the maximum 10 SOL. In the currency picker each token shows its address, shortened, with a button that copies it, and SOL reads **Native**.
 
 The platform fee scales with it: 10% on tiny pots, down to 2% on large ones. [Fees and prizes](../economy/fees-and-prizes.md) has the tier table.
+
+The amount field shows one **Fee** figure: the platform fee rate for the amount you typed, plus the jackpot fee rate while the race [feeds the jackpot](#feeding-the-jackpot). Hover it, or tap it on a phone, to see the two parts.
 
 <figure><img src="../../.gitbook/assets/races/app-entry-fee-field-banner.png" alt="The entry fee field on the create form with the currency picker beside it"><figcaption><p>The minimum is 0.01 SOL, and the picker sets what everyone pays in.</p></figcaption></figure>
 
@@ -43,7 +45,7 @@ How many seats the lobby has. The default cap is 5 and the absolute maximum is 2
 
 ### Feeding the jackpot
 
-A share of your race's pool goes into [the jackpot](../competition/jackpot.md) unless you untick this. It is the first option on the form and is ticked to begin with, and any creator can change it with or without a Runner NFT. The card shows the rate and what it comes to in your race's currency, and the prize preview on the form follows your choice. A race that feeds the jackpot carries the jackpot mark, so players see it before they join. The choice is not offered while the platform's jackpot rate is zero. The card also says whether a jackpot is running right now: the share is taken when the prize is claimed, and only [while one is running](../competition/jackpot.md#between-two-jackpots).
+A share of your race's pool goes into [the jackpot](../competition/jackpot.md) unless you untick this. It is the first option on the form and is ticked to begin with, and any creator can change it with or without a Runner NFT. Its label carries the rate, **Feeds the jackpot** followed by the percentage, and its explanation names what that comes to as an amount in your race's currency. The **Fee** figure and the prize preview on the form follow your choice. A race that feeds the jackpot carries the jackpot mark, so players see it before they join. The choice is not offered while the platform's jackpot rate is zero. The card also says whether a jackpot is running right now: the share is taken when the prize is claimed, and only [while one is running](../competition/jackpot.md#between-two-jackpots).
 
 <figure><img src="../../.gitbook/assets/races/app-jackpot-create-option-banner.png" alt="The feeds the jackpot option at the top of the create form, ticked"><figcaption><p>First on the form, and ticked unless you untick it.</p></figcaption></figure>
 

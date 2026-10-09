@@ -286,6 +286,8 @@ Single files in the same folder, all artwork:
 | Shot                                        | Page                               | Shows                                                               |
 | ------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
 | `app-jackpot-tab`                           | `competition/jackpot.md`           | The Jackpot tab: pot, countdown, rules and current standings        |
+| `app-jackpot-standings` **(banner)**        | `competition/jackpot.md`           | Current standings: the finalists as they stand, own row highlighted |
+| `app-jackpot-race-chip` **(banner)**        | `competition/jackpot.md`           | A race card header carrying the jackpot mark                        |
 | `app-jackpot-claim` **(banner)**            | `competition/jackpot.md`           | A past draw under Past winners, with its claim button               |
 | `app-jackpot-verify` **(banner)**           | `competition/jackpot.md`           | A draw's record: transactions, finalists, random number             |
 | `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                   |

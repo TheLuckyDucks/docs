@@ -43,6 +43,8 @@ Costs paid in SOL stay in SOL. Network fees, rent, and the withdrawal or cancell
 
 The entry fee field carries a currency picker listing SOL and every supported token with its icon, symbol and your balance. Which tokens appear, and in what order, is set by the platform.
 
+Under each symbol is the token's address, shortened, with a button that copies it in full: the sure way to tell a token from a lookalike with the same name. SOL has no token address and reads **Native**. The Play Balance picker and the holder gate's picker show the same line.
+
 ## Fee tier differences
 
 Each token has its own tier schedule. The percentages match SOL's (10%, 7.5%, 5%, 3%, 2%) while the thresholds suit what that token is worth, which is why AMPS and AISI sit at much higher absolute numbers.

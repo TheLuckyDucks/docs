@@ -7,7 +7,7 @@ description: A scheduled event where teams compete for one pot. What counts, how
 
 A scheduled event where **teams** compete over a fixed window for a single pot. No sign-up, no entry fee: you race as usual, and the races your [team](teams.md) runs inside the window count toward its standing.
 
-One runs at a time, and its page shows the window, the rule it is scored on, the pot and the live standings.
+One runs at a time, and its page shows the window, the rule it is scored on, the pot and the live standings. While it is running, a countdown headed **Ends in** shows the days, hours, minutes and seconds left.
 
 {% columns %}
 {% column width="70%" %}

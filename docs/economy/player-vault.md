@@ -21,7 +21,7 @@ The balance is not a number recorded somewhere: it is the actual SOL in your acc
 
 ## Topping up
 
-From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. The **25%**, **50%** and **All** chips under the amount fill it in for you, from what your wallet can move. You can hold SOL and several tokens at once, each tracked separately.
+From the Player page choose Deposit, pick SOL or a supported token, enter an amount and sign. The currency picker shows each token's address under its symbol, shortened, with a button that copies it in full, and SOL reads **Native**. The **25%**, **50%** and **All** chips under the amount fill it in for you, from what your wallet can move. You can hold SOL and several tokens at once, each tracked separately.
 
 {% hint style="info" %}
 **A deposit always needs your wallet's signature.** Not a policy: money leaving your wallet requires your wallet to sign, so no setting and no permission can move it for you.
