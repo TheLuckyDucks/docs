@@ -56,7 +56,7 @@ Only players who raced during the period can win. The platform sets the rules fo
 | Rule                | What it decides                                             |
 | ------------------- | ----------------------------------------------------------- |
 | Period              | How long each jackpot runs: a number of days, from 1 to 30  |
-| Ranked by           | XP earned in races, races won, races lost, or races created |
+| Ranked by           | The scoring rule of the period, one of the rules below      |
 | Finalists           | How many of the top players are entered, from 1 to 50       |
 | Players             | Everyone, or verified players only                          |
 | Min. races required | How many races you must have run in the period to be ranked |
@@ -65,9 +65,30 @@ Every race counts toward the ranking: paid or sponsored, in SOL or in a token. Y
 
 Meeting those rules is all it takes to be ranked, whatever your score. With the ranking by races won, a player who has raced and not won yet is ranked with 0 wins, below everyone who has won. So in a quiet period where 10 players raced and only 2 of them won, all 10 are ranked, and with 10 finalists all 10 go into the draw.
 
-Players level on the ranking, at zero or at any other score, are separated by the age of their player account: the one created earlier places higher. A rule change applies from the next period, never to the one being played.
+Players level on the score, at zero or at any other, are separated by the second figure on their row, the higher first. Players level on both are separated by the age of their player account: the one created earlier places higher. A rule change applies from the next period, never to the one being played.
 
-**Current standings** lists the finalists as they stand and nobody below them: the players who would go into the draw if the period ended now. A note under the list says that one of them wins the whole pot. When you are among them your own row is highlighted. Ranked lower, you are not listed and the tab does not state your place, so the score on the last row is the one to beat.
+### What you are ranked by
+
+Each jackpot is ranked by one scoring rule. They are the rules [tournaments](tournaments.md#scoring) use, applied to each player on their own, and the **Ranked by** box names the one in force.
+
+| Ranked by                      | Your score                                                       | Second figure |
+| ------------------------------ | ---------------------------------------------------------------- | ------------- |
+| Wins                           | Races won                                                        | Races run     |
+| Races                          | Races run                                                        | Wins          |
+| XP                             | XP earned from race results                                      | Wins          |
+| SOL volume                     | SOL paid in entry fees                                           | Wins          |
+| Podiums                        | Top 3 finishes                                                   | Wins          |
+| Races created                  | Races you created that ran to a result                           | Races run     |
+| Race size                      | The seats of the races you ran                                   | Races run     |
+| Wins and races                 | Each win counts 0.6 and each race you run counts 0.4             | Races run     |
+| Losses and races               | Each race you do not win counts 0.6 and each race you run 0.4    | Races run     |
+| Last places and races          | Each last place counts 0.6 and each race you run counts 0.4      | Races run     |
+| Races, double with a Boost NFT | Each race you run counts 1, and 2 when you run it with a Boost   | Races run     |
+| Races, double with a Duck NFT  | Each race you run counts 1, and 2 when you run it with a Duck    | Races run     |
+
+The two rules that reward losing count taking part as well. One race run and lost scores 1. Eight races run with no loss score 3.2, and nine races with one loss score 4.2. So entering once and losing does not put a player ahead of those who keep racing.
+
+**Current standings** lists the finalists as they stand and nobody below them: the players who would go into the draw if the period ended now. Each row shows the two figures the rule reads, and the score beside them when the score is made of both. A note under the list says that one of them wins the whole pot, and how the score is made when it adds two figures. When you are among them your own row is highlighted. Ranked lower, you are not listed and the tab does not state your place, so the score on the last row is the one to beat.
 
 If you have raced and are not ranked at all, the tab says why above the list: too few races so far, or a period open to verified players only.
 

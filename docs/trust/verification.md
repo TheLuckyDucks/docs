@@ -16,6 +16,8 @@ Anyone can set a **nickname** and an **avatar** on the Player page, verified or 
 
 Both live off chain on your profile and can change any time.
 
+Sign in without a nickname and the app offers to set one, with a picture, on the spot. **Not now** closes it until you next sign in or reload. Tick **Don't show this again** before you close it and it stays away for good, on every device. Either way, the Player page is always where you set them.
+
 <figure><img src="../../.gitbook/assets/trust/app-nickname-avatar-fields-banner.png" alt="The nickname field and the avatar upload on the Player page"><figcaption><p>Open to everyone, verified or not, and changeable any time.</p></figcaption></figure>
 
 ## What gets verified

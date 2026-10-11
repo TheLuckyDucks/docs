@@ -45,14 +45,18 @@ Every rule is a **per-player average**, so size alone wins nothing: 10 members r
 | Wins, races, XP, SOL volume, token volume, podium finishes | The average per member, one rule per metric                                                                         |
 | Weighted                                                   | Average wins at 60 percent plus average races at 40 percent                                                         |
 | Duels                                                      | Points from 1v1 rematches, doubled against another team or a solo racer                                             |
-| Worst results                                              | Most last places per member. The more you lose, the better                                                          |
+| Worst results                                              | Two rules: races not won, or last places, at 60 percent plus races run at 40 percent. Losing counts, and so does taking part |
 | Creators                                                   | Most completed races created per member                                                                             |
 | Biggest races                                              | Bigger lobbies score more, with a bonus for a mixed lobby                                                           |
 | NFT and token rules                                        | Races per member, where races using a Boost, a Cosmetic, or the tournament's paired collection or token count twice |
 
 The first family carries a **diversity bonus**: 10 percent per outside team or solo racer you meet, averaged across your races, so racing only your own members scores least. The other rules already account for outside play and take no bonus.
 
-A tie is broken by which team was created first, then by a fixed seed. No shared places.
+A tie on the score is broken by the rule's second figure per member, the higher first: races run under the rules about wins, losses, last places, duels, creators, biggest races and the NFT and token rules, and wins under the others. Teams level on both are separated by which team was created first, then by a fixed seed. No shared places.
+
+A tournament can also carry a third worst-results rule, most last places per member with nothing for the races run. No new tournament is created with it.
+
+The [jackpot](jackpot.md#what-you-are-ranked-by) ranks single players by the same rules.
 
 ## The pot and who gets it
 
