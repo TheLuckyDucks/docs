@@ -35,7 +35,7 @@ Each box draws only from its own group:
 
 The reward is picked at open time against weights the team configures, so rarer rewards hold a smaller share of the pool.
 
-To see what a box can open into right now, hover its card in the marketplace, or tap its art on a phone. The card flicks through the art of every reward still in the pool. A reward sold as a [surprise item](README.md#surprise-items) shows as its shadow there too.
+To see what a box can open into right now, hover its card in the marketplace, or tap its art on a phone. The card flicks through the art of every reward still in the pool.
 
 ## How opening works
 
