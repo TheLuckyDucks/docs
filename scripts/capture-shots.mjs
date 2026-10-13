@@ -317,7 +317,7 @@ const SHOTS = [
       { wait: 600 },
     ],
     target: '[data-cy="jackpot-standings"]',
-    maxHeight: 260, // the header row and the first few places
+    maxHeight: 276, // the header row and four whole places
     keepScroll: true,
     note: "needs a period with players ranked in it",
   },
