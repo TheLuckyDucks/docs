@@ -141,10 +141,10 @@ const SHOTS = [
     // pins each card in place, so hiding one leaves a hole rather than
     // pulling the next up: pick a pair from the same row. The ids go stale as
     // races start.
-    span: ["#race-5010", "#race-5008"],
-    target: "#race-5010",
+    span: ["#race-5821", "#race-5820"],
+    target: "#race-5821",
     pad: 12,
-    note: "5010 is Winner Takes All and 5008 Podium, both open, one row",
+    note: "5821 is Winner Takes All and 5820 Podium, both open, one row",
   },
   {
     stem: "app-race-detail-modal",
@@ -154,7 +154,7 @@ const SHOTS = [
     path: "/app/races",
     // A race this wallet has joined and that has not started, opened from its
     // card, so the modal shows a lobby the reader is in rather than one to join.
-    steps: [{ click: "#race-5015 >> text=/^#5015$/" }],
+    steps: [{ click: "#race-5821 >> text=/^#5821$/" }],
     target: MODAL,
     after: [
       {
@@ -163,14 +163,14 @@ const SHOTS = [
         optional: true,
       },
     ],
-    note: "race 5015: joined by the signed-in wallet, not started",
+    note: "race 5821: joined by the signed-in wallet, not started",
   },
   {
     stem: "app-lobby-participants",
     modes: ["guest"],
     folder: "races",
     kind: "pair",
-    path: "/app/races/5364",
+    path: "/app/races/5821",
     steps: [
       {
         click:
@@ -178,7 +178,7 @@ const SHOTS = [
       },
     ],
     target: MODAL,
-    note: "race 5364: an open lobby filling, two of its three carrying a boost",
+    note: "race 5821: an open lobby filling, each of its three carrying a boost",
   },
   {
     stem: "app-lobby-filling",
@@ -187,7 +187,7 @@ const SHOTS = [
     kind: "pair",
     path: "/app/races",
     steps: [
-      { click: '#race-4979 [data-cy="race-action"][data-action="lobby"]' },
+      { click: '#race-5820 [data-cy="race-action"][data-action="lobby"]' },
     ],
     target: MODAL,
     after: [
@@ -197,7 +197,7 @@ const SHOTS = [
         optional: true,
       },
     ],
-    note: "race 4979's lobby, joined and filling. The lounge outlives a page change, so it is closed",
+    note: "race 5820's lobby, joined and filling. The lounge outlives a page change, so it is closed",
   },
   {
     stem: "app-tournament-page",
@@ -256,20 +256,84 @@ const SHOTS = [
   },
   {
     stem: "app-marketplace-rent-button",
-    modes: ["guest", "off"],
+    modes: ["off"],
     folder: "nfts",
     kind: "banner",
     path: "/marketplace/",
     // Only the Runner rents today. The banner is its price row and its Mint and
     // Rent buttons, so it does not repeat the whole card nft-runner-example shows.
-    steps: [{ click: '[data-cy="nav-tab"][data-category="runner"]' }],
-    span: [
-      '[data-cy="tier-card"]:has(button:has-text("Rent")) [data-cy="tier-price"]',
-      '[data-cy="tier-card"]:has(button:has-text("Rent")) button:has-text("Rent")',
+    steps: [
+      {
+        click: '[data-cy="nav-tab"][data-category="runner"]',
+        optional: true,
+      },
     ],
-    target: '[data-cy="tier-card"] button:has-text("Rent")',
+    span: [
+      '[data-cy="tier-card"]:has([data-cy="tier-rent"]) >> nth=0 >> css=[data-cy="tier-price"]',
+      '[data-cy="tier-card"]:has([data-cy="tier-rent"]) >> nth=0 >> css=[data-cy="tier-rent"]',
+    ],
+    target: '[data-cy="tier-rent"] >> nth=0',
   },
 
+  {
+    stem: "app-race-features-sheet",
+    modes: ["guest", "off"],
+    folder: "races",
+    kind: "banner",
+    path: "/app/races",
+    // The chip row of the first open card is the control that opens it.
+    steps: [
+      { click: '[data-cy="race-card"] >> nth=0 >> css=.rc-feature-badges' },
+      { wait: 700 },
+    ],
+    target: '[data-cy="race-features-sheet"]',
+    after: [
+      {
+        click: '[data-cy="race-features-sheet"] :text-is("CLOSE")',
+        optional: true,
+      },
+    ],
+  },
+  {
+    stem: "app-jackpot-tab",
+    modes: ["guest", "off"],
+    folder: "competition",
+    kind: "pair",
+    path: "/app/jackpot",
+    // The pot, the countdown and the rule boxes fill a frame on their own,
+    // and the standings sit under them, so the frame is the shot.
+    target: '[data-cy="jackpot-page"]',
+    clip: "viewport",
+    settle: 2000,
+  },
+  {
+    stem: "app-jackpot-standings",
+    modes: ["guest", "off"],
+    folder: "competition",
+    kind: "banner",
+    path: "/app/jackpot",
+    steps: [
+      { scrollTo: '[data-cy="jackpot-standings"]', block: "center" },
+      { wait: 600 },
+    ],
+    target: '[data-cy="jackpot-standings"]',
+    maxHeight: 260, // the header row and the first few places
+    keepScroll: true,
+    note: "needs a period with players ranked in it",
+  },
+  {
+    stem: "app-jackpot-race-chip",
+    modes: ["guest", "off"],
+    folder: "competition",
+    kind: "banner",
+    path: "/app/races",
+    // The chip row of whichever open race is first, rather than a pinned id:
+    // the subject is the money bag among the chips, and every race that feeds
+    // the jackpot carries it.
+    target: '[data-cy="race-card"] >> nth=0 >> css=.rc-header',
+    pad: 10,
+    note: "an open race that feeds the jackpot, so its row carries 💰",
+  },
   // ---------- no wallet, pinned to races that show the thing
   {
     stem: "app-verify-fairness",
@@ -327,21 +391,21 @@ const SHOTS = [
     modes: ["guest", "off"],
     folder: "nfts",
     kind: "banner",
-    path: "/app/races/5364",
+    path: "/app/races/5821",
     steps: [{ click: '.modal-md :text-is("Players")' }],
     target: '.pb-nickname:text-is("dotfx") >> xpath=ancestor::*[6]',
     maxHeight: 186, // three rows: a banner, not the whole list
-    note: "race 5364: an open lobby where two of three carry a boost",
+    note: "race 5821: an open lobby where all three carry a boost",
   },
   {
     stem: "app-verified-badge",
     modes: ["guest", "off"],
     folder: "trust",
     kind: "banner",
-    path: "/app/races/5364",
+    path: "/app/races/5821",
     steps: [{ click: '.modal-md :text-is("Players")' }],
     target: '.pb-nickname:text-is("dotfx") >> xpath=ancestor::*[5]',
-    note: "one verified player's row in race 5364",
+    note: "one verified player's row in race 5821",
   },
   {
     stem: "app-no-boost-race-card",
@@ -360,10 +424,10 @@ const SHOTS = [
       { wait: 1500 },
       { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
       { wait: 1500 },
-      { scrollTo: "#race-5133", block: "center" },
+      { scrollTo: "#race-5815", block: "center" },
     ],
-    target: "#race-5133",
-    note: "race 5133, sponsored",
+    target: "#race-5815",
+    note: "race 5815, sponsored",
   },
   {
     stem: "app-rematch-chain-indicator",
@@ -381,10 +445,15 @@ const SHOTS = [
       { wait: 1500 },
       { scrollTo: '[data-cy="race-card"] >> nth=-1', block: "end" },
       { wait: 1500 },
-      { scrollTo: "#race-5140", block: "center" },
+      {
+        scrollTo: '[data-cy="race-card"]:has-text("Rematch #") >> nth=0',
+        block: "center",
+      },
     ],
-    target: "#race-5140",
-    note: "race 5140, a first rematch",
+    target:
+      '[data-cy="race-card"]:has-text("Rematch #") >> nth=0 >> css=.rc-header',
+    pad: 10,
+    note: "the most recent archived rematch, whichever it is",
   },
   {
     stem: "app-usd-estimate",
@@ -392,11 +461,11 @@ const SHOTS = [
     folder: "economy",
     kind: "banner",
     path: "/app/races",
-    target: "#race-4979 .stat-box",
+    target: '[data-cy="race-card"] >> nth=0 >> css=.stat-box',
   },
   {
     stem: "nft-runner-example",
-    modes: ["guest", "off"],
+    modes: ["off"],
     folder: "nfts",
     kind: "banner",
     path: "/marketplace/",
@@ -625,6 +694,16 @@ const SHOTS = [
     modes: ["off"],
     steps: [{ click: '[data-cy="create-race"]' }],
     cardOf: "text=/^minimum account age/i",
+  },
+  {
+    stem: "app-jackpot-create-option",
+    folder: "races",
+    kind: "banner",
+    path: "/app/races",
+    modes: ["off"],
+    steps: [{ click: '[data-cy="create-race"]' }],
+    target: '[data-option="feedJackpot"]',
+    pad: 10,
   },
   {
     stem: "app-ai-commentary-toggle",
@@ -1386,11 +1465,11 @@ const SHOTS = [
     stem: "docs-card-economy",
     folder: "brand",
     kind: "single",
-    path: "/app/races/4985",
+    path: "/app/races/5818",
     modes: ["on"],
     target: '.modal-md :text-is("#1") >> xpath=ancestor::*[3]',
     aspect: 16 / 9,
-    note: "race 4985: a pool and what each place took out of it",
+    note: "race 5818: a pool and what each place took out of it",
   },
   {
     stem: "docs-card-trust",
@@ -1398,13 +1477,17 @@ const SHOTS = [
     kind: "single",
     path: "/app/verify/4398",
     modes: ["guest"],
-    steps: [
-      { scrollTo: ':text-is("Players recorded on-chain")', block: "center" },
-    ],
-    // the panel: its heading, the tx link and the finishing order under it
-    target: ':text-is("Players recorded on-chain") >> xpath=ancestor::*[2]',
+    steps: [{ scrollTo: ':text-is("ORAO VRF")', block: "center" }],
+    // The seed section rather than the players panel: a cover is read at a
+    // few hundred pixels, and the players panel now opens on a segment chart
+    // and a table of hashes, which at that size is a squiggle. These are four
+    // labelled lines, and they are the thing the page exists to show.
+    span: [':text-is("ORAO VRF")', "text=/RANDOMNESS ACCOUNT/i"],
+    target: ':text-is("ORAO VRF")',
+    pad: 12,
     aspect: 16 / 9,
-    note: "race 4398: the winners as the chain recorded them",
+    keepScroll: true,
+    note: "race 4398: the VRF seed and the account it came from",
   },
   {
     stem: "docs-card-help",

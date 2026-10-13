@@ -83,7 +83,7 @@ When a refund, a cancellation or a declined rematch sent for you has to reopen s
 {% hint style="warning" %}
 **An action that pays you still needs SOL in the vault.** Claiming costs a fee even though money is coming to you, so a vault holding tokens and no SOL cannot claim.
 
-**There is no fallback to your wallet.** Signing for yourself, your wallet is right there and covers what your balance cannot. A delegated action has nowhere to fall back to, so it stops and asks you to top up.
+**There is no fallback to your wallet.** Signing for yourself, your wallet is right there and covers what your balance cannot. A delegated action has nowhere to fall back to, so it stops and asks you to top up. Joining a race is checked before it is sent: when your vault does not cover the entry and your wallet is connected, the app hands the join to your wallet to sign instead.
 {% endhint %}
 
 ## What happens after you tap

@@ -5,15 +5,18 @@ description: Taking a slot in someone else's race, with eligibility, boosts, cos
 
 # Joining and playing
 
-The race list updates live, newest at the top. Each card carries the entry fee, prize pool, slots taken and duration. Icons in its header show what the race adds, and hovering one names it:
+The race list updates live, newest at the top. Each card carries the entry fee, prize pool, slots taken and duration. Icons in its header show what the race adds. Hover one to name it, or tap the row of them on a card to open a sheet that explains each in words:
 
 - 🎁 sponsored: joining costs nothing
 - ✅, 📋 or 👛, who may join: verified players, an allow list, or holders of an NFT or token. A holder gate shows the collection's or token's own icon when it has one.
-- ⏳ a minimum account age
+- 🐣 a minimum account age
 - 🔊 AI commentary
 - 𝕏 announced on X
 - ▶ can start short of a full lobby
 - ⚡ boosts accepted, or 🚫 on a sponsored race, which refuses them
+- 💰 the race feeds [the jackpot](../competition/jackpot.md)
+
+<figure><img src="../../.gitbook/assets/races/app-race-features-sheet-banner.png" alt="The sheet a race card opens, naming each of the race's features in a sentence"><figcaption><p>Every mark on the card, in words. A phone has no hover, so the row is a button.</p></figcaption></figure>
 
 A custom track shows as the card's background. Bottom left is the race's creator: hover or tap their avatar for their name and wallet.
 

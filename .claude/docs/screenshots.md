@@ -179,6 +179,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-claim-prize` **(banner)**                  | `races/joining-and-playing.md`                                | The claim button with the payout on it, finishing order beside it |
 | `app-login-linked-account`                      | `races/without-the-wallet-app.md`                             | The login screen offering a linked account next to connect wallet |
 | `app-delegated-signing-panel` **(banner)**      | `races/delegated-play.md`                                     | The delegated signing panel: duration, expiry, revoke             |
+| `app-race-features-sheet` **(banner)**          | `races/joining-and-playing.md`                                | The sheet a card's chip row opens, each feature in a sentence     |
 | `app-race-cards-modes` **(banner)**             | `races/race-modes.md`                                         | Two cards side by side, one WTA badge, one Podium Split badge     |
 | `app-join-setting-picker` **(banner)**          | `races/access-and-gating.md`, `races/advanced-options.md`     | The join setting selector open, all five options visible          |
 | `app-link-external-wallet` **(banner)**         | `races/access-and-gating.md`                                  | The link an external wallet panel with the supported chains       |
