@@ -119,8 +119,8 @@ Invites specific wallets to a private race, up to **20 wallets**, which is also 
 
 - Add the wallets, one per line, as you create the race.
 - Your own wallet depends on how you create it:
-  - In a **normal** race you are auto joined as the first player, and the allowlist check is skipped for that one join, so you need not list yourself.
-  - In **host mode** you are not auto joined, so joining later means being on the list like anyone else. Host mode needs a Runner regardless.
+  - In a **normal** race you are auto joined as the first player, and the form starts the list with your own wallet. The list holds one wallet per seat, so if you take your wallet off it while still joining, you take the seat of one of the wallets you listed. The form warns you when that is the case.
+  - In **host mode** you are not auto joined, so you can delete your own wallet from the list and give that seat to someone else. Joining later means being on the list like anyone else. Host mode needs a Runner regardless.
   - In a **sponsored** race you do not play, so the list does not concern you.
 - On the list, the race shows an active Join button and you enter like any other race.
 - The list is held for about an hour while you build it and sign. Take longer and the hold expires: re-enter it and create again. No funds are involved, so that costs nothing.
