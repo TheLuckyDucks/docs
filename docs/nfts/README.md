@@ -33,6 +33,7 @@ The contract checks the NFT is in the wallet at the moment of the transaction, i
 - **Mints.** New collections drop periodically, announced on the homepage and in Telegram.
 - **Marketplace.** The in-app marketplace lists every NFT from The Lucky Ducks for sale, filterable by collection.
 - **Third party.** Tensor and MagicEden carry the same NFTs, and buying there lands the asset in the same wallet.
+- **Surprise items.** Some Duck, Track and Boost items are sold with their look kept back until you mint one. See [Surprise items](#surprise-items).
 - **Mystery Boxes.** Sealed boxes that open into a random reward from the matching collection. See [Mystery Boxes](mystery-boxes.md).
 - **Renting.** Some tiers rent by the day. The NFT sits in your wallet and works normally for the term, then returns on its own. See [Renting an NFT](renting.md).
 
@@ -49,6 +50,35 @@ The contract checks the NFT is in the wallet at the moment of the transaction, i
 
 {% endcolumn %}
 {% endcolumns %}
+
+## Surprise items
+
+Some Duck, Track and Boost items are sold as a surprise: you find out what the item is when your mint lands. Until then the marketplace shows a shadow where its art would be, with a placeholder name (**Surprise Duck**, **Surprise Track** or **Surprise Boost**) and a placeholder line in place of its description. The price, the supply and the number minted are the item's own.
+
+The mint itself works like any other. The shadow stays while your mint is on its way, and the real art, name and description take its place when it lands. A mint that fails reveals nothing, and trying again starts from the shadow.
+
+<figure><img src="../../.gitbook/assets/nfts/app-surprise-item-banner.png" alt="A marketplace tier sold as a surprise: a shadow where the art would be, the placeholder name Surprise Duck, and its price, supply and minted count"><figcaption><p>The price, the supply and the count are the item's own. Only the art and the name are held back.</p></figcaption></figure>
+
+{% hint style="info" %}
+A surprise item is not a draw. Every mint of it gives the same item, and only what it looks like is kept back until you have one. For a random reward, see [Mystery Boxes](mystery-boxes.md).
+{% endhint %}
+
+Who sees the item as itself:
+
+| Who is looking                               | What the marketplace shows          |
+| -------------------------------------------- | ----------------------------------- |
+| A visitor, or a wallet that holds none of it | The shadow and the placeholder name |
+| The wallet that holds one, once signed in    | The item as itself                  |
+| Anyone, once it has sold out                 | The item as itself, marked sold out |
+
+While an item is still a surprise to you:
+
+- **It cannot be rented.** The item has no Rent button until you own one or it has sold out, because a rental puts the item in your wallet and shows you what it is. See [Renting an NFT](renting.md).
+- **Announcements keep it back too.** The Telegram and X posts for such a mint say that a surprise item was minted, by whom and how many are left. They do not name the item or show its art.
+
+If you got one somewhere else and the marketplace still shows the shadow, open your NFTs there and refresh the list. It reads your wallet again, and the item then shows as itself.
+
+Runner NFTs and Mystery Boxes are never sold this way. It is a surprise and not a secret: once somebody has minted one, the item is an ordinary NFT in their wallet, and any explorer or market shows it.
 
 ## What about royalties
 

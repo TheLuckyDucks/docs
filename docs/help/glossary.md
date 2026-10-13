@@ -119,6 +119,10 @@ The advanced access NFT. Required to create races with non-default options. See 
 
 A race where the creator funds the prize pool upfront; joiners pay nothing to enter. See [Sponsored race](../races/advanced-options.md#sponsored-race).
 
+### Surprise item
+
+A Duck, Track or Boost sold in the marketplace with its art, name and description kept back until you mint one. Not a draw: every mint of it gives the same item. See [Surprise items](../nfts/README.md#surprise-items).
+
 ### Threshold (underfilled)
 
 The minimum number of joiners at which a race with start-when-underfilled on can start short. The creator sets it on a slider at creation. See [Start when underfilled](../races/advanced-options.md#start-when-underfilled).

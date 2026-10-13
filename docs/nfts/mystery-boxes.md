@@ -35,6 +35,8 @@ Each box draws only from its own group:
 
 The reward is picked at open time against weights the team configures, so rarer rewards hold a smaller share of the pool.
 
+To see what a box can open into right now, hover its card in the marketplace, or tap its art on a phone. The card flicks through the art of every reward still in the pool. A reward sold as a [surprise item](README.md#surprise-items) shows as its shadow there too.
+
 ## How opening works
 
 {% stepper %}
@@ -145,5 +147,13 @@ Yes. The marketplace shows a feed of the latest reveals, so you can see what oth
 <summary>Are box rewards different from collection mints?</summary>
 
 No. A reward is identical to one minted any other way: same collection, same metadata, same listing options.
+
+</details>
+
+<details>
+
+<summary>Is a surprise item in the marketplace a Mystery Box?</summary>
+
+No. A box draws a random reward, and a surprise item is one fixed item whose look is kept back until you mint it. See [Surprise items](README.md#surprise-items).
 
 </details>

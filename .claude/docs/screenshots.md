@@ -208,20 +208,21 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 
 ## nfts/
 
-| Shot                                         | Page                                                | Shows                                                         |
-| -------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------- |
-| `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                        |
-| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The Runner tab: no Runner found, and what one unlocks         |
-| `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | The Runner tier: price, minted count, Mint and Rent           |
-| `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage  |
-| `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges       |
-| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A sponsored race card: 🚫 where the bolt goes                 |
-| `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview |
-| `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply         |
-| `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active         |
-| `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                  |
-| `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent   |
-| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | The create form Runner tab: a tile under the RENTED band      |
+| Shot                                         | Page                                                | Shows                                                                                  |
+| -------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                                                 |
+| `app-surprise-item` **(banner)**             | `nfts/README.md`                                    | A tier sold as a surprise: the shadow, the placeholder name, the real price and supply |
+| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The Runner tab: no Runner found, and what one unlocks                                  |
+| `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | The Runner tier: price, minted count, Mint and Rent                                    |
+| `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage                           |
+| `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges                                |
+| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A sponsored race card: 🚫 where the bolt goes                                          |
+| `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview                          |
+| `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply                                  |
+| `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active                                  |
+| `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                                           |
+| `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent                            |
+| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | The create form Runner tab: a tile under the RENTED band                               |
 
 Single files in the same folder, all artwork:
 

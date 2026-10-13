@@ -17,6 +17,8 @@ Only the tiers the platform offers. In the marketplace a rentable tier has a **R
 
 Mystery Boxes never rent. A box exists only until you open it, so there would be nothing to give back.
 
+An item sold as a surprise has no Rent button until you own one or it has sold out, since renting it would show you what it is. See [Surprise items](README.md#surprise-items).
+
 The pool is deliberately small. Rentable items are minted for the purpose, carry a **Rental** label where an edition number would be, and run to a handful of each. If a tier is all out, the Rent button says so and you can try again when one returns.
 
 ## Choosing how long
