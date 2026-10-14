@@ -109,7 +109,7 @@ An account owned by the smart contract that holds the entry fees for one race, a
 
 ### Rematch
 
-A follow-up 1v1 either player can offer when a race ends, inheriting its settings and rolling the stake forward. See [Rematches](../competition/rematches.md).
+A follow-up 1v1 either player can offer when a race ends, inheriting its settings and played double or nothing for the whole pot of the race before it. See [Rematches](../competition/rematches.md).
 
 ### Runner NFT
 

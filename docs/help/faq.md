@@ -83,7 +83,7 @@ No. Cancel the offer and your stake comes back, free of charge once their accept
 
 ### Does a pending rematch stop me claiming my prize?
 
-Only while the offer is open, because the program holds the prize until the offer is settled. Accepting pays the finished race out with no claim at all, and a decline, a cancel or clearing an expired offer makes it claimable again. The reverse is the trap: claiming first ends the chance of a rematch on that race, because the winner's next stake comes out of those unclaimed winnings. See [Rematches](../competition/rematches.md).
+Only while the offer is open, because the program holds the prize until the offer is settled. Accepting rolls the finished race's prize into the rematch with no claim at all, and a decline, a cancel or clearing an expired offer makes it claimable again. The reverse is the trap: claiming first ends the chance of a rematch on that race, because the winner's next stake is that unclaimed prize. See [Rematches](../competition/rematches.md).
 
 ### Can I gate a race on an NFT collection from another chain?
 

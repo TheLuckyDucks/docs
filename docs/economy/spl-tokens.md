@@ -74,7 +74,7 @@ Signing yourself, you approve the extra transaction and the payout in one prompt
 
 A token payout can carry a memo, a short note that travels with the transfer and shows in a block explorer and in any wallet history that displays memos. It says what the payment is and which race or tournament it belongs to, such as `LuckyDucks refund race #1234`. A withdrawal from your player vault, or closing your account, reads `LuckyDucks withdraw`.
 
-- **Always**, on a race prize, a creator's share, leaving a lobby, a rematch payout, a withdrawal from your vault and closing your account.
+- **Always**, on a race prize, a creator's share, leaving a lobby, a declined rematch's refund, a withdrawal from your vault and closing your account.
 - **Only when your token account requires one**, on a refund, a cancellation and a tournament prize, which pay a whole lobby or team at once. Some Token-2022 accounts refuse any incoming transfer that arrives without a memo, and those get one. Every other account receives the payment with no note.
 
 ## Why use SPL tokens

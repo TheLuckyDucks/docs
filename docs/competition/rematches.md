@@ -1,11 +1,11 @@
 ---
 icon: rotate-right
-description: Roll your stake straight into another 1v1, what the proposer picks, and why nobody is ever stuck.
+description: Double or nothing on a 1v1 you just finished, what the proposer picks, and why nobody is ever stuck.
 ---
 
 # Rematches
 
-When a 1v1 ends, either player can offer a rematch. It rolls your stake forward instead of paying everything out and asking you to buy back in, and the offer sits on the prize claim screen so you do not go looking for it.
+When a 1v1 ends, either player can offer a rematch, and a rematch is double or nothing. The whole pot of the race you just finished rolls into the next one, the loser matches it, and whoever wins the rematch takes both. The offer sits on the prize claim screen so you do not go looking for it.
 
 <figure><img src="../../.gitbook/assets/competition/app-rematch-offer-banner.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>Claiming and rematching are the same stop.</p></figcaption></figure>
 
@@ -14,7 +14,7 @@ When a 1v1 ends, either player can offer a rematch. It rolls your stake forward 
 A finished 1v1 you played in. Sponsored races cannot be rematched, and neither can a race whose prize has already been claimed. Token races rematch exactly like SOL ones.
 
 {% hint style="warning" %}
-**Claim the prize and the rematch goes with it.** The winner's stake in the next race comes out of the winnings still sitting in the old race, so once those are paid out there is nothing to roll forward and the program refuses the offer. Rematch first, or claim and start a fresh race.
+**Claim the prize and the rematch goes with it.** The winner's stake in the next race is the prize still sitting in the old race, so once it is paid out there is nothing to roll forward and the program refuses the offer. Rematch first, or claim and start a fresh race.
 {% endhint %}
 
 Two windows also apply, both short and both platform settings, so the app is where to read them: you have a window from the finish to make the offer, and your opponent then has their own window to answer it.
@@ -23,14 +23,14 @@ Two windows also apply, both short and both platform settings, so the app is whe
 
 Click Offer Rematch on the claim screen. That creates the next race and puts your stake in it:
 
-- **Winner.** Your stake is one entry fee, taken from the winnings you have not claimed. The rest of that payout, minus fees, reaches you when your opponent accepts, with no separate claim.
-- **Loser.** You deposit one entry fee up front. Your opponent's stake joins it when they accept.
+- **Winner.** Your stake is the whole prize you have not claimed. It stays where it is and nothing is paid out. Your opponent matches it when they accept.
+- **Loser.** You deposit an amount equal to that prize up front. The winner's prize joins it when they accept.
 
-Either way the new pot is exactly 2 entry fees, matching the race it followed. Offering uses one of your [daily races](../races/daily-races.md).
+Either way the new pot is twice the old one: a race of 2 entry fees is rematched for 4, and that rematch for 8. The amount on the button is what you are putting in, and the note beside it says what the winner takes. No fee is taken when a rematch is accepted. The pot pays its fees once, when the last race of the chain is claimed. Offering uses one of your [daily races](../races/daily-races.md).
 
 ## What the proposer picks
 
-The new race inherits the entry fee, duration, join setting, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
+The new race's entry fee is the pot of the race before it. It inherits the duration, join setting, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
 
 | At propose time     | What it does                                                                                                                                                     |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -45,7 +45,7 @@ The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Due
 
 ## Accepting
 
-Accepting inside the window starts the new race and pays the finished one out immediately, so the winner never claims it separately. It uses one of the accepter's daily races.
+Accepting inside the window starts the new race. If the winner made the offer, the loser deposits the match as they accept. Nothing is paid out: the finished race's prize is the winner's stake in the new one, so there is no separate claim to make. It uses one of the accepter's daily races.
 
 ## Cancelling versus declining
 
@@ -68,7 +68,7 @@ Cancelling while your opponent can still accept costs the same fixed penalty as 
 
 ## Rematch chains
 
-A rematch can be rematched, up to the platform's maximum chain depth. Each card carries a Rematch #N badge saying how far down the chain it is, and a chain keeps the windows the first race was created with.
+A rematch can be rematched, up to the platform's maximum chain depth. The pot doubles at every step, so the stakes of a chain climb fast: read the amount on the button before you offer or accept. Each card carries a Rematch #N badge saying how far down the chain it is, and a chain keeps the windows the first race was created with.
 
 <figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-banner.png" alt="A race card carrying a Rematch #1 badge beside its race number"><figcaption><p>How far down the chain this race is.</p></figcaption></figure>
 
