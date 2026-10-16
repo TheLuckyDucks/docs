@@ -144,6 +144,17 @@ Counted by how many different [supported tokens](../economy/spl-tokens.md) you h
 
 The cosmetic and track ladders count **different** NFTs, so racing the same duck 10 times moves neither. See [NFT collections](../nfts/README.md).
 
+## Duck creation 🎨
+
+| Badge         | Emoji | How to earn            |
+| ------------- | ----- | ---------------------- |
+| Duck Maker    | 🎨    | Create your first duck |
+| Duck Designer | 🎨    | Create 2 ducks         |
+| Duck Studio   | 🎨    | Create 5 ducks         |
+| Duck Factory  | 🎨    | Create 10 ducks        |
+
+Earned when a duck made to your own design is minted to your wallet. See [Creating a duck](../nfts/creating-a-duck.md).
+
 ## Social and hosting 🤝
 
 | Badge         | Emoji | How to earn                                   |

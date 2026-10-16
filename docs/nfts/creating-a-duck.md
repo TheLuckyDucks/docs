@@ -82,9 +82,9 @@ While the team has your duck to look at, you can ping a team member on our Teleg
 
 Once the team approves the finishing, your duck is approved and minted to your wallet, with nothing more for you to do. The step shows it swimming as it will in a race, and you get a notification when your duck is approved and again when it is minted.
 
-The duck is minted with you as its creator, on chain and in its metadata, so wallets and marketplaces credit you whoever holds it later. It carries no royalty: a resale pays nobody. Its files and links name the duck by a random id, never by your wallet.
+The duck is minted with you as its creator, on chain and in its metadata, so wallets and marketplaces credit you whoever holds it later. It carries no royalty: a resale pays nobody. Its rarity is Unique. Its files and links name the duck by a random id, never by your wallet.
 
-Once it is minted, you can also have a [turntable video](#turntable-video) made of it.
+Every duck minted to you counts toward the [Duck creation badges](../competition/badges.md#duck-creation). Once it is minted, you can also have a [turntable video](#turntable-video) made of it.
 
 {% endstep %}
 {% endstepper %}
