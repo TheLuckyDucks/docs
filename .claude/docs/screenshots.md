@@ -222,6 +222,14 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply                                  |
 | `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active                                  |
 | `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                                           |
+| `app-duck-create-steps` **(banner)**         | `nfts/creating-a-duck.md`                           | The step bar on the Create tab, the step under way marked                              |
+| `app-duck-create-prompt` **(banner)**        | `nfts/creating-a-duck.md`                           | Title and description over the four reference slots, some filled                       |
+| `app-duck-create-payment` **(banner)**       | `nfts/creating-a-duck.md`                           | The price, the voucher field and Apply, and the pay button                             |
+| `app-duck-create-concepts`                   | `nfts/creating-a-duck.md`                           | The numbered concepts, front and back, each with its check mark                        |
+| `app-duck-create-stages` **(banner)**        | `nfts/creating-a-duck.md`                           | Concept, Animation and Finishing under a creation title                                |
+| `app-duck-turntable` **(banner)**            | `nfts/creating-a-duck.md`                           | The turntable offer on a minted duck, with its price                                   |
+| `app-duck-create-discard` **(banner)**       | `nfts/creating-a-duck.md`                           | The discard dialog: the voucher coming back, and confirm                               |
+| `app-duck-creations-list` **(banner)**       | `nfts/creating-a-duck.md`                           | A wallet's creations, newest first, one of them minted                                 |
 | `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent                            |
 | `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | The create form Runner tab: a tile under the RENTED band                               |
 

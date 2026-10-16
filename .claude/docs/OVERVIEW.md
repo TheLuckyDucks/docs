@@ -52,6 +52,7 @@ links to it rather than restating it.
 | Boost mechanics, stacking, fairness                                       | `nfts/boosts.md`                      |
 | Tracks and custom scenery                                                 | `nfts/tracks.md`                      |
 | Cosmetics and avatars                                                     | `nfts/cosmetics.md`                   |
+| A duck made to your design: the steps, discards, vouchers, your creations | `nfts/creating-a-duck.md`             |
 | Mystery Boxes                                                             | `nfts/mystery-boxes.md`               |
 | Renting an NFT                                                            | `nfts/renting.md`                     |
 | Tournaments, rule sets, standings                                         | `competition/tournaments.md`          |

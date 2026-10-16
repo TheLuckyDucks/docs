@@ -37,6 +37,7 @@ The collection carries the Royalties plugin at a rate of zero, so selling a cosm
 
 - Themed drops every few weeks
 - The in-app marketplace and the third party markets. See [Where to acquire](README.md#where-to-acquire)
+- Made to your own design. See [Creating your own duck](creating-a-duck.md)
 
 ## Setting an avatar
 

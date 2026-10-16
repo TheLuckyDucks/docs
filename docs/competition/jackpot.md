@@ -47,8 +47,6 @@ The figure at the top of the Jackpot tab is the whole pot in dollars, or its SOL
 
 Each entry shows the token's icon and symbol with its address under them, shortened, beside a button that copies it in full. SOL has no token address and reads **Native**. Then come the amount, to 3 decimals, its dollar value when dollar figures are on, and a button that opens that balance in a block explorer. The pot's own address is not printed on the page: the explorer button on the SOL entry opens the account that holds it. The amounts update on their own as race prizes are claimed.
 
-Under the dropdown, **Transactions** opens the list of the jackpot's on-chain transactions so far, each with a copy button and an explorer link, the same list a race's details keep.
-
 ## Who can win
 
 Only players who raced during the period can win. The platform sets the rules for each jackpot, and the Jackpot tab shows the ones in force, each in a box of its own.
@@ -132,9 +130,9 @@ Jackpots follow each other with no gap, unless the platform holds the next one b
 
 ## Claiming the prize
 
-A jackpot is claimed, like a race prize. Win one and that draw shows a Claim button under **Past winners** on the Jackpot tab, and the prize appears with your other unclaimed winnings.
+A jackpot is claimed, like a race prize. Win one and the Jackpot tab shows your prize at the top, with its Claim button, whichever list you are reading. The same Claim button ends the draw's **Jackpot details**, with what it pays written on it, and the prize appears with your other unclaimed winnings in the Unclaimed Items banner, where **Claim All** claims it after them. A jackpot prize always opens your wallet, so with one waiting Claim All asks your wallet to sign, even where your race claims would otherwise go through without it.
 
-<figure><img src="../../.gitbook/assets/competition/app-jackpot-claim-banner.png" alt="A past jackpot draw under Past winners, with the pot it holds and the claim button beside it"><figcaption><p>The draw you won waits under Past winners until you claim it.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-jackpot-claim-banner.png" alt="The jackpot prize you won at the top of the Jackpot tab, with what it holds and the claim button beside it"><figcaption><p>The prize you won waits at the top of the Jackpot tab until you claim it.</p></figcaption></figure>
 
 - **You receive everything the pot held**: its SOL and every token, each in its own currency.
 - **It lands in your wallet or your player vault**, following the same [payout target](../economy/player-vault.md#where-your-winnings-land) your race prizes use.
@@ -151,11 +149,11 @@ There is no deadline. An unclaimed prize waits for you, and nobody else can take
 
 ## Checking a draw yourself
 
-Every draw under **Past winners** on the Jackpot tab has a **Verify fairness** button. It opens the draw's record: the transactions that opened, settled and paid it, the account that held the prize and the token accounts beside it, the finalists in ranked order, and the random number ORAO published. The check runs in your browser: it recomputes the winning position from that number and tells you whether it matches the winner on record.
+**Past winners** on the Jackpot tab lists every draw: its number, its winner, its date, and its prize in dollars at the moment it was drawn. Select a draw to open its **Jackpot details**, laid out as the jackpot under way is: its prize in dollars beside whether it is claimed, its number and the dates of its jackpot, the rules it was ranked under, and a dropdown of each currency the prize held, with a link to where each one sat. Under them, sections open with a tap: its finalists in ranked order with the winner's row in gold, every transaction of the draw, and **Verify fairness**, which shows its request to ORAO for a random number, the transaction that used it, and the check. The check runs in your browser: it recomputes the winning position from the number ORAO published, and warns you if that is not the winner on record.
 
-<figure><img src="../../.gitbook/assets/competition/app-jackpot-verify-banner.png" alt="A draw's verification record: its transactions, the finalists in ranked order and the random number, with the recomputed winner"><figcaption><p>The draw recomputed in your browser, from the number ORAO published.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/app-jackpot-verify-banner.png" alt="A draw's details: its prize, its dates, the finalists in ranked order with the winner highlighted, and its fairness check"><figcaption><p>A draw's details, with its winner recomputed in your browser from the number ORAO published.</p></figcaption></figure>
 
-The same row carries two links: the transaction that drew the winner, and a public archive of the draw holding its finalists in ranked order, the random number and the winner. With those and the formula below, anyone can recompute who should have won without relying on the app at all.
+Once the winner has claimed the prize, the draw's details also hold a public archive of the draw, under **IPFS**: its finalists in ranked order, the random number, the winner and the claim that paid them. With it and the formula below, anyone can recompute who should have won without relying on the app at all.
 
 <details>
 

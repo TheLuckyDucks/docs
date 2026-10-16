@@ -27,6 +27,7 @@
 - [Boost NFTs](nfts/boosts.md)
 - [Track NFTs](nfts/tracks.md)
 - [Cosmetic NFTs](nfts/cosmetics.md)
+- [Creating your own duck](nfts/creating-a-duck.md)
 - [Mystery Boxes](nfts/mystery-boxes.md)
 - [Renting an NFT](nfts/renting.md)
 
