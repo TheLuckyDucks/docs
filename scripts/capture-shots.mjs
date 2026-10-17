@@ -1192,6 +1192,123 @@ const SHOTS = [
   },
 
   // ---------- the marketplace, signed in
+  // ---------- the storefront's duck creation, five steps and their records.
+  // Every one of these needs a creation of its own standing at that step, so
+  // each says which. None of them pays, submits, discards or confirms
+  // anything: the capture opens what is already there.
+  {
+    stem: "app-duck-create-steps",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1200 }],
+    target: '[data-cy="create-duck-steps"]',
+    pad: 10,
+  },
+  {
+    stem: "app-duck-create-prompt",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    // The first step of a creation that has not been paid for: the two fields
+    // and the four slots under them.
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    span: [
+      '[data-cy="create-duck-title"]',
+      '[data-cy="create-duck-references"]',
+    ],
+    target: '[data-cy="create-duck-references"]',
+    pad: 12,
+    note: "a creation on its first step, some reference slots filled",
+  },
+  {
+    stem: "app-duck-create-payment",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    // The pay card holds the price, the voucher field and the button. Nothing
+    // is pressed: a creation already on this step is what the shot needs.
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    target: '[data-cy="create-duck-pay-card"]',
+    pad: 10,
+    note: "a creation standing on the payment step. Pay is never pressed",
+  },
+  {
+    stem: "app-duck-create-concepts",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "pair",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 2000 }],
+    target: '[data-cy="create-duck-concepts"]',
+    clip: "viewport",
+    settle: 1500,
+    note: "a paid creation whose concepts are drawn and not yet picked",
+  },
+  {
+    stem: "app-duck-create-stages",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    target: '[data-cy="create-duck-progress"]',
+    pad: 10,
+    note: "a submitted creation: Concept, Animation and Finishing",
+  },
+  {
+    stem: "app-duck-turntable",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    target: '[data-cy="create-duck-turntable"]',
+    pad: 10,
+    note: "a minted duck, offered a turntable or carrying one",
+  },
+  {
+    stem: "app-duck-create-discard",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    // The dialog is opened for the shot and closed by its Cancel. The confirm
+    // button beside it is never pressed: a discard cannot be undone.
+    steps: [
+      { click: '[data-cy="nav-create"]' },
+      { wait: 1500 },
+      { click: '[data-cy="create-duck-discard"]' },
+      { wait: 800 },
+    ],
+    target: '[data-cy="create-duck-discard-modal"]',
+    after: [
+      {
+        click: '[data-cy="create-duck-discard-modal"] :text-is("Cancel")',
+        optional: true,
+      },
+    ],
+    note: "a creation in flight. CANCEL closes it; DISCARD is never pressed",
+  },
+  {
+    stem: "app-duck-creations-list",
+    modes: ["off"],
+    folder: "nfts",
+    kind: "banner",
+    path: "/marketplace/",
+    steps: [
+      { click: '[data-cy="nav-create"]' },
+      { wait: 1500 },
+      { click: '[data-cy="create-duck-my-creations"]', optional: true },
+      { wait: 1200 },
+    ],
+    target: '[data-cy="create-duck-creations"]',
+    maxHeight: 420,
+    note: "a wallet with at least one creation, newest first",
+  },
   {
     stem: "app-rental-duration-slider",
     folder: "nfts",

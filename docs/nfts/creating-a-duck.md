@@ -22,7 +22,7 @@ The feature is experimental and AI can make mistakes, so look over every concept
 
 Give your duck a title of 4 to 24 characters (it is minted as "LD Duck" followed by your title, and the whole name stays within 32) and a description of 100 to 500 characters: its outfit, mood, colours, and one gloriously unnecessary detail. Under them, add 1 to 4 reference pictures, PNG, JPEG or WebP, up to 1 MB each: pick them, or drop them onto the empty slots. Square pictures work best. Show one clear duck or character, front on, on a plain background, its whole body in frame; a back view of it helps the AI draw your duck from behind, as a race shows it.
 
-<figure><img src="../../.gitbook/assets/nfts/app-duck-create-prompt-banner.png" alt="The prompt step: the title and description fields above four reference picture slots, two of them filled"><figcaption><p>One to four reference pictures. Pick them, or drop them onto the empty slots.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nfts/app-duck-create-prompt-banner.png" alt="The prompt step: the title and description fields above the four reference picture slots, the first of them required"><figcaption><p>One to four reference pictures. Pick them, or drop them onto the empty slots.</p></figcaption></figure>
 
 {% endstep %}
 

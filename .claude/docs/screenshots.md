@@ -223,7 +223,7 @@ Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
 | `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active                                  |
 | `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                                           |
 | `app-duck-create-steps` **(banner)**         | `nfts/creating-a-duck.md`                           | The step bar on the Create tab, the step under way marked                              |
-| `app-duck-create-prompt` **(banner)**        | `nfts/creating-a-duck.md`                           | Title and description over the four reference slots, some filled                       |
+| `app-duck-create-prompt` **(banner)**        | `nfts/creating-a-duck.md`                           | Title and description over the four reference slots, the first required                |
 | `app-duck-create-payment` **(banner)**       | `nfts/creating-a-duck.md`                           | The price, the voucher field and Apply, and the pay button                             |
 | `app-duck-create-concepts`                   | `nfts/creating-a-duck.md`                           | The numbered concepts, front and back, each with its check mark                        |
 | `app-duck-create-stages` **(banner)**        | `nfts/creating-a-duck.md`                           | Concept, Animation and Finishing under a creation title                                |
