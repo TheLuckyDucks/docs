@@ -97,7 +97,9 @@ A minted duck can have a turntable video: a short clip of it turning on the spot
 
 <figure><img src="../../.gitbook/assets/nfts/app-duck-turntable-banner.png" alt="The turntable offer on a minted duck: the box that plays the video, with the generate button and its price"><figcaption><p>Paid apart, and no voucher applies. It plays where the still picture was.</p></figcaption></figure>
 
-Once paid, the video is made from your duck as minted, and a team member checks it before it goes out; one they turn down is made again, with nothing for you to do. Once approved, it is added to your duck, and it plays in the same box. Your duck's page and your wallet may take a while to show it, as they keep what they read for a time.
+Once paid, the video is made from your duck as minted, and a team member checks it along the way and before it goes out; anything they turn down is made again, with nothing for you to do. Once approved, it is added to your duck, and it plays in the same box. Your duck's page and your wallet may take a while to show it, as they keep what they read for a time.
+
+Until filming starts you can discard the video, from the same box. What was prepared for it is spent, and a part of what you paid for it comes back as a voucher for your next duck creation, with the amount in front of you before you confirm and the code shown the moment you discard. Once filming has started it can no longer be discarded, and a discarded video cannot be ordered again for that duck.
 
 ## Discarding a creation
 
@@ -122,7 +124,7 @@ Vouchers come from discards, and the team can issue them too.
 
 ## Your creations
 
-Once you have made a creation, the Create tab lists them, newest first: each with its picture and name, its price and date, and once minted your duck's address with copy, the explorer and its page, as your other NFTs show it. Click a creation to see its whole process: your prompt and pictures, every concept with your pick, the team's notes, and its transactions, and once it is minted your duck's address, with its page, and its turntable video, or the offer of one. Create a new duck starts another. A wallet can create up to 99 ducks.
+Once you have made a creation, the Create tab lists them, newest first: each with its picture and name, its number, and once minted your duck's address with copy, the explorer and its page, as your other NFTs show it. Click a creation to see its whole process: its price and date, your prompt and pictures, every concept with your pick, the team's notes, and its transactions, and once it is minted your duck's address, with its page, its metadata, with a button to copy it, and its turntable video, or the offer of one. Create a new duck starts another. A wallet can create up to 99 ducks.
 
 <figure><img src="../../.gitbook/assets/nfts/app-duck-creations-list-banner.png" alt="The list of a wallet's creations, each with its picture, name, price and date, one of them minted"><figcaption><p>Newest first. A minted one carries its duck's address and its page.</p></figcaption></figure>
 
