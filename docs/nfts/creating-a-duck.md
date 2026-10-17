@@ -8,7 +8,7 @@ description: Turn a few pictures and a description into a one-of-a-kind duck, re
 You can have a duck made to your own design. You send a few pictures and describe it, AI draws a set of concepts, you pick one, and once a team member approves it the duck is animated and minted to your wallet as a one-of-a-kind [Cosmetic](cosmetics.md). It lives in the marketplace, on the Create tab of the top menu after the collections, which is there once you are signed in and while the team has creation open, or while you have a creation under way.
 
 {% hint style="warning" %}
-The feature is experimental and AI can make mistakes, so look over every concept before you pick one. Payments are not refunded.
+The feature is experimental and AI can make mistakes, so look over every concept before you pick one. Payments are not refunded in SOL, but if you [discard a creation](#discarding-a-creation) before its finishing starts, part of its price can come back as a [voucher](#vouchers) for your next one, worth more the earlier you discard.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/nfts/app-duck-create-steps-banner.png" alt="The step bar across the top of the Create tab, with the step under way marked"><figcaption><p>The bar at the top says which step you are on, and you can leave and come back.</p></figcaption></figure>
@@ -20,7 +20,7 @@ The feature is experimental and AI can make mistakes, so look over every concept
 
 ### Prompt
 
-Give your duck a title of 4 to 24 characters (it is minted as "LD Duck" followed by your title, and the whole name stays within 32) and a description of 100 to 500 characters: its outfit, mood, colours, and one gloriously unnecessary detail. Under them, add 1 to 4 reference pictures, PNG, JPEG or WebP, up to 1 MB each: pick them, or drop them onto the empty slots. Square pictures work best. Show one clear duck or character, front on, on a plain background, its whole body in frame; a back view of it helps the AI draw your duck from behind, as a race shows it.
+Give your duck a title of 4 to 24 characters (it is minted as "LD Duck" followed by your title, and the whole name stays within 32) and a description of at least 100 characters, up to the limit its counter shows (never more than 500, and less when the AI needs more room for its own instructions): its outfit, mood, colours, and one gloriously unnecessary detail. Under them, add 1 to 4 reference pictures, PNG, JPEG or WebP, up to 1 MB each: pick them, or drop them onto the empty slots. Square pictures work best. Show one clear duck or character, front on, on a plain background, its whole body in frame; a back view of it helps the AI draw your duck from behind, as a race shows it.
 
 <figure><img src="../../.gitbook/assets/nfts/app-duck-create-prompt-banner.png" alt="The prompt step: the title and description fields above the four reference picture slots, the first of them required"><figcaption><p>One to four reference pictures. Pick them, or drop them onto the empty slots.</p></figcaption></figure>
 
