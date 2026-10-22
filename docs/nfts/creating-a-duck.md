@@ -42,6 +42,8 @@ One flat fee in SOL covers everything that follows: the concepts, the team's rev
 
 AI draws a set of concepts, each a front view and the back view your duck shows in a race. An AI check reads every picture against a standard duck (its feet, the floor, the wings, and anything drawn around it, such as sweat drops), marks it with a tick or a cross (point at a cross to see what it flagged), and the concepts are shown and numbered best first, so Concept 1 is the one the check liked most. A front view may be turned a little to one side; one drawn facing right is mirrored for you, its back view with it. The check only guides you: any picture can be picked, and if it flagged your pick, the step points you to the team on Telegram first. Pick one front and one back, which do not have to come from the same concept. If none suits you, edit the title and description and ask for another set, as many times as the step says are left.
 
+If the AI refuses to draw anything from your prompt or one of your pictures, a team member sends the prompt back to you with a note, signed with their name. The Prompt step opens again with your title, prompt and pictures as you sent them, to change and send again. It costs nothing: the set you paid for is drawn from the new prompt.
+
 {% columns %}
 {% column width="70%" %}
 
@@ -103,7 +105,7 @@ Until filming starts you can discard the video, from the same box. What was prep
 
 ## Discarding a creation
 
-From the moment you pay until the team approves the finishing, you can discard the creation: while its concepts are being drawn, from the Concepts step, or while it is reviewed and made. What was already made is spent, and a part of the price comes back to you as a voucher for your next creation, shown the moment you discard. How much depends on how far your creation got, a stage being made counting as done: the most until your pick is approved, while the concepts are drawn and while your pick waits for review, a little less if you asked for another set of concepts, less once your pick is approved and your duck is being made to swim, less again or nothing once its animation is being made, and nothing once its finishing has started. Discarding stops whatever was being made for it. The voucher is counted on the creation's full price, even if a voucher paid part of it, and the discard asks you to confirm with the amount in front of you.
+From the moment you pay until the team approves the finishing, you can discard the creation: while its concepts are being drawn, from the Concepts step, or while it is reviewed and made. What was already made is spent, and a part of the price comes back to you as a voucher for your next creation, shown the moment you discard. How much depends on how far your creation got, a stage being made counting as done: the most until your pick is approved, while the concepts are drawn and while your pick waits for review, a little less if you asked for another set of concepts, less once your pick is approved and your duck is being made to swim, less again or nothing once its animation is being made, and nothing once its finishing has started. Discarding stops whatever was being made for it. The voucher is counted on what you paid in SOL, and on what a voucher took off the price only if that voucher keeps its rest: a voucher that does not is spent on the creation, so a creation it paid for whole leaves no voucher. The discard asks you to confirm with the amount in front of you.
 
 <figure><img src="../../.gitbook/assets/nfts/app-duck-create-discard-banner.png" alt="The discard dialog: what the creation got to, the voucher amount coming back, and the confirm button"><figcaption><p>The amount is in front of you before you confirm, and the code is shown once.</p></figcaption></figure>
 
@@ -113,20 +115,22 @@ A discard's voucher can be used once and is good for 30 days. Copy its code befo
 
 ## Vouchers
 
-A voucher takes an amount off the price of a creation. Type its code on the Payment step and press Apply, with or without its dash and in any case, and the pay button shows the lower price. A voucher worth the whole price makes the creation free, with nothing to sign.
+A voucher takes an amount off the price of a creation. Type its code on the Payment step and press Apply, with or without its dash and in any case, and the pay button shows the lower price. A voucher worth the whole price brings it to zero, and your wallet still signs the payment, a transfer of nothing, so the network fee is all it costs you.
 
-- Each wallet can use a voucher once. A voucher can serve one wallet or several, up to a number the team sets, and a discard's voucher serves one.
+- Each wallet can use a voucher once. A voucher can serve one wallet or several, up to a number the team sets, and a discard's voucher serves one. The team can also keep a voucher it issues to the wallets it names, and then only those wallets can use it, each once; the new code its rest leaves you is yours alone.
 - A voucher takes at most the whole price. What it is worth beyond the price is lost, unless the voucher keeps its rest: a discard's voucher always does, and the team says so for each voucher it issues. Once your creation is paid, a voucher for you alone keeps the rest under the same code, and a voucher shared with other wallets gives you a new code of your own for it, shown as your payment goes through, until the same date. Keep that code: it is not shown again.
-- A voucher is refused once it has expired, been used up, or been withdrawn by the team.
+- A voucher is refused once it has expired, been used up, or been withdrawn by the team, and to a wallet it is not for.
 - It counts as used when your creation is paid for. If your payment does not go through, the use is given back.
 
 Vouchers come from discards, and the team can issue them too.
 
 ## Your creations
 
-Once you have made a creation, the Create tab lists them, newest first: each with its picture and name, its number, and once minted your duck's address with copy, the explorer and its page, as your other NFTs show it. Click a creation to see its whole process: its price and date, your prompt and pictures, every concept with your pick, the team's notes, and its transactions, and once it is minted your duck's address, with its page, its metadata, with a button to copy it, and its turntable video, or the offer of one. Create a new duck starts another. A wallet can create up to 99 ducks.
+Once you have made a creation, the Create tab lists them, newest first: each with its picture and name, its number, and once minted a check on its picture and your duck's address with a button to copy it. Click a creation to see its whole process: its price and date, your prompt and pictures, every concept with your pick, the team's notes, and its transactions, and once it is minted your duck's address, with its page, its metadata, with a button to copy it, and its turntable video, or the offer of one. Create a new duck starts another. A wallet can create up to 99 ducks.
 
-<figure><img src="../../.gitbook/assets/nfts/app-duck-creations-list-banner.png" alt="The list of a wallet's creations, each with its picture, name, price and date, one of them minted"><figcaption><p>Newest first. A minted one carries its duck's address and its page.</p></figcaption></figure>
+While a creation waits, for its concepts, for the team or for its mint, Back takes you to this list if you have made another duck before it. Click the waiting one to go back to it: it also comes back on its own when it needs you again, when its mint begins, and when your duck is minted. Create a new duck shows again once it is finished.
+
+<figure><img src="../../.gitbook/assets/nfts/app-duck-creations-list-banner.png" alt="The list of a wallet's creations, each with its picture, name, price and date, one of them minted"><figcaption><p>Newest first. A minted one carries its duck's address.</p></figcaption></figure>
 
 {% hint style="info" %}
 Some time after a creation ends, discarded or minted, its pictures move to IPFS, a public file network, your reference pictures included. They still show in your list as before, and anyone with a link to one can open it.

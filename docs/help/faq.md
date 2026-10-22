@@ -23,13 +23,13 @@ No. The entry fee is your whole stake, and a losing race costs you nothing beyon
 
 The entry fee, a small network fee on what you sign, and on your very first race a one-time deposit for your player account, which comes back if you ever close it. Creating a race instead of joining one adds a few small creation costs and the race account's rent, which also returns when the race closes. [Fees and prizes](../economy/fees-and-prizes.md) and [Refunds and rent](../economy/refunds-and-rent.md) have the figures.
 
+### How do I get SOL into my wallet?
+
+Buy it on any exchange that sells SOL and send it to your wallet's address, or use the buy button some wallets carry. Nothing here sells it to you. You need a little even for a token race, because Solana takes its network fee in SOL whatever the race is played for. See [SPL token races](../economy/spl-tokens.md).
+
 ### Can I play on my phone?
 
 Yes, and it is built for it. Link a social account and turn on [playing without signing every action](../races/delegated-play.md) and a whole session never opens your wallet app: one tap per join, claim or rematch. [Playing without your wallet app](../races/without-the-wallet-app.md) is the order to set it up in.
-
-### Does my wallet sign the transactions the app sends?
-
-Yes, with nothing to set. Wallets that support Solana's newer v1 transactions (Phantom and Solflare, for example) sign that format, and others use the older format automatically. If a wallet fails a v1 transaction, the app retries that action in the older format, which can mean a second approval, and keeps to it for the rest of your session.
 
 ### Do I need a Runner NFT to play?
 
@@ -89,6 +89,10 @@ Only while the offer is open, because the program holds the prize until the offe
 
 Yes, with a Runner NFT, which this gate always needs. Pick the NFT Holders join setting and then the chain. Joiners link the external wallet holding the NFT once, and the race itself is unchanged, still on Solana. See [NFT holders](../races/access-and-gating.md#nft-holders).
 
+### Can I run a giveaway in my own token?
+
+Yes, as a sponsored race: you put up the prize and players join for nothing. It needs a Runner NFT, and the token has to be one the platform has enabled, which is the team's to do, so ask before you announce a date. See [SPL token races](../economy/spl-tokens.md) and [Hosting, cancelling, and refunds](../races/hosting-and-cancelling.md).
+
 ## When something goes wrong
 
 ### My race never started. Where is my money?
@@ -107,6 +111,24 @@ Not out of the platform. The permission covers playing, and the contract itself 
 
 Your wallet still owns your funds. Claims and refunds need nobody's permission, a cancel needs only its creator's signature, and all of them can be sent straight to the contract with any tool that reaches Solana. The website is a convenience over the chain, not an authority.
 
+## Safety and privacy
+
+### Has the contract been audited?
+
+Not by an outside firm. What stands in its place is what you can check without trusting anyone: the program's interface is published, each race's seed comes from an account the platform does not own, and every transfer a race makes is on the chain to read. [Verifying a race on-chain](../trust/verifying-a-race.md) is that check, start to finish.
+
+### Does the platform ever get access to my wallet?
+
+No. It never holds your keys, and nothing moves without a signature your wallet shows you first. The one permission you can grant covers playing and is revocable at any moment, and the contract itself refuses to let it withdraw from your vault or close your account. See [Playing without signing every action](../races/delegated-play.md).
+
+### What if a site pretends to be The Lucky Ducks?
+
+Read the address bar: the site is **theluckyducks.com**. Nobody here will ever ask for your seed phrase or your private key, for any reason, and no part of the platform needs either. A page that asks is not ours; close it and say so on [Telegram](social-networks.md).
+
+### What does the platform know about me?
+
+Your wallet address, the races it played, and whatever you choose to add: a nickname, an avatar, a linked social account, which is kept as a yes beside your wallet rather than as anything from the account itself. There are no passwords and no email addresses. Your race history sits on a public chain in any case, readable by anyone, whether or not a page here shows it. See [Verification](../trust/verification.md).
+
 ## Trust, and how it works underneath
 
 From here on the answers assume a little more, and the last few are for anyone who wants to see the machinery.
@@ -119,6 +141,10 @@ Check it yourself. The seed came from an oracle account the platform does not ow
 
 Yes. Once ORAO publishes the seed the outcome is fixed, so re-running the contract's simulation on that seed and the participant list gives the ranking the canvas will show. Most players would rather watch. See [Provable randomness](../trust/fairness.md#anyone-can-predict-the-outcome-early).
 
+### What does this site show me, and what is on the chain?
+
+A copy, kept in step. Reading the chain for every page would be slow, so the backend follows the program's events into a database the pages read, and links you to the chain for anything that decides money. The backend also sends the transactions that need nobody's permission, the seed request and the finalize among them, and that is the whole of its part: it cannot touch what they produce, because the seed is the oracle's and the finishing order follows from it.
+
 ### Can anyone start or finish a race?
 
 Yes, once its moment has come. Starting an underfilled race and finalizing a race both need nobody's permission: the backend normally sends them, and any wallet can step in if it does not. See [How a race works](../introduction/how-it-works.md#3-start).
@@ -130,6 +156,14 @@ Because the seed gates the race: it has to arrive within seconds, cost little en
 ### Why do race ID numbers sometimes skip?
 
 A rematch offer takes the next race number, and one that is declined or expires does not give it back, so gaps are normal. See [Rematches](../competition/rematches.md#rematch-chains).
+
+### Why is 20 the most players in a race?
+
+Two limits meet there. The canvas is drawn for twenty ducks, and more of them on a phone is a scrum rather than a race. And a payout names every player's account in one transaction, which Solana bounds, so a larger lobby would have to pay out across several.
+
+### Does my wallet sign the transactions the app sends?
+
+Yes, with nothing to set. Wallets that support Solana's newer v1 transactions (Phantom and Solflare, for example) sign that format, and others use the older format automatically. If a wallet fails a v1 transaction, the app retries that action in the older format, which can mean a second approval, and keeps to it for the rest of your session.
 
 ### Can I run my own client?
 
