@@ -919,7 +919,7 @@ const SHOTS = [
     stem: "app-play-balance-panel",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [{ scrollTo: '[data-cy="vault-balance"]', block: "center" }],
     span: [
@@ -933,7 +933,7 @@ const SHOTS = [
     stem: "app-pay-from-balance-checkbox",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [{ scrollTo: '[data-cy="vault-spend-toggle"]', block: "center" }],
     span: [
@@ -949,7 +949,7 @@ const SHOTS = [
     stem: "app-vault-deposit-dialog",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [
       { scrollTo: '[data-cy="vault-amount"]', block: "center" },
@@ -978,7 +978,7 @@ const SHOTS = [
     stem: "app-vault-withdraw-dialog",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [
       { scrollTo: '[data-cy="vault-direction"]', block: "center" },
@@ -1013,7 +1013,7 @@ const SHOTS = [
     stem: "app-delegation-duration-selector",
     folder: "races",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [
       { scrollTo: '[data-cy="grant-duration"]', block: "center" },
@@ -1035,7 +1035,7 @@ const SHOTS = [
     stem: "app-preferences-panel",
     folder: "help",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     // The whole block: the language picker, every switch under it and the Save
     // that commits them.
@@ -1046,7 +1046,7 @@ const SHOTS = [
     stem: "app-payout-target-setting",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [{ scrollTo: '[data-cy="payout-target"]', block: "center" }],
     span: [
@@ -1059,7 +1059,7 @@ const SHOTS = [
     stem: "app-telegram-handle-toggle",
     folder: "trust",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [
       { scrollTo: "text=/^announcements$/i >> visible=true", block: "center" },
@@ -1075,7 +1075,7 @@ const SHOTS = [
     stem: "app-close-account-button",
     folder: "economy",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["off"],
     steps: [
       {
@@ -1095,7 +1095,7 @@ const SHOTS = [
     stem: "app-verification-tab",
     folder: "trust",
     kind: "pair",
-    path: "/app/player/verification",
+    path: "/app/wallet/verification",
     modes: ["off"],
     target: "text=/verified via/i >> visible=true",
     clip: "viewport",
@@ -1104,7 +1104,7 @@ const SHOTS = [
     stem: "app-link-external-wallet",
     folder: "races",
     kind: "banner",
-    path: "/app/player/verification",
+    path: "/app/wallet/verification",
     modes: ["off"],
     steps: [
       { scrollTo: "text=/^evm wallet$/i >> visible=true", block: "center" },
@@ -1120,7 +1120,7 @@ const SHOTS = [
     stem: "app-badges-profile",
     folder: "competition",
     kind: "pair",
-    path: "/app/player",
+    path: "/app/wallet",
     modes: ["off"],
     steps: [
       { scrollTo: "text=/^badges \\(/i >> visible=true", block: "start" },
@@ -1133,7 +1133,7 @@ const SHOTS = [
     stem: "app-nickname-avatar-fields",
     folder: "trust",
     kind: "banner",
-    path: "/app/player",
+    path: "/app/wallet",
     modes: ["off"],
     // The pencil beside the nickname: an icon, named only by its label.
     steps: [{ click: '[aria-label="Edit profile"], [title="Edit profile"]' }],
@@ -1448,7 +1448,7 @@ const SHOTS = [
     stem: "nft-card-renting",
     folder: "nfts",
     kind: "single",
-    path: "/app/player/nfts",
+    path: "/app/wallet/nfts",
     modes: ["off"],
     // The renter's own collection: the art under its RENTED band, with the
     // countdown to the end of the term, and the name below.
@@ -1464,7 +1464,7 @@ const SHOTS = [
     stem: "app-delegated-signing-panel",
     folder: "races",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["on"],
     steps: [{ scrollTo: '[data-cy="grant-status"]', block: "center" }],
     span: [
@@ -1478,7 +1478,7 @@ const SHOTS = [
     stem: "app-delegation-revoke",
     folder: "races",
     kind: "banner",
-    path: "/app/player/settings",
+    path: "/app/wallet/settings",
     modes: ["on"],
     steps: [{ scrollTo: '[data-cy="grant-revoke"]', block: "center" }],
     span: ['[data-cy="grant-status"]', '[data-cy="grant-revoke"]'],
@@ -1565,7 +1565,7 @@ const SHOTS = [
     // Written for a tournament standings board. Nothing is running, and a
     // team page is too wide to read at cover size, so it is the badge wall:
     // its heading and the first rows, which read at any size.
-    path: "/app/player",
+    path: "/app/wallet",
     modes: ["on"],
     steps: [
       { scrollTo: "text=/^badges \\(/i >> visible=true", block: "center" },

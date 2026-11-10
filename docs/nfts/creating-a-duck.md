@@ -76,6 +76,8 @@ Your creation stays on this step while it is made. Under its title, three stages
 
 While the team has your duck to look at, you can ping a team member on our Telegram channel to speed things up. If they turn your pick down, you are back on the Concepts step with their note and one more set to make, and you pick again. If they turn down the swim or the finishing, the swim is made again, with nothing for you to do.
 
+Sometimes a stage of your duck fails to be made, and the team retries it, with nothing for you to do. If it still cannot be made, the team may close the creation: your Create tab then says your duck could not be made, and you can start a new one.
+
 {% endstep %}
 
 {% step %}

@@ -1,11 +1,11 @@
 ---
 icon: rotate-right
-description: Double or nothing on a 1v1 you just finished, what the proposer picks, and why nobody is ever stuck.
+description: A rematch of the 1v1 you just finished, at the stake its creator set from same stakes to double or nothing, what the proposer picks, and why nobody is ever stuck.
 ---
 
 # Rematches
 
-When a 1v1 ends, either player can offer a rematch, and a rematch is double or nothing. The whole pot of the race you just finished rolls into the next one, the loser matches it, and whoever wins the rematch takes both. The offer sits on the prize claim screen so you do not go looking for it.
+When a 1v1 ends, either player can offer a rematch, played for the stake the race's creator set: anything from the same stake again to double or nothing. Whoever wins the rematch takes its pot. The offer sits on the prize claim screen so you do not go looking for it.
 
 <figure><img src="../../.gitbook/assets/competition/app-rematch-offer-banner.png" alt="The prize claim screen with an Offer Rematch button beside the claim button"><figcaption><p>Claiming and rematching are the same stop.</p></figcaption></figure>
 
@@ -17,20 +17,32 @@ A finished 1v1 you played in. Sponsored races cannot be rematched, and neither c
 **Claim the prize and the rematch goes with it.** The winner's stake in the next race is the prize still sitting in the old race, so once it is paid out there is nothing to roll forward and the program refuses the offer. Rematch first, or claim and start a fresh race.
 {% endhint %}
 
+## The rematch stake
+
+Whoever creates a paid 1v1 sets what its rematches are played for with the **Rematch Stake** slider on the create form, from ×1 to ×2 in steps of ×0.05. Any creator can, no Runner NFT needed. Each rematch stakes the entry fee of the race before it times that multiplier, so the pot grows by it at every rematch. The slider starts at ×1.25, and at ×2 rematches are double or nothing. Under it a curve shows how the pot grows over a full chain at the multiplier you set: point at a rematch, or tap it, to read its pot and each player's stake in the race's currency. The race details show the multiplier a 1v1 uses, so you know before you join, and every rematch of the chain keeps it.
+
+| Multiplier                | What each player stakes                     | What the winner takes          | Paid out when the rematch is accepted     |
+| ------------------------- | ------------------------------------------- | ------------------------------ | ----------------------------------------- |
+| **×2**, double or nothing | the whole pot of the last race              | twice that, so the pot doubles | nothing                                   |
+| **×1.5**                  | one and a half of the last race's entry fee | the pot grows by half          | the rest of the winner's prize, less fees |
+| **×1**, same stakes       | the race's entry fee                        | 2 entry fees, every time       | the rest of the winner's prize, less fees |
+
+A lower multiplier is the cheaper way to keep playing: the pot still grows, more slowly, and the winner banks the rest of their prize each time. At ×1 every rematch costs what the first race did. From ×1.75 up the create form warns you how much the last rematch of a full chain would stake, because a multiplier compounds: at ×2 a tenth rematch would stake over a thousand times the first entry fee.
+
 Two windows also apply, both short and both platform settings, so the app is where to read them: you have a window from the finish to make the offer, and your opponent then has their own window to answer it.
 
 ## Offering a rematch
 
 Click Offer Rematch on the claim screen. That creates the next race and puts your stake in it:
 
-- **Winner.** Your stake is the whole prize you have not claimed. It stays where it is and nothing is paid out. Your opponent matches it when they accept.
-- **Loser.** You deposit an amount equal to that prize up front. The winner's prize joins it when they accept.
+- **Winner.** Your stake comes out of the prize you have not claimed and stays where it is. Your opponent matches it when they accept.
+- **Loser.** You deposit the stake up front. The winner's stake joins it when they accept.
 
-Either way the new pot is twice the old one: a race of 2 entry fees is rematched for 4, and that rematch for 8. The amount on the button is what you are putting in, and the note beside it says what the winner takes. No fee is taken when a rematch is accepted. The pot pays its fees once, when the last race of the chain is claimed. Offering uses one of your [daily races](../races/daily-races.md).
+At ×2 your stake is the whole prize, so the new pot is twice the old one: a race of 2 entry fees is rematched for 4, and that rematch for 8. No fee is taken when it is accepted; the pot pays its fees once, when the last race of the chain is claimed. Below ×2 your stake is the entry fee times the multiplier, so at ×1.5 a race of 2 entry fees is rematched for 3, and when it is accepted the winner is paid the rest of their prize, less the platform fee and the jackpot fee. The amount on the button is what you are putting in, and the note beside it says what the winner takes. Offering uses one of your [daily races](../races/daily-races.md).
 
 ## What the proposer picks
 
-The new race's entry fee is the pot of the race before it. It inherits the duration, join setting, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
+The new race's entry fee is the stake: the entry fee of the race before it times the multiplier, the whole pot at ×2. It inherits the duration, join setting, the multiplier, [no-boost mode](../nfts/boosts.md#no-boost-races) and every customization the old one had. Four things are yours to change:
 
 | At propose time     | What it does                                                                                                                                                     |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -45,7 +57,7 @@ The name carries over with a `#N` suffix, so "Duel" becomes "Duel #2", then "Due
 
 ## Accepting
 
-Accepting inside the window starts the new race. If the winner made the offer, the loser deposits the match as they accept. Nothing is paid out: the finished race's prize is the winner's stake in the new one, so there is no separate claim to make. It uses one of the accepter's daily races.
+Accepting inside the window starts the new race. If the winner made the offer, the loser deposits the match as they accept. There is no separate claim to make. At ×2 nothing is paid out, since the finished race's prize is the winner's stake in the new one. Below ×2 the stake stays in and the rest of the prize is paid to the winner, less fees. It uses one of the accepter's daily races.
 
 ## Cancelling versus declining
 
@@ -68,7 +80,7 @@ Cancelling while your opponent can still accept costs the same fixed penalty as 
 
 ## Rematch chains
 
-A rematch can be rematched, up to the platform's maximum chain depth. The pot doubles at every step, so the stakes of a chain climb fast: read the amount on the button before you offer or accept. Each card carries a Rematch #N badge saying how far down the chain it is, and a chain keeps the windows the first race was created with.
+A rematch can be rematched, up to the platform's maximum chain depth, at the same multiplier. At ×2 the pot doubles at every step and at ×1.5 it grows by half, so the stakes of a chain climb fast: read the amount on the button before you offer or accept. At ×1 it stays at 2 entry fees. Each card carries a Rematch #N badge saying how far down the chain it is, and a chain keeps the windows the first race was created with.
 
 <figure><img src="../../.gitbook/assets/competition/app-rematch-chain-indicator-banner.png" alt="A race card carrying a Rematch #1 badge beside its race number"><figcaption><p>How far down the chain this race is.</p></figcaption></figure>
 

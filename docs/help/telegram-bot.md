@@ -106,6 +106,8 @@ From then on, when a raid ends the bot tallies who engaged:
 
 Check standings with `/raidboard`. Points feed your global XP and unlock raid badges, listed in [Badges](../competition/badges.md).
 
+A post raided in several groups counts once for you: each group's board credits you, but your XP and badge progress come from the post, not from each group.
+
 Linking stays optional. Without it you still push the group goals, you just do not appear on the personal board.
 
 ## FAQ
