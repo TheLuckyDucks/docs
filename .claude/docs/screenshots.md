@@ -14,11 +14,14 @@ repeats none of them.
 folder sits at the repository root because GitBook requires it there. That is
 why a page climbs two levels to reach an image.
 
-## Reading the tables
+## Reading the lists
 
-A row marked **(banner)** is one file, `<name>-banner.png`: a single wide image
-of one control, at roughly 600x250. Every other screenshot row is two files,
-`<name>-desktop.png` and `<name>-mobile.png`. Artwork rows name their file in
+Each line in the folder sections below: shot, or file for artwork: the page or
+pages using it; what it shows.
+
+A line marked (banner) is one file, `<name>-banner.png`: a single wide image
+of one control, at roughly 600x250. Every other screenshot line is two files,
+`<name>-desktop.png` and `<name>-mobile.png`. Artwork lines name their file in
 full.
 
 ## Folders
@@ -27,22 +30,23 @@ Assets live under `.gitbook/assets/<section>/`, where the section is the page
 folder that uses them. It keeps a pair adjacent, keeps a section's shots
 together, and makes an orphan obvious.
 
-| Folder                   | Holds                                                            |
-| ------------------------ | ---------------------------------------------------------------- |
-| `.gitbook/assets/brand/` | Artwork for the root `README.md`: cover, hero, and 7 card covers |
-| `introduction/`          | Getting Started                                                  |
-| `races/`                 | Races, and the cost breakdown `economy/` borrows                 |
-| `nfts/`                  | Collections, boxes, renting, and the six card covers             |
-| `competition/`           | Tournaments, teams, rematches, badges, lottery                   |
-| `economy/`               | Vault, payouts, creator share, refunds, tokens                   |
-| `trust/`                 | Verification, and the four block explorer shots                  |
-| `help/`                  | Telegram, and the four social card covers                        |
+Each line: folder: what it holds.
+
+- `.gitbook/assets/brand/`: Artwork for the root `README.md`: cover, hero, and 8 card covers
+- `introduction/`: Getting Started
+- `races/`: Races, and the cost breakdown `economy/` borrows
+- `nfts/`: Collections, boxes, renting, and the six card covers
+- `competition/`: Tournaments, teams, rematches, badges, lottery
+- `economy/`: Vault, payouts, creator share, refunds, tokens
+- `token/`: The token page, the presale, staking, the OTC desk
+- `trust/`: Verification, and the four block explorer shots
+- `help/`: Telegram, and the four social card covers
 
 An asset used by two pages lives in the folder of the page that owns the
-subject, and the other page reaches it by relative path.
-Eleven do: the cost breakdown and ten control banners, since one banner per control
-means a control documented on two pages is referenced twice rather than captured
-twice. The Pages column below names both pages each time.
+subject, and the other page reaches it by relative path. The cost breakdown
+and several control banners do, since one banner per control means a control
+documented on two pages is referenced twice rather than captured twice. Their
+lines below name both pages.
 
 ## What the checker already covers
 
@@ -100,7 +104,9 @@ commands are the whole procedure.
 `npm run capture` takes some of these off the live site for you, driving a
 Chrome you started with `--remote-debugging-port=9222`. `npm run capture --
 --list` says which. It only ever overwrites a file `npm run assets` has
-already made, so the two commands keep owning which files exist.
+already made, so the two commands keep owning which files exist. On this host
+it needs `networkingMode=mirrored` in `.wslconfig`, because Chrome binds its
+debug port to loopback and WSL is otherwise a separate network.
 
 **It reaches far less than half of this list, and the reason is the product,
 not the script.** Create Race is disabled for a guest and the player page
@@ -134,187 +140,192 @@ out, or capture from a quiet moment, before a shot goes on a page.
   edit. That is the point of fixing the names here.
 
 Two sizes are special: `brand/docs-cover-welcome.png` is the space cover and
-wants roughly **1990x480**, and the six `nfts/nft-card-*.png` are card covers,
-so a **16:9** crop each, as are the seven `brand/docs-card-*.png` on the welcome
-page and the four `help/social-card-*.png`. A cover is linked from a hidden
+wants roughly 1990x480, and the `nfts/nft-card-*.png` are card covers, so a
+16:9 crop each, as are the `brand/docs-card-*.png` on the welcome page and the
+`help/social-card-*.png`. A cover is linked from a hidden
 `data-card-cover` column rather than shown in a figure, so it carries no alt
 text of its own and `scripts/sync-assets.mjs` labels it from a table in the
 script.
 
 ## brand/ (artwork, single files)
 
-| File                            | Page        | Shows                                                                     |
-| ------------------------------- | ----------- | ------------------------------------------------------------------------- |
-| `docs-cover-welcome.png`        | `README.md` | The space cover: the landing page hero strip, captured at 1990x480        |
-| `docs-hero-race-canvas.png`     | `README.md` | A five duck race mid-run with position markers, wide crop of the canvas   |
-| `docs-card-getting-started.png` | `README.md` | Card cover, 16:9, one race card close up                                  |
-| `docs-card-races.png`           | `README.md` | Card cover, 16:9, the create form: mode, fee, currency, seats, validation |
-| `docs-card-nfts.png`            | `README.md` | Card cover, 16:9, three Boost tiers with their prices                     |
-| `docs-card-competition.png`     | `README.md` | Card cover, 16:9, the badge wall on a player page                         |
-| `docs-card-economy.png`         | `README.md` | Card cover, 16:9, a race podium with each place's payout                  |
-| `docs-card-trust.png`           | `README.md` | Card cover, 16:9, the winners recorded on chain, with the speed chart     |
-| `docs-card-help.png`            | `README.md` | Card cover, 16:9, the FAQ on the landing page                             |
+- `docs-cover-welcome.png`: `README.md`; The space cover: the landing page hero strip, captured at 1990x480
+- `docs-hero-race-canvas.png`: `README.md`; A five duck race mid-run with position markers, wide crop of the canvas
+- `docs-card-getting-started.png`: `README.md`; Card cover, 16:9, one race card close up
+- `docs-card-races.png`: `README.md`; Card cover, 16:9, the create form: mode, fee, currency, seats, validation
+- `docs-card-nfts.png`: `README.md`; Card cover, 16:9, three Boost tiers with their prices
+- `docs-card-competition.png`: `README.md`; Card cover, 16:9, the badge wall on a player page
+- `docs-card-economy.png`: `README.md`; Card cover, 16:9, a race podium with each place's payout
+- `docs-card-token.png`: `README.md`; Card cover, 16:9, the token page: the address, the facts and the allocations
+- `docs-card-trust.png`: `README.md`; Card cover, 16:9, the winners recorded on chain, with the speed chart
+- `docs-card-help.png`: `README.md`; Card cover, 16:9, the FAQ on the landing page
 
 ## introduction/
 
-Each row is two files: `<name>-desktop.png` and `<name>-mobile.png`.
-
-| Shot                                    | Page                                  | Shows                                                           |
-| --------------------------------------- | ------------------------------------- | --------------------------------------------------------------- |
-| `app-connect-wallet` **(banner)**       | `introduction/getting-started.md`     | The connect dialog with the wallet list                         |
-| `app-lobby-list`                        | `introduction/getting-started.md`     | Three or four open race cards: entry fee, pool, slots, duration |
-| `app-race-finish-claim`                 | `introduction/getting-started.md`     | The post race screen: finishing order, claim button with amount |
-| `app-lobby-filling`                     | `introduction/how-it-works.md`        | A joined lobby filling: 9 of 20 seats, avatars under the count  |
-| `app-race-canvas-midrace`               | `introduction/what-is-lucky-ducks.md` | Ducks part way down the lane with the standings overlay         |
-| `app-player-account-modal` **(banner)** | `introduction/getting-started.md`     | The first-race modal: rent quoted, refundable, no own tx        |
+- `app-connect-wallet` (banner): `introduction/getting-started.md`; The connect dialog with the wallet list
+- `app-lobby-list`: `introduction/getting-started.md`; Three or four open race cards: entry fee, pool, slots, duration
+- `app-race-finish-claim`: `introduction/getting-started.md`; The post race screen: finishing order, claim button with amount
+- `app-lobby-filling`: `introduction/how-it-works.md`; A joined lobby filling: 9 of 20 seats, avatars under the count
+- `app-race-canvas-midrace`: `introduction/what-is-lucky-ducks.md`; Ducks part way down the lane with the standings overlay
+- `app-player-account-modal` (banner): `introduction/getting-started.md`; The first-race modal: rent quoted, refundable, no own tx
 
 ## races/
 
-| Shot                                            | Page                                                          | Shows                                                             |
-| ----------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `app-jackpot-create-option` **(banner)**        | `races/creating-a-race.md`                                    | The feeds the jackpot option, first on the form, ticked           |
-| `app-create-race-form`                          | `races/creating-a-race.md`                                    | Top of the create form: entry fee, max players, duration, mode    |
-| `app-create-race-cost-breakdown` **(banner)**   | `races/creating-a-race.md`, `economy/fees-and-prizes.md`      | The itemised cost box, rent line visible                          |
-| `app-race-detail-modal`                         | `races/joining-and-playing.md`                                | A joined race's modal: pool, seats, fee, duration                 |
-| `app-claim-prize` **(banner)**                  | `races/joining-and-playing.md`                                | The claim button with the payout on it, finishing order beside it |
-| `app-login-linked-account`                      | `races/without-the-wallet-app.md`                             | The login screen offering a linked account next to connect wallet |
-| `app-delegated-signing-panel` **(banner)**      | `races/delegated-play.md`                                     | The delegated signing panel: duration, expiry, revoke             |
-| `app-race-features-sheet` **(banner)**          | `races/joining-and-playing.md`                                | The sheet a card's chip row opens, each feature in a sentence     |
-| `app-race-cards-modes` **(banner)**             | `races/race-modes.md`                                         | Two cards side by side, one WTA badge, one Podium Split badge     |
-| `app-join-setting-picker` **(banner)**          | `races/access-and-gating.md`, `races/advanced-options.md`     | The join setting selector open, all five options visible          |
-| `app-link-external-wallet` **(banner)**         | `races/access-and-gating.md`                                  | The link an external wallet panel with the supported chains       |
-| `app-gated-race-join-disabled` **(banner)**     | `races/access-and-gating.md`, `races/joining-and-playing.md`  | A gated race with Join disabled and the requirement stated        |
-| `app-underfilled-slider` **(banner)**           | `races/advanced-options.md`                                   | The underfilled card on a 10 player race, slider at 5             |
-| `app-cancel-race-confirm` **(banner)**          | `races/hosting-and-cancelling.md`                             | The cancel confirmation: refund to players, flat SOL penalty      |
-| `app-entry-fee-field` **(banner)**              | `races/creating-a-race.md`                                    | The entry fee field with the currency picker beside it            |
-| `app-max-players-field` **(banner)**            | `races/creating-a-race.md`                                    | The seats control, values past the default marked as gated        |
-| `app-race-duration-field` **(banner)**          | `races/creating-a-race.md`, `races/advanced-options.md`       | The duration field with the platform ceiling stated               |
-| `app-race-mode-picker` **(banner)**             | `races/creating-a-race.md`                                    | The mode picker: Winner Takes All beside Podium Split             |
-| `app-create-race-opt-ins`                       | `races/creating-a-race.md`                                    | The opt in cards stacked, all off, gated ones show a Runner chip  |
-| `app-ai-commentary-toggle` **(banner)**         | `races/advanced-options.md`                                   | The AI commentary toggle with its per second cost                 |
-| `app-x-announcement-toggle` **(banner)**        | `races/advanced-options.md`                                   | The X announcement toggle with its flat cost                      |
-| `app-custom-name-field` **(banner)**            | `races/advanced-options.md`                                   | The custom name field with a race title typed in                  |
-| `app-join-timeout-field` **(banner)**           | `races/advanced-options.md`                                   | The join timeout field set to a short window                      |
-| `app-custom-track-picker` **(banner)**          | `races/advanced-options.md`, `nfts/tracks.md`                 | The track picker: the four built in tracks and one Track NFT      |
-| `app-sponsored-race-toggle` **(banner)**        | `races/advanced-options.md`                                   | The sponsored toggle with the prize amount field open             |
-| `app-minimum-account-age-toggle` **(banner)**   | `races/advanced-options.md`                                   | The account age slider, set between 5 minutes and 6 months        |
-| `app-nft-gate-fields` **(banner)**              | `races/access-and-gating.md`                                  | The NFT Holders gate: collection field and minimum count          |
-| `app-token-gate-fields` **(banner)**            | `races/access-and-gating.md`                                  | The Token Holders gate: mint field and minimum amount             |
-| `app-allowed-players-list` **(banner)**         | `races/access-and-gating.md`                                  | The invite list with several wallets in it and the counter        |
-| `app-host-mode-toggle` **(banner)**             | `races/hosting-and-cancelling.md`                             | The host without playing toggle, unavailable on a 1v1             |
-| `app-withdraw-button` **(banner)**              | `races/joining-and-playing.md`, `economy/refunds-and-rent.md` | The withdraw button with the time left on it                      |
-| `app-lobby-participants`                        | `races/joining-and-playing.md`                                | The race modal part filled: avatars, nicknames, NFT badges        |
-| `app-delegation-duration-selector` **(banner)** | `races/delegated-play.md`                                     | The duration list open: 1, 7 and 30 days                          |
-| `app-delegation-revoke` **(banner)**            | `races/delegated-play.md`, `races/without-the-wallet-app.md`  | The Revoke button, shown while a grant is live                    |
+- `app-jackpot-create-option` (banner): `races/creating-a-race.md`; The feeds the jackpot option, first on the form, ticked
+- `app-create-race-form`: `races/creating-a-race.md`; Top of the create form: entry fee, max players, duration, mode
+- `app-create-race-cost-breakdown` (banner): `races/creating-a-race.md`, `economy/fees-and-prizes.md`; The itemised cost box, rent line visible
+- `app-race-detail-modal`: `races/joining-and-playing.md`; A joined race's modal: pool, seats, fee, duration
+- `app-claim-prize` (banner): `races/joining-and-playing.md`; The claim button with the payout on it, finishing order beside it
+- `app-login-linked-account`: `races/without-the-wallet-app.md`; The login screen offering a linked account next to connect wallet
+- `app-delegated-signing-panel` (banner): `races/delegated-play.md`; The delegated signing panel: duration, expiry, revoke
+- `app-race-features-sheet` (banner): `races/joining-and-playing.md`; The sheet a card's chip row opens, each feature in a sentence
+- `app-race-cards-modes` (banner): `races/race-modes.md`; Two cards side by side, one WTA badge, one Podium Split badge
+- `app-join-setting-picker` (banner): `races/access-and-gating.md`, `races/advanced-options.md`; The join setting selector open, all five options visible
+- `app-link-external-wallet` (banner): `races/access-and-gating.md`; The link an external wallet panel with the supported chains
+- `app-gated-race-join-disabled` (banner): `races/access-and-gating.md`, `races/joining-and-playing.md`; A gated race with Join disabled and the requirement stated
+- `app-underfilled-slider` (banner): `races/advanced-options.md`; The underfilled card on a 10 player race, slider at 5
+- `app-cancel-race-confirm` (banner): `races/hosting-and-cancelling.md`; The cancel confirmation: refund to players, flat SOL penalty
+- `app-entry-fee-field` (banner): `races/creating-a-race.md`; The entry fee field with the currency picker beside it
+- `app-max-players-field` (banner): `races/creating-a-race.md`; The seats control, values past the default marked as gated
+- `app-race-duration-field` (banner): `races/creating-a-race.md`, `races/advanced-options.md`; The duration field with the platform ceiling stated
+- `app-race-mode-picker` (banner): `races/creating-a-race.md`; The mode picker: Winner Takes All beside Podium Split
+- `app-create-race-opt-ins`: `races/creating-a-race.md`; The opt in cards stacked, all off, gated ones show a Runner chip
+- `app-ai-commentary-toggle` (banner): `races/advanced-options.md`; The AI commentary toggle with its per second cost
+- `app-x-announcement-toggle` (banner): `races/advanced-options.md`; The X announcement toggle with its flat cost
+- `app-custom-name-field` (banner): `races/advanced-options.md`; The custom name field with a race title typed in
+- `app-join-timeout-field` (banner): `races/advanced-options.md`; The join timeout field set to a short window
+- `app-custom-track-picker` (banner): `races/advanced-options.md`, `nfts/tracks.md`; The track picker: the four built in tracks and one Track NFT
+- `app-sponsored-race-toggle` (banner): `races/advanced-options.md`; The sponsored toggle with the prize amount field open
+- `app-minimum-account-age-toggle` (banner): `races/advanced-options.md`; The account age slider, set between 5 minutes and 6 months
+- `app-nft-gate-fields` (banner): `races/access-and-gating.md`; The NFT Holders gate: collection field and minimum count
+- `app-token-gate-fields` (banner): `races/access-and-gating.md`; The Token Holders gate: mint field and minimum amount
+- `app-allowed-players-list` (banner): `races/access-and-gating.md`; The invite list with several wallets in it and the counter
+- `app-host-mode-toggle` (banner): `races/hosting-and-cancelling.md`; The host without playing toggle, unavailable on a 1v1
+- `app-withdraw-button` (banner): `races/joining-and-playing.md`, `economy/refunds-and-rent.md`; The withdraw button with the time left on it
+- `app-lobby-participants`: `races/joining-and-playing.md`; The race modal part filled: avatars, nicknames, NFT badges
+- `app-delegation-duration-selector` (banner): `races/delegated-play.md`; The duration list open: 1, 7 and 30 days
+- `app-delegation-revoke` (banner): `races/delegated-play.md`, `races/without-the-wallet-app.md`; The Revoke button, shown while a grant is live
 
 ## nfts/
 
-| Shot                                         | Page                                                | Shows                                                                                  |
-| -------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `app-marketplace-collections`                | `nfts/README.md`                                    | The marketplace filtered by collection                                                 |
-| `app-surprise-item` **(banner)**             | `nfts/README.md`                                    | A tier sold as a surprise: the shadow, the placeholder name, the real price and supply |
-| `app-create-race-runner-locked` **(banner)** | `nfts/runners.md`                                   | The Runner tab: no Runner found, and what one unlocks                                  |
-| `nft-runner-example` **(banner)**            | `nfts/runners.md`                                   | The Runner tier: price, minted count, Mint and Rent                                    |
-| `app-boost-picker` **(banner)**              | `nfts/boosts.md`, `races/joining-and-playing.md`    | The boost picker in the join modal, each with its percentage                           |
-| `app-boost-badges-lobby` **(banner)**        | `nfts/boosts.md`                                    | A participant list where two players carry boost badges                                |
-| `app-no-boost-race-card` **(banner)**        | `nfts/boosts.md`                                    | A sponsored race card: 🚫 where the bolt goes                                          |
-| `app-cosmetic-picker` **(banner)**           | `nfts/cosmetics.md`, `races/joining-and-playing.md` | The cosmetics tab with one skin selected and the duck preview                          |
-| `app-mystery-box-types`                      | `nfts/mystery-boxes.md`                             | A box leading its section, price and remaining supply                                  |
-| `app-mystery-box-reveal` **(banner)**        | `nfts/mystery-boxes.md`                             | The reveal progress part way through, one step active                                  |
-| `app-marketplace-rent-button` **(banner)**   | `nfts/renting.md`                                   | A tier with Rent beside Mint                                                           |
-| `app-duck-create-steps` **(banner)**         | `nfts/creating-a-duck.md`                           | The step bar on the Create tab, the step under way marked                              |
-| `app-duck-create-prompt` **(banner)**        | `nfts/creating-a-duck.md`                           | Title and description over the four reference slots, the first required                |
-| `app-duck-create-payment` **(banner)**       | `nfts/creating-a-duck.md`                           | The price, the voucher field and Apply, and the pay button                             |
-| `app-duck-create-concepts`                   | `nfts/creating-a-duck.md`                           | The numbered concepts, front and back, each with its check mark                        |
-| `app-duck-create-stages` **(banner)**        | `nfts/creating-a-duck.md`                           | Concept, Animation and Finishing under a creation title                                |
-| `app-duck-turntable` **(banner)**            | `nfts/creating-a-duck.md`                           | The turntable offer on a minted duck, with its price                                   |
-| `app-duck-create-discard` **(banner)**       | `nfts/creating-a-duck.md`                           | The discard dialog: the voucher coming back, and confirm                               |
-| `app-duck-creations-list` **(banner)**       | `nfts/creating-a-duck.md`                           | A wallet's creations, newest first, one of them minted                                 |
-| `app-rental-duration-slider` **(banner)**    | `nfts/renting.md`                                   | The day slider, its shortcut marks and the total above Rent                            |
-| `app-rented-ribbon` **(banner)**             | `nfts/renting.md`                                   | The create form Runner tab: a tile under the RENTED band                               |
+- `app-marketplace-collections`: `nfts/README.md`; The marketplace filtered by collection
+- `app-surprise-item` (banner): `nfts/README.md`; A tier sold as a surprise: the shadow, the placeholder name, the real price and supply
+- `app-create-race-runner-locked` (banner): `nfts/runners.md`; The Runner tab: no Runner found, and what one unlocks
+- `nft-runner-example` (banner): `nfts/runners.md`; The Runner tier: price, minted count, Mint and Rent
+- `app-boost-picker` (banner): `nfts/boosts.md`, `races/joining-and-playing.md`; The boost picker in the join modal, each with its percentage
+- `app-boost-badges-lobby` (banner): `nfts/boosts.md`; A participant list where two players carry boost badges
+- `app-no-boost-race-card` (banner): `nfts/boosts.md`; A sponsored race card: 🚫 where the bolt goes
+- `app-cosmetic-picker` (banner): `nfts/cosmetics.md`, `races/joining-and-playing.md`; The cosmetics tab with one skin selected and the duck preview
+- `app-mystery-box-types`: `nfts/mystery-boxes.md`; A box leading its section, price and remaining supply
+- `app-mystery-box-reveal` (banner): `nfts/mystery-boxes.md`; The reveal progress part way through, one step active
+- `app-marketplace-rent-button` (banner): `nfts/renting.md`; A tier with Rent beside Mint
+- `app-duck-create-steps` (banner): `nfts/creating-a-duck.md`; The step bar on the Create tab, the step under way marked
+- `app-duck-create-prompt` (banner): `nfts/creating-a-duck.md`; Title and description over the four reference slots, the first required
+- `app-duck-create-payment` (banner): `nfts/creating-a-duck.md`; The price, the voucher field and Apply, and the pay button
+- `app-duck-create-concepts`: `nfts/creating-a-duck.md`; The numbered concepts, front and back, each with its check mark
+- `app-duck-create-stages` (banner): `nfts/creating-a-duck.md`; Concept, Animation and Finishing under a creation title
+- `app-duck-turntable` (banner): `nfts/creating-a-duck.md`; The turntable offer on a minted duck, with its price
+- `app-duck-create-discard` (banner): `nfts/creating-a-duck.md`; The discard dialog: the voucher coming back, and confirm
+- `app-duck-creations-list` (banner): `nfts/creating-a-duck.md`; A wallet's creations, newest first, one of them minted
+- `app-rental-duration-slider` (banner): `nfts/renting.md`; The day slider, its shortcut marks and the total above Rent
+- `app-rented-ribbon` (banner): `nfts/renting.md`; The create form Runner tab: a tile under the RENTED band
 
 Single files in the same folder, all artwork:
 
-| File                         | Page                | Shows                                                              |
-| ---------------------------- | ------------------- | ------------------------------------------------------------------ |
-| `nft-card-runners.png`       | `nfts/README.md`    | Card cover, 16:9, a band cut from the Runner art                   |
-| `nft-card-boosts.png`        | `nfts/README.md`    | Card cover, 16:9, a band cut from a Boost's art                    |
-| `nft-card-tracks.png`        | `nfts/README.md`    | Card cover, 16:9, a track background                               |
-| `nft-card-cosmetics.png`     | `nfts/README.md`    | Card cover, 16:9, three duck skins side by side                    |
-| `nft-card-mystery-boxes.png` | `nfts/README.md`    | Card cover, 16:9, a sealed box                                     |
-| `nft-card-renting.png`       | `nfts/README.md`    | Card cover, 16:9, a rented Runner: RENTED band and countdown       |
-| `nft-cosmetics-grid.png`     | `nfts/cosmetics.md` | Two rows of four skins, each with name, rarity and price           |
-| `nft-track-examples.png`     | `nfts/tracks.md`    | The four built in tracks side by side: day, night, sunset, sunrise |
+- `nft-card-runners.png`: `nfts/README.md`; Card cover, 16:9, a band cut from the Runner art
+- `nft-card-boosts.png`: `nfts/README.md`; Card cover, 16:9, a band cut from a Boost's art
+- `nft-card-tracks.png`: `nfts/README.md`; Card cover, 16:9, a track background
+- `nft-card-cosmetics.png`: `nfts/README.md`; Card cover, 16:9, three duck skins side by side
+- `nft-card-mystery-boxes.png`: `nfts/README.md`; Card cover, 16:9, a sealed box
+- `nft-card-renting.png`: `nfts/README.md`; Card cover, 16:9, a rented Runner: RENTED band and countdown
+- `nft-cosmetics-grid.png`: `nfts/cosmetics.md`; Two rows of four skins, each with name, rarity and price
+- `nft-track-examples.png`: `nfts/tracks.md`; The four built in tracks side by side: day, night, sunset, sunrise
 
 ## competition/
 
-| Shot                                        | Page                               | Shows                                                               |
-| ------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
-| `app-jackpot-tab`                           | `competition/jackpot.md`           | The Jackpot tab: pot, countdown, rules and current standings        |
-| `app-jackpot-standings` **(banner)**        | `competition/jackpot.md`           | Current standings: the finalists as they stand, own row highlighted |
-| `app-jackpot-race-chip` **(banner)**        | `competition/jackpot.md`           | A race card header carrying the jackpot mark                        |
-| `app-jackpot-claim` **(banner)**            | `competition/jackpot.md`           | A past draw under Past winners, with its claim button               |
-| `app-jackpot-verify` **(banner)**           | `competition/jackpot.md`           | A draw's record: transactions, finalists, random number             |
-| `app-tournament-page`                       | `competition/tournaments.md`       | The tournament page: window, rule, pot, standings                   |
-| `app-tournament-claim` **(banner)**         | `competition/tournaments.md`       | The claim button with one member's share and its dollar figure      |
-| `app-team-roster`                           | `competition/teams.md`             | A team page with roster, member cap and seats left                  |
-| `app-join-requests-inbox` **(banner)**      | `competition/teams.md`             | Pending requests under the roster, ticked, with accept and reject   |
-| `app-rematch-offer` **(banner)**            | `competition/rematches.md`         | The claim screen with Offer Rematch beside the claim button         |
-| `app-rematch-chain-indicator` **(banner)**  | `competition/rematches.md`         | A card with its Rematch #N badge                                    |
-| `app-badges-profile`                        | `competition/badges.md`            | A profile badge grid, unlocked lit and locked dimmed                |
-| `app-lottery-box` **(banner)**              | `competition/community-lottery.md` | The empty EuroMillions box: a blank line and 1 to 50 (supplied)     |
-| `app-lottery-pick` **(banner)**             | `competition/community-lottery.md` | The box after a pick: 2 in the first slot, and its reply (supplied) |
-| `app-team-invite` **(banner)**              | `competition/teams.md`             | The INVITE LINK box: link, copy button, invite message              |
-| `app-rematch-proposer-options` **(banner)** | `competition/rematches.md`         | The propose dialog: commentary, announcement, track, runner         |
+- `app-jackpot-tab`: `competition/jackpot.md`; The Jackpot tab: pot, countdown, rules and current standings
+- `app-jackpot-standings` (banner): `competition/jackpot.md`; Current standings: the finalists as they stand, own row highlighted
+- `app-jackpot-race-chip` (banner): `competition/jackpot.md`; A race card header carrying the jackpot mark
+- `app-jackpot-claim` (banner): `competition/jackpot.md`; A past draw under Past winners, with its claim button
+- `app-jackpot-verify` (banner): `competition/jackpot.md`; A draw's record: transactions, finalists, random number
+- `app-tournament-page`: `competition/tournaments.md`; The tournament page: window, rule, pot, standings
+- `app-tournament-claim` (banner): `competition/tournaments.md`; The claim button with one member's share and its dollar figure
+- `app-team-roster`: `competition/teams.md`; A team page with roster, member cap and seats left
+- `app-join-requests-inbox` (banner): `competition/teams.md`; Pending requests under the roster, ticked, with accept and reject
+- `app-rematch-offer` (banner): `competition/rematches.md`; The claim screen with Offer Rematch beside the claim button
+- `app-rematch-chain-indicator` (banner): `competition/rematches.md`; A card with its Rematch #N badge
+- `app-badges-profile`: `competition/badges.md`; A profile badge grid, unlocked lit and locked dimmed
+- `app-lottery-box` (banner): `competition/community-lottery.md`; The empty EuroMillions box: a blank line and 1 to 50 (supplied)
+- `app-lottery-pick` (banner): `competition/community-lottery.md`; The box after a pick: 2 in the first slot, and its reply (supplied)
+- `app-team-invite` (banner): `competition/teams.md`; The INVITE LINK box: link, copy button, invite message
+- `app-rematch-proposer-options` (banner): `competition/rematches.md`; The propose dialog: commentary, announcement, track, runner
 
 ## economy/
 
-| Shot                                         | Page                                                    | Shows                                                          |
-| -------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------- |
-| `app-play-balance-panel` **(banner)**        | `economy/player-vault.md`                               | The Play Balance panel: balances, deposit, withdraw            |
-| `app-payout-target-setting` **(banner)**     | `economy/player-vault.md`                               | The payout target control, wallet selected                     |
-| `app-creator-share-preview` **(banner)**     | `economy/creator-fee-share.md`                          | The create form line stating what the race will earn           |
-| `app-unclaimed-items-banner` **(banner)**    | `economy/refunds-and-rent.md`                           | The top bar strip: trophy, total owed, CLAIM ALL               |
-| `app-currency-picker` **(banner)**           | `economy/spl-tokens.md`                                 | The currency picker listing SOL and the supported tokens       |
-| `app-vault-deposit-dialog` **(banner)**      | `economy/player-vault.md`                               | The deposit dialog, currency chosen and an amount entered      |
-| `app-vault-withdraw-dialog` **(banner)**     | `economy/player-vault.md`                               | The withdraw dialog with the whole balance available           |
-| `app-pay-from-balance-checkbox` **(banner)** | `economy/player-vault.md`, `economy/fees-and-prizes.md` | The pay race entries from your Play Balance checkbox           |
-| `app-close-account-button` **(banner)**      | `economy/refunds-and-rent.md`                           | The close account button with the refundable rent stated       |
-| `app-usd-estimate` **(banner)**              | `economy/fees-and-prizes.md`                            | One amount in SOL with its approximate dollar figure beside it |
+- `app-play-balance-panel` (banner): `economy/player-vault.md`; The Play Balance panel: balances, deposit, withdraw
+- `app-payout-target-setting` (banner): `economy/player-vault.md`; The payout target control, wallet selected
+- `app-creator-share-preview` (banner): `economy/creator-fee-share.md`; The create form line stating what the race will earn
+- `app-unclaimed-items-banner` (banner): `economy/refunds-and-rent.md`; The top bar strip: trophy, total owed, CLAIM ALL
+- `app-currency-picker` (banner): `economy/spl-tokens.md`; The currency picker listing SOL and the supported tokens
+- `app-vault-deposit-dialog` (banner): `economy/player-vault.md`; The deposit dialog, currency chosen and an amount entered
+- `app-vault-withdraw-dialog` (banner): `economy/player-vault.md`; The withdraw dialog with the whole balance available
+- `app-pay-from-balance-checkbox` (banner): `economy/player-vault.md`, `economy/fees-and-prizes.md`; The pay race entries from your Play Balance checkbox
+- `app-close-account-button` (banner): `economy/refunds-and-rent.md`; The close account button with the refundable rent stated
+- `app-usd-estimate` (banner): `economy/fees-and-prizes.md`; One amount in SOL with its approximate dollar figure beside it
+
+## token/
+
+Captured on theluckyducks.com/token, /presale, /otc and /staking, which are separate
+apps from the dApp. A presale shot needs a sale with both phases set, and
+the allocation banner a wallet the priority rule admits, signed in.
+
+- `app-token-page`: `token/the-token.md`; The token page from the top: the address, the facts, the allocations and the official pool
+- `app-token-facts` (banner): `token/the-token.md`; The supply and the three facts: mint, freeze and metadata authority, each with its state
+- `app-token-allocations` (banner): `token/the-token.md`; The allocations table: share, wallet, lock with its provider link, released so far
+- `app-token-giveaways` (banner): `token/the-token.md`; The giveaway list: each free race, when it ended, its prize and winners
+- `app-presale-sale`: `token/presale.md`; A sale's page: both phases with price and wallet limit, sold against the minimum, the buy form
+- `app-presale-allocation` (banner): `token/presale.md`; The priority phase signed in: the wallet's allocation and what it has bought
+- `app-presale-claim` (banner): `token/presale.md`; The claim button with the released amount not yet claimed
+- `app-staking-pools`: `token/staking.md`; The pool list: what each stakes and pays, its APY, lock, fees, staked, and reward reserve
+- `app-staking-stake-form` (banner): `token/staking.md`; The stake form: the amount, the deposit fee, the amount credited and when the lock ends
+- `app-otc-desk`: `token/otc-desk.md`; The order book: sell and buy orders, size, price, each against the pool
+- `app-otc-post-order` (banner): `token/otc-desk.md`; The post order form with the parts, taker, expiry, release and Telegram and X choices
+- `app-otc-pool-floor` (banner): `token/otc-desk.md`; An order marked under the floor, the pool's price and the floor beside it
+- `app-otc-releases` (banner): `token/otc-desk.md`; My desk: a release part way out, with Claim
 
 ## trust/
 
 The four explorer shots are captured on a real mainnet race, which means the
-figures in them are public already. Use the **same** race for all four, so a
+figures in them are public already. Use the same race for all four, so a
 reader following the page sees one story. A phone capture of an explorer is
 still worth having: it is where most readers will actually check a race.
 
-| Shot                                      | Page                                         | Shows                                                                 |
-| ----------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------- |
-| `app-verify-fairness`                     | `trust/verifying-a-race.md`                  | The verification screen: seed, formula and recomputed times           |
-| `app-verify-timings`                      | `trust/verifying-a-race.md`                  | One racer's segment table: hash, weight, speed, distance, time        |
-| `app-verify-entry` **(banner)**           | `trust/verifying-a-race.md`                  | A finished race's Verify fairness panel: the seed and the Verify link |
-| `app-verification-tab`                    | `trust/verification.md`                      | The verification tab with the enabled providers                       |
-| `app-verified-badge` **(banner)**         | `trust/verification.md`                      | A lobby row with the green verified dot on the avatar                 |
-| `explorer-program-account`                | `trust/verifying-a-race.md`                  | Upgradeable, upgrade authority, last deployed slot                    |
-| `explorer-race-account-data`              | `trust/verifying-a-race.md`                  | The decoded race account: creator, fee, status, players, winners      |
-| `explorer-orao-randomness-account`        | `trust/verifying-a-race.md`                  | The randomness account with the ORAO program as its owner             |
-| `explorer-claim-prize-balances`           | `trust/verifying-a-race.md`                  | Balance changes on the claim tx: vault out, winner in, fee in         |
-| `app-nickname-avatar-fields` **(banner)** | `trust/verification.md`, `nfts/cosmetics.md` | The nickname field and the avatar upload                              |
-| `app-telegram-handle-toggle` **(banner)** | `trust/verification.md`                      | The Telegram handle toggle, switched off                              |
+- `app-verify-fairness`: `trust/verifying-a-race.md`; The verification screen: seed, formula and recomputed times
+- `app-verify-timings`: `trust/verifying-a-race.md`; One racer's segment table: hash, weight, speed, distance, time
+- `app-verify-entry` (banner): `trust/verifying-a-race.md`; A finished race's Verify fairness panel: the seed and the Verify link
+- `app-verification-tab`: `trust/verification.md`; The verification tab with the enabled providers
+- `app-verified-badge` (banner): `trust/verification.md`; A lobby row with the green verified dot on the avatar
+- `explorer-program-account`: `trust/verifying-a-race.md`; Upgradeable, upgrade authority, last deployed slot
+- `explorer-race-account-data`: `trust/verifying-a-race.md`; The decoded race account: creator, fee, status, players, winners
+- `explorer-orao-randomness-account`: `trust/verifying-a-race.md`; The randomness account with the ORAO program as its owner
+- `explorer-claim-prize-balances`: `trust/verifying-a-race.md`; Balance changes on the claim tx: vault out, winner in, fee in
+- `app-nickname-avatar-fields` (banner): `trust/verification.md`, `nfts/cosmetics.md`; The nickname field and the avatar upload
+- `app-telegram-handle-toggle` (banner): `trust/verification.md`; The Telegram handle toggle, switched off
 
 ## help/
 
-| Shot                                 | Page                      | Shows                                                      |
-| ------------------------------------ | ------------------------- | ---------------------------------------------------------- |
-| `app-preferences-panel` **(banner)** | `help/preferences.md`     | The preferences panel: its switches and the Save button    |
-| `tg-race-announcement`               | `help/telegram-bot.md`    | A race announcement card in a group: entry fee, mode, link |
-| `social-card-telegram.png`           | `help/social-networks.md` | Card cover, 16:9, the Telegram group                       |
-| `social-card-x.png`                  | `help/social-networks.md` | Card cover, 16:9, the X profile                            |
-| `social-card-youtube.png`            | `help/social-networks.md` | Card cover, 16:9, the YouTube channel                      |
-| `social-card-tiktok.png`             | `help/social-networks.md` | Card cover, 16:9, the TikTok profile                       |
+- `app-preferences-panel` (banner): `help/preferences.md`; The preferences panel: its switches and the Save button
+- `tg-race-announcement`: `help/telegram-bot.md`; A race announcement card in a group: entry fee, mode, link
+- `tg-buy-post` (banner): `help/telegram-bot.md`; A buy post: SOL paid, tokens bought, price, market cap, buyer, the chart buttons
+- `tg-stake-reply` (banner): `help/telegram-bot.md`; The answer to /stake: each pool's staked total, stakers, APY, lock and reserve
+- `tg-otc-offer-post` (banner): `help/telegram-bot.md`; An OTC offer post: side, size, price against the pool's, the order button
+- `social-card-telegram.png`: `help/social-networks.md`; Card cover, 16:9, the Telegram group
+- `social-card-x.png`: `help/social-networks.md`; Card cover, 16:9, the X profile
+- `social-card-youtube.png`: `help/social-networks.md`; Card cover, 16:9, the YouTube channel
+- `social-card-tiktok.png`: `help/social-networks.md`; Card cover, 16:9, the TikTok profile
 
-The phone half of this one is the Telegram mobile app, not a browser.
+The phone half of `tg-race-announcement` is the Telegram mobile app, not a
+browser.
 
 ## Pages that deliberately carry no image
 

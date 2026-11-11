@@ -1,5 +1,5 @@
 ---
-description: Images on a page. Which class of image a sentence wants, the figure markup, captions and alt text, file names, and how the files in .gitbook/assets are created and replaced. Read before adding, changing or removing a figure.
+description: "Images on a page. Which class of image a sentence wants, the figure markup, captions and alt text, file names, and how the files in .gitbook/assets are created and replaced. Read before adding, changing or removing a figure."
 paths:
   - "docs/**/*.md"
   - ".gitbook/assets/**"
@@ -10,8 +10,12 @@ paths:
 
 Files live in `.gitbook/assets/<section>/`, where the section is the page
 folder that uses them, and `brand/` holds the artwork of the welcome page. A
-page references one by relative path (`CLAUDE.md`, "Layout"), always inside a
-`<figure>` with an `alt` and a `<figcaption>`, never as a bare `![]()`.
+page references one by relative path, always inside a `<figure>` with an
+`alt` and a `<figcaption>`, never as a bare `![]()`. The asset folder sits at
+the repository root, not in `docs/`, because GitBook requires it there, so a
+page climbs out of the content tree to reach an image:
+`../../.gitbook/assets/<section>/x.png` from a page in a section,
+`../.gitbook/assets/brand/x.png` from `docs/README.md`.
 
 `.claude/docs/screenshots.md` is the shot list: every image, what it must
 show, and how to capture one. A new image gets a row there, and
@@ -20,11 +24,11 @@ show, and how to capture one. A new image gets a row there, and
 ## Which image does a sentence want?
 
 - **Talking about part of a page**, a button, a combobox, a slider, a chip, a
-  cost box? A **banner**: one wide image, `<stem>-banner.png`, on its own with
+  cost box? A banner: one wide image, `<stem>-banner.png`, on its own with
   no columns block. A control looks the same on a phone, so a pair of it is two
   pictures of one thing.
 - **Showing a whole screen or view**, a lobby, a modal, a page, an explorer
-  view? A **pair**: `<stem>-desktop.png` and `<stem>-mobile.png` in a single
+  view? A pair: `<stem>-desktop.png` and `<stem>-mobile.png` in a single
   `{% columns %}` block at 70/30, desktop first, which GitBook stacks on a
   narrow screen. The platform is played on phones, so a desktop-only screen
   describes an experience most readers do not have, and a pair split over two

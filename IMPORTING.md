@@ -36,27 +36,27 @@ a stylesheet (`CLAUDE.md`, "Publishing").
 ## The literal syntax of each block
 
 Which block does which job is `.claude/rules/pages.md`. This is how each one is
-written, and every one of them survives a round trip through the web editor:
+written, and every one of them survives a round trip through the web editor.
+Each line: block: syntax.
 
-| Block             | Syntax                                                              |
-| ----------------- | ------------------------------------------------------------------- |
-| Front matter      | `icon:`, `description:`, and `cover:`/`coverY:` on `docs/README.md` |
-| Hint              | `{% hint style="info\|success\|warning\|danger" %}`                 |
-| Stepper           | `{% stepper %}` / `{% step %}` with an `###` title per step         |
-| Tabs              | `{% tabs %}` / `{% tab title="..." %}`                              |
-| Expandable        | `<details>` with a `<summary>`                                      |
-| Cards             | `<table data-view="cards">` with a `data-card-target` column        |
-| Page link card    | `{% content-ref url="..." %}`                                       |
-| Code with a title | `{% code title="..." %}` around a fenced block                      |
-| Diagram           | A fenced ` ```mermaid ` block                                       |
-| Columns           | `{% columns %}` / `{% column width="70%" %}`                        |
-| Image             | `<figure><img src="..." alt="..."><figcaption>`                     |
+- Front matter: `icon:`, `description:`, and `cover:`/`coverY:` on
+  `docs/README.md`
+- Hint: `{% hint style="info|success|warning|danger" %}`
+- Stepper: `{% stepper %}` / `{% step %}` with an `###` title per step
+- Tabs: `{% tabs %}` / `{% tab title="..." %}`
+- Expandable: `<details>` with a `<summary>`
+- Cards: `<table data-view="cards">` with a `data-card-target` column
+- Page link card: `{% content-ref url="..." %}`
+- Code with a title: `{% code title="..." %}` around a fenced block
+- Diagram: a fenced ` ```mermaid ` block
+- Columns: `{% columns %}` / `{% column width="70%" %}`
+- Image: `<figure><img src="..." alt="..."><figcaption>`
 
 Page icons are Font Awesome names without the `fa-` prefix. A card cover is
 linked from a hidden `data-card-cover` column rather than shown in a figure.
 
 ## What the web editor does to images
 
-GitBook writes anything uploaded through the editor **flat** into
+GitBook writes anything uploaded through the editor flat into
 `.gitbook/assets/`, which is why a capture is replaced through git
 (`.claude/rules/images.md`).

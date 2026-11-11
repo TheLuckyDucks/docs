@@ -1,5 +1,5 @@
 ---
-description: Where a fact lives on the site, and how to add, move or rename a page or a heading without breaking a public URL. Read before stating a rule or a number on a page, and before touching SUMMARY.md or .gitbook.yaml.
+description: "Where a fact lives on the site, and how to add, move or rename a page or a heading without breaking a public URL. Read before stating a rule or a number on a page, and before touching SUMMARY.md or .gitbook.yaml."
 paths:
   - "docs/**/*.md"
   - ".gitbook.yaml"
@@ -41,15 +41,15 @@ disagree come about.
 
 ## How do I add a page?
 
-1. Find the topic in the ownership table of `OVERVIEW.md`. If it is already
+1. Find the topic in the ownership list of `OVERVIEW.md`. If it is already
    owned, the change is a section on that page, not a new file.
 2. If it is genuinely new, create the `.md` in the folder whose section a
    reader would look in, with a filename that reads as the topic and `icon:`
    and `description:` front matter (`pages.md`).
-3. Add its line to `SUMMARY.md` under the right heading. **A page missing from
-   `SUMMARY.md` is unreachable through navigation**, which is the most common
+3. Add its line to `SUMMARY.md` under the right heading. A page missing from
+   `SUMMARY.md` is unreachable through navigation, which is the most common
    way a new page silently does nothing. `npm run check` fails on it.
-4. Add its row to the ownership table.
+4. Add its line to the ownership list.
 5. Link to it from the page a reader is most likely to be on when the question
    occurs to them. A page nothing links to is a page nothing reaches.
 
@@ -82,7 +82,7 @@ same batch:
 2. Its line in `SUMMARY.md`.
 3. Every inbound link, every `{% content-ref %}` and every asset reference.
    Links are relative paths, so grep for the old filename and fix every hit.
-4. Its rows in `.claude/docs/OVERVIEW.md` and `.claude/docs/screenshots.md`.
+4. Its lines in `.claude/docs/OVERVIEW.md` and `.claude/docs/screenshots.md`.
 5. A line in the hand-over naming the old path, the new one and the redirect.
 
 ## May I reword a heading?

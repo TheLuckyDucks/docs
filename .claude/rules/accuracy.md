@@ -1,5 +1,5 @@
 ---
-description: Where every number and mechanic on a page comes from, and how to check one. Read before writing or changing any figure, limit, fee, percentage or timeout.
+description: "Where every number and mechanic on a page comes from, and how to check one. Read before writing or changing any figure, limit, fee, percentage or timeout."
 paths:
   - "docs/**/*.md"
 ---
@@ -8,15 +8,15 @@ paths:
 
 Nothing in this repository verifies a claim. `npm run check` reads structure
 only, so a page with perfect front matter, balanced blocks and live links can
-still carry a wrong fee, and it ships silently for a player to act on. **A
-number on a money page is the highest-cost defect this bundle can carry.**
+still carry a wrong fee, and it ships silently for a player to act on. A
+number on a money page is the highest-cost defect this bundle can carry.
 
 Every mechanic described here is behaviour of a deployed Solana program, and
 every figure is either a constant in that program or a value in its on-chain
 config. Both are decided in the product repository, checked out beside this
 one: `../TheLuckyDucks` from this root, holding `Anchor/` (the program),
-`Backend/` (everything off chain) and `Frontend/app/` (the dApp). The paths in
-the table below are inside it.
+`Backend/` (everything off chain) and `Frontend/packages/app/` (the dApp). The
+paths in the list below are inside it.
 
 **Read the product, never another page.** A page reads as confident current
 documentation, so a claim carried from one page to the next looks corroborated
@@ -25,16 +25,25 @@ this rule: the commands that produce each answer.
 
 ## Claim to source
 
-| A page claims                                                | Authoritative source                                                               |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| A live fee, penalty, cap, timeout, percentage or threshold   | `Anchor/platform-config-mainnet.json`                                              |
-| A default, a bound on a tunable, or a hard-coded limit       | `Anchor/programs/lucky_ducks/src/state.rs`                                         |
-| What an instruction does, and the edge cases around it       | `Anchor/docs/program-reference.md`                                                 |
-| Refunds, penalties, rent, who pays for what                  | `Anchor/docs/program-reference.md`, `Anchor/.claude/rules/vault-and-delegation.md` |
-| Randomness, VRF, how a winner is determined                  | `Anchor/programs/lucky_ducks/src/helpers.rs`, `calculate_finish_time`              |
-| A wallet flow, a button, what a screen shows                 | `Frontend/app/`, mapped by `Frontend/app/docs/OVERVIEW.md`                         |
-| XP, leaderboards, badges, standings, the Telegram bot, raids | `Backend/`. None of it is on chain                                                 |
-| A collection address, or which NFT gates what                | `Anchor/platform-config-mainnet.json`, the `nftCollection*` fields                 |
+Each line: what a page claims: the authoritative source.
+
+- A live fee, penalty, cap, timeout, percentage or threshold:
+  `Anchor/platform-config-mainnet.json`
+- A default, a bound on a tunable, or a hard-coded limit:
+  `Anchor/programs/lucky_ducks/src/state.rs`
+- What an instruction does, and the edge cases around it:
+  `Anchor/docs/program-reference.md`
+- Refunds, penalties, rent, who pays for what:
+  `Anchor/docs/program-reference.md`,
+  `Anchor/.claude/rules/vault-and-delegation.md`
+- Randomness, VRF, how a winner is determined:
+  `Anchor/programs/lucky_ducks/src/helpers.rs`, `calculate_finish_time`
+- A wallet flow, a button, what a screen shows: `Frontend/packages/app/`,
+  mapped by `Frontend/docs/packages/APP.md`
+- XP, leaderboards, badges, standings, the Telegram bot, raids: `Backend/`.
+  None of it is on chain
+- A collection address, or which NFT gates what:
+  `Anchor/platform-config-mainnet.json`, the `nftCollection*` fields
 
 The general shape of the game, written for a player rather than a developer, is
 `Anchor/README.md`. It is the closest thing to a peer of this bundle and a good
@@ -43,7 +52,7 @@ first stop when a page needs to describe a mechanic end to end.
 
 ## Mainnet is the source, not the constant
 
-`state.rs` constants are what a **freshly initialized** config is seeded with.
+`state.rs` constants are what a freshly initialized config is seeded with.
 The live values are in the on-chain `PlatformConfig` account, and
 `platform-config-mainnet.json` mirrors it. They diverge whenever an
 administrator updates a tunable, which is a transaction rather than a release.
@@ -57,7 +66,8 @@ page and the JSON disagree, neither settles it. Leave the figure as it is and
 report both, for the owner to settle against the on-chain account.
 
 **This is the single largest source of wrong figures on these pages.** Four
-divergences were live at once, each one a page that had quoted the constant:
+divergences have been live at once, each one a page that had quoted the
+constant:
 the race duration ceiling (`maxRaceDuration` well under `MAX_RACE_DURATION`),
 the lobby window (`joinTimeout` far above `JOIN_TIMEOUT_DEFAULT`), the team cap
 (`maxTeamMembers` above `MAX_TEAM_MEMBERS_DEFAULT`) and the per-action delegate
@@ -126,12 +136,12 @@ is ten percent and `creatorFeeShareRunnerBps: 4000` is forty.
   still. Before editing `help/telegram-bot.md`, read the renderer and the
   catalogue rather than the page. `.claude/docs/verifying-claims.md` names the files.
 - **When the frontend and the program disagree, the program wins, and a
-  frontend COMMENT is the weakest evidence in the repository.** The NFT Holders
-  gate is premium in `is_premium_base`, so creating one always needs a Runner,
-  while a comment in the create form still described it as free when the
-  collection is whitelisted. Whitelisting decides which collections may gate;
-  it has not decided create cost since that changed. A page written from the UI
-  layer inherits whatever the UI has not caught up on.
+  frontend comment is the weakest evidence in the repository.** The NFT
+  Holders gate is premium in `is_premium_base`, so creating one always needs a
+  Runner, while a comment in the create form described it as free when the
+  collection is whitelisted. Whitelisting decides which collections may gate,
+  not what creating a race costs. A page written from the UI layer inherits
+  whatever the UI has not caught up on.
 
 ## Phrase a tunable so an admin change cannot falsify the page
 
@@ -140,7 +150,7 @@ states one as a fact goes stale without anybody editing anything.
 
 - Prefer the mechanism: "the platform fee drops as the entry fee rises, and the
   exact rate is shown before you confirm."
-- When an exact figure genuinely helps, put it in a **worked example** with its
+- When an exact figure genuinely helps, put it in a worked example with its
   own stated inputs. An example that says "a 1 SOL pool at a 3 percent fee"
   stays readable and honest even after the rate moves, in a way that "the fee is
   3 percent" does not.
@@ -150,7 +160,7 @@ states one as a fact goes stale without anybody editing anything.
 - Where the figure itself is stated, it is stated on the page that owns the
   subject and nowhere else (`site-structure.md`).
 
-Values that are NOT admin-tunable can be stated flatly: the program id, the
+Values that are not admin-tunable can be stated flatly: the program id, the
 podium split having exactly three places, the fact that there are no ties, the
 fact that a seed cannot be changed after it is committed.
 

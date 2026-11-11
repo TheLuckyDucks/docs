@@ -7,7 +7,7 @@
 
 Reading the product repository is expected, not exceptional. It is checked out
 beside this one, at `../TheLuckyDucks` from this root, and its `Anchor/`,
-`Backend/` and `Frontend/app/` are all fair evidence: a claim on a page should
+`Backend/` and `Frontend/packages/app/` are all fair evidence: a claim on a page should
 be traceable to one of them. Every command below starts from this
 repository's root.
 
@@ -41,9 +41,10 @@ curl -s https://api.mainnet-beta.solana.com -H 'Content-Type: application/json' 
   -d '{"jsonrpc":"2.0","id":1,"method":"getMinimumBalanceForRentExemption","params":[0]}'
 ```
 
-The dApp's own copy of that math is `Frontend/app/src/shared/utils/rent.ts`
+The dApp's own copy of that math is
+`Frontend/packages/app/src/shared/utils/rent.ts`
 (`PLAYER_ACCOUNT_LEN`, `ATA_SIZE`), which takes the rate from `/config`. A race
-account is sized for a **full lobby**, so its rent depends on the seats. Set
+account is sized for a full lobby, so its rent depends on the seats. Set
 `RATE` to the result above divided by 128:
 
 ```bash
@@ -69,7 +70,7 @@ Two files, in this order:
 
 1. `Anchor/programs/lucky_ducks/src/contexts.rs` for the instruction's
    `#[derive(Accounts)]`. A `Signer<'info>` field is a required signature; no
-   `Signer` at all means **anyone** can submit it.
+   `Signer` at all means anyone can submit it.
 2. The handler in `Anchor/programs/lucky_ducks/src/instructions/` for the
    `require!` lines, which are the refusals.
 
@@ -83,7 +84,7 @@ and no participant restriction.
 For any page that describes an action, the validator for that instruction is the
 list of ways a player can be told no. `validate_rematch_proposal` in
 `helpers.rs` is a good shape to read: sponsored races, non-1v1 races, an
-unfinished race, an **already claimed prize**, a non-participant, an existing
+unfinished race, an already claimed prize, a non-participant, an existing
 proposal, a full chain and a closed window are each a refusal, and a page that
 mentions none of them is describing the happy path only.
 
@@ -103,24 +104,30 @@ grep -n "let is_premium_base" -A 14 programs/lucky_ducks/src/instructions/race_c
 Every disjunct in it is a Runner requirement, and any page saying a feature is
 free has to be checked against that list rather than against the create form.
 The gates are the trap: two of them sit outside the expression and are free,
-and the other two are inside it. A validation gate that is NOT in the list is
+and the other two are inside it. A validation gate that is not in the list is
 still checked against the creator, but through their own join rather than a
 create-time rule, so a host who never takes a seat is never asked.
 
 ## Off-chain surfaces
 
-None of this is in the program, and all of it moves without a release.
+None of this is in the program, and all of it moves without a release. Each
+line: claim on a page: where the truth lives.
 
-| Claim on a page                    | Where the truth lives                                                  |
-| ---------------------------------- | ---------------------------------------------------------------------- |
-| Badge names, thresholds, emoji     | `Backend/packages/shared/src/constants/badges.constants.ts`            |
-| Telegram commands and descriptions | `Backend/packages/shared/src/constants/telegram.constants.ts`          |
-| The raid card and its labels       | `Backend/packages/telegram/src/raids-render.ts`, `raids-card.ts`       |
-| Raid point weights                 | `Backend/packages/telegram/src/raids-x.ts` (`LIKE_PTS`, `RT_PTS`, ...) |
-| The race announcement card         | `Backend/packages/telegram/src/race-card.ts`                           |
-| Which collections rent             | `Backend/packages/api/src/controllers/nft-rental.controller.ts`        |
-| The lounge arcade                  | `Backend/packages/shared/src/constants/arcade.constants.ts`            |
-| A screen, a button, a default      | `Frontend/app/src/`, mapped by `Frontend/app/docs/OVERVIEW.md`         |
+- Badge names, thresholds, emoji:
+  `Backend/packages/shared/src/constants/badges.constants.ts`
+- Telegram commands and descriptions:
+  `Backend/packages/shared/src/constants/telegram.constants.ts`
+- The raid card and its labels:
+  `Backend/packages/telegram/src/raids/raids-render.ts`, `raids-card.ts`
+- Raid point weights: `Backend/packages/telegram/src/raids/raids-x.ts`
+  (`LIKE_PTS`, `RT_PTS`, ...)
+- The race announcement card:
+  `Backend/packages/telegram/src/race/race-card.ts`
+- Which collections rent:
+  `Backend/packages/api/src/controllers/nft-rental.controller.ts`
+- The lounge arcade: `Backend/packages/shared/src/constants/arcade.constants.ts`
+- A screen, a button, a default: `Frontend/packages/app/src/`, mapped by
+  `Frontend/docs/packages/APP.md`
 
 The badge catalogue is worth extracting rather than reading:
 

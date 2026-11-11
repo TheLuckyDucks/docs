@@ -1,5 +1,5 @@
 ---
-description: How to write a player-facing page. Reader, reading level, vocabulary, voice, length, front matter, blocks, links and page structure. Read before editing any page.
+description: "How to write a player-facing page. Reader, reading level, vocabulary, voice, length, front matter, blocks, links and page structure. Read before editing any page."
 paths:
   - "docs/**/*.md"
 ---
@@ -17,12 +17,12 @@ the site describing mainnet only. Images are `images.md`.
 
 ## Who is reading: one page, two readers
 
-Every page has to work for someone whose first wallet is a week old **and** for
+Every page has to work for someone whose first wallet is a week old and for
 someone who has been in crypto for years. That is one page, not two, and not a
 compromise page that half-serves both.
 
-The rule that makes it possible: **assume no prior knowledge, but never spend a
-reader's patience proving it.**
+**Assume no prior knowledge, but never spend a reader's patience proving
+it.** That is the rule that makes it possible.
 
 - **Explain a term in the clause where it first appears, then move on.** "The
   race vault, the account that holds everyone's entry fees until the race
@@ -50,16 +50,18 @@ is the wrong sentence.
 
 Assume general crypto literacy is being built, not present. Wallet, token, NFT,
 transaction and fee can stand alone. Anything Solana-specific or
-platform-specific gets its clause.
+platform-specific gets its clause. Each line: do not write, unexplained: write
+instead.
 
-| Do not write, unexplained      | Write                                                            |
-| ------------------------------ | ---------------------------------------------------------------- |
-| "your PlayerAccount PDA"       | "your player account, which the program creates for your wallet" |
-| "rent-exempt"                  | "the small SOL deposit Solana requires to keep an account open"  |
-| "the VRF callback"             | "when the randomness arrives on chain"                           |
-| "ATA"                          | "your token account for that token"                              |
-| "lamports"                     | SOL, converted. Lamports only where an explorer will show them   |
-| "CPI", "discriminator", "seed" | Nothing. These belong in the program repository                  |
+- "your PlayerAccount PDA": "your player account, which the program creates
+  for your wallet"
+- "rent-exempt": "the small SOL deposit Solana requires to keep an account
+  open"
+- "the VRF callback": "when the randomness arrives on chain"
+- "ATA": "your token account for that token"
+- "lamports": SOL, converted. Lamports only where an explorer will show them
+- "CPI", "discriminator", "seed": nothing. These belong in the program
+  repository
 
 - `help/glossary.md` exists for terms a player meets repeatedly. An entry there
   is not a substitute for the clause on first use; it is the second copy for
@@ -142,21 +144,24 @@ goes for a bare ` #`, which YAML reads as a comment. `npm run check` parses ever
 GitBook's own blocks are used deliberately, because they survive a round trip
 through the web editor. Each one has a job; reach for the block that matches
 the job, not the one that looks busiest. `IMPORTING.md` lists the literal
-syntax of each.
+syntax of each. Each line: block: what it is for.
 
-| Block                       | For                                                                    |
-| --------------------------- | ---------------------------------------------------------------------- |
-| `{% hint style="info" %}`   | A consequence a reader will otherwise miss                             |
-| `style="warning"`           | A cost, a penalty, a window that closes, a thing that cannot be undone |
-| `style="danger"`            | The reader losing something: a rental voided, a flag that never resets |
-| `style="success"`           | A guarantee the platform cannot take away                              |
-| `{% stepper %}`             | A procedure a reader performs in order, once                           |
-| `{% tabs %}`                | Two or three parallel cases where a reader needs one of them           |
-| `<details>`                 | Depth a reader does not need to finish the page                        |
-| `<table data-view="cards">` | Navigation, on a page whose job is to send readers elsewhere           |
-| `{% content-ref %}`         | The one page a reader most likely wants next, at the foot of a page    |
-| `{% code title="..." %}`    | Something a reader copies, where the title says what it is             |
-| ` ```mermaid `              | A flow or a lifecycle that a list would describe worse                 |
+- `{% hint style="info" %}`: a consequence a reader will otherwise miss
+- `style="warning"`: a cost, a penalty, a window that closes, a thing that
+  cannot be undone
+- `style="danger"`: the reader losing something: a rental voided, a flag that
+  never resets
+- `style="success"`: a guarantee the platform cannot take away
+- `{% stepper %}`: a procedure a reader performs in order, once
+- `{% tabs %}`: two or three parallel cases where a reader needs one of them
+- `<details>`: depth a reader does not need to finish the page
+- `<table data-view="cards">`: navigation, on a page whose job is to send
+  readers elsewhere
+- `{% content-ref %}`: the one page a reader most likely wants next, at the
+  foot of a page
+- `{% code title="..." %}`: something a reader copies, where the title says
+  what it is
+- ` ```mermaid `: a flow or a lifecycle that a list would describe worse
 
 - **A hint is for a consequence, not for emphasis.** A page where three
   paragraphs in four sit in a coloured box has no emphasis left.

@@ -13,7 +13,7 @@ hand every time.
 
 ## When do I run anything?
 
-**A run of small requests is ONE batch.** While requests are still arriving,
+**A run of small requests is one batch.** While requests are still arriving,
 only edit: nothing is scanned, formatted or checked per request or per file.
 Write each edit to the conventions as it is made. When the edits have stopped,
 once, in this order:
@@ -35,12 +35,15 @@ Windows host, so this needs no WSL:
 perl -ne 'print "$ARGV:$.: $_" if /\xE2\x80\x94|\xE2\x80\x93|\S - \S|[Tt]witter|[Tt]weet|\r/; close ARGV if eof' <the files the batch touched>
 ```
 
-| A hit on                        | Means                                                                    |
-| ------------------------------- | ------------------------------------------------------------------------ |
-| An em dash or an en dash        | Repunctuate (`CLAUDE.md`). The checker fails on either in a page as well |
-| A hyphen with a space each side | A dash in disguise, unless it is a minus sign in arithmetic              |
-| The words Twitter or tweet      | "X" and "post", unless the line is the rule that forbids them            |
-| A carriage return               | A CRLF file. Convert it to LF, nothing else                              |
+Each line: a hit on: what it means.
+
+- An em dash or an en dash: repunctuate (`CLAUDE.md`). The checker fails on
+  either in a page as well.
+- A hyphen with a space each side: a dash in disguise, unless it is a minus
+  sign in arithmetic.
+- The words Twitter or tweet: "X" and "post", unless the line is the rule that
+  forbids them.
+- A carriage return: a CRLF file. Convert it to LF, nothing else.
 
 A hit is read and fixed by hand, and only that file is scanned again.
 
@@ -76,19 +79,18 @@ only (`accuracy.md`).
 The tree, uncommitted, and a report the owner can review before running git:
 
 - what changed, page by page, and why;
-- **which pages describe behaviour mainnet does not have yet**, so that they
-  are held rather than pushed (`CLAUDE.md`, "Publishing");
+- which pages describe behaviour mainnet does not have yet, so that they are
+  held rather than pushed (`CLAUDE.md`, "Publishing");
 - every page that moved or was renamed, with its redirect;
 - any figure that could not be verified, said as such;
 - the check's verdict line.
 
 ## May I launch an agent?
 
-**An agent is launched only on the owner's word.** The owner's rule: "agents
-usage consumes a lot of tokens: limit its usage: ask user before launching
-agent". An agent starts with none of the session's context and rebuilds it by
-reading, so even a small task costs a large number of tokens, several at once
-multiply that, and the owner pays for every one.
+**An agent is launched only on the owner's word**, because agents consume a
+lot of tokens. An agent starts with none of the session's context and rebuilds
+it by reading, so even a small task costs a large number of tokens, several at
+once multiply that, and the owner pays for every one.
 
 - **Ask first.** Say what the agent would do, why the session cannot
   reasonably do it itself and roughly how large it is, and wait for a yes.
