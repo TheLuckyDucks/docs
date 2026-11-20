@@ -24,8 +24,8 @@ Each line: section: what it answers.
 - Races: How do I create or join one, and what are all these options
 - NFTs: What do the four collections change
 - Competition: Tournaments, teams, rematches, badges, the jackpot
+- Arcade: The five games, where to play them, and what a run earns
 - Economy: What does it cost, what do I get back
-- The Token: What the token is, and how to buy, stake or trade it
 - Trust and Fairness: Why should I believe the result
 - Help: FAQ, glossary, bot, where to find us
 
@@ -61,16 +61,13 @@ it owns.
 - `competition/badges.md`: Badges and XP milestones
 - `competition/jackpot.md`: The jackpot: the pot, who is entered, the draw
 - `competition/community-lottery.md`: The community lottery
+- `arcade/README.md`: The Arcade games, where to play them, their boards, XP and sharing
 - `economy/fees-and-prizes.md`: Entry fee, platform fee tiers, the jackpot fee, prize pool
 - `economy/player-vault.md`: The pre-funded balance, deposits, withdrawals, payout target
 - `economy/player-vault.md`: Which balance the top bar button shows
 - `economy/creator-fee-share.md`: Creator fee share
 - `economy/refunds-and-rent.md`: Withdrawals, refunds, rent, surcharges
 - `economy/spl-tokens.md`: Token races, supported programs
-- `token/the-token.md`: The Lucky Ducks token: its address, its facts, the allocations, the official pool, giveaway races
-- `token/presale.md`: Buying in the presale: the phases, the minimum, refunds, claims
-- `token/staking.md`: Staking pools, rewards, unbonding, closing a position
-- `token/otc-desk.md`: The OTC desk: orders, the fee, the pool's floor, releases
 - `trust/fairness.md`: ORAO VRF and how a seed becomes a winner
 - `trust/verifying-a-race.md`: Checking a race yourself in an explorer
 - `trust/verification.md`: Player profiles and verification badges
@@ -118,6 +115,7 @@ section where one is named: the fact.
 - `competition/tournaments.md`: Tournament scoring, the pot, its fee ceiling, claiming
 - `competition/rematches.md`: Rematch rules, windows, chain depth, why race numbers skip
 - `competition/jackpot.md`: Jackpot period, finalists, the draw, cancelling, claiming
+- `arcade/README.md`: Each game's rules, its XP per day, the boards and a Telegram account's best moving to a wallet
 - `help/telegram-bot.md`: Jackpot posts in Telegram; raid point weights; how a card names you
 
 ## Topics that live on more than one page

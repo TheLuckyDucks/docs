@@ -40,6 +40,10 @@
 - [The jackpot](competition/jackpot.md)
 - [The community lottery](competition/community-lottery.md)
 
+## Arcade
+
+- [The Arcade](arcade/README.md)
+
 ## Economy
 
 - [Fees and prizes](economy/fees-and-prizes.md)

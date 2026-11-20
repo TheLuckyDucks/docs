@@ -69,20 +69,20 @@ Players level on the score, at zero or at any other, are separated by the second
 
 Each jackpot is ranked by one scoring rule. They are the rules [tournaments](tournaments.md#scoring) use, applied to each player on their own, and the **Ranked by** box names the one in force.
 
-| Ranked by                      | Your score                                                       | Second figure |
-| ------------------------------ | ---------------------------------------------------------------- | ------------- |
-| Wins                           | Races won                                                        | Races run     |
-| Races                          | Races run                                                        | Wins          |
-| XP                             | XP earned from race results                                      | Wins          |
-| SOL volume                     | SOL paid in entry fees                                           | Wins          |
-| Podiums                        | Top 3 finishes                                                   | Wins          |
-| Races created                  | Races you created that ran to a result                           | Races run     |
-| Race size                      | The seats of the races you ran                                   | Races run     |
-| Wins and races                 | Each win counts 0.6 and each race you run counts 0.4             | Races run     |
-| Losses and races               | Each race you do not win counts 0.6 and each race you run 0.4    | Races run     |
-| Last places and races          | Each last place counts 0.6 and each race you run counts 0.4      | Races run     |
-| Races, double with a Boost NFT | Each race you run counts 1, and 2 when you run it with a Boost   | Races run     |
-| Races, double with a Duck NFT  | Each race you run counts 1, and 2 when you run it with a Duck    | Races run     |
+| Ranked by                      | Your score                                                     | Second figure |
+| ------------------------------ | -------------------------------------------------------------- | ------------- |
+| Wins                           | Races won                                                      | Races run     |
+| Races                          | Races run                                                      | Wins          |
+| XP                             | XP earned from race results                                    | Wins          |
+| SOL volume                     | SOL paid in entry fees                                         | Wins          |
+| Podiums                        | Top 3 finishes                                                 | Wins          |
+| Races created                  | Races you created that ran to a result                         | Races run     |
+| Race size                      | The seats of the races you ran                                 | Races run     |
+| Wins and races                 | Each win counts 0.6 and each race you run counts 0.4           | Races run     |
+| Losses and races               | Each race you do not win counts 0.6 and each race you run 0.4  | Races run     |
+| Last places and races          | Each last place counts 0.6 and each race you run counts 0.4    | Races run     |
+| Races, double with a Boost NFT | Each race you run counts 1, and 2 when you run it with a Boost | Races run     |
+| Races, double with a Duck NFT  | Each race you run counts 1, and 2 when you run it with a Duck  | Races run     |
 
 The two rules that reward losing count taking part as well. One race run and lost scores 1. Eight races run with no loss score 3.2, and nine races with one loss score 4.2. So entering once and losing does not put a player ahead of those who keep racing.
 
@@ -145,7 +145,7 @@ There is no deadline. An unclaimed prize waits for you, and nobody else can take
 
 ## Following along in Telegram
 
-`/jackpot` in a group with the bot shows the jackpot that is running, and groups get a post at each stage of one. The Lucky Ducks X account may post the start and the winner too. See [The Lucky Ducks Telegram bot](../help/telegram-bot.md#jackpot-announcements).
+`/jackpot` in a group with the bot shows the jackpot that is running, and groups get a post at each stage of one. The post that the jackpot has ended lets you watch the draw without leaving Telegram: the same wheel, turning to the winner at the same moment as on the site. The Lucky Ducks X account may post the start and the winner too. See [The Lucky Ducks Telegram bot](../help/telegram-bot.md#jackpot-announcements).
 
 ## Checking a draw yourself
 

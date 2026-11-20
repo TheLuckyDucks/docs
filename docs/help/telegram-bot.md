@@ -5,27 +5,34 @@ description: Commands, group announcements and raids. What everyone can use, and
 
 # The Lucky Ducks Telegram bot
 
-The bot keeps a group in sync with on chain racing and rewards engagement on X. Join the main group at [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks), or add the bot to your own. [Social networks](social-networks.md) lists every channel.
+The bot keeps a group in sync with on chain racing and rewards engagement on X. Join the main group at [t.me/TheLuckyDucks](https://t.me/TheLuckyDucks), or ask the team to set the bot up in your own. [Social networks](social-networks.md) lists every channel.
 
 ## Everyday commands
 
-| Command        | What it does                                                     |
-| -------------- | ---------------------------------------------------------------- |
-| `/duck`        | Your player stats. `/player` and `/user` do the same             |
-| `/leaderboard` | Top players. Add `day`, `week`, `month` or `all` for a window    |
-| `/races`       | Open races                                                       |
-| `/race`        | One race in detail                                               |
-| `/team`        | Your team's stats                                                |
-| `/teams`       | Browse teams                                                     |
-| `/jackpot`     | The jackpot: the pot, the next draw, the rules and the leaders   |
-| `/raidboard`   | The raid leaderboard. Add `week` or `month` for a shorter window |
-| `/duckfact`    | A random duck fact                                               |
-| `/joke`        | A random duck joke                                               |
-| `/url`         | Every link and social                                            |
-| `/help`        | The command list                                                 |
+| Command        | What it does                                                                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/duck`        | Your player stats. `/player` and `/user` do the same                                                                                                    |
+| `/leaderboard` | Top players. Add `day`, `week`, `month` or `all` for a window                                                                                           |
+| `/races`       | Open races                                                                                                                                              |
+| `/race`        | One race in detail                                                                                                                                      |
+| `/team`        | Your team's stats                                                                                                                                       |
+| `/teams`       | Browse teams                                                                                                                                            |
+| `/lottery`     | The [community lottery](../competition/community-lottery.md) line that is open, with buttons to pick a number in Telegram or on the site                |
+| `/arcade`      | [The Arcade](../arcade/README.md): a button for each game, and one to the site. `/play`, `/game` and `/games` do the same                               |
+| `/luckyfight`  | Play [Lucky Fight](../arcade/README.md#lucky-fight), or challenge someone with `/fight @handle`. `/duckfight` and `/fight` do the same                  |
+| `/luckysquad`  | Play [Lucky Squad](../arcade/README.md#lucky-squad), the side-scrolling run-and-gun, or keep a squad to the players you name with `/luckysquad @handle` |
+| `/luckyflaps`  | Play [Lucky Flaps](../arcade/README.md#lucky-flaps), the tap-to-flap flyer                                                                              |
+| `/luckyshot`   | Play [Lucky Shot](../arcade/README.md#lucky-shot), the duck shooting game                                                                               |
+| `/luckydodge`  | Play [Lucky Dodge](../arcade/README.md#lucky-dodge): dodge the falling flock                                                                            |
+| `/jackpot`     | The jackpot: the pot, the next draw, the rules and the leaders                                                                                          |
+| `/raidboard`   | The raid leaderboard. Add `week` or `month` for a shorter window                                                                                        |
+| `/duckfact`    | A random duck fact                                                                                                                                      |
+| `/joke`        | A random duck joke                                                                                                                                      |
+| `/url`         | Every link and social                                                                                                                                   |
+| `/help`        | The command list                                                                                                                                        |
 
 {% hint style="info" %}
-Whoever added the bot to a group can narrow that list, so a command you use in one group may be absent in another. `/help` always shows what the group you are in actually offers.
+The bot answers these only in groups the team has set it up in, and each group answers only the commands switched on for it, so a command you use in one group may get no answer in another. A private chat with the bot answers none of them. The "/" menu in a group lists what that group answers.
 {% endhint %}
 
 ## Race announcements
@@ -58,9 +65,29 @@ Announcements name you by the first of these that exists: your Telegram handle, 
 
 Your handle is shown only if you opted in, and the same switch turns it off again. See [Player verification](../trust/verification.md#telegram-handle-in-group-announcements).
 
+## The Arcade
+
+`/arcade` posts a button for each game of [the Arcade](../arcade/README.md), and each game's own command posts it alone, with a **Play** button that opens it inside Telegram. A group's `/arcade` offers only the games whose commands it answers. Your runs count on the same boards as on the site, and with your Telegram account linked to your wallet they earn XP and badges: see [Player verification](../trust/verification.md).
+
+A Lucky Fight between two players gets a result post in the group, with **Rematch** and **Replay** buttons. See [Lucky Fight](../arcade/README.md#lucky-fight).
+
 ## Jackpot announcements
 
-The bot posts three times for each period of [the jackpot](../competition/jackpot.md): when it starts, with the draw time and the rules; when it ends, with the prize and the finalists; and when the winner is drawn, naming them with their avatar. The start post is headed **New jackpot #N**, N being the number the Jackpot tab shows for that jackpot, and it carries the jackpot picture when the platform has set one. `/jackpot` answers with the card of the jackpot that is running whenever you ask: its number, the pot as it stands, the draw time, the rules and the leaders so far. A period that ends with no winner gets one post saying the pot rolls over, and none when the pot is empty. A jackpot the platform cancels before its draw gets one post saying so, with what the pot held. Each post has a button to the Jackpot tab, **View on dApp** on the start post, and the start and winner posts gain a button to the same announcement on X when there is one. Whoever added the bot to a group can switch each of those posts off for it.
+The bot posts three times for each period of [the jackpot](../competition/jackpot.md): when it starts, with the draw time and the rules; when it ends, with the prize and the finalists; and when the winner is drawn, naming them with their avatar. The start post is headed **New jackpot #N**, N being the number the Jackpot tab shows for that jackpot, and it carries the jackpot picture when the platform has set one. `/jackpot` answers with the card of the jackpot that is running whenever you ask: its number, the pot as it stands, the draw time, the rules and the leaders so far. A period that ends with no winner gets one post saying the pot rolls over, and none when the pot is empty. A jackpot the platform cancels before its draw gets one post saying so, with what the pot held. Each post has a button to the Jackpot tab, **View on dApp** on the start post, and the start and winner posts gain a button to the same announcement on X when there is one. The post that the jackpot has ended goes out as the draw starts and carries **Watch the draw on Telegram**: it opens the jackpot inside Telegram, with the pot, the countdown and the wheel turning to the winner, and the standings under it. Nothing in it needs a wallet or a tap. The winner post and the answer to `/jackpot` carry **View on Telegram**, which opens the same view. Whoever added the bot to a group can switch each of those posts off for it.
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../../.gitbook/assets/help/tg-jackpot-draw-desktop.png" alt="The jackpot draw opened inside Telegram: the pot, the countdown, the wheel of finalists turning, and the standings below it"><figcaption><p>The same draw as on the site, turning to the winner at the same moment.</p></figcaption></figure>
+
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../../.gitbook/assets/help/tg-jackpot-draw-mobile.png" alt="The jackpot draw opened inside Telegram: the pot, the countdown, the wheel of finalists turning, and the standings below it, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
+{% endcolumn %}
+{% endcolumns %}
 
 ## Raids: boost the post together
 

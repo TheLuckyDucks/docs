@@ -33,6 +33,21 @@ const SINGLE_ASSETS = new Set([
   "docs-hero-race-canvas.png",
   "nft-cosmetics-grid.png",
   "nft-track-examples.png",
+  "docs-arcade-lucky-shot.png",
+  "docs-arcade-lucky-flaps.png",
+  "docs-arcade-lucky-dodge.png",
+  "docs-arcade-lucky-fight.png",
+  "docs-arcade-lucky-squad.png",
+  "docs-lucky-flaps-weather.png",
+  "docs-lucky-flaps-fish.png",
+  "docs-lucky-dodge-play.png",
+  "docs-badges-lucky-dodge.png",
+  "docs-badges-lucky-shot.png",
+  "docs-badges-lucky-fight.png",
+  "docs-badges-lucky-flaps.png",
+  "docs-badges-lucky-squad.png",
+  "docs-badges-losing-streak.png",
+  "docs-badges-last-place.png",
 ]);
 // A card cover fills a hidden `data-card-cover` column rather than a figure:
 // one 16:9 file, no viewport pair. One prefix per card table.

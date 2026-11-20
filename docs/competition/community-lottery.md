@@ -25,7 +25,7 @@ A round opens in a set window on a day the UK actually draws, and the first play
 
 Sunday has no round, because nothing is drawn on a Sunday.
 
-Every pick appears in the row for everyone watching, and the box closes itself when the last slot goes.
+Every pick appears in the row for everyone watching, on the site and in Telegram alike. Once the last slot goes, no number can be picked.
 
 ## Picking a number
 
@@ -62,7 +62,35 @@ To stop being asked at all, untick **Take part in picking the daily lottery line
 
 ## Following along in Telegram
 
-Channels can opt into lottery announcements: the window opening, each number as it goes, and the finished line. Ask a channel admin to switch it on, or see [The Lucky Ducks Telegram bot](../help/telegram-bot.md).
+Channels can opt into lottery announcements: the window opening, each number as it goes, and the finished line. Ask a channel admin to switch it on, or see [The Lucky Ducks Telegram bot](../help/telegram-bot.md). `/lottery` shows the line that is open, in a group where the bot answers it.
+
+## Picking from Telegram
+
+The opening post, each number's post until the line is full, and the answer to `/lottery` carry two buttons: **Pick on dApp** opens the site, and **Pick on Telegram** opens the same line inside Telegram, filling as players pick. Tap a free number there and it is yours, on the same terms as on the site.
+
+<figure><img src="../../.gitbook/assets/competition/tg-lottery-post-banner.png" alt="A lottery post in a Telegram group, the line so far above two buttons: Pick on dApp and Pick on Telegram"><figcaption><p>Either button picks into the same line.</p></figcaption></figure>
+
+{% columns %}
+{% column width="70%" %}
+
+<figure><img src="../../.gitbook/assets/competition/tg-lottery-picker-desktop.png" alt="The lottery picker opened inside Telegram: the line with some slots filled, and the numbers below the taken ones marked"><figcaption><p>The line fills here as players pick, on the site or in Telegram.</p></figcaption></figure>
+
+{% endcolumn %}
+
+{% column width="30%" %}
+
+<figure><img src="../../.gitbook/assets/competition/tg-lottery-picker-mobile.png" alt="The lottery picker opened inside Telegram: the line with some slots filled, and the numbers below the taken ones marked, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+
+{% endcolumn %}
+{% endcolumns %}
+
+Your number goes to the wallet your Telegram account is linked to. Telegram tells the bot who you are, so you never sign in or connect a wallet inside Telegram.
+
+{% hint style="info" %}
+**Your Telegram account has to be linked to your wallet first**, by verifying with Telegram on the site. Until it is, the picker shows the line but not the numbers, and its **Open the dApp** button takes you to where you link it. See [Player verification](../trust/verification.md).
+{% endhint %}
+
+The picker tells you if you already hold a number in the line. Left open for a long time, it asks to be closed and opened again from a post.
 
 ## Things worth knowing
 

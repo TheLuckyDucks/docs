@@ -127,6 +127,9 @@ All four run through WSL, in the form above; when and in what order is
 - **`npm run capture`** takes real screenshots off the live site into
   `.gitbook/assets/`, overwriting only what `npm run assets` made
   (`.claude/docs/screenshots.md`, "How to capture").
+- **`npm run badges`** rebuilds the badge medal rows on `competition/badges.md`
+  from the medals the product repository serves, overwriting only what
+  `npm run assets` made. Rerun it whenever the medals are redrawn.
 
 ## Conventions that hold in every file
 

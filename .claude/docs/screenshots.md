@@ -32,13 +32,13 @@ together, and makes an orphan obvious.
 
 Each line: folder: what it holds.
 
-- `.gitbook/assets/brand/`: Artwork for the root `README.md`: cover, hero, and 8 card covers
+- `.gitbook/assets/brand/`: Artwork for the root `README.md`: cover, hero, and 9 card covers
 - `introduction/`: Getting Started
 - `races/`: Races, and the cost breakdown `economy/` borrows
 - `nfts/`: Collections, boxes, renting, and the six card covers
 - `competition/`: Tournaments, teams, rematches, badges, lottery
+- `arcade/`: The Arcade games
 - `economy/`: Vault, payouts, creator share, refunds, tokens
-- `token/`: The token page, the presale, staking, the OTC desk
 - `trust/`: Verification, and the four block explorer shots
 - `help/`: Telegram, and the four social card covers
 
@@ -155,8 +155,8 @@ script.
 - `docs-card-races.png`: `README.md`; Card cover, 16:9, the create form: mode, fee, currency, seats, validation
 - `docs-card-nfts.png`: `README.md`; Card cover, 16:9, three Boost tiers with their prices
 - `docs-card-competition.png`: `README.md`; Card cover, 16:9, the badge wall on a player page
+- `docs-card-arcade.png`: `README.md`; Card cover, 16:9, the four game cards in a grid
 - `docs-card-economy.png`: `README.md`; Card cover, 16:9, a race podium with each place's payout
-- `docs-card-token.png`: `README.md`; Card cover, 16:9, the token page: the address, the facts and the allocations
 - `docs-card-trust.png`: `README.md`; Card cover, 16:9, the winners recorded on chain, with the speed chart
 - `docs-card-help.png`: `README.md`; Card cover, 16:9, the FAQ on the landing page
 
@@ -255,10 +255,51 @@ Single files in the same folder, all artwork:
 - `app-rematch-offer` (banner): `competition/rematches.md`; The claim screen with Offer Rematch beside the claim button
 - `app-rematch-chain-indicator` (banner): `competition/rematches.md`; A card with its Rematch #N badge
 - `app-badges-profile`: `competition/badges.md`; A profile badge grid, unlocked lit and locked dimmed
+- `app-badge-tooltip` (banner): `competition/badges.md`; A badge's tooltip on the wallet page: the medal at 64x64, then the name, what it asks for and the group
 - `app-lottery-box` (banner): `competition/community-lottery.md`; The empty EuroMillions box: a blank line and 1 to 50 (supplied)
 - `app-lottery-pick` (banner): `competition/community-lottery.md`; The box after a pick: 2 in the first slot, and its reply (supplied)
 - `app-team-invite` (banner): `competition/teams.md`; The INVITE LINK box: link, copy button, invite message
 - `app-rematch-proposer-options` (banner): `competition/rematches.md`; The propose dialog: commentary, announcement, track, runner
+- `tg-lottery-post` (banner): `competition/community-lottery.md`; A lottery post in a group: the line so far, Pick on dApp and Pick on Telegram
+- `tg-lottery-picker`: `competition/community-lottery.md`; The picker inside Telegram for a linked account: the line part filled, the free numbers below
+  Single files in the same folder, all artwork: each `docs-badges-*` puts one
+  ladder's medals side by side (an Arcade game's three, the losing streaks, the last places), drawn from
+  `Frontend/packages/www/public/badges/<id>.png` in the product repository by
+  `npm run badges`.
+
+- `docs-badges-lucky-dodge.png`: `competition/badges.md`; Quick Feet, Untouchable and Flock Phantom, side by side
+- `docs-badges-lucky-shot.png`: `competition/badges.md`; Sharp Eye, Deadeye and Marsh Legend, side by side
+- `docs-badges-lucky-fight.png`: `competition/badges.md`; Lucky Fighter, Pond Champion and Flawless Legend, side by side
+- `docs-badges-lucky-flaps.png`: `competition/badges.md`; Fledgling, Skyrunner and Full Flight, side by side
+- `docs-badges-lucky-squad.png`: `competition/badges.md`; Squad Recruit, Reed Commando and Squad Legend, side by side
+- `docs-badges-losing-streak.png`: `competition/badges.md`; Unlucky Duck, Lame Duck, Cursed Duck and Lost Cause, side by side
+- `docs-badges-last-place.png`: `competition/badges.md`; Tail Feather, Back Marker, Rear Guard, Wooden Spoon and Lanterne Rouge, side by side
+
+## arcade/
+
+- `app-arcade-hub`: `arcade/README.md`; The chat panel flipped to the arcade in a race lounge: one button per game, in the hub's order: Lucky Fight, Lucky Squad, Lucky Flaps, Lucky Shot, Lucky Dodge
+- `tg-lucky-shot-game`: `arcade/README.md`; Lucky Shot mid-round: ducks over the reeds, the round clock, shots left, the hit tally
+- `tg-lucky-shot-board` (banner): `arcade/README.md`; The start screen, linked: Your best, XP today against the cap, Play, the leaderboard
+- `tg-arcade-card` (banner): `arcade/README.md`; The /arcade post in a group: Lucky Fight on its own row, the other games two to a row, Visit The Lucky Ducks under them
+- `app-lucky-fight-start` (banner): `arcade/README.md`; The Lucky Fight start screen: wins, streak, XP today, SOLO MODE, a blinking JOIN with the challenger's avatar, the board
+- `tg-lucky-fight-game`: `arcade/README.md`; Lucky Fight mid-round: two ducks fighting on the dock, both health bars, rounds won, the round clock
+- `tg-lucky-fight-result` (banner): `arcade/README.md`; The bot's reply under a fight post: the winner's avatar, rounds, damage, score, Rematch and Replay
+- `tg-lucky-squad-game`: `arcade/README.md`; Lucky Squad mid-arena: the duck behind a sandbag wall, rifle crows across it, a caged duckling, the health bar, lives, weapon, grenades and arena clock
+- `app-lucky-squad-open` (banner): `arcade/README.md`; Lucky Squad's OPEN A SQUAD screen on the site, in the game window: you first with your avatar, nickname and shortened wallet, three invite fields (one holding a picked player, one showing suggestions), OPEN and BACK
+- `tg-lucky-flaps-start` (banner): `arcade/README.md`; The start screen, linked: best, XP today, SOLO MODE, OPEN TO THE FLOCK, JOIN THE FLOCK, the board
+
+Single files in the same folder, all artwork. The `docs-arcade-*` are the
+games' share cards, copied from the og-metadata service's `assets/arcade/<game>.png`
+in the product repository.
+
+- `docs-arcade-lucky-shot.png`: `arcade/README.md`; Lucky Shot's share card, 1200x630
+- `docs-arcade-lucky-flaps.png`: `arcade/README.md`; Lucky Flaps' share card, 1200x630
+- `docs-arcade-lucky-dodge.png`: `arcade/README.md`; Lucky Dodge's share card, 1200x630
+- `docs-arcade-lucky-fight.png`: `arcade/README.md`; Lucky Fight's share card, 1200x630
+- `docs-arcade-lucky-squad.png`: `arcade/README.md`; Lucky Squad's share card, 1200x630
+- `docs-lucky-flaps-weather.png`: `arcade/README.md`; Five frames of one stage side by side: rain, storm bolt, storm flash, snow under the Rush, fog
+- `docs-lucky-flaps-fish.png`: `arcade/README.md`; Five moments of one gold carp's leap between two gates, from the splash out to the splash back
+- `docs-lucky-dodge-play.png`: `arcade/README.md`; Three moments side by side, no HUD: open water far below, clouds under and over the flock, small shadows cast off to the side
 
 ## economy/
 
@@ -272,26 +313,6 @@ Single files in the same folder, all artwork:
 - `app-pay-from-balance-checkbox` (banner): `economy/player-vault.md`, `economy/fees-and-prizes.md`; The pay race entries from your Play Balance checkbox
 - `app-close-account-button` (banner): `economy/refunds-and-rent.md`; The close account button with the refundable rent stated
 - `app-usd-estimate` (banner): `economy/fees-and-prizes.md`; One amount in SOL with its approximate dollar figure beside it
-
-## token/
-
-Captured on theluckyducks.com/token, /presale, /otc and /staking, which are separate
-apps from the dApp. A presale shot needs a sale with both phases set, and
-the allocation banner a wallet the priority rule admits, signed in.
-
-- `app-token-page`: `token/the-token.md`; The token page from the top: the address, the facts, the allocations and the official pool
-- `app-token-facts` (banner): `token/the-token.md`; The supply and the three facts: mint, freeze and metadata authority, each with its state
-- `app-token-allocations` (banner): `token/the-token.md`; The allocations table: share, wallet, lock with its provider link, released so far
-- `app-token-giveaways` (banner): `token/the-token.md`; The giveaway list: each free race, when it ended, its prize and winners
-- `app-presale-sale`: `token/presale.md`; A sale's page: both phases with price and wallet limit, sold against the minimum, the buy form
-- `app-presale-allocation` (banner): `token/presale.md`; The priority phase signed in: the wallet's allocation and what it has bought
-- `app-presale-claim` (banner): `token/presale.md`; The claim button with the released amount not yet claimed
-- `app-staking-pools`: `token/staking.md`; The pool list: what each stakes and pays, its APY, lock, fees, staked, and reward reserve
-- `app-staking-stake-form` (banner): `token/staking.md`; The stake form: the amount, the deposit fee, the amount credited and when the lock ends
-- `app-otc-desk`: `token/otc-desk.md`; The order book: sell and buy orders, size, price, each against the pool
-- `app-otc-post-order` (banner): `token/otc-desk.md`; The post order form with the parts, taker, expiry, release and Telegram and X choices
-- `app-otc-pool-floor` (banner): `token/otc-desk.md`; An order marked under the floor, the pool's price and the floor beside it
-- `app-otc-releases` (banner): `token/otc-desk.md`; My desk: a release part way out, with Claim
 
 ## trust/
 
@@ -316,9 +337,7 @@ still worth having: it is where most readers will actually check a race.
 
 - `app-preferences-panel` (banner): `help/preferences.md`; The preferences panel: its switches and the Save button
 - `tg-race-announcement`: `help/telegram-bot.md`; A race announcement card in a group: entry fee, mode, link
-- `tg-buy-post` (banner): `help/telegram-bot.md`; A buy post: SOL paid, tokens bought, price, market cap, buyer, the chart buttons
-- `tg-stake-reply` (banner): `help/telegram-bot.md`; The answer to /stake: each pool's staked total, stakers, APY, lock and reserve
-- `tg-otc-offer-post` (banner): `help/telegram-bot.md`; An OTC offer post: side, size, price against the pool's, the order button
+- `tg-jackpot-draw`: `help/telegram-bot.md`; The draw viewer inside Telegram: pot, countdown, the wheel turning, the standings
 - `social-card-telegram.png`: `help/social-networks.md`; Card cover, 16:9, the Telegram group
 - `social-card-x.png`: `help/social-networks.md`; Card cover, 16:9, the X profile
 - `social-card-youtube.png`: `help/social-networks.md`; Card cover, 16:9, the YouTube channel
