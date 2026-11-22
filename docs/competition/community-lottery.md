@@ -68,7 +68,7 @@ Channels can opt into lottery announcements: the window opening, each number as 
 
 The opening post, each number's post until the line is full, and the answer to `/lottery` carry two buttons: **Pick on dApp** opens the site, and **Pick on Telegram** opens the same line inside Telegram, filling as players pick. Tap a free number there and it is yours, on the same terms as on the site.
 
-<figure><img src="../../.gitbook/assets/competition/tg-lottery-post-banner.png" alt="A lottery post in a Telegram group, the line so far above two buttons: Pick on dApp and Pick on Telegram"><figcaption><p>Either button picks into the same line.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/competition/tg-lottery-post-banner.png" alt="A lottery post in a Telegram group, the line so far above two buttons: Pick on dApp and Pick on Telegram" width="375"><figcaption><p>Either button picks into the same line.</p></figcaption></figure>
 
 {% columns %}
 {% column width="70%" %}

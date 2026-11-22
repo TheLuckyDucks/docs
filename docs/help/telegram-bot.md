@@ -39,19 +39,7 @@ The bot answers these only in groups the team has set it up in, and each group a
 
 The bot posts a card when a race opens, and again for wins and prize claims, each linking to the race on the site. A race card carries the name, the entry fee and prize, the seats, the mode, who may join, the duration and join window, and the creator. Extras appear as their own rows when they apply: a sponsored badge, a minimum account age, a Track, AI commentary, a flexible start threshold, and whether boosts are allowed or disabled. A rematch says so instead, with its depth and the race the chain started from.
 
-{% columns %}
-{% column width="70%" %}
-
-<figure><img src="../../.gitbook/assets/help/tg-race-announcement-desktop.png" alt="A race announcement card posted by the bot in a Telegram group, with the entry fee, mode and a link"><figcaption><p>Announcements carry the race link, so the group can join from the chat.</p></figcaption></figure>
-
-{% endcolumn %}
-
-{% column width="30%" %}
-
-<figure><img src="../../.gitbook/assets/help/tg-race-announcement-mobile.png" alt="A race announcement card posted by the bot in a Telegram group, with the entry fee, mode and a link, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
-
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src="../../.gitbook/assets/help/tg-race-announcement-banner.png" alt="A New Race post by the bot: the race's picture, then its name, entry fee, prize, seats, mode, who may join, duration, join window, Track, boosts and creator, with the Join on dApp and Marketplace buttons" width="375"><figcaption><p>Announcements carry the race link, so the group can join from the chat.</p></figcaption></figure>
 
 ### Why two groups show different races
 
@@ -93,7 +81,7 @@ The bot posts three times for each period of [the jackpot](../competition/jackpo
 
 A **raid** rallies the group around a post from The Lucky Ducks on X. While one is live the bot keeps a card updated in place:
 
-<figure><img src="../../.gitbook/assets/help/tg-raid-card-banner.png" alt="A live raid card posted by the bot: the X post quoted, who wrote it, the link and the duration, then likes, reposts and replies each against its goal with a bar of green squares, and the Like, Repost, Reply, View on X and Open dApp buttons"><figcaption><p>One card per raid, updated in place as the counts climb.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/help/tg-raid-card-banner.png" alt="A live raid card posted by the bot: the X post quoted, who wrote it, the link and the duration, then likes, reposts and replies each against its goal with a bar of green squares, and the Like, Repost, Reply, View on X and Open dApp buttons" width="375"><figcaption><p>One card per raid, updated in place as the counts climb.</p></figcaption></figure>
 
 Each line shows the count against the goal, with a bar under it and a tick once the goal is met. Under the card sit Like, Repost and Reply buttons that open X with the action ready, so you never leave Telegram to find the post. When every goal lands, or the timer runs out, the card flips to a summary with the top raiders on it and the next post in the queue goes live.
 

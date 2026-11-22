@@ -337,15 +337,18 @@ still worth having: it is where most readers will actually check a race.
 
 - `app-preferences-panel` (banner): `help/preferences.md`; The preferences panel: its switches and the Save button
 - `tg-raid-card` (banner): `help/telegram-bot.md`; A live raid card, drawn by `scripts/tg-posts`: the quoted post, author, link, duration, the three counts with green bars, the five buttons
-- `tg-race-announcement`: `help/telegram-bot.md`; A real New Race post off the channel's public preview (t.me/s), picture, figures and buttons
+- `tg-race-announcement` (banner): `help/telegram-bot.md`; A real New Race post off the channel's public preview (t.me/s), at a phone's width: picture, figures and buttons
 - `tg-jackpot-draw`: `help/telegram-bot.md`; The Mini App's jackpot view off `/tg/?jackpot` while a jackpot runs: pot, countdown, rules, the pot's SOL, stopped above the standings (other players). Retake during a draw to show the wheel
 - `social-card-telegram.png`: `help/social-networks.md`; Card cover, 16:9, the Telegram group
 - `social-card-x.png`: `help/social-networks.md`; Card cover, 16:9, the X profile
 - `social-card-youtube.png`: `help/social-networks.md`; Card cover, 16:9, the YouTube channel
 - `social-card-tiktok.png`: `help/social-networks.md`; Card cover, 16:9, the TikTok profile
 
-The phone half of `tg-race-announcement` is the Telegram mobile app, not a
-browser.
+Every bot post (`tg-race-announcement`, `tg-raid-card`, `tg-arcade-card`,
+`tg-lottery-post`, `tg-lucky-fight-result`) is one banner at a phone's width
+(`phoneWidth` in the capture script), never a desktop and phone pair:
+Telegram is read on a phone, and a post spread across a desktop column is
+drawn far larger than any chat shows it.
 
 ## Pages that deliberately carry no image
 

@@ -1992,14 +1992,18 @@ const SHOTS = [
   //
   // t.me/s/<channel> draws each post as Telegram does, on its chat ground, in
   // the light theme. `before` puts the post wanted at the bottom of the page.
+  // Every bot post is a phone-width banner: Telegram is read on a phone.
   {
     stem: "tg-race-announcement",
     folder: "help",
-    kind: "pair",
+    kind: "banner",
+    phoneWidth: true,
     guestEntry: false,
     url: "https://t.me/s/TheLuckyDucks?before=42795",
     colorScheme: "light",
     steps: [
+      // The channel's own bar is pinned over the top of whatever scrolls.
+      { css: ".tgme_header { display: none !important; }" },
       {
         scrollTo: '[data-post="TheLuckyDucks/42794"]',
         block: "center",
@@ -2017,6 +2021,7 @@ const SHOTS = [
     stem: "tg-arcade-card",
     folder: "arcade",
     kind: "banner",
+    phoneWidth: true,
     url: tgPost("arcade-card"),
     guestEntry: false,
     target: ".tgme_widget_message_wrap",
@@ -2097,6 +2102,7 @@ const SHOTS = [
     stem: "tg-raid-card",
     folder: "help",
     kind: "banner",
+    phoneWidth: true,
     url: tgPost("raid-card"),
     guestEntry: false,
     target: ".tgme_widget_message_wrap",
@@ -2107,6 +2113,7 @@ const SHOTS = [
     stem: "tg-lottery-post",
     folder: "competition",
     kind: "banner",
+    phoneWidth: true,
     url: tgPost("lottery-post"),
     guestEntry: false,
     target: ".tgme_widget_message_wrap",
@@ -2117,6 +2124,7 @@ const SHOTS = [
     stem: "tg-lucky-fight-result",
     folder: "arcade",
     kind: "banner",
+    phoneWidth: true,
     url: tgPost("lucky-fight-result"),
     guestEntry: false,
     target: ".tgme_widget_message_wrap",
@@ -2239,7 +2247,15 @@ const targetsFor = (shot) => {
           phone: true,
         },
       ]
-    : [{ file: join(dir, shot.stem + "-banner.png"), device: desktop }];
+    : [
+        {
+          file: join(dir, shot.stem + "-banner.png"),
+          // `phoneWidth` lays a banner out in the phone frame and crops it to
+          // its target: a Telegram post as a phone shows it, at a phone's
+          // size rather than spread across a desktop column.
+          device: shot.phoneWidth ? PHONE : desktop,
+        },
+      ];
 };
 
 const refuseIfAbsent = (file) => {
