@@ -284,7 +284,7 @@ Single files in the same folder, all artwork:
 - `app-lucky-fight-start` (banner): `arcade/lucky-fight.md`; The Lucky Fight start screen in the game window, cropped above the board (other players): wins, streak, XP today, SOLO MODE, OPEN A CHALLENGE
 - `tg-lucky-fight-game`: `arcade/lucky-fight.md`; A solo fight in its first round, off the dApp's game window (the Mini App runs the same game): both ducks, health bars, rounds won, the clock; the phone half held sideways
 - `tg-lucky-fight-result` (banner): `arcade/lucky-fight.md`; The bot's reply under a fight post, drawn by `scripts/tg-posts`: the winner's avatar, rounds, damage, points, Rematch and Replay
-- `tg-lucky-squad-game`: `arcade/lucky-squad.md`; A solo run walked into its first arena: the duck, two rifle crows ahead, the HUD; the phone half held sideways with the touch buttons
+- `tg-lucky-squad-game`: `arcade/lucky-squad.md`; A solo run walked into its first checkpoint: the duck, two rifle crows ahead, the HUD; the phone half held sideways with the touch buttons
 - `app-lucky-squad-open` (banner): `arcade/lucky-squad.md`; Lucky Squad's OPEN A SQUAD screen in the game window: your own wallet first, three empty invite fields, OPEN and BACK
 - `tg-lucky-flaps-start` (banner): `arcade/lucky-flaps.md`; The start screen, linked, cropped above the board (other players): best, XP today, SOLO MODE, OPEN TO THE FLOCK
 

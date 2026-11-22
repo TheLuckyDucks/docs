@@ -52,7 +52,7 @@ You can play in Telegram before linking a wallet. Your runs then rank under your
 XP and badges go to a wallet, so in Telegram they need your account linked to one. Each game pays XP up to 50 a day, counted from 00:00 UTC:
 
 - **Lucky Fight**: 3 XP for finishing a fight, 7 more for winning it, and 3 for each round you win at full health. A fight that ends in its first seconds pays nothing.
-- **Lucky Squad**: 5 XP for each arena you clear, the boss's arena once the Heron Walker is down.
+- **Lucky Squad**: 5 XP for each checkpoint you clear, a boss's once the boss is wrecked.
 - **Lucky Flaps**: 5 XP for each stage you clear.
 - **Lucky Shot**: 5 XP for each round you clear.
 - **Lucky Dodge**: 5 XP for each level you clear.
