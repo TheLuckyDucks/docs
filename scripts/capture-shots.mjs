@@ -34,7 +34,8 @@
  * Add `--headless=new` for guest runs. Leave it off for `--session`, so you can
  * reach the wallet.
  */
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { chromium } from "playwright-core";
 
@@ -208,6 +209,79 @@ const SHOTS = [
     path: "/app/tournaments",
     target: '[data-cy="tournament-hero"]',
     note: "only renders while a tournament is running. Fails otherwise",
+  },
+  {
+    stem: "app-jackpot-verify",
+    modes: ["guest", "off"],
+    folder: "competition",
+    kind: "banner",
+    path: "/app/jackpot",
+    steps: [
+      { click: '[data-cy="jackpot-tab-bar"] button', text: "Past winners" },
+      { wait: 1500 },
+      { click: '[data-cy="jackpot-draw"]' },
+      { wait: 2500 },
+      // The record opens on its winner and the finalists, who are other
+      // players: the shot is the section that verifies the draw, opened.
+      { click: '[data-cy="jackpot-details"] >> text=/^Verify fairness/i' },
+      { wait: 1500 },
+      {
+        scrollTo: '[data-cy="jackpot-details"] >> text=/^Verify fairness/i',
+        block: "start",
+      },
+    ],
+    target: '[data-cy="jackpot-details-section"]:has-text("Verify fairness")',
+    pad: 8,
+    keepScroll: true,
+    note: "the newest past draw's fairness check, opened",
+  },
+  {
+    stem: "app-badge-tooltip",
+    modes: ["off", "on"],
+    folder: "competition",
+    kind: "banner",
+    path: "/app/wallet",
+    // The badge wall's chips carry no handle; the first chip after the wall's
+    // heading is an earned one, since earned badges come first.
+    steps: [
+      { scrollTo: "text=/^badges \\(/i >> visible=true", block: "center" },
+      {
+        hover: "text=/^badges \\(/i >> visible=true >> xpath=following::img[1]",
+      },
+    ],
+    target: '[role="tooltip"]',
+    pad: 24,
+    parkPointer: false,
+    keepScroll: true,
+    note: "the first earned badge's tooltip: its medal, name, ask and group",
+  },
+  {
+    stem: "app-arcade-hub",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "pair",
+    // The team page's chat, which a member always has; a race lounge's needs
+    // a seat in a race that is still open.
+    path: "/app/teams",
+    steps: [
+      { click: 'button:has-text("My Team")', optional: true },
+      // A phone keeps the chat behind its own sub-tab; a desktop shows it.
+      {
+        click: '[data-cy="team-subtab"] >> visible=true',
+        text: "Chat",
+        optional: true,
+      },
+      // Optional: the desktop pass leaves the panel on its arcade face, where
+      // the control is the way back to the chat instead.
+      { click: '[data-cy="arcade-swap"] >> visible=true', optional: true },
+      { wait: 1500 },
+      // The phone frame opens on the activity ticker, which names other
+      // players; starting it at the arcade leaves the ticker above the frame.
+      { scrollTo: '[data-cy="arcade"] >> visible=true', block: "start" },
+    ],
+    target: '[data-cy="arcade"] >> visible=true',
+    keepScroll: true,
+    note: "the signed-in wallet's own team chat, flipped to the arcade",
   },
   {
     stem: "app-team-roster",
@@ -1202,7 +1276,7 @@ const SHOTS = [
     folder: "nfts",
     kind: "banner",
     path: "/marketplace/",
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1200 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 1200 }],
     target: '[data-cy="create-duck-steps"]',
     pad: 10,
   },
@@ -1214,7 +1288,7 @@ const SHOTS = [
     path: "/marketplace/",
     // The first step of a creation that has not been paid for: the two fields
     // and the four slots under them.
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 1500 }],
     span: [
       '[data-cy="create-duck-title"]',
       '[data-cy="create-duck-references"]',
@@ -1231,7 +1305,7 @@ const SHOTS = [
     path: "/marketplace/",
     // The pay card holds the price, the voucher field and the button. Nothing
     // is pressed: a creation already on this step is what the shot needs.
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 1500 }],
     target: '[data-cy="create-duck-pay-card"]',
     pad: 10,
     note: "a creation standing on the payment step. Pay is never pressed",
@@ -1242,7 +1316,7 @@ const SHOTS = [
     folder: "nfts",
     kind: "pair",
     path: "/marketplace/",
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 2000 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 2000 }],
     target: '[data-cy="create-duck-concepts"]',
     clip: "viewport",
     settle: 1500,
@@ -1254,7 +1328,7 @@ const SHOTS = [
     folder: "nfts",
     kind: "banner",
     path: "/marketplace/",
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 1500 }],
     target: '[data-cy="create-duck-progress"]',
     pad: 10,
     note: "a submitted creation: Concept, Animation and Finishing",
@@ -1265,7 +1339,7 @@ const SHOTS = [
     folder: "nfts",
     kind: "banner",
     path: "/marketplace/",
-    steps: [{ click: '[data-cy="nav-create"]' }, { wait: 1500 }],
+    steps: [{ click: '[data-cy="nav-tab"]', text: "Create" }, { wait: 1500 }],
     target: '[data-cy="create-duck-turntable"]',
     pad: 10,
     note: "a minted duck, offered a turntable or carrying one",
@@ -1279,7 +1353,7 @@ const SHOTS = [
     // The dialog is opened for the shot and closed by its Cancel. The confirm
     // button beside it is never pressed: a discard cannot be undone.
     steps: [
-      { click: '[data-cy="nav-create"]' },
+      { click: '[data-cy="nav-tab"]', text: "Create" },
       { wait: 1500 },
       { click: '[data-cy="create-duck-discard"]' },
       { wait: 800 },
@@ -1300,7 +1374,7 @@ const SHOTS = [
     kind: "banner",
     path: "/marketplace/",
     steps: [
-      { click: '[data-cy="nav-create"]' },
+      { click: '[data-cy="nav-tab"]', text: "Create" },
       { wait: 1500 },
       { click: '[data-cy="create-duck-my-creations"]', optional: true },
       { wait: 1200 },
@@ -1663,6 +1737,46 @@ const SHOTS = [
     inside: true,
   },
   {
+    stem: "nft-card-tracks",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    // The sale ribbon and the slide dots lie over the art.
+    steps: [
+      { click: '[data-cy="nav-tab"][data-category="tracks"]' },
+      {
+        css: '[data-cy="tier-discount"], [aria-label="Slideshow navigation"] { display: none !important; }',
+      },
+    ],
+    target: '[data-cy="tier-card"] img',
+    aspect: 16 / 9,
+    inside: true,
+  },
+  {
+    stem: "nft-track-examples",
+    folder: "nfts",
+    kind: "single",
+    path: "/marketplace/",
+    // Four Tracks in one row. The grid lays three to a row at a desktop
+    // width, so the step sets four columns rather than widening the window,
+    // which only stretches each card. The sale ribbon and the slide dots lie
+    // over the art.
+    steps: [
+      { click: '[data-cy="nav-tab"][data-category="tracks"]' },
+      {
+        css: ':has(> [data-cy="tier-card"]) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } [data-cy="tier-discount"], [aria-label="Slideshow navigation"] { display: none !important; }',
+      },
+    ],
+    span: [
+      '[data-cy="tier-card"] >> nth=0 >> img',
+      '[data-cy="tier-card"] >> nth=3 >> img',
+    ],
+    target: '[data-cy="tier-card"] img',
+    pad: 8,
+    settle: 1500,
+    note: "the first four Track NFTs on the Tracks tab, their art only",
+  },
+  {
     stem: "nft-card-cosmetics",
     folder: "nfts",
     kind: "single",
@@ -1694,6 +1808,82 @@ const SHOTS = [
     target: '[data-cy="tier-card"]',
     pad: 12,
     settle: 2000,
+  },
+
+  // ---------- the social covers, off the team's public profiles
+  //
+  // Each is the profile's header alone: the feed under it shows other
+  // people's posts and handles. These are other sites, so their selectors
+  // break when the site changes; a failed shot names the one to look at.
+  {
+    stem: "social-card-telegram",
+    folder: "help",
+    kind: "single",
+    // The web preview: t.me itself hands the page to the Telegram app.
+    url: "https://t.me/s/TheLuckyDucks",
+    guestEntry: false,
+    // No pad: the card's edge meets the matte, not the chat's patterned ground.
+    target: ".tgme_channel_info",
+    aspect: 16 / 9,
+    matte: "0x212121",
+    colorScheme: "dark",
+    settle: 2000,
+  },
+  {
+    stem: "social-card-x",
+    folder: "help",
+    kind: "single",
+    url: "https://x.com/TheDucksRun",
+    guestEntry: false,
+    span: ['img[src*="profile_banners"]', "text=/Followers$/"],
+    target: 'img[src*="profile_banners"]',
+    pad: 8,
+    aspect: 16 / 9,
+    matte: "0x000000",
+    colorScheme: "dark",
+    settle: 4000,
+  },
+  {
+    stem: "social-card-youtube",
+    hold: "the channel has little on it yet; its cover stays a placeholder",
+    folder: "help",
+    kind: "single",
+    url: "https://www.youtube.com/@theducksrun",
+    guestEntry: false,
+    steps: [
+      // The cookie consent a fresh profile meets first, in English or Spanish.
+      {
+        click:
+          'button:has-text("Reject all"), button:has-text("Rechazar todo")',
+        optional: true,
+      },
+      {
+        css: "html { scrollbar-width: none } ::-webkit-scrollbar { display: none }",
+      },
+    ],
+    // The banner sits outside the header that holds the name.
+    span: ["#page-header-banner-sizer", "#page-header"],
+    target: "#page-header",
+    pad: 8,
+    aspect: 16 / 9,
+    matte: "0x0F0F0F",
+    colorScheme: "dark",
+    settle: 4000,
+  },
+  {
+    stem: "social-card-tiktok",
+    folder: "help",
+    kind: "single",
+    url: "https://www.tiktok.com/@theducksrun",
+    guestEntry: false,
+    // The site's own Log in bar is pinned over the header's right end.
+    steps: [{ css: "#fixed-top-container { display: none !important; }" }],
+    target: ".user-profile-header",
+    pad: 8,
+    aspect: 16 / 9,
+    matte: "0x000000",
+    colorScheme: "dark",
+    settle: 4000,
   },
 ];
 
@@ -1815,6 +2005,12 @@ const runSteps = async (page, steps = []) => {
         await loc.first().click({ timeout });
         await page.waitForTimeout(1200);
       }
+      if (step.hover) {
+        // A tooltip shows only while the pointer rests on its anchor, so the
+        // shot that wants one hovers last and asks `parkPointer: false`.
+        await page.locator(step.hover).first().hover({ timeout });
+        await page.waitForTimeout(900);
+      }
       if (step.check || step.uncheck) {
         // Remember the box as found, once per shot, so `restore` can put back
         // what this wallet had rather than what some other wallet had.
@@ -1922,8 +2118,38 @@ const bounds = async (page, el, maxHeight = Infinity) => {
  */
 const crop = (box, shot) => {
   const fit = shot.inside ? insideAspect : toAspect;
-  const { vw, vh, ...rest } = shot.aspect ? fit(box, shot.aspect) : box;
+  const grow = shot.aspect && !shot.matte;
+  const { vw, vh, ...rest } = grow ? fit(box, shot.aspect) : box;
   return rest;
+};
+
+/**
+ * `matte` pads the tight crop out to `aspect` with one colour instead, for a
+ * page whose surroundings are someone else's content (a profile's feed beside
+ * its header): the subject stays alone, centred on a plain ground. Needs
+ * ffmpeg, as `npm run assets` does.
+ */
+const applyMatte = (file, shot) => {
+  const ratio = shot.aspect;
+  const padded = file + ".matte.png";
+  const run = spawnSync(
+    "ffmpeg",
+    [
+      "-y",
+      "-loglevel",
+      "error",
+      "-i",
+      file,
+      "-vf",
+      `pad=w='max(iw,ceil(ih*${ratio}/2)*2)':h='max(ih,ceil(iw/${ratio}/2)*2)':x='(ow-iw)/2':y='(oh-ih)/2':color=${shot.matte}`,
+      "-frames:v",
+      "1",
+      padded,
+    ],
+    { stdio: "inherit" },
+  );
+  if (run.status !== 0) throw new Error("ffmpeg could not matte " + file);
+  renameSync(padded, file);
 };
 
 /**
@@ -2016,6 +2242,25 @@ const snap = async (page, clip) => {
  * first on purpose: a race modal opens only when the races page mounts fresh,
  * and leaving it is also what closes whatever the previous shot left open.
  */
+/**
+ * A page that mounts mid-navigation can land on the app's error screen
+ * ("Something went wrong." and its RELOAD). Pressing RELOAD loads the same
+ * address afresh, as a player would, and the shot carries on from there.
+ */
+const recoverCrash = async (page) => {
+  const reload = page.locator('button:has-text("RELOAD")').first();
+  const crashed = await page
+    .locator("text=Something went wrong.")
+    .first()
+    .isVisible()
+    .catch(() => false);
+  if (!crashed || !(await reload.isVisible().catch(() => false))) return;
+  console.log("    the page crashed; pressing RELOAD");
+  await reload.click();
+  await page.waitForLoadState("domcontentloaded").catch(() => {});
+  await page.waitForTimeout(4000);
+};
+
 const spaGo = async (page, path) => {
   const go = (p) =>
     page.evaluate((u) => {
@@ -2055,6 +2300,7 @@ const shoot = async (page, shot, file, phone = false) => {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: T * 3 });
   }
   if (shot.guestEntry !== false && !SESSION) await enterGuest(page);
+  await recoverCrash(page);
   if (!deepLink) await runSteps(page, shot.steps);
   // `cardOf` crops to the card a label sits in: the nearest ancestor that draws
   // a border and is wide enough to be a card rather than a chip. The form's
@@ -2109,12 +2355,16 @@ const shoot = async (page, shot, file, phone = false) => {
   }
   // Park the pointer on the empty right edge first. A click leaves it over the
   // control it pressed, and a tooltip it summons would be in the picture.
-  const edge = await page.evaluate(() => [
-    innerWidth - 2,
-    Math.round(innerHeight / 2),
-  ]);
-  await page.mouse.move(edge[0], edge[1]).catch(() => {});
-  await page.waitForTimeout(300);
+  // A shot whose subject IS a tooltip keeps the pointer where its last
+  // `hover` step left it (`parkPointer: false`).
+  if (shot.parkPointer !== false) {
+    const edge = await page.evaluate(() => [
+      innerWidth - 2,
+      Math.round(innerHeight / 2),
+    ]);
+    await page.mouse.move(edge[0], edge[1]).catch(() => {});
+    await page.waitForTimeout(300);
+  }
   await page.waitForTimeout(shot.settle ?? 800); // let art and live numbers settle
   // A toast is never the subject. A "new version" notice arrives whenever a
   // deploy lands mid-run and stays until closed, and a race result can pop up
@@ -2191,6 +2441,7 @@ const shoot = async (page, shot, file, phone = false) => {
           vh: vp.height,
         };
         writeFileSync(file, await snap(page, crop(span, shot)));
+        if (shot.matte) applyMatte(file, shot);
         return;
       }
     }
@@ -2198,6 +2449,7 @@ const shoot = async (page, shot, file, phone = false) => {
       ? await snap(page)
       : await snap(page, crop(await bounds(page, el, shot.maxHeight), shot));
     writeFileSync(file, png);
+    if (shot.matte && !frame) applyMatte(file, shot);
   } finally {
     if (unzoom) await unzoom();
     // `after` puts back what the shot changed, a toggle or a picked option, so
@@ -2212,7 +2464,11 @@ const captureGuest = async (browser, shot) => {
   const files = [];
   for (const { file, device, phone } of targetsFor(shot)) {
     refuseIfAbsent(file);
-    const context = await browser.newContext(device);
+    // `colorScheme` asks another site for its dark theme; the app is dark
+    // whatever the browser prefers.
+    const context = await browser.newContext(
+      shot.colorScheme ? { ...device, colorScheme: shot.colorScheme } : device,
+    );
     try {
       await shoot(await context.newPage(), shot, file, phone);
       files.push(file);

@@ -32,7 +32,7 @@ Details worth knowing:
 
 - The penalty is a separate transfer, not a deduction from the refund. Same net effect, but on chain you see two movements: a credit and a small SOL debit.
 - It comes from whatever signed. Sign yourself and it leaves your wallet; leave during a [delegated session](../races/delegated-play.md) and it leaves your vault, so even a sponsored race you are leaving needs a funded vault.
-- On a sponsored race joiners paid nothing, so withdrawing just frees the seat: no refund, no penalty, and the sponsor's deposit untouched.
+- On a sponsored race joiners paid nothing, so withdrawing refunds nothing and leaves the sponsor's deposit untouched, but the penalty still applies: a free seat is the cheapest one to take and abandon, so leaving costs the same as leaving a paid race.
 - In a **1v1** the creator cannot withdraw, since that would strand the other player. They cancel instead.
 
 Withdrawn players stay in the participants list with a strikethrough, and stop counting toward the fill counter or the underfilled threshold.

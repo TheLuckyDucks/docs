@@ -239,7 +239,7 @@ Single files in the same folder, all artwork:
 - `nft-card-mystery-boxes.png`: `nfts/README.md`; Card cover, 16:9, a sealed box
 - `nft-card-renting.png`: `nfts/README.md`; Card cover, 16:9, a rented Runner: RENTED band and countdown
 - `nft-cosmetics-grid.png`: `nfts/cosmetics.md`; Two rows of four skins, each with name, rarity and price
-- `nft-track-examples.png`: `nfts/tracks.md`; The four built in tracks side by side: day, night, sunset, sunrise
+- `nft-track-examples.png`: `nfts/tracks.md`; Four Track NFTs' art side by side, off the marketplace's Tracks tab, with no sale ribbon or slide dots
 
 ## competition/
 
@@ -247,7 +247,7 @@ Single files in the same folder, all artwork:
 - `app-jackpot-standings` (banner): `competition/jackpot.md`; Current standings: the finalists as they stand, own row highlighted
 - `app-jackpot-race-chip` (banner): `competition/jackpot.md`; A race card header carrying the jackpot mark
 - `app-jackpot-claim` (banner): `competition/jackpot.md`; A past draw under Past winners, with its claim button
-- `app-jackpot-verify` (banner): `competition/jackpot.md`; A draw's record: transactions, finalists, random number
+- `app-jackpot-verify` (banner): `competition/jackpot.md`; A past draw's Verify fairness section, opened: the VRF transactions, the seed, the randomness account, the formula. No winner or finalist in the crop
 - `app-tournament-page`: `competition/tournaments.md`; The tournament page: window, rule, pot, standings
 - `app-tournament-claim` (banner): `competition/tournaments.md`; The claim button with one member's share and its dollar figure
 - `app-team-roster`: `competition/teams.md`; A team page with roster, member cap and seats left
@@ -277,7 +277,7 @@ Single files in the same folder, all artwork:
 
 ## arcade/
 
-- `app-arcade-hub`: `arcade/README.md`; The chat panel flipped to the arcade in a race lounge: one button per game, in the hub's order: Lucky Fight, Lucky Squad, Lucky Flaps, Lucky Shot, Lucky Dodge
+- `app-arcade-hub`: `arcade/README.md`; The team chat panel flipped to the arcade, scrolled past the activity ticker on a phone: one button per game, in the hub's order: Lucky Fight, Lucky Squad, Lucky Flaps, Lucky Shot, Lucky Dodge
 - `tg-lucky-shot-game`: `arcade/README.md`; Lucky Shot mid-round: ducks over the reeds, the round clock, shots left, the hit tally
 - `tg-lucky-shot-board` (banner): `arcade/README.md`; The start screen, linked: Your best, XP today against the cap, Play, the leaderboard
 - `tg-arcade-card` (banner): `arcade/README.md`; The /arcade post in a group: Lucky Fight on its own row, the other games two to a row, Visit The Lucky Ducks under them

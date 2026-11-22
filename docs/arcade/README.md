@@ -14,13 +14,13 @@ The Arcade is five quick games, **Lucky Fight**, **Lucky Squad**, **Lucky Flaps*
 {% columns %}
 {% column width="70%" %}
 
-<figure><img src="../../.gitbook/assets/arcade/app-arcade-hub-desktop.png" alt="The back of a race lounge's chat panel, flipped to the arcade: a button for each game"><figcaption><p>One button per game, each with its board shared with Telegram.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/arcade/app-arcade-hub-desktop.png" alt="A team's chat panel flipped to the arcade: a button for each game, each with its scores"><figcaption><p>One button per game, each with its board shared with Telegram.</p></figcaption></figure>
 
 {% endcolumn %}
 
 {% column width="30%" %}
 
-<figure><img src="../../.gitbook/assets/arcade/app-arcade-hub-mobile.png" alt="The back of a race lounge's chat panel, flipped to the arcade: a button for each game, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/arcade/app-arcade-hub-mobile.png" alt="A team's chat panel flipped to the arcade: a button for each game, each with its scores, on a phone"><figcaption><p>On a phone</p></figcaption></figure>
 
 {% endcolumn %}
 {% endcolumns %}
