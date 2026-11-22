@@ -1198,6 +1198,9 @@ const SHOTS = [
     modes: ["off"],
     steps: [
       { scrollTo: "text=/^badges \\(/i >> visible=true", block: "start" },
+      // A phone pins its top bar over the page: scrolling back by the bar's
+      // height puts the heading just under it rather than the first row.
+      { wheel: "text=/^badges \\(/i >> visible=true", dy: -100 },
     ],
     target: "text=/^badges \\(/i >> visible=true",
     clip: "viewport",
