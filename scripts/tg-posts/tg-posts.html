@@ -1,0 +1,244 @@
+<!doctype html>
+<!--
+  The bot's Telegram posts, drawn for the docs' screenshots.
+
+  Each post is one entry of POSTS below, its text written as the bot writes
+  it (Backend/packages/telegram/src in the product repository: the card
+  builders named on each entry), and shown with Telegram's own web preview
+  stylesheet and markup, the ones t.me/s/<channel> draws a real post with, so
+  a drawn post and a real one look alike. `#<id>` in the address picks the
+  post; `npm run capture -- --only <stem>` takes it.
+
+  A post that exists in the channel is captured from the channel itself
+  (tg-race-announcement); this page is for the ones that do not: a group's
+  replies, the lottery's picks, a raid's live card. When the bot's wording
+  changes, the entry here changes with it and the shot is taken again.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Telegram posts</title>
+    <link href="https://telegram.org/css/font-roboto.css?1" rel="stylesheet" />
+    <link href="https://telegram.org/css/widget-frame.css?75" rel="stylesheet" />
+    <link href="https://telegram.org/css/telegram-web.css?39" rel="stylesheet" />
+    <style>
+      /* The chat ground: Telegram's default four colours, which the preview
+         paints on a canvas from data-colors="dbddbb,6ba587,d5d88d,88b884". */
+      /* The preview's own script paints this frame; without it the stylesheet
+         leaves the frame hidden, so it is placed here. */
+      body {
+        background: none !important;
+      }
+      .tgme_background_wrap {
+        display: block !important;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: -1 !important;
+      }
+      .tgme_background_pattern {
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0.25 !important;
+        background-size: 420px auto !important;
+        mix-blend-mode: soft-light;
+      }
+      .tgme_background_wrap .ground {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 15% 20%, #dbddbb 0, transparent 55%),
+          radial-gradient(circle at 85% 25%, #6ba587 0, transparent 60%),
+          radial-gradient(circle at 80% 85%, #d5d88d 0, transparent 60%),
+          radial-gradient(circle at 20% 80%, #88b884 0, transparent 60%),
+          #a8c49a;
+      }
+      .tgme_background_pattern {
+        background-image: url("https://telegram.org/img/tgme/pattern.svg?1");
+      }
+      .tgme_channel_history {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      /* Whole pixels for every emoji in the text, so a run of them (a raid's
+         bar, a lottery line's empty squares) keeps one gap between each. */
+      .tgme_widget_message_text i.emoji {
+        display: inline-block !important;
+        width: 20px !important;
+        height: 20px !important;
+        background-size: 20px 20px !important;
+        padding: 0 !important;
+        margin: 0 1px !important;
+        vertical-align: -3px !important;
+      }
+      .tgme_widget_message_text blockquote {
+        margin: 12px 0 !important;
+      }
+      .post-missing {
+        padding: 40px;
+        font: 16px sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions"
+  >
+    <div class="tgme_background_wrap">
+      <div class="ground"></div>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <main class="tgme_main">
+      <div class="tgme_container">
+        <section class="tgme_channel_history js-message_history" id="history"></section>
+      </div>
+    </main>
+    <script>
+      const BOT = {
+        name: "The Lucky Ducks Bot",
+        avatar: "https://theluckyducks.com/assets/LD_400x400.jpg",
+      };
+      const EXPLORER = "https://solscan.io/account/";
+
+      /** A player as `playerLabel` names one: the name, then the wallet linked. */
+      const player = (name, short) =>
+        `${name} (<a href="${EXPLORER}">${short}</a>)`;
+      const DOTFX = player("dotfx", "HJmxtV…BSHzTa");
+      const TEAM = player("TheDucksRun", "DuckZz…af7CMv");
+
+      /**
+       * Each post: `text` is the body as the bot sends it, its MarkdownV2 or
+       * HTML turned into the tags Telegram renders it to; `buttons` the inline
+       * keyboard, one array per row; `photo` a picture the text is the
+       * caption of; `reply` the post it answers.
+       */
+      const POSTS = {
+        // arcade/commands-arcade.ts arcadeCommandText and arcadeButtons: the
+        // reply to /arcade in a group that answers every game's command.
+        "arcade-card": {
+          time: "10:28",
+          reply: { author: "dotfx", text: "/arcade@TheLuckyDucksBot" },
+          text: [
+            "🕹 <b>Lucky Ducks Arcade</b>",
+            "",
+            "Fight, run and gun, fly, shoot and dodge: every game opens in the Mini App, and every run counts on its board, in the app as here.",
+            "",
+            "<i>Pick a game below. XP and badges go to your linked wallet.</i>",
+          ],
+          buttons: [
+            ["🥊 Lucky Fight"],
+            ["🪖 Lucky Squad", "🪽 Lucky Flaps"],
+            ["🎯 Lucky Shot", "🕹 Lucky Dodge"],
+            ["🦆 Visit The Lucky Ducks"],
+          ],
+        },
+
+        // raids/raids-render.ts renderCard, raids/raids-card.ts the keyboard.
+        "raid-card": {
+          time: "18:04",
+          text: [
+            "🦆 Raid the X Post!",
+            // A quote is a block of its own: the blank lines the bot writes
+            // around it are drawn as the quote's margins.
+            "<blockquote>The pond is open. 20 seat lobby, 0.05 SOL in, winner takes the pot.</blockquote>",
+            '👤 The Lucky Ducks (<a href="https://x.com/TheDucksRun">TheDucksRun</a>) on X',
+            '🔗 Post: <a href="https://x.com/TheDucksRun">https://x.com/TheDucksRun/status/1991870213361152346</a>',
+            "🕐 Duration: 1h 30m",
+            "",
+            "❤️ Likes: 7/10",
+            "🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜",
+            "🔁 Reposts: 3/3 ✅",
+            "🟩🟩🟩",
+            "💬 Replies: 1/5",
+            "🟩⬜⬜⬜⬜",
+          ],
+          buttons: [
+            ["❤️ Like", "🔁 Repost", "💬 Reply"],
+            ["𝕏 View on X", "🦆 Open dApp"],
+          ],
+        },
+
+        // lottery/handlers-lottery.ts announcePick, bot/lib-views.ts
+        // buildLotteryPickKeyboard.
+        "lottery-post": {
+          time: "21:16",
+          text: [
+            "🎟 <b>Lotto #3208</b>",
+            `🟢 <b>27</b> taken by @dotfx (<a href="${EXPLORER}">HJmxtV…BSHzTa</a>)`,
+            "",
+            "<b>4</b> <b>11</b> <b>12</b> <b>27</b> ⬜ ⬜ (4/6)",
+          ],
+          buttons: [["🎟 Pick on Telegram"], ["🦆 Pick on dApp"]],
+        },
+
+        // lucky-fight/lucky-fight-result.ts luckyFightResultText, sent as a
+        // reply to the fight's post over the winner's avatar.
+        "lucky-fight-result": {
+          time: "10:41",
+          reply: { author: BOT.name, text: "🥊 Lucky Fight" },
+          photo:
+            "https://ipfs.filebase.io/ipfs/QmbPR8q5dE5gTfrXNUf8xSKwamP5Pd9cWEVuh9mwamrnjC",
+          text: [
+            "🥊 <b>Lucky Fight</b>",
+            "",
+            `🏆 ${DOTFX} beats ${TEAM}`,
+            " 🦆 dotfx: 2 rounds • 412 damage • 18,450 points",
+            " 🦆 TheDucksRun: 1 round • 305 damage • 12,900 points",
+            "",
+            "<i>Rematch? One more fight never hurt anyone!</i>",
+          ],
+          buttons: [["🥊 Rematch", "▶️ Replay"]],
+        },
+      };
+
+      /** Telegram's emoji images are named by the UTF-8 bytes, FE0F dropped. */
+      const EMOJI =
+        /\p{Extended_Pictographic}(?:️)?(?:‍\p{Extended_Pictographic}(?:️)?)*/gu;
+      const emojiImage = (emoji) => {
+        const hex = [...new TextEncoder().encode(emoji.replace(/️/g, ""))]
+          .map((b) => b.toString(16).padStart(2, "0").toUpperCase())
+          .join("");
+        return `<i class="emoji" style="background-image:url('https://telegram.org/img/emoji/40/${hex}.png')"><b>${emoji}</b></i>`;
+      };
+      /** Emoji to images in text only, never inside a tag's attributes. */
+      const withEmoji = (html) =>
+        html
+          .split(/(<[^>]+>)/)
+          .map((part) => (part.startsWith("<") ? part : part.replace(EMOJI, emojiImage)))
+          .join("");
+
+      const TAIL =
+        '<i class="tgme_widget_message_bubble_tail"><svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20"><g fill="none"><path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path></g></svg></i>';
+
+      const render = (id, post) => {
+        const reply = post.reply
+          ? `<a class="tgme_widget_message_reply"><div class="tgme_widget_message_author accent_color"><span class="tgme_widget_message_author_name">${post.reply.author}</span></div><div class="tgme_widget_message_text js-message_reply_text">${withEmoji(post.reply.text)}</div></a>`
+          : "";
+        const photo = post.photo
+          ? `<a class="tgme_widget_message_photo_wrap" style="width:800px;background-image:url('${post.photo}')"><div class="tgme_widget_message_photo" style="padding-top:100%"></div></a>`
+          : "";
+        const keyboard = post.buttons
+          ? `<div class="tgme_widget_message_inline_keyboard">${post.buttons
+              .map(
+                (row) =>
+                  `<div class="tgme_widget_message_inline_row">${row
+                    .map(
+                      (label) =>
+                        `<a class="tgme_widget_message_inline_button url_button"><span class="tgme_widget_message_inline_button_text" dir="auto">${withEmoji(label)}</span></a>`,
+                    )
+                    .join("")}</div>`,
+              )
+              .join("")}</div>`
+          : "";
+        return `<div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap user-color-2 js-widget_message" data-post="${id}"><div class="tgme_widget_message_user"><a><i class="tgme_widget_message_user_photo bgcolor2"><img src="${BOT.avatar}"></i></a></div><div class="tgme_widget_message_bubble">${TAIL}<div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"><span dir="auto">${BOT.name}</span></a></div>${reply}${photo}<div class="tgme_widget_message_text js-message_text" dir="auto">${post.text
+          .map(withEmoji)
+          .join("<br/>")}</div><div class="tgme_widget_message_footer compact js-message_footer"><div class="tgme_widget_message_info short js-message_info"><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date"><time class="time">${post.time}</time></a></span></div></div></div>${keyboard}</div></div>`;
+      };
+
+      const id = decodeURIComponent(location.hash.slice(1));
+      const post = POSTS[id];
+      document.getElementById("history").innerHTML = post
+        ? render(id, post)
+        : `<p class="post-missing">No post "${id}". Known: ${Object.keys(POSTS).join(", ")}</p>`;
+    </script>
+  </body>
+</html>

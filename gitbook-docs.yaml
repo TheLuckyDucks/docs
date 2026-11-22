@@ -5,6 +5,7 @@ site:
     - type: space
       key: luckyducks-docs
       title: The Lucky Ducks
+      path: untitled
       default: true
       content:
         directory: ./

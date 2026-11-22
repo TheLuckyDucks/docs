@@ -111,6 +111,21 @@ const MODAL = ".modal-sm, .modal-md, .modal-lg";
  * `hold` keeps a shot out of every run until `--only` names it.
  */
 /**
+ * A page of this repository as the browser opens it. Chrome runs on Windows
+ * while this script runs in WSL on the usual host, so the path goes through
+ * `wslpath -m` there; anywhere else it is the path as it stands.
+ */
+const localPage = (relative, hash = "") => {
+  const path = join(ROOT, relative);
+  const windows = spawnSync("wslpath", ["-m", path], { encoding: "utf8" });
+  const shown = windows.status === 0 ? windows.stdout.trim() : path;
+  return "file:///" + shown.replace(/^\/+/, "") + hash;
+};
+
+/** The drawn Telegram posts (`scripts/tg-posts/tg-posts.html`), by id. */
+const tgPost = (id) => localPage("scripts/tg-posts/tg-posts.html", "#" + id);
+
+/**
  * The team page's chat turned over to the arcade: a phone keeps the chat
  * behind its own sub-tab, and a panel already on its arcade face shows the
  * way back instead of the ARCADE control, so both clicks are optional.
@@ -270,6 +285,102 @@ const SHOTS = [
     parkPointer: false,
     keepScroll: true,
     note: "the first earned badge's tooltip: its medal, name, ask and group",
+  },
+
+  // The Mini App's game screens. Outside Telegram the Mini App has no signed
+  // launch data and asks to be reopened, and it runs the dApp's own game code,
+  // so these are the same screens opened from the dApp's arcade.
+  // Each down to its buttons: the board under them names other players.
+  ...[
+    { stem: "tg-lucky-shot-board", game: "luckyshot", maxHeight: 420 },
+    { stem: "tg-lucky-flaps-start", game: "luckyflaps", maxHeight: 440 },
+  ].map(({ stem, game, maxHeight }) => ({
+    stem,
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "banner",
+    path: "/app/teams",
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      { click: `[data-cy="arcade-game"][data-game="${game}"] >> visible=true` },
+      { wait: 6000 },
+    ],
+    target: '[data-cy="game-window"]',
+    maxHeight,
+    after: [{ click: '[data-cy="game-window-close"]', optional: true }],
+    note: "the start screen, as the Mini App draws it for a linked account",
+  })),
+  {
+    stem: "tg-lucky-shot-game",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "pair",
+    path: "/app/teams",
+    // A run is played for the shot and left by closing the window.
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      {
+        click: '[data-cy="arcade-game"][data-game="luckyshot"] >> visible=true',
+      },
+      { wait: 6000 },
+      { click: '[data-cy="game-window"] button:has-text("PLAY")' },
+      { wait: 7000 },
+    ],
+    target: '[data-cy="game-window"]',
+    // Upright on a phone: Lucky Shot's field is portrait, and held sideways
+    // it stands between two black bands.
+    after: [{ click: '[data-cy="game-window-close"]', optional: true }],
+    note: "a run a few seconds in, ducks in the air; the window is then closed",
+  },
+  {
+    stem: "tg-lucky-fight-game",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "pair",
+    path: "/app/teams",
+    // SOLO, then the select screen's 10 seconds take the duck selected, the
+    // versus screen's 3 and the round's intro: the shot lands in round one,
+    // the CPU on the attack. The window is closed after it.
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      {
+        click:
+          '[data-cy="arcade-game"][data-game="luckyfight"] >> visible=true',
+      },
+      { waitFor: '[data-cy="lucky-fight-solo"]' },
+      { click: '[data-cy="lucky-fight-solo"]' },
+      { wait: 24000 },
+    ],
+    target: '[data-cy="game-window"]',
+    phoneLandscape: true,
+    after: [{ click: '[data-cy="game-window-close"]', optional: true }],
+    note: "a solo fight in its first round; the window is then closed",
+  },
+  {
+    stem: "tg-lucky-squad-game",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "pair",
+    path: "/app/teams",
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      {
+        click:
+          '[data-cy="arcade-game"][data-game="luckysquad"] >> visible=true',
+      },
+      { wait: 6000 },
+      { click: '[data-cy="game-window"] button:has-text("Solo mode")' },
+      { wait: 12000 },
+      // The run opens on an empty lane: the duck walks on to the first
+      // wall and its crows, the game's canvas taking the keys once clicked.
+      { click: '[data-cy="game-window"] canvas', optional: true },
+      { hold: "ArrowRight", ms: 3500 },
+      { wait: 600 },
+    ],
+    target: '[data-cy="game-window"]',
+    phoneLandscape: true,
+    after: [{ click: '[data-cy="game-window-close"]', optional: true }],
+    note: "a solo run walked on to its first wall; the window is then closed",
   },
   {
     stem: "app-lucky-fight-start",
@@ -1877,6 +1988,142 @@ const SHOTS = [
     settle: 2000,
   },
 
+  // ---------- the bot's posts, off the channel's public preview
+  //
+  // t.me/s/<channel> draws each post as Telegram does, on its chat ground, in
+  // the light theme. `before` puts the post wanted at the bottom of the page.
+  {
+    stem: "tg-race-announcement",
+    folder: "help",
+    kind: "pair",
+    guestEntry: false,
+    url: "https://t.me/s/TheLuckyDucks?before=42795",
+    colorScheme: "light",
+    steps: [
+      {
+        scrollTo: '[data-post="TheLuckyDucks/42794"]',
+        block: "center",
+      },
+    ],
+    target: '.tgme_widget_message_wrap:has([data-post="TheLuckyDucks/42794"])',
+    pad: 16,
+    keepScroll: true,
+    settle: 2500,
+    note: "race #6418's real New Race post, on the channel's own ground",
+  },
+
+  // ---------- the bot's posts no channel shows, drawn by scripts/tg-posts
+  {
+    stem: "tg-arcade-card",
+    folder: "arcade",
+    kind: "banner",
+    url: tgPost("arcade-card"),
+    guestEntry: false,
+    target: ".tgme_widget_message_wrap",
+    pad: 16,
+    settle: 2500,
+  },
+
+  // ---------- the Mini App's own views, the ones it draws outside Telegram
+  {
+    stem: "tg-lottery-picker",
+    folder: "competition",
+    kind: "pair",
+    // The picker needs Telegram's launch data and a linked account. The data
+    // goes in the address, as Telegram passes it, unsigned; the round the
+    // picker then asks for is answered here, in the backend's shape
+    // (`TelegramLotteryRoundResponse`), with a Lotto line three numbers in,
+    // picked by the team's account. Nothing is picked.
+    url: `https://theluckyducks.com/tg/?lottery#tgWebAppData=${encodeURIComponent(
+      `user=${encodeURIComponent(JSON.stringify({ id: 1, first_name: "dotfx", username: "dotfx" }))}&auth_date=1795000000&hash=0`,
+    )}&tgWebAppVersion=8.0&tgWebAppPlatform=web`,
+    guestEntry: false,
+    viewport: { width: 480, height: 700 },
+    routes: [
+      {
+        match: "**/lottery/telegram/round*",
+        json: {
+          linked: true,
+          viewerHasPicked: false,
+          previousLines: [],
+          round: {
+            roundId: 1,
+            gameSlug: "LOTTO",
+            drawNo: 3208,
+            drawDate: "2026-11-28T20:00:00.000Z",
+            closesAt: "2026-11-28T18:30:00.000Z",
+            positions: 6,
+            primaryCount: 6,
+            primaryMin: 1,
+            primaryMax: 59,
+            secondaryMin: 0,
+            secondaryMax: 0,
+            secondaryName: null,
+            jackpotPence: 340000000,
+            jackpotText: null,
+          },
+          picks: [4, 11, 27].map((ball, i) => ({
+            position: i + 1,
+            ball,
+            player: "DuckZza8dx6B3Qyc4ov3LGxvEifYbYNs2PuMyaaf7CMv",
+            nickname: "TheDucksRun",
+            avatarUrl: "https://theluckyducks.com/assets/LD_400x400.jpg",
+            verified: true,
+          })),
+        },
+      },
+    ],
+    target: "body",
+    clip: "viewport",
+    settle: 6000,
+    note: "a Lotto line three numbers in, the round answered by the script",
+  },
+  {
+    stem: "tg-jackpot-draw",
+    folder: "help",
+    kind: "pair",
+    // The jackpot view needs no launch data. The desktop half is the size
+    // Telegram Desktop opens a Mini App at, and both stop above the
+    // standings, which name other players.
+    url: "https://theluckyducks.com/tg/?jackpot",
+    guestEntry: false,
+    viewport: { width: 480, height: 700 },
+    target: "body",
+    clip: "viewport",
+    settle: 6000,
+    note: "the jackpot under way: the pot, the countdown, the rules",
+  },
+  {
+    stem: "tg-raid-card",
+    folder: "help",
+    kind: "banner",
+    url: tgPost("raid-card"),
+    guestEntry: false,
+    target: ".tgme_widget_message_wrap",
+    pad: 16,
+    settle: 2500,
+  },
+  {
+    stem: "tg-lottery-post",
+    folder: "competition",
+    kind: "banner",
+    url: tgPost("lottery-post"),
+    guestEntry: false,
+    target: ".tgme_widget_message_wrap",
+    pad: 16,
+    settle: 2500,
+  },
+  {
+    stem: "tg-lucky-fight-result",
+    folder: "arcade",
+    kind: "banner",
+    url: tgPost("lucky-fight-result"),
+    guestEntry: false,
+    target: ".tgme_widget_message_wrap",
+    pad: 16,
+    settle: 3500,
+  },
+
   // ---------- the social covers, off the team's public profiles
   //
   // Each is the profile's header alone: the feed under it shows other
@@ -1978,7 +2225,17 @@ const targetsFor = (shot) => {
         { file: join(dir, shot.stem + "-desktop.png"), device: desktop },
         {
           file: join(dir, shot.stem + "-mobile.png"),
-          device: PHONE,
+          // A game is played with the phone held sideways, so its phone half
+          // is the same phone turned: `phoneLandscape`.
+          device: shot.phoneLandscape
+            ? {
+                ...PHONE,
+                viewport: {
+                  width: PHONE.viewport.height,
+                  height: PHONE.viewport.width,
+                },
+              }
+            : PHONE,
           phone: true,
         },
       ]
@@ -2102,6 +2359,13 @@ const runSteps = async (page, steps = []) => {
       if (step.press) {
         await page.keyboard.press(step.press);
         await page.waitForTimeout(500);
+      }
+      // `hold` keeps a key down for `ms`: a game's duck walked forward into
+      // the part of the stage the shot is about.
+      if (step.hold) {
+        await page.keyboard.down(step.hold);
+        await page.waitForTimeout(step.ms ?? 1000);
+        await page.keyboard.up(step.hold);
       }
       if (step.fill) {
         await page.locator(step.fill).first().fill(step.value, { timeout });
@@ -2342,6 +2606,20 @@ const spaGo = async (page, path) => {
 
 const shoot = async (page, shot, file, phone = false) => {
   if (!SESSION) await noCache(page).catch(() => {});
+  // `routes` answers a request with the body given, for a screen whose data
+  // only reaches a signed caller (a Mini App outside Telegram). Guest runs
+  // only: a guest's context is thrown away after its shot.
+  if (shot.routes && !SESSION) {
+    for (const { match, json } of shot.routes) {
+      await page.route(match, (route) =>
+        route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify(json),
+        }),
+      );
+    }
+  }
   // `--race` deep-links a race you chose, instead of taking whichever card is
   // at the top of a live list. The app routes /app/races/<id> to that race's
   // modal, so the click step is then redundant.

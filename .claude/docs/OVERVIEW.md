@@ -61,7 +61,8 @@ it owns.
 - `competition/badges.md`: Badges and XP milestones
 - `competition/jackpot.md`: The jackpot: the pot, who is entered, the draw
 - `competition/community-lottery.md`: The community lottery
-- `arcade/README.md`: The Arcade games, where to play them, their boards, XP and sharing
+- `arcade/README.md`: The Arcade: where to play, the online lobby limits, the boards, XP, badges and sharing
+- `arcade/lucky-fight.md`, `lucky-squad.md`, `lucky-flaps.md`, `lucky-shot.md`, `lucky-dodge.md`: Each game, its controls, rules and scoring
 - `economy/fees-and-prizes.md`: Entry fee, platform fee tiers, the jackpot fee, prize pool
 - `economy/player-vault.md`: The pre-funded balance, deposits, withdrawals, payout target
 - `economy/player-vault.md`: Which balance the top bar button shows
@@ -115,7 +116,8 @@ section where one is named: the fact.
 - `competition/tournaments.md`: Tournament scoring, the pot, its fee ceiling, claiming
 - `competition/rematches.md`: Rematch rules, windows, chain depth, why race numbers skip
 - `competition/jackpot.md`: Jackpot period, finalists, the draw, cancelling, claiming
-- `arcade/README.md`: Each game's rules, its XP per day, the boards and a Telegram account's best moving to a wallet
+- `arcade/README.md`: Each game's XP per day, the boards and a Telegram account's best moving to a wallet
+- `arcade/lucky-<game>.md`: That game's rules, controls and scoring
 - `help/telegram-bot.md`: Jackpot posts in Telegram; raid point weights; how a card names you
 
 ## Topics that live on more than one page

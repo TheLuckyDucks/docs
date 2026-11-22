@@ -260,8 +260,8 @@ Single files in the same folder, all artwork:
 - `app-lottery-pick` (banner): `competition/community-lottery.md`; The box after a pick: 2 in the first slot, and its reply (supplied)
 - `app-team-invite` (banner): `competition/teams.md`; The INVITE LINK box: link, copy button, invite message
 - `app-rematch-proposer-options` (banner): `competition/rematches.md`; The propose dialog: commentary, announcement, track, runner
-- `tg-lottery-post` (banner): `competition/community-lottery.md`; A lottery post in a group: the line so far, Pick on dApp and Pick on Telegram
-- `tg-lottery-picker`: `competition/community-lottery.md`; The picker inside Telegram for a linked account: the line part filled, the free numbers below
+- `tg-lottery-post` (banner): `competition/community-lottery.md`; A lottery pick post, drawn by `scripts/tg-posts`: the ball taken and by whom, the line so far, Pick on Telegram and Pick on dApp
+- `tg-lottery-picker`: `competition/community-lottery.md`; The Mini App's picker off `/tg/?lottery`, its launch data in the address and its round answered by the capture script (a Lotto line three numbers in): the line, the taken numbers marked below
   Single files in the same folder, all artwork: each `docs-badges-*` puts one
   ladder's medals side by side (an Arcade game's three, the losing streaks, the last places), drawn from
   `Frontend/packages/www/public/badges/<id>.png` in the product repository by
@@ -278,28 +278,28 @@ Single files in the same folder, all artwork:
 ## arcade/
 
 - `app-arcade-hub`: `arcade/README.md`; The team chat panel flipped to the arcade, scrolled past the activity ticker on a phone: one button per game, in the hub's order: Lucky Fight, Lucky Squad, Lucky Flaps, Lucky Shot, Lucky Dodge
-- `tg-lucky-shot-game`: `arcade/README.md`; Lucky Shot mid-round: ducks over the reeds, the round clock, shots left, the hit tally
-- `tg-lucky-shot-board` (banner): `arcade/README.md`; The start screen, linked: Your best, XP today against the cap, Play, the leaderboard
-- `tg-arcade-card` (banner): `arcade/README.md`; The /arcade post in a group: Lucky Fight on its own row, the other games two to a row, Visit The Lucky Ducks under them
-- `app-lucky-fight-start` (banner): `arcade/README.md`; The Lucky Fight start screen in the game window, cropped above the board (other players): wins, streak, XP today, SOLO MODE, OPEN A CHALLENGE
-- `tg-lucky-fight-game`: `arcade/README.md`; Lucky Fight mid-round: two ducks fighting on the dock, both health bars, rounds won, the round clock
-- `tg-lucky-fight-result` (banner): `arcade/README.md`; The bot's reply under a fight post: the winner's avatar, rounds, damage, score, Rematch and Replay
-- `tg-lucky-squad-game`: `arcade/README.md`; Lucky Squad mid-arena: the duck behind a sandbag wall, rifle crows across it, a caged duckling, the health bar, lives, weapon, grenades and arena clock
-- `app-lucky-squad-open` (banner): `arcade/README.md`; Lucky Squad's OPEN A SQUAD screen in the game window: your own wallet first, three empty invite fields, OPEN and BACK
-- `tg-lucky-flaps-start` (banner): `arcade/README.md`; The start screen, linked: best, XP today, SOLO MODE, OPEN TO THE FLOCK, JOIN THE FLOCK, the board
+- `tg-lucky-shot-game`: `arcade/lucky-shot.md`; Lucky Shot mid-round: ducks over the reeds, the round clock, shots left, the hit tally
+- `tg-lucky-shot-board` (banner): `arcade/lucky-shot.md`; The start screen, linked, cropped above the board (other players): your best, XP today against the cap, PLAY
+- `tg-arcade-card` (banner): `arcade/README.md`; The bot's reply to /arcade, drawn by `scripts/tg-posts`: Lucky Fight on its own row, the other games two to a row, Visit The Lucky Ducks under them
+- `app-lucky-fight-start` (banner): `arcade/lucky-fight.md`; The Lucky Fight start screen in the game window, cropped above the board (other players): wins, streak, XP today, SOLO MODE, OPEN A CHALLENGE
+- `tg-lucky-fight-game`: `arcade/lucky-fight.md`; A solo fight in its first round, off the dApp's game window (the Mini App runs the same game): both ducks, health bars, rounds won, the clock; the phone half held sideways
+- `tg-lucky-fight-result` (banner): `arcade/lucky-fight.md`; The bot's reply under a fight post, drawn by `scripts/tg-posts`: the winner's avatar, rounds, damage, points, Rematch and Replay
+- `tg-lucky-squad-game`: `arcade/lucky-squad.md`; A solo run walked into its first arena: the duck, two rifle crows ahead, the HUD; the phone half held sideways with the touch buttons
+- `app-lucky-squad-open` (banner): `arcade/lucky-squad.md`; Lucky Squad's OPEN A SQUAD screen in the game window: your own wallet first, three empty invite fields, OPEN and BACK
+- `tg-lucky-flaps-start` (banner): `arcade/lucky-flaps.md`; The start screen, linked, cropped above the board (other players): best, XP today, SOLO MODE, OPEN TO THE FLOCK
 
 Single files in the same folder, all artwork. The `docs-arcade-*` are the
 games' share cards, copied from the og-metadata service's `assets/arcade/<game>.png`
 in the product repository.
 
-- `docs-arcade-lucky-shot.png`: `arcade/README.md`; Lucky Shot's share card, 1200x630
-- `docs-arcade-lucky-flaps.png`: `arcade/README.md`; Lucky Flaps' share card, 1200x630
-- `docs-arcade-lucky-dodge.png`: `arcade/README.md`; Lucky Dodge's share card, 1200x630
-- `docs-arcade-lucky-fight.png`: `arcade/README.md`; Lucky Fight's share card, 1200x630
-- `docs-arcade-lucky-squad.png`: `arcade/README.md`; Lucky Squad's share card, 1200x630
-- `docs-lucky-flaps-weather.png`: `arcade/README.md`; Five frames of one stage side by side: rain, storm bolt, storm flash, snow under the Rush, fog
-- `docs-lucky-flaps-fish.png`: `arcade/README.md`; Five moments of one gold carp's leap between two gates, from the splash out to the splash back
-- `docs-lucky-dodge-play.png`: `arcade/README.md`; Three moments side by side, no HUD: open water far below, clouds under and over the flock, small shadows cast off to the side
+- `docs-arcade-lucky-shot.png`: `arcade/lucky-shot.md`; Lucky Shot's share card, 1200x630
+- `docs-arcade-lucky-flaps.png`: `arcade/lucky-flaps.md`; Lucky Flaps' share card, 1200x630
+- `docs-arcade-lucky-dodge.png`: `arcade/lucky-dodge.md`; Lucky Dodge's share card, 1200x630
+- `docs-arcade-lucky-fight.png`: `arcade/lucky-fight.md`; Lucky Fight's share card, 1200x630
+- `docs-arcade-lucky-squad.png`: `arcade/lucky-squad.md`; Lucky Squad's share card, 1200x630
+- `docs-lucky-flaps-weather.png`: `arcade/lucky-flaps.md`; Five frames of one stage side by side: rain, storm bolt, storm flash, snow under the Rush, fog
+- `docs-lucky-flaps-fish.png`: `arcade/lucky-flaps.md`; Five moments of one gold carp's leap between two gates, from the splash out to the splash back
+- `docs-lucky-dodge-play.png`: `arcade/lucky-dodge.md`; Three moments side by side, no HUD: open water far below, clouds under and over the flock, small shadows cast off to the side
 
 ## economy/
 
@@ -336,8 +336,9 @@ still worth having: it is where most readers will actually check a race.
 ## help/
 
 - `app-preferences-panel` (banner): `help/preferences.md`; The preferences panel: its switches and the Save button
-- `tg-race-announcement`: `help/telegram-bot.md`; A race announcement card in a group: entry fee, mode, link
-- `tg-jackpot-draw`: `help/telegram-bot.md`; The draw viewer inside Telegram: pot, countdown, the wheel turning, the standings
+- `tg-raid-card` (banner): `help/telegram-bot.md`; A live raid card, drawn by `scripts/tg-posts`: the quoted post, author, link, duration, the three counts with green bars, the five buttons
+- `tg-race-announcement`: `help/telegram-bot.md`; A real New Race post off the channel's public preview (t.me/s), picture, figures and buttons
+- `tg-jackpot-draw`: `help/telegram-bot.md`; The Mini App's jackpot view off `/tg/?jackpot` while a jackpot runs: pot, countdown, rules, the pot's SOL, stopped above the standings (other players). Retake during a draw to show the wheel
 - `social-card-telegram.png`: `help/social-networks.md`; Card cover, 16:9, the Telegram group
 - `social-card-x.png`: `help/social-networks.md`; Card cover, 16:9, the X profile
 - `social-card-youtube.png`: `help/social-networks.md`; Card cover, 16:9, the YouTube channel

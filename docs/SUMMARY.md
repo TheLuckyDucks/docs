@@ -43,6 +43,11 @@
 ## Arcade
 
 - [The Arcade](arcade/README.md)
+  - [Lucky Fight](arcade/lucky-fight.md)
+  - [Lucky Squad](arcade/lucky-squad.md)
+  - [Lucky Flaps](arcade/lucky-flaps.md)
+  - [Lucky Shot](arcade/lucky-shot.md)
+  - [Lucky Dodge](arcade/lucky-dodge.md)
 
 ## Economy
 
