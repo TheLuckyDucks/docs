@@ -110,6 +110,22 @@ const MODAL = ".modal-sm, .modal-md, .modal-lg";
  * `--session` phases. A shot in both `guest` and `off` is retaken signed in.
  * `hold` keeps a shot out of every run until `--only` names it.
  */
+/**
+ * The team page's chat turned over to the arcade: a phone keeps the chat
+ * behind its own sub-tab, and a panel already on its arcade face shows the
+ * way back instead of the ARCADE control, so both clicks are optional.
+ */
+const ARCADE_FROM_TEAM_CHAT = [
+  { click: 'button:has-text("My Team")', optional: true },
+  {
+    click: '[data-cy="team-subtab"] >> visible=true',
+    text: "Chat",
+    optional: true,
+  },
+  { click: '[data-cy="arcade-swap"] >> visible=true', optional: true },
+  { wait: 1500 },
+];
+
 const SHOTS = [
   // ---------- no wallet, the app
   {
@@ -254,6 +270,54 @@ const SHOTS = [
     parkPointer: false,
     keepScroll: true,
     note: "the first earned badge's tooltip: its medal, name, ask and group",
+  },
+  {
+    stem: "app-lucky-fight-start",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "banner",
+    path: "/app/teams",
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      {
+        click:
+          '[data-cy="arcade-game"][data-game="luckyfight"] >> visible=true',
+      },
+      { waitFor: '[data-cy="lucky-fight-solo"]' },
+      { wait: 2000 },
+    ],
+    // Down to the buttons: the board under them names other players.
+    target: '[data-cy="game-window"]',
+    maxHeight: 430,
+    after: [{ click: '[data-cy="game-window-close"]', optional: true }],
+    note: "the start screen in the game window, opened from the team chat",
+  },
+  {
+    stem: "app-lucky-squad-open",
+    modes: ["off", "on"],
+    folder: "arcade",
+    kind: "banner",
+    path: "/app/teams",
+    // OPEN A SQUAD only opens its screen; its own OPEN is never pressed.
+    steps: [
+      ...ARCADE_FROM_TEAM_CHAT,
+      {
+        click:
+          '[data-cy="arcade-game"][data-game="luckysquad"] >> visible=true',
+      },
+      { waitFor: '[data-cy="lucky-squad-open"]' },
+      { click: '[data-cy="lucky-squad-open"]' },
+      { waitFor: '[data-cy="lucky-squad-open-view"]' },
+      { wait: 1200 },
+    ],
+    // Down to OPEN and BACK; the plate runs on empty below them.
+    target: '[data-cy="game-window"]',
+    maxHeight: 545,
+    after: [
+      { click: '[data-cy="lucky-squad-open-back"]', optional: true },
+      { click: '[data-cy="game-window-close"]', optional: true },
+    ],
+    note: "the OPEN A SQUAD screen, nothing typed; OPEN is never pressed",
   },
   {
     stem: "app-arcade-hub",
@@ -1576,12 +1640,12 @@ const SHOTS = [
     // penalty going out. It renders on the card, not in the race modal, and it
     // is gone 120 seconds after the join that put it there.
     span: [
-      '#race-4998 [data-cy="race-action"][data-action="lobby"]',
-      '#race-4998 [data-cy="race-action"][data-action="withdraw"]',
+      `#race-${RACE ?? "4998"} [data-cy="race-action"][data-action="lobby"]`,
+      `#race-${RACE ?? "4998"} [data-cy="race-action"][data-action="withdraw"]`,
     ],
-    target: '#race-4998 [data-cy="race-action"][data-action="withdraw"]',
+    target: `#race-${RACE ?? "4998"} [data-cy="race-action"][data-action="withdraw"]`,
     pad: 12,
-    note: "race 4996, joined for the shot. Only takeable inside the window",
+    note: "the race --race names, joined for the shot; only inside its window",
   },
 
   // ---------- the covers on the welcome page

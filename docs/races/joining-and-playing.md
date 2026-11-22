@@ -96,7 +96,7 @@ Changed your mind? Click Withdraw. It is open for a short window after your own 
 The vault then refunds your full entry fee and charges a small fixed penalty from your wallet, always in SOL even on token races. [Refunds and rent](../economy/refunds-and-rent.md#withdrawal-during-the-lobby) has the windows, the figure and the full rules.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="The withdraw button in the race modal with the time left on it"><figcaption><p>Live for 2 minutes after your own join, and dead in the last minute of the window.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="A race card's red Withdraw button beside Lobby, carrying the entry fee that comes back and the penalty that goes out"><figcaption><p>Live for 2 minutes after your own join, and dead in the last minute of the window.</p></figcaption></figure>
 
 ## When the race starts
 

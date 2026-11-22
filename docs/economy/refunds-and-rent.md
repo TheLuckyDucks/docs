@@ -37,7 +37,7 @@ Details worth knowing:
 
 Withdrawn players stay in the participants list with a strikethrough, and stop counting toward the fill counter or the underfilled threshold.
 
-<figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="The withdraw button in the race modal with the time left on it"><figcaption><p>The button disables itself once either window closes.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/races/app-withdraw-button-banner.png" alt="A race card's red Withdraw button beside Lobby, carrying the entry fee that comes back and the penalty that goes out"><figcaption><p>The button disables itself once either window closes.</p></figcaption></figure>
 
 ## Full refund on race cancellation or expiration
 

@@ -201,7 +201,7 @@ script.
 - `app-token-gate-fields` (banner): `races/access-and-gating.md`; The Token Holders gate: mint field and minimum amount
 - `app-allowed-players-list` (banner): `races/access-and-gating.md`; The invite list with several wallets in it and the counter
 - `app-host-mode-toggle` (banner): `races/hosting-and-cancelling.md`; The host without playing toggle, unavailable on a 1v1
-- `app-withdraw-button` (banner): `races/joining-and-playing.md`, `economy/refunds-and-rent.md`; The withdraw button with the time left on it
+- `app-withdraw-button` (banner): `races/joining-and-playing.md`, `economy/refunds-and-rent.md`; A race card's red Withdraw button beside Lobby, with the entry coming back and the penalty going out
 - `app-lobby-participants`: `races/joining-and-playing.md`; The race modal part filled: avatars, nicknames, NFT badges
 - `app-delegation-duration-selector` (banner): `races/delegated-play.md`; The duration list open: 1, 7 and 30 days
 - `app-delegation-revoke` (banner): `races/delegated-play.md`, `races/without-the-wallet-app.md`; The Revoke button, shown while a grant is live
@@ -281,11 +281,11 @@ Single files in the same folder, all artwork:
 - `tg-lucky-shot-game`: `arcade/README.md`; Lucky Shot mid-round: ducks over the reeds, the round clock, shots left, the hit tally
 - `tg-lucky-shot-board` (banner): `arcade/README.md`; The start screen, linked: Your best, XP today against the cap, Play, the leaderboard
 - `tg-arcade-card` (banner): `arcade/README.md`; The /arcade post in a group: Lucky Fight on its own row, the other games two to a row, Visit The Lucky Ducks under them
-- `app-lucky-fight-start` (banner): `arcade/README.md`; The Lucky Fight start screen: wins, streak, XP today, SOLO MODE, a blinking JOIN with the challenger's avatar, the board
+- `app-lucky-fight-start` (banner): `arcade/README.md`; The Lucky Fight start screen in the game window, cropped above the board (other players): wins, streak, XP today, SOLO MODE, OPEN A CHALLENGE
 - `tg-lucky-fight-game`: `arcade/README.md`; Lucky Fight mid-round: two ducks fighting on the dock, both health bars, rounds won, the round clock
 - `tg-lucky-fight-result` (banner): `arcade/README.md`; The bot's reply under a fight post: the winner's avatar, rounds, damage, score, Rematch and Replay
 - `tg-lucky-squad-game`: `arcade/README.md`; Lucky Squad mid-arena: the duck behind a sandbag wall, rifle crows across it, a caged duckling, the health bar, lives, weapon, grenades and arena clock
-- `app-lucky-squad-open` (banner): `arcade/README.md`; Lucky Squad's OPEN A SQUAD screen on the site, in the game window: you first with your avatar, nickname and shortened wallet, three invite fields (one holding a picked player, one showing suggestions), OPEN and BACK
+- `app-lucky-squad-open` (banner): `arcade/README.md`; Lucky Squad's OPEN A SQUAD screen in the game window: your own wallet first, three empty invite fields, OPEN and BACK
 - `tg-lucky-flaps-start` (banner): `arcade/README.md`; The start screen, linked: best, XP today, SOLO MODE, OPEN TO THE FLOCK, JOIN THE FLOCK, the board
 
 Single files in the same folder, all artwork. The `docs-arcade-*` are the
