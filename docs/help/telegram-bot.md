@@ -59,7 +59,7 @@ Your handle is shown only if you opted in, and the same switch turns it off agai
 
 A Lucky Fight between two players gets a result post in the group, with **Rematch** and **Replay** buttons. See [Lucky Fight](../arcade/lucky-fight.md).
 
-Groups that turn it on also see a post whenever a player opens a game to others: a Lucky Fight challenge, a Lucky Squad or a Lucky Flaps flock, over the player's avatar, with the seats taken and a button to join. A game waiting for particular players names them, and only they can take those seats. A game started from a command such as `/fight @handle` already has its own post, so it gets no second one.
+Groups that turn it on also see a post whenever a player opens a game to others: a Lucky Fight challenge, a Lucky Squad or a Lucky Flaps flock, over the game's picture, with the seats taken and a button to join. A game waiting for particular players names them, and only they can take those seats. A game started from a command such as `/fight @handle` already has its own post, so it gets no second one.
 
 ## Jackpot announcements
 
